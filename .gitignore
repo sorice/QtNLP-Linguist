@@ -1,0 +1,11 @@
+$ cat .gitignore
+*.pyc
+*~
+/data
+html/
+/modules
+/.project
+*.orig
+*.*#
+*.bak
+/.bzr

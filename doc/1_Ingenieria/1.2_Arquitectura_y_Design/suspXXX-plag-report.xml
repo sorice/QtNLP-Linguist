@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE report SYSTEM "susp-plag-report.dtd">
+
+<report xmlns = "susp-doc005.txt">
+	<susp doc_susp_name="susp-doc005.txt"></susp>
+	<description>Nombre único(no se repite) del reporte en la carpeta out - generado por el parser XML contenido en el algoritmo. </description>
+	<fragment number = "PD001" frag_length="1978" frag_offset="0" frag_sentence="5" frag_words="57">
+		<description>number: Número secuencial para todos los fragmentos detectados por el algoritmo. No se corresponde con la cantidad de fragmentos detectados en un reporte.</description>
+		<src doc_src_name="src-doc3024.txt" frag_src_length="674" frag_src_offset="3612" frag_src_sentence="6" frag_src_words="65">
+		Y aquí se debería poner el fragmento de texto del documento src para no tener que extraerlo del .txt original. Evitando enlaces que pueden estar inconsistentes o que puedan cambiar de lugar en el sistema de ficheros, aunque deberían ser los de EScorpus. El lateral izquierdo de la aplicación puede leerlos de los originales, pero el reporte no(recuerda que el algoritmo ha pasado y ha extraído, y como quiera que sea cada algoritmo podría dividir las oraciones a su propia manera de acuerdo a como esté implementado).
+		</src>
+		<plag_type automatic_tag-reuse_type="plagiarism" human_tag-reuse_type="bad citation" ></plag_type>
+			<description>Características del texto reusado que caracteriza a este fragmento</description>
+			<plag automatic_plag_tipology="paraphrase" human_plag_tipology="paraphrase" automatic_other_plag_typologies_present="" other_plag_typologies_present="paraphrase-deletion, cross-language">
+				<description>Si automatic_plag_tipology="paraphrase" entonces deberían existir los valores de las etiquetas siguientes</description>
+				<clase value="morfo-lexicos"></clase>
+				<subclase value="lexico"></subclase>
+				<paraphrase_type value="synonym"></paraphrase_type>
+			</plag>
+		<case></case>
+		Este fragmento habla de cualquier cosa. Y para que no haya necesidad de tener los docs susp y src, debería incluirse en esta etiqueta el contenido literal del fragmento. Así sería más fácil de visualizar en el editor de textos step_by_step de EScorpus. Se cumplen las mismas reglas del cambio de referencia que para el texto src (o sea el algoritmo pasa y extrae este fragmento como desea).
+	</fragment>
+	<fragment number = "PD002" frag_length="405" frag_offset="3045" frag_sentence="3" frag_words="45">
+		<description>number: Número secuencial para todos los fragmentos detectados por el algoritmo. No se corresponde con la cantidad de fragmentos detectados en un reporte.</description>
+		<src doc_src_name="src-doc1424.txt" frag_src_length="566" frag_src_offset="0128" frag_src_sentence="4" frag_src_words="37"></src>
+		<reuse_type automatic_tag-reuse_type="citation" human_tag-reuse_type="citation"></reuse_type>
+			<description>Características del texto reusado que caracteriza a este fragmento. Sí el reuse_type = "plagiarism" entonces la etiqueta "plag" debería contener valores</description>
+			<plag automatic_plag_tipology="" human_plag_tipology="" automatic_other_plag_typologies_present="" other_plag_typologies_present="">
+				<description>Si automatic_plag_tipology="paraphrase" entonces deberían existir los valores de las etiquetas siguientes</description>
+				<clase value=""></clase>
+				<subclase value=""></subclase>
+				<paraphrase_type value=""></paraphrase_type>
+			</plag>
+		<case>Aquí por proximidad si doc_src_name y doc_susp_name coinciden, y frag_length="1978" frag_offset="0" y frag_src_length="566" frag_src_offset="0128" tienen diferencias de menos de 100 chars del inicio o el final a lo que refleja el corpus entonces debería ponerse el ID del caso en el corpus anotado.
+		</case>
+	</fragment>
+	<algorithm>
+		<name></name>
+		<version></version>
+	</algorithm>
+
+</report>

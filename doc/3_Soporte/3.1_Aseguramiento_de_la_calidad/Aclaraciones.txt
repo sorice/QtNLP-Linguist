@@ -1,0 +1,5 @@
+25 de febrero 2013, eliminando un documento que la UCi tenía llamado "Lista de chequeo". Existe un documento global por el cual se mide, y este debería ser de dominio de todo el equipo.
+
+9 de marzo de 2013 El Glosario de Términos puede ser generado durante la investigación. Si existe un glosario en un proyecto de similares características puede ser reutilizado. Demora hacerlo la primera vez.
+
+GLOBAL significa que se genera el artefacto en la estructura administrativa superior al proyecto. Ejemplo: a nivel de centro de desarrollo, línea de trabajo, dpto, etc. El equipo de desarrollo le hace aportes cuando lo considere necesarios por la tipología o las necesidades de su proyecto.

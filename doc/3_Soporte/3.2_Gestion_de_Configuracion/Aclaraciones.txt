@@ -1,0 +1,4 @@
+2009 Plantilla de Gestión de Cambio sustituye a Pedidos de cambios y Solicitud de Cambios.
+
+9 de marzo de 2013 
+GLOBAL significa que se genera el artefacto en la estructura administrativa superior al proyecto. Ejemplo: a nivel de centro de desarrollo, línea de trabajo, dpto, etc. El equipo de desarrollo le hace aportes cuando lo considere necesarios por la tipología o las necesidades de su proyecto.

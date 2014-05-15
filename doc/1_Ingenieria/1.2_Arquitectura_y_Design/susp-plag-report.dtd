@@ -1,0 +1,5 @@
+<!-- Fig. 15.7: letter.dtd-->
+<!-- DTD document for letter.xml. -->
+
+<!ELEMENT letter ( contact+, salutation, paragraph+,
+closing, signature )>
