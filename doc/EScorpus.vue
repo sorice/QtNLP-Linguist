@@ -1,18 +1,18 @@
-<!-- Tufts VUE 3.1.2 concept-map (sunshine.vue) 2014-01-05 -->
+<!-- Tufts VUE 3.1.2 concept-map (EScorpus.vue) 2014-05-15 -->
 <!-- Tufts VUE: http://vue.tufts.edu/ -->
 <!-- Do Not Remove: VUE mapping @version(1.1) jar:file:/opt/VUE.jar!/tufts/vue/resources/lw_mapping_1_1.xml -->
-<!-- Do Not Remove: Saved date Sun Jan 05 21:17:18 CST 2014 by sorice on platform Linux 3.2.0-48-generic in JVM 1.6.0_27-b27 -->
+<!-- Do Not Remove: Saved date Thu May 15 17:09:14 CDT 2014 by sorice on platform Linux 3.2.0-48-generic in JVM 1.6.0_27-b27 -->
 <!-- Do Not Remove: Saving version @(#)VUE: built March 8 2012 at 1310 by vue on Linux 2.4.21-63.EL i386 JVM 1.5.0_06-b05(bits=32) -->
 <?xml version="1.0" encoding="US-ASCII"?>
 <LW-MAP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="none" ID="0" label="sunshine.vue"
+    xsi:noNamespaceSchemaLocation="none" ID="0" label="EScorpus.vue"
     created="1364339456635" x="0.0" y="0.0" width="980.17365"
     height="927.8998" strokeWidth="0.0" autoSized="false">
-    <resource referenceCreated="1388974638585" size="137726"
-        spec="/home/sorice/sunshine/doc/source/expediente/sunshine.vue"
+    <resource referenceCreated="1400188154991" size="136239"
+        spec="/media/swlDOC/Doctorado/00_EScorpus/doc/EScorpus.vue"
         type="1" xsi:type="URLResource">
-        <title>sunshine.vue</title>
-        <property key="File" value="/home/sorice/sunshine/doc/source/expediente/sunshine.vue"/>
+        <title>EScorpus.vue</title>
+        <property key="File" value="/media/swlDOC/Doctorado/00_EScorpus/doc/EScorpus.vue"/>
     </resource>
     <fillColor>#FFFFFF</fillColor>
     <strokeColor>#404040</strokeColor>
@@ -152,11 +152,11 @@
             x="34.0" y="22.0" width="136.0" height="27.0"
             strokeWidth="1.0" autoSized="true" xsi:type="node">
             <resource referenceCreated="0" size="89617"
-                spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.2_Riesgos/Lista_de_Riesgos.odt"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.2_Riesgos/Ejemplo_OBSOLETA_PLantilla_Lista_de_Riesgos_SXP_v3.2.odt"
                 type="1" xsi:type="URLResource">
-                <title>Lista_de_Riesgos.odt</title>
-                <property key="@file.relative" value="02_Gestion_de_Proyectos/2.2_Riesgos/Lista_de_Riesgos.odt"/>
-                <property key="File" value="02_Gestion_de_Proyectos/2.2_Riesgos/Lista_de_Riesgos.odt"/>
+                <title>Ejemplo_OBSOLETA_PLantilla_Lista_de_Riesgos_SXP_v3.2.odt</title>
+                <property key="@file.relative" value="02_Gestion_de_Proyectos/2.2_Riesgos/Ejemplo_OBSOLETA_PLantilla_Lista_de_Riesgos_SXP_v3.2.odt"/>
+                <property key="File" value="02_Gestion_de_Proyectos/2.2_Riesgos/Ejemplo_OBSOLETA_PLantilla_Lista_de_Riesgos_SXP_v3.2.odt"/>
             </resource>
             <fillColor>#FFFFFF</fillColor>
             <strokeColor>#FFFFFF</strokeColor>
@@ -179,15 +179,15 @@
     <child ID="6" label="Glosario de T&#xe9;rminos" layerID="1"
         created="1364339464586" x="-69.399994" y="243.79977"
         width="175.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="127563"
-            spec="/home/sorice/sunshine/doc/source/expediente/3_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"
+        <resource referenceCreated="0" size="128098"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"
             type="1" xsi:type="URLResource">
             <title>15_Glosario_de_Terminos.odt</title>
-            <property key="@file.relative" value="3_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
-            <property key="File" value="3_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
+            <property key="@file.relative" value="03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
+            <property key="File" value="03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
         </resource>
-        <fillColor>#8AEE95</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <fillColor>#FEFEC9</fillColor>
+        <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -524,10 +524,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-size: 12; margin-top: 0px; margin-left: 0px; margin-right: 0px; color: #000000; font-family: Arial; margin-bottom: 0px }
-        ol { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
-        p { margin-top: 0; margin-left: 0; margin-right: 0; color: #000000; margin-bottom: 0 }
-        ul { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
+        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
+        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
+        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -566,15 +566,15 @@
         x="250.75" y="112.75" width="66.0" height="27.0"
         strokeWidth="4.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" accessAttempted="1377394129577"
-            accessSuccessful="1377394139340" size="141536"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/03_LRP.odt"
+            accessSuccessful="1377394139340" size="49806"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/03_LRP.odt"
             type="1" xsi:type="URLResource">
             <title>03_LRP.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/03_LRP.odt"/>
             <property key="File" value="01_Ingenieria/1.1_Requisitos/03_LRP.odt"/>
         </resource>
         <fillColor>#8AEE95</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <strokeColor>#8AEE95</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-bold-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -593,7 +593,7 @@
         created="1364815086096" x="114.34999" y="112.75" width="128.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="26950"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.1_Plan de proyecto/OPCIONAL_04_Ficha_Tecnica_para_Registro_de_Proyectos.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.1_Plan de proyecto/OPCIONAL_04_Ficha_Tecnica_para_Registro_de_Proyectos.odt"
             type="1" xsi:type="URLResource">
             <title>OPCIONAL_04_Ficha_Tecnica_para_Registro_de_Proyectos.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.1_Plan%20de%20proyecto/OPCIONAL_04_Ficha_Tecnica_para_Registro_de_Proyectos.odt"/>
@@ -618,8 +618,8 @@
     <child ID="70" label="Arquitectura de Software" layerID="1"
         created="1364815891233" x="114.54996" y="428.49115"
         width="195.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="86815"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.2_Arquitectura_y_Design/09b_Arq_de_Software.odt"
+        <resource referenceCreated="0" size="86834"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/09b_Arq_de_Software.odt"
             type="1" xsi:type="URLResource">
             <title>09b_Arq_de_Software.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/09b_Arq_de_Software.odt"/>
@@ -662,10 +662,10 @@
   &lt;head&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-size: 12; margin-top: 0px; margin-left: 0px; margin-right: 0px; color: #000000; font-family: Arial; margin-bottom: 0px }
-        ol { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
-        p { margin-top: 0; margin-left: 0; margin-right: 0; color: #000000; margin-bottom: 0 }
-        ul { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
+        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
+        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
+        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -700,10 +700,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-size: 12; margin-top: 0px; margin-left: 0px; margin-right: 0px; color: #000000; font-family: Arial; margin-bottom: 0px }
-        ol { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
-        p { margin-top: 0; margin-left: 0; margin-right: 0; color: #000000; margin-bottom: 0 }
-        ul { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
+        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
+        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
+        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -721,7 +721,7 @@
         created="1364818568731" x="114.55" y="139.65" width="156.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="85382"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"
             type="1" xsi:type="URLResource">
             <title>03_Levantamiento_de_Informacion.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"/>
@@ -747,13 +747,13 @@
         created="1364818591942" x="114.149994" y="164.65001"
         width="190.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="337113"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"
             type="1" xsi:type="URLResource">
             <title>Procesos_del_Negocio_IDEF.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"/>
             <property key="File" value="01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"/>
         </resource>
-        <fillColor>#FFC63B</fillColor>
+        <fillColor>#FEFEC9</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-12</font>
@@ -773,14 +773,14 @@
         created="1364818641498" x="114.74997" y="334.25" width="151.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="30549"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.2_Arquitectura_y_Design/09a_Modelo_de_Design.lyx"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/09a_Modelo_de_Design.lyx"
             type="1" xsi:type="URLResource">
             <title>09a_Modelo_de_Design.lyx</title>
             <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/09a_Modelo_de_Design.lyx"/>
             <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/09a_Modelo_de_Design.lyx"/>
         </resource>
-        <fillColor>#FFC63B</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <fillColor>#FEFEC9</fillColor>
+        <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -799,7 +799,7 @@
         created="1365187892151" x="360.81152" y="289.31863"
         width="127.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="163993"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"
             type="1" xsi:type="URLResource">
             <title>Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf</title>
             <property key="@file.relative" value="01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"/>
@@ -843,7 +843,7 @@
             x="34.0" y="22.0" width="149.0" height="27.0"
             strokeWidth="1.0" autoSized="true" xsi:type="node">
             <resource referenceCreated="0" size="35616"
-                spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.3_Implementacion_y_Prueba/08_Caso_de_Prueba_de_Aceptacion.odt"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/08_Caso_de_Prueba_de_Aceptacion.odt"
                 type="1" xsi:type="URLResource">
                 <title>08_Caso_de_Prueba_de_Aceptacion.odt</title>
                 <property key="@file.relative" value="01_Ingenieria/1.3_Implementacion_y_Prueba/08_Caso_de_Prueba_de_Aceptacion.odt"/>
@@ -868,8 +868,8 @@
         <child ID="86" label="C&#xf3;digo fuente"
             created="1365188141472" x="34.0" y="45.25" width="114.17831"
             height="22.0" strokeWidth="4.0" autoSized="false" xsi:type="node">
-            <fillColor>#8AEE95</fillColor>
-            <strokeColor>#FFC63B</strokeColor>
+            <fillColor>#FEFEC9</fillColor>
+            <strokeColor>#FEFEC9</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-bold-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -906,8 +906,8 @@
         <child ID="184" label="Tareas de ingenier&#xed;a"
             created="1365406789937" x="34.0" y="85.0" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="199376"
-                spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/06_HU.odt"
+            <resource referenceCreated="0" size="40506"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
                 <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
@@ -1001,7 +1001,7 @@
         created="1365191169643" x="-65.44998" y="654.6987" width="192.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="31426"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.7_Investigaciones/13_USAR_SOLO_SI_HAY_INVESTIGACIONES_Informe_de_Investigaciones.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.7_Investigaciones/13_USAR_SOLO_SI_HAY_INVESTIGACIONES_Informe_de_Investigaciones.odt"
             type="1" xsi:type="URLResource">
             <title>13_USAR_SOLO_SI_HAY_INVESTIGACIONES_Informe_de_Investigaciones.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.7_Investigaciones/13_USAR_SOLO_SI_HAY_INVESTIGACIONES_Informe_de_Investigaciones.odt"/>
@@ -1027,7 +1027,7 @@
         created="1365191175333" x="114.349976" y="396.0999"
         width="144.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="82862"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.3_Implementacion_y_Prueba/10_Plan_de_Pruebas.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/10_Plan_de_Pruebas.odt"
             type="1" xsi:type="URLResource">
             <title>10_Plan_de_Pruebas.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.3_Implementacion_y_Prueba/10_Plan_de_Pruebas.odt"/>
@@ -1089,7 +1089,7 @@
             created="1365191056359" x="34.0" y="42.25" width="149.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
             <resource referenceCreated="0" size="20034"
-                spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"
                 type="1" xsi:type="URLResource">
                 <title>02_Gestion_de_atencion_a_clientes.odt</title>
                 <property key="@file.relative" value="02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"/>
@@ -1114,8 +1114,8 @@
         <child ID="104" label="Tareas de Ingenier&#xed;a"
             created="1365191091211" x="34.0" y="65.5" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="199376"
-                spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/06_HU.odt"
+            <resource referenceCreated="0" size="40506"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
                 <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
@@ -1141,7 +1141,7 @@
     </child>
     <child ID="113" label="content in Manage Tool" layerID="1"
         created="1365191754409" x="-79.25002" y="117.62503"
-        width="191.25" height="48.25" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        width="170.25" height="46.75" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <fillColor>#C1C1FF</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
         <textColor>#000000</textColor>
@@ -1157,16 +1157,10 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/dbc73b347f000101006c13ee05d89d1c</URIString>
         <child ID="116" label="- Tareas de Investigaci&#xf3;n"
-            created="1365191792275" x="34.0" y="22.0" width="199.0"
-            height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="72856"
-                spec="/media/swlDOC/Doctorado/Notas_de_la_Investigacion/Notas_de_la_investigacion.txt"
-                type="1" xsi:type="URLResource">
-                <title>Notas_de_la_investigacion.txt</title>
-                <property key="File" value="/media/swlDOC/Doctorado/Notas_de_la_Investigacion/Notas_de_la_investigacion.txt"/>
-            </resource>
-            <fillColor>#8AEE95</fillColor>
-            <strokeColor>#FFC63B</strokeColor>
+            created="1365191792275" x="34.0" y="22.0" width="171.0"
+            height="25.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
+            <fillColor>#FEFEC9</fillColor>
+            <strokeColor>#FEFEC9</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-14</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -1415,10 +1409,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-size: 12; margin-top: 0px; margin-left: 0px; margin-right: 0px; color: #000000; font-family: Arial; margin-bottom: 0px }
-        ol { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
-        p { margin-top: 0; margin-left: 0; margin-right: 0; color: #000000; margin-bottom: 0 }
-        ul { list-style-position: outside; font-size: 12; margin-top: 6; margin-left: 30; vertical-align: middle; font-family: Arial }
+        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
+        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
+        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -1491,14 +1485,14 @@
         <child ID="132" label="Manual de Desarrollo"
             created="1365213571496" x="34.0" y="62.5" width="170.42188"
             height="27.0" strokeWidth="4.0" autoSized="false" xsi:type="node">
-            <resource referenceCreated="0" size="5406"
-                spec="/home/sorice/sunshine/doc/html/modules/modules.html"
+            <resource referenceCreated="0" size="5200"
+                spec="/media/swlDOC/Doctorado/00_EScorpus/html/modules/modules.html"
                 type="1" xsi:type="URLResource">
                 <title>modules.html</title>
-                <property key="File" value="/home/sorice/sunshine/doc/html/modules/modules.html"/>
+                <property key="File" value="/media/swlDOC/Doctorado/00_EScorpus/html/modules/modules.html"/>
             </resource>
             <fillColor>#8AEE95</fillColor>
-            <strokeColor>#FFC63B</strokeColor>
+            <strokeColor>#8AEE95</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-bold-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -1722,16 +1716,9 @@
         <point1 x="623.2467" y="64.43976"/>
         <point2 x="623.25073" y="370.03973"/>
     </child>
-    <child ID="153" label="SXP- 4.0 en una imagen v.0.1" layerID="1"
+    <child ID="153" label="DOC Proyecto EScorpus" layerID="1"
         created="1365270200548" x="548.2486" y="-133.06021"
-        width="291.0" height="30.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="8380"
-            spec="/home/sorice/sunshine/doc/source/expediente/README.txt"
-            type="1" xsi:type="URLResource">
-            <title>README.txt</title>
-            <property key="@file.relative" value="README.txt"/>
-            <property key="File" value="README.txt"/>
-        </resource>
+        width="224.0" height="30.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <fillColor>#FFFFFF</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
         <textColor>#000000</textColor>
@@ -1753,11 +1740,11 @@
         layerID="1" created="1365270263715" x="528.7486" y="-103.72688"
         width="360.0" height="36.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="41156"
-            spec="/media/Repo/repository/sxp/SXP4.0.odt/Guion_de_la_metodologia_SXP4.0.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/Guion_de_la_metodologia_SXP4.0.odt"
             type="1" xsi:type="URLResource">
             <title>Guion_de_la_metodologia_SXP4.0.odt</title>
-            <property key="@file.relative" value="SXP4.0.odt/Guion_de_la_metodologia_SXP4.0.odt"/>
-            <property key="File" value="/media/Repo/repository/sxp/SXP4.0.odt/Guion_de_la_metodologia_SXP4.0.odt"/>
+            <property key="@file.relative" value="Guion_de_la_metodologia_SXP4.0.odt"/>
+            <property key="File" value="Guion_de_la_metodologia_SXP4.0.odt"/>
         </resource>
         <fillColor>#FFFFFF</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
@@ -1878,15 +1865,15 @@
     <child ID="67" label="Historias de Usuario(HU)" layerID="1"
         created="1364815410184" x="114.34996" y="223.34996"
         width="178.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="199376"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/06_HU.odt"
+        <resource referenceCreated="0" size="40506"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
             type="1" xsi:type="URLResource">
             <title>06_HU.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
             <property key="File" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
         </resource>
         <fillColor>#8AEE95</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <strokeColor>#8AEE95</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-bold-12</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -1975,7 +1962,7 @@
             <URIString>http://vue.tufts.edu/rdf/resource/e30828f27f000101007e24dfe2a870cb</URIString>
             <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
         </child>
-        <child ID="188" label="Artefacto documental comenzado"
+        <child ID="188" label="Artefacto documental cambiante"
             created="1380163827102" x="34.0" y="117.5" width="221.0"
             height="42.0" strokeWidth="1.0" autoSized="false" xsi:type="node">
             <fillColor>#8AEE95</fillColor>
@@ -2058,7 +2045,7 @@
         created="1364814016721" x="114.350006" y="255.0252"
         width="152.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="81906"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.1_Requisitos/07_Plan_de_Release.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/07_Plan_de_Release.odt"
             type="1" xsi:type="URLResource">
             <title>07_Plan_de_Release.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/07_Plan_de_Release.odt"/>
@@ -2084,7 +2071,7 @@
         created="1365312848329" x="114.0459" y="38.43976" width="153.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="20034"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"
             type="1" xsi:type="URLResource">
             <title>02_Gestion_de_atencion_a_clientes.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.odt"/>
@@ -2110,7 +2097,7 @@
         created="1365312877004" x="114.5459" y="83.43976" width="155.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="20563"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/01_Carta_de_Intencion_de_Clientes.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/01_Carta_de_Intencion_de_Clientes.odt"
             type="1" xsi:type="URLResource">
             <title>01_Carta_de_Intencion_de_Clientes.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/01_Carta_de_Intencion_de_Clientes.odt"/>
@@ -2136,11 +2123,11 @@
         created="1365214549097" x="715.33276" y="648.43976"
         width="160.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="34983"
-            spec="/home/sorice/sunshine/doc/source/expediente/3_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/03_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"
             type="1" xsi:type="URLResource">
             <title>18_Gestion_de_Cambios.odt</title>
-            <property key="@file.relative" value="3_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"/>
-            <property key="File" value="3_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"/>
+            <property key="@file.relative" value="03_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"/>
+            <property key="File" value="03_Soporte/3.2_Gestion_de_Configuracion/18_Gestion_de_Cambios.odt"/>
         </resource>
         <fillColor>#FEFEC9</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
@@ -2180,13 +2167,14 @@
     <child ID="134" label="Manual de Usuario" layerID="1"
         created="1365213617831" x="534.2658" y="741.13965" width="157.0"
         height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="8162"
-            spec="/home/sorice/sunshine/doc/html/index.html" type="1" xsi:type="URLResource">
+        <resource referenceCreated="0" size="7700"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/html/index.html"
+            type="1" xsi:type="URLResource">
             <title>index.html</title>
-            <property key="File" value="/home/sorice/sunshine/doc/html/index.html"/>
+            <property key="File" value="/media/swlDOC/Doctorado/00_EScorpus/html/index.html"/>
         </resource>
         <fillColor>#8AEE95</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <strokeColor>#8AEE95</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -2205,11 +2193,11 @@
         created="1365314152809" x="714.81635" y="748.93976"
         width="161.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="35649"
-            spec="/media/Repo/repository/sxp/SXP4.0.odt/4_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/04_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"
             type="1" xsi:type="URLResource">
             <title>19_Ejemplo_Acta_de_Aceptacion.odt</title>
-            <property key="@file.relative" value="SXP4.0.odt/4_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"/>
-            <property key="File" value="/media/Repo/repository/sxp/SXP4.0.odt/4_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"/>
+            <property key="@file.relative" value="04_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"/>
+            <property key="File" value="04_Legal/19_Ejemplo_Acta_de_Aceptacion.odt"/>
         </resource>
         <fillColor>#FEFEC9</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
@@ -2231,13 +2219,13 @@
         created="1365392663320" x="114.149994" y="455.9398"
         width="213.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="278902"
-            spec="/home/sorice/sunshine/doc/source/expediente/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"
             type="1" xsi:type="URLResource">
             <title>11_Arq_de_Informacion.odt</title>
             <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"/>
             <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"/>
         </resource>
-        <fillColor>#8AEE95</fillColor>
+        <fillColor>#FEFEC9</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
@@ -2360,14 +2348,14 @@
         width="120.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" accessAttempted="1377393204076"
             accessSuccessful="1377393209535" size="50726"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_I+D.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_I+D.odt"
             type="1" xsi:type="URLResource">
             <title>12_Proyecto_I+D.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_I+D.odt"/>
             <property key="File" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_I+D.odt"/>
         </resource>
-        <fillColor>#8AEE95</fillColor>
-        <strokeColor>#8AEE95</strokeColor>
+        <fillColor>#FEFEC9</fillColor>
+        <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -2387,13 +2375,13 @@
         layerID="1" created="1378169180739" x="356.04077" y="80.93977"
         width="161.0" height="42.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="31602"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/19_Acta_de_Aceptacion_Arq_de_Informacion.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/19_Acta_de_Aceptacion_Arq_de_Informacion.odt"
             type="1" xsi:type="URLResource">
             <title>19_Acta_de_Aceptacion_Arq_de_Informacion.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/19_Acta_de_Aceptacion_Arq_de_Informacion.odt"/>
             <property key="File" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/19_Acta_de_Aceptacion_Arq_de_Informacion.odt"/>
         </resource>
-        <fillColor>#FFC63B</fillColor>
+        <fillColor>#FEFEC9</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
@@ -2410,17 +2398,10 @@
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
     <child ID="187" label="1er Informe Investigaci&#xf3;n" layerID="1"
-        created="1378957522369" x="-90.42508" y="81.93982" width="197.0"
-        height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="728127"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.7_Investigaciones/2013-01-07_Analisis_de_relaciones_semanticas_Deteccion_de_Plagio_rephrase.pdf"
-            type="1" xsi:type="URLResource">
-            <title>2013-01-07_Analisis_de_relaciones_semanticas_Deteccion_de_Plagio_rephrase.pdf</title>
-            <property key="@file.relative" value="02_Gestion_de_Proyectos/2.7_Investigaciones/2013-01-07_Analisis_de_relaciones_semanticas_Deteccion_de_Plagio_rephrase.pdf"/>
-            <property key="File" value="02_Gestion_de_Proyectos/2.7_Investigaciones/2013-01-07_Analisis_de_relaciones_semanticas_Deteccion_de_Plagio_rephrase.pdf"/>
-        </resource>
-        <fillColor>#FFC63B</fillColor>
-        <strokeColor>#FFFFFF</strokeColor>
+        created="1378957522369" x="-90.42508" y="81.93982" width="169.0"
+        height="25.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        <fillColor>#FEFEC9</fillColor>
+        <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -2438,15 +2419,15 @@
     <child ID="191" label="Cx Clientes" layerID="1"
         created="1382290557676" x="268.26572" y="139.93979"
         width="110.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="37365"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.ods"
+        <resource referenceCreated="0" size="43262"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.ods"
             type="1" xsi:type="URLResource">
             <title>02_Gestion_de_atencion_a_clientes.ods</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.ods"/>
             <property key="File" value="02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.ods"/>
         </resource>
-        <fillColor>#8AEE95</fillColor>
-        <strokeColor>#FFC63B</strokeColor>
+        <fillColor>#FEFEC9</fillColor>
+        <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -2465,7 +2446,7 @@
         created="1382290662941" x="118.26572" y="610.9398" width="149.0"
         height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="52901"
-            spec="/home/sorice/sunshine/doc/source/expediente/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_Tecnico.odt"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_Tecnico.odt"
             type="1" xsi:type="URLResource">
             <title>12_Proyecto_Tecnico.odt</title>
             <property key="@file.relative" value="02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/12_Proyecto_Tecnico.odt"/>
@@ -2495,8 +2476,8 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/a9407ae17f0001010084c1f965fda63b</URIString>
     </layer>
-    <userZoom>0.75</userZoom>
-    <userOrigin x="-134.00064" y="-111.170166"/>
+    <userZoom>1.0</userZoom>
+    <userOrigin x="-225.46393" y="-145.56021"/>
     <presentationBackground>#202020</presentationBackground>
     <PathwayList currentPathway="0" revealerIndex="-1">
         <pathway ID="0" label="Camino sin t&#xed;tulo"
@@ -2570,6 +2551,6 @@
     <date>2013-03-26</date>
     <mapFilterModel/>
     <modelVersion>5</modelVersion>
-    <saveLocation>/home/sorice/sunshine/doc/source/expediente</saveLocation>
-    <saveFile>/home/sorice/sunshine/doc/source/expediente/sunshine.vue</saveFile>
+    <saveLocation>/media/swlDOC/Doctorado/00_EScorpus/doc</saveLocation>
+    <saveFile>/media/swlDOC/Doctorado/00_EScorpus/doc/EScorpus.vue</saveFile>
 </LW-MAP>
