@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>suspXXX-plag-report.xml</title>
+</head>
+<body>
+<pre style='color:#1f1c1b;background-color:#ffffff;'>
+<b>&lt;?xml</b> version=&quot;1.0&quot; encoding=&quot;utf-8&quot;<b>?&gt;</b>
+
+<b><span style='color:#0057ae;'>&lt;!DOCTYPE </span></b>report SYSTEM &quot;susp-plag-report.dtd&quot;<b><span style='color:#0057ae;'>&gt;</span></b>
+
+<b>&lt;report</b><span style='color:#006e28;'> xmlns</span> <span style='color:#006e28;'>=</span> <span style='color:#aa0000;'>&quot;susp-doc005.txt&quot;</span><b>&gt;</b>
+	<b>&lt;susp</b><span style='color:#006e28;'> doc_susp_name=</span><span style='color:#aa0000;'>&quot;susp-doc005.txt&quot;</span><b>&gt;&lt;/susp&gt;</b>
+	<b>&lt;description&gt;</b>Nombre único(no se repite) del reporte en la carpeta out - generado por el parser XML contenido en el algoritmo. <b>&lt;/description&gt;</b>
+	<b>&lt;fragment</b><span style='color:#006e28;'> number</span> <span style='color:#006e28;'>=</span> <span style='color:#aa0000;'>&quot;PD001&quot;</span><span style='color:#006e28;'> frag_length=</span><span style='color:#aa0000;'>&quot;1978&quot;</span><span style='color:#006e28;'> frag_offset=</span><span style='color:#aa0000;'>&quot;0&quot;</span><span style='color:#006e28;'> frag_sentence=</span><span style='color:#aa0000;'>&quot;5&quot;</span><span style='color:#006e28;'> frag_words=</span><span style='color:#aa0000;'>&quot;57&quot;</span><b>&gt;</b>
+		<b>&lt;description&gt;</b>number: Número secuencial para todos los fragmentos detectados por el algoritmo. No se corresponde con la cantidad de fragmentos detectados en un reporte.<b>&lt;/description&gt;</b>
+		<b>&lt;src</b><span style='color:#006e28;'> doc_src_name=</span><span style='color:#aa0000;'>&quot;src-doc3024.txt&quot;</span><span style='color:#006e28;'> frag_src_length=</span><span style='color:#aa0000;'>&quot;674&quot;</span><span style='color:#006e28;'> frag_src_offset=</span><span style='color:#aa0000;'>&quot;3612&quot;</span><span style='color:#006e28;'> frag_src_sentence=</span><span style='color:#aa0000;'>&quot;6&quot;</span><span style='color:#006e28;'> frag_src_words=</span><span style='color:#aa0000;'>&quot;65&quot;</span><b>&gt;</b>
+		Y aquí se debería poner el fragmento de texto del documento src para no tener que extraerlo del .txt original. Evitando enlaces que pueden estar inconsistentes o que puedan cambiar de lugar en el sistema de ficheros, aunque deberían ser los de EScorpus. El lateral izquierdo de la aplicación puede leerlos de los originales, pero el reporte no(recuerda que el algoritmo ha pasado y ha extraído, y como quiera que sea cada algoritmo podría dividir las oraciones a su propia manera de acuerdo a como esté implementado).
+		<b>&lt;/src&gt;</b>
+		<b>&lt;plag_type</b><span style='color:#006e28;'> automatic_tag-reuse_type=</span><span style='color:#aa0000;'>&quot;plagiarism&quot;</span><span style='color:#006e28;'> human_tag-reuse_type=</span><span style='color:#aa0000;'>&quot;bad citation&quot;</span> <b>&gt;&lt;/plag_type&gt;</b>
+			<b>&lt;description&gt;</b>Características del texto reusado que caracteriza a este fragmento<b>&lt;/description&gt;</b>
+			<b>&lt;plag</b><span style='color:#006e28;'> automatic_plag_tipology=</span><span style='color:#aa0000;'>&quot;paraphrase&quot;</span><span style='color:#006e28;'> human_plag_tipology=</span><span style='color:#aa0000;'>&quot;paraphrase&quot;</span><span style='color:#006e28;'> automatic_other_plag_typologies_present=</span><span style='color:#aa0000;'>&quot;&quot;</span><span style='color:#006e28;'> other_plag_typologies_present=</span><span style='color:#aa0000;'>&quot;paraphrase-deletion, cross-language&quot;</span><b>&gt;</b>
+				<b>&lt;description&gt;</b>Si automatic_plag_tipology=&quot;paraphrase&quot; entonces deberían existir los valores de las etiquetas siguientes<b>&lt;/description&gt;</b>
+				<b>&lt;clase</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;morfo-lexicos&quot;</span><b>&gt;&lt;/clase&gt;</b>
+				<b>&lt;subclase</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;lexico&quot;</span><b>&gt;&lt;/subclase&gt;</b>
+				<b>&lt;paraphrase_type</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;synonym&quot;</span><b>&gt;&lt;/paraphrase_type&gt;</b>
+			<b>&lt;/plag&gt;</b>
+		<b>&lt;case&gt;&lt;/case&gt;</b>
+		Este fragmento habla de cualquier cosa. Y para que no haya necesidad de tener los docs susp y src, debería incluirse en esta etiqueta el contenido literal del fragmento. Así sería más fácil de visualizar en el editor de textos step_by_step de EScorpus. Se cumplen las mismas reglas del cambio de referencia que para el texto src (o sea el algoritmo pasa y extrae este fragmento como desea).
+	<b>&lt;/fragment&gt;</b>
+	<b>&lt;fragment</b><span style='color:#006e28;'> number</span> <span style='color:#006e28;'>=</span> <span style='color:#aa0000;'>&quot;PD002&quot;</span><span style='color:#006e28;'> frag_length=</span><span style='color:#aa0000;'>&quot;405&quot;</span><span style='color:#006e28;'> frag_offset=</span><span style='color:#aa0000;'>&quot;3045&quot;</span><span style='color:#006e28;'> frag_sentence=</span><span style='color:#aa0000;'>&quot;3&quot;</span><span style='color:#006e28;'> frag_words=</span><span style='color:#aa0000;'>&quot;45&quot;</span><b>&gt;</b>
+		<b>&lt;description&gt;</b>number: Número secuencial para todos los fragmentos detectados por el algoritmo. No se corresponde con la cantidad de fragmentos detectados en un reporte.<b>&lt;/description&gt;</b>
+		<b>&lt;src</b><span style='color:#006e28;'> doc_src_name=</span><span style='color:#aa0000;'>&quot;src-doc1424.txt&quot;</span><span style='color:#006e28;'> frag_src_length=</span><span style='color:#aa0000;'>&quot;566&quot;</span><span style='color:#006e28;'> frag_src_offset=</span><span style='color:#aa0000;'>&quot;0128&quot;</span><span style='color:#006e28;'> frag_src_sentence=</span><span style='color:#aa0000;'>&quot;4&quot;</span><span style='color:#006e28;'> frag_src_words=</span><span style='color:#aa0000;'>&quot;37&quot;</span><b>&gt;&lt;/src&gt;</b>
+		<b>&lt;reuse_type</b><span style='color:#006e28;'> automatic_tag-reuse_type=</span><span style='color:#aa0000;'>&quot;citation&quot;</span><span style='color:#006e28;'> human_tag-reuse_type=</span><span style='color:#aa0000;'>&quot;citation&quot;</span><b>&gt;&lt;/reuse_type&gt;</b>
+			<b>&lt;description&gt;</b>Características del texto reusado que caracteriza a este fragmento. Sí el reuse_type = &quot;plagiarism&quot; entonces la etiqueta &quot;plag&quot; debería contener valores<b>&lt;/description&gt;</b>
+			<b>&lt;plag</b><span style='color:#006e28;'> automatic_plag_tipology=</span><span style='color:#aa0000;'>&quot;&quot;</span><span style='color:#006e28;'> human_plag_tipology=</span><span style='color:#aa0000;'>&quot;&quot;</span><span style='color:#006e28;'> automatic_other_plag_typologies_present=</span><span style='color:#aa0000;'>&quot;&quot;</span><span style='color:#006e28;'> other_plag_typologies_present=</span><span style='color:#aa0000;'>&quot;&quot;</span><b>&gt;</b>
+				<b>&lt;description&gt;</b>Si automatic_plag_tipology=&quot;paraphrase&quot; entonces deberían existir los valores de las etiquetas siguientes<b>&lt;/description&gt;</b>
+				<b>&lt;clase</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;&quot;</span><b>&gt;&lt;/clase&gt;</b>
+				<b>&lt;subclase</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;&quot;</span><b>&gt;&lt;/subclase&gt;</b>
+				<b>&lt;paraphrase_type</b><span style='color:#006e28;'> value=</span><span style='color:#aa0000;'>&quot;&quot;</span><b>&gt;&lt;/paraphrase_type&gt;</b>
+			<b>&lt;/plag&gt;</b>
+		<b>&lt;case&gt;</b>Aquí por proximidad si doc_src_name y doc_susp_name coinciden, y frag_length=&quot;1978&quot; frag_offset=&quot;0&quot; y frag_src_length=&quot;566&quot; frag_src_offset=&quot;0128&quot; tienen diferencias de menos de 100 chars del inicio o el final a lo que refleja el corpus entonces debería ponerse el ID del caso en el corpus anotado.
+		<b>&lt;/case&gt;</b>
+	<b>&lt;/fragment&gt;</b>
+	<b>&lt;algorithm&gt;</b>
+		<b>&lt;name&gt;&lt;/name&gt;</b>
+		<b>&lt;version&gt;&lt;/version&gt;</b>
+	<b>&lt;/algorithm&gt;</b>
+
+<b>&lt;/report&gt;</b>
+</pre>
+</body>
+</html>
