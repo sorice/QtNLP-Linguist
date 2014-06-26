@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title></title>
+</head>
+<body bgcolor="#FFCC66" link="#0000ff" text="#000000" vlink="#000080">
+<p align="center">&nbsp;</p>
+<h1 align="center">4. Segmenting Text </h1>
+<p align="justify">The text segmentation interface allows you split a newly 
+imported plain-text file into the segments you wish to structure. The same 
+interface allows you to change segment boundaries even after you have structured 
+the text. Initially, an imported text is treated as a single segment. 
+</p><p align="justify">Figure 1 shows the text Segmentation Interface. The text 
+is shown in the main <i>text window</i>, and on the left 
+are a number of buttons (the <i>toolbar</i>). These buttons 
+are either <i>mode </i>buttons (which change how you 
+interact with the text window) or <i>action</i> buttons 
+(which actually do something directly). <br>&nbsp; 
+</p><p>
+</p><center><img src="segment.jpg"> 
+<br>Figure 1: The Text Segmentation Interface </center> 
+<h3>4.1 Modes </h3>
+<p>The segmentation interface allows two modes of 
+interaction: 
+</p><ul>
+    <li><b>Segment Mode</b>: each click on 
+    the text window will produce a new segment divider at the point where you 
+    click. If there is already a segment marker at that point, it is deleted. 
+    All key presses are ignored. 
+    <p></p>  
+                  
+                   
+          
+    </li><li><b>Edit Mode</b>: in this 
+    mode, you can edit the text as in a normal text edit window. Note that you 
+    cannot delete segment markers using the delete/backspace keys. </li></ul><p>
+<b>
+	Warning
+</b> : Cut and paste 
+of text including segment markers is not allowed. 
+	</p><h3>4.2 Actions</h3>
+
+<p>
+
+
+There are two action buttons: 
+</p><ul>
+    <li><b>Paragraphs</b>: produces a 
+    segment boundary at each double paragraph mark in the text. 
+    <p></p>   
+              
+    </li><li><b>Sentences</b>: produces a 
+    segment boundary after each end of sentence. Note that the algorithm to spot 
+    ends of sentences is not perfect, and may go wrong if a sentence doesn't end 
+    in usual punctuation (e.g., . ? !). It can also go wrong where these symbols 
+    appear in other contexts, e.g., as the second char in "1. 
+    Introduction". It does however handle phenomena such as 
+    "e.g.", "i.e.", "etc.", "...". When 
+    the system produces wrong segmentation, insert/delete segmentation by 
+    clicking at the appropriate place while in <i>Segment</i> 
+    mode. </li></ul>
+<h3>4.3 Note on Segmentation </h3>
+<p align="justify">The typical process after importing a plain text file is 
+to initially hit the <i>Sentences</i> button, then add in 
+segment marks where you see fit, and delete bogus marks. 
+</p><p>Note that if you get it wrong now, you can come back 
+during structuring and change the borders. 
+</p><p align="justify">A problem occurs with <i>embedded 
+elements</i> -- cases where a rhetorically dependent stretch of text occurs 
+within another node. For instance, we might wish to treat the embedded clause in 
+the following as dependent on the main clause: <i>John, -- 
+I think you know him -- is here for two weeks.</i> At present, the interface 
+does not handle such cases. A simple solution is for the user to move the 
+embedded text outside of the enclosing text. 
+</p><p align="justify">When you are ready to assign structure, hit the 
+"Structurer" button on the Interface selection bar at the top. 
+</p><h3>4.4 Summary of Functionalities </h3>
+<p>
+</p><center>
+<table border="2">
+    
+    <tbody><tr>
+        <td width="200">Insert a single segment mark</td>
+        <td>Select Segment mode; click at the 
+            desired point.&nbsp; </td></tr>
+    <tr>
+        <td width="200">Insert segment marks at end of 
+            each sentence&nbsp; </td>
+        <td>Click on the Sentences button.</td></tr>
+    <tr>
+        <td width="200">Delete a segment mark</td>
+        <td>Select Segment mode; click on the 
+            segment mark to delete.&nbsp; </td></tr>
+    <tr>
+        <td width="200">Changing text</td>
+        <td>Select Edit mode; edit the text 
+            (note: avoid cut/paste of text which includes segment marks).&nbsp; 
+    </td></tr>
+    <tr>
+        <td width="200">Move on to structuring</td>
+        <td>Hit the Structurer button.&nbsp; 
+    </td></tr></tbody></table></center>
+<center>&nbsp;</center>
+<center>
+<p>
+<table border="">
+    
+    <tbody><tr>
+        <td>
+            <div align="center"><a href="http://www.wagsoft.com/RSTTool/section3.html">Prior 
+            Section</a></div></td>
+        <td>
+            <div align="center"><a href="http://www.wagsoft.com/RSTTool/index.html">Index</a></div></td>
+        <td>
+            <div align="center"><a href="http://www.wagsoft.com/RSTTool/section5.html">Next 
+            Section</a></div></td></tr></tbody></table></p></center>
+
+
+
+</body>
+</html>

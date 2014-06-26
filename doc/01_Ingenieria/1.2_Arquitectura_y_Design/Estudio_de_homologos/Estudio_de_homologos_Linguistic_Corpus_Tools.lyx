@@ -1,0 +1,185 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass llncs
+\begin_preamble
+
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Diseño de Arquitectura de Información para EScorpus
+\end_layout
+
+\begin_layout Author
+Ing.
+ Abel Meneses Abad
+\end_layout
+
+\begin_layout Institute
+\paragraph_spacing other 0
+CEETI, Facultad de Eléctrica, Universidad Central Marta Abreu de Las Villas,
+ Santa Clara, Cuba.
+\end_layout
+
+\begin_layout Abstract
+Aquí se encuentran las principales herramientas para el tratamiento de corpus
+ textuales estudiados durante mi doctorado.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Palabras clave: 
+\end_layout
+
+\end_deeper
+\begin_layout Abstract
+corpus, corpus de texto, procesamiento de lenguaje natural
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Section
+Estudio de homólogos
+\end_layout
+
+\begin_layout Subsection
+Antconc
+\end_layout
+
+\begin_layout Standard
+URL: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.antlab.sci.waseda.ac.jp/index.html
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Licencia: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Descripción: Software orientado al análisis de corpus.
+ Muestra
+\begin_inset Newline newline
+\end_inset
+
+ScreenShot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-24-AntConc3.2.4_512x300_scrot.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de AntConc 3.2.4, tomado en Ubuntu 12.04
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

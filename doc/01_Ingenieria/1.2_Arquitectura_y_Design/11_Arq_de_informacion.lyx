@@ -1,0 +1,785 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark} % En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
+\fancyhead[RE]{\rightmark} % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
+\fancyfoot[LE,RO]{Elaborado por el grupo de Experiencia de Usuario.Todos los Derechos Reservados} %Escribo este texto a la izquierda en las páginas impares y a la derecha en las pares
+\renewcommand{\footrulewidth}{1pt}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+endnotes
+foottoend
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 3cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Graphics
+	filename logo.png
+	rotateOrigin centerTop
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+Arquitectura de información
+\end_layout
+
+\begin_layout Quotation
+\align center
+
+\series bold
+\color blue
+<Nombre del proyecto>
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\color blue
+<Nombre del producto>
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\color blue
+<Versión>
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="5cm">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Control de versiones
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Iteración
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Autor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+<<Descripción de los elementos incorporados o modificados en esta iteración>>
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Reglas de Confidencialidad
+\end_layout
+
+\begin_layout Section*
+Clasificación:
+\size normal
+\color blue
+ <<Clasificación>>
+\end_layout
+
+\begin_layout Standard
+Este documento contiene información propietaria de la 
+\color blue
+Universidad de Granma y/o <<Empresa Cliente>>
+\color inherit
+, y es emitido confidencialmente para un propósito específico.
+ El que recibe el documento asume la custodia y control, comprometiéndose
+ a no reproducir, divulgar, difundir o de cualquier manera hacer de conocimiento
+s público su contenido, excepto para cumplir el propósito para el cual se
+ ha generado.
+\end_layout
+
+\begin_layout Part*
+
+\size normal
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Subsection
+Alcance
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Alcance definido para el producto en la ficha técnica>>
+\end_layout
+
+\begin_layout Subsection
+Definiciones, Acrónimos y Abreviaturas
+\end_layout
+
+\begin_layout Subsection
+Referencias
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Lista de documentos a los que se hace referencia>>
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="11cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Título
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Esbozo de la estructura o taxonomía
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Representación simple de la estructura del portal en cuanto a etiquetas
+ y jerarquía de los contenidos.>>
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Ejemplo (los niveles deben verse de esta forma): 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+Inicio 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+1.1 Quiénes somos 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+1.1.1 Nuestra historia 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+1.1.2.Nuestro Personal 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+1.1.2.1 Biografías del personal
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+1.2 Qué hacemos 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+1.2.1 Productos 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+1.2.2 Servicios
+\end_layout
+
+\begin_layout Subsection
+Descripción de los elementos de la arquitectura
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Descripción textual de cada uno de los elementos de la estructura, característ
+icas, comportamiento.
+ etc.>>
+\end_layout
+
+\begin_layout Subsection
+Definición de los elementos de usabilidad y accesibilidad 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Descripción textual de las características de los elementos de la aplicación
+ que pueden influir en la usabilidad y la accesibilidad en el sistema, utilizar
+ como referencia los documentos "Principios de Nielsen" y "Pautas de Accesibilid
+ad".>>
+\end_layout
+
+\begin_layout Section
+Definición de la estructura
+\end_layout
+
+\begin_layout Subsection
+Diagrama de arquitectura
+\end_layout
+
+\begin_layout Subsection
+Elementos del sistema de navegación
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Listado de los elementos del Sistema de Navegación>>
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Ejemplo:
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Menú General: siempre presente en todo el sitio, permite el acceso a cada
+ una de las áreas del sitio.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Pié de Página: usualmente ubicado en la parte inferior de cada página, indica
+ el nombre de la institución, teléfonos, dirección física y de correo electrónic
+o.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Barra Corporativa: ofrece diversas opciones de información respecto del
+ sitio y tal como el anterior, se muestra en todas las páginas.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Ruta de Acceso: listado que aparece en la parte superior de cada página
+ y que muestra el trazado de páginas que hay entre la Portada del sitio
+ hasta la página actual que se esté revisando; cada una de ellas debe tener
+ un enlace, para acceder al área de la cual depende la página.
+ Cada uno de los elementos que conforman este «camino» debe tener un enlace
+ que permita el acceso a esas áreas.
+ En la literatura internacional en inglés sobre este tema, se llama a este
+ elemento como «breadcrumbs».
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Fecha de publicación: para saber la vigencia de publicación del contenido
+ desplegado.
+ • Botón Inicio: para ir a la portada.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Botón Mapa del sitio: para ver el mapa del Sitio Web 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Botón Contacto: para enviar un mensaje al encargado del sitio 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Buscador: presente en cada página si la funcionalidad existe en el sitio.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Botón Ayuda: para recibir ayuda sobre qué hacer en cada pantalla del sitio.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Botón Imprimir: para imprimir el contenido de la página; se espera que el
+ formato de impresión del documento que se muestra en pantalla sea más simple
+ que la página normal del Sitio Web, para dar la impresión al usuario de
+ que hay una preocupación por ayudarle en la tarea de llevar impreso el
+ contenido.>>
+\end_layout
+
+\begin_layout Subsection
+Diseño de las pantallas tipo
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Representación lineal de cada uno de los elementos que componen las pantallas
+ tipo, con el objetivo de verificar la ubicación de cada uno de ellos.
+\end_layout
+
+\begin_layout Subsubsection
+
+\color blue
+Pantalla tipo ______________.>>
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<En caso de que las pantallas sean similares en distintas funcionalidades,
+ hacer una pantala tipo generica y describir lo elementos comunes.>>
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Descripción de los elementos que componen la pantalla:
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<A cada elemento se le asigna un número en la pantalla y se describe la
+ funcionalidad que realiza.
+ Debe explicarse la función del elemento en relación a la acción de usuario.
+ Realizar esto inmediatamente debajo de cada prototipo.>>
+\end_layout
+
+\begin_layout Subsection
+Descripción de la interacción de los usuarios
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Debe explicarse la interacción de los elementos y los resultados en sus
+ pantallas correspondientes.>>
+\end_layout
+
+\begin_layout Section
+Componentes relevantes del diseño
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Deben listarse y explicar los componentes relevantes que se incluirán
+ en el diseño con su nombre técnico y su correspondiente referencia internaciona
+l.>>
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<La idea de este punto es ir aumentando el acerbo del equipo de desarroll
+ en cuanto a diseño de funcionalidades de acuedo a lo más novedoso usado
+ actualmente.>>
+\end_layout
+
+\begin_layout Section
+Anexos
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+<<Poner aqui imágenes para un mayor entendimiento de los componentes.>>
+\end_layout
+
+\end_body
+\end_document

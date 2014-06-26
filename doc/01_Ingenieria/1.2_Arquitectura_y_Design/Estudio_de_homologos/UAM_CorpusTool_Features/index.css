@@ -1,0 +1,35 @@
+/* ::::: http://www.wagsoft.com/CorpusTool/css/main.css ::::: */
+
+* { font-family: Lucida Sans,Lucida Grande,Verdana Arial; font-size: 16px; line-height: 150%; }
+.fr { position: absolute; overflow: hidden; }
+.top { top: 0px; height: 30px; }
+.row1 { top: 29px; height: 48px; }
+.row2 { top: 77px; bottom: 29px; }
+.bot { bottom: 0px; height: 30px; }
+.left { left: 0px; width: 30px; }
+.right { right: 0px; width: 30px; }
+.mid { left: 29px; right: 29px; }
+.top.left { background-image: url('topleft.gif'); }
+.top.mid { background-image: url('top.gif'); }
+.top.right { background-image: url('topright.gif'); }
+.row1.left, .row2.left { background-image: url('left.gif'); }
+.row1.mid, .row2.mid { background-color: rgb(187, 192, 198); }
+.row1.right, .row2.right { background-image: url('right.gif'); }
+.bot.left { background-image: url('botleft.gif'); }
+.bot.mid { background-image: url('bot.gif'); }
+.bot.right { background-image: url('botright.gif'); }
+.row2.mid { overflow-y: auto; }
+tr.tbar { height: 39px; }
+td.sel { background-image: url('down.gif'); color: black; text-shadow: 1px 1px 1px white; font-size: 16px; font-family: Arial,Lucida Sans,Lucida Grande,Verdana; text-align: center; width: 120px; }
+td.nosel { background-image: url('normal.gif'); color: rgb(105, 112, 119); font-size: 16px; font-family: Arial,Lucida Sans,Lucida Grande,Verdana; text-align: center; width: 120px; }
+td.sel A { color: white; text-shadow: 1px 1px 1px black; font-weight: bold; }
+td.nosel A { color: rgb(105, 112, 119); text-shadow: 1px 1px 1px white; font-weight: normal; }
+A:link, A:visited, A:active { text-decoration: none; outline: medium none; }
+a:hover { text-decoration: underline; }
+body { position: absolute; color: rgb(51, 51, 51); margin: 0px; padding: 0px; }
+table { padding: 0px; margin: 0px; border-collapse: collapse; }
+h1 { margin: 0px 4px 0px 0px; padding: 0px 0px 5px 5px; white-space: nowrap; text-shadow: 2px 2px 2px white; text-align: center; font-size: 28px; color: rgb(109, 99, 99); }
+h2 { margin: 0px 4px 0px 0px; padding: 10px 0px 4px 5px; white-space: nowrap; text-shadow: 1px 1px 1px rgb(204, 204, 204); text-align: left; color: rgb(109, 99, 99); font-size: 20px; }
+p { font-size: 16px; text-align: justify; }
+li { text-align: justify; }
+html, body { width: 100%; height: 100%; margin: 0px; padding: 0px; }

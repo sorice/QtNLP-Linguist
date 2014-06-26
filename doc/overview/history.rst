@@ -11,7 +11,8 @@ El proyecto nace en el año 2014 durante el trabajo de doctorado de Abel Meneses
 Ppales momentos
 **********************************
 
-* 8 de abril de 2014, Leonel y Abel escriben las primeras ideas.
+* 8/04/2014, Leonel y Abel escriben las primeras ideas.
+* 21/06/2014, Abel genera la estructura de carpetas RC1 y también la DOC beta-0.1.
 
 Historia
 ************
