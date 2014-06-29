@@ -15,17 +15,14 @@ View Level
 Control Level
 ================
 
-Procesos:
+Breve lista de los procesos que ocurren en EScorpus:
 
-1. Preprocesamiento: 
-	Convierte los textos en formato PDF o TXT al formato ZZZdoc.xml.
-2. Estandarización de salidas de algoritmos: 
-	Convierte la carpeta out de la salida de los algoritmos en un único XML, estandarizado para comparar con 
-3. Comparación del algorithmXXX-plag-report.xml vs EScorpusYYY-plag-cases-corpus.xml
-	Extracción de datos de las métricas: Precision, Recall, Granularity, F-Measure, PlagDet, Run-Time, etc.
-4. Actualizar XMLs:
-	Escribir datos de coincidencia en el *algorithmXXX-plag-report.xml*. Ej: etiqueta <case> = # del caso con el que coincide en el *EScorpusYYY-plag-cases-corpus*
-	Escribir datos de las métricas en *algorithmXXX-data-report.xml*. Ej: Etiqueta <precision> = precisión.
+1. **Preprocesamiento:** Convertir todos los docs al formato ZZZdoc.xml.
+2. **Estandarización** de salidas de algoritmos: Convertir carpeta out en un único XML.
+3. **Comparación de XMLs:** *algorithmXXX-plag-report.xml* vs *EScorpusYYY-plag-cases-corpus.xml*.
+4. **Actualizar XMLs:** Escribir datos de la comparación en el *algorithmXXX-plag-report.xml*.
+
+:Ver más: `Lista completa de Funcionalidades <../doc/features/features.html>`_
 
 Data Model
 ==============

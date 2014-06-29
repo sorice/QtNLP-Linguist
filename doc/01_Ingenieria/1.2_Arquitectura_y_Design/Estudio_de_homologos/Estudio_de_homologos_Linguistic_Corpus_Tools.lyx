@@ -27,6 +27,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -73,7 +74,7 @@
 \begin_body
 
 \begin_layout Title
-Diseño de Arquitectura de Información para EScorpus
+Diseño de Arquitectura de Información para ToNgueLP
 \end_layout
 
 \begin_layout Author
@@ -108,8 +109,57 @@ corpus, corpus de texto, procesamiento de lenguaje natural
 Introducción
 \end_layout
 
+\begin_layout Standard
+El presente resumen es un acercamiento a las herramientas de procesamiento
+ de textos orientadas al trabajo con corpus lingüísticos.
+ Estos deben ser anotados con información Léxica, Sintáctica o Semántica
+ para el análisis de relaciones o el hallazgo de concordancias entre estructuras
+ previamente anotadas.
+\end_layout
+
+\begin_layout Standard
+Estas herramientas están orientadas al trabajo de los lingüistas para facilitar
+ la búsqueda de información, estadísticas de los documentos o del corpus,
+ así como análisis propio del procesamiento de las lenguas naturales o formales.
+\end_layout
+
 \begin_layout Section
 Estudio de homólogos
+\end_layout
+
+\begin_layout Standard
+El estudio de homólogos es uno de los primeros procesos que se debe realizar
+ al concebir un proyecto.
+ En particular casi ninguna esfera del conocimiento científico ha quedado
+ sin tratar hoy en día, por lo tanto antes de comenzar un proyecto desde
+ cero (y luego ver que estabas descubriendo el agua tibia) debes estudiar
+ los software similares para tomar ideas.
+\end_layout
+
+\begin_layout Standard
+En particular este breve estudio está centrado en herramientas para el tratamien
+to de corpus lingüísticos.
+ En particular se escogen los siguientes parámetros para compararlos:
+\end_layout
+
+\begin_layout Itemize
+Existencia de una URL pública y activa.
+\end_layout
+
+\begin_layout Itemize
+Licencia de software.
+\end_layout
+
+\begin_layout Itemize
+Descripción de funcionalidades.
+\end_layout
+
+\begin_layout Itemize
+Compatibilidad con los Sistemas operativos.
+\end_layout
+
+\begin_layout Itemize
+Existencia de pantallas gráficas (y que no sean de consola).
 \end_layout
 
 \begin_layout Subsection
@@ -132,12 +182,21 @@ http://www.antlab.sci.waseda.ac.jp/index.html
 \begin_inset Newline newline
 \end_inset
 
+Versión: 3.2.4
+\begin_inset Newline newline
+\end_inset
+
 Licencia: No se especifica.
 \begin_inset Newline newline
 \end_inset
 
 Descripción: Software orientado al análisis de corpus.
- Muestra
+ Muestra resumen de la cantidad de palabras, collocations, n-grams y concordanci
+as.
+\begin_inset Newline newline
+\end_inset
+
+Sistemas Operativos: Multiplataforma
 \begin_inset Newline newline
 \end_inset
 
@@ -165,7 +224,77 @@ status open
 
 \begin_layout Plain Layout
 Captura de pantalla de AntConc 3.2.4, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 24 de junio de 2014
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+UAM CorpusTOO
+\end_layout
+
+\begin_layout Standard
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.wagsoft.com/CorpusTool/index.html
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Versión 2.0 Beta5
+\begin_inset Newline newline
+\end_inset
+
+Licencia: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Descripción: Software orientado a la anotación de corpus lingüísticos.
+ Permite crear esquemas XML en el que son guardados los datos del corpus.
+\begin_inset Newline newline
+\end_inset
+
+Sistemas Operativos: Windows & MacOSX
+\begin_inset Newline newline
+\end_inset
+
+ScreenShot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-26_UAM_CorpusTool.jpeg
+	scale 50
 
 \end_inset
 
@@ -173,11 +302,397 @@ Captura de pantalla de AntConc 3.2.4, tomado en Ubuntu 12.04
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de UAM CorpusTool 2.0 beta5, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Subsubsection
+Search View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-26_UAM_CorpusTool-Search_View.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de UAM CorpusTool 2.0 beta5, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Statistics View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-26_UAM_CorpusTool-Statistics_View.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de UAM CorpusTool 2.0 beta5, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+WordSmith Tools
+\end_layout
+
+\begin_layout Standard
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.lexically.net/wordsmith/
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Versión: 0.6
+\begin_inset Newline newline
+\end_inset
+
+Licencia: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Descripción: Permite el análisis de corpus textuales extrayendo el listado
+ de palabras, anotar el texto, realizar análisis de concordancia, etc.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Sistemas Operativos: Windows
+\begin_inset Newline newline
+\end_inset
+
+ScreenShot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-24_WordSmith_Tools.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de WordSmith Tools 6.0, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+RSTTools
+\end_layout
+
+\begin_layout Standard
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.wagsoft.com/RSTTool/index.html
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Versión: 0.6
+\begin_inset Newline newline
+\end_inset
+
+Licencia: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Descripción: Permite la segmentación de textos manualmente, marcar luego
+ la relación entre estos segmentos, hacer anotaciones del discurso y generar
+ estadísticas sobre el texto y lo construido.
+\begin_inset Newline newline
+\end_inset
+
+Sistemas Operativos: Multiplataforma
+\begin_inset Newline newline
+\end_inset
+
+ScreenShot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-26_RSTTools-Module-Segmentation_Text.jpeg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de RSTTools 3.0, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Nooj
+\end_layout
+
+\begin_layout Standard
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.nooj4nlp.net/pages/nooj.html
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Versión: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Licencia: No se especifica.
+\begin_inset Newline newline
+\end_inset
+
+Descripción: Permite extraer datos de corpus textuales, adicionalmente realizar
+ el etiquetado de estos atendiendo a funciones lingüísticas, permite realizar
+ desambiguación de palabras
+\begin_inset Newline newline
+\end_inset
+
+Sistemas Operativos: Windows.
+ Permite su uso en Linux a través de Mono.
+\begin_inset Newline newline
+\end_inset
+
+ScreenShot:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-06-26_Nooj-Corpus.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Captura de pantalla de NooJ Community Edition, tomado en Ubuntu 12.04
+\begin_inset Newline newline
+\end_inset
+
+Accedido el: 26 de junio de 2014
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Existen un gran número de aplicaciones para este tipo de fin.
+\end_layout
+
+\begin_layout Standard
+En la URL 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.uow.edu.au/~dlee/software.htm
+\end_layout
+
+\end_inset
+
+ se pueden encontrar una lista más grande de herramientas que se utilizan
+ para el tratamiento de corpus.
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
+Cosas que faltan:
+\end_layout
+
+\begin_layout Itemize
+Adicionar que empresa le da soporte a cada herramienta.
+\end_layout
+
+\begin_layout Itemize
 
 \end_layout
 
