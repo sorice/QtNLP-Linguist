@@ -9,7 +9,7 @@
 \fancyhf{}
 \fancyhead[LO]{\leftmark} % En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
 \fancyhead[RE]{\rightmark} % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
-\fancyfoot[LE,RO]{Elaborado por el grupo de Experiencia de Usuario.Todos los Derechos Reservados} %Escribo este texto a la izquierda en las páginas impares y a la derecha en las pares
+\fancyfoot[LE,RO]{Elaborado por la Cooperativa CubaSWL.Todos los Derechos Reservados} %Escribo este texto a la izquierda en las páginas impares y a la derecha en las pares
 \renewcommand{\footrulewidth}{1pt}
 \end_preamble
 \use_default_options true
@@ -39,9 +39,19 @@ enumitem
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_amsmath 1
@@ -50,7 +60,7 @@ enumitem
 \use_mathdots 1
 \cite_engine basic
 \use_bibtopic false
-\use_indices false
+\use_indices true
 \paperorientation portrait
 \suppress_date false
 \use_refstyle 1
@@ -91,14 +101,7 @@ enumitem
 \begin_inset space ~
 \end_inset
 
-
-\begin_inset Graphics
-	filename logo.png
-	rotateOrigin centerTop
-
-\end_inset
-
-
+Cooperativa CubaSWL
 \end_layout
 
 \begin_layout Standard
@@ -115,8 +118,7 @@ enumitem
 
 \end_layout
 
-\begin_layout Standard
-\align center
+\begin_layout Title
 
 \series bold
 \size largest
@@ -127,24 +129,39 @@ Arquitectura de información
 \align center
 
 \series bold
+Proyecto:
 \color blue
-<Nombre del proyecto>
+ ToNgueLP, editor de corpus de textos para tareas NLP
 \end_layout
 
 \begin_layout Standard
 \align center
 
 \series bold
+Producto:
 \color blue
-<Nombre del producto>
+ ToNgueLP
+\series default
+ 
+\series bold
+Corpus Tools 
 \end_layout
 
 \begin_layout Standard
 \align center
 
 \series bold
+Versión:
 \color blue
-<Versión>
+ 1.0
+\end_layout
+
+\begin_layout Author
+Autores: Abel Meneses Abad
+\begin_inset Newline newline
+\end_inset
+
+Leonel Salazar Videaux
 \end_layout
 
 \begin_layout Center Footer
@@ -169,11 +186,11 @@ Arquitectura de información
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="5">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="2.3cm">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="6cm">
+<column alignment="center" valignment="top" width="4cm">
 <row>
 <cell multicolumn="1" alignment="left" valignment="top" usebox="none">
 \begin_inset Text
@@ -252,7 +269,7 @@ Iteración
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -261,7 +278,7 @@ Descripción
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -276,7 +293,7 @@ Autor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+29/6/2014
 \end_layout
 
 \end_inset
@@ -285,7 +302,7 @@ Autor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.1
 \end_layout
 
 \end_inset
@@ -294,7 +311,7 @@ Autor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2
 \end_layout
 
 \end_inset
@@ -303,9 +320,7 @@ Autor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\color blue
-<<Descripción de los elementos incorporados o modificados en esta iteración>>
+Digitalizada el prototipo de la vista principal con Pencil.
 \end_layout
 
 \end_inset
@@ -314,7 +329,7 @@ Autor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Abel Meneses Abad
 \end_layout
 
 \end_inset
@@ -335,19 +350,39 @@ Reglas de Confidencialidad
 Clasificación:
 \size normal
 \color blue
- <<Clasificación>>
+ 
 \end_layout
 
 \begin_layout Standard
-Este documento contiene información propietaria de la 
+
+\size normal
+Software particular para la Universidad de Camagüey, factible de exportar
+ por las partes desarrolladoras, de carácter nacional a evaluar en la convocator
+ia del CITMA en el 2015.
+\end_layout
+
+\begin_layout Standard
+Este documento contiene información propietaria de 
 \color blue
-Universidad de Granma y/o <<Empresa Cliente>>
+Abel Meneses Abad
 \color inherit
-, y es emitido confidencialmente para un propósito específico.
- El que recibe el documento asume la custodia y control, comprometiéndose
+, y es emitido confidencialmente para orientar al equipo de desarrollo de
+ EScorpus.
+\end_layout
+
+\begin_layout Standard
+El que recibe el documento asume la custodia y control, comprometiéndose
  a no reproducir, divulgar, difundir o de cualquier manera hacer de conocimiento
 s público su contenido, excepto para cumplir el propósito para el cual se
  ha generado.
+\end_layout
+
+\begin_layout Standard
+Estas reglas son aplicables a las 
+\series bold
+6
+\series default
+ páginas de este documento.
 \end_layout
 
 \begin_layout Part*
@@ -372,14 +407,29 @@ LatexCommand tableofcontents
 Introducción
 \end_layout
 
+\begin_layout Standard
+Este documento define la arquitectura de información de ToNgueLP.
+\end_layout
+
 \begin_layout Subsection
 Alcance
 \end_layout
 
 \begin_layout Standard
+Este documento refiere en su versión 1 los elementos de la arquitectura
+ de información para las 3 vistas fundamentales de ToNgueLP:
+\end_layout
 
-\color blue
-<<Alcance definido para el producto en la ficha técnica>>
+\begin_layout Itemize
+Vista Principal.
+\end_layout
+
+\begin_layout Itemize
+Vista de Comparación.
+\end_layout
+
+\begin_layout Itemize
+Vista de Diccionarios.
 \end_layout
 
 \begin_layout Subsection
@@ -390,64 +440,20 @@ Definiciones, Acrónimos y Abreviaturas
 Referencias
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-<<Lista de documentos a los que se hace referencia>>
+\begin_layout Enumerate
+Estudio de Homólogos.
 \end_layout
 
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
+\begin_layout Enumerate
+Ayuda generada con Sphinx.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="1">
-<features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="11cm">
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Título
+\begin_layout Enumerate
+Documentos manuscritos de Abel.
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
+\begin_layout Enumerate
+Lista de chequeo del estándar ISO 9241-210:2010
 \end_layout
 
 \begin_layout Section
@@ -706,38 +712,365 @@ Diseño de las pantallas tipo
 \end_layout
 
 \begin_layout Standard
+Se describen 3 pantallas tipos:
+\end_layout
 
-\color blue
-<<Representación lineal de cada uno de los elementos que componen las pantallas
- tipo, con el objetivo de verificar la ubicación de cada uno de ellos.
+\begin_layout Itemize
+Vista Principal.
+\end_layout
+
+\begin_layout Itemize
+Vista de Comparación.
+\end_layout
+
+\begin_layout Itemize
+Vista de Diccionarios.
 \end_layout
 
 \begin_layout Subsubsection
-
-\color blue
-Pantalla tipo ______________.>>
+Vista Pricipal
 \end_layout
 
 \begin_layout Standard
+Esta pantalla es la pantalla inicial de ToNgueLP, su objetivo principal
+ es visualizar los casos contenidos en los XML de los corpus contenidos
+ por la aplicación.
+\end_layout
 
-\color blue
-<<En caso de que las pantallas sean similares en distintas funcionalidades,
- hacer una pantala tipo generica y describir lo elementos comunes.>>
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Mockups/Vista_Principal.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vista Principal ToNgueLP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Descripción de los elementos que componen la pantalla:
+Breve descripción de los elementos que componen la pantalla:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Barras de Menú
+\end_layout
+
+\begin_layout Enumerate
+Opción de Loguin, para expertos autorizados a confirmar manualmente los
+ casos generados automáticamante.
+\end_layout
+
+\begin_layout Enumerate
+Tabs para diferentes corpus cargados.
+\end_layout
+
+\begin_layout Enumerate
+Barra de Plugins
+\end_layout
+
+\begin_layout Enumerate
+Componente de búsqueda.
+\end_layout
+
+\begin_layout Enumerate
+Lista de casos
+\end_layout
+
+\begin_layout Enumerate
+Tabs de, casos o vistas de la aplicación.
+\end_layout
+
+\begin_layout Enumerate
+Fragmento del texto del documento fuente u original.
+\end_layout
+
+\begin_layout Enumerate
+Barra de datos del fragmento fuente.
+\end_layout
+
+\begin_layout Enumerate
+Fragmento del texto del documento sospechoso.
+\end_layout
+
+\begin_layout Enumerate
+Barra de datos del fragmento sospechoso.
+\end_layout
+
+\begin_layout Enumerate
+Elementos para editar fragmentos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Descripción detallada de los elementos que componen la pantalla:
+\end_layout
+
+\begin_layout Enumerate
+Barras de Menú (definición beta)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Archivo: permite cargar un archivo de corpus/ salvar el corpus en edición/
+ o todos los corpus.
+\end_layout
+
+\begin_layout Enumerate
+Corpus: Información del Corpus/Seleccionar el Parser/Sugerir automáticamente
+ el parser compatible.
+\end_layout
+
+\begin_layout Enumerate
+Vistas: Vista Principal/Vista Comparación/Vista de Diccionario.
+ (esta puede ser sustituida por la barra de plugins y entonces cambiar a
+ Configuración: Idioma/Parser/Datos del Editor/...)
+\end_layout
+
+\begin_layout Enumerate
+Tools: Acceso directo a los procesos de EScorpus para ejecutarlos manualmente:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Convertir documentos TXT o PDF a ZZZdoc.XML
+\end_layout
+
+\begin_layout Enumerate
+Generar XML estandar a partir de la carpeta OUT de la salida de un algoritmo
+ de detección.
+\end_layout
+
+\begin_layout Enumerate
+Comparación del XML estandar con XML del corpus cargado.
+\end_layout
+
+\begin_layout Enumerate
+Actualizar ciertos tags del XML de datos del algoritmo y actualizar ciertos
+ tags del XML reporte de casos detectados.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+About: enlaces a Copyright/Ayuda de Usuarios/Manual de Desarrollo
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Opción de Loguin, para expertos autorizados a confirmar manualmente los
+ casos generados automáticamante.
+\end_layout
+
+\begin_layout Enumerate
+Tabs para diferentes corpus cargados: Tener acceso a más de un corpus simultánea
+mente.
+\end_layout
+
+\begin_layout Enumerate
+Barra de Plugins: Similar a Doclux, permite accesar directamente las funciones
+ principales de la aplicación.
+\end_layout
+
+\begin_layout Enumerate
+Componente de búsqueda: buscar casos que contienen determinada secuencia
+ de palabras (aquí se debe agregar un selector con: id, corpus, case, query)
+\end_layout
+
+\begin_layout Enumerate
+Lista de casos: Mostrará en una lista todos los casos existentes en el corpus
+ para accederlos rápidamente(en caso de que sean muchos este componente
+ deberá tener también una búsqueda para filtrarlos y accesarlos rápidamente)
+\end_layout
+
+\begin_layout Enumerate
+Tabs de, casos o vistas de la aplicación: casos en edición, o Vistas abiertas
+ en las que se trabaja simultáneamente.
+\end_layout
+
+\begin_layout Enumerate
+Fragmento del texto del documento fuente u original: visualiza el fragmento
+ original del caso (este componente no permite edición al menos que se active
+ el ELEMENTO 
+\begin_inset Quotes eld
+\end_inset
+
+Active Text Edition
+\begin_inset Quotes erd
+\end_inset
+
+ después de autenticado)
+\end_layout
+
+\begin_layout Enumerate
+Barra de datos del fragmento fuente: datos que contiene el corpus sobre
+ el fragmento original.(no se edita manualmente, solo automáticamente)
+\end_layout
+
+\begin_layout Enumerate
+Fragmento del texto del documento sospechoso: visualiza el fragmento sospechoso
+ del caso (este componente no permite edición al menos que se active el
+ ELEMENTO 
+\begin_inset Quotes eld
+\end_inset
+
+Active Text Edition
+\begin_inset Quotes erd
+\end_inset
+
+ después de autenticado)
+\end_layout
+
+\begin_layout Enumerate
+Barra de datos del fragmento sospechoso: datos que contiene el corpus sobre
+ el fragmento sospechoso.(no se edita manualmente, solo automáticamente)
+\end_layout
+
+\begin_layout Enumerate
+Elementos para editar fragmentos: barra de ELEMENTOS.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Human Validation: para que se confirme manualmente que el caso generado
+ por un algoritmo automático realmente es consistente.
+\end_layout
+
+\begin_layout Enumerate
+Add New Case: adicionar un nuevo caso.
+ Se colocan en blanco 8 y 10.
+ (un algoritmo(basado en análisis temático) sugiere 3 documentos donde serán
+ insertados, se abre un popup para seleccionar y estos son insertados automática
+mente)
+\end_layout
+
+\begin_layout Enumerate
+Active Text Edition: permite editar 8 y 10 en el caso de la pestaña en el
+ foco.
+\end_layout
+
+\begin_layout Enumerate
+Datos generados automáticamente y un selector para que manualmente se categorice
+ a este caso.
+\end_layout
+
+\begin_layout Enumerate
+Define or Re-Define los límites(boundaries) del texto que compone el caso.
+ Siempre podrá verse texto en los límites superior e inferior que no pertenecen
+ al caso.
+\end_layout
+
+\begin_layout Enumerate
+Annotate Corpus: permitirá adicionar etiquetas o visualizar aquellas que
+ existen en el corpus, como: POS, SRL, Name Entity, etc.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Vista de Comparación (Borrador)
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
-\color blue
-<<A cada elemento se le asigna un número en la pantalla y se describe la
- funcionalidad que realiza.
- Debe explicarse la función del elemento en relación a la acción de usuario.
- Realizar esto inmediatamente debajo de cada prototipo.>>
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Mockups/2014-06-23_Bazaar-Explorer-Diff-View_1024x600.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vista de Diff de Bazaar Explorer, prototipo de como quedará la Vista de
+ Comparación.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Vista de Diccionarios (Borrador)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Mockups/2014-06-29_Artha.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vista del Front-End de Wordnet: Artha.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
