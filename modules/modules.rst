@@ -8,9 +8,9 @@ EScorpus es un sistema basado en módulos o plugins. En esta sección mostramos 
 View Level
 ================
 
-* Prototipo y código fuente  en Qt de la **Vista Principal**.
-* Prototipo y código fuente en Qt de la **Vista de Comparación**.
-* Prototipo y código fuente en Qt de la **Vista de Diccionarios**.
+* Prototipo y código fuente  en Qt de la :ref:`Vista Principal <EScorpus_module_principal>`.
+* Prototipo y código fuente en Qt de la :ref:`Vista de Comparación <EScorpus_module_matching>`.
+* Prototipo y código fuente en Qt de la :ref:`Vista de Diccionarios <EScorpus_module_dicts>`.
 
 Control Level
 ================
@@ -48,7 +48,7 @@ Módulos de EScorpus
 Referencias
 =============
 
-.. [1] Barrón-Cedeño Alberto, Vila Marta, Martí M. Antonia, Rosso Paolo. 2013. Title *"Plagiarism meets Paraphrasing: Insights for the Next Generation in Automatic Plagiarism Detection"*. In *Computational Linguistics*. URL *http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00153*.
+.. [1] Barrón-Cedeño Alberto, Vila Marta, Martí M. Antonia, Rosso Paolo. 2013. Title *"`Plagiarism meets Paraphrasing: Insights for the Next Generation in Automatic Plagiarism Detection <http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00153>`_"*. In *Computational Linguistics*.
 
 Copyright
 ==========

@@ -1,14 +1,14 @@
-<!-- Tufts VUE 3.1.2 concept-map (EScorpus.vue) 2014-05-15 -->
+<!-- Tufts VUE 3.1.2 concept-map (EScorpus.vue) 2014-07-18 -->
 <!-- Tufts VUE: http://vue.tufts.edu/ -->
 <!-- Do Not Remove: VUE mapping @version(1.1) jar:file:/opt/VUE.jar!/tufts/vue/resources/lw_mapping_1_1.xml -->
-<!-- Do Not Remove: Saved date Thu May 15 17:09:14 CDT 2014 by sorice on platform Linux 3.2.0-48-generic in JVM 1.6.0_27-b27 -->
+<!-- Do Not Remove: Saved date Fri Jul 18 11:04:52 CDT 2014 by sorice on platform Linux 3.2.0-64-generic in JVM 1.6.0_31-b31 -->
 <!-- Do Not Remove: Saving version @(#)VUE: built March 8 2012 at 1310 by vue on Linux 2.4.21-63.EL i386 JVM 1.5.0_06-b05(bits=32) -->
 <?xml version="1.0" encoding="US-ASCII"?>
 <LW-MAP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="none" ID="0" label="EScorpus.vue"
     created="1364339456635" x="0.0" y="0.0" width="980.17365"
     height="927.8998" strokeWidth="0.0" autoSized="false">
-    <resource referenceCreated="1400188154991" size="136239"
+    <resource referenceCreated="1405695892789" size="136284"
         spec="/media/swlDOC/Doctorado/00_EScorpus/doc/EScorpus.vue"
         type="1" xsi:type="URLResource">
         <title>EScorpus.vue</title>
@@ -524,10 +524,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
-        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
-        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
-        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
+        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
+        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -566,7 +566,7 @@
         x="250.75" y="112.75" width="66.0" height="27.0"
         strokeWidth="4.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" accessAttempted="1377394129577"
-            accessSuccessful="1377394139340" size="49806"
+            accessSuccessful="1377394139340" size="50097"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/03_LRP.odt"
             type="1" xsi:type="URLResource">
             <title>03_LRP.odt</title>
@@ -618,7 +618,7 @@
     <child ID="70" label="Arquitectura de Software" layerID="1"
         created="1364815891233" x="114.54996" y="428.49115"
         width="195.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="86834"
+        <resource referenceCreated="0"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/09b_Arq_de_Software.odt"
             type="1" xsi:type="URLResource">
             <title>09b_Arq_de_Software.odt</title>
@@ -662,10 +662,10 @@
   &lt;head&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
-        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
-        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
-        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
+        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
+        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -700,10 +700,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
-        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
-        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
-        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
+        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
+        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -719,16 +719,16 @@
     </child>
     <child ID="76" label="Levantamiento de Inf." layerID="1"
         created="1364818568731" x="114.55" y="139.65" width="156.0"
-        height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="85382"
-            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"
+        height="27.0" strokeWidth="3.0" autoSized="true" xsi:type="node">
+        <resource referenceCreated="0" size="1009292"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/Estudio_de_homologos_Linguistic_Corpus_Tools.pdf"
             type="1" xsi:type="URLResource">
-            <title>03_Levantamiento_de_Informacion.odt</title>
-            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"/>
-            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/03_Levantamiento_de_Informacion.odt"/>
+            <title>Estudio_de_homologos_Linguistic_Corpus_Tools.pdf</title>
+            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/Estudio_de_homologos_Linguistic_Corpus_Tools.pdf"/>
+            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/Estudio_de_homologos_Linguistic_Corpus_Tools.pdf"/>
         </resource>
-        <fillColor>#FEFEC9</fillColor>
-        <strokeColor>#FEFEC9</strokeColor>
+        <fillColor>#FFC63B</fillColor>
+        <strokeColor>#30D643</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-12</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -744,7 +744,7 @@
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
     <child ID="77" label="Diagrama de Negocio IDEF" layerID="1"
-        created="1364818591942" x="114.149994" y="164.65001"
+        created="1364818591942" x="114.149994" y="167.3167"
         width="190.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="337113"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"
@@ -1409,10 +1409,10 @@
   &lt;head style="color: #000000" color="#000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { margin-right: 0px; font-family: Arial; margin-left: 0px; color: #000000; margin-top: 0px; font-size: 12; margin-bottom: 0px }
-        ol { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
-        p { margin-right: 0; margin-left: 0; color: #000000; margin-top: 0; margin-bottom: 0 }
-        ul { font-family: Arial; margin-left: 30; vertical-align: middle; margin-top: 6; font-size: 12; list-style-position: outside }
+        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
+        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
+        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -1485,7 +1485,7 @@
         <child ID="132" label="Manual de Desarrollo"
             created="1365213571496" x="34.0" y="62.5" width="170.42188"
             height="27.0" strokeWidth="4.0" autoSized="false" xsi:type="node">
-            <resource referenceCreated="0" size="5200"
+            <resource referenceCreated="0" size="9480"
                 spec="/media/swlDOC/Doctorado/00_EScorpus/html/modules/modules.html"
                 type="1" xsi:type="URLResource">
                 <title>modules.html</title>
@@ -2167,11 +2167,11 @@
     <child ID="134" label="Manual de Usuario" layerID="1"
         created="1365213617831" x="534.2658" y="741.13965" width="157.0"
         height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="7700"
-            spec="/media/swlDOC/Doctorado/00_EScorpus/html/index.html"
+        <resource referenceCreated="0" size="6283"
+            spec="file:///media/swlDOC/Doctorado/00_EScorpus/html/doc/help/help.html"
             type="1" xsi:type="URLResource">
-            <title>index.html</title>
-            <property key="File" value="/media/swlDOC/Doctorado/00_EScorpus/html/index.html"/>
+            <title>help.html</title>
+            <property key="File" value="/media/swlDOC/Doctorado/00_EScorpus/html/doc/help/help.html"/>
         </resource>
         <fillColor>#8AEE95</fillColor>
         <strokeColor>#8AEE95</strokeColor>
@@ -2218,7 +2218,7 @@
     <child ID="177" label="Arquitectura de Informaci&#xf3;n" layerID="1"
         created="1365392663320" x="114.149994" y="455.9398"
         width="213.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="278902"
+        <resource referenceCreated="0"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"
             type="1" xsi:type="URLResource">
             <title>11_Arq_de_Informacion.odt</title>
@@ -2417,7 +2417,7 @@
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
     <child ID="191" label="Cx Clientes" layerID="1"
-        created="1382290557676" x="268.26572" y="139.93979"
+        created="1382290557676" x="276.93225" y="139.93979"
         width="110.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" size="43262"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.6_Reuniones/02_Gestion_de_atencion_a_clientes.ods"
@@ -2476,8 +2476,8 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/a9407ae17f0001010084c1f965fda63b</URIString>
     </layer>
-    <userZoom>1.0</userZoom>
-    <userOrigin x="-225.46393" y="-145.56021"/>
+    <userZoom>1.5</userZoom>
+    <userOrigin x="-233.41934" y="-214.3403"/>
     <presentationBackground>#202020</presentationBackground>
     <PathwayList currentPathway="0" revealerIndex="-1">
         <pathway ID="0" label="Camino sin t&#xed;tulo"

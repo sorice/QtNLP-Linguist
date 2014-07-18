@@ -1,6 +1,6 @@
-.. _EScorpus_history:
+.. _History:
 
-Historia de EScorpus
+Historia de |EScorpus|
 ======================
 
 Resumen
@@ -19,4 +19,6 @@ Historia
 
 2014
 ------
+* 29/06/2014, Abel realiza el primer prototipo de la Vista Principal o de Lingüistas.
 
+.. |EScorpus| replace:: ToNgueLP
