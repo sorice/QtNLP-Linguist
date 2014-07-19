@@ -33,7 +33,11 @@ Arquitectura
 
 |EScorpus| es una herramienta desarrollada en Qt y Python. Basa su arquitectura en un modelo de plugins (carpeta **modules**) que facilita su desarrollo desde funciones básicas del procesamiento de las lenguas naturales, así como las interfaces simples para los linguistas. La raíz del proyecto está conformada por algunas carpetas que consideramos parte de la arquitectura, y algo importante a leer para iniciarse en el desarrollo de este proyecto:
 
-:nota: (Aquí falta una foto como las que pone Leonel en la Arq de Software de Doclux sobre el sistema de carpetas. Dado el juego de colores del tema "nature" que estoy utilizando, usar una foto con los íconos de Konqueror)
+.. _root-file-ToNgueLP:
+.. figure:: /doc/raiz_ToNgueLP.png
+	:align: center
+
+	Sistema de ficheros raíz de |EScorpus|
 
 * :ref:`config`: *Datos de configuración, idioma,...*
 * :ref:`EScorpus_data` 

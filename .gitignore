@@ -1,12 +1,15 @@
 $ cat .gitignore
 *.pyc
 *~
-/data
-html/
+/data/algorithms
+/data/corpuses
+/data/src
+/data/susp
 /modules/bzr-explorer-1.3.0
 /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos
+html/
 /.project
 *.orig
 *.*#
 *.bak
-/.bzr
+/.git
