@@ -10,7 +10,7 @@
 		<src doc_src_name="src-doc3024.txt" frag_src_length="674" frag_src_offset="3612" frag_src_sentence="6" frag_src_words="65">
 		Y aquí se debería poner el fragmento de texto del documento src para no tener que extraerlo del .txt original. Evitando enlaces que pueden estar inconsistentes o que puedan cambiar de lugar en el sistema de ficheros, aunque deberían ser los de ToNgueLP. El lateral izquierdo de la aplicación puede leerlos de los originales, pero el reporte no(recuerda que el algoritmo ha pasado y ha extraído, y como quiera que sea cada algoritmo podría dividir las oraciones a su propia manera de acuerdo a como esté implementado).
 		</src>
-		<plag_type automatic_tag-reuse_type="plagiarism" human_tag-reuse_type="bad citation" ></plag_type>
+		<plag_type automatic_tag-reuse_type="plagiarism" human_tag-reuse_type="bad citation"  projection='global'></plag_type>
 			<description>Características del texto reusado que caracteriza a este fragmento</description>
 			<plag automatic_plag_tipology="paraphrase" human_plag_tipology="paraphrase" automatic_other_plag_typologies_present="" other_plag_typologies_present="paraphrase-deletion, cross-language">
 				<description>Si automatic_plag_tipology="paraphrase" entonces deberían existir los valores de las etiquetas siguientes</description>
