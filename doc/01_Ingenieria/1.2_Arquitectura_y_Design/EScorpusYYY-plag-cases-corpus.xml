@@ -2,15 +2,17 @@
 
 <!DOCTYPE report SYSTEM "EScorpusYYY-plag-cases-corpus.dtd">
 
-<corpus name="EScorpus" version="1.0" lng="es" total_cases="200" copyright="copyleft" owners="uclv,uci,udg,uc" authors="abel,leonel" country="Cuba" creation_date="2014-06-22" last_modification_date="2014-06-23" xmlns = "http://escorpus.github.com">
-	<fragments>
-		<fragment id="022" fragment_description="susp_doc:susp-doc023;src_doc:src-doc078;frag_length:1978;frag_offset:0;frag_src_length:674;frag_src_offset:3612">
-	</fragments>
-	<paraphrase_candidates src_description="id:078" src_doc_name="src-doc078">
-		<fragment id="022"/>
+<corpus name="EScorpus" version="1.0" lang="es" total_cases="200" license="GPL" copyright="copyleft" owners="uclv,uci,udg,uc" authors="abel,leonel" country="Cuba" creation_date="2014-06-22" last_modification_date="2014-07-25" xmlns = "http://escorpus.github.com">
+
+	<snippets>
+		<snippet id="022" snippet_description="susp_doc:susp-doc023;src_doc:src-doc078;frag_length:1978;frag_offset:0;frag_src_length:674;frag_src_offset:3612">
+	</snippets>
+
+	<paraphrase_candidates src_description="id:078" src_doc_name="src-doc078" case="34">
+		<snippet id="022"/>
 			<annotation author="87" is_paraphrase="true" source_description="id:18689">
 				<phenomenon type="lex_same_polarity" projection="local" source_description="id:5528">
-					
+
         <snippet id="16488">
           <scope offset="125" length="4"/>
         </snippet>
@@ -18,7 +20,7 @@
           <scope offset="71" length="11"/>
         </snippet>
       </phenomenon>
-<corpus/>
+</corpus>
 
 	<susp doc_susp_name="susp-doc005.txt"></susp>
 	<description>Nombre único(no se repite) del reporte en la carpeta out - generado por el parser XML contenido en el algoritmo. </description>
