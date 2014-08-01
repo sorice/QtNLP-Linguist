@@ -35,7 +35,7 @@ Estructura de Ficheros
 * :src: Carpeta de documentos originales (o fuentes) del corpus de |EScorpus|.
 * :susp: Carpeta de documentos sospechosos del corpus de |EScorpus|
 * :data.srt: Fichero necesario para generar la documentación automáticamente.
-* :metadata-corpus.xml: `Metadatos del corpus <data/metadata-corpus.xml>`_
+* :ToNgueLP-plag-cases-corpus.xml: `Corpus de ToNgueLP <data/metadata-corpus.xml>`_
 
 :Copyright: Creative Commons Share Alike Non Commercial Use, 2014
 .. sectionauthor:: Abel Meneses Abad <abelma1980@gmail.com> 
