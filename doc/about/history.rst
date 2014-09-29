@@ -12,7 +12,10 @@ Ppales momentos
 **********************************
 
 * 8/04/2014, Leonel y Abel escriben las primeras ideas.
-* 21/06/2014, Abel genera la estructura de carpetas RC1 y también la DOC beta-0.1.
+* 21/06/2014, Abel genera la estructura de carpetas RC1 y también la DOC Alfa-0.1.
+* 21/08/2014, Abel termina el primer ejemplo del parser del corpus de ToNgueLP. Y es enviado a Leonel.
+* 8/9/2014, Abel genera los diagramas de estados de la Vista Principal. La arquitectura de información queda bastante definida.
+* 28/09/2014, Abel genera la versión Beta-0.2 de la DOC.
 
 Historia
 ************
