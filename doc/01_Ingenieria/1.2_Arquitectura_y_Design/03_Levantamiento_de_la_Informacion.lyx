@@ -72,7 +72,7 @@ enumitem
 \begin_layout Center Header
 
 \size larger
-Facultad Regional de Ciencias Informáticas 
+Cooperativa CubaSWL 
 \end_layout
 
 \begin_layout Standard
@@ -83,12 +83,7 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename logo.png
-
-\end_inset
-
-
+<Logo>
 \end_layout
 
 \begin_layout Plain Layout

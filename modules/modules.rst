@@ -3,7 +3,7 @@
 Plugins
 *****************
 
-EScorpus es un sistema basado en módulos o plugins. En esta sección mostramos a través del modelo de las 3 capas cómo está desarrollada esta aplicación informática. En la sección final usted también podrá encontrar la documentación dividida por módulos.
+|EScorpus| es un sistema basado en módulos o plugins. En esta sección mostramos a través del modelo de las 3 capas cómo está desarrollada esta aplicación informática. En la sección final usted también podrá encontrar la documentación dividida por módulos.
 
 View Level
 ================
@@ -45,13 +45,15 @@ Módulos de EScorpus
 * Modulo de comparación o **Matching View**.
 * Módulo de diccionarios o **Dict View**.
 
+:leer más: :ref:`Arquitectura de Software <ToNgueLP_architecture>` 
+
 Referencias
 =============
 
 .. [1] Barrón-Cedeño Alberto, Vila Marta, Martí M. Antonia, Rosso Paolo. 2013. Title *"`Plagiarism meets Paraphrasing: Insights for the Next Generation in Automatic Plagiarism Detection <http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00153>`_"*. In *Computational Linguistics*.
 
-Copyright
-==========
-
 :Licencia: Creative Commons Share Alike Non Commercial Use, 2014
+
 .. sectionauthor:: Abel Meneses Abad <abelma1980@gmail.com>
+
+.. |EScorpus| replace:: ToNgueLP

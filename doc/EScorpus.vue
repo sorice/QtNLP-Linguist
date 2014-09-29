@@ -1,14 +1,14 @@
-<!-- Tufts VUE 3.1.2 concept-map (EScorpus.vue) 2014-07-18 -->
+<!-- Tufts VUE 3.1.2 concept-map (EScorpus.vue) 2014-09-07 -->
 <!-- Tufts VUE: http://vue.tufts.edu/ -->
 <!-- Do Not Remove: VUE mapping @version(1.1) jar:file:/opt/VUE.jar!/tufts/vue/resources/lw_mapping_1_1.xml -->
-<!-- Do Not Remove: Saved date Fri Jul 18 11:04:52 CDT 2014 by sorice on platform Linux 3.2.0-64-generic in JVM 1.6.0_31-b31 -->
+<!-- Do Not Remove: Saved date Sun Sep 07 23:28:47 CDT 2014 by sorice on platform Linux 3.2.0-64-generic in JVM 1.6.0_31-b31 -->
 <!-- Do Not Remove: Saving version @(#)VUE: built March 8 2012 at 1310 by vue on Linux 2.4.21-63.EL i386 JVM 1.5.0_06-b05(bits=32) -->
 <?xml version="1.0" encoding="US-ASCII"?>
 <LW-MAP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="none" ID="0" label="EScorpus.vue"
     created="1364339456635" x="0.0" y="0.0" width="980.17365"
     height="927.8998" strokeWidth="0.0" autoSized="false">
-    <resource referenceCreated="1405695892789" size="136284"
+    <resource referenceCreated="1410146927661" size="138483"
         spec="/media/swlDOC/Doctorado/00_EScorpus/doc/EScorpus.vue"
         type="1" xsi:type="URLResource">
         <title>EScorpus.vue</title>
@@ -179,15 +179,15 @@
     <child ID="6" label="Glosario de T&#xe9;rminos" layerID="1"
         created="1364339464586" x="-69.399994" y="243.79977"
         width="175.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="128098"
+        <resource referenceCreated="0" size="49303"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"
             type="1" xsi:type="URLResource">
             <title>15_Glosario_de_Terminos.odt</title>
             <property key="@file.relative" value="03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
             <property key="File" value="03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"/>
         </resource>
-        <fillColor>#FEFEC9</fillColor>
-        <strokeColor>#FEFEC9</strokeColor>
+        <fillColor>#FFC63B</fillColor>
+        <strokeColor>#30D643</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -521,19 +521,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/c564d7aa7f00010100ad89eca77b073c</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
-        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
-        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
-        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        body { margin-right: 0px; color: #000000; margin-bottom: 0px; font-size: 12; margin-left: 0px; font-family: Arial; margin-top: 0px }
+        ol { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
+        p { margin-right: 0; color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0 }
+        ul { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       --------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -543,13 +543,13 @@
     </child>
     <child ID="54"
         label="Iteraci&#xf3;n 1&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"
-        layerID="1" created="1364814317525" x="-72.183495" y="185.43976"
-        width="390.26685" height="37.0" strokeWidth="1.0"
+        layerID="1" created="1364814317525" x="-72.183495" y="199.43976"
+        width="390.26685" height="25.0" strokeWidth="1.0"
         autoSized="false" xsi:type="node">
         <fillColor>#EEEEEE</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
         <textColor>#000000</textColor>
-        <font>Arial-bold-22</font>
+        <font>Arial-bold-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
             ontology-list-size="0" RCategoryListSize="0">
             <ontology-list-string></ontology-list-string>
@@ -566,7 +566,7 @@
         x="250.75" y="112.75" width="66.0" height="27.0"
         strokeWidth="4.0" autoSized="true" xsi:type="node">
         <resource referenceCreated="0" accessAttempted="1377394129577"
-            accessSuccessful="1377394139340" size="50097"
+            accessSuccessful="1377394139340" size="52074"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/03_LRP.odt"
             type="1" xsi:type="URLResource">
             <title>03_LRP.odt</title>
@@ -662,10 +662,10 @@
   &lt;head&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
-        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
-        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
-        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        body { margin-right: 0px; color: #000000; margin-bottom: 0px; font-size: 12; margin-left: 0px; font-family: Arial; margin-top: 0px }
+        ol { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
+        p { margin-right: 0; color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0 }
+        ul { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
       --&gt;
     &lt;/style&gt;
     
@@ -697,19 +697,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/c564d7d07f00010100ad89ec4578dd48</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
-        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
-        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
-        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        body { margin-right: 0px; color: #000000; margin-bottom: 0px; font-size: 12; margin-left: 0px; font-family: Arial; margin-top: 0px }
+        ol { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
+        p { margin-right: 0; color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0 }
+        ul { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -720,7 +720,7 @@
     <child ID="76" label="Levantamiento de Inf." layerID="1"
         created="1364818568731" x="114.55" y="139.65" width="156.0"
         height="27.0" strokeWidth="3.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="1009292"
+        <resource referenceCreated="0" size="1033453"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/Estudio_de_homologos_Linguistic_Corpus_Tools.pdf"
             type="1" xsi:type="URLResource">
             <title>Estudio_de_homologos_Linguistic_Corpus_Tools.pdf</title>
@@ -743,18 +743,18 @@
         <URIString>http://vue.tufts.edu/rdf/resource/d31c983c7f00010100ad89ec914590dd</URIString>
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
-    <child ID="77" label="Diagrama de Negocio IDEF" layerID="1"
-        created="1364818591942" x="114.149994" y="167.3167"
-        width="190.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="337113"
-            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"
+    <child ID="77" label="Diagrama de &#xa;Estados Corpus" layerID="1"
+        created="1364818591942" x="114.149994" y="164.3167"
+        width="129.0" height="36.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        <resource referenceCreated="0" size="6995"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Corpus_Process.dia"
             type="1" xsi:type="URLResource">
-            <title>Procesos_del_Negocio_IDEF.odt</title>
-            <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"/>
-            <property key="File" value="01_Ingenieria/1.1_Requisitos/Procesos_del_Negocio_IDEF.odt"/>
+            <title>Diagrama_de_Estados_Vista_Principal_ToNgueLP-Corpus_Process.dia</title>
+            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Corpus_Process.dia"/>
+            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Corpus_Process.dia"/>
         </resource>
-        <fillColor>#FEFEC9</fillColor>
-        <strokeColor>#FEFEC9</strokeColor>
+        <fillColor>#FFC63B</fillColor>
+        <strokeColor>#000000</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-12</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -868,7 +868,7 @@
         <child ID="86" label="C&#xf3;digo fuente"
             created="1365188141472" x="34.0" y="45.25" width="114.17831"
             height="22.0" strokeWidth="4.0" autoSized="false" xsi:type="node">
-            <fillColor>#FEFEC9</fillColor>
+            <fillColor>#8AEE95</fillColor>
             <strokeColor>#FEFEC9</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-bold-12</font>
@@ -887,8 +887,8 @@
         <child ID="80" label="Historias de Usuario"
             created="1365187830605" x="34.0" y="64.75" width="125.0"
             height="23.0" strokeWidth="1.0" autoSized="false" xsi:type="node">
-            <fillColor>#FFFFFF</fillColor>
-            <strokeColor>#FFFFFF</strokeColor>
+            <fillColor>#8AEE95</fillColor>
+            <strokeColor>#8AEE95</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -906,15 +906,15 @@
         <child ID="184" label="Tareas de ingenier&#xed;a"
             created="1365406789937" x="34.0" y="85.0" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="40506"
+            <resource referenceCreated="0" size="257636"
                 spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
                 <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
                 <property key="File" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
             </resource>
-            <fillColor>#FFFFFF</fillColor>
-            <strokeColor>#FFFFFF</strokeColor>
+            <fillColor>#8AEE95</fillColor>
+            <strokeColor>#8AEE95</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -933,8 +933,8 @@
     </child>
     <child ID="92"
         label="Cambios -&#xa;mientras se&#xa;implementa -&#xa;producto de una&#xa;visi&#xf3;n superior&#xa;del sistema."
-        layerID="1" created="1365190137536" x="229.35995" y="184.828"
-        width="181.15613" height="196.3216" strokeWidth="1.0"
+        layerID="1" created="1365190137536" x="226.38063" y="203.80637"
+        width="151.32823" height="177.34323" strokeWidth="1.0"
         strokeStyle="2" autoSized="false" controlCount="2"
         arrowState="2" xsi:type="link">
         <strokeColor>#404040</strokeColor>
@@ -951,11 +951,11 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/dbc2bd247f000101006c13eec143f789</URIString>
         <point1 x="377.20886" y="380.6496"/>
-        <point2 x="229.85995" y="223.34996"/>
+        <point2 x="226.88063" y="223.34996"/>
         <ID1 xsi:type="node">80</ID1>
         <ID2 xsi:type="node">67</ID2>
         <ctrlPoint0 x="286.28424" y="368.24023" xsi:type="point"/>
-        <ctrlPoint1 x="502.06903" y="84.72963" xsi:type="point"/>
+        <ctrlPoint1 x="379.41577" y="135.8377" xsi:type="point"/>
     </child>
     <child ID="94" label="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Sprint Alfa"
         layerID="1" created="1365190492720" x="329.27542" y="459.049"
@@ -1069,8 +1069,8 @@
         <child ID="99" label="Cronograma de Producci&#xf3;n"
             created="1365190581163" x="34.0" y="22.0" width="163.0"
             height="23.0" strokeWidth="1.0" autoSized="false" xsi:type="node">
-            <fillColor>#FFFFFF</fillColor>
-            <strokeColor>#FFFFFF</strokeColor>
+            <fillColor>#C1C1FF</fillColor>
+            <strokeColor>#000000</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -1114,15 +1114,15 @@
         <child ID="104" label="Tareas de Ingenier&#xed;a"
             created="1365191091211" x="34.0" y="65.5" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="40506"
+            <resource referenceCreated="0" size="257636"
                 spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
                 <property key="@file.relative" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
                 <property key="File" value="01_Ingenieria/1.1_Requisitos/06_HU.odt"/>
             </resource>
-            <fillColor>#FFFFFF</fillColor>
-            <strokeColor>#FFFFFF</strokeColor>
+            <fillColor>#8AEE95</fillColor>
+            <strokeColor>#8AEE95</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-12</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -1141,7 +1141,7 @@
     </child>
     <child ID="113" label="content in Manage Tool" layerID="1"
         created="1365191754409" x="-79.25002" y="117.62503"
-        width="170.25" height="46.75" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        width="191.25" height="48.25" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <fillColor>#C1C1FF</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
         <textColor>#000000</textColor>
@@ -1157,10 +1157,16 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/dbc73b347f000101006c13ee05d89d1c</URIString>
         <child ID="116" label="- Tareas de Investigaci&#xf3;n"
-            created="1365191792275" x="34.0" y="22.0" width="171.0"
-            height="25.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-            <fillColor>#FEFEC9</fillColor>
-            <strokeColor>#FEFEC9</strokeColor>
+            created="1365191792275" x="34.0" y="22.0" width="199.0"
+            height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+            <resource referenceCreated="0" size="150164"
+                spec="/media/swlDOC/Doctorado/Notas_de_la_Investigacion/Notas_de_la_investigacion.txt"
+                type="1" xsi:type="URLResource">
+                <title>Notas_de_la_investigacion.txt</title>
+                <property key="File" value="/media/swlDOC/Doctorado/Notas_de_la_Investigacion/Notas_de_la_investigacion.txt"/>
+            </resource>
+            <fillColor>#8AEE95</fillColor>
+            <strokeColor>#000000</strokeColor>
             <textColor>#000000</textColor>
             <font>Arial-plain-14</font>
             <metadata-list category-list-size="1" other-list-size="0"
@@ -1406,19 +1412,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/dd44dafa7f00010101fac7cfc2aaf57f</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { color: #000000; font-size: 12; font-family: Arial; margin-bottom: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px }
-        ol { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
-        p { color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0; margin-right: 0 }
-        ul { vertical-align: middle; font-size: 12; font-family: Arial; margin-left: 30; margin-top: 6; list-style-position: outside }
+        body { margin-right: 0px; color: #000000; margin-bottom: 0px; font-size: 12; margin-left: 0px; font-family: Arial; margin-top: 0px }
+        ol { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
+        p { margin-right: 0; color: #000000; margin-bottom: 0; margin-left: 0; margin-top: 0 }
+        ul { vertical-align: middle; list-style-position: outside; font-size: 12; margin-left: 30; font-family: Arial; margin-top: 6 }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -1716,9 +1722,9 @@
         <point1 x="623.2467" y="64.43976"/>
         <point2 x="623.25073" y="370.03973"/>
     </child>
-    <child ID="153" label="DOC Proyecto EScorpus" layerID="1"
+    <child ID="153" label="DOC Proyecto ToNgueLP" layerID="1"
         created="1365270200548" x="548.2486" y="-133.06021"
-        width="224.0" height="30.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        width="231.0" height="30.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
         <fillColor>#FFFFFF</fillColor>
         <strokeColor>#FFFFFF</strokeColor>
         <textColor>#000000</textColor>
@@ -1843,29 +1849,10 @@
         <point2 x="119.35002" y="441.60007"/>
         <ctrlPoint0 x="33.75" y="416.0398" xsi:type="point"/>
     </child>
-    <child ID="162" layerID="1" created="1365272317708" x="32.499905"
-        y="294.77313" width="11.0" height="23.0" strokeWidth="1.0"
-        autoSized="true" xsi:type="node">
-        <fillColor>#FFFFFF</fillColor>
-        <strokeColor>#FFFFFF</strokeColor>
-        <textColor>#000000</textColor>
-        <font>Arial-plain-10</font>
-        <metadata-list category-list-size="1" other-list-size="0"
-            ontology-list-size="0" RCategoryListSize="0">
-            <ontology-list-string></ontology-list-string>
-            <metadata xsi:type="vue-metadata-element">
-                <value></value>
-                <key>http://vue.tufts.edu/vue.rdfs#none</key>
-                <type>1</type>
-            </metadata>
-        </metadata-list>
-        <URIString>http://vue.tufts.edu/rdf/resource/e09f87367f0001010153b17c84a8a4fb</URIString>
-        <shape xsi:type="rectangle"/>
-    </child>
     <child ID="67" label="Historias de Usuario(HU)" layerID="1"
         created="1364815410184" x="114.34996" y="223.34996"
         width="178.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="40506"
+        <resource referenceCreated="0" size="257636"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
             type="1" xsi:type="URLResource">
             <title>06_HU.odt</title>
@@ -2217,16 +2204,16 @@
     </child>
     <child ID="177" label="Arquitectura de Informaci&#xf3;n" layerID="1"
         created="1365392663320" x="114.149994" y="455.9398"
-        width="213.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0"
-            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"
+        width="213.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
+        <resource referenceCreated="0" size="645910"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_informacion.pdf"
             type="1" xsi:type="URLResource">
-            <title>11_Arq_de_Informacion.odt</title>
-            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"/>
-            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_Informacion.odt"/>
+            <title>11_Arq_de_informacion.pdf</title>
+            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_informacion.pdf"/>
+            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_informacion.pdf"/>
         </resource>
-        <fillColor>#FEFEC9</fillColor>
-        <strokeColor>#FEFEC9</strokeColor>
+        <fillColor>#FFC63B</fillColor>
+        <strokeColor>#30D643</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
         <metadata-list category-list-size="1" other-list-size="0"
@@ -2374,7 +2361,8 @@
         label="Acta de Aceptaci&#xf3;n&#xa;Arquitectura de Inf"
         layerID="1" created="1378169180739" x="356.04077" y="80.93977"
         width="161.0" height="42.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="31602"
+        <resource referenceCreated="0" accessAttempted="1410145487073"
+            accessSuccessful="1410145488233" size="31602"
             spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.4_Acuerdos_de_trabajo/19_Acta_de_Aceptacion_Arq_de_Informacion.odt"
             type="1" xsi:type="URLResource">
             <title>19_Acta_de_Aceptacion_Arq_de_Informacion.odt</title>
@@ -2398,9 +2386,16 @@
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
     <child ID="187" label="1er Informe Investigaci&#xf3;n" layerID="1"
-        created="1378957522369" x="-90.42508" y="81.93982" width="169.0"
-        height="25.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <fillColor>#FEFEC9</fillColor>
+        created="1378957522369" x="-90.42508" y="81.93982" width="197.0"
+        height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        <resource referenceCreated="0" size="2852861"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/02_Gestion_de_Proyectos/2.7_Investigaciones/01_Article_High_Quality_User_Interpace_for_Plagiarism_System.pdf"
+            type="1" xsi:type="URLResource">
+            <title>01_Article_High_Quality_User_Interpace_for_Plagiarism_System.pdf</title>
+            <property key="@file.relative" value="02_Gestion_de_Proyectos/2.7_Investigaciones/01_Article_High_Quality_User_Interpace_for_Plagiarism_System.pdf"/>
+            <property key="File" value="02_Gestion_de_Proyectos/2.7_Investigaciones/01_Article_High_Quality_User_Interpace_for_Plagiarism_System.pdf"/>
+        </resource>
+        <fillColor>#FDE888</fillColor>
         <strokeColor>#FEFEC9</strokeColor>
         <textColor>#000000</textColor>
         <font>Arial-plain-14</font>
@@ -2468,6 +2463,32 @@
         <URIString>http://vue.tufts.edu/rdf/resource/d6f335147f00010100dd6317796f08a7</URIString>
         <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
     </child>
+    <child ID="194" label="Diagrama de &#xa;Estados Cases" layerID="1"
+        created="1410145976209" x="240.25574" y="164.93979"
+        width="125.0" height="36.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
+        <resource referenceCreated="0" size="9670"
+            spec="/media/swlDOC/Doctorado/00_EScorpus/doc/01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Case_Process.dia"
+            type="1" xsi:type="URLResource">
+            <title>Diagrama_de_Estados_Vista_Principal_ToNgueLP-Case_Process.dia</title>
+            <property key="@file.relative" value="01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Case_Process.dia"/>
+            <property key="File" value="01_Ingenieria/1.2_Arquitectura_y_Design/Diagrams/Diagrama_de_Estados_Vista_Principal_ToNgueLP-Case_Process.dia"/>
+        </resource>
+        <fillColor>#FFC63B</fillColor>
+        <strokeColor>#000000</strokeColor>
+        <textColor>#000000</textColor>
+        <font>Arial-plain-12</font>
+        <metadata-list category-list-size="1" other-list-size="0"
+            ontology-list-size="0" RCategoryListSize="0">
+            <ontology-list-string></ontology-list-string>
+            <metadata xsi:type="vue-metadata-element">
+                <value></value>
+                <key>http://vue.tufts.edu/vue.rdfs#none</key>
+                <type>1</type>
+            </metadata>
+        </metadata-list>
+        <URIString>http://vue.tufts.edu/rdf/resource/5341fa917f00010100c0679fe3a45a0c</URIString>
+        <shape arcwidth="20.0" archeight="20.0" xsi:type="roundRect"/>
+    </child>
     <layer ID="1" label="Layer 1" created="1364339456660" x="0.0"
         y="0.0" width="1.4E-45" height="1.4E-45" strokeWidth="0.0" autoSized="false">
         <metadata-list category-list-size="0" other-list-size="0"
@@ -2476,8 +2497,8 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/a9407ae17f0001010084c1f965fda63b</URIString>
     </layer>
-    <userZoom>1.5</userZoom>
-    <userOrigin x="-233.41934" y="-214.3403"/>
+    <userZoom>1.0</userZoom>
+    <userOrigin x="-300.74426" y="-145.56021"/>
     <presentationBackground>#202020</presentationBackground>
     <PathwayList currentPathway="0" revealerIndex="-1">
         <pathway ID="0" label="Camino sin t&#xed;tulo"

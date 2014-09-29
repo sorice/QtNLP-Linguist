@@ -8,12 +8,44 @@
 
 |EScorpus| es una aplicación de escritorio del tipo *Front-End* para el trabajo con corpus de textos elaborados para detección de similaridad o detección de plagio. Está desarrollada en **Qt** y **Python**.
 
-  *Objetivo:* Crear una aplicación para la creación de corpus en español para tareas de Procesamiento de Lenguaje Natural, fáciles de usar por lingüistas con poco conocimiento de informática.
+  **Objetivo:** Crear una aplicación para la creación de corpus en español para tareas de Procesamiento de Lenguaje Natural, fáciles de usar por lingüistas con poco conocimiento de informática; y también por especialistas informáticos que investigan en el área de NLP.
+
+Instalación
+*************
+¿Cómo instalar ToNgueLP?
+
+.. toctree::
+   :maxdepth: 2
+
+   /doc/install/install
 
 Guía de Usuario
 *******************
 
-Si usted solo desea aprender a utilizar |EScorpus| como entusiasta, lingüista o investigador del procesamiento de los lenguajes naturales, entonces lea esta sección:
+|EScorpus| puede ser usado como *lingüista*, *investigador* del procesamiento de los lenguajes naturales, o *entusiasta de los idiomas*. Si usted desea conocer como usar esta herramienta lea esta sección:
+
+.. tabularcolumns:: m{150pt} m{150pt} m{150pt} |c|c|c|
+
+======================================================== =========================================================== =======================================================
+ |Vista Principal|								 |Vista de Comparación|								|Vista de Diccionarios|
+======================================================== =========================================================== =======================================================
+ :ref:`Vista p/ Lingüistas <EScorpus_module_principal>`   :ref:`Vista p/ Investigadores <EScorpus_module_matching>`   :ref:`Entusiasta de Idiomas <EScorpus_module_dicts>`
+======================================================== =========================================================== =======================================================
+
+.. |Vista Principal| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_Principal_for_sphinx-doc.png
+                 :height: 105pt
+                 :width:  120pt
+                 :alt: Vista principal de ToNgueLP.
+
+.. |Vista de Comparación| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Comparacion.png
+                 :height: 90pt
+                 :width:  120pt
+                 :alt: Vista principal de ToNgueLP.
+
+.. |Vista de Diccionarios| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Diccionario.png
+                 :height: 120pt
+                 :width:  90pt
+                 :alt: Vista principal de ToNgueLP.
 
 .. toctree::
    :maxdepth: 2
@@ -28,55 +60,20 @@ Esta sección está orientada a desarrolladores activos o entusiastas futuros de
  * Básicamente, ¿cómo está constituida la estructura de |EScorpus|?
  * ¿Dónde puedo leer la documentación del proceso de desarrollo de |EScorpus|?  
 
-Arquitectura
---------------
+.. toctree::
+   :maxdepth: 2
 
-|EScorpus| es una herramienta desarrollada en Qt y Python. Basa su arquitectura en un modelo de plugins (carpeta **modules**) que facilita su desarrollo desde funciones básicas del procesamiento de las lenguas naturales, así como las interfaces simples para los linguistas. La raíz del proyecto está conformada por algunas carpetas que consideramos parte de la arquitectura, y algo importante a leer para iniciarse en el desarrollo de este proyecto:
+   /modules/modules
 
-.. _root-file-ToNgueLP:
-.. figure:: /doc/raiz_ToNgueLP.png
-	:align: center
+Documentación
+****************
 
-	Sistema de ficheros raíz de |EScorpus|
+Esta sección está dirigida a aquellos que deseen conocer |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. Todo el proyecto está documentado usando la metodología SXP, un híbrido cubano de XP y SCRUM. Usted podrá encontrar aquí los artefactos finales archivados en papel y entregados a los clientes de |EScorpus| y además los editables para su reproducción atendiendo a los derechos de copyright especificados.
 
-* :ref:`config`: *Datos de configuración, idioma,...*
-* :ref:`EScorpus_data` 
-	*Ubicación de los datos, corpus de paráfrasis en español en formato XML, diccionarios utilizados para el Procesamiento del Lenguaje Natural.*
-* :ref:`EScorpus_doc` 
-	*Expediente de proyecto usando SXP, otros ficheros de datos importantes para generar la documentación.*
-* :ref:`EScorpus_libraries`: *Bibliotecas externas necesarias para ejecutar el proyecto con éxito.*
-* :ref:`modules <EScorpus_modules>`: *Módulos o plugins que componen |EScorpus|.*
-* :ref:`ui`: *GUIs en Qt*
+.. toctree::
+   :maxdepth: 2
 
-:leer más: :ref:`Arquitectura de Software <EScorpus_modules>` 
-
-Dev DOC
-----------
-|EScorpus| posee un expediente de proyecto (basado en la metodología SXP), donde se encuentra documentado todo el proceso de desarrollo. Así mismo cada función de código es documentada con **docstrings** y se incluyen las ayudas a estas funciones autogeneradas dentro de la documentación con *Sphinx*. 
-
-* Un nuevo desarrollador podrá leer cada función programada en |EScorpus|.
-* Cada clase o método programado podrá ser leído en esta documentación, en el momento necesario.
-* No se expone al desarrollador a leer la titánica lista de funciones de una en una para adivinar sus relaciones.
-
-:ver más: `Expediente del proyecto <_static/EScorpus.html>`_
-
-:dependencias: Para abrir/editar los documentos deberá tener instalados:
-
-   * Libre Office, u ODT compatible.
-   * Lyx or Latex compatible.
-   * Pencil (Prototipos de Interfaz).
-   * Navegador Web o HTML compatible.
-   * Visor y Editor de Imágenes.
-
-DOCs fundamentales
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Con el objetivo de ahorrar tiempo y estimular a futuros desarrolladores algunos artefactos significativos pueden ser leídos desde misma página de la documentación:
-
-* `Estudio de Software Homólogos <_static/01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/Estudio_de_homologos_Linguistic_Corpus_Tools.pdf>`_
-* `XML de casos detectados por el Algoritmo-XXX <_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-plag-report.html>`_
-
-:ver más: `Expediente del proyecto <_static/EScorpus.html>`_
+   /doc/doc
 
 Acerca de:
 *******************
@@ -87,7 +84,11 @@ Esta sección refiere algunos apuntes históricos del proyecto, así como datos 
 * :ref:`Release Notes <Release_notes>`
 * :ref:`Colaboradores <Colaborators>`
 
-:Copyright: Creative Commons Share Alike Non Commercial Use, 2014
+Copyright
+***********
+
+:Licencia: Creative Commons Share Alike Non Commercial Use, 2014
+
 .. sectionauthor:: Abel Meneses Abad <abelma1980@gmail.com> 
 
 .. |EScorpus| replace:: ToNgueLP

@@ -9,7 +9,7 @@
 \fancyhf{}
 \fancyhead[LO]{\leftmark} % En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
 \fancyhead[RE]{\rightmark} % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
-\fancyfoot[LE,RO]{Elaborado por la Cooperativa CubaSWL.Todos los Derechos Reservados} %Escribo este texto a la izquierda en las páginas impares y a la derecha en las pares
+\fancyfoot[LE,RO]{Elaborado por la Cooperativa CubaSWL. Licencia CC Share-Alike Non-commercial Use} %Escribo este texto a la izquierda en las páginas impares y a la derecha en las pares
 \renewcommand{\footrulewidth}{1pt}
 \end_preamble
 \use_default_options true
@@ -78,7 +78,7 @@ enumitem
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -87,36 +87,6 @@ enumitem
 \end_header
 
 \begin_body
-
-\begin_layout Standard
-\align center
-\begin_inset space \thinspace{}
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset space ~
-\end_inset
-
-Cooperativa CubaSWL
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
 
 \begin_layout Title
 
@@ -156,16 +126,26 @@ Versión:
  1.0
 \end_layout
 
-\begin_layout Author
-Autores: Abel Meneses Abad
+\begin_layout Standard
+\align center
+
+\series bold
+Autores:
+\series default
+ Abel Meneses Abad
 \begin_inset Newline newline
 \end_inset
 
 Leonel Salazar Videaux
 \end_layout
 
-\begin_layout Center Footer
+\begin_layout Standard
+\align center
 
+\series bold
+Institución:
+\series default
+ Cooperativa CubaSWL
 \end_layout
 
 \begin_layout Standard
@@ -184,7 +164,7 @@ Leonel Salazar Videaux
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="5">
+<lyxtabular version="3" rows="5" columns="5">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2.3cm">
 <column alignment="center" valignment="top" width="0">
@@ -289,7 +269,7 @@ Autor
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -298,7 +278,7 @@ Autor
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -307,7 +287,54 @@ Autor
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Digitalizada el prototipo de la vista principal con Pencil.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abel Meneses Abad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aug/2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -316,11 +343,58 @@ Autor
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cambios a partir de la discusión con el programador de UI.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abel Meneses Abad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Digitalizada el prototipo de la vista principal con Pencil.
+Sept/2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cambios en la UI Ppal tras análisis y diseño de procesos.
 \end_layout
 
 \end_inset
@@ -346,19 +420,25 @@ Abel Meneses Abad
 Reglas de Confidencialidad
 \end_layout
 
-\begin_layout Section*
-Clasificación:
-\size normal
-\color blue
- 
-\end_layout
-
 \begin_layout Standard
 
 \size normal
-Software particular para la Universidad de Camagüey, factible de exportar
- por las partes desarrolladoras, de carácter nacional a evaluar en la convocator
-ia del CITMA en el 2015.
+Documento parcialmente libre.
+ Desarrollado para la tesis de doctorado 
+\begin_inset Quotes eld
+\end_inset
+
+Análisis de relaciones semánticas para la detección de plagio parafrástico
+ en textos científicos sobre computación escritos en idioma español
+\begin_inset Quotes erd
+\end_inset
+
+, del autor Abel Meneses Abad.
+ El mismo constituye evidencia del desarrollo de ToNgueLP herramienta parcialmen
+te libre desarrollada para lingüistas y con el apoyo de la Universidad de
+ Camagüey, y la Universidad Marta Abreu de Las Villas, así como la asesoría
+ del PhD Alberto Barrón Cedeño.
+ Factible de exportar por las partes titulares.
 \end_layout
 
 \begin_layout Standard
@@ -367,7 +447,12 @@ Este documento contiene información propietaria de
 Abel Meneses Abad
 \color inherit
 , y es emitido confidencialmente para orientar al equipo de desarrollo de
- EScorpus.
+ ToNgueLP.
+ Su utilización en entornos académicos o de investigación sin fines comerciales
+ es permitido, así como su reutilización literal en documentos afines, citando
+ el original y sin fines de lucro.
+ Si elabora un artefacto con fines comerciales debe acordar la compra del
+ original con los titulares del producto.
 \end_layout
 
 \begin_layout Standard
@@ -378,11 +463,20 @@ s público su contenido, excepto para cumplir el propósito para el cual se
 \end_layout
 
 \begin_layout Standard
+El documento ha sido elaborado sobre la plantilla de Arquitectura de Información
+ de SXP 4.x, autoría y titularidad de Enma Lidia Muñoz García.
+\end_layout
+
+\begin_layout Standard
 Estas reglas son aplicables a las 
 \series bold
-6
+11
 \series default
  páginas de este documento.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
@@ -441,146 +535,390 @@ Referencias
 \end_layout
 
 \begin_layout Enumerate
-Estudio de Homólogos.
+Estudio de Homólogos del proyecto ToNgueLP.
 \end_layout
 
 \begin_layout Enumerate
-Ayuda generada con Sphinx.
+Ayuda generada con Sphinx del proyecto ToNgueLP.
 \end_layout
 
 \begin_layout Enumerate
-Documentos manuscritos de Abel.
+Notas manuscritas de la tesis de doctorado de Abel Meneses Abad.
 \end_layout
 
 \begin_layout Enumerate
 Lista de chequeo del estándar ISO 9241-210:2010
 \end_layout
 
+\begin_layout Enumerate
+Diagrama_de_Estados_Vista_Principal_ToNgueLP-Corpus_Process.dia
+\end_layout
+
+\begin_layout Enumerate
+Diagrama_de_Estados_Vista_Principal_ToNgueLP-Case_Process.dia
+\end_layout
+
 \begin_layout Section
 Esbozo de la estructura o taxonomía
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 
-\color blue
-<<Representación simple de la estructura del portal en cuanto a etiquetas
- y jerarquía de los contenidos.>>
+\color black
+Corpus
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-<<Ejemplo (los niveles deben verse de esta forma): 
+\begin_deeper
+\begin_layout Enumerate
+Load New Corpus
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-Inicio 
+\begin_layout Enumerate
+Insert New Doc
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-1.1 Quiénes somos 
+\begin_layout Enumerate
+Save Corpus
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-1.1.1 Nuestra historia 
+\begin_layout Enumerate
+Corpus Inf.
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-1.1.2.Nuestro Personal 
+\begin_layout Enumerate
+Select Parser
 \end_layout
 
-\begin_layout Standard
+\end_deeper
+\begin_layout Enumerate
 
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-1.1.2.1 Biografías del personal
+\color black
+Tools
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-1.2 Qué hacemos 
+\begin_deeper
+\begin_layout Enumerate
+Vista Principal
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-1.2.1 Productos 
+\begin_layout Enumerate
+Vista Comparación
 \end_layout
 
-\begin_layout Standard
-
-\color blue
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset space \space{}
-\end_inset
-
-1.2.2 Servicios
+\begin_layout Enumerate
+Vista de Diccionario
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+
+\color black
+Config
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Config Lang
+\end_layout
+
+\begin_layout Enumerate
+Config Parser
+\end_layout
+
+\begin_layout Enumerate
+Config Paths
+\end_layout
+
+\begin_layout Enumerate
+Config User Data
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\color black
+Scripts
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(nombre x definir): Convertir documentos TXT o PDF a ZZZdoc.XML.
+\end_layout
+
+\begin_layout Enumerate
+Verificar compatibilidad del Corpus cargado con el Parser configurado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Generar XML estandar a partir de la carpeta OUT de la
+ salida de un algoritmo de detección.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Comparación del XML estandar con XML del corpus cargado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Actualizar ciertos tags del XML de datos del algoritmo
+ y actualizar ciertos tags del XML reporte de casos detectados.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\color black
+Help
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Copyright
+\end_layout
+
+\begin_layout Enumerate
+Ayuda de Usuarios
+\end_layout
+
+\begin_layout Enumerate
+Manual de Desarrollo
+\end_layout
+
+\begin_layout Enumerate
+About
+\end_layout
+
+\begin_layout Enumerate
+Contact us
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\color black
+Users
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Loguin
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+¿Esto está bien?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Descripción de los elementos de la arquitectura
 \end_layout
 
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Menús
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barras de Menú
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Loguin
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Opción de Loguin, para expertos autorizados a confirmar manualmente los
+ casos generados automáticamante.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Corpus
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Acceder simultáneamente a diferentes corpus cargados.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Barras de Herramientas
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de Herramientas de Menús.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Search
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Componente de búsqueda.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Case
+\emph default
+ 
+\emph on
+List
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Lista de casos
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tabs de casos y/o vistas de la aplicación.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento fuente u original.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento fuente.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento sospechoso.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento sospechoso.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Edición de Casos
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Elementos para editar fragmentos.
+\end_layout
+
 \begin_layout Standard
 
 \color blue
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\color blue
+En la plantilla original no se entiende bien esto, pues pareciera lo mismo
+ en varios acápites.
+ ¿Puedes orientarme? Ó, ¿debo poner aquí una descripción del skeleton?
+\end_layout
+
+\end_inset
+
 <<Descripción textual de cada uno de los elementos de la estructura, característ
 icas, comportamiento.
  etc.>>
@@ -590,13 +928,216 @@ icas, comportamiento.
 Definición de los elementos de usabilidad y accesibilidad 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
 
-\color blue
-<<Descripción textual de las características de los elementos de la aplicación
- que pueden influir en la usabilidad y la accesibilidad en el sistema, utilizar
- como referencia los documentos "Principios de Nielsen" y "Pautas de Accesibilid
-ad".>>
+
+\emph on
+Barra de Menús
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: No se desplegará, sus contenidos serán visualizados en [4, Barra de Herramient
+as].
+ El objetivo es conservar la visión de barras desplegables, pero eliminarlas,
+ visualmente el efecto se verá, y se gana en el tamaño de los elementos
+ a clickear.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Loguin
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: No se levanta una ventana sino un menú embebido como hacen todas las aplicacio
+nes web actuales.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Corpus
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Similar al comportamiento de tabs laterales de konqueror,...
+ Acceder simultáneamente a diferentes corpus cargados.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Barras de Herramientas
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+: click o movimiento a la derecha o izquierda si hubieran muchas opciones
+ o elementos a clickear.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Search
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Al comenzar a tipear y pasar de 3 caracteres automáticamente se comienzan
+ a mostrar resultados, desplegándose por debajo del componente y por encima
+ de la interfaz sin formar parte de ella.
+ Similar a componentes de búsqueda existentes en otras aplicaciones como
+ Kiwix.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Case
+\emph default
+ 
+\emph on
+List
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: En este elemento solo se puede dar click sobre sus items.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Similar a los tabs de Firefox y navegadores de archivo.
+ Se pueden visualizar módulos completos de la herramienta y no solo los
+ casos.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Elemento de texto que posee posibilidades de recargarse como si fuera
+ AJAX, teniendo guardados, pero invisibles, elementos como las 
+\begin_inset Quotes eld
+\end_inset
+
+annotations
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: elemento simple que se autorecargan los valores al hacer cualquier modificació
+n del elemento [8]
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Similar a [8]
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Similar a [9]
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Edición de Casos
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Similar a [4] algunos elementos cambiarán sus labels al clickearlos en
+ dependencia del estado en el que esté la aplicación, permitiendo una nueva
+ función asociada con la anterior.
+ Esto permite ahorrar espacio, facilitar al usuario la culminación satisfactoria
+ de una instancia de cualquier proceso relacionado con un caso.
+ Al mismo tiempo el usuario verá las opciones en un elemento de gran tamaño.
 \end_layout
 
 \begin_layout Section
@@ -728,7 +1269,7 @@ Vista de Diccionarios.
 \end_layout
 
 \begin_layout Subsubsection
-Vista Pricipal
+Vista Principal
 \end_layout
 
 \begin_layout Standard
@@ -746,7 +1287,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Mockups/Vista_Principal.png
+	filename Mockups/R1.5_X_ToNgueLP_Vista_Principal.png
 	scale 50
 
 \end_inset
@@ -783,52 +1324,188 @@ Breve descripción de los elementos que componen la pantalla:
 
 \begin_deeper
 \begin_layout Enumerate
-Barras de Menú
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Menús
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barras de Menú
 \end_layout
 
 \begin_layout Enumerate
-Opción de Loguin, para expertos autorizados a confirmar manualmente los
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Loguin
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Opción de Loguin, para expertos autorizados a confirmar manualmente los
  casos generados automáticamante.
 \end_layout
 
 \begin_layout Enumerate
-Tabs para diferentes corpus cargados.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Corpus
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Acceder simultáneamente a diferentes corpus cargados.
 \end_layout
 
 \begin_layout Enumerate
-Barra de Plugins
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Barras de Herramientas
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de Plugins o .
 \end_layout
 
 \begin_layout Enumerate
-Componente de búsqueda.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Search
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Componente de búsqueda.
 \end_layout
 
 \begin_layout Enumerate
-Lista de casos
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Case
+\emph default
+ 
+\emph on
+List
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Lista de casos
 \end_layout
 
 \begin_layout Enumerate
-Tabs de, casos o vistas de la aplicación.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tabs de casos y/o vistas de la aplicación.
 \end_layout
 
 \begin_layout Enumerate
-Fragmento del texto del documento fuente u original.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento fuente u original.
 \end_layout
 
 \begin_layout Enumerate
-Barra de datos del fragmento fuente.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento fuente.
 \end_layout
 
 \begin_layout Enumerate
-Fragmento del texto del documento sospechoso.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento sospechoso.
 \end_layout
 
 \begin_layout Enumerate
-Barra de datos del fragmento sospechoso.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento sospechoso.
 \end_layout
 
 \begin_layout Enumerate
-Elementos para editar fragmentos.
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Edición de Casos
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Elementos para editar fragmentos.
 \end_layout
 
 \end_deeper
@@ -839,88 +1516,316 @@ Descripción detallada de los elementos que componen la pantalla:
 \end_layout
 
 \begin_layout Enumerate
-Barras de Menú (definición beta)
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Menús
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barras de Menús (definición beta)→ Estas no se desplegarán serán visualizadas
+ en el elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Barras de Herramientas
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Archivo: permite cargar un archivo de corpus/ salvar el corpus en edición/
- o todos los corpus.
-\end_layout
+Menú 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Enumerate
-Corpus: Información del Corpus/Seleccionar el Parser/Sugerir automáticamente
- el parser compatible.
-\end_layout
 
-\begin_layout Enumerate
-Vistas: Vista Principal/Vista Comparación/Vista de Diccionario.
- (esta puede ser sustituida por la barra de plugins y entonces cambiar a
- Configuración: Idioma/Parser/Datos del Editor/...)
-\end_layout
+\emph on
+Corpus
+\emph default
 
-\begin_layout Enumerate
-Tools: Acceso directo a los procesos de EScorpus para ejecutarlos manualmente:
+\begin_inset Quotes erd
+\end_inset
+
+: Permite cargar un archivo de corpus/ salvar el corpus en edición/ o todos
+ los corpus.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Convertir documentos TXT o PDF a ZZZdoc.XML
+Load New Corpus
 \end_layout
 
 \begin_layout Enumerate
-Generar XML estandar a partir de la carpeta OUT de la salida de un algoritmo
- de detección.
+Insert New Doc
 \end_layout
 
 \begin_layout Enumerate
-Comparación del XML estandar con XML del corpus cargado.
+Save Corpus
 \end_layout
 
 \begin_layout Enumerate
-Actualizar ciertos tags del XML de datos del algoritmo y actualizar ciertos
- tags del XML reporte de casos detectados.
+Corpus Inf.
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar el Parser
+\end_layout
+
+\begin_layout Enumerate
+Sugerir automáticamente el parser compatible
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-About: enlaces a Copyright/Ayuda de Usuarios/Manual de Desarrollo
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+Tools
+\begin_inset Quotes erd
+\end_inset
+
+: Vista Principal/Vista Comparación/Vista de Diccionario.
+ (el el futuro puede tener las otras vistas previstas en la LRP)
+\end_layout
+
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Config
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permite definir el Idioma/Parser/Datos del Editor/...
+ (falta bien esta por estudiar, depende mucho de las cosas a programar.)
+\end_layout
+
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+Scripts
+\begin_inset Quotes erd
+\end_inset
+
+: Acceso directo a los procesos de ToNgueLP para ejecutarlos manualmente:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(nombre x definir): Convertir documentos TXT o PDF a ZZZdoc.XML.
+\end_layout
+
+\begin_layout Enumerate
+Verificar compatibilidad del Corpus cargado con el Parser configurado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Generar XML estandar a partir de la carpeta OUT de la
+ salida de un algoritmo de detección.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Comparación del XML estandar con XML del corpus cargado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Actualizar ciertos tags del XML de datos del algoritmo
+ y actualizar ciertos tags del XML reporte de casos detectados.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\strikeout on
+(el el futuro) 
+\begin_inset Quotes eld
+\end_inset
+
+Adicionar nuevo script
+\begin_inset Quotes erd
+\end_inset
+
+, tener los elementos posibles en pantalla y unirlos como en un simulador
+ o sea moviendo cuadritos(preguntar a Leonel como se llamaban los elementos
+ visuales desplazables que había en el UI del SCADA).
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Opción de Loguin, para expertos autorizados a confirmar manualmente los
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Help
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: enlaces a Copyright/Ayuda de Usuarios/Manual de Desarrollo/About.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Loguin
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Opción de Loguin para expertos autorizados a confirmar manualmente los
  casos generados automáticamante.
 \end_layout
 
 \begin_layout Enumerate
-Tabs para diferentes corpus cargados: Tener acceso a más de un corpus simultánea
-mente.
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tener acceso a más de un corpus simultáneamente.
 \end_layout
 
 \begin_layout Enumerate
-Barra de Plugins: Similar a Doclux, permite accesar directamente las funciones
- principales de la aplicación.
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barras de Herramientas
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Su funcionamiento es similar al componente 
+\begin_inset Quotes eld
+\end_inset
+
+Barras de Herramientas
+\begin_inset Quotes erd
+\end_inset
+
+ de Microsoft Office 2010.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Similar a Doclux, permite accesar directamente las funciones principales
+ de la aplicación.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
-Componente de búsqueda: buscar casos que contienen determinada secuencia
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Search
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Componente de búsqueda: buscar casos que contienen determinada secuencia
  de palabras (aquí se debe agregar un selector con: id, corpus, case, query)
 \end_layout
 
 \begin_layout Enumerate
-Lista de casos: Mostrará en una lista todos los casos existentes en el corpus
- para accederlos rápidamente(en caso de que sean muchos este componente
- deberá tener también una búsqueda para filtrarlos y accesarlos rápidamente)
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Case
+\emph default
+ 
+\emph on
+List
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Mostrará en una lista todos los casos existentes en el corpus para accederlos
+ rápidamente(en caso de que sean muchos este componente deberá tener también
+ una búsqueda para filtrarlos y accesarlos rápidamente)
 \end_layout
 
 \begin_layout Enumerate
-Tabs de, casos o vistas de la aplicación: casos en edición, o Vistas abiertas
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tabs de, casos o vistas de la aplicación: casos en edición, o Vistas abiertas
  en las que se trabaja simultáneamente.
 \end_layout
 
 \begin_layout Enumerate
-Fragmento del texto del documento fuente u original: visualiza el fragmento
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento fuente u original: visualiza el fragmento
  original del caso (este componente no permite edición al menos que se active
  el ELEMENTO 
 \begin_inset Quotes eld
@@ -934,13 +1839,37 @@ Active Text Edition
 \end_layout
 
 \begin_layout Enumerate
-Barra de datos del fragmento fuente: datos que contiene el corpus sobre
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento fuente: datos que contiene el corpus sobre
  el fragmento original.(no se edita manualmente, solo automáticamente)
 \end_layout
 
 \begin_layout Enumerate
-Fragmento del texto del documento sospechoso: visualiza el fragmento sospechoso
- del caso (este componente no permite edición al menos que se active el
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Fragmento del texto del documento sospechoso: visualiza el fragmento sospechos
+o del caso (este componente no permite edición al menos que se active el
  ELEMENTO 
 \begin_inset Quotes eld
 \end_inset
@@ -953,22 +1882,53 @@ Active Text Edition
 \end_layout
 
 \begin_layout Enumerate
-Barra de datos del fragmento sospechoso: datos que contiene el corpus sobre
- el fragmento sospechoso.(no se edita manualmente, solo automáticamente)
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Bar Data
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barra de datos del fragmento sospechoso: datos que contiene el corpus
+ sobre el fragmento sospechoso.(no se edita manualmente, solo automáticamente)
 \end_layout
 
 \begin_layout Enumerate
-Elementos para editar fragmentos: barra de ELEMENTOS.
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Edición de Casos
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Funciones para editar fragmentos.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Human Validation: para que se confirme manualmente que el caso generado
- por un algoritmo automático realmente es consistente.
-\end_layout
+Elemento 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Enumerate
-Add New Case: adicionar un nuevo caso.
+
+\emph on
+Add New Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Adicionar un nuevo caso.
  Se colocan en blanco 8 y 10.
  (un algoritmo(basado en análisis temático) sugiere 3 documentos donde serán
  insertados, se abre un popup para seleccionar y estos son insertados automática
@@ -976,26 +1936,302 @@ mente)
 \end_layout
 
 \begin_layout Enumerate
-Active Text Edition: permite editar 8 y 10 en el caso de la pestaña en el
- foco.
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Edit Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permite editar 8 y 10 en el caso de la pestaña en el foco.
 \end_layout
 
+\begin_deeper
 \begin_layout Enumerate
-Datos generados automáticamente y un selector para que manualmente se categorice
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Verify Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Segundo estado de 
+\begin_inset Quotes eld
+\end_inset
+
+Edit Case
+\begin_inset Quotes erd
+\end_inset
+
+, una vez editado necesita verificarse.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+El documento 
+\begin_inset Quotes eld
+\end_inset
+
+Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
+ de este estado.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Update Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tercer estado de 
+\begin_inset Quotes eld
+\end_inset
+
+Edit Case
+\begin_inset Quotes erd
+\end_inset
+
+, una vez verificado puede insertarse los cambios en el XML del corpus.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+El documento 
+\begin_inset Quotes eld
+\end_inset
+
+Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
+ de este estado.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Human Validation
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Para que se confirme manualmente que el caso generado por un algoritmo
+ automático realmente es consistente.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+Save Validation
+\begin_inset Quotes erd
+\end_inset
+
+: Segundo estado de 
+\begin_inset Quotes eld
+\end_inset
+
+Human Validation
+\begin_inset Quotes erd
+\end_inset
+
+, una vez llenados los campos en blanco de 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Plag Type
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ puede ser guardado como datos del caso.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+El documento 
+\begin_inset Quotes eld
+\end_inset
+
+Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
+ de este estado.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Plag Type
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Datos generados automáticamente sobre el caso.
+ Nota: se activa para edición y un selector para que manualmente se categorice
  a este caso.
 \end_layout
 
+\begin_deeper
 \begin_layout Enumerate
-Define or Re-Define los límites(boundaries) del texto que compone el caso.
- Siempre podrá verse texto en los límites superior e inferior que no pertenecen
- al caso.
+Contiene los siguientes datos: Clase de Plagio, Tipo de Plagio, Projection.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Re-Define Boundaries
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permite definir o redefinir los límites (denotado como corchetes verdes)
+ de los textos que componen el caso.
+ Siempre podrá verse texto que no pertenece al caso, en los elementos 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+src Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+susp Case Text
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ por fuera de los límites superior e inferior.
 \end_layout
 
 \begin_layout Enumerate
-Annotate Corpus: permitirá adicionar etiquetas o visualizar aquellas que
- existen en el corpus, como: POS, SRL, Name Entity, etc.
+Elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+View Linguistic Annotation
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permitirá adicionar etiquetas o visualizar aquellas que existen en el
+ corpus, como: POS, SRL, Name Entity, etc.
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+Next Annotation
+\begin_inset Quotes erd
+\end_inset
+
+: Segundo estado de 
+\begin_inset Quotes eld
+\end_inset
+
+Corpus Annotation
+\begin_inset Quotes erd
+\end_inset
+
+, permitirá ver el siguiente tipo de anotación contenido, ej.: POS, SRL,
+ etc.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+El documento 
+\begin_inset Quotes eld
+\end_inset
+
+Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
+ de este estado.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Subsubsection
 Vista de Comparación (Borrador)
@@ -1036,6 +2272,18 @@ Vista de Diff de Bazaar Explorer, prototipo de como quedará la Vista de
 
 \end_layout
 
+\begin_layout Itemize
+
+\series bold
+Breve descripción de los elementos que componen la pantalla:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Descripción detallada de los elementos que componen la pantalla:
+\end_layout
+
 \begin_layout Subsubsection
 Vista de Diccionarios (Borrador)
 \end_layout
@@ -1073,6 +2321,18 @@ Vista del Front-End de Wordnet: Artha.
 
 \end_layout
 
+\begin_layout Itemize
+
+\series bold
+Breve descripción de los elementos que componen la pantalla:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Descripción detallada de los elementos que componen la pantalla:
+\end_layout
+
 \begin_layout Subsection
 Descripción de la interacción de los usuarios
 \end_layout
@@ -1082,6 +2342,19 @@ Descripción de la interacción de los usuarios
 \color blue
 <<Debe explicarse la interacción de los elementos y los resultados en sus
  pantallas correspondientes.>>
+\color inherit
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Hacer aquí un diagrama resumido del diagrama de estado pero donde solo se
+ vea como interactúan los elementos de la AI definidos en 2.1.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1104,14 +2377,20 @@ l.>>
  actualmente.>>
 \end_layout
 
-\begin_layout Section
-Anexos
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+theendnotes 
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\color blue
-<<Poner aqui imágenes para un mayor entendimiento de los componentes.>>
+
 \end_layout
 
 \end_body

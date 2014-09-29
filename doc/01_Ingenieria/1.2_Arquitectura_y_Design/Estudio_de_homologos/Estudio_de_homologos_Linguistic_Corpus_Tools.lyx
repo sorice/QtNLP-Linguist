@@ -2,7 +2,7 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass llncs
+\textclass article
 \begin_preamble
 
 \end_preamble
@@ -26,19 +26,23 @@
 \default_output_format default
 \output_sync 0
 \bibtex_command default
-\index_command default
+\index_command makeindex
 \float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref true
+\pdf_title "Estudio de Homólogos ToNgueLP"
+\pdf_author "Abel Meneses Abad"
+\pdf_subject "Documento de desarrollo para proyecto ToNgueLP"
+\pdf_keywords "ToNgueLP, UX, Estudio de Homólogos"
 \pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks false
 \pdf_pdfborder false
-\pdf_colorlinks false
-\pdf_backref false
+\pdf_colorlinks true
+\pdf_backref page
 \pdf_pdfusetitle true
 \papersize default
 \use_geometry false
@@ -82,8 +86,7 @@ Ing.
  Abel Meneses Abad
 \end_layout
 
-\begin_layout Institute
-\paragraph_spacing other 0
+\begin_layout Standard
 CEETI, Facultad de Eléctrica, Universidad Central Marta Abreu de Las Villas,
  Santa Clara, Cuba.
 \end_layout
@@ -93,16 +96,23 @@ Aquí se encuentran las principales herramientas para el tratamiento de corpus
  textuales estudiados durante mi doctorado.
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 
 \series bold
 Palabras clave: 
 \end_layout
 
-\end_deeper
-\begin_layout Abstract
+\begin_layout Standard
 corpus, corpus de texto, procesamiento de lenguaje natural
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -163,7 +173,7 @@ Existencia de pantallas gráficas (y que no sean de consola).
 \end_layout
 
 \begin_layout Subsection
-Antconc
+AntConc
 \end_layout
 
 \begin_layout Standard
@@ -245,7 +255,7 @@ Accedido el: 24 de junio de 2014
 \end_layout
 
 \begin_layout Subsection
-UAM CorpusTOO
+UAM CorpusTool
 \end_layout
 
 \begin_layout Standard
@@ -656,7 +666,7 @@ Accedido el: 26 de junio de 2014
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Conclusiones
 \end_layout
 

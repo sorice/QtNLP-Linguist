@@ -23,11 +23,12 @@ parser.parse(open(xml_corpus))
 #~ print 'Elementos del Par de fragmentos[', handler.snippet_pair_id,'] = ',handler.snippet_pair[handler.snippet_pair_id]
 
 element = handler.getCase(kase)
+print 'element: ', element
  
 if element != None:
-	textoa = open(corpus_dir+'/susp/'+element[1]+'.txt','r').read().decode('utf-8') 
+	textoa = open(corpus_dir+'/susp/'+element[1]+'.txt','r').read()
 	susp_snippet = textoa[int(element[7]):int(element[7])+int(element[5])]
-	textob = open(corpus_dir+'/src/'+element[3]+'.txt','r').read().decode('utf-8') 
+	textob = open(corpus_dir+'/src/'+element[3]+'.txt','r').read()
 	src_snippet = textob[int(element[11]):int(element[11])+int(element[9])]
 
 	fuzzr = fuzz.ratio(susp_snippet,src_snippet)
