@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="menu">
+    <file>icons/menu_corpus.png</file>
+  </qresource>
+  <qresource prefix="toolbar">
+    <file>icons/validate_case.png</file>
+    <file>icons/redefine_boundaries.png</file>
+    <file>icons/view_annotation.png</file>
+    <file>icons/edit_case.png</file>
+    <file>icons/add_case.png</file>
+    <file>icons/menu_corpus.png</file>
+    <file>icons/add_algorithm_output.png</file>
+    <file>icons/add_corpus_doc.png</file>
+    <file>icons/close_corpus.png</file>
+    <file>icons/corpus_info.png</file>
+  </qresource>
+</RCC>
