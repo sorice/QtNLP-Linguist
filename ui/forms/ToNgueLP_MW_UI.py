@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'ToNgueLP_MW.ui'
 #
-# Created: Sun Oct  5 12:55:11 2014
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Thu Nov 20 17:34:12 2014
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,12 +12,21 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_ToNgueLP_MW(object):
     def setupUi(self, ToNgueLP_MW):
         ToNgueLP_MW.setObjectName(_fromUtf8("ToNgueLP_MW"))
-        ToNgueLP_MW.resize(910, 611)
+        ToNgueLP_MW.resize(953, 611)
         self.centralwidget = QtGui.QWidget(ToNgueLP_MW)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.gridLayout = QtGui.QGridLayout(self.centralwidget)
@@ -26,84 +35,10 @@ class Ui_ToNgueLP_MW(object):
         self.corpusTabs.setContextMenuPolicy(QtCore.Qt.PreventContextMenu)
         self.corpusTabs.setTabPosition(QtGui.QTabWidget.West)
         self.corpusTabs.setObjectName(_fromUtf8("corpusTabs"))
-        self.tab = QtGui.QWidget()
-        self.tab.setObjectName(_fromUtf8("tab"))
-        self.gridLayout_3 = QtGui.QGridLayout(self.tab)
-        self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
-        self.frame = QtGui.QFrame(self.tab)
-        self.frame.setMinimumSize(QtCore.QSize(216, 0))
-        self.frame.setMaximumSize(QtCore.QSize(216, 16777215))
-        self.frame.setObjectName(_fromUtf8("frame"))
-        self.gridLayout_2 = QtGui.QGridLayout(self.frame)
-        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
-        self.verticalLayout = QtGui.QVBoxLayout()
-        self.verticalLayout.setSpacing(0)
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.searchCase = QtGui.QLineEdit(self.frame)
-        self.searchCase.setMinimumSize(QtCore.QSize(200, 0))
-        self.searchCase.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.searchCase.setObjectName(_fromUtf8("searchCase"))
-        self.verticalLayout.addWidget(self.searchCase)
-        self.casesList = QtGui.QListView(self.frame)
-        self.casesList.setMinimumSize(QtCore.QSize(200, 0))
-        self.casesList.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.casesList.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
-        self.casesList.setObjectName(_fromUtf8("casesList"))
-        self.verticalLayout.addWidget(self.casesList)
-        self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
-        self.casesCount = QtGui.QLabel(self.frame)
-        self.casesCount.setObjectName(_fromUtf8("casesCount"))
-        self.horizontalLayout.addWidget(self.casesCount)
-        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
-        self.verticalLayout.addLayout(self.horizontalLayout)
-        self.gridLayout_2.addLayout(self.verticalLayout, 0, 0, 1, 1)
-        self.gridLayout_3.addWidget(self.frame, 0, 0, 1, 1)
-        self.casesWorkingArea = QtGui.QTabWidget(self.tab)
-        self.casesWorkingArea.setObjectName(_fromUtf8("casesWorkingArea"))
-        self.tab_3 = QtGui.QWidget()
-        self.tab_3.setObjectName(_fromUtf8("tab_3"))
-        self.gridLayout_4 = QtGui.QGridLayout(self.tab_3)
-        self.gridLayout_4.setObjectName(_fromUtf8("gridLayout_4"))
-        self.verticalLayout_2 = QtGui.QVBoxLayout()
-        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.sourceDoc = QtGui.QTextEdit(self.tab_3)
-        self.sourceDoc.setObjectName(_fromUtf8("sourceDoc"))
-        self.verticalLayout_2.addWidget(self.sourceDoc)
-        self.sourceInfo = QtGui.QLabel(self.tab_3)
-        self.sourceInfo.setObjectName(_fromUtf8("sourceInfo"))
-        self.verticalLayout_2.addWidget(self.sourceInfo)
-        self.line = QtGui.QFrame(self.tab_3)
-        self.line.setFrameShape(QtGui.QFrame.HLine)
-        self.line.setFrameShadow(QtGui.QFrame.Sunken)
-        self.line.setObjectName(_fromUtf8("line"))
-        self.verticalLayout_2.addWidget(self.line)
-        self.suspDoc = QtGui.QTextEdit(self.tab_3)
-        self.suspDoc.setObjectName(_fromUtf8("suspDoc"))
-        self.verticalLayout_2.addWidget(self.suspDoc)
-        self.suspInfo = QtGui.QLabel(self.tab_3)
-        self.suspInfo.setObjectName(_fromUtf8("suspInfo"))
-        self.verticalLayout_2.addWidget(self.suspInfo)
-        self.gridLayout_4.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
-        self.casesWorkingArea.addTab(self.tab_3, _fromUtf8(""))
-        self.tab_4 = QtGui.QWidget()
-        self.tab_4.setObjectName(_fromUtf8("tab_4"))
-        self.casesWorkingArea.addTab(self.tab_4, _fromUtf8(""))
-        self.tab_5 = QtGui.QWidget()
-        self.tab_5.setObjectName(_fromUtf8("tab_5"))
-        self.casesWorkingArea.addTab(self.tab_5, _fromUtf8(""))
-        self.gridLayout_3.addWidget(self.casesWorkingArea, 0, 1, 1, 1)
-        self.corpusTabs.addTab(self.tab, _fromUtf8(""))
-        self.tab_2 = QtGui.QWidget()
-        self.tab_2.setObjectName(_fromUtf8("tab_2"))
-        self.corpusTabs.addTab(self.tab_2, _fromUtf8(""))
         self.gridLayout.addWidget(self.corpusTabs, 0, 1, 1, 1)
         ToNgueLP_MW.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(ToNgueLP_MW)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 910, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 953, 27))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuCorpus = QtGui.QMenu(self.menubar)
         self.menuCorpus.setObjectName(_fromUtf8("menuCorpus"))
@@ -124,12 +59,10 @@ class Ui_ToNgueLP_MW(object):
         self.toolBar = QtGui.QToolBar(ToNgueLP_MW)
         self.toolBar.setContextMenuPolicy(QtCore.Qt.PreventContextMenu)
         self.toolBar.setMovable(False)
-        self.toolBar.setIconSize(QtCore.QSize(48, 48))
         self.toolBar.setFloatable(False)
         self.toolBar.setObjectName(_fromUtf8("toolBar"))
         ToNgueLP_MW.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
         self.toolBar_2 = QtGui.QToolBar(ToNgueLP_MW)
-        self.toolBar_2.setIconSize(QtCore.QSize(48, 48))
         self.toolBar_2.setObjectName(_fromUtf8("toolBar_2"))
         ToNgueLP_MW.addToolBar(QtCore.Qt.BottomToolBarArea, self.toolBar_2)
         self.actionLoad_New_Corpus = QtGui.QAction(ToNgueLP_MW)
@@ -250,85 +183,45 @@ class Ui_ToNgueLP_MW(object):
         self.toolBar_2.addAction(self.actionView_Annotation)
 
         self.retranslateUi(ToNgueLP_MW)
-        self.corpusTabs.setCurrentIndex(0)
-        self.casesWorkingArea.setCurrentIndex(0)
+        self.corpusTabs.setCurrentIndex(-1)
         QtCore.QMetaObject.connectSlotsByName(ToNgueLP_MW)
 
     def retranslateUi(self, ToNgueLP_MW):
-        ToNgueLP_MW.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "ToNgueLP", None, QtGui.QApplication.UnicodeUTF8))
-        self.searchCase.setPlaceholderText(QtGui.QApplication.translate("ToNgueLP_MW", "Search case?", None, QtGui.QApplication.UnicodeUTF8))
-        self.casesCount.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Total: 10", None, QtGui.QApplication.UnicodeUTF8))
-        self.sourceDoc.setHtml(QtGui.QApplication.translate("ToNgueLP_MW", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">By Earth911</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Wednesday, June 20, 2007</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic; color:#00ff00;\">In United States, about half the air pollution comes from cars and trucks. Two important ways to reduce air pollution are to drive less, even a little less, and to drive smart. Taking fewer trips in your car or truck helps cut air pollution. And adopting smart driving habits reduces your car’s emissions.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic; color:#00ff00;\">Driving less doesn’t mean you have to stay home. Try combining driving with alternative modes of transportation</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Carpool.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Walk or ride a bicycle.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Shop by phone or mail.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Ride public transit.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Driving smart keeps pollution at a minimum</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Accelerate gradually.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Use cruise control on the highway.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Obey the speed limit.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Combine your errands into one trip.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Keep your car tuned and support the smog check program.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Don’t top off at the gas pumps.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Replace your car’s air filter.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Keep your tires properly inflated.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">What about smoking vehicles?</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Contact the EPA’s Office of Air Quality Planning &amp; Standards,</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">When<span style=\" color:#000000;\"> shopping for your next car</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#000000;\">Look for the most efficient, lowest polluting model–or even use either a non-polluting car or zero emission vehicle. Check out these Web sites for information that will help you identify clean and fuel efficient vehicles in any part of the country:</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.sourceInfo.setText(QtGui.QApplication.translate("ToNgueLP_MW", "id = 278, src_name = src-doc45, length = 570 chars 70 words 5 sentences, orig_offset = 329", None, QtGui.QApplication.UnicodeUTF8))
-        self.suspDoc.setHtml(QtGui.QApplication.translate("ToNgueLP_MW", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">At this stage of research, scientists can not firmly link global warming to changes in circulation patterns. But one study by British and Italian scientists, reported recently in the journal Nature, examined data on atmospheric circulation over the  last 50 years  in the  Northern Hemisphere . <span style=\" font-style:italic; color:#ff0000;\">The researchers looked to see whether there had been any change in frequency of large-scale circulation regimes. The data revealed that there had : in recent decades, patterns had shifted to favor a warmer climate for most land areas in the  Northern Hemisphere . In a general warming of the globe, the air above those land areas would be expected to warm more than that above the oceans, because of differing abilities to absorb heat.</span> But the authors of the new study postulate that the change in circulation patterns is the main reason the land has lately warmed so much. That is, they say, the climate of the hemisphere shifts naturally back and forth between two dominant regimes. Both the  North Atlantic  and  North Pacific  oscillations are believed to be affected by this shift.</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.suspInfo.setText(QtGui.QApplication.translate("ToNgueLP_MW", "<html><head/><body><p>id = 367, src_name = susp-doc69, length = 489 chars 67 words 5 sentences, orig_offset = 125</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.casesWorkingArea.setTabText(self.casesWorkingArea.indexOf(self.tab_3), QtGui.QApplication.translate("ToNgueLP_MW", "Case 1", None, QtGui.QApplication.UnicodeUTF8))
-        self.casesWorkingArea.setTabText(self.casesWorkingArea.indexOf(self.tab_4), QtGui.QApplication.translate("ToNgueLP_MW", "Case 2", None, QtGui.QApplication.UnicodeUTF8))
-        self.casesWorkingArea.setTabText(self.casesWorkingArea.indexOf(self.tab_5), QtGui.QApplication.translate("ToNgueLP_MW", "Compare Cases", None, QtGui.QApplication.UnicodeUTF8))
-        self.corpusTabs.setTabText(self.corpusTabs.indexOf(self.tab), QtGui.QApplication.translate("ToNgueLP_MW", "Corpus X", None, QtGui.QApplication.UnicodeUTF8))
-        self.corpusTabs.setTabText(self.corpusTabs.indexOf(self.tab_2), QtGui.QApplication.translate("ToNgueLP_MW", "Corpus Y", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuCorpus.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Corpus", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuTools.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Tools", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuConfig.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Config", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuScripts.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Scripts", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuHelp.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Help", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuLogin.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Login", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBar.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "toolBar", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBar_2.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "toolBar_2", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionLoad_New_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Load New Corpus", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionAdd_New_Corpus_Doc.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add New Corpus Doc", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionCorpus_Information.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Corpus Information", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionClose_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Close Corpus", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionAdd_Algorithm_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add Algorithm Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionAdd_New_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add New Case", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionEdit_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Edit Case", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionValidate_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Validate Case", None, QtGui.QApplication.UnicodeUTF8))
-        self.action_Re_Define_Boundaries.setText(QtGui.QApplication.translate("ToNgueLP_MW", "(Re)Define Boundaries", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionView_Annotation.setText(QtGui.QApplication.translate("ToNgueLP_MW", "View Annotation", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSave_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Save Corpus", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSelect_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Select Parser", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSuggest_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Suggest Parser", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionMain_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Main View", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionComparison_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Comparison View", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionDictionary_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Dictionary View", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionConvert_Documents.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Convert Documents", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionVerify_Corpus_and_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Verify Corpus and Parser", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionGenerate_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Generate Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionCompare_Parser_Output_and_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare Parser Output and XML Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionGenerate_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Generate XML Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionCompare_Parser_and_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare Parser and XML Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionCompare_XMLs.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare XMLs", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionUpdate_XMLs_Info.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Update XMLs Info", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionAbout_ToNgueLP.setText(QtGui.QApplication.translate("ToNgueLP_MW", "About ToNgueLP", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionHelp.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Help", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionUser_s_Manual.setText(QtGui.QApplication.translate("ToNgueLP_MW", "User\'s Manual", None, QtGui.QApplication.UnicodeUTF8))
+        ToNgueLP_MW.setWindowTitle(_translate("ToNgueLP_MW", "ToNgueLP", None))
+        self.menuCorpus.setTitle(_translate("ToNgueLP_MW", "Corpus", None))
+        self.menuTools.setTitle(_translate("ToNgueLP_MW", "Tools", None))
+        self.menuConfig.setTitle(_translate("ToNgueLP_MW", "Config", None))
+        self.menuScripts.setTitle(_translate("ToNgueLP_MW", "Scripts", None))
+        self.menuHelp.setTitle(_translate("ToNgueLP_MW", "Help", None))
+        self.menuLogin.setTitle(_translate("ToNgueLP_MW", "Login", None))
+        self.toolBar.setWindowTitle(_translate("ToNgueLP_MW", "toolBar", None))
+        self.toolBar_2.setWindowTitle(_translate("ToNgueLP_MW", "toolBar_2", None))
+        self.actionLoad_New_Corpus.setText(_translate("ToNgueLP_MW", "Load New Corpus", None))
+        self.actionAdd_New_Corpus_Doc.setText(_translate("ToNgueLP_MW", "Add New Corpus Doc", None))
+        self.actionCorpus_Information.setText(_translate("ToNgueLP_MW", "Corpus Information", None))
+        self.actionClose_Corpus.setText(_translate("ToNgueLP_MW", "Close Corpus", None))
+        self.actionAdd_Algorithm_Output.setText(_translate("ToNgueLP_MW", "Add Algorithm Output", None))
+        self.actionAdd_New_Case.setText(_translate("ToNgueLP_MW", "Add New Case", None))
+        self.actionEdit_Case.setText(_translate("ToNgueLP_MW", "Edit Case", None))
+        self.actionValidate_Case.setText(_translate("ToNgueLP_MW", "Validate Case", None))
+        self.action_Re_Define_Boundaries.setText(_translate("ToNgueLP_MW", "(Re)Define Boundaries", None))
+        self.actionView_Annotation.setText(_translate("ToNgueLP_MW", "View Annotation", None))
+        self.actionSave_Corpus.setText(_translate("ToNgueLP_MW", "Save Corpus", None))
+        self.actionSelect_Parser.setText(_translate("ToNgueLP_MW", "Select Parser", None))
+        self.actionSuggest_Parser.setText(_translate("ToNgueLP_MW", "Suggest Parser", None))
+        self.actionMain_View.setText(_translate("ToNgueLP_MW", "Main View", None))
+        self.actionComparison_View.setText(_translate("ToNgueLP_MW", "Comparison View", None))
+        self.actionDictionary_View.setText(_translate("ToNgueLP_MW", "Dictionary View", None))
+        self.actionConvert_Documents.setText(_translate("ToNgueLP_MW", "Convert Documents", None))
+        self.actionVerify_Corpus_and_Parser.setText(_translate("ToNgueLP_MW", "Verify Corpus and Parser", None))
+        self.actionGenerate_Output.setText(_translate("ToNgueLP_MW", "Generate Output", None))
+        self.actionCompare_Parser_Output_and_XML_Output.setText(_translate("ToNgueLP_MW", "Compare Parser Output and XML Output", None))
+        self.actionGenerate_XML_Output.setText(_translate("ToNgueLP_MW", "Generate XML Output", None))
+        self.actionCompare_Parser_and_XML_Output.setText(_translate("ToNgueLP_MW", "Compare Parser and XML Output", None))
+        self.actionCompare_XMLs.setText(_translate("ToNgueLP_MW", "Compare XMLs", None))
+        self.actionUpdate_XMLs_Info.setText(_translate("ToNgueLP_MW", "Update XMLs Info", None))
+        self.actionAbout_ToNgueLP.setText(_translate("ToNgueLP_MW", "About ToNgueLP", None))
+        self.actionHelp.setText(_translate("ToNgueLP_MW", "Help", None))
+        self.actionUser_s_Manual.setText(_translate("ToNgueLP_MW", "User\'s Manual", None))
 
 import resources_rc
