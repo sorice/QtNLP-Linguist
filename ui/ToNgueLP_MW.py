@@ -243,6 +243,7 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       info += 'Country: ' + corpus_info[5] + '<br/>'
       info += 'Created: ' + corpus_info[6] + '<br/>'
       info += 'Changed: ' + corpus_info[7] + '<br/>'
+      info += 'Total Cases:' + str(corpus_info[8]) + '<br/>'
       QMessageBox.information(self, self.appName, info)
 
 

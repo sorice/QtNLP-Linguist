@@ -62,16 +62,13 @@ class CorpusHandler(ContentHandler):
          for tuple in string.split(';'):
             for value in tuple.split(':'):
                array.append(value)
-         #~ print 'arreglo: ', array
 
          array.append(str(attrs.getValue('id')))
 
          self.snippet_pair[self.snippet_pair_id] = array
-         #~ print 'esto es de tipo: ', type(self.snippet_pair[self.snippet_pair_id])
 
       self.elements += 1
       self.indent += 1
-
 
    def endElement(self, name):
       self.indent -= 1

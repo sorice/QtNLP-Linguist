@@ -4,7 +4,8 @@
 from ToNgueLP_Parser import *
 from xml.sax import SAXParseException
 #from fuzzywuzzy import fuzz
-import time
+from scripts import update_corpus_xml_info
+
 
 class Corpus_Reader:
    """Corpus parser general class"""
@@ -15,12 +16,13 @@ class Corpus_Reader:
       self.__src_snippet = ''
       self.__corpus_dir = ''
       self.__corpus_file = ''
-      #~ kase = input('Entre el número del caso que desea revisar: ')
-      #self.__case_number = -1
+      self.__first_run = True
+
       # XML parser & handler
       self.__handler = CorpusHandler()
       self.__parser = make_parser()
       self.__parser.setContentHandler(self.__handler)
+      
 
       # helper flag
       self.__parsed = False
@@ -37,6 +39,8 @@ class Corpus_Reader:
       try:
          self.__parser.parse(open(self.__corpus_file))
          self.__parsed = True
+         if self.__parsed:
+            self.__first_run = False
       except SAXParseException as e:
          self.__parsed = False
 
@@ -86,9 +90,14 @@ class Corpus_Reader:
 
    def get_corpus_total_cases(self):
       """Return corpus total cases"""
+      __info = update_corpus_xml_info.Update_Corpus_XML_Info()
 
-      if not self.__parsed:
+      if not self.__parsed: # Si no abrió el .XML ents...
          return None
+      elif self.__first_run: # Sí es la primera vez que se solicita el # total de casos...
+         return self.__handler.total_cases
+      else: # de lo contrario, verifica el número de pares de fragmentos
+         self.__handler.total_cases = __info.snippet_pair_count()
 
       return self.__handler.total_cases
 
@@ -101,7 +110,7 @@ class Corpus_Reader:
 
       return (self.__handler.corpus_name, self.__handler.version, self.__handler.lang,
          self.__handler.owners, self.__handler.authors, self.__handler.country,
-         self.__handler.creation_date, self.__handler.last_modification_date)
+         self.__handler.creation_date, self.__handler.last_modification_date, self.__handler.total_cases)
 
 '''   fuzzr = fuzz.ratio(susp_snippet,src_snippet)
 
