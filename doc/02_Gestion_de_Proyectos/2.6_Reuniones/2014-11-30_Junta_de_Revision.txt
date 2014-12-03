@@ -15,7 +15,12 @@ Asisten: Abel y Leonel.
 	* Hay que verificar si el texto tiene más caracteres por encima o por debajo del caso.
 - 10mo: usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP, así se harán más cortos los nombres.
 
-**********************+
+Acuerdos de la junta de Revisión de Octubre 2014
+****************************************************
+
+Objetivos de la junta de Revisión de Octubre 2014
+******************************************************
+
 (dejar los acuerdos y borrar lo otro después)
 Puntos iniciales:
 1- Diferencias entre la interfaz en Qt y el prototipo.
@@ -35,7 +40,7 @@ Adicionales surgidos en el encuentro
 9- Revisar aspectos del correo que me envió el 10/9/2014.
 10- Portar repo de Escorpus de Git a Hg.
 11- Ayuda adicional con el dónde encontrar la definición de los elementos de UI de Qt, Bootstrap y ExtJs para hacer artículo de UX vs PDS en inglés.
-****************
+
 
 1- Diferencias entre interfaz Qt y prototipo
 A: se agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
