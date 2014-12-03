@@ -1,0 +1,95 @@
+Reunión de la Junta de Revisión
+Objetivo: Revisar el diseño de la versión 0.2.1 en Qt4.
+Asisten: Abel y Leonel.
+
+- 1ro: Mover “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”. El área del susp será la del src (debajo para mejorar la usabilidad, pues los usuarios trabajarán más en el susp, y es mejor ponerlo arriba)
+- 2do: intercambiar el orden de “susp Case Text” y “susp Case Bar Data”. Ahora quedaría “susp Case Bar Data” primero mostrando la información sobre el texto. Esto da la posibilidad de nombrar el área del texto, pues no se sabe que área es cual.
+- 3ro: idem para los componentes del src.
+- 4to: Acordamos usar un "nombre clave" basado en nombres de grandes personalidades de la lingüística, palabras con semánticas profundas poco conocidas, palabras en latín...
+- 5to: en los casos usar una descripción en el "list case". O sea agregarles un identificador textual para buscar, ej Case n: descripción.
+- 6to: probar agregar color del tipo de plagio al list case.
+- 7mo: agregar al diagrama de estados del load-corpus un sub estado antes de cargarlo que verifique la integridad de los datos que hacen falta.
+
+- 8vo: programar cerrar los tabs.
+- 9no: poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
+	* Hay que verificar si el texto tiene más caracteres por encima o por debajo del caso.
+- 10mo: usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP, así se harán más cortos los nombres.
+
+**********************+
+(dejar los acuerdos y borrar lo otro después)
+Puntos iniciales:
+1- Diferencias entre la interfaz en Qt y el prototipo.
+2- Revisar ejemplo en pyqt
+	* ejemplos de config p/ c++ ¿se mantiene esto o hay que que hacer otra cosa? ¿Existe alguna config x defecto para QtCreator en el proyecto ToNgueLP?
+	* Valoración personal de Leonel de Qt5 o QML.
+3- Programar conexión del lector de XML
+	Objetivo: visualizar corpus reducido v0.1 que le había mandado por correo.
+4- Programar conexión del escritor de XML
+	Objetivo: introducir un ejemplo básico, o sea solo los txt src y susp datos de pos y length -> y que se visualice en la interfaz.
+5- Exponerle new ideas de la interfaz a partir del estudio de UX a Sistemas de Detección de Plagio(PDS), v2.0 de ToNgueLP.
+	Objetivo: no es para programar, solo evaluar y compartir información.
+6- Analizar algunos estándares de documentación con python-sphinx.
+7- Documento sobre Arq. de Software de Doclux.
+Adicionales surgidos en el encuentro
+8- Carpeta test, para tener todos los recursos de las pruebas de caja blanca.
+9- Revisar aspectos del correo que me envió el 10/9/2014.
+10- Portar repo de Escorpus de Git a Hg.
+11- Ayuda adicional con el dónde encontrar la definición de los elementos de UI de Qt, Bootstrap y ExtJs para hacer artículo de UX vs PDS en inglés.
+****************
+
+1- Diferencias entre interfaz Qt y prototipo
+A: se agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
+Search y Case List -> Fixed Width
+
+A: Leonel debe confeccionar el esqueleto de la Vista Principal. Luego los otros esqueletos en su momento.
+
+A: Loguin - No es una prioridad ahora. Leonel dice que se puede programar luego.
+	- Cuando se haga definir lo que está habilitado o no.
+
+2- Ejemplo pyqt
+Leonel me explicó como se conecta la UI a través de SLOT y en una segunda variante utilizando Decoradores.
+
+Observación: No se utilizará QtCreator en el proyecto. Hay que programar en Geany y conectar utilizando "tu propio talento"
+
+Abel copió de Leonel los libros de pyqt para estudiar los ejemplos.
+A: Abel hará un ejemplo el mismo estudiando este ejemplo base para coger habilidades con Qt.
+
+3- Programar conexión del lector de XML
+Se logró mostrar en la consola al ejecutar ToNgueLP.py los casos del corpus v0.1
+A: Abel programar bien esta clase con todos sus métodos.
+
+A: Hay que hacer una capa de abstracción para la comunicación de los diferentes parsers con la interfaz.
+
+A: Cambiar todos los tabs por 3 espacios.
+
+A: Instalar python2.7-doc para poder programar y buscar rapidamente en /usr/share/doc/python2.7/html los métodos que tiene cada paquete.
+
+4- Programar conexión del escritor de XML
+A: Abel hará esto luego. 3ra iteración.
+
+5- Discutidas nuevas ideas de la interfaz, solo informativo para Leonel quedará escrito en los artículos de Abel.
+
+A: Especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), 
+	Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora.
+
+6- Analizar algunos estándares de documentación con python-sphinx.
+A: Documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+A: Nomenclatura de los .py: ToNgueLP_<Modulo o Paquete>_<funcionalidad>.py
+Ej: ToNgueLP_corpus_parser.py
+
+A: Los nombres de los ficheros no deben tener signos '-', si los tiene python no puede leer esta carpeta como un paquete.
+
+7- Documento sobre Arq. de Software de Doclux.
+A: Hay que escribirlo porque está desactualizado.
+
+9- Revisar aspectos del correo que me envió el 10/9/2014.
+Revisado y todos los temas fueron cubiertos en los otros puntos. En la programación del XML_reader tuvimos que hacer la captura del path donde estamos para luego llamar a una función que está en otro lugar donde está el ámbito.
+
+10- Portar el repo de Git a Hg
+Intentado pero no logrado.
+Se hizo el último commit.
+A: Abel estudiará como hacer esto.
+A: Leonel y Abel irán haciendo commits con git.
+ 
+Documentado por: Abel Meneses
+fecha: 1/11/2014

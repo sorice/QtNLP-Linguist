@@ -39,10 +39,11 @@ class Corpus_Reader:
       try:
          self.__parser.parse(open(self.__corpus_file))
          self.__parsed = True
-         if self.__parsed:
-            self.__first_run = False
       except SAXParseException as e:
          self.__parsed = False
+      
+      if self.__parsed:
+         self.__first_run = False
 
       return self.__parsed
 
