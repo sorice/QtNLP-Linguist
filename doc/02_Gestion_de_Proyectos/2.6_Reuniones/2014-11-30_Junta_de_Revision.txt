@@ -3,26 +3,95 @@ Objetivo: Revisar el diseño de la versión 0.2.1 en Qt4.
 Asisten: Abel y Leonel.
 
 - 1ro: Mover “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”. El área del susp será la del src (debajo para mejorar la usabilidad, pues los usuarios trabajarán más en el susp, y es mejor ponerlo arriba)
+
+A: Leonel lo moverá en el UI.
+A: Abel lo cambiará en el diseño de la Arq. de Inf.
+
 - 2do: intercambiar el orden de “susp Case Text” y “susp Case Bar Data”. Ahora quedaría “susp Case Bar Data” primero mostrando la información sobre el texto. Esto da la posibilidad de nombrar el área del texto, pues no se sabe que área es cual.
+
+A: Leonel lo moverá en el UI.
+A: Abel lo cambiará en el diseño de la Arq. de Inf.
+
 - 3ro: idem para los componentes del src.
+
+A: Leonel lo moverá en el UI.
+A: Abel lo cambiará en el diseño de la Arq. de Inf.
+
 - 4to: Acordamos usar un "nombre clave" basado en nombres de grandes personalidades de la lingüística, palabras con semánticas profundas poco conocidas, palabras en latín...
-- 5to: en los casos usar una descripción en el "list case". O sea agregarles un identificador textual para buscar, ej Case n: descripción.
-- 6to: probar agregar color del tipo de plagio al list case.
+
+A: Nombre clave primer release 'Sassure'
+
+- 5to: en los casos usar una descripción en el "list case". O sea agregarles un identificador textual para usar como información en el "search case list", ej Case n: descripción.
+
+A: ¿Cómo hacer esto? Se agrega al XML? se mostrará en el componente 'List Case'
+
+- 6to: Probar agregar color del tipo de plagio al elemento correspondiente en el list case.
+
+A: Leonel probar agregar color del tipo de plagio al elemento correspondiente en el list case.
+
 - 7mo: agregar al diagrama de estados del load-corpus un sub estado antes de cargarlo que verifique la integridad de los datos que hacen falta.
 
+A: Abel deberá diagramar lo que ya hizo en el UI de verificar el 'total_corpus_cases', pero ahora genérico para la verificación de todas las informaciones verificables automáticamente. Ej: total_real_cases, total_corpus_cases, o los casos nomenclados como <phenomenon type="literal_plagiarism"(esto se puede hacer automáticamente teniendo los casos con la función de string matching, usar cualquiera de la biblioteca externa que tengo que funciona con hash y otras cosas, ver mis experimentos de hash fingerprints. O usar el fuzzy para eliminar problemas de espacios, cambios menores, o una simple comparación de cadenas en python)
+
 - 8vo: programar cerrar los tabs.
-- 9no: poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
+
+A: Leonel: revisará como se hace esto. Activar el Ctrl+w para cerrarlas por teclado.
+
+- 9no: Poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
+	* Hay que verificar si el texto existe. (pensar en P4P que no sabemos cuales son los textos)
 	* Hay que verificar si el texto tiene más caracteres por encima o por debajo del caso.
-- 10mo: usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP, así se harán más cortos los nombres.
+	* Revisar los mensajes de 'out of range' que está dando la interfaz en la consola.
+	* Una vez creada la propiedad del susp_text_margen y src_text_margen en la interfaz, utilizar los colores por tipología para marcar los textos.
+	* Definir los colores que mejor se ven para las 6 tipologías.
+	* Revisar si es posible hacer subrayado de palabras. (esto es para marcar las palabras que tienen implicación en la paráfrasis en el texto ya resaltado con un color)
+
+- 10mo: Usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP, así se harán más cortos los nombres.
+
+A:Leonel cambiar todos los nombres de los ficheros con esta nueva regla.
+
+A: Abel Incluir en el estilo de código usar las siglas TNLP para sustituir ToNgueLP en los nombres de todos los ficheros.
+
+Otras tareas:
+UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
+- Leonel agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
+Search y Case List -> Fixed Width
+- Abel especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), 
+	Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora.
+- Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+- Abel Incluir la carpeta test en la raíz del proyecto.
+- Abel, de forma experimental programar la primera clase con unit-test que será Test_Load_Corpus, será probado con el TNLP_plag_cases_corpus.xml
+- Leonel programar de forma experimental(alfa) 'Insertar un caso'.
+
+Miembro camagüeyano del equipo:
+- Sacar 200 artículos de la wikipedia sobre computación.
+- Julio y él definirán las temáticas: Ej.: 'Ingeniería de Software', 'Inteligencia Artificial', 'Programación', 'Base de Datos'.
+- (como aún no se puede insertar casos en ToNgueLP) Deberá construir los snippet_pairs de forma manual.
 
 Acuerdos de la junta de Revisión de Octubre 2014
 ****************************************************
+[I]A: se agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
+Search y Case List -> Fixed Width
+[OK]A: Leonel debe confeccionar el esqueleto de la Vista Principal. Luego los otros esqueletos en su momento.
+[P]A: Loguin - No es una prioridad ahora. Leonel dice que se puede programar luego.
+	- Cuando se haga definir lo que está habilitado o no.
+[I]A: Abel hará un ejemplo el mismo estudiando este ejemplo base para coger habilidades con Qt.
+[OK, Leonel lo hizo]A: Abel programar bien la clase de lectura del XML corpus de ToNgueLP con todos sus métodos.
+[P]A: Hay que hacer una capa de abstracción para la comunicación de los diferentes parsers con la interfaz.
+[OK]A: Cambiar todos los tabs por 3 espacios.
+[OK]A: Abel Instalar python2.7-doc para poder programar y buscar rapidamente en /usr/share/doc/python2.7/html los métodos que tiene cada paquete.
+[OK, solución inicial con lib 'python-re']A: Abel programará el escritor de XML. 3ra iteración.
+[I]A: Abel especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), 
+	Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora.
+[I]A: Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+[Permanente, poner en el estilo de código]A: Nomenclatura de los .py: ToNgueLP_<Modulo o Paquete>_<funcionalidad>.py
+Ej: ToNgueLP_corpus_parser.py
+[Permanente, poner en el estilo de código]A: Los nombres de los ficheros no deben tener signos '-', si los tiene python no puede leer esta carpeta como un paquete.
+[I]A: Documento sobre Arq. de Software de Doclux hay que re-escribirlo porque está desactualizado.
+[OK, se optó por bzr]A: Abel estudiará como portar el repo de Git a Hg.
+[OK]A: Leonel y Abel irán haciendo commits con git.
 
 Objetivos de la junta de Revisión de Octubre 2014
 ******************************************************
-
-(dejar los acuerdos y borrar lo otro después)
-Puntos iniciales:
 1- Diferencias entre la interfaz en Qt y el prototipo.
 2- Revisar ejemplo en pyqt
 	* ejemplos de config p/ c++ ¿se mantiene esto o hay que que hacer otra cosa? ¿Existe alguna config x defecto para QtCreator en el proyecto ToNgueLP?
@@ -41,60 +110,5 @@ Adicionales surgidos en el encuentro
 10- Portar repo de Escorpus de Git a Hg.
 11- Ayuda adicional con el dónde encontrar la definición de los elementos de UI de Qt, Bootstrap y ExtJs para hacer artículo de UX vs PDS en inglés.
 
-
-1- Diferencias entre interfaz Qt y prototipo
-A: se agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
-Search y Case List -> Fixed Width
-
-A: Leonel debe confeccionar el esqueleto de la Vista Principal. Luego los otros esqueletos en su momento.
-
-A: Loguin - No es una prioridad ahora. Leonel dice que se puede programar luego.
-	- Cuando se haga definir lo que está habilitado o no.
-
-2- Ejemplo pyqt
-Leonel me explicó como se conecta la UI a través de SLOT y en una segunda variante utilizando Decoradores.
-
-Observación: No se utilizará QtCreator en el proyecto. Hay que programar en Geany y conectar utilizando "tu propio talento"
-
-Abel copió de Leonel los libros de pyqt para estudiar los ejemplos.
-A: Abel hará un ejemplo el mismo estudiando este ejemplo base para coger habilidades con Qt.
-
-3- Programar conexión del lector de XML
-Se logró mostrar en la consola al ejecutar ToNgueLP.py los casos del corpus v0.1
-A: Abel programar bien esta clase con todos sus métodos.
-
-A: Hay que hacer una capa de abstracción para la comunicación de los diferentes parsers con la interfaz.
-
-A: Cambiar todos los tabs por 3 espacios.
-
-A: Instalar python2.7-doc para poder programar y buscar rapidamente en /usr/share/doc/python2.7/html los métodos que tiene cada paquete.
-
-4- Programar conexión del escritor de XML
-A: Abel hará esto luego. 3ra iteración.
-
-5- Discutidas nuevas ideas de la interfaz, solo informativo para Leonel quedará escrito en los artículos de Abel.
-
-A: Especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), 
-	Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora.
-
-6- Analizar algunos estándares de documentación con python-sphinx.
-A: Documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
-A: Nomenclatura de los .py: ToNgueLP_<Modulo o Paquete>_<funcionalidad>.py
-Ej: ToNgueLP_corpus_parser.py
-
-A: Los nombres de los ficheros no deben tener signos '-', si los tiene python no puede leer esta carpeta como un paquete.
-
-7- Documento sobre Arq. de Software de Doclux.
-A: Hay que escribirlo porque está desactualizado.
-
-9- Revisar aspectos del correo que me envió el 10/9/2014.
-Revisado y todos los temas fueron cubiertos en los otros puntos. En la programación del XML_reader tuvimos que hacer la captura del path donde estamos para luego llamar a una función que está en otro lugar donde está el ámbito.
-
-10- Portar el repo de Git a Hg
-Intentado pero no logrado.
-Se hizo el último commit.
-A: Abel estudiará como hacer esto.
-A: Leonel y Abel irán haciendo commits con git.
- 
 Documentado por: Abel Meneses
-fecha: 1/11/2014
+fecha: 31/11/2014
