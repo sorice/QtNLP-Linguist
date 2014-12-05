@@ -61,6 +61,7 @@ Search y Case List -> Fixed Width
 - Abel Incluir la carpeta test en la raíz del proyecto.
 - Abel, de forma experimental programar la primera clase con unit-test que será Test_Load_Corpus, será probado con el TNLP_plag_cases_corpus.xml
 - Leonel programar de forma experimental(alfa) 'Insertar un caso'.
+- Abel programar la lectura de los .txt de los corpus comprimidos, o sea verificar si están comprimidos y leer, luego leer si no lo están.(ejemplo de esto en el libro Think Stats, se importa la biblioteca gzip en el código survey.py)
 
 Miembro camagüeyano del equipo:
 - Sacar 200 artículos de la wikipedia sobre computación.
