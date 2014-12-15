@@ -1,0 +1,46 @@
+Reunión de la Junta de Revisión
+Objetivo: Revisar el diseño de la versión 0.3.
+Asisten: Abel y Leonel.
+
+Objetivos desglosados:
+- Hay que revisar que se hará con el doc estilo de código porque el original de SXP está en muy malas condiciones.
+
+Acuerdos de la junta de Revisión de Nov 2014
+****************************************************
+A: Leonel lo moverá en el UI “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.
+A: Abel cambiará en el diseño de la Arq. de Inf “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.
+A: Leonel en el UI intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.
+A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.
+A: Leonel en el UI intercambiar el orden de “src Case Text” y “src Case Bar Data”.
+A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “src Case Text” y “src Case Bar Data”.
+A: Nombre clave primer release 'Sassure'
+A: usar una descripción en el "list case", o sea agregarles un identificador textual para usar como información en el "search case list". ¿Cómo hacer esto? Se agrega al XML? se mostrará en el componente 'List Case'.
+A: Leonel probar agregar color del tipo de plagio al elemento correspondiente en el list case.
+A: Abel deberá diagramar lo que ya hizo en el UI de verificar el 'total_corpus_cases', pero ahora genérico para la verificación de todas las informaciones verificables automáticamente. Ej: total_real_cases, total_corpus_cases, o los casos nomenclados como <phenomenon type="literal_plagiarism"(esto se puede hacer automáticamente teniendo los casos con la función de string matching, usar cualquiera de la biblioteca externa que tengo que funciona con hash y otras cosas, ver mis experimentos de hash fingerprints. O usar el fuzzy para eliminar problemas de espacios, cambios menores, o una simple comparación de cadenas en python)
+A: Leonel: revisará como se hace esto. Activar el Ctrl+w para cerrarlas por teclado.
+A: Leonel poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
+A:Leonel cambiar todos los nombres de los ficheros con esta nueva regla: Usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP.
+A: Abel Incluir en el estilo de código usar las siglas TNLP para sustituir ToNgueLP en los nombres de todos los ficheros.[OK, 14/12/2014, incluido en la gest de configuración]
+Otras tareas:
+- Leonel UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
+- Leonel agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
+Search y Case List -> Fixed Width
+- Abel especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), 
+	Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora.
+- Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+- Abel Incluir la carpeta test en la raíz del proyecto.
+- Abel, de forma experimental programar la primera clase con unit-test que será Test_Load_Corpus, será probado con el TNLP_plag_cases_corpus.xml
+- Leonel programar de forma experimental(alfa) 'Insertar un caso'.
+- Abel programar la lectura de los .txt de los corpus comprimidos, o sea verificar si están comprimidos y leer, luego leer si no lo están.(ejemplo de esto en el libro Think Stats, se importa la biblioteca gzip en el código survey.py)
+
+Miembro camagüeyano del equipo:
+- Sacar 200 artículos de la wikipedia sobre computación.
+- Julio y él definirán las temáticas: Ej.: 'Ingeniería de Software', 'Inteligencia Artificial', 'Programación', 'Base de Datos'.
+- (como aún no se puede insertar casos en ToNgueLP) Deberá construir los snippet_pairs de forma manual.
+
+Objetivos de la junta de Revisión de Nov 2014
+******************************************************
+Revisar el diseño de la versión 0.2.1 en Qt4.
+
+Documentado por: Abel Meneses
+fecha: 31/11/2014
