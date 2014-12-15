@@ -55,7 +55,7 @@ Guía de Usuario
 Guía de Desarrollo
 *******************
 
-Esta sección está orientada a desarrolladores activos o entusiastas futuros desarrolladores de |EScorpus|. Ha sido dividida en dos partes **Arquitectura** y **Dev DOC** para ayudar a los desarrolladores con las dos cuestiones más importantes:
+Esta sección está orientada a desarrolladores activos, o entusiastas futuros desarrolladores de |EScorpus|. Ha sido dividida en dos partes **Arquitectura** y **Dev DOC** para ayudar a los desarrolladores con las dos cuestiones más importantes:
 
  * Básicamente, ¿cómo está constituida la estructura de |EScorpus|?
  * ¿Dónde puedo leer la documentación del proceso de desarrollo de |EScorpus|?  

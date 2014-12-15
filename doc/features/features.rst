@@ -3,7 +3,7 @@
 Funcionalidades
 *******************
 
-En esta sección se descripen los procesos que ocurren en EScorpus así como el 100% de las funcionalidades de la aplicación. También contenidas en el documento LRP de la documentación de desarrollo.
+En esta sección se descripen los procesos que ocurren en |EScorpus| así como el 100% de las funcionalidades de la aplicación. También contenidas en el documento LRP de la documentación de desarrollo.
 
 Procesos
 ==========
@@ -21,4 +21,4 @@ Procesos
 Funcionalidades
 =================
 
-
+.. |EScorpus| replace:: ToNgueLP

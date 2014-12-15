@@ -15,7 +15,7 @@ View Level
 Control Level
 ================
 
-Breve lista de los procesos que ocurren en EScorpus:
+Breve lista de los procesos que ocurren en |EScorpus|:
 
 1. **Preprocesamiento:** Convertir todos los docs al formato ZZZdoc.xml.
 2. **Estandarización** de salidas de algoritmos: Convertir carpeta out en un único XML.
@@ -27,18 +27,18 @@ Breve lista de los procesos que ocurren en EScorpus:
 Data Model
 ==============
 
-EScorpus no usa gestor de BD relacional o no relacional. La persistencia de sus datos se garantizan a través de XMLs diseñados para cada función de la aplicación.
+|EScorpus| no usa gestor de BD relacional o no relacional. La persistencia de sus datos se garantizan a través de XMLs diseñados para cada función de la aplicación.
 
 * `XML del Corpus de casos de Plagio  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/EScorpusYYY-plag-cases-corpus.html>`_
-	XML propio de EScorpus con el corpus etiquetado de los casos de plagio parafrástico manualmente anotados. Está basada en un artículo [1]_ dedicado a la creación del primer corpus de paráfrasis para la detección de plagio.
+	XML propio de |EScorpus| con el corpus etiquetado de los casos de plagio parafrástico manualmente anotados. Está basada en un artículo [1]_ dedicado a la creación del primer corpus de paráfrasis para la detección de plagio.
 * `XML base de todos los documentos <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/ZZZdoc.html>`_
-	Formato XML de todos los textos contenidos en EScorpus. Contienen información de los textos originales extraídas con diferentes técnicas NLP.
+	Formato XML de todos los textos contenidos en |EScorpus|. Contienen información de los textos originales extraídas con diferentes técnicas NLP.
 * `Reporte XML de casos detectados  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-plag-report.html>`_
 	XML de casos detectados por el **Algoritmo-XXX**
 * `Reporte XML de los datos del Algoritmo-XXX  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-data-report.html>`_
 	XML con datos del **Algoritmo-XXX** antes y después del proceso de comparación.
 
-Módulos de EScorpus
+Módulos de |EScorpus|
 =======================
 
 * Módulo principal o **Linguist View**.

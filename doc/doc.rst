@@ -11,7 +11,7 @@ Dev DOC
 * Cada clase o método programado podrá ser leído en esta documentación, en el momento necesario.
 * No se expone al desarrollador a leer la titánica lista de funciones de una en una para adivinar sus relaciones.
 
-:ver más: `Artefactos entregados ordenados según el proceso <../_static/EScorpus.html>`_
+:ver más: `Artefactos entregados ordenados según el proceso <../_static/ToNgueLP.html>`_
 
 :dependencias: Para abrir/editar los documentos deberá tener instalados:
 
@@ -38,7 +38,7 @@ DOCs Editables
 
 :Nota: para leer esta sección usted deberá poseer el proyecto |EScorpus| con su carpeta **doc**.
 
-	`Expediente editable <../../doc/EScorpus.html>`_
+	`Expediente editable <../../doc/ToNgueLP.html>`_
 
 :dependencias: Para abrir/editar los documentos deberá tener instalados:
 
