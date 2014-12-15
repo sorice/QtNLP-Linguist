@@ -11,13 +11,13 @@ Arquitectura
 
 	Sistema de ficheros raíz de |EScorpus|
 
-* :ref:`bin <ToNgueLP_bin_path>`:
+* :ref:`bin <ToNgueLP_bin_path>`: *Binarios de la aplicación.*
 * :ref:`config <ToNgueLP_config_file>`: *Datos de configuración, idioma,...*
 * :ref:`EScorpus_data`: *Ubicación de los datos, corpus de paráfrasis en español en formato XML, diccionarios utilizados para el Procesamiento del Lenguaje Natural.*
 * :ref:`EScorpus_doc`: *Contiene el expediente de proyecto usando la metodología SXP, además de otros recursos importantes, como las imágenes, para generar esta documentación web.*
 * :ref:`EScorpus_libraries`: *Bibliotecas externas necesarias para ejecutar el proyecto con éxito.*
 * :ref:`modules <EScorpus_modules>`: *Módulos o plugins que componen la aplicación.*
-* :ref:`scripts <ToNgueLP_scripts_path>`: *Scripts necesarios para el funcionamiento del negocio de ToNgueLP.*
+* :ref:`scripts <ToNgueLP_scripts>`: *Scripts necesarios para el funcionamiento del negocio de ToNgueLP.*
 * :ref:`ui <ToNgueLP_ui_file>`: *GUIs en Qt*
 
 Copyright
