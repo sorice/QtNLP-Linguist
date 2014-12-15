@@ -15,7 +15,7 @@ from ui.ToNgueLP_MW import ToNgueLP_MW
 
 # global app information
 appName = "ToNgueLP"
-appVersion = "0.1"
+appVersion = "0.2.1"
 
 if __name__ == '__main__':
    # create application

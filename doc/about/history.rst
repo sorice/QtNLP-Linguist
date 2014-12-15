@@ -11,17 +11,22 @@ El proyecto nace en el año 2014 durante el trabajo de doctorado de Abel Meneses
 Ppales momentos
 **********************************
 
-* 8/04/2014, Leonel y Abel escriben las primeras ideas.
-* 21/06/2014, Abel genera la estructura de carpetas RC1 y también la DOC Alfa-0.1.
-* 21/08/2014, Abel termina el primer ejemplo del parser del corpus de ToNgueLP. Y es enviado a Leonel.
-* 8/9/2014, Abel genera los diagramas de estados de la Vista Principal. La arquitectura de información queda bastante definida.
-* 28/09/2014, Abel genera la versión Beta-0.2 de la DOC.
+* 29/06/2014, Abel realiza el primer prototipo de la Vista Principal o de Lingüistas.
+* 21/11/2014, Leonel y Abel generan la primera versión funcional del prototipo, que carga el corpus y calcula la cantidad de casos contenidos en el corpus. Sale también el primer script precisamente de cálculo de los casos automáticamente.
 
 Historia
 ************
 
 2014
 ------
+
+* 8/04/2014, Leonel y Abel escriben las primeras ideas.
+* 21/06/2014, Abel genera la estructura de carpetas RC1 y también la DOC Alfa-0.1.
 * 29/06/2014, Abel realiza el primer prototipo de la Vista Principal o de Lingüistas.
+* 21/08/2014, Abel termina el primer ejemplo del parser del corpus de ToNgueLP. Y es enviado a Leonel.
+* 8/9/2014, Abel genera los diagramas de estados de la Vista Principal. La arquitectura de información queda bastante definida.
+* 28/09/2014, Abel genera la versión Beta-0.2 de la DOC.
+* ../10/2014, Leonel diseña el prototipo en Qt.
+* 21/11/2014, Leonel y Abel generan la primera versión funcional del prototipo, que carga el corpus y calcula la cantidad de casos contenidos en el corpus. Sale también el primer script precisamente de cálculo de los casos automáticamente.
 
 .. |EScorpus| replace:: ToNgueLP
