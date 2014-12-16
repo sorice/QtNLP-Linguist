@@ -3,24 +3,47 @@ Objetivo: Revisar el diseño de la versión 0.3.
 Asisten: Abel y Leonel.
 
 Objetivos desglosados:
-- Hay que revisar que se hará con el doc estilo de código porque el original de SXP está en muy malas condiciones.
+- Código de colores que me pidió Leonel en su correo del 12/12/2014. Añadido en la vista principal en la documentación Sphinx.
+
+1- Hay que revisar que se hará con el doc estilo de código porque el original de SXP está en muy malas condiciones.
+
+2- Probé con éxito generar documentación desde dentro del código de una clase.
+
+3- El tema de las pruebas es enorme!!! Hoy instalé una biblioteca adicional a las que ya tenía que me permitirán estudiar a ver si para cuando nos veamos en enero puedo enseñarte algún set de pruebas decentes. Se puede integrar bazaar con el sistemas de pruebas.
+
+4- Cuando te refieras a un XML en particular por favor usa los nombres que están en la documentación supongo que te refieres al ToNgueLP-plag-cases-corpus.xml. Siendo así los tipos de plagios los tienes en el Plagio_Parafrastico.png que te mando atachado.
+Ahora si te refieres a las categorías más generales: Literal, Paráfrasis, CrosLingual, Bad-Citation y Citas-Copyleft tendrás que usar alguna foto del Prototipo de Sunshine.(Te la mando?)
+
+5- Del anterior(4) me dio por pensar en cosas que debo probar, como finalmente crear un caso del P4P utilizando la información contenida ahí. (para ver si machea eso con lo que me dijo Alberto)... Para luego hacer el script que me permita hacer compatibles un etiquetado con el otro(o sea convertir el etiquetado PAN en P4P y viceversa). Al menos durante esta fase no creo que sea conveniente programar varios parsers.(tu me dices de todas formas) Y además se me ocurrieron otras cosas al respecto.--> 6
+
+6- Se que aún no programas el margen, cuando lo hagas se verá mejor lo que voy a decirte: el texto del source debería verse entre los brackets, pero su forma debería ser cursiva y color negro. NO NEGRITA Y VERDE. Entonces el susp sí debería verse del mismo color que su cuadradito colorido en el Case_List, que a la larga coincide con los de Sunshine. (cuando introduzcas los márgenes los casos como los mostrados deberían quedar más al centro del componente)-->
+
+7- MEDULAR con respecto a esta interfaz. Después de revisar el XML y ver la cantidad de datos que posee un caso, creo que será mejor usar un área, y no una barra para implementar el tema de la modificación de los datos, algo que incluso sirva para mostrarlo. Voy a tratar de diagramarlo para enviártelo. Imagina solo estos datos "Tipo de Plagio", "Projection", "Autor del caso", "Base_Line_Class"(esta es la clase en la que ha sido clasificado este caso por el algoritmo baseline de la investigación, esta etiqueta ni la busques que me di cuenta ahora), "# de oraciones del fragmento", "<otra cualquiera que pueda aparecer durante la investigación o el desarrollo>"(se me ocurre el tópico de cada txt, por ejemplo necesitaré definir los tópicos de computación sobre los que habrá casos en el corpus inicial de ToNgueLP)...
+
+8- Search_Case_List, va cogiendo forma pero me doy cuenta que tendremos que pensar este componente como los grandes, porque tu me pusiste sobre aviso, es esencial cuando haya 1000 casos en la lista, necesitaremos formas óptimas de filtrar, de lo contrario esto es una shit. Esto deberíamos discutirlo aquí, estudia lo que se puede hacer con este componente, porque solo así nuestras locas ideas sabremos si son posibles con ese componente de Qt o no.
+
+9- El cambio de orden en la interfaz + los colores en el Case_List resultaron excelentes. Me siento defraudado del arquitecto de información que diseñó la versión anterior. jajaja
 
 Acuerdos de la junta de Revisión de Nov 2014
 ****************************************************
-A: Leonel lo moverá en el UI “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.
-A: Abel cambiará en el diseño de la Arq. de Inf “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.
-A: Leonel en el UI intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.
-A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.
-A: Leonel en el UI intercambiar el orden de “src Case Text” y “src Case Bar Data”.
-A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “src Case Text” y “src Case Bar Data”.
-A: Nombre clave primer release 'Sassure'
+A: Leonel lo moverá en el UI “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.[OK, 12/12/2014]
+A: Abel cambiará en el diseño de la Arq. de Inf “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.[OK, 16/12/2014]
+A: Leonel en el UI intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.[OK, 12/12/2014]
+A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “susp Case Text” y “susp Case Bar Data”.[OK, 16/12/2014]
+A: Leonel en el UI intercambiar el orden de “src Case Text” y “src Case Bar Data”.[OK, 12/12/2014]
+A: Abel cambiará en el diseño de la Arq. de Inf intercambiar el orden de “src Case Text” y “src Case Bar Data”.[OK, 16/12/2014]
+A: Nombre clave primer release 'Sassure'[OK, 31/11/2014]
+
 A: usar una descripción en el "list case", o sea agregarles un identificador textual para usar como información en el "search case list". ¿Cómo hacer esto? Se agrega al XML? se mostrará en el componente 'List Case'.
-A: Leonel probar agregar color del tipo de plagio al elemento correspondiente en el list case.
+
+A: Leonel probar agregar color del tipo de plagio al elemento correspondiente en el list case.[OK, 12/12/2014]
+
 A: Abel deberá diagramar lo que ya hizo en el UI de verificar el 'total_corpus_cases', pero ahora genérico para la verificación de todas las informaciones verificables automáticamente. Ej: total_real_cases, total_corpus_cases, o los casos nomenclados como <phenomenon type="literal_plagiarism"(esto se puede hacer automáticamente teniendo los casos con la función de string matching, usar cualquiera de la biblioteca externa que tengo que funciona con hash y otras cosas, ver mis experimentos de hash fingerprints. O usar el fuzzy para eliminar problemas de espacios, cambios menores, o una simple comparación de cadenas en python)
-A: Leonel: revisará como se hace esto. Activar el Ctrl+w para cerrarlas por teclado.
+A: Leonel: revisará como se hace esto. Activar el Ctrl+w para cerrarlas por teclado.[OK, 12/12/2014]
 A: Leonel poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
 A:Leonel cambiar todos los nombres de los ficheros con esta nueva regla: Usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP.
 A: Abel Incluir en el estilo de código usar las siglas TNLP para sustituir ToNgueLP en los nombres de todos los ficheros.[OK, 14/12/2014, incluido en la gest de configuración]
+
 Otras tareas:
 - Leonel UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
 - Leonel agregará un toolbar a la izquierda, de tamaño fijo, para desplazar a la derecha el "Case Edition Toolbar". Toolbar adicional = width Case List
