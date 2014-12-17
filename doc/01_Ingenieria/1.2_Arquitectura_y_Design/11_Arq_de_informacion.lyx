@@ -1287,8 +1287,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Mockups/R1.5_X_ToNgueLP_Vista_Principal.png
-	scale 50
+	filename Mockups/Vista_Principal_for_sphinx-doc.png
 
 \end_inset
 
@@ -1627,7 +1626,9 @@ Scripts
 \begin_inset Quotes erd
 \end_inset
 
-: Acceso directo a los procesos de ToNgueLP para ejecutarlos manualmente:
+: Acceso directo a los procesos de ToNgueLP para ejecutarlos manualmente
+ o ver la salida que van generando(similar a la consola de synaptic cuando
+ está instalando):
 \end_layout
 
 \begin_deeper

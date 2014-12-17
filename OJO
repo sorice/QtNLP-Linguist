@@ -1,5 +1,0 @@
-Para que la distribucion del proyecto ocupara MENOS ESPACIO he borrado los ficheros que son "generables",
-de momento esto es solo una solucion temporal, puedes volver a obtener el fichero de RECURSOS y el
-CODIGO de la UI ejecutando los scrips ui2py.sh y qrc2py.sh dentro de la carpeta ui/forms
-
-SOLO ES ALGO TEMPORAL !!!
