@@ -12,7 +12,8 @@
 # serve to show the default.
 
 import sys, os
-sys.path.append('scripts')
+sys.path.append(os.path.abspath('scripts'))
+sys.path.append(os.path.abspath('modules/ToNgueLP_corpus'))
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

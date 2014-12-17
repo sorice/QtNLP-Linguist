@@ -1,4 +1,4 @@
-.. _EScorpus_module_dicts:
+.. _QtToNgueLP_module_dicts:
 
 Vista de Diccionarios
 ***********************
@@ -8,7 +8,8 @@ La vista de diccionarios está dirigida a los usuarios de todo tipo.
 
 :nota: Los diccionarios serán guardados en el formato de wordnet.
 
-.. _vista-diccionario:
+.. _qt-vista-diccionario:
+
 .. figure:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Diccionario.png
 	:align: center
 

@@ -1,9 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8-sig -*-
 
+"""
+.. module:: ToNgueLP_corpus_XML_read
+   :platform: Linux
+   :synopsis: Leer datos del XML del corpus base de ToNgueLP.
+
+.. moduleauthor:: Abel Meneses Abad <abelma1980@gmail.com>
+.. moduleauthor:: Leonel Salazar Videaux <lordford@openmailbox.org>
+
+"""
+
 from ToNgueLP_Parser import *
 from xml.sax import SAXParseException
-#from fuzzywuzzy import fuzz
 from scripts import update_corpus_xml_info
 
 
@@ -22,7 +31,6 @@ class Corpus_Reader:
       self.__handler = CorpusHandler()
       self.__parser = make_parser()
       self.__parser.setContentHandler(self.__handler)
-      
 
       # helper flag
       self.__parsed = False
@@ -46,11 +54,6 @@ class Corpus_Reader:
          self.__first_run = False
 
       return self.__parsed
-
-      #~ print "El nombre del corpus es: ", handler.corpus_name
-      #~ print "Total Elements: %d" % handler.elements
-
-      #~ print 'Elementos del Par de fragmentos[', handler.snippet_pair_id,'] = ',handler.snippet_pair[handler.snippet_pair_id]
 
 
    def get_case(self, _case = 1):
@@ -112,28 +115,3 @@ class Corpus_Reader:
       return (self.__handler.corpus_name, self.__handler.version, self.__handler.lang,
          self.__handler.owners, self.__handler.authors, self.__handler.country,
          self.__handler.creation_date, self.__handler.last_modification_date, self.__handler.total_cases)
-
-'''   fuzzr = fuzz.ratio(susp_snippet,src_snippet)
-
-#  fuzz_partial = fuzz.partial_ratio(susp_snippet,src_snippet)
-   init = time.time()
-
-#  fuzz_sort = fuzz.token_sort_ratio(susp_snippet,src_snippet)
-
-   timea = time.time() - init
-
-print 'El fragmento sospechoso es: ', susp_snippet
-
-print '/n ****************************** /n'
-
-print 'El fragmento fuente es: ', src_snippet
-
-#print 'fuzz ratio = ', fuzzr
-
-#print 'fuzz partial ratio = ', fuzz_partial
-
-print 'fuzz sort ratio = ', fuzz_sort
-
-print 'La comparación de los fragmentos demora: ', timea
-
-'''

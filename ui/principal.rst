@@ -1,4 +1,4 @@
-.. _EScorpus_module_principal:
+.. _QtToNgueLP_module_principal:
 
 Vista Principal
 *****************
@@ -6,11 +6,13 @@ Vista Principal
 La vista principal está dirigida a los lingüistas.
 	* Objetivo: Permitir la creación de casos de plagio con paráfrasis. Clasificar estos. Y además categorizar los casos generados automáticamente para |EScorpus| de forma manual, lo que permitirá evaluar con las métricas definidas los algoritmos de detección.
 
-.. _vista-principal:
-.. figure:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_Principal_for_sphinx-doc.png
+.. _qt-vista-principal:
+.. figure:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/QtToNgueLP_Vista_Principal.png
 	:align: center
+	:height: 350pt
+	:width:  550pt
 
-	Vista principal de |EScorpus|.
+	Vista Principal de |EScorpus| elaborada en Qt4.
 
 Descripción de los elementos
 ===================================

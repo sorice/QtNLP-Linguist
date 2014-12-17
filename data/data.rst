@@ -29,15 +29,15 @@ Estructura de Ficheros
 
 	Ficheros de la carpeta *data* de |EScorpus|. 
 
-* :ref:`Algorithms <Algorithms>`.
-	Carpeta de algoritmos en proceso de comparación.
-* :Corpuses: `Carpeta de corpus adicionados por el usuario <Corpuses>`.
+* :ref:`algorithms <Algorithms>`: Carpeta de algoritmos en proceso de comparación.
+* :ref:`corpuses <Corpuses>`: Carpeta de corpus adicionados por el usuario.
 * :src: Carpeta de documentos originales (o fuentes) del corpus de |EScorpus|.
 * :susp: Carpeta de documentos sospechosos del corpus de |EScorpus|
 * :data.srt: Fichero necesario para generar la documentación automáticamente.
 * :ToNgueLP-plag-cases-corpus.xml: `Corpus de ToNgueLP <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/EScorpusYYY-plag-cases-corpus.html>`_
 
 :Copyright: Creative Commons Share Alike Non Commercial Use, 2014
+
 .. sectionauthor:: Abel Meneses Abad <abelma1980@gmail.com> 
 
 .. |EScorpus| replace:: ToNgueLP

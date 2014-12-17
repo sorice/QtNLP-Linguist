@@ -5,11 +5,11 @@ Releases
 
 * 0.1 Desarrollada a mediados del 2014.
 	Versión experimental para los desarrolladores.
-	Objetivo: 
-		* Definición base de la arquitectura, primeras pruebas del funcionamiento. 
-		* Definición de los XMLs bases del proyecto.
-		* Primera versión del parser de |EScorpus|.
-		* Elaborar prototipos funcionales de la vista principal y de la vista de comparación.
+	Objetivos: 
+	* Definición base de la arquitectura, primeras pruebas del funcionamiento. 
+	* Definición de los XMLs bases del proyecto.
+	* Primera versión del parser de |EScorpus|.
+	* Elaborar prototipos funcionales de la vista principal y de la vista de comparación.
 
 * 0.2 Objetivos: (planificada para **oct/2014** -- obtenida el **27/11/2014**)
 	* Cargar corpus. Ver casos en el ListCases. Y abrir en pestañas.

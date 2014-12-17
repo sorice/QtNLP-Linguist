@@ -5,12 +5,14 @@ Plugins
 
 |EScorpus| es un sistema basado en módulos o plugins. En esta sección mostramos a través del modelo de las 3 capas cómo está desarrollada esta aplicación informática. En la sección final usted también podrá encontrar la documentación dividida por módulos.
 
+	* :ref:`ToNgueLP Corpus Parser <ToNgueLP_corpus_parser_module>`
+
 View Level
 ================
 
-* Prototipo y código fuente  en Qt de la :ref:`Vista Principal <EScorpus_module_principal>`.
-* Prototipo y código fuente en Qt de la :ref:`Vista de Comparación <EScorpus_module_matching>`.
-* Prototipo y código fuente en Qt de la :ref:`Vista de Diccionarios <EScorpus_module_dicts>`.
+* Prototipo y código fuente  en Qt de la :ref:`Vista Principal <QtToNgueLP_module_principal>`.
+* Prototipo y código fuente en Qt de la :ref:`Vista de Comparación <QtToNgueLP_module_matching>`.
+* Prototipo y código fuente en Qt de la :ref:`Vista de Diccionarios <QtToNgueLP_module_dicts>`.
 
 Control Level
 ================
@@ -41,9 +43,9 @@ Data Model
 Módulos de |EScorpus|
 =======================
 
-* Módulo principal o **Linguist View**.
-* Modulo de comparación o **Matching View**.
-* Módulo de diccionarios o **Dict View**.
+* :ref:`Módulo principal <EScorpus_module_principal>` o **Linguist View**.
+* :ref:`Modulo de comparación <EScorpus_module_matching>` o **Matching View**.
+* :ref:`Módulo de diccionarios <EScorpus_module_dicts>` o **Dict View**.
 
 :leer más: :ref:`Arquitectura de Software <ToNgueLP_architecture>` 
 

@@ -24,6 +24,8 @@ Ahora si te refieres a las categorías más generales: Literal, Paráfrasis, Cro
 
 9- El cambio de orden en la interfaz + los colores en el Case_List resultaron excelentes. Me siento defraudado del arquitecto de información que diseñó la versión anterior. jajaja
 
+10- Revisar con Leonel el Diagrama de Secuencias después que hagamos los mínimos en Qt para poder escribirlo con los nombre de las clases, objetos y cualquier otra definición necesaria.
+
 Acuerdos de la junta de Revisión de Nov 2014
 ****************************************************
 A: Leonel lo moverá en el UI “src Case Text” y “src Case Bar Data” a la posición de “susp Case Text” y “susp Case Bar Data”.[OK, 12/12/2014]

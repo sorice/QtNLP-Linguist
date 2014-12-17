@@ -1,4 +1,4 @@
-.. _EScorpus_module_matching:
+.. _QtToNgueLP_module_matching:
 
 Vista de Comparación
 ***********************
@@ -8,7 +8,7 @@ La vista de comparación está dirigida a los usuarios del tipo **Investigador N
 
 Este módulo genera información que es escrita de forma automática en los XMLs del algoritmo que está siendo probado.
 
-.. _vista-comparacion:
+.. _qt-vista-comparacion:
 .. figure:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Comparacion.png
 	:align: center
 
