@@ -65,6 +65,11 @@ Esta sección está orientada a desarrolladores activos, o entusiastas futuros d
 
    /modules/modules
 
+Arq Software
+---------------
+
+:Avanzado: :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
+
 Documentación
 ****************
 

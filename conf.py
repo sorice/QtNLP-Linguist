@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+sys.path.append(os.path.abspath(os.getcwd()))
 sys.path.append(os.path.abspath('scripts'))
 sys.path.append(os.path.abspath('modules/ToNgueLP_corpus'))
 
