@@ -1148,6 +1148,45 @@ Definición de la estructura
 Diagrama de arquitectura
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2014-12-22_ToNgueLP-Diagrama_de_la_Arquitectura_de_Inf.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ejemplo de Diagrama.
+ Rodrigo, 2009.
+ La Habana.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Elementos del sistema de navegación
 \end_layout
@@ -1155,97 +1194,316 @@ Elementos del sistema de navegación
 \begin_layout Standard
 
 \color blue
-<<Listado de los elementos del Sistema de Navegación>>
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\color blue
+Listado de los elementos del Sistema de Navegación
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
-\color blue
-<<Ejemplo:
+\color black
+Aquí se definen los elementos globales que podrán accesarse en todas las
+ vistas, y además la conceptualización de algunos de ellos que es fundamental
+ para el entendimiento de la usabilidad de la aplicación.
 \end_layout
 
-\begin_layout Itemize
-
-\color blue
-Menú General: siempre presente en todo el sitio, permite el acceso a cada
- una de las áreas del sitio.
+\begin_layout Enumerate
+Elemento 
+\series bold
+[1]
+\series default
  
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barra de Menús
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Barras de Menús (definición beta)→ Estas no se desplegarán serán visualizadas
+ en el elemento 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Barras de Herramientas
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
+\begin_deeper
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
 
-\color blue
-Pié de Página: usualmente ubicado en la parte inferior de cada página, indica
- el nombre de la institución, teléfonos, dirección física y de correo electrónic
-o.
+
+\emph on
+Corpus
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permite cargar un archivo de corpus/ salvar el corpus en edición/ o todos
+ los corpus.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Load New Corpus
+\end_layout
+
+\begin_layout Enumerate
+Insert New Doc
+\end_layout
+
+\begin_layout Enumerate
+Save Corpus
+\end_layout
+
+\begin_layout Enumerate
+Corpus Inf.
+\end_layout
+
+\begin_layout Enumerate
+Seleccionar el Parser
+\end_layout
+
+\begin_layout Enumerate
+Sugerir automáticamente el parser compatible
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+Tools
+\begin_inset Quotes erd
+\end_inset
+
+: Vista Principal/Vista Comparación/Vista de Diccionario.
+ (el el futuro puede tener las otras vistas previstas en la LRP)
+\end_layout
+
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Config
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Permite definir el Idioma/Parser/Datos del Editor/...
+ (falta bien esta por estudiar, depende mucho de las cosas a programar.)
+\end_layout
+
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+Scripts
+\begin_inset Quotes erd
+\end_inset
+
+: Acceso directo a los procesos de ToNgueLP para ejecutarlos manualmente
+ o ver la salida que van generando(similar a la consola de synaptic cuando
+ está instalando):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(nombre x definir): Convertir documentos TXT o PDF a ZZZdoc.XML.
+\end_layout
+
+\begin_layout Enumerate
+Verificar compatibilidad del Corpus cargado con el Parser configurado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Generar XML estandar a partir de la carpeta OUT de la
+ salida de un algoritmo de detección.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Comparación del XML estandar con XML del corpus cargado.
+\end_layout
+
+\begin_layout Enumerate
+(nombre x definir): Actualizar ciertos tags del XML de datos del algoritmo
+ y actualizar ciertos tags del XML reporte de casos detectados.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+\strikeout on
+(el el futuro) 
+\begin_inset Quotes eld
+\end_inset
+
+Adicionar nuevo script
+\begin_inset Quotes erd
+\end_inset
+
+, tener los elementos posibles en pantalla y unirlos como en un simulador
+ o sea moviendo cuadritos(preguntar a Leonel como se llamaban los elementos
+ visuales desplazables que había en el UI del SCADA).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Menú 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Help
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: enlaces a Copyright/Ayuda de Usuarios/Manual de Desarrollo/About.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Elemento 
+\series bold
+[2]
+\series default
  
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Loguin
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Opción de Loguin para expertos autorizados a confirmar manualmente los
+ casos generados automáticamante.
 \end_layout
 
-\begin_layout Itemize
-
-\color blue
-Barra Corporativa: ofrece diversas opciones de información respecto del
- sitio y tal como el anterior, se muestra en todas las páginas.
+\begin_layout Enumerate
+Elemento 
+\series bold
+[3]
+\series default
  
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Tabs Case
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Tener acceso a más de un corpus simultáneamente.
 \end_layout
 
-\begin_layout Itemize
-
-\color blue
-Ruta de Acceso: listado que aparece en la parte superior de cada página
- y que muestra el trazado de páginas que hay entre la Portada del sitio
- hasta la página actual que se esté revisando; cada una de ellas debe tener
- un enlace, para acceder al área de la cual depende la página.
- Cada uno de los elementos que conforman este «camino» debe tener un enlace
- que permita el acceso a esas áreas.
- En la literatura internacional en inglés sobre este tema, se llama a este
- elemento como «breadcrumbs».
+\begin_layout Enumerate
+Elemento 
+\series bold
+[4]
+\series default
  
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Barras de Herramientas
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Su funcionamiento es similar al componente 
+\begin_inset Quotes eld
+\end_inset
+
+Barras de Herramientas
+\begin_inset Quotes erd
+\end_inset
+
+ de Microsoft Office 2010.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Similar a Doclux, permite accesar directamente las funciones principales
+ de la aplicación.
 \end_layout
 
-\begin_layout Itemize
+\end_inset
 
-\color blue
-Fecha de publicación: para saber la vigencia de publicación del contenido
- desplegado.
- • Botón Inicio: para ir a la portada.
+
+\end_layout
+
+\begin_layout Enumerate
+Elemento 
+\series bold
+[5]
+\series default
  
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Search
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+: Componente de búsqueda: buscar casos que contienen determinada secuencia
+ de palabras (aquí se debe agregar un selector con: id, corpus, case, query)
 \end_layout
 
-\begin_layout Itemize
-
-\color blue
-Botón Mapa del sitio: para ver el mapa del Sitio Web 
-\end_layout
-
-\begin_layout Itemize
-
-\color blue
-Botón Contacto: para enviar un mensaje al encargado del sitio 
-\end_layout
-
-\begin_layout Itemize
-
-\color blue
-Buscador: presente en cada página si la funcionalidad existe en el sitio.
- 
-\end_layout
-
-\begin_layout Itemize
-
-\color blue
-Botón Ayuda: para recibir ayuda sobre qué hacer en cada pantalla del sitio.
- 
-\end_layout
-
-\begin_layout Itemize
-
-\color blue
-Botón Imprimir: para imprimir el contenido de la página; se espera que el
- formato de impresión del documento que se muestra en pantalla sea más simple
- que la página normal del Sitio Web, para dar la impresión al usuario de
- que hay una preocupación por ayudarle en la tarea de llevar impreso el
- contenido.>>
+\begin_layout Enumerate
+Map Doc Bar 
+\series bold
+[...] 
+\series default
+: Permite acceder a diferentes posiciones del documento marcados con algún
+ objetivo.
+ Puede ser marcas que indiquen fragmentos re-usados de texto.
 \end_layout
 
 \begin_layout Subsection
@@ -1514,268 +1772,13 @@ Barra de Edición de Casos
 Descripción detallada de los elementos que componen la pantalla:
 \end_layout
 
-\begin_layout Enumerate
-Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Barra de Menús
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Barras de Menús (definición beta)→ Estas no se desplegarán serán visualizadas
- en el elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\shape italic
-Barras de Herramientas
-\shape default
-
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
 \begin_deeper
-\begin_layout Enumerate
-Menú 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Corpus
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Permite cargar un archivo de corpus/ salvar el corpus en edición/ o todos
- los corpus.
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Load New Corpus
-\end_layout
-
-\begin_layout Enumerate
-Insert New Doc
-\end_layout
-
-\begin_layout Enumerate
-Save Corpus
-\end_layout
-
-\begin_layout Enumerate
-Corpus Inf.
-\end_layout
-
-\begin_layout Enumerate
-Seleccionar el Parser
-\end_layout
-
-\begin_layout Enumerate
-Sugerir automáticamente el parser compatible
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Menú 
-\begin_inset Quotes eld
-\end_inset
-
-Tools
-\begin_inset Quotes erd
-\end_inset
-
-: Vista Principal/Vista Comparación/Vista de Diccionario.
- (el el futuro puede tener las otras vistas previstas en la LRP)
-\end_layout
-
-\begin_layout Enumerate
-Menú 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Config
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Permite definir el Idioma/Parser/Datos del Editor/...
- (falta bien esta por estudiar, depende mucho de las cosas a programar.)
-\end_layout
-
-\begin_layout Enumerate
-Menú 
-\begin_inset Quotes eld
-\end_inset
-
-Scripts
-\begin_inset Quotes erd
-\end_inset
-
-: Acceso directo a los procesos de ToNgueLP para ejecutarlos manualmente
- o ver la salida que van generando(similar a la consola de synaptic cuando
- está instalando):
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-(nombre x definir): Convertir documentos TXT o PDF a ZZZdoc.XML.
-\end_layout
-
-\begin_layout Enumerate
-Verificar compatibilidad del Corpus cargado con el Parser configurado.
-\end_layout
-
-\begin_layout Enumerate
-(nombre x definir): Generar XML estandar a partir de la carpeta OUT de la
- salida de un algoritmo de detección.
-\end_layout
-
-\begin_layout Enumerate
-(nombre x definir): Comparación del XML estandar con XML del corpus cargado.
-\end_layout
-
-\begin_layout Enumerate
-(nombre x definir): Actualizar ciertos tags del XML de datos del algoritmo
- y actualizar ciertos tags del XML reporte de casos detectados.
-\end_layout
-
-\begin_layout Enumerate
-
-\emph on
-\strikeout on
-(el el futuro) 
-\begin_inset Quotes eld
-\end_inset
-
-Adicionar nuevo script
-\begin_inset Quotes erd
-\end_inset
-
-, tener los elementos posibles en pantalla y unirlos como en un simulador
- o sea moviendo cuadritos(preguntar a Leonel como se llamaban los elementos
- visuales desplazables que había en el UI del SCADA).
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Menú 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Help
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: enlaces a Copyright/Ayuda de Usuarios/Manual de Desarrollo/About.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Loguin
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Opción de Loguin para expertos autorizados a confirmar manualmente los
- casos generados automáticamante.
-\end_layout
-
-\begin_layout Enumerate
-Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Tabs Case
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Tener acceso a más de un corpus simultáneamente.
-\end_layout
-
-\begin_layout Enumerate
-Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Barras de Herramientas
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Su funcionamiento es similar al componente 
-\begin_inset Quotes eld
-\end_inset
-
-Barras de Herramientas
-\begin_inset Quotes erd
-\end_inset
-
- de Microsoft Office 2010.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Similar a Doclux, permite accesar directamente las funciones principales
- de la aplicación.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-Search
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Componente de búsqueda: buscar casos que contienen determinada secuencia
- de palabras (aquí se debe agregar un selector con: id, corpus, case, query)
-\end_layout
-
-\begin_layout Enumerate
-Elemento 
+\series bold
+[6]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1793,11 +1796,37 @@ List
 
 : Mostrará en una lista todos los casos existentes en el corpus para accederlos
  rápidamente(en caso de que sean muchos este componente deberá tener también
- una búsqueda para filtrarlos y accesarlos rápidamente)
+ una búsqueda para filtrarlos y accesarlos rápidamente).
 \end_layout
 
-\begin_layout Enumerate
+\begin_deeper
+\begin_layout Itemize
+El 
+\begin_inset Quotes eld
+\end_inset
+
+Search Case List
+\begin_inset Quotes erd
+\end_inset
+
+ será un elemento de alto valor agregado pues: permitirá buscar por los
+ colores que identifican los tipos de texto re-usado.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Permitirá buscar por palabras claves asociadas al texto que contienen los
+ fragmentos asociados.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
 Elemento 
+\series bold
+[7]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1813,8 +1842,12 @@ Tabs Case
  en las que se trabaja simultáneamente.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
+\series bold
+[8]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1836,11 +1869,17 @@ Active Text Edition
 \begin_inset Quotes erd
 \end_inset
 
- después de autenticado)
+ después de autenticado) - Este componente debe permitir el formateado de
+ texto: textos en colores, textos subrayados, click derecho para adicionar
+ al diccionario, etc.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
+\series bold
+[9]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1853,11 +1892,15 @@ src Case Bar Data
 \end_inset
 
 : Barra de datos del fragmento fuente: datos que contiene el corpus sobre
- el fragmento original.(no se edita manualmente, solo automáticamente)
+ el fragmento original.(no se edita manualmente, solo automáticamente).
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
+\series bold
+[10]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1879,28 +1922,31 @@ Active Text Edition
 \begin_inset Quotes erd
 \end_inset
 
- después de autenticado)
+ después de autenticado) - Este componente debe permitir el formateado de
+ texto: textos en colores, textos subrayados, click derecho para adicionar
+ al diccionario, etc.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
-\begin_inset Quotes eld
-\end_inset
-
-
+\series bold
+[11]
+\series default
+ “
 \emph on
 susp Case Bar Data
 \emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-: Barra de datos del fragmento sospechoso: datos que contiene el corpus
+”: Barra de datos del fragmento sospechoso: datos que contiene el corpus
  sobre el fragmento sospechoso.(no se edita manualmente, solo automáticamente)
+ 
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
+\series bold
+[12]
+\series default
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1912,11 +1958,11 @@ Barra de Edición de Casos
 \begin_inset Quotes erd
 \end_inset
 
-: Funciones para editar fragmentos.
+: Funciones para editar fragmentos:
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -1933,10 +1979,10 @@ Add New Case
  Se colocan en blanco 8 y 10.
  (un algoritmo(basado en análisis temático) sugiere 3 documentos donde serán
  insertados, se abre un popup para seleccionar y estos son insertados automática
-mente)
+mente).
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -1953,7 +1999,7 @@ Edit Case
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 \begin_inset Quotes eld
 \end_inset
 
@@ -1995,8 +2041,7 @@ Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
 
 \end_layout
 
-\begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 \begin_inset Quotes eld
 \end_inset
 
@@ -2039,8 +2084,7 @@ Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -2058,7 +2102,7 @@ Human Validation
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 \begin_inset Quotes eld
 \end_inset
 
@@ -2109,7 +2153,7 @@ Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -2128,12 +2172,12 @@ Plag Type
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Contiene los siguientes datos: Clase de Plagio, Tipo de Plagio, Projection.
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -2175,7 +2219,7 @@ susp Case Text
  por fuera de los límites superior e inferior.
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
 Elemento 
 \begin_inset Quotes eld
 \end_inset
@@ -2193,7 +2237,7 @@ View Linguistic Annotation
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
+\begin_layout Itemize
 \begin_inset Quotes eld
 \end_inset
 
@@ -2232,6 +2276,7 @@ Diagrama de Estados Vista Principal de ToNgueLP refleja las condiciones
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Subsubsection
