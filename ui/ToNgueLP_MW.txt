@@ -1,0 +1,24 @@
+>>> from mocker import Mocker
+>>> import sys, os
+>>> sys.path.append(os.path.dirname(os.getcwd()))
+>>> import ToNgueLP_MW
+
+Probar la función de show_corpus_info de la UI principal.
+
+>>> mocker = Mocker()
+>>> QMainWindowI = mocker.mock()
+>>> Ui_ToNgueLP_MW = mocker.mock()
+>>> mocker.replay()
+>>> UI = ToNgueLP_MW.ToNgueLP_MW(QMainWindowI,Ui_ToNgueLP_MW)
+<mocker.Mock object at ...>
+
+>>> mocker.replay()
+>>> __corpus_list = 2
+>>> obj = ToNgueLP_MW.show_corpus_info(UI)
+Traceback (most recent call last):
+  File "/media/swlDOC/Doctorado/00_ToNgueLP/ui/ToNgueLP_MW.py", line 232, in show_corpus_info
+    raise QMessageBox.critical(self, self.appName, 'No corpus loaded.')
+TypeError: exceptions must be old-style classes or derived from BaseException, not StandardButton
+
+>>> mocker.restore()
+>>> mocker.verify()
