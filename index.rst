@@ -6,9 +6,11 @@
 ¡Bienvenidos a |EScorpus|!
 ============================================
 
-|EScorpus| es una aplicación de escritorio del tipo *Front-End* para el trabajo con corpus de textos elaborados para detección de similaridad o detección de plagio. Está desarrollada en **Qt** y **Python**.
+|EScorpus| es una aplicación de escritorio del tipo *Front-End* para el trabajo con corpus lingüísticos. Está desarrollada en **Qt** y **Python**.
 
-  **Objetivo:** Crear una aplicación para la creación de corpus en español para tareas de Procesamiento de Lenguaje Natural, fáciles de usar por lingüistas con poco conocimiento de informática; y también por especialistas informáticos que investigan en el área de NLP.
+  **Objetivo:** Crear una aplicación para la creación, edición y análisis de corpus en español para tareas de Procesamiento de Lenguaje Natural, fáciles de usar por lingüistas con poco conocimiento de informática; y también por especialistas informáticos que investigan en el área de NLP.
+
+  **v1.0**: En su primera versión estará dedicada al desarrollo de la arquitectura de la aplicación y el trabajo con corpus de textos elaborados para detección de similaridad o detección de plagio.
 
 Instalación
 *************
@@ -17,12 +19,12 @@ Instalación
 .. toctree::
    :maxdepth: 2
 
-   /doc/install/install
+   /doc/01_Ingenieria/1.3_Implementacion_y_Prueba/install
 
 Guía de Usuario
 *******************
 
-|EScorpus| puede ser usado como *lingüista*, *investigador* del procesamiento de los lenguajes naturales, o *entusiasta de los idiomas*. Si usted desea conocer como usar esta herramienta lea esta sección:
+|EScorpus| puede ser usado como **lingüista**, como **investigador** del procesamiento de los lenguajes naturales, o como **entusiasta de los idiomas**. Si usted desea conocer como usar esta herramienta lea esta sección:
 
 .. tabularcolumns:: m{150pt} m{150pt} m{150pt} |c|c|c|
 
@@ -50,7 +52,7 @@ Guía de Usuario
 .. toctree::
    :maxdepth: 2
 
-   /doc/help/help
+   /doc/01_Ingenieria/1.3_Implementacion_y_Prueba/Manual_de_usuario/help
 
 Guía de Desarrollo
 *******************
@@ -68,17 +70,17 @@ Esta sección está orientada a desarrolladores activos, o entusiastas futuros d
 Arq Software
 ---------------
 
-:Avanzado: :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
+  :Avanzado: :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
 
 Documentación
-****************
+----------------
 
-Esta sección está dirigida a aquellos que deseen conocer |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. Todo el proyecto está documentado usando la metodología SXP, un híbrido cubano de XP y SCRUM. Usted podrá encontrar aquí los artefactos finales archivados en papel y entregados a los clientes de |EScorpus| y además los editables para su reproducción atendiendo a los derechos de copyright especificados.
+  Conozca |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. El proyecto está documentado usando la metodología SXP (híbrido cubano de XP -SCRUM). Usted podrá encontrar aquí los artefactos finales entregados a los clientes de |EScorpus|, y los editables para su uso atendiendo al copyright especificado.
 
-.. toctree::
-   :maxdepth: 2
+  .. toctree::
+     :maxdepth: 2
 
-   /doc/doc
+     /doc/doc
 
 Acerca de:
 *******************

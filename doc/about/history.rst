@@ -28,5 +28,6 @@ Historia
 * 28/09/2014, Abel genera la versión Beta-0.2 de la DOC.
 * ../10/2014, Leonel diseña el prototipo en Qt.
 * 21/11/2014, Leonel y Abel generan la primera versión funcional del prototipo, que carga el corpus y calcula la cantidad de casos contenidos en el corpus. Sale también el primer script precisamente de cálculo de los casos automáticamente.
+* ../12/2014, Abel comienza la preparación de |EScorpus| para hacer pruebas automáticas de caja blanca. Lo que permitiría hacer "*integración continua*" en etapas posteriores de desarrollo.
 
 .. |EScorpus| replace:: ToNgueLP

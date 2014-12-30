@@ -6,6 +6,10 @@ Plugins
 |EScorpus| es un sistema basado en módulos o plugins. En esta sección mostramos a través del modelo de las 3 capas cómo está desarrollada esta aplicación informática. En la sección final usted también podrá encontrar la documentación dividida por módulos.
 
 	* :ref:`ToNgueLP Corpus Parser <ToNgueLP_corpus_parser_module>`
+	* :ref:`Modulo de comparación <EScorpus_module_matching>` o **Matching View**.
+	* :ref:`Módulo de diccionarios <EScorpus_module_dicts>` o **Dict View**.
+
+:leer más: :ref:`Arquitectura de Software <ToNgueLP_architecture>` 
 
 View Level
 ================
@@ -17,14 +21,14 @@ View Level
 Control Level
 ================
 
-Breve lista de los procesos que ocurren en |EScorpus|:
+Procesos en segundo plano (background) que ocurren en |EScorpus|:
 
 1. **Preprocesamiento:** Convertir todos los docs al formato ZZZdoc.xml.
 2. **Estandarización** de salidas de algoritmos: Convertir carpeta out en un único XML.
 3. **Comparación de XMLs:** *algorithmXXX-plag-report.xml* vs *EScorpusYYY-plag-cases-corpus.xml*.
 4. **Actualizar XMLs:** Escribir datos de la comparación en el *algorithmXXX-plag-report.xml*.
 
-:Ver más: `Lista completa de Funcionalidades <../doc/features/features.html>`_
+:Ver más: `Lista completa de Procesos <../doc/01_Ingenieria/1.1_Requisitos/features.html>`_
 
 Data Model
 ==============
@@ -39,15 +43,6 @@ Data Model
 	XML de casos detectados por el **Algoritmo-XXX**
 * `Reporte XML de los datos del Algoritmo-XXX  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-data-report.html>`_
 	XML con datos del **Algoritmo-XXX** antes y después del proceso de comparación.
-
-Módulos de |EScorpus|
-=======================
-
-* :ref:`Módulo principal <EScorpus_module_principal>` o **Linguist View**.
-* :ref:`Modulo de comparación <EScorpus_module_matching>` o **Matching View**.
-* :ref:`Módulo de diccionarios <EScorpus_module_dicts>` o **Dict View**.
-
-:leer más: :ref:`Arquitectura de Software <ToNgueLP_architecture>` 
 
 Referencias
 =============

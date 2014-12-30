@@ -229,8 +229,8 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       """Show current corpus information"""
 
       if not len(self.__corpus_list):
-         QMessageBox.critical(self, self.appName, 'No corpus loaded.')
-         return
+         raise QMessageBox.critical(self, self.appName, 'No corpus loaded.')
+         #~ return
 
       corpus_info = self.__corpus_list[self.corpusTabs.currentIndex()].get_corpus_info()
 
