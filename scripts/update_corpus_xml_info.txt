@@ -1,0 +1,46 @@
+2do Test de ToNgueLP
+Inicialización
+>>> from mocker import Mocker 
+>>> import sys, os
+>>> sys.path.append(os.path.dirname(os.getcwd()))
+>>> import update_corpus_xml_info
+
+Probando el constructor de la clase.
+
+>>> mocker = Mocker()
+>>> number = mocker.mock()
+>>> corpus_file = mocker.mock()
+>>> corpus_dir = mocker.mock()
+>>> text = mocker.mock()
+>>> mocker.replay()
+>>> script = update_corpus_xml_info.Update_Corpus_XML_Info(number, corpus_file, corpus_dir, text)
+>>> script.number == number
+True
+>>> mocker.restore()
+>>> mocker.verify()
+
+Probando el método snippet_pair_count cuando no está el fichero. Para ello usamos un nombre de fichero no existente en esta ruta 'script.rst'. (Nota se acerca bastante al nombre del fichero que aparece allí que es scripts.rst, es intencional la selección de este nombre para que parezca que sí lo encontrará pero al final no lo hace.)
+
+>>> mocker = Mocker()
+>>> number = mocker.mock()
+>>> corpus_file = mocker.mock()
+>>> corpus_dir = mocker.mock()
+>>> text = mocker.mock()
+>>> corpus_file = 'script.rst'
+>>> mocker.replay()
+>>> script = update_corpus_xml_info.Update_Corpus_XML_Info(number, corpus_file, corpus_dir, text)
+>>> script.snippet_pair_count()
+The file does not exist
+
+Probando cuando el fichero si está que devuelva el valor correcto. Para ello se utilizará el XML de pruebas contenido en la carpeta test.
+
+>>> mocker = Mocker()
+>>> number = mocker.mock()
+>>> corpus_file = mocker.mock()
+>>> corpus_dir = mocker.mock()
+>>> text = mocker.mock()
+>>> corpus_file = '../test/ToNgueLP-test-plag-cases-corpus.xml'
+>>> mocker.replay()
+>>> script = update_corpus_xml_info.Update_Corpus_XML_Info(number, corpus_file, corpus_dir, text)
+>>> script.snippet_pair_count()
+6

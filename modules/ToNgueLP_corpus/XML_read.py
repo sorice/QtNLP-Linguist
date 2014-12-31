@@ -15,6 +15,9 @@ from ToNgueLP_Parser import *
 from xml.sax import SAXParseException
 from scripts import update_corpus_xml_info
 
+number = 0
+text = ''
+
 class Corpus_Reader:
    """Corpus parser general class"""
 
@@ -33,7 +36,6 @@ class Corpus_Reader:
 
       # helper flag
       self.__parsed = False
-
 
    def parse_xml(self, corpus_file = 'ToNgueLP-plag-cases-corpus.xml', corpus_dir = 'data/'):
       """Parse corpus XML and return the data to the UI"""
@@ -93,7 +95,7 @@ class Corpus_Reader:
 
    def get_corpus_total_cases(self):
       """Return corpus total cases"""
-      __info = update_corpus_xml_info.Update_Corpus_XML_Info()
+      __info = update_corpus_xml_info.Update_Corpus_XML_Info(number, self.__corpus_file, self.__corpus_dir, text)
 
       if not self.__parsed: # Si no abrió el .XML ents...
          return None
