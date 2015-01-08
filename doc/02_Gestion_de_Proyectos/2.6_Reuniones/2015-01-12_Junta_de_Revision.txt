@@ -4,6 +4,7 @@ Asisten: Abel y Leonel.
 
 Objetivos desglosados:
 - Código de colores que me pidió Leonel en su correo del 12/12/2014. Añadido en la vista principal en la documentación Sphinx.
+- En la siguiente iteración programar la inclusión del corpus modificado del PAN, así como el script para generarlo. (esto ayudará a que la salida de mi algoritmo también pueda ser convertida a un solo XML)
 
 1- Hay que revisar que se hará con el doc estilo de código porque el original de SXP está en muy malas condiciones.
 
@@ -25,6 +26,12 @@ Ahora si te refieres a las categorías más generales: Literal, Paráfrasis, Cro
 9- El cambio de orden en la interfaz + los colores en el Case_List resultaron excelentes. Me siento defraudado del arquitecto de información que diseñó la versión anterior. jajaja
 
 10- Revisar con Leonel el Diagrama de Secuencias después que hagamos los mínimos en Qt para poder escribirlo con los nombre de las clases, objetos y cualquier otra definición necesaria.
+
+11- No me acuerdo de la documentación de los elementos en el QtAssistant. Cómo se busca? Cuál es la URL directa?
+
+12- Documentar los iconos utilizados, la URL en el sistema Ubuntu y además que colección es. Esto no lo he documentado en ningún lugar. Ponerlo en la documentación Sphinx de ToNgueLP.
+
+13- Implementada una batería de pruebas con python-mocker para el único script programado en ToNgueLP.[OK, 30/12/2014]
 
 Acuerdos de la junta de Revisión de Nov 2014
 ****************************************************
@@ -53,11 +60,11 @@ Search y Case List -> Fixed Width
 - Abel especificar en la Arq. de Inf. que la opción menú scripts es para activar un Windows de Información del proceso (como synaptic), Objetivo: o sea no es para activar el script sino para visualizar lo que está haciendo por si se demora. [OK, 16/12/2014]
 - Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
 - Abel Incluir la carpeta test en la raíz del proyecto.[OK, 04/12/2014]
-- Abel, de forma experimental programar la primera clase con unit-test que será Test_Load_Corpus, será probado con el TNLP_plag_cases_corpus.xml
+- Abel, de forma experimental programar la primera clase con unit-test que será Test_Load_Corpus, será probado con el TNLP_plag_cases_corpus.xml[OK 29/12/2014, fallida hace falta + doc y conocimiento relacionado con testing y UIs]
 - Leonel programar de forma experimental(alfa) 'Insertar un caso'.
 
 - Abel programar la lectura de los .txt de los corpus comprimidos, o sea verificar si están comprimidos y leer, luego leer si no lo están.(ejemplo de esto en el libro Think Stats, se importa la biblioteca gzip en el código survey.py)[OK, 16/12/2014]
-[solución para adicionar un texto]
+[solución para adicionar un texto, OK, se descubrió el 31/12/2014 que no había forma de hacer esto con esa biblioteca][OK, 1/1/2015 logré solucionarlo todo con los .zip]
 import gzip
 >a = gzip.open(file.gz,'a')
 >a.write('\nConcatenar este texto al que ya existe')
