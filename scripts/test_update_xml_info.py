@@ -66,5 +66,4 @@ class test_UCXI_snippet_pair_count(TestCase):
       mocker.restore()
       mocker.verify()
       
-if __name__ == '__main__':
-   main()
+
