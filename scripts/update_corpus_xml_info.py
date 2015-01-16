@@ -18,7 +18,7 @@ class Update_Corpus_XML_Info:
    """
    
    def __init__(self, number, corpus_file, corpus_dir, text):
-      """Inicializar el script"""
+      """Script Update_Corpus_XML_Info Object Constructor."""
       self.number = number
       self.corpus_file = corpus_file
       self.corpus_dir = corpus_dir
