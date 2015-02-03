@@ -64,6 +64,8 @@ class CorpusHandler(ContentHandler):
                array.append(value)
 
          array.append(str(attrs.getValue('id')))
+         array.append(str(attrs.getValue('plag_type')))
+         array.append(str(attrs.getValue('brief_description')))
 
          self.snippet_pair[self.snippet_pair_id] = array
 

@@ -2,6 +2,13 @@
   <qresource prefix="menu">
     <file>icons/menu_corpus.png</file>
   </qresource>
+  <qresource prefix="plag_type">
+    <file alias="pt_red">icons/pt_red.png</file>
+    <file alias="pt_green">icons/pt_green.png</file>
+    <file alias="pt_blue">icons/pt_blue.png</file>
+    <file alias="pt_yellow">icons/pt_yellow.png</file>
+    <file alias="pt_orange">icons/pt_orange.png</file>
+  </qresource>
   <qresource prefix="toolbar">
     <file>icons/validate_case.png</file>
     <file>icons/redefine_boundaries.png</file>

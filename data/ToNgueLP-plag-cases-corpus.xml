@@ -5,12 +5,12 @@
 <corpus name="EScorpus" version="0.02" lang="en" total_cases="6" total_true_cases="3" license="GPL" copyright="copyleft" owners="uclv,uci,udg,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://escorpus.github.com">
 
    <snippets>
-      <snippet_pair id="001" snippet_pair_description="susp_doc:susp-doc01765;src_doc:src-doc02276;frag_length:575;frag_offset:0;frag_src_length:575;frag_src_offset:0"/>
-      <snippet_pair id="002" snippet_pair_description="susp_doc:susp-doc01508;src_doc:src-doc01508;frag_length:10863;frag_offset:283;frag_src_length:24792;frag_src_offset:75764"/>
-      <snippet_pair id="003" snippet_pair_description="susp_doc:susp-doc01250;src_doc:src-doc01250;frag_length:397;frag_offset:51526;frag_src_length:406;frag_src_offset:199024"/>
-      <snippet_pair id="004" snippet_pair_description="susp_doc:susp-doc00005;src_doc:src-doc01090;frag_length:698;frag_offset:3593;frag_src_length:698;frag_src_offset:1300"/>
-      <snippet_pair id="005" snippet_pair_description="susp_doc:susp-doc00005;src_doc:src-doc01090;frag_length:674;frag_offset:3612;frag_src_length:1978;frag_src_offset:0"/>
-      <snippet_pair id="006" snippet_pair_description="susp_doc:susp-doc00539;src_doc:src-doc01529;frag_length:416;frag_offset:966;frag_src_length:443;frag_src_offset:827"/>
+      <snippet_pair id="001" snippet_pair_description="susp_doc:susp-doc01765;src_doc:src-doc02276;frag_length:575;frag_offset:0;frag_src_length:575;frag_src_offset:0" plag_type="literal" brief_description="Random description 1"/>
+      <snippet_pair id="002" snippet_pair_description="susp_doc:susp-doc01508;src_doc:src-doc01508;frag_length:10863;frag_offset:283;frag_src_length:24792;frag_src_offset:75764" plag_type="paraphrastic" brief_description="Lorem ipsum dolor sit amet"/>
+      <snippet_pair id="003" snippet_pair_description="susp_doc:susp-doc01250;src_doc:src-doc01250;frag_length:397;frag_offset:51526;frag_src_length:406;frag_src_offset:199024" plag_type="interlingual" brief_description="consetetur sadipscing elitr"/>
+      <snippet_pair id="004" snippet_pair_description="susp_doc:susp-doc00005;src_doc:src-doc01090;frag_length:698;frag_offset:3593;frag_src_length:698;frag_src_offset:1300" plag_type="bad_quotation" brief_description="sed diam nonumyeirmod tempor"/>
+      <snippet_pair id="005" snippet_pair_description="susp_doc:susp-doc00005;src_doc:src-doc01090;frag_length:674;frag_offset:3612;frag_src_length:1978;frag_src_offset:0" plag_type="copyleft" brief_description="invidunt ut labore et dolore"/>
+      <snippet_pair id="006" snippet_pair_description="susp_doc:susp-doc00539;src_doc:src-doc01529;frag_length:416;frag_offset:966;frag_src_length:443;frag_src_offset:827" plag_type="good_quotation" brief_description="magna aliquyam erat"/>
 
    </snippets>
 
