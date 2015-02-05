@@ -15,11 +15,8 @@ from ui.ToNgueLP_MW import TNLP_MW
 
 # global app information
 appName = "ToNgueLP"
-<<<<<<< TREE
-appVersion = "0.2.1"
-=======
 appVersion = "0.2.1 (Sassure)"
->>>>>>> MERGE-SOURCE
+
 
 if __name__ == '__main__':
    # create application

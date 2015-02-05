@@ -116,3 +116,10 @@ class Corpus_Reader:
       return (self.__handler.corpus_name, self.__handler.version, self.__handler.lang,
          self.__handler.owners, self.__handler.authors, self.__handler.country,
          self.__handler.creation_date, self.__handler.last_modification_date, self.__handler.total_cases)
+
+   def get_case_summary(self, _case = 1):
+      """Return basic information about a case"""
+
+      _case_info = self.__handler.getCase(_case)
+      # return tuple(id, plag_type, brief_description)
+      return (_case_info[12], _case_info[13], _case_info[14])

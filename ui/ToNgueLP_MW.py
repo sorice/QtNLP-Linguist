@@ -271,13 +271,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       """Show current corpus information"""
 
       if not len(self.__corpus_list):
-<<<<<<< TREE
-         raise QMessageBox.critical(self, self.appName, 'No corpus loaded.')
-         #~ return
-=======
          QMessageBox.critical(self, self.__appName, 'No corpus loaded.')
          return
->>>>>>> MERGE-SOURCE
 
       corpus_info = self.__corpus_list[self.corpusTabs.currentIndex()].get_corpus_info()
 
