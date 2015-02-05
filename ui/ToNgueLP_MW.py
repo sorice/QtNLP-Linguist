@@ -11,39 +11,46 @@ from forms.ToNgueLP_MW_UI import Ui_ToNgueLP_MW
 # import reader
 from modules.ToNgueLP_corpus import XML_read
 
-class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
+# import plag types
+from TNLP_Plag_Types import plag_types
+
+try:
+   _fromUtf8 = QString.fromUtf8
+except AttributeError:
+   def _fromUtf8(s):
+      return s
+
+class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
    def __init__(self, _name, _version, parent = None):
       # init the parent
-      super(ToNgueLP_MW, self).__init__(parent)
+      super(TNLP_MW, self).__init__(parent)
 
       # setup UI
       self.setupUi(self)
 
+      # remove in the future
+      self.toolBar_Cases.setDisabled(True)
+
       # some attributes
-      self.appName = _name
-      self.appVersion = _version
+      self.__appName = _name
+      self.__appVersion = _version
 
       # readers list
       self.__corpus_list = []
 
       # extra config
       self.showMaximized()
-      self.setWindowTitle(self.appName + ' - ' + self.appVersion)
+      self.setWindowTitle(self.__appName + ' - ' + self.__appVersion)
 
       # signals and slots
       self.actionLoad_New_Corpus.triggered.connect(self.load_new_corpus)
       self.actionCorpus_Information.triggered.connect(self.show_corpus_info)
       self.actionClose_Corpus.triggered.connect(self.close_corpus)
+      self.actionExit.triggered.connect(self.close)
 
 
    def __create_new_corpus_tab(self):
       """Create an empty new tab for corpus"""
-
-      try:
-         _fromUtf8 = QString.fromUtf8
-      except AttributeError:
-         def _fromUtf8(s):
-            return s
 
       tab = QWidget()
       # left area
@@ -60,6 +67,9 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       searchCase.setMaximumSize(QSize(200, 16777215))
       searchCase.setPlaceholderText("Search case?")
       verticalLayout.addWidget(searchCase)
+      # slot
+      searchCase.returnPressed.connect(self.__searchCase)
+      #
       # cases list
       casesList = QListWidget(frame)
       casesList.setMinimumSize(QSize(200, 0))
@@ -81,6 +91,7 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       gridLayout_2.addLayout(verticalLayout, 0, 0, 1, 1)
       gridLayout_3.addWidget(frame, 0, 0, 1, 1)
       casesWorkingArea = QTabWidget(tab)
+      casesWorkingArea.setMovable(True)
       # slot
       casesWorkingArea.currentChanged.connect(self.__update_selected_case)
       #
@@ -90,6 +101,9 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       # global layout update
       self.gridLayout.addWidget(self.corpusTabs, 0, 1, 1, 1)
+
+      casesWorkingArea.setTabsClosable(True)
+      casesWorkingArea.tabCloseRequested.connect(self.__closeCaseTab)
 
       return tab
 
@@ -101,27 +115,45 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       tab_1 = QWidget()
       gridLayout_4 = QGridLayout(tab_1)
       verticalLayout_2 = QVBoxLayout()
-      sourceDoc = QTextEdit(tab_1)
-      sourceDoc.setReadOnly(True)
-      sourceDoc.setHtml('Source')
-      verticalLayout_2.addWidget(sourceDoc)
-      sourceInfo = QLabel(tab_1)
-      #sourceInfo.setText(QString("id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(str(278)).arg(str('src-doc45')).arg(str(570)).arg(str(70)).arg(str(5)).arg(str(329)))
-      verticalLayout_2.addWidget(sourceInfo)
-      line = QFrame(tab_1)
-      line.setFrameShape(QFrame.HLine)
-      line.setFrameShadow(QFrame.Sunken)
-      verticalLayout_2.addWidget(line)
+
+      suspInfo = QLabel(tab_1)
+      #suspInfo.setText(QString("id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(str(367)).arg(str('susp-doc69')).arg(str(489)).arg(str(67)).arg(str(5)).arg(str(125)))
+      verticalLayout_2.addWidget(suspInfo)
+
       suspDoc = QTextEdit(tab_1)
       suspDoc.setReadOnly(True)
       suspDoc.setHtml('Suspicious')
       verticalLayout_2.addWidget(suspDoc)
-      suspInfo = QLabel(tab_1)
-      #suspInfo.setText(QString("id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(str(367)).arg(str('susp-doc69')).arg(str(489)).arg(str(67)).arg(str(5)).arg(str(125)))
-      verticalLayout_2.addWidget(suspInfo)
+
+      line = QFrame(tab_1)
+      line.setFrameShape(QFrame.HLine)
+      line.setFrameShadow(QFrame.Sunken)
+      verticalLayout_2.addWidget(line)
+
+      sourceInfo = QLabel(tab_1)
+      #sourceInfo.setText(QString("id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(str(278)).arg(str('src-doc45')).arg(str(570)).arg(str(70)).arg(str(5)).arg(str(329)))
+      verticalLayout_2.addWidget(sourceInfo)
+
+      sourceDoc = QTextEdit(tab_1)
+      sourceDoc.setReadOnly(True)
+      sourceDoc.setHtml('Source')
+      verticalLayout_2.addWidget(sourceDoc)
+
       gridLayout_4.addLayout(verticalLayout_2, 0, 0, 1, 1)
+      # shortcut
+      QShortcut(Qt.CTRL + Qt.Key_W, tab_1, self.__ctrl_w)
 
       return tab_1
+
+
+   def __ctrl_w(self):
+      """Close current tab when CTRL+W is pressed"""
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      __cases = __corpus.children()[2] # cases tab
+      # close current tab
+      self.__closeCaseTab(__cases.currentIndex())
 
 
    def load_new_corpus(self):
@@ -136,7 +168,7 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          for i in self.__corpus_list:
             __corpus_names.append(i.get_corpus_name())
          if __reader.get_corpus_name() in __corpus_names:
-            QMessageBox.critical(self, self.appName, 'Corpus <b>' + __reader.get_corpus_name() + ' </b>already loaded.')
+            QMessageBox.critical(self, self.__appName, 'Corpus <b>' + __reader.get_corpus_name() + ' </b>already loaded.')
             return
 
          # add a new tab for corpus
@@ -145,18 +177,21 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          _total_lb = tab.children()[1].children()[3] # total cases
          self.corpusTabs.addTab(tab, QString(__reader.get_corpus_name()))
 
+         # create cases list
          for i in range(__reader.get_corpus_total_cases()):
             i = i + 1
-            listItem = QListWidgetItem(QString('Case: ' + str(i)))
-            listItem.setData(Qt.UserRole, i)
+            _tmp_case = __reader.get_case_summary(i)
+            listItem = QListWidgetItem(QIcon(plag_types[_tmp_case[1]][0]), QString("[" + _tmp_case[0] + "]: " + _tmp_case[2]))
+            # data: list(index, plag_type_rgb_color)
+            listItem.setData(Qt.UserRole, [i, plag_types[_tmp_case[1]][1]])
             _cases_list.addItem(listItem)
 
          _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
          self.__corpus_list.append(__reader)
 
-         QMessageBox.information(self, self.appName, 'Corpus loaded.')
+         QMessageBox.information(self, self.__appName, 'Corpus loaded.')
       else:
-         QMessageBox.critical(self, self.appName, 'Error parsing corpus.')
+         QMessageBox.critical(self, self.__appName, 'Error parsing corpus.')
 
 
    def __get_case(self, _current, _old):
@@ -175,7 +210,8 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          __cases.setCurrentIndex(tmp_cases.index(_current.text()))
          return
 
-      case_index = int(_current.data(Qt.UserRole).toString())
+      case_data = _current.data(Qt.UserRole).toList()
+      case_index = int(case_data[0].toString())
       case = self.__corpus_list[self.corpusTabs.currentIndex()].get_case(case_index)
 
       case_tab = self.__create_new_case_tab()
@@ -184,15 +220,17 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       __items = __cases.currentWidget() # cases tab content
       __items = __items.children() # index 1, 2, 4, 5
-      __src_te = __items[1] # src text
-      __src_lb = __items[2] # src data
-      __susp_te = __items[4] # susp text
-      __susp_lb = __items[5] # susp data
+
+      __susp_lb = __items[1] # susp text
+      __susp_te = __items[2] # susp data
+      __src_lb = __items[4] # src text
+      __src_te = __items[5] # src data
+
       # update components
       __src_te.setHtml(case[1])
-      __src_lb.setText(QString("[<b>Source</b>] id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(case[2][12]).arg(case[2][3]).arg(case[2][9]).arg(str(0)).arg(str(0)).arg(case[2][11]))
+      __src_lb.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;&nbsp;id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(case[2][12]).arg(case[2][3]).arg(case[2][9]).arg(str(0)).arg(str(0)).arg(case[2][11]))
       __susp_te.setHtml(case[0])
-      __susp_lb.setText(QString("[<b>Suspicious</b>] id = <b>%1</b>, susp_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(case[2][12]).arg(case[2][1]).arg(case[2][5]).arg(str(0)).arg(str(0)).arg(case[2][7]))
+      __susp_lb.setText(QString("[<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;&nbsp;id = <b>%1</b>, susp_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(case[2][12]).arg(case[2][1]).arg(case[2][5]).arg(str(0)).arg(str(0)).arg(case[2][7]))
       # format segments
       # source
       __cursor = __src_te.textCursor()
@@ -201,7 +239,7 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __format = QTextCharFormat()
       #~ __format.setFontWeight(QFont.Bold)
       __format.setFontItalic(True)
-      __format.setForeground(QBrush(Qt.green))
+      ##__format.setForeground(QBrush(Qt.green))
       __cursor.mergeCharFormat(__format)
       # suspiciuos
       __cursor = __susp_te.textCursor()
@@ -210,7 +248,10 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __format = QTextCharFormat()
       #~ __format.setFontWeight(QFont.Bold)
       __format.setFontItalic(True)
-      __format.setForeground(QBrush(Qt.red))
+      #__format.setForeground(QBrush(Qt.red))
+      __format.setFontUnderline(True)
+      __format.setUnderlineStyle(QTextCharFormat.WaveUnderline)
+      __format.setUnderlineColor(QColor(case_data[1].toString()))
       __cursor.mergeCharFormat(__format)
 
 
@@ -222,15 +263,21 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __cases = __corpus.children()[2] # cases tab
       __cases_list = __corpus.children()[1].children()[2] # cases list
       # focus case
-      __cases_list.setCurrentItem(__cases_list.findItems(__cases.tabText(_case), Qt.MatchCaseSensitive)[0])
+      if __cases.count() > 0:
+         __cases_list.setCurrentItem(__cases_list.findItems(__cases.tabText(_case), Qt.MatchCaseSensitive)[0])
 
 
    def show_corpus_info(self):
       """Show current corpus information"""
 
       if not len(self.__corpus_list):
+<<<<<<< TREE
          raise QMessageBox.critical(self, self.appName, 'No corpus loaded.')
          #~ return
+=======
+         QMessageBox.critical(self, self.__appName, 'No corpus loaded.')
+         return
+>>>>>>> MERGE-SOURCE
 
       corpus_info = self.__corpus_list[self.corpusTabs.currentIndex()].get_corpus_info()
 
@@ -244,18 +291,64 @@ class ToNgueLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       info += 'Created: ' + corpus_info[6] + '<br/>'
       info += 'Changed: ' + corpus_info[7] + '<br/>'
       info += 'Total Cases:' + str(corpus_info[8]) + '<br/>'
-      QMessageBox.information(self, self.appName, info)
+
+      QMessageBox.information(self, self.__appName, info)
 
 
    def close_corpus(self):
       """Close current corpus"""
 
       if not len(self.__corpus_list):
-         QMessageBox.critical(self, self.appName, 'No corpus loaded.')
+         QMessageBox.critical(self, self.__appName, 'No corpus loaded.')
+         return
+
+      resp = QMessageBox.question(self, self.__appName, u'Close corpus <b>' + self.corpusTabs.tabText(self.corpusTabs.currentIndex()) + '</b>?', QMessageBox.Yes | QMessageBox.No)
+      if resp == QMessageBox.No:
          return
 
       del(self.__corpus_list[self.corpusTabs.currentIndex()])
       self.corpusTabs.removeTab(self.corpusTabs.currentIndex())
 
-      QMessageBox.information(self, self.appName, 'Corpus closed.')
+      QMessageBox.information(self, self.__appName, 'Corpus closed.')
 
+
+   def closeEvent(self, event):
+      """Handle the window close event"""
+
+      resp = QMessageBox.question(self, self.__appName, u'Exit <b>' + self.__appName + '</b>?', QMessageBox.Yes | QMessageBox.No)
+      if resp == QMessageBox.Yes:
+         event.accept()
+      else:
+         event.ignore()
+
+
+   def __closeCaseTab(self, tab_index):
+      """Close selected tab"""
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      __cases = __corpus.children()[2] # cases tab
+
+      resp = QMessageBox.question(self, self.__appName, u'Close case <b>' + __cases.tabText(tab_index) + '</b>?', QMessageBox.Yes | QMessageBox.No)
+      if resp == QMessageBox.Yes:
+         # close case
+         __cases.removeTab(tab_index)
+
+
+   def __searchCase(self):
+      """Search cases"""
+
+      # clear the search criteria
+      search_criteria = self.sender().text().trimmed()
+      # if valid then search
+      if search_criteria.length():
+         print "Searching for \"" + search_criteria + "\""
+         # locate working elements
+         __corpus = self.corpusTabs.currentWidget() # corpus
+         __cases_list = __corpus.children()[1].children()[2] # cases list
+         # focus first case matching the search criteria
+         __result = __cases_list.findItems(search_criteria, Qt.MatchContains)
+         if len(__result) > 0:
+            __cases_list.setCurrentItem(__result[0])
+      else:
+         print "Please enter a valid search string"

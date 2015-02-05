@@ -11,11 +11,15 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 # import main window
-from ui.ToNgueLP_MW import ToNgueLP_MW
+from ui.ToNgueLP_MW import TNLP_MW
 
 # global app information
 appName = "ToNgueLP"
+<<<<<<< TREE
 appVersion = "0.2.1"
+=======
+appVersion = "0.2.1 (Sassure)"
+>>>>>>> MERGE-SOURCE
 
 if __name__ == '__main__':
    # create application
@@ -23,7 +27,7 @@ if __name__ == '__main__':
    app.setApplicationName(appName)
 
    # create widget
-   w = ToNgueLP_MW(appName, appVersion)
+   w = TNLP_MW(appName, appVersion)
    w.show()
 
    # connection
