@@ -37,7 +37,7 @@ class Corpus_Reader:
       # helper flag
       self.__parsed = False
 
-   def parse_xml(self, corpus_file = 'TNLP.xml', corpus_dir = 'data/corpuses/TNLP'):
+   def parse_xml(self, corpus_file = 'TNLP.xml', corpus_dir = 'data/corpuses/TNLP/'):
       """Parse corpus XML and return the data to the UI"""
 
       # XML location
