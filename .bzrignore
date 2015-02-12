@@ -1,0 +1,14 @@
+*.pyc
+*~
+/data/algorithms
+/data/corpuses
+/doc/01_Ingenieria/1.2_Arquitectura_y_Design/Estudio_de_homologos/
+/html
+/.project
+*.orig
+*.*#
+*.bak
+/bin
+OJO.txt
+*.gz
+*.directory
