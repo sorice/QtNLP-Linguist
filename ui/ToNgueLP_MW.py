@@ -9,7 +9,7 @@ from PyQt4.QtGui import *
 from forms.ToNgueLP_MW_UI import Ui_ToNgueLP_MW
 
 # import reader
-from modules.ToNgueLP_corpus import XML_read
+from modules.TNLP_corpus import XML_read
 
 # import plag types
 from TNLP_Plag_Types import plag_types
