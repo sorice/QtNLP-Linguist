@@ -11,7 +11,7 @@
 
 """
 
-from ToNgueLP_Parser import *
+from TNLP_Parser import *
 from xml.sax import SAXParseException
 from scripts import update_corpus_xml_info
 
