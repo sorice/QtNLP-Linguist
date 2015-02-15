@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- <!DOCTYPE report SYSTEM "TNLP.dtd"> -->
-
-<corpus name="RNLP" version="0.2" lang="es" total_cases="1" total_true_cases="1" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://tnlp.github.com">
-
+<corpus name="TNLP" version="0.2" lang="es" total_cases="1" total_true_cases="1" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://tnlp.github.com">
     <cases NLP_problem_type="similarity" text_extension="paragraph">
         <case_pair id="006" case_pair_description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown"/>
             <snippet_1 susp_doc="susp/susp-doc00539" snippet_offset="966" snippet_length="416"/>
             <snippet_2 src_doc="src/src-doc01529" snippet_src_offset="827" snippet_src_length="443"/>
     </cases>
-
-   <annotations paraphrase_candidates src_description="id:02276" src_doc_name="src-doc02276">
-        <cases_pair id="006">
+   <annotations>
+        <case_pair id="006">
             <annotation id="1" author="abelm" is_paraphrase="True" human_validation="None" artificial_validation="True" date="2015/02/14">
                 <phenomenon type="lex_same_polarity" projection="local"/>
                 <chunk_1 chunk_offset="30" chunk_length="47"/>
@@ -22,6 +18,6 @@
                 <chunk_1 chunk_offset="18" chunk_length="8"/>
                 <chunk_2 chunk_src_offset="18" chunk_src_length="6"/>
             </annotation>
-        </cases_pair>
+        </case_pair>
    </annotations>
 </corpus>
