@@ -28,7 +28,7 @@ sys.path.append(os.path.abspath('modules/TNLP_corpus'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.pngmath', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.pngmath', 'sphinx.ext.viewcode','sphinxcontrib.bibtex']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -89,6 +89,9 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+# File of Bibliography in bibtex format
+bibcite_bibdb = 'reference'
+style = 'APA'
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -123,7 +126,6 @@ html_title = 'ToNgueLP alpha-0.1 DOC'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 html_static_path = ['doc']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,

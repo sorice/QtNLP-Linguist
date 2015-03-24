@@ -20,6 +20,17 @@ Arquitectura
 * :ref:`scripts <ToNgueLP_scripts>`: *Scripts necesarios para el funcionamiento del negocio de ToNgueLP.*
 * :ref:`ui <ToNgueLP_ui_file>`: *GUIs en Qt*
 
+.. list-table::
+   :class: contentstable
+
+   * - `Lib <lib/lib.html>`_
+
+       Bibliotecas adicionales que se utilizan.
+
+     - `UI <ui/ui.html>`_
+
+       Interfaz gráfica de TNLP.
+
 Copyright
 ----------
 

@@ -26,28 +26,20 @@ Guía de Usuario
 
 |EScorpus| puede ser usado como **lingüista**, como **investigador** del procesamiento de los lenguajes naturales, o como **entusiasta de los idiomas**. Si usted desea conocer como usar esta herramienta lea esta sección:
 
-.. tabularcolumns:: m{150pt} m{150pt} m{150pt} |c|c|c|
+.. list-table::
+   :class: contentstable
 
-======================================================== =========================================================== =======================================================
- |Vista Principal|								 |Vista de Comparación|								|Vista de Diccionarios|
-======================================================== =========================================================== =======================================================
- :ref:`Vista p/ Lingüistas <EScorpus_module_principal>`   :ref:`Vista p/ Investigadores <EScorpus_module_matching>`   :ref:`Entusiasta de Idiomas <EScorpus_module_dicts>`
-======================================================== =========================================================== =======================================================
+   * - :ref:`Vista p/ Lingüistas <EScorpus_module_principal>`
 
-.. |Vista Principal| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_Principal_for_sphinx-doc.png
-                 :height: 105pt
-                 :width:  120pt
-                 :alt: Vista principal de ToNgueLP.
+       |Vista Principal|
 
-.. |Vista de Comparación| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Comparacion.png
-                 :height: 90pt
-                 :width:  120pt
-                 :alt: Vista principal de ToNgueLP.
+     - :ref:`Vista p/ Investigadores <EScorpus_module_matching>`   
 
-.. |Vista de Diccionarios| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Diccionario.png
-                 :height: 120pt
-                 :width:  90pt
-                 :alt: Vista principal de ToNgueLP.
+       |Vista de Comparación|
+
+     - :ref:`Entusiasta de Idiomas <EScorpus_module_dicts>`
+
+       |Vista de Diccionarios|   
 
 .. toctree::
    :maxdepth: 2
@@ -75,7 +67,7 @@ Arq Software
 Documentación
 ----------------
 
-  Conozca |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. El proyecto está documentado usando la metodología SXP (híbrido cubano de XP -SCRUM). Usted podrá encontrar aquí los artefactos finales entregados a los clientes de |EScorpus|, y los editables para su uso atendiendo al copyright especificado.
+  Conozca |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. El proyecto está documentado usando la metodología SXP (híbrido cubano de XP -SCRUM). Usted podrá encontrar aquí los artefactos finales entregados a los clientes de |EScorpus|, y los editables para su uso atendiendo al copyright especificado. :cite:`Bhagat2013`
 
   .. toctree::
      :maxdepth: 2
@@ -91,6 +83,9 @@ Esta sección refiere algunos apuntes históricos del proyecto, así como datos 
 * :ref:`Release Notes <Release_notes>`
 * :ref:`Colaboradores <Colaborators>`
 
+.. bibliography:: reference.bib
+  :style:
+
 Copyright
 ***********
 
@@ -99,3 +94,18 @@ Copyright
 .. sectionauthor:: Abel Meneses Abad <abelma1980@gmail.com> 
 
 .. |EScorpus| replace:: ToNgueLP
+
+.. |Vista Principal| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_Principal_for_sphinx-doc.png
+                 :height: 105pt
+                 :width:  120pt
+                 :alt: Vista principal de ToNgueLP.
+
+.. |Vista de Comparación| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Comparacion.png
+                 :height: 90pt
+                 :width:  120pt
+                 :alt: Vista principal de ToNgueLP.
+
+.. |Vista de Diccionarios| image:: /doc/01_Ingenieria/1.2_Arquitectura_y_Design/Mockups/Vista_de_Diccionario.png
+                 :height: 120pt
+                 :width:  90pt
+                 :alt: Vista principal de ToNgueLP.
