@@ -1,0 +1,7 @@
+R equipo NLP
+Agregar URLs al .VUE del doctorado.
+./Resultados/OK_18_2014-03-18_PAN_2014_Text_Alignment_Task-no_enviado_test10-y-test11
+
+Revisar el libro:
+file:///media/31C4-B2B6/Python/02_Scientific/numpy & scipy/Python Scientific lecture notes.pdf
+Para la tarea de Ginori.
