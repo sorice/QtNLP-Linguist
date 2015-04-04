@@ -11,3 +11,5 @@
 OJO.txt
 *.gz
 *.directory
+/doc/.~*
+*.m
