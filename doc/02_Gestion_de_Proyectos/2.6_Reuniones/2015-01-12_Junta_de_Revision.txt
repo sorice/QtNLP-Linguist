@@ -11,7 +11,7 @@ Objetivos desglosados:
 
 [OK]2- Probé con éxito generar documentación desde dentro del código de una clase. También dentro de varias clases.[OK, 21/12/2014]
 
-[OK]3- El tema de las pruebas es enorme!!! Hoy instalé una biblioteca adicional a las que ya tenía que me permitirán estudiar a ver si para cuando nos veamos en enero puedo enseñarte algún set de pruebas decentes. Se puede integrar bazaar con el sistemas de pruebas.
+[OK]3- El tema de las pruebas es enorme!!! Hoy instalé una biblioteca adicional a las que ya tenía que me permitirán estudiar a ver si para cuando nos veamos en enero puedo enseñarte algún set de pruebas decentes. Se puede integrar bazaar con el sistemas de pruebas.[OK, 09/01/2015]
 
 [OK]4- Cuando te refieras a un XML en particular por favor usa los nombres que están en la documentación supongo que te refieres al ToNgueLP-plag-cases-corpus.xml. Siendo así los tipos de plagios los tienes en el Plagio_Parafrastico.png que te mando atachado.
 Ahora si te refieres a las categorías más generales: Literal, Paráfrasis, CrosLingual, Bad-Citation y Citas-Copyleft tendrás que usar alguna foto del Prototipo de Sunshine.(Te la mando?)
@@ -86,4 +86,4 @@ Objetivos de la junta de Revisión de Nov 2014
 Revisar el diseño de la versión 0.2.1 en Qt4.
 
 Documentado por: Abel Meneses
-fecha: 31/11/2014
+fecha: ../01/2015

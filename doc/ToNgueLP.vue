@@ -1,14 +1,14 @@
-<!-- Tufts VUE 3.1.2 concept-map (ToNgueLP.vue) 2014-12-21 -->
+<!-- Tufts VUE 3.1.2 concept-map (ToNgueLP.vue) 2015-04-03 -->
 <!-- Tufts VUE: http://vue.tufts.edu/ -->
 <!-- Do Not Remove: VUE mapping @version(1.1) jar:file:/opt/VUE.jar!/tufts/vue/resources/lw_mapping_1_1.xml -->
-<!-- Do Not Remove: Saved date Sun Dec 21 19:32:32 CST 2014 by sorice on platform Linux 3.2.0-64-generic in JVM 1.6.0_31-b31 -->
+<!-- Do Not Remove: Saved date Fri Apr 03 23:31:29 CDT 2015 by sorice on platform Linux 3.2.0-64-generic in JVM 1.6.0_31-b31 -->
 <!-- Do Not Remove: Saving version @(#)VUE: built March 8 2012 at 1310 by vue on Linux 2.4.21-63.EL i386 JVM 1.5.0_06-b05(bits=32) -->
 <?xml version="1.0" encoding="US-ASCII"?>
 <LW-MAP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="none" ID="0" label="ToNgueLP.vue"
     created="1364339456635" x="0.0" y="0.0" width="980.17365"
     height="927.8998" strokeWidth="0.0" autoSized="false">
-    <resource referenceCreated="1419208353411" size="138328"
+    <resource referenceCreated="1428118289551" size="138315"
         spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/ToNgueLP.vue"
         type="1" xsi:type="URLResource">
         <title>ToNgueLP.vue</title>
@@ -179,7 +179,7 @@
     <child ID="6" label="Glosario de T&#xe9;rminos" layerID="1"
         created="1364339464586" x="-69.399994" y="243.79977"
         width="175.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="49303"
+        <resource referenceCreated="0" size="44996"
             spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/03_Soporte/3.1_Aseguramiento_de_la_calidad/15_Glosario_de_Terminos.odt"
             type="1" xsi:type="URLResource">
             <title>15_Glosario_de_Terminos.odt</title>
@@ -521,19 +521,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/c564d7aa7f00010100ad89eca77b073c</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-family: Arial; color: #000000; margin-top: 0px; margin-bottom: 0px; font-size: 12; margin-right: 0px; margin-left: 0px }
-        ol { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
-        p { color: #000000; margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0 }
-        ul { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
+        body { color: #000000; margin-right: 0px; font-size: 12; margin-top: 0px; margin-left: 0px; font-family: Arial; margin-bottom: 0px }
+        ol { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
+        p { color: #000000; margin-right: 0; margin-top: 0; margin-left: 0; margin-bottom: 0 }
+        ul { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       --------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -662,10 +662,10 @@
   &lt;head&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-family: Arial; color: #000000; margin-top: 0px; margin-bottom: 0px; font-size: 12; margin-right: 0px; margin-left: 0px }
-        ol { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
-        p { color: #000000; margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0 }
-        ul { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
+        body { color: #000000; margin-right: 0px; font-size: 12; margin-top: 0px; margin-left: 0px; font-family: Arial; margin-bottom: 0px }
+        ol { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
+        p { color: #000000; margin-right: 0; margin-top: 0; margin-left: 0; margin-bottom: 0 }
+        ul { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
@@ -697,19 +697,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/c564d7d07f00010100ad89ec4578dd48</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-family: Arial; color: #000000; margin-top: 0px; margin-bottom: 0px; font-size: 12; margin-right: 0px; margin-left: 0px }
-        ol { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
-        p { color: #000000; margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0 }
-        ul { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
+        body { color: #000000; margin-right: 0px; font-size: 12; margin-top: 0px; margin-left: 0px; font-family: Arial; margin-bottom: 0px }
+        ol { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
+        p { color: #000000; margin-right: 0; margin-top: 0; margin-left: 0; margin-bottom: 0 }
+        ul { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -798,12 +798,11 @@
     <child ID="81" label="Estilo de c&#xf3;digo" layerID="1"
         created="1365187892151" x="360.81152" y="289.31863"
         width="127.0" height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="163993"
-            spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"
+        <resource referenceCreated="0" size="93946"
+            spec="/media/swlDOC/Doctorado/00_ToNgueLP/html/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/2013_Rosen_Guido-Style_Guide_for_Python_Code.html"
             type="1" xsi:type="URLResource">
-            <title>Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf</title>
-            <property key="@file.relative" value="01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"/>
-            <property key="File" value="01_Ingenieria/1.3_Implementacion_y_Prueba/Ejemplo_de_Estilo_de_Codigo_Google-Python-Style.pdf"/>
+            <title>2013_Rosen_Guido-Style_Guide_for_Python_Code.html</title>
+            <property key="File" value="/media/swlDOC/Doctorado/00_ToNgueLP/html/doc/01_Ingenieria/1.3_Implementacion_y_Prueba/2013_Rosen_Guido-Style_Guide_for_Python_Code.html"/>
         </resource>
         <fillColor>#C1C1FF</fillColor>
         <strokeColor>#C1C1FF</strokeColor>
@@ -906,7 +905,7 @@
         <child ID="184" label="Tareas de ingenier&#xed;a"
             created="1365406789937" x="34.0" y="85.0" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="259447"
+            <resource referenceCreated="0" size="259925"
                 spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
@@ -1114,7 +1113,7 @@
         <child ID="104" label="Tareas de Ingenier&#xed;a"
             created="1365191091211" x="34.0" y="65.5" width="153.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="259447"
+            <resource referenceCreated="0" size="259925"
                 spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
                 type="1" xsi:type="URLResource">
                 <title>06_HU.odt</title>
@@ -1159,7 +1158,7 @@
         <child ID="116" label="- Tareas de Investigaci&#xf3;n"
             created="1365191792275" x="34.0" y="22.0" width="199.0"
             height="27.0" strokeWidth="1.0" autoSized="true" xsi:type="node">
-            <resource referenceCreated="0" size="164448"
+            <resource referenceCreated="0" size="200389"
                 spec="/media/swlDOC/Doctorado/Notas_de_la_Investigacion/Notas_de_la_investigacion.txt"
                 type="1" xsi:type="URLResource">
                 <title>Notas_de_la_investigacion.txt</title>
@@ -1412,19 +1411,19 @@
         </metadata-list>
         <URIString>http://vue.tufts.edu/rdf/resource/dd44dafa7f00010101fac7cfc2aaf57f</URIString>
         <richText>&lt;html&gt;
-  &lt;head style="color: #000000" color="#000000"&gt;
+  &lt;head color="#000000" style="color: #000000"&gt;
     &lt;style type="text/css"&gt;
       &lt;!--
-        body { font-family: Arial; color: #000000; margin-top: 0px; margin-bottom: 0px; font-size: 12; margin-right: 0px; margin-left: 0px }
-        ol { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
-        p { color: #000000; margin-top: 0; margin-bottom: 0; margin-right: 0; margin-left: 0 }
-        ul { font-family: Arial; margin-top: 6; font-size: 12; margin-left: 30; vertical-align: middle; list-style-position: outside }
+        body { color: #000000; margin-right: 0px; font-size: 12; margin-top: 0px; margin-left: 0px; font-family: Arial; margin-bottom: 0px }
+        ol { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
+        p { color: #000000; margin-right: 0; margin-top: 0; margin-left: 0; margin-bottom: 0 }
+        ul { font-size: 12; margin-top: 6; vertical-align: middle; margin-left: 30; font-family: Arial; list-style-position: outside }
       --&gt;
     &lt;/style&gt;
     
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;p style="color: #000000" color="#000000"&gt;
+    &lt;p color="#000000" style="color: #000000"&gt;
       -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     &lt;/p&gt;
   &lt;/body&gt;
@@ -1491,7 +1490,7 @@
         <child ID="132" label="Manual de Desarrollo"
             created="1365213571496" x="34.0" y="62.5" width="170.42188"
             height="27.0" strokeWidth="4.0" autoSized="false" xsi:type="node">
-            <resource referenceCreated="0" size="11471"
+            <resource referenceCreated="0" size="11238"
                 spec="/media/swlDOC/Doctorado/00_ToNgueLP/html/modules/modules.html"
                 type="1" xsi:type="URLResource">
                 <title>modules.html</title>
@@ -1852,7 +1851,7 @@
     <child ID="67" label="Historias de Usuario(HU)" layerID="1"
         created="1364815410184" x="114.34996" y="223.34996"
         width="178.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="259447"
+        <resource referenceCreated="0" size="259925"
             spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/01_Ingenieria/1.1_Requisitos/06_HU.odt"
             type="1" xsi:type="URLResource">
             <title>06_HU.odt</title>
@@ -2154,7 +2153,7 @@
     <child ID="134" label="Manual de Usuario" layerID="1"
         created="1365213617831" x="534.2658" y="741.13965" width="157.0"
         height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="7034"
+        <resource referenceCreated="0"
             spec="/media/swlDOC/Doctorado/00_ToNgueLP/html/doc/help/help.html"
             type="1" xsi:type="URLResource">
             <title>help.html</title>
@@ -2205,7 +2204,7 @@
     <child ID="177" label="Arquitectura de Informaci&#xf3;n" layerID="1"
         created="1365392663320" x="114.149994" y="455.9398"
         width="213.0" height="27.0" strokeWidth="4.0" autoSized="true" xsi:type="node">
-        <resource referenceCreated="0" size="637521"
+        <resource referenceCreated="0" size="671844"
             spec="/media/swlDOC/Doctorado/00_ToNgueLP/doc/01_Ingenieria/1.2_Arquitectura_y_Design/11_Arq_de_informacion.pdf"
             type="1" xsi:type="URLResource">
             <title>11_Arq_de_informacion.pdf</title>
@@ -2498,7 +2497,7 @@
         <URIString>http://vue.tufts.edu/rdf/resource/a9407ae17f0001010084c1f965fda63b</URIString>
     </layer>
     <userZoom>1.0</userZoom>
-    <userOrigin x="-177.92508" y="-145.56021"/>
+    <userOrigin x="-102.92508" y="-145.56021"/>
     <presentationBackground>#202020</presentationBackground>
     <PathwayList currentPathway="0" revealerIndex="-1">
         <pathway ID="0" label="Camino sin t&#xed;tulo"

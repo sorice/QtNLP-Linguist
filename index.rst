@@ -62,7 +62,9 @@ Esta sección está orientada a desarrolladores activos, o entusiastas futuros d
 Arq Software
 ---------------
 
-  :Avanzado: :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
+  :Avanzado: 
+    * :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
+    * :ref:`Estilo de Código de ToNgueLP<TNLP_code_style>` 
 
 Documentación
 ----------------
@@ -73,6 +75,23 @@ Documentación
      :maxdepth: 2
 
      /doc/doc
+
+Matlab Example
+***************
+
+.. code-block:: matlab
+
+   nf = fix((nx-len+inc)/inc);
+   f=zeros(nf,len);
+   indf= inc*(0:(nf-1)).';
+   inds = (1:len);
+   f(:) = x(indf(:,ones(1,len))+inds(ones(nf,1),:));
+   if (nwin > 1)
+       w = win(:)';
+       f = f .* w(ones(nf,1),:);
+   end
+
+.. autofunction:: enframe()
 
 Acerca de:
 *******************

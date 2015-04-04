@@ -1,5 +1,8 @@
-PEP: 8
-Title: Style Guide for Python Code
+.. _TNLP_code_style:
+
+Style Guide for Python Code
+*******************************
+
 Version: $Revision$
 Last-Modified: $Date$
 Author: Guido van Rossum <guido@python.org>,
