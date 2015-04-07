@@ -11,7 +11,7 @@
 
 """
 
-from ToNgueLP_Parser import *
+from TNLP_Parser import *
 from xml.sax import SAXParseException
 from scripts import update_corpus_xml_info
 
@@ -50,7 +50,7 @@ class Corpus_Reader:
          self.__parsed = True
       except SAXParseException as e:
          self.__parsed = False
-      
+
       if self.__parsed:
          self.__first_run = False
 
