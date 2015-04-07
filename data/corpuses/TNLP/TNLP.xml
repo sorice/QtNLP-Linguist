@@ -3,37 +3,37 @@
 <corpus name="TNLP" version="0.2" lang="es" total_cases="1" total_true_cases="1" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://tnlp.github.com">
    <cases>
       <group NLP_problem_type="similarity" text_extension="paragraph">
-         <case_pair id="6" case_pair_description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" case_generate_by="human" case_generator_name="abel">
-            <snippet_1 susp_doc="susp/susp-doc00539" snippet_offset="966" snippet_length="416" susp_sentences_number="5"/>
-            <snippet_2 src_doc="src/src-doc01529" snippet_src_offset="827" snippet_src_length="443" src_sentences_number="4"/>
-         </case_pair>
+         <case id="6" description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generate_by="human" generator_name="abel">
+            <susp_snippet doc="susp/susp-doc00539" offset="966" length="416" sentences_count="5"/>
+            <src_snippet doc="src/src-doc01529" offset="827" length="443" sentences_count="4"/>
+         </case>
       </group>
       <group NLP_problem_type="translation" text_extension="paragraph">
-         <case_pair id="7" case_pair_description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" case_generated_by="machine" case_generator_name="abel-ngram-gen-2">
-            <snippet_1 susp_doc="susp/susp-doc00539" snippet_offset="966" snippet_length="416"/>
-            <snippet_2 src_doc="src/src-doc01529" snippet_src_offset="827" snippet_src_length="443"/>
-         </case_pair>
+         <case id="7" description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generated_by="machine" generator_name="abel-ngram-gen-2">
+            <susp_snippet doc="susp/susp-doc00539" offset="966" length="416" sentences_count="5"/>
+            <src_snippet doc="src/src-doc01529" offset="827" length="443" sentences_count="4"/>
+         </case>
       </group>
    </cases>
    <annotations>
-      <case_pair id="6">
+      <case id="6">
          <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
             <phenomenon type="lex_same_polarity" projection="local"/>
-            <chunk_1 chunk_offset="30" chunk_length="47"/>
-            <chunk_2 chunk_src_offset="14" chunk_src_length="30"/>
+            <susp_chunk offset="30" length="47"/>
+            <src_chunk offset="14" length="30"/>
          </annotation>
-         <annotation id="2" author="abelm" is_paraphrase="False" human_validation="True" artificial_validation="True" annotation_date="2015/02/15">
+         <annotation id="2" author="abelm" is_paraphrase="False" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/15">
             <phenomenon type="None" projection="None"/>
-            <chunk_1 chunk_offset="18" chunk_length="8"/>
-            <chunk_2 chunk_src_offset="18" chunk_src_length="6"/>
+            <susp_chunk offset="18" length="8"/>
+            <src_chunk offset="18" length="6"/>
          </annotation>
-      </case_pair>
-      <case_pair id="7">
-         <annotation id="1" author="abelm" is_paraphrase="True" human_validation="None" artificial_validation="True" annotation_date="2015/02/14">
+      </case>
+      <case id="7">
+         <annotation id="1" author="abelm" is_paraphrase="True" " validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
             <phenomenon type="lex_same_polarity" projection="local"/>
-            <chunk_1 chunk_offset="30" chunk_length="47"/>
-            <chunk_2 chunk_src_offset="14" chunk_src_length="30"/>
+            <susp_chunk offset="30" length="47"/>
+            <src_chunk offset="14" length="30"/>
          </annotation>
-      </case_pair>
+      </case>
    </annotations>
 </corpus>
