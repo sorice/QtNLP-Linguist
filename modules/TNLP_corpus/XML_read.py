@@ -50,7 +50,7 @@ class Corpus_Reader:
          self.__parsed = True
       except SAXParseException as e:
          self.__parsed = False
-      
+
       if self.__parsed:
          self.__first_run = False
 

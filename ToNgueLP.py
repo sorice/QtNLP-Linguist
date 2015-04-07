@@ -4,18 +4,18 @@
 import sys
 import os
 # add current ToNgueLP location to python PATH to locate modules
-sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../../')))
+#sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../../')))
 
 # import PyQt4 QtCore and QtGui modules
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 # import main window
-from ui.ToNgueLP_MW import TNLP_MW
+from ui.TNLP_MW import TNLP_MW
 
 # global app information
 appName = "ToNgueLP"
-appVersion = "0.2.1 (Sassure)"
+appVersion = "0.3.x (----)"
 
 
 if __name__ == '__main__':

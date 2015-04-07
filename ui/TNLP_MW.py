@@ -6,10 +6,11 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 # import UI base file
-from forms.ToNgueLP_MW_UI import Ui_ToNgueLP_MW
+from forms.TNLP_MW_UI import Ui_ToNgueLP_MW
 
 # import reader
-from modules.TNLP_corpus import XML_read
+#from modules.TNLP_corpus import XML_read
+from modules.TNLP_corpus.TNLP_XML_Manager import TNLP_XML_Manager
 
 # import plag types
 from TNLP_Plag_Types import plag_types
@@ -121,6 +122,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       verticalLayout_2.addWidget(suspInfo)
 
       suspDoc = QTextEdit(tab_1)
+      suspDoc.setObjectName(_fromUtf8("suspDoc"))
       suspDoc.setReadOnly(True)
       suspDoc.setHtml('Suspicious')
       verticalLayout_2.addWidget(suspDoc)
@@ -129,6 +131,49 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       line.setFrameShape(QFrame.HLine)
       line.setFrameShadow(QFrame.Sunken)
       verticalLayout_2.addWidget(line)
+
+      """annotationsWidget = QGroupBox(centralwidget)
+      annotationsWidget.setGeometry(QRect(130, 80, 282, 319))
+      annotationsWidget.setContextMenuPolicy(Qt.PreventContextMenu)
+      annotationsWidget.setFlat(True)
+      annotationsWidget.setObjectName(_fromUtf8("annotationsWidget"))
+      gridLayout = QGridLayout(annotationsWidget)
+      gridLayout.setObjectName(_fromUtf8("gridLayout"))
+      verticalLayout_2 = QVBoxLayout()
+      verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
+      horizontalLayout = QHBoxLayout()
+      horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+      addAnnotation = QPushButton(annotationsWidget)
+      addAnnotation.setMinimumSize(QSize(64, 0))
+      addAnnotation.setMaximumSize(QSize(64, 16777215))
+      addAnnotation.setObjectName(_fromUtf8("addAnnotation"))
+      horizontalLayout.addWidget(addAnnotation)
+      previousAnnotation = QPushButton(annotationsWidget)
+      previousAnnotation.setMinimumSize(QSize(64, 0))
+      previousAnnotation.setMaximumSize(QSize(64, 16777215))
+      previousAnnotation.setObjectName(_fromUtf8("previousAnnotation"))
+      horizontalLayout.addWidget(previousAnnotation)
+      nextAnnotation = QPushButton(annotationsWidget)
+      nextAnnotation.setMinimumSize(QSize(64, 0))
+      nextAnnotation.setMaximumSize(QSize(64, 16777215))
+      nextAnnotation.setObjectName(_fromUtf8("nextAnnotation"))
+      horizontalLayout.addWidget(nextAnnotation)
+      spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout.addItem(spacerItem)
+      verticalLayout_2.addLayout(horizontalLayout)
+      verticalLayout = QVBoxLayout()
+      verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+      chunkSusp = QLabel(annotationsWidget)
+      chunkSusp.setObjectName(_fromUtf8("chunkSusp"))
+      verticalLayout.addWidget(chunkSusp)
+      chunkSrc = QLabel(annotationsWidget)
+      chunkSrc.setObjectName(_fromUtf8("chunkSrc"))
+      verticalLayout.addWidget(chunkSrc)
+      verticalLayout_2.addLayout(verticalLayout)
+      gridLayout.addLayout(verticalLayout_2, 0, 0, 1, 1)
+      annotationsList = QListView(annotationsWidget)
+      annotationsList.setObjectName(_fromUtf8("annotationsList"))
+      gridLayout.addWidget(annotationsList, 1, 0, 1, 1)"""
 
       sourceInfo = QLabel(tab_1)
       #sourceInfo.setText(QString("id = <b>%1</b>, src_name = <b>%2</b>, length = <b>%3</b> char(s), <b>%4</b> words, <b>%5</b> sentence(s), orig_offset = <b>%6</b>").arg(str(278)).arg(str('src-doc45')).arg(str(570)).arg(str(70)).arg(str(5)).arg(str(329)))
@@ -160,9 +205,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       """Load a new corpus"""
 
       # parser instance
-      __reader = XML_read.Corpus_Reader()
+      #__reader = XML_read.Corpus_Reader()
+      __reader = TNLP_XML_Manager()
+      print __reader
 
-      if __reader.parse_xml():
+      if __reader.parse_xml('abc.xml'):
          # corpus already loaded?
          __corpus_names = []
          for i in self.__corpus_list:
