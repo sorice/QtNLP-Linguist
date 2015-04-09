@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ToNgueLP_MW.ui'
+# Form implementation generated from reading ui file 'TNLP_MW.ui'
 #
-# Created: Mon Jan 12 13:54:28 2015
+# Created: Tue Apr  7 22:03:46 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -39,7 +39,7 @@ class Ui_ToNgueLP_MW(object):
         self.gridLayout.addWidget(self.corpusTabs, 0, 1, 1, 1)
         ToNgueLP_MW.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(ToNgueLP_MW)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 953, 27))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 953, 29))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuCorpus = QtGui.QMenu(self.menubar)
         self.menuCorpus.setObjectName(_fromUtf8("menuCorpus"))
@@ -53,6 +53,10 @@ class Ui_ToNgueLP_MW(object):
         self.menuHelp.setObjectName(_fromUtf8("menuHelp"))
         self.menuLogin = QtGui.QMenu(self.menubar)
         self.menuLogin.setObjectName(_fromUtf8("menuLogin"))
+        self.menuCases = QtGui.QMenu(self.menubar)
+        self.menuCases.setObjectName(_fromUtf8("menuCases"))
+        self.menuAnnotations = QtGui.QMenu(self.menubar)
+        self.menuAnnotations.setObjectName(_fromUtf8("menuAnnotations"))
         ToNgueLP_MW.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(ToNgueLP_MW)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
@@ -163,6 +167,18 @@ class Ui_ToNgueLP_MW(object):
         self.actionUser_s_Manual.setObjectName(_fromUtf8("actionUser_s_Manual"))
         self.actionExit = QtGui.QAction(ToNgueLP_MW)
         self.actionExit.setObjectName(_fromUtf8("actionExit"))
+        self.actionAdd_case = QtGui.QAction(ToNgueLP_MW)
+        self.actionAdd_case.setObjectName(_fromUtf8("actionAdd_case"))
+        self.actionEdit_case = QtGui.QAction(ToNgueLP_MW)
+        self.actionEdit_case.setObjectName(_fromUtf8("actionEdit_case"))
+        self.actionDelete_case = QtGui.QAction(ToNgueLP_MW)
+        self.actionDelete_case.setObjectName(_fromUtf8("actionDelete_case"))
+        self.actionAdd_annotation = QtGui.QAction(ToNgueLP_MW)
+        self.actionAdd_annotation.setObjectName(_fromUtf8("actionAdd_annotation"))
+        self.actionEdit_annotation = QtGui.QAction(ToNgueLP_MW)
+        self.actionEdit_annotation.setObjectName(_fromUtf8("actionEdit_annotation"))
+        self.actionDelete_annotation = QtGui.QAction(ToNgueLP_MW)
+        self.actionDelete_annotation.setObjectName(_fromUtf8("actionDelete_annotation"))
         self.menuCorpus.addAction(self.actionLoad_New_Corpus)
         self.menuCorpus.addAction(self.actionAdd_New_Corpus_Doc)
         self.menuCorpus.addAction(self.actionSave_Corpus)
@@ -181,7 +197,15 @@ class Ui_ToNgueLP_MW(object):
         self.menuScripts.addAction(self.actionUpdate_XMLs_Info)
         self.menuHelp.addAction(self.actionAbout_ToNgueLP)
         self.menuHelp.addAction(self.actionUser_s_Manual)
+        self.menuCases.addAction(self.actionAdd_case)
+        self.menuCases.addAction(self.actionEdit_case)
+        self.menuCases.addAction(self.actionDelete_case)
+        self.menuAnnotations.addAction(self.actionAdd_annotation)
+        self.menuAnnotations.addAction(self.actionEdit_annotation)
+        self.menuAnnotations.addAction(self.actionDelete_annotation)
         self.menubar.addAction(self.menuCorpus.menuAction())
+        self.menubar.addAction(self.menuCases.menuAction())
+        self.menubar.addAction(self.menuAnnotations.menuAction())
         self.menubar.addAction(self.menuTools.menuAction())
         self.menubar.addAction(self.menuConfig.menuAction())
         self.menubar.addAction(self.menuScripts.menuAction())
@@ -210,6 +234,8 @@ class Ui_ToNgueLP_MW(object):
         self.menuScripts.setTitle(_translate("ToNgueLP_MW", "Scripts", None))
         self.menuHelp.setTitle(_translate("ToNgueLP_MW", "Help", None))
         self.menuLogin.setTitle(_translate("ToNgueLP_MW", "Login", None))
+        self.menuCases.setTitle(_translate("ToNgueLP_MW", "Cases", None))
+        self.menuAnnotations.setTitle(_translate("ToNgueLP_MW", "Annotations", None))
         self.toolBar_Main.setWindowTitle(_translate("ToNgueLP_MW", "toolBar", None))
         self.toolBar_Fixed.setWindowTitle(_translate("ToNgueLP_MW", "toolBar_2", None))
         self.toolBar_Cases.setWindowTitle(_translate("ToNgueLP_MW", "toolBar_3", None))
@@ -242,5 +268,11 @@ class Ui_ToNgueLP_MW(object):
         self.actionUser_s_Manual.setText(_translate("ToNgueLP_MW", "User\'s Manual", None))
         self.actionExit.setText(_translate("ToNgueLP_MW", "Exit", None))
         self.actionExit.setShortcut(_translate("ToNgueLP_MW", "Ctrl+Q", None))
+        self.actionAdd_case.setText(_translate("ToNgueLP_MW", "Add case", None))
+        self.actionEdit_case.setText(_translate("ToNgueLP_MW", "Edit case", None))
+        self.actionDelete_case.setText(_translate("ToNgueLP_MW", "Delete case", None))
+        self.actionAdd_annotation.setText(_translate("ToNgueLP_MW", "Add annotation", None))
+        self.actionEdit_annotation.setText(_translate("ToNgueLP_MW", "Edit annotation", None))
+        self.actionDelete_annotation.setText(_translate("ToNgueLP_MW", "Delete annotation", None))
 
 import resources_rc

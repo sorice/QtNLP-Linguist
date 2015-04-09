@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# adapted from MediMorph Project
+# adapted from MediaMorph Project
 # Thanks guys !!! Awesome script !!!
 
 # Converts all .qrc files in current directory into .py files

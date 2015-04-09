@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# adapted from MediMorph Project
+# adapted from MediaMorph Project
 # Thanks guys !!! Awesome script !!!
 
 # Converts all .ui files in current directory into .py files

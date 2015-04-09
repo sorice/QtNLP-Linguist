@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>953</width>
-     <height>27</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCorpus">
@@ -90,7 +90,25 @@
      <string>Login</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuCases">
+    <property name="title">
+     <string>Cases</string>
+    </property>
+    <addaction name="actionAdd_case"/>
+    <addaction name="actionEdit_case"/>
+    <addaction name="actionDelete_case"/>
+   </widget>
+   <widget class="QMenu" name="menuAnnotations">
+    <property name="title">
+     <string>Annotations</string>
+    </property>
+    <addaction name="actionAdd_annotation"/>
+    <addaction name="actionEdit_annotation"/>
+    <addaction name="actionDelete_annotation"/>
+   </widget>
    <addaction name="menuCorpus"/>
+   <addaction name="menuCases"/>
+   <addaction name="menuAnnotations"/>
    <addaction name="menuTools"/>
    <addaction name="menuConfig"/>
    <addaction name="menuScripts"/>
@@ -361,6 +379,36 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAdd_case">
+   <property name="text">
+    <string>Add case</string>
+   </property>
+  </action>
+  <action name="actionEdit_case">
+   <property name="text">
+    <string>Edit case</string>
+   </property>
+  </action>
+  <action name="actionDelete_case">
+   <property name="text">
+    <string>Delete case</string>
+   </property>
+  </action>
+  <action name="actionAdd_annotation">
+   <property name="text">
+    <string>Add annotation</string>
+   </property>
+  </action>
+  <action name="actionEdit_annotation">
+   <property name="text">
+    <string>Edit annotation</string>
+   </property>
+  </action>
+  <action name="actionDelete_annotation">
+   <property name="text">
+    <string>Delete annotation</string>
    </property>
   </action>
  </widget>
