@@ -3,37 +3,31 @@
 <corpus name="TNLP" version="0.2" lang="es" total_cases="1" total_true_cases="1" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://tnlp.github.com">
    <cases>
       <group NLP_problem_type="similarity" text_extension="paragraph">
-         <case id="6" description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generate_by="human" generator_name="abel">
+         <case id="6" description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generated_by="human" generator_name="abel">
             <susp_snippet doc="susp/susp-doc00539" offset="966" length="416" sentences_count="5"/>
             <src_snippet doc="src/src-doc01529" offset="827" length="443" sentences_count="4"/>
+            <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
+               <phenomenon type="lex_same_polarity" projection="local"/>
+               <susp_chunk offset="30" length="47"/>
+               <src_chunk offset="14" length="30"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="False" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/15">
+               <phenomenon type="None" projection="None"/>
+               <susp_chunk offset="18" length="8"/>
+               <src_chunk offset="18" length="6"/>
+            </annotation>
          </case>
       </group>
       <group NLP_problem_type="translation" text_extension="paragraph">
          <case id="7" description="" plag_type="paraphrase" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generated_by="machine" generator_name="abel-ngram-gen-2">
             <susp_snippet doc="susp/susp-doc00539" offset="966" length="416" sentences_count="5"/>
             <src_snippet doc="src/src-doc01529" offset="827" length="443" sentences_count="4"/>
+            <annotation id="3" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
+               <phenomenon type="lex_same_polarity" projection="local"/>
+               <susp_chunk offset="30" length="47"/>
+               <src_chunk offset="14" length="30"/>
+            </annotation>
          </case>
       </group>
    </cases>
-   <annotations>
-      <case id="6">
-         <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
-            <phenomenon type="lex_same_polarity" projection="local"/>
-            <susp_chunk offset="30" length="47"/>
-            <src_chunk offset="14" length="30"/>
-         </annotation>
-         <annotation id="2" author="abelm" is_paraphrase="False" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/15">
-            <phenomenon type="None" projection="None"/>
-            <susp_chunk offset="18" length="8"/>
-            <src_chunk offset="18" length="6"/>
-         </annotation>
-      </case>
-      <case id="7">
-         <annotation id="1" author="abelm" is_paraphrase="True" " validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
-            <phenomenon type="lex_same_polarity" projection="local"/>
-            <susp_chunk offset="30" length="47"/>
-            <src_chunk offset="14" length="30"/>
-         </annotation>
-      </case>
-   </annotations>
 </corpus>
