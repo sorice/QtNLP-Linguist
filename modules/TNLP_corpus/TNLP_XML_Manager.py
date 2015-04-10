@@ -13,6 +13,7 @@
 
 #~ from lib.python_contrib.pxdom import *
 import pxdom
+import os
 
 class TNLP_XML_Manager:
    """Helper to manage the TNLP.xml information file"""
@@ -21,6 +22,7 @@ class TNLP_XML_Manager:
       """Init global attributes"""
 
       self.__parsed = False
+      self.__xml_file = None
       self.__xml_document = None
       self.__root_node = None
       self.__cases_node = None
@@ -36,6 +38,7 @@ class TNLP_XML_Manager:
       """Parse the indicated xml_file"""
 
       result = False
+      self.__ruta = xml_file
       self.__xml_document = pxdom.parse(xml_file)
       # TODO: Validate parse(...) result
       # if no errors
@@ -125,11 +128,24 @@ class TNLP_XML_Manager:
          case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
          case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
          case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
-
+         case['text_susp'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+         case['text_src'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
+         
          self.__cases.append(case)
 
       return self.__cases
 
+   def __get_snippet_text(self, _snippet_doc, _snippet_offset, _snippet_length):
+      """Return from a specific text the snippet with the given offset and length."""
+      
+      _tmp_ruta = self.__ruta[:self.__ruta.rfind('/')]
+      _corpus_file = _tmp_ruta[_tmp_ruta.rfind('/')+1:]
+      _doc = open('./data/corpuses/'+_corpus_file+'/'+_snippet_doc+'.txt')
+      _tmp_doc = _doc.read()
+      _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset)+int(_snippet_length)]
+      _doc.close()
+      
+      return _text
 
    def get_case_by_id(self, case_id): #OK
       """Return the case by it's id."""
@@ -159,6 +175,8 @@ class TNLP_XML_Manager:
             case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
             case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
             case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
+            case['text_susp'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+            case['text_src'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
 
             break
 
@@ -176,6 +194,7 @@ class TNLP_XML_Manager:
       for item in _cases:
          if item.getAttribute('id') == str(case_id):
             _annotations = item.getElementsByTagName('annotation')
+      _case = self.get_case_by_id(case_id)
 
       # if there are no annotation
       if _annotations == None:
@@ -198,11 +217,23 @@ class TNLP_XML_Manager:
          annotation['src_chunk_offset'] = item.getElementsByTagName('src_chunk')[0].getAttribute('offset')
          annotation['src_chunk_length'] = item.getElementsByTagName('src_chunk')[0].getAttribute('length')
          # TODO: extract sentences from TNLP.xml (sentences etc...)
+         annotation['lb_note_susp_sentence'] = self.__get_sentence_from_snippet(_case['text_susp'], annotation['susp_chunk_offset'])
+         annotation['lb_note_src_sentence'] = self.__get_sentence_from_snippet(_case['text_src'], annotation['src_chunk_offset'])
 
          annotations.append(annotation)
 
       return annotations
 
+   def __get_sentence_from_snippet(self, _snippet, _chunk_offset):
+      
+      _chunk_offset = int(_chunk_offset)
+      
+      _tmp_text1 = _snippet[:_chunk_offset]
+      _tmp_text2 = _snippet[_chunk_offset:]
+      
+      _sentence = _tmp_text1[_tmp_text1.rfind('.')+1:]+_tmp_text2[:_tmp_text2.find('.')]
+      
+      return _sentence
 
    def add_case(self, _problem_type, _extension, _description, _plag_type,
       _summary, _auto_summary, _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset,
@@ -322,9 +353,11 @@ class TNLP_XML_Manager:
 
 
    def get_corpus_name(self):
-      """Returns the corpus name"""
+      """Returns the corpus name."""
+      
+      _corpus_name = self.__root_node.getAttribute('name')
 
-      return 'TNLP'
+      return _corpus_name
 
 
    def get_case_summary(self, _index):

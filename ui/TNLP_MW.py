@@ -477,19 +477,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
          # display first annotation
          self.__show_annotation(__annotations[0])
-         '''__lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
-         __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
-         __lb_note_id.setText(__annotations[__selected_annotation]['id'])
-         __lb_note_type.setText(__annotations[__selected_annotation]['phenomenon_type'])
-         __lb_note_projection.setText(__annotations[__selected_annotation]['projection'])
-         __lb_note_susp.setText(__annotations[__selected_annotation]['susp_chunk_offset'] + ' / ' +
-            __annotations[__selected_annotation]['susp_chunk_length'])
-         __lb_note_src.setText(__annotations[__selected_annotation]['src_chunk_offset'] + ' / ' +
-            __annotations[__selected_annotation]['src_chunk_length'])
-         __lb_note_author.setText(__annotations[__selected_annotation]['author'])
-         __lb_note_date.setText(__annotations[__selected_annotation]['annotation_date'])
-         __lb_note_human_val.setText(__annotations[__selected_annotation]['validated_by_human_beings'])
-         __lb_note_machine_recog.setText(__annotations[__selected_annotation]['recognized_by_algorithms'])'''
+         
       else:
          __lb_note_susp_sentence.setText('-')
          __lb_note_src_sentence.setText('-')
@@ -526,7 +514,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(str(0))
          .arg(case['susp_snippet_sentences_count'])
          .arg(case['susp_snippet_offset']))
-      __text_susp.setHtml('TODO: leer el fichero y poner el contenido aqui o hacerlo en el parser...')
+      __text_susp.setHtml(case['text_susp'])
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
          length = <b>%2</b> char(s), <b>%3</b> words, <b>%4</b> sentence(s), offset = <b>%5</b>")
          .arg(case['src_snippet_doc'])
@@ -534,7 +522,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(str(0))
          .arg(case['src_snippet_sentences_count'])
          .arg(case['src_snippet_offset']))
-      __text_src.setHtml('TODO: leer el fichero y poner el contenido aqui o hacerlo en el parser...')
+      __text_src.setHtml(case['text_src'])
 
       # show the first annotation if there is any
       #
@@ -758,8 +746,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
 
       # update components
-      __lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
-      __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
+      __lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + _info['lb_note_susp_sentence'])
+      __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + _info['lb_note_src_sentence'])
       __lb_note_id.setText(_info['id'])
       __lb_note_type.setText(_info['phenomenon_type'])
       __lb_note_projection.setText(_info['projection'])
