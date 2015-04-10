@@ -17,19 +17,34 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_12">
      <item>
-      <widget class="QLabel" name="lb_susp_info">
+      <widget class="QLabel" name="case_details">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;[&lt;span style=&quot; font-weight:600;&quot;&gt;Suspicious&lt;/span&gt;] &amp;nbsp;&amp;nbsp;&amp;nbsp; id = &lt;span style=&quot; font-weight:600;&quot;&gt;000&lt;/span&gt;, susp_name = &lt;span style=&quot; font-weight:600;&quot;&gt;susp-1111&lt;/span&gt;, length = &lt;span style=&quot; font-weight:600;&quot;&gt;555&lt;/span&gt; char(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; word(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; sentence(s), origin_offset = &lt;span style=&quot; font-weight:600;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Case details</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="text_susp">
-       <property name="readOnly">
-        <bool>true</bool>
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
-       <property name="plainText">
-        <string>Texto sospechoso</string>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lb_susp_info">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;[&lt;span style=&quot; font-weight:600;&quot;&gt;Suspicious&lt;/span&gt;]    doc-name = &lt;span style=&quot; font-weight:600;&quot;&gt;susp-1111&lt;/span&gt;, length = &lt;span style=&quot; font-weight:600;&quot;&gt;555&lt;/span&gt; char(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; word(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; sentence(s), offset = &lt;span style=&quot; font-weight:600;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="text_susp">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Texto sospechoso&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -89,7 +104,7 @@
    <item row="4" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="lb_susp_sentenc">
+      <widget class="QLabel" name="lb_susp_sentence">
        <property name="text">
         <string>Susp Sentence</string>
        </property>
@@ -214,7 +229,8 @@
           </font>
          </property>
          <property name="text">
-          <string>Susp Offset</string>
+          <string>Susp
+Offset / Len</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -222,7 +238,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="lb_susp_offset">
+        <widget class="QLabel" name="lb_note_susp">
          <property name="text">
           <string>10</string>
          </property>
@@ -244,7 +260,8 @@
           </font>
          </property>
          <property name="text">
-          <string>Susp Length</string>
+          <string>Src
+Offset / Len</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -252,7 +269,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="lb_susp_length">
+        <widget class="QLabel" name="lb_note_src">
          <property name="text">
           <string>50</string>
          </property>
@@ -443,17 +460,18 @@ Recognized</string>
      <item>
       <widget class="QLabel" name="lb_src_info">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;[&lt;span style=&quot; font-weight:600;&quot;&gt;Source&lt;/span&gt;]     id = &lt;span style=&quot; font-weight:600;&quot;&gt;000&lt;/span&gt;, src_name = &lt;span style=&quot; font-weight:600;&quot;&gt;src-1111&lt;/span&gt;, length = &lt;span style=&quot; font-weight:600;&quot;&gt;555&lt;/span&gt; char(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; word(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; sentence(s), origin_offset = &lt;span style=&quot; font-weight:600;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;[&lt;span style=&quot; font-weight:600;&quot;&gt;Source&lt;/span&gt;]     doc-name = &lt;span style=&quot; font-weight:600;&quot;&gt;src-1111&lt;/span&gt;, length = &lt;span style=&quot; font-weight:600;&quot;&gt;555&lt;/span&gt; char(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; word(s), &lt;span style=&quot; font-weight:600;&quot;&gt;1&lt;/span&gt; sentence(s), offset = &lt;span style=&quot; font-weight:600;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="text_src">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="plainText">
-        <string>Texto fuente</string>
+      <widget class="QTextEdit" name="text_src">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Texto fuente&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>

@@ -28,6 +28,8 @@ class TNLP_XML_Manager:
       self.__NLP_problem_type = 'similarity'
       self.__text_extension = 'paragraph'
       self.__cases = []
+      self.__case_info = None
+
 
    # public methods
    def parse_xml(self, xml_file): #OK
@@ -46,6 +48,7 @@ class TNLP_XML_Manager:
       self.__parsed = True
 
       return result
+
 
    def get_corpus_info(self): #OK
       """Return the root element info in a dictionary."""
@@ -68,20 +71,22 @@ class TNLP_XML_Manager:
       corpus['xmlns'] = self.__root_node.getAttribute('xmlns')
 
       return corpus
-   
+
+
    def get_corpus_total_cases(self): #OK
       """Return how many cases exists in corpus"""
-      
+
       total_cases = 0
 
       if not self.__parsed:
          return None
-      
+
       for i in range(len(self.__groups)):
          case = self.__groups[i].getElementsByTagName('case')
          total_cases += len(case)
 
       return total_cases
+
 
    def get_specific_total_cases(self,NLP_problem_type): #OK
       """Return how many cases exists in corpus about a specific NLP problem type."""
@@ -93,8 +98,9 @@ class TNLP_XML_Manager:
          if self.__groups[i].getAttribute('NLP_problem_type') == NLP_problem_type:
             target = i
       cases = self.__groups[target].getElementsByTagName('case')
-      
+
       return len(cases)
+
 
    def get_cases(self): #OK
       """Return all cases in a list."""
@@ -124,6 +130,7 @@ class TNLP_XML_Manager:
 
       return self.__cases
 
+
    def get_case_by_id(self, case_id): #OK
       """Return the case by it's id."""
 
@@ -142,7 +149,7 @@ class TNLP_XML_Manager:
             case['automatic_summary'] = item.getAttribute('automatic_summary')
             case['original_corpus'] = item.getAttribute('original_corpus')
             case['original_corpus_id'] = item.getAttribute('original_corpus_id')
-            case['generated_by'] = item.getAttribute('generate_by')
+            case['generated_by'] = item.getAttribute('generated_by')
             case['generator_name'] = item.getAttribute('generator_name')
             case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
             case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
@@ -152,51 +159,53 @@ class TNLP_XML_Manager:
             case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
             case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
             case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
+
             break
 
       return case
 
-   def get_annotations_of_case(self, case_id): #OK
+
+   def get_annotations_of_case(self, case_id):
       """Return annotations corresponding to a case."""
-      
+
+      #TODO: refactorize
       annotations = []
-      
-      # if there are no annotations
-      tmp_annotations = self.__root_node.getElementsByTagName('annotation')
-      if tmp_annotations == None:
-         return annotations
-      
-      # Sí existen anotaciones continuar: obtener todos los case, y extraer las anotaciones del bucado por el ide.
-      tmp_cases = self.__root_node.getElementsByTagName('case')
-      
-      case = {}
-      
-      for item in tmp_cases:
-         case['id'] = item.getAttribute('id')
-         if case['id'] == str(case_id):
-            annotations = []
-            tmp_annotations = item.getElementsByTagName('annotation')
-            for element in tmp_annotations:
-               annotation = {}
-               annotation['id']= element.getAttribute('id')
-               annotation['author']= element.getAttribute('author')
-               annotation['is_paraphrase']= element.getAttribute('is_paraphrase')
-               annotation['validated_by_human_beings']= element.getAttribute('validated_by_human_beings')
-               annotation['recognized_by_algorithms']= element.getAttribute('recognized_by_algorithms')
-               annotation['algorithms_names']= element.getAttribute('algorithms_names')
-               annotation['annotation_date']= element.getAttribute('annotation_date')
-               annotation['phenomenon_type'] = element.getElementsByTagName('phenomenon')[0].getAttribute('type')
-               annotation['projection'] = element.getElementsByTagName('phenomenon')[0].getAttribute('projection')
-               annotation['susp_chunk_offset'] = element.getElementsByTagName('susp_chunk')[0].getAttribute('offset')
-               annotation['susp_chunk_length'] = element.getElementsByTagName('susp_chunk')[0].getAttribute('length')
-               annotation['src_chunk_offset'] = element.getElementsByTagName('src_chunk')[0].getAttribute('offset')
-               annotation['src_chunk_length'] = element.getElementsByTagName('src_chunk')[0].getAttribute('length')
-               annotations.append(annotation)
-               
+
+      _cases = self.__root_node.getElementsByTagName('case')
+
+      for item in _cases:
+         if item.getAttribute('id') == str(case_id):
+            _annotations = item.getElementsByTagName('annotation')
+
+      # if there are no annotation
+      if _annotations == None:
+         return _annotations
+
+      for item in _annotations:
+         annotation = {}
+
+         annotation['id']= item.getAttribute('id')
+         annotation['author']= item.getAttribute('author')
+         annotation['is_paraphrase']= item.getAttribute('is_paraphrase')
+         annotation['validated_by_human_beings']= item.getAttribute('validated_by_human_beings')
+         annotation['recognized_by_algorithms']= item.getAttribute('recognized_by_algorithms')
+         annotation['algorithms_names']= item.getAttribute('algorithms_names')
+         annotation['annotation_date']= item.getAttribute('annotation_date')
+         annotation['phenomenon_type'] = item.getElementsByTagName('phenomenon')[0].getAttribute('type')
+         annotation['projection'] = item.getElementsByTagName('phenomenon')[0].getAttribute('projection')
+         annotation['susp_chunk_offset'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('offset')
+         annotation['susp_chunk_length'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('length')
+         annotation['src_chunk_offset'] = item.getElementsByTagName('src_chunk')[0].getAttribute('offset')
+         annotation['src_chunk_length'] = item.getElementsByTagName('src_chunk')[0].getAttribute('length')
+         # TODO: extract sentences from TNLP.xml (sentences etc...)
+
+         annotations.append(annotation)
+
       return annotations
 
+
    def add_case(self, _problem_type, _extension, _description, _plag_type,
-      _summary, _auto_summary, _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset, 
+      _summary, _auto_summary, _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset,
       _susp_length, _src_doc, _src_offset, _src_length): #OK
       """Add a new case to the corpus"""
 
@@ -208,12 +217,12 @@ class TNLP_XML_Manager:
       for i in range(len(self.__groups)):
          if self.__groups[i].getAttribute('NLP_problem_type') == NLP_problem_type:
             target = i
-      
+
       actual_group = self.__groups[target]
       total_cases = len(self.__root_node.getElementsByTagName('case'))
 
       # create new node and append it to current group
-      # case node     
+      # case node
       case = self.__xml_document.createElement('case')
       case.setAttribute('id', str(total_cases + 1))
       case.setAttribute('description', _description)
@@ -224,21 +233,21 @@ class TNLP_XML_Manager:
       case.setAttribute('original_corpus_id', _original_corpus_id)
       case.setAttribute('generated_by',_generated_by)
       case.setAttribute('generator_name', _generator_name)
-      
+
       # susp snippet node
       susp_snippet = self.__xml_document.createElement('susp_snippet')
       susp_snippet.setAttribute('doc', _susp_doc)
       susp_snippet.setAttribute('offset', str(_susp_offset))
       susp_snippet.setAttribute('length', str(_susp_length))
       case.appendChild(susp_snippet)
-      
+
       # src snippet node
       src_snippet = self.__xml_document.createElement('src_snippet')
       src_snippet.setAttribute('doc', _src_doc)
       src_snippet.setAttribute('offset', str(_src_offset))
       src_snippet.setAttribute('length', str(_src_length))
       case.appendChild(src_snippet)
-      
+
       # add case to group
       actual_group.appendChild(case)
 
@@ -247,7 +256,8 @@ class TNLP_XML_Manager:
 
       return result
 
-   def add_annotation(self, _case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names, 
+
+   def add_annotation(self, _case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names,
       _date, _type, _projection, _chunk_offset, _chunk_length, _chunk_src_offset, _chunk_src_length):
       """Add an annotation to a case"""
 
@@ -255,18 +265,18 @@ class TNLP_XML_Manager:
 
       result = False
       case = {}
-      
+
       tmp_cases = self.__root_node.getElementsByTagName('case')
       for item in tmp_cases:
          case['id'] = item.getAttribute('id')
          if case['id'] == str(_case_id):
             actual_case = item
-      
+
       if actual_case.getElementsByTagName('annotation'):
          total_annotation = len(actual_case.getElementsByTagName('annotation'))
       else:
          total_annotation = 0
-         
+
       # create new node and append it to current case
       # annotation node
       annotation = self.__xml_document.createElement('annotation')
@@ -277,19 +287,19 @@ class TNLP_XML_Manager:
       annotation.setAttribute('recognized_by_algorithms', _recognized_by_algorithms)
       annotation.setAttribute('algorithms_names', _algorithms_names)
       annotation.setAttribute('annotation_date', _date)
-      
+
       # phenomenon node
       phenomenon = self.__xml_document.createElement('phenomenon')
       phenomenon.setAttribute('type', _type)
       phenomenon.setAttribute('projection', _projection)
       annotation.appendChild(phenomenon)
-      
+
       # susp chunk node
       susp_chunk = self.__xml_document.createElement('susp_chunk')
       susp_chunk.setAttribute('chunk_offset', _chunk_offset)
       susp_chunk.setAttribute('chunk_length', _chunk_length)
       annotation.appendChild(susp_chunk)
-      
+
       # susp chunk node
       src_chunk = self.__xml_document.createElement('src_chunk')
       src_chunk.setAttribute('chunk_offset', _chunk_src_offset)
@@ -309,6 +319,27 @@ class TNLP_XML_Manager:
 
       serialiser = self.__xml_document.implementation.createLSSerializer()
       serialiser.writeToURI(self.__xml_document, _xml_file)
+
+
+   def get_corpus_name(self):
+      """Returns the corpus name"""
+
+      return 'TNLP'
+
+
+   def get_case_summary(self, _index):
+      """Return basic information about a especific case."""
+
+      case = {}
+
+      tmp_cases = self.__root_node.getElementsByTagName('case')
+
+      if 0 < _index and _index <= self.get_corpus_total_cases():
+         case['id'] = tmp_cases[_index - 1].getAttribute('id')
+         case['annotator_summary'] = tmp_cases[_index - 1].getAttribute('annotator_summary')
+         case['plag_type'] = tmp_cases[_index - 1].getAttribute('plag_type')
+
+      return (case['plag_type'], case['id'], case['annotator_summary'])
 
 
    # auxiliar & private methods
@@ -357,7 +388,7 @@ if __name__ == "__main__":
    print "\nCASES"
    list = a.get_cases()
    print "TNLP.__cases[0] = ",list[0]
-   
+
    id = 6
    print "\nCASE, id = " + str(id) + ": "
    print a.get_case_by_id(id)

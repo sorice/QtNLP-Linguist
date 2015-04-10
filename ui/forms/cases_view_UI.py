@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'cases_view.ui'
 #
-# Created: Tue Apr  7 22:03:46 2015
+# Created: Thu Apr  9 21:49:34 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -31,11 +31,18 @@ class Ui_Form(object):
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.verticalLayout_12 = QtGui.QVBoxLayout()
         self.verticalLayout_12.setObjectName(_fromUtf8("verticalLayout_12"))
+        self.case_details = QtGui.QLabel(Form)
+        self.case_details.setObjectName(_fromUtf8("case_details"))
+        self.verticalLayout_12.addWidget(self.case_details)
+        self.line_5 = QtGui.QFrame(Form)
+        self.line_5.setFrameShape(QtGui.QFrame.HLine)
+        self.line_5.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_5.setObjectName(_fromUtf8("line_5"))
+        self.verticalLayout_12.addWidget(self.line_5)
         self.lb_susp_info = QtGui.QLabel(Form)
         self.lb_susp_info.setObjectName(_fromUtf8("lb_susp_info"))
         self.verticalLayout_12.addWidget(self.lb_susp_info)
-        self.text_susp = QtGui.QPlainTextEdit(Form)
-        self.text_susp.setReadOnly(True)
+        self.text_susp = QtGui.QTextEdit(Form)
         self.text_susp.setObjectName(_fromUtf8("text_susp"))
         self.verticalLayout_12.addWidget(self.text_susp)
         self.gridLayout.addLayout(self.verticalLayout_12, 0, 0, 1, 1)
@@ -61,9 +68,9 @@ class Ui_Form(object):
         self.gridLayout.addWidget(self.line, 3, 0, 1, 1)
         self.verticalLayout = QtGui.QVBoxLayout()
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.lb_susp_sentenc = QtGui.QLabel(Form)
-        self.lb_susp_sentenc.setObjectName(_fromUtf8("lb_susp_sentenc"))
-        self.verticalLayout.addWidget(self.lb_susp_sentenc)
+        self.lb_susp_sentence = QtGui.QLabel(Form)
+        self.lb_susp_sentence.setObjectName(_fromUtf8("lb_susp_sentence"))
+        self.verticalLayout.addWidget(self.lb_susp_sentence)
         self.lb_src_sentence = QtGui.QLabel(Form)
         self.lb_src_sentence.setObjectName(_fromUtf8("lb_src_sentence"))
         self.verticalLayout.addWidget(self.lb_src_sentence)
@@ -130,10 +137,10 @@ class Ui_Form(object):
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.verticalLayout_5.addWidget(self.label_7)
-        self.lb_susp_offset = QtGui.QLabel(Form)
-        self.lb_susp_offset.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
-        self.lb_susp_offset.setObjectName(_fromUtf8("lb_susp_offset"))
-        self.verticalLayout_5.addWidget(self.lb_susp_offset)
+        self.lb_note_susp = QtGui.QLabel(Form)
+        self.lb_note_susp.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.lb_note_susp.setObjectName(_fromUtf8("lb_note_susp"))
+        self.verticalLayout_5.addWidget(self.lb_note_susp)
         self.horizontalLayout.addLayout(self.verticalLayout_5)
         self.verticalLayout_6 = QtGui.QVBoxLayout()
         self.verticalLayout_6.setObjectName(_fromUtf8("verticalLayout_6"))
@@ -145,10 +152,10 @@ class Ui_Form(object):
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName(_fromUtf8("label_8"))
         self.verticalLayout_6.addWidget(self.label_8)
-        self.lb_susp_length = QtGui.QLabel(Form)
-        self.lb_susp_length.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
-        self.lb_susp_length.setObjectName(_fromUtf8("lb_susp_length"))
-        self.verticalLayout_6.addWidget(self.lb_susp_length)
+        self.lb_note_src = QtGui.QLabel(Form)
+        self.lb_note_src.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.lb_note_src.setObjectName(_fromUtf8("lb_note_src"))
+        self.verticalLayout_6.addWidget(self.lb_note_src)
         self.horizontalLayout.addLayout(self.verticalLayout_6)
         self.verticalLayout_7 = QtGui.QVBoxLayout()
         self.verticalLayout_7.setObjectName(_fromUtf8("verticalLayout_7"))
@@ -234,8 +241,7 @@ class Ui_Form(object):
         self.lb_src_info = QtGui.QLabel(Form)
         self.lb_src_info.setObjectName(_fromUtf8("lb_src_info"))
         self.verticalLayout_13.addWidget(self.lb_src_info)
-        self.text_src = QtGui.QPlainTextEdit(Form)
-        self.text_src.setReadOnly(True)
+        self.text_src = QtGui.QTextEdit(Form)
         self.text_src.setObjectName(_fromUtf8("text_src"))
         self.verticalLayout_13.addWidget(self.text_src)
         self.gridLayout.addLayout(self.verticalLayout_13, 9, 0, 1, 1)
@@ -245,10 +251,15 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
-        self.lb_susp_info.setText(_translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Suspicious</span>] &nbsp;&nbsp;&nbsp; id = <span style=\" font-weight:600;\">000</span>, susp_name = <span style=\" font-weight:600;\">susp-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), origin_offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None))
-        self.text_susp.setPlainText(_translate("Form", "Texto sospechoso", None))
+        self.case_details.setText(_translate("Form", "Case details", None))
+        self.lb_susp_info.setText(_translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Suspicious</span>]    doc-name = <span style=\" font-weight:600;\">susp-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None))
+        self.text_susp.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Noto Sans\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto sospechoso</p></body></html>", None))
         self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">Annotation Details</span></p></body></html>", None))
-        self.lb_susp_sentenc.setText(_translate("Form", "Susp Sentence", None))
+        self.lb_susp_sentence.setText(_translate("Form", "Susp Sentence", None))
         self.lb_src_sentence.setText(_translate("Form", "Src Sentence", None))
         self.label_4.setText(_translate("Form", "ID", None))
         self.lb_note_id.setText(_translate("Form", "1", None))
@@ -256,10 +267,12 @@ class Ui_Form(object):
         self.lb_note_type.setText(_translate("Form", "Same Polarity", None))
         self.label_6.setText(_translate("Form", "Projection", None))
         self.lb_note_projection.setText(_translate("Form", "Local", None))
-        self.label_7.setText(_translate("Form", "Susp Offset", None))
-        self.lb_susp_offset.setText(_translate("Form", "10", None))
-        self.label_8.setText(_translate("Form", "Susp Length", None))
-        self.lb_susp_length.setText(_translate("Form", "50", None))
+        self.label_7.setText(_translate("Form", "Susp\n"
+"Offset / Len", None))
+        self.lb_note_susp.setText(_translate("Form", "10", None))
+        self.label_8.setText(_translate("Form", "Src\n"
+"Offset / Len", None))
+        self.lb_note_src.setText(_translate("Form", "50", None))
         self.label_9.setText(_translate("Form", "Author", None))
         self.lb_note_author.setText(_translate("Form", "Leonel", None))
         self.label_10.setText(_translate("Form", "Date", None))
@@ -272,6 +285,10 @@ class Ui_Form(object):
         self.lb_note_machine_recog.setText(_translate("Form", "False", None))
         self.btn_prev_note.setText(_translate("Form", "Prev", None))
         self.btn_next_note.setText(_translate("Form", "Next", None))
-        self.lb_src_info.setText(_translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Source</span>]     id = <span style=\" font-weight:600;\">000</span>, src_name = <span style=\" font-weight:600;\">src-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), origin_offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None))
-        self.text_src.setPlainText(_translate("Form", "Texto fuente", None))
+        self.lb_src_info.setText(_translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Source</span>]     doc-name = <span style=\" font-weight:600;\">src-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None))
+        self.text_src.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Noto Sans\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto fuente</p></body></html>", None))
 
