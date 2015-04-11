@@ -21,6 +21,7 @@ class TNLP_XML_Manager:
       """Init global attributes"""
 
       self.__parsed = False
+      self.__xml_file = None
       self.__xml_document = None
       self.__root_node = None
       self.__cases_node = None
@@ -36,6 +37,7 @@ class TNLP_XML_Manager:
       """Parse the indicated xml_file"""
 
       result = False
+      self.__xml_path = xml_file
       self.__xml_document = pxdom.parse(xml_file)
       # TODO: Validate parse(...) result
       # if no errors
@@ -125,6 +127,9 @@ class TNLP_XML_Manager:
          case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
          case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
          case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
+         case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+         case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
+
 
          self.__cases.append(case)
 
@@ -159,10 +164,30 @@ class TNLP_XML_Manager:
             case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
             case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
             case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
+            case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+            case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
 
             break
 
       return case
+
+   def __get_snippet_text(self, _snippet_doc, _snippet_offset, _snippet_length):
+      """Return from a specific text the snippet with the given offset and length."""
+
+      '''_tmp_ruta = self.__xml_path[:self.__xml_path.rfind('/')]
+      _corpus_file = _tmp_ruta[_tmp_ruta.rfind('/')+1:]
+      _doc = open('./data/corpuses/'+_corpus_file+'/'+_snippet_doc+'.txt')
+      _tmp_doc = _doc.read()
+      _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset)+int(_snippet_length)]
+      _doc.close()'''
+
+      _corpus_dir = self.__xml_path[:self.__xml_path.rfind('/') + 1]
+      _doc = open(_corpus_dir + _snippet_doc + '.txt')
+      _tmp_doc = _doc.read()
+      _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
+      _doc.close()
+
+      return _text
 
 
    def get_annotations_of_case(self, case_id):
@@ -176,6 +201,8 @@ class TNLP_XML_Manager:
       for item in _cases:
          if item.getAttribute('id') == str(case_id):
             _annotations = item.getElementsByTagName('annotation')
+
+      _case = self.get_case_by_id(case_id)
 
       # if there are no annotation
       if _annotations == None:
@@ -197,11 +224,24 @@ class TNLP_XML_Manager:
          annotation['susp_chunk_length'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('length')
          annotation['src_chunk_offset'] = item.getElementsByTagName('src_chunk')[0].getAttribute('offset')
          annotation['src_chunk_length'] = item.getElementsByTagName('src_chunk')[0].getAttribute('length')
-         # TODO: extract sentences from TNLP.xml (sentences etc...)
+         annotation['susp_sentence'] = self.__get_sentence_from_snippet(_case['susp_text'], annotation['susp_chunk_offset'])
+         annotation['src_sentence'] = self.__get_sentence_from_snippet(_case['src_text'], annotation['src_chunk_offset'])
 
          annotations.append(annotation)
 
       return annotations
+
+
+   def __get_sentence_from_snippet(self, _snippet, _chunk_offset):
+
+      _chunk_offset = int(_chunk_offset)
+
+      _tmp_text1 = _snippet[:_chunk_offset]
+      _tmp_text2 = _snippet[_chunk_offset:]
+
+      _sentence = _tmp_text1[_tmp_text1.rfind('.') + 1:] + _tmp_text2[:_tmp_text2.find('.')]
+
+      return _sentence
 
 
    def add_case(self, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
@@ -210,6 +250,7 @@ class TNLP_XML_Manager:
       """Add a new case to the corpus"""
 
       #TODO validate all input data
+      #TODO calculate next id using max(existing_ids)
 
       result = False
 
@@ -264,6 +305,7 @@ class TNLP_XML_Manager:
       """Add an annotation to a case"""
 
       #TODO validate all input data
+      #TODO calculate next id using max(existing_ids)
 
       result = False
       case = {}
@@ -298,14 +340,14 @@ class TNLP_XML_Manager:
 
       # susp chunk node
       susp_chunk = self.__xml_document.createElement('susp_chunk')
-      susp_chunk.setAttribute('chunk_offset', _chunk_offset)
-      susp_chunk.setAttribute('chunk_length', _chunk_length)
+      susp_chunk.setAttribute('offset', _chunk_offset)
+      susp_chunk.setAttribute('length', _chunk_length)
       annotation.appendChild(susp_chunk)
 
       # susp chunk node
       src_chunk = self.__xml_document.createElement('src_chunk')
-      src_chunk.setAttribute('chunk_offset', _chunk_src_offset)
-      src_chunk.setAttribute('chunk_length', _chunk_src_length)
+      src_chunk.setAttribute('offset', _chunk_src_offset)
+      src_chunk.setAttribute('length', _chunk_src_length)
       annotation.appendChild(src_chunk)
 
       # add annotation to case
@@ -316,11 +358,11 @@ class TNLP_XML_Manager:
 
       return result
 
-   def write_xml(self, _xml_file):
+   def write_xml(self):
       """Write data to _xml_file"""
 
       serialiser = self.__xml_document.implementation.createLSSerializer()
-      serialiser.writeToURI(self.__xml_document, _xml_file)
+      serialiser.writeToURI(self.__xml_document, self.__xml_path)
 
 
    def get_corpus_name(self):
@@ -417,4 +459,4 @@ if __name__ == "__main__":
    print "\nANNOTATIONS, case = " + str(id) + ": "
    print a.get_annotations_of_case(id)
 
-   a.write_xml('salida.xml')
+   a.write_xml()

@@ -12,14 +12,17 @@ from forms.TNLP_MW_UI import Ui_ToNgueLP_MW
 #from modules.TNLP_corpus import XML_read
 from modules.TNLP_corpus.TNLP_XML_Manager import TNLP_XML_Manager
 
-# import plag types
-from TNLP_Plag_Types import plag_types
+# import constant types
+from TNLP_Enums_Helper import plag_types
 
 # import Case Tab helper
 from TNLP_Cases_Tab import TNLP_CaseTab
 
 # import Add Case helper
 from TNLP_Add_Case import TNLP_AddCase
+
+# import Add Annotation helper
+from TNLP_Add_Annotation import TNLP_AddAnnotation
 
 try:
    _fromUtf8 = QString.fromUtf8
@@ -57,6 +60,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionClose_Corpus.triggered.connect(self.close_corpus)
       self.actionExit.triggered.connect(self.close)
       self.actionAdd_New_Case.triggered.connect(self.__add_case)
+      self.actionAdd_annotation.triggered.connect(self.__add_annotation)
 
 
    def __create_new_corpus_tab(self):
@@ -463,34 +467,34 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       xml_file = str(xml_file)
 
       # parser instance
-      self.__reader = TNLP_XML_Manager()
+      __reader = TNLP_XML_Manager()
 
-      if self.__reader.parse_xml(xml_file):
+      if __reader.parse_xml(xml_file):
          # corpus already loaded?
          __corpus_names = []
          for i in self.__corpus_list:
             __corpus_names.append(i.get_corpus_name())
-         if self.__reader.get_corpus_name() in __corpus_names:
-            QMessageBox.critical(self, self.__appName, 'Corpus <b>' + self.__reader.get_corpus_name() + ' </b>already loaded.')
+         if __reader.get_corpus_name() in __corpus_names:
+            QMessageBox.critical(self, self.__appName, 'Corpus <b>' + __reader.get_corpus_name() + ' </b>already loaded.')
             return
 
          # add a new tab for corpus
          tab = self.__create_new_corpus_tab()
          _cases_list = tab.children()[1].children()[2] # cases list
          _total_lb = tab.children()[1].children()[3] # total cases
-         self.corpusTabs.addTab(tab, QString(self.__reader.get_corpus_name()))
+         self.corpusTabs.addTab(tab, QString(__reader.get_corpus_name()))
 
          # create cases list
-         for i in range(self.__reader.get_corpus_total_cases()):
+         for i in range(__reader.get_corpus_total_cases()):
             i = i + 1
-            _tmp_case = self.__reader.get_case_summary(i)
+            _tmp_case = __reader.get_case_summary(i)
             listItem = QListWidgetItem(QIcon(plag_types[_tmp_case[0]][0]), QString("[" + _tmp_case[1] + "]: " + _tmp_case[2]))
             # data: list(index, plag_type_rgb_color)
             listItem.setData(Qt.UserRole, [_tmp_case[1], plag_types[_tmp_case[0]][1]])
             _cases_list.addItem(listItem)
 
-         _total_lb.setText(QString('Total cases: <b>%1</b>').arg(self.__reader.get_corpus_total_cases()))
-         self.__corpus_list.append(self.__reader)
+         _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
+         self.__corpus_list.append(__reader)
 
          QMessageBox.information(self, self.__appName, 'Corpus loaded.')
       else:
@@ -527,51 +531,6 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __cases.addTab(case_tab, _current.text())
       __cases.setCurrentIndex(__cases.count() - 1)
 
-      '''# locate working elements
-      __case_details = case_tab.findChild(QLabel, "case_details")
-      __lb_susp_info = case_tab.findChild(QLabel, "lb_susp_info")
-      __text_susp = case_tab.findChild(QTextEdit, "text_susp")
-      __lb_note_susp_sentence = case_tab.findChild(QLabel, "lb_note_susp_sentence")
-      __lb_note_src_sentence = case_tab.findChild(QLabel, "lb_note_src_sentence")
-      __lb_note_id = case_tab.findChild(QLabel, "lb_note_id")
-      __lb_note_type = case_tab.findChild(QLabel, "lb_note_type")
-      __lb_note_projection = case_tab.findChild(QLabel, "lb_note_projection")
-      __lb_note_susp = case_tab.findChild(QLabel, "lb_susp_offset")
-      __lb_note_src = case_tab.findChild(QLabel, "lb_susp_length")
-      __lb_note_author = case_tab.findChild(QLabel, "lb_note_author")
-      __lb_note_date = case_tab.findChild(QLabel, "lb_note_date")
-      __lb_note_human_val = case_tab.findChild(QLabel, "lb_note_human_val")
-      __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
-      __btn_prev_note = case_tab.findChild(QPushButton, "btn_prev_note")
-      __btn_next_note = case_tab.findChild(QPushButton, "btn_next_note")
-      __lb_src_info = case_tab.findChild(QLabel, "lb_src_info")
-      __text_src = case_tab.findChild(QTextEdit, "text_src")
-      __lb_note_current =case_tab.findChild(QAction, "lb_note_current")
-      __lb_note_count = case_tab.findChild(QAction, "lb_note_count")
-
-      __annotations = self.__corpus_list[self.corpusTabs.currentIndex()].get_annotations_of_case(case_id)
-      __selected_annotation = -1
-      if len(__annotations) > 0:
-         __selected_annotation = 0;
-
-         # display first annotation
-         self.__show_annotation(1)
-         __lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
-         __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
-         __lb_note_id.setText(__annotations[__selected_annotation]['id'])
-         __lb_note_type.setText(__annotations[__selected_annotation]['phenomenon_type'])
-         __lb_note_projection.setText(__annotations[__selected_annotation]['projection'])
-         __lb_note_susp.setText(__annotations[__selected_annotation]['susp_chunk_offset'] + ' / ' +
-            __annotations[__selected_annotation]['susp_chunk_length'])
-         __lb_note_src.setText(__annotations[__selected_annotation]['src_chunk_offset'] + ' / ' +
-            __annotations[__selected_annotation]['src_chunk_length'])
-         __lb_note_author.setText(__annotations[__selected_annotation]['author'])
-         __lb_note_date.setText(__annotations[__selected_annotation]['annotation_date'])
-         __lb_note_human_val.setText(__annotations[__selected_annotation]['validated_by_human_beings'])
-         __lb_note_machine_recog.setText(__annotations[__selected_annotation]['recognized_by_algorithms'])
-      else:
-         self.__show_no_annotations()'''
-
       # locate working elements
       __case_details = case_tab.findChild(QLabel, "case_details")
       __lb_susp_info = case_tab.findChild(QLabel, "lb_susp_info")
@@ -600,7 +559,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(str(0))
          .arg(case['susp_snippet_sentences_count'])
          .arg(case['susp_snippet_offset']))
-      __text_susp.setHtml('TODO: leer el fichero y poner el contenido aqui o hacerlo en el parser...')
+      __text_susp.setHtml(case['susp_text'])
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
          length = <b>%2</b> char(s), <b>%3</b> words, <b>%4</b> sentence(s), offset = <b>%5</b>")
          .arg(case['src_snippet_doc'])
@@ -608,7 +567,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(str(0))
          .arg(case['src_snippet_sentences_count'])
          .arg(case['src_snippet_offset']))
-      __text_src.setHtml('TODO: leer el fichero y poner el contenido aqui o hacerlo en el parser...')
+      __text_src.setHtml(case['src_text'])
 
       return
 
@@ -797,8 +756,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       _info = _annotations[_index]
 
       # update components
-      __lb_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
-      __lb_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
+      __lb_susp_sentence.setText('<b>Suspicious sentence:</b> ' + _info['susp_sentence'])
+      __lb_src_sentence.setText('<b>Source sentence:</b> ' + _info['src_sentence'])
       __lb_note_id.setText(_info['id'])
       __lb_note_type.setText(_info['phenomenon_type'])
       __lb_note_projection.setText(_info['projection'])
@@ -855,5 +814,26 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
    def __add_case(self):
       '''Show Add Case Window'''
 
-      add = TNLP_AddCase(self.__reader, self)
+      # select correct corpus reader
+      __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+
+      add = TNLP_AddCase(__reader, self)
+      add.show()
+
+
+   def __add_annotation(self):
+      '''Show Add Annotation Window'''
+
+      # select correct corpus reader
+      __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      case_tab = __corpus.children()[2] # cases tab
+      case_tab = case_tab.currentWidget()
+
+      # get case data
+      (case, annotations, index) = case_tab.get_case_data()
+
+      add = TNLP_AddAnnotation(__reader, case, self)
       add.show()

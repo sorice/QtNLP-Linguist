@@ -13,3 +13,8 @@ plag_types = {
    "copyleft": (":/plag_type/pt_green", "#00ff00"),
    "good_quotation": (":/plag_type/pt_green", "#00ff00"),
 }
+
+# Define phenomenom types used in annotations
+phenomenom_types = [
+   "lex_same_polarity"
+]

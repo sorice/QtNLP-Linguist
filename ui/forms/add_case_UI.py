@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'add_case.ui'
 #
-# Created: Fri Apr 10 22:43:39 2015
+# Created: Sat Apr 11 10:29:18 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,9 +26,21 @@ except AttributeError:
 class Ui_Add_Case(object):
     def setupUi(self, Add_Case):
         Add_Case.setObjectName(_fromUtf8("Add_Case"))
+        Add_Case.setWindowModality(QtCore.Qt.WindowModal)
         Add_Case.resize(814, 561)
         self.gridLayout = QtGui.QGridLayout(Add_Case)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.horizontalLayout_9 = QtGui.QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(_fromUtf8("horizontalLayout_9"))
+        self.label_19 = QtGui.QLabel(Add_Case)
+        self.label_19.setObjectName(_fromUtf8("label_19"))
+        self.horizontalLayout_9.addWidget(self.label_19)
+        self.lb_corpus_name = QtGui.QLabel(Add_Case)
+        self.lb_corpus_name.setObjectName(_fromUtf8("lb_corpus_name"))
+        self.horizontalLayout_9.addWidget(self.lb_corpus_name)
+        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem)
+        self.gridLayout.addLayout(self.horizontalLayout_9, 0, 0, 1, 1)
         self.verticalLayout_11 = QtGui.QVBoxLayout()
         self.verticalLayout_11.setObjectName(_fromUtf8("verticalLayout_11"))
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
@@ -195,18 +207,18 @@ class Ui_Add_Case(object):
         self.verticalLayout_11.addLayout(self.verticalLayout_8)
         self.horizontalLayout_8 = QtGui.QHBoxLayout()
         self.horizontalLayout_8.setObjectName(_fromUtf8("horizontalLayout_8"))
-        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem)
+        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout_8.addItem(spacerItem1)
         self.btn_add_case = QtGui.QPushButton(Add_Case)
         self.btn_add_case.setObjectName(_fromUtf8("btn_add_case"))
         self.horizontalLayout_8.addWidget(self.btn_add_case)
         self.pushButton_2 = QtGui.QPushButton(Add_Case)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.horizontalLayout_8.addWidget(self.pushButton_2)
-        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout_8.addItem(spacerItem1)
+        spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout_8.addItem(spacerItem2)
         self.verticalLayout_11.addLayout(self.horizontalLayout_8)
-        self.gridLayout.addLayout(self.verticalLayout_11, 0, 0, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout_11, 1, 0, 1, 1)
 
         self.retranslateUi(Add_Case)
         QtCore.QObject.connect(self.pushButton_2, QtCore.SIGNAL(_fromUtf8("clicked()")), Add_Case.close)
@@ -229,6 +241,8 @@ class Ui_Add_Case(object):
 
     def retranslateUi(self, Add_Case):
         Add_Case.setWindowTitle(_translate("Add_Case", "Add Case", None))
+        self.label_19.setText(_translate("Add_Case", "Corpus name:", None))
+        self.lb_corpus_name.setText(_translate("Add_Case", "name", None))
         self.label.setText(_translate("Add_Case", "Problem type:", None))
         self.label_3.setText(_translate("Add_Case", "Description:", None))
         self.label_5.setText(_translate("Add_Case", "Keywords:", None))

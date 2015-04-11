@@ -8,8 +8,8 @@ from PyQt4.QtGui import *
 # import UI base file
 from forms.add_case_UI import Ui_Add_Case
 
-# import plag types
-from TNLP_Plag_Types import plag_types
+# import constant types
+from TNLP_Enums_Helper import plag_types
 
 try:
    _fromUtf8 = QString.fromUtf8
@@ -35,8 +35,10 @@ class TNLP_AddCase(QDialog, Ui_Add_Case):
       for k in plag_types.keys():
          self.cb_plag_type.addItem(k)
 
+      self.lb_corpus_name.setText('<b>' + self.__xml.get_corpus_name() + '</b>')
+
       #TODO: cargar los valores de los combos problem_type y text_extension despues de
-      # definir los diccionarios correspondientes en TNLP_Plag_Types
+      # definir los diccionarios correspondientes en TNLP_Enums_Helper
       # en el visual ELIMINAR esos valores por defecto
 
 
@@ -74,4 +76,4 @@ class TNLP_AddCase(QDialog, Ui_Add_Case):
          case_data['susp_sentences_count'], case_data['src_doc'], case_data['src_offset'], case_data['src_length'],
          case_data['src_sentences_count'])
 
-      self.__xml.write_xml('/home/lordford/test1.xml')
+      self.__xml.write_xml()
