@@ -63,6 +63,12 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionAdd_annotation.triggered.connect(self.__add_annotation)
 
 
+   def get_app_name(self):
+      '''Return AppName'''
+
+      return self.__appName
+
+
    def __create_new_corpus_tab(self):
       """Create an empty new tab for corpus"""
 
@@ -92,6 +98,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       verticalLayout.addWidget(casesList)
       # slot
       casesList.currentItemChanged.connect(self.__get_case)
+      casesList.itemClicked.connect(self.__get_case)
       #
       # total cases
       horizontalLayout = QHBoxLayout()
@@ -315,6 +322,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_src_info.setObjectName(_fromUtf8("lb_src_info"))
       verticalLayout_13.addWidget(lb_src_info)
       text_src = QTextEdit(tab_1)
+      text_src.setReadOnly(True)
       text_src.setObjectName(_fromUtf8("text_src"))
       verticalLayout_13.addWidget(text_src)
       gridLayout.addLayout(verticalLayout_13, 10, 0, 1, 1)
@@ -370,6 +378,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       verticalLayout_12.addWidget(lb_susp_info)
       text_susp = QTextEdit(tab_1)
       text_susp.setObjectName(_fromUtf8("text_susp"))
+      text_susp.setReadOnly(True)
       verticalLayout_12.addWidget(text_susp)
       gridLayout.addLayout(verticalLayout_12, 0, 0, 1, 1)
       line_4 = QFrame(tab_1)
@@ -485,12 +494,10 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          self.corpusTabs.addTab(tab, QString(__reader.get_corpus_name()))
 
          # create cases list
-         for i in range(__reader.get_corpus_total_cases()):
-            i = i + 1
-            _tmp_case = __reader.get_case_summary(i)
-            listItem = QListWidgetItem(QIcon(plag_types[_tmp_case[0]][0]), QString("[" + _tmp_case[1] + "]: " + _tmp_case[2]))
+         for case in __reader.get_cases():
+            listItem = QListWidgetItem(QIcon(plag_types[case['plag_type']][0]), QString("[" + case['id'] + "]: " + case['annotator_summary']))
             # data: list(index, plag_type_rgb_color)
-            listItem.setData(Qt.UserRole, [_tmp_case[1], plag_types[_tmp_case[0]][1]])
+            listItem.setData(Qt.UserRole, [case['id'], plag_types[case['plag_type']][1]])
             _cases_list.addItem(listItem)
 
          _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
@@ -501,7 +508,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          QMessageBox.critical(self, self.__appName, 'Error parsing corpus.')
 
 
-   def __get_case(self, _current, _old):
+   def __get_case(self, _current, _old = None):
       """Return case"""
 
       # TODO: refactorize
@@ -615,6 +622,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
             self.__show_no_annotations()
          else:
             self.__show_annotation(index, annotations, case)
+      else:
+         __cases_list.setCurrentRow(__cases_list.currentRow(), QItemSelectionModel.Clear)
 
 
    def show_corpus_info(self):
@@ -696,7 +705,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          if len(__result) > 0:
             __cases_list.setCurrentItem(__result[0])
       else:
-         resp = QMessageBox.critical(self, self.__appName, u'Please enter a valid search criteria.')
+         QMessageBox.critical(self, self.__appName, u'Please enter a valid search criteria.')
 
 
    def __show_prev_annotation(self):
@@ -814,6 +823,10 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
    def __add_case(self):
       '''Show Add Case Window'''
 
+      if len(self.__corpus_list) == 0:
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+
       # select correct corpus reader
       __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
 
@@ -823,6 +836,17 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
    def __add_annotation(self):
       '''Show Add Annotation Window'''
+
+      if (len(self.__corpus_list) == 0):
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+      else:
+         # locate working elements
+         __corpus = self.corpusTabs.currentWidget() # corpus
+         case_tab = __corpus.children()[2] # cases tab
+         if case_tab.count() == 0:
+            QMessageBox.critical(self, self.__appName, u'No case opened.')
+            return
 
       # select correct corpus reader
       __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
@@ -837,3 +861,37 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       add = TNLP_AddAnnotation(__reader, case, self)
       add.show()
+
+
+   def update_case_list(self, _new_case_id):
+      '''Update cases list'''
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      __cases_list = __corpus.children()[1].children()[2] # cases list
+      _total_lb = __corpus.children()[1].children()[3] # total cases
+
+      # update cases list
+      __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+      case = __reader.get_case_by_id(_new_case_id)
+      listItem = QListWidgetItem(QIcon(plag_types[case['plag_type']][0]), QString("[" + case['id'] + "]: " + case['annotator_summary']))
+      listItem.setData(Qt.UserRole, [case['id'], plag_types[case['plag_type']][1]])
+      __cases_list.addItem(listItem)
+
+      _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
+
+
+   def update_annotations_list(self, _new_annotation):
+      '''Update annotations list'''
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      case_tab = __corpus.children()[2] # cases tab
+      current_tab = case_tab.currentIndex()
+      case_tab = case_tab.currentWidget()
+
+      # update annotations list
+      case_tab.add_annotation(_new_annotation)
+
+      self.__update_selected_case(current_tab)
+

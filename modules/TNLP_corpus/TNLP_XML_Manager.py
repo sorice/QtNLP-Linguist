@@ -26,8 +26,6 @@ class TNLP_XML_Manager:
       self.__root_node = None
       self.__cases_node = None
       self.__groups = None
-      self.__NLP_problem_type = 'similarity'
-      self.__text_extension = 'paragraph'
       self.__cases = []
       self.__case_info = None
 
@@ -256,16 +254,26 @@ class TNLP_XML_Manager:
 
       # select the correct group for the case
       for i in range(len(self.__groups)):
-         if self.__groups[i].getAttribute('NLP_problem_type') == self.__NLP_problem_type:
+         if self.__groups[i].getAttribute('NLP_problem_type') == _problem_type:
             target = i
 
       actual_group = self.__groups[target]
       total_cases = len(self.__root_node.getElementsByTagName('case'))
 
+      # calculate new case id
+      ids = []
+      for c in self.get_cases():
+         ids.append(int(c['id']))
+
+      if len(ids) > 0:
+         case_id = max(ids) + 1
+      else:
+         case_id = 1
+
       # create new node and append it to current group
       # case node
       case = self.__xml_document.createElement('case')
-      case.setAttribute('id', str(total_cases + 1))
+      case.setAttribute('id', str(case_id))
       case.setAttribute('description', _description)
       case.setAttribute('plag_type', _plag_type)
       case.setAttribute('annotator_summary', _summary)
@@ -297,7 +305,7 @@ class TNLP_XML_Manager:
       # update result
       result = True
 
-      return result
+      return case_id
 
 
    def add_annotation(self, _case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names,
@@ -356,7 +364,7 @@ class TNLP_XML_Manager:
       # update result
       result = True
 
-      return result
+      return self.get_annotations_of_case(_case_id)[-1]
 
    def write_xml(self):
       """Write data to _xml_file"""
@@ -388,27 +396,6 @@ class TNLP_XML_Manager:
 
 
    # auxiliar & private methods
-   def __get_cases(self):
-      """Helper: return cases from all groups"""
-
-      cases = self.__cases_node[0].getElementsByTagName('case_pair')
-      return cases
-
-
-   def __get_annotations(self, case_pair_id):
-      """Helper: return annotations for a specific case_id"""
-
-      annotations = None
-
-      tmp_cases = self.__annotations_node[0].getElementsByTagName('case_pair')
-      for item in tmp_cases:
-         if item.hasAttribute('id') and item.getAttribute('id') == str(case_pair_id):
-            annotations = item
-            break
-
-      return annotations
-
-
    def __update_corpus_info(self):
       """Update corpus information such as modification date and so on..."""
 

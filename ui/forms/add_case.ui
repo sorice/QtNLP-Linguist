@@ -226,10 +226,18 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <widget class="QLineEdit" name="le_susp_doc_name"/>
+              <widget class="QLineEdit" name="le_susp_doc_name">
+               <property name="text">
+                <string>susp/</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="le_susp_offset"/>
+              <widget class="QLineEdit" name="le_susp_offset">
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QLabel" name="lb_susp_length">
@@ -304,10 +312,18 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_10">
              <item>
-              <widget class="QLineEdit" name="le_src_doc_name"/>
+              <widget class="QLineEdit" name="le_src_doc_name">
+               <property name="text">
+                <string>src/</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="le_src_offset"/>
+              <widget class="QLineEdit" name="le_src_offset">
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QLabel" name="lb_src_length">

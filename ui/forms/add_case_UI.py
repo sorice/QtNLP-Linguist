@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'add_case.ui'
 #
-# Created: Sat Apr 11 10:29:18 2015
+# Created: Sat Apr 11 13:06:53 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -259,6 +259,8 @@ class Ui_Add_Case(object):
         self.label_10.setText(_translate("Add_Case", "Offset:", None))
         self.label_11.setText(_translate("Add_Case", "Length:", None))
         self.label_12.setText(_translate("Add_Case", "Sentences:", None))
+        self.le_susp_doc_name.setText(_translate("Add_Case", "susp/", None))
+        self.le_susp_offset.setText(_translate("Add_Case", "0", None))
         self.lb_susp_length.setText(_translate("Add_Case", "0", None))
         self.lb_susp_sentences_count.setText(_translate("Add_Case", "0", None))
         self.label_18.setText(_translate("Add_Case", "Source text:", None))
@@ -266,6 +268,8 @@ class Ui_Add_Case(object):
         self.label_15.setText(_translate("Add_Case", "Offset:", None))
         self.label_14.setText(_translate("Add_Case", "Length:", None))
         self.label_16.setText(_translate("Add_Case", "Sentences:", None))
+        self.le_src_doc_name.setText(_translate("Add_Case", "src/", None))
+        self.le_src_offset.setText(_translate("Add_Case", "0", None))
         self.lb_src_length.setText(_translate("Add_Case", "0", None))
         self.lb_src_sentences_count.setText(_translate("Add_Case", "0", None))
         self.btn_add_case.setText(_translate("Add_Case", "Add", None))

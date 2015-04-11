@@ -16,7 +16,7 @@ from ui.TNLP_MW import TNLP_MW
 
 # global app information
 appName = "ToNgueLP"
-appVersion = "0.3.x (----)"
+appVersion = "0.4.x (----)"
 
 
 if __name__ == '__main__':

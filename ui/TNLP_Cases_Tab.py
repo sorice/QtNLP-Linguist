@@ -30,3 +30,9 @@ class TNLP_CaseTab(QTabWidget):
       '''Returns case data'''
 
       return (self.__case, self.__annotations, self.__annotation_index)
+
+
+   def add_annotation(self, _annotation):
+      '''Add new annotation to list'''
+
+      self.__annotations.append(_annotation)

@@ -32,8 +32,6 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       self.__xml = _xml_manager
       self._case = _case_data
 
-      print self._case
-
       # load default data
       for i in phenomenom_types:
          self.cb_type.addItem(i)
@@ -70,7 +68,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       case_data['src_offset'] = str(self.le_src_offset.text())
       case_data['src_length'] = str(self.lb_src_length.text())
 
-      self.__xml.add_annotation(case_data['case_id'], case_data['author'],
+      new_annotation = self.__xml.add_annotation(case_data['case_id'], case_data['author'],
          case_data['is_paraphrase'], case_data['validated_by_human_beings'],
          case_data['recognized_by_algorithms'], case_data['algorithms_names'],
          case_data['annotation_date'], case_data['type'], case_data['projection'],
@@ -78,3 +76,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
          case_data['src_length'])
 
       self.__xml.write_xml()
+
+      self.parent().update_annotations_list(new_annotation)
+
+      QMessageBox.information(self, self.parent().get_app_name(), u'Annotation added.')

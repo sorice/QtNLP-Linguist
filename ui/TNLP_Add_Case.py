@@ -69,7 +69,7 @@ class TNLP_AddCase(QDialog, Ui_Add_Case):
       case_data['src_length'] = str(self.lb_src_length.text())
       case_data['src_sentences_count'] = str(self.lb_src_sentences_count.text())
 
-      self.__xml.add_case(case_data['problem_type'], case_data['text_extension'], case_data['description'],
+      new_case_id = self.__xml.add_case(case_data['problem_type'], case_data['text_extension'], case_data['description'],
          case_data['plag_type'], case_data['annotator_summary'], case_data['automatic_summary'],
          case_data['original_corpus'], case_data['original_corpus_id'], case_data['generated_by'],
          case_data['generator_name'], case_data['susp_doc'], case_data['susp_offset'], case_data['susp_length'],
@@ -77,3 +77,7 @@ class TNLP_AddCase(QDialog, Ui_Add_Case):
          case_data['src_sentences_count'])
 
       self.__xml.write_xml()
+
+      self.parent().update_case_list(new_case_id)
+
+      QMessageBox.information(self, self.parent().get_app_name(), u'Case added.')
