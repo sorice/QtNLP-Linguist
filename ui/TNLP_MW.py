@@ -48,6 +48,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionCorpus_Information.triggered.connect(self.show_corpus_info)
       self.actionClose_Corpus.triggered.connect(self.close_corpus)
       self.actionExit.triggered.connect(self.close)
+      self.actionAdd_New_Case.triggered.connect(self.add_new_case) #Abel
 
 
    def __create_new_corpus_tab(self):
@@ -759,3 +760,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_date.setText(_info['annotation_date'])
       __lb_note_human_val.setText(_info['validated_by_human_beings'])
       __lb_note_machine_recog.setText(_info['recognized_by_algorithms'])
+
+   def add_new_case(self):
+      
+      NewCase = QWidget()
+      NewCase = self.Ui_Add_Case_View()

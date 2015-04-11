@@ -374,6 +374,8 @@ class TNLP_XML_Manager:
 
       return (case['plag_type'], case['id'], case['annotator_summary'])
 
+   #Programar esto muy pronto.
+   #def get_cases_by_group(self):
 
    # auxiliar & private methods
    def __get_cases(self):
