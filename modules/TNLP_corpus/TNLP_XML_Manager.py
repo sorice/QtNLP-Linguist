@@ -11,8 +11,8 @@
 
 """
 
-#~ from lib.python_contrib.pxdom import *
-import pxdom
+from lib.python_contrib.pxdom import pxdom
+import os, urllib
 
 class TNLP_XML_Manager:
    """Helper to manage the TNLP.xml information file"""
@@ -172,14 +172,7 @@ class TNLP_XML_Manager:
    def __get_snippet_text(self, _snippet_doc, _snippet_offset, _snippet_length):
       """Return from a specific text the snippet with the given offset and length."""
 
-      '''_tmp_ruta = self.__xml_path[:self.__xml_path.rfind('/')]
-      _corpus_file = _tmp_ruta[_tmp_ruta.rfind('/')+1:]
-      _doc = open('./data/corpuses/'+_corpus_file+'/'+_snippet_doc+'.txt')
-      _tmp_doc = _doc.read()
-      _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset)+int(_snippet_length)]
-      _doc.close()'''
-
-      _corpus_dir = self.__xml_path[:self.__xml_path.rfind('/') + 1]
+      _corpus_dir = os.path.dirname(self.__xml_path) + '/'
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
       _tmp_doc = _doc.read()
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
@@ -248,7 +241,6 @@ class TNLP_XML_Manager:
       """Add a new case to the corpus"""
 
       #TODO validate all input data
-      #TODO calculate next id using max(existing_ids)
 
       result = False
 
@@ -320,19 +312,23 @@ class TNLP_XML_Manager:
 
       tmp_cases = self.__root_node.getElementsByTagName('case')
       for item in tmp_cases:
-         case['id'] = item.getAttribute('id')
-         if case['id'] == str(_case_id):
+         if item.getAttribute('id') == str(_case_id):
             actual_case = item
 
-      if actual_case.getElementsByTagName('annotation'):
-         total_annotation = len(actual_case.getElementsByTagName('annotation'))
+      # calculate new case id
+      ids = []
+      for a in self.get_annotations_of_case(_case_id):
+         ids.append(int(a['id']))
+
+      if len(ids) > 0:
+         annotation_id = max(ids) + 1
       else:
-         total_annotation = 0
+         annotation_id = 1
 
       # create new node and append it to current case
       # annotation node
       annotation = self.__xml_document.createElement('annotation')
-      annotation.setAttribute('id', str(total_annotation + 1))
+      annotation.setAttribute('id', str(annotation_id))
       annotation.setAttribute('author', _author)
       annotation.setAttribute('is_paraphrase', _is_paraphrase)
       annotation.setAttribute('validated_by_human_beings', _validated_by_human_beings)
@@ -370,7 +366,7 @@ class TNLP_XML_Manager:
       """Write data to _xml_file"""
 
       serialiser = self.__xml_document.implementation.createLSSerializer()
-      serialiser.writeToURI(self.__xml_document, self.__xml_path)
+      serialiser.writeToURI(self.__xml_document, 'file:' + urllib.pathname2url(self.__xml_path))
 
 
    def get_corpus_name(self):
@@ -401,49 +397,3 @@ class TNLP_XML_Manager:
 
       pass
 
-
-# Test Environment
-if __name__ == "__main__":
-   a = TNLP_XML_Manager()
-   a.parse_xml('../../data/corpuses/TNLP/TNLP.xml')
-
-   print "CORPUS INFO: "
-   print a.get_corpus_info()
-
-   print "\nCORPUS TOTAL CASES: "
-   print a.get_corpus_total_cases()
-
-   NLP_problem_type = 'similarity'
-   print "\nTOTAL CASES OF "+ NLP_problem_type
-   print a.get_specific_total_cases(NLP_problem_type)
-
-   print "\nCASES"
-   list = a.get_cases()
-   print "TNLP.__cases[0] = ",list[0]
-
-   id = 6
-   print "\nCASE, id = " + str(id) + ": "
-   print a.get_case_by_id(id)
-
-   print "\nANNOTATIONS #s, case = " + str(id) + ": "
-   print len(a.get_annotations_of_case(id))
-   print "\nANNOTATIONS, case = " + str(id) + ": "
-   print a.get_annotations_of_case(id)
-
-   print "\nADD CASE"
-   print a.add_case("similarity","paragraph","desc","paraphrase","manual summary","auto summary",
-   "PAN_PC-15","12345", 'human', 'abelm','susp/susp-doc00560', '15', '30', 'src/src-doc01360', '60', '101', '5', '6')
-
-   print "\nCORPUS TOTAL CASES: "
-   print a.get_corpus_total_cases()
-
-   print "\nADD ANNOTATION"
-   print a.add_annotation(id, 'leonelsv', 'True', 'None', 'True', 'ngram-1',
-   '2015-02-26', 'coordination', 'local', '10', '55', '2', '120')
-
-   print "\nANNOTATIONS LENGTH, case = " + str(id) + ": "
-   print len(a.get_annotations_of_case(id))
-   print "\nANNOTATIONS, case = " + str(id) + ": "
-   print a.get_annotations_of_case(id)
-
-   a.write_xml()

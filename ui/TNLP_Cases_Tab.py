@@ -36,3 +36,5 @@ class TNLP_CaseTab(QTabWidget):
       '''Add new annotation to list'''
 
       self.__annotations.append(_annotation)
+      if self.__annotation_index == -1:
+         self.__annotation_index += 1
