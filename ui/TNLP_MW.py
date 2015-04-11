@@ -15,6 +15,12 @@ from modules.TNLP_corpus.TNLP_XML_Manager import TNLP_XML_Manager
 # import plag types
 from TNLP_Plag_Types import plag_types
 
+# import Case Tab helper
+from TNLP_Cases_Tab import TNLP_CaseTab
+
+# import Add Case helper
+from TNLP_Add_Case import TNLP_AddCase
+
 try:
    _fromUtf8 = QString.fromUtf8
 except AttributeError:
@@ -39,6 +45,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       # readers list
       self.__corpus_list = []
 
+      self.__reader = None
+
       # extra config
       self.showMaximized()
       self.setWindowTitle(self.__appName + ' - ' + self.__appVersion)
@@ -48,6 +56,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionCorpus_Information.triggered.connect(self.show_corpus_info)
       self.actionClose_Corpus.triggered.connect(self.close_corpus)
       self.actionExit.triggered.connect(self.close)
+      self.actionAdd_New_Case.triggered.connect(self.__add_case)
 
 
    def __create_new_corpus_tab(self):
@@ -113,62 +122,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       """Create a new case tab for current corpus"""
 
       # right area
-      tab_1 = QWidget()
+      #tab_1 = QWidget()
+      tab_1 = TNLP_CaseTab()
 
       gridLayout = QGridLayout(tab_1)
       gridLayout.setObjectName(_fromUtf8("gridLayout"))
-      verticalLayout_12 = QVBoxLayout()
-      verticalLayout_12.setObjectName(_fromUtf8("verticalLayout_12"))
-      case_details = QLabel(tab_1)
-      case_details.setObjectName(_fromUtf8("case_details"))
-      verticalLayout_12.addWidget(case_details)
-      line_5 = QFrame(tab_1)
-      line_5.setFrameShape(QFrame.HLine)
-      line_5.setFrameShadow(QFrame.Sunken)
-      line_5.setObjectName(_fromUtf8("line_5"))
-      verticalLayout_12.addWidget(line_5)
-      lb_susp_info = QLabel(tab_1)
-      lb_susp_info.setObjectName(_fromUtf8("lb_susp_info"))
-      verticalLayout_12.addWidget(lb_susp_info)
-      text_susp = QTextEdit(tab_1)
-      text_susp.setReadOnly(True)
-      text_susp.setObjectName(_fromUtf8("text_susp"))
-      verticalLayout_12.addWidget(text_susp)
-      gridLayout.addLayout(verticalLayout_12, 0, 0, 1, 1)
-      line_3 = QFrame(tab_1)
-      line_3.setFrameShape(QFrame.HLine)
-      line_3.setFrameShadow(QFrame.Sunken)
-      line_3.setObjectName(_fromUtf8("line_3"))
-      gridLayout.addWidget(line_3, 1, 0, 1, 1)
-      horizontalLayout_3 = QHBoxLayout()
-      horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
-      spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_3.addItem(spacerItem)
-      label_2 = QLabel(tab_1)
-      label_2.setObjectName(_fromUtf8("label_2"))
-      horizontalLayout_3.addWidget(label_2)
-      spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_3.addItem(spacerItem1)
-      gridLayout.addLayout(horizontalLayout_3, 2, 0, 1, 1)
-      line = QFrame(tab_1)
-      line.setFrameShape(QFrame.HLine)
-      line.setFrameShadow(QFrame.Sunken)
-      line.setObjectName(_fromUtf8("line"))
-      gridLayout.addWidget(line, 3, 0, 1, 1)
-      verticalLayout = QVBoxLayout()
-      verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-      lb_susp_sentenc = QLabel(tab_1)
-      lb_susp_sentenc.setObjectName(_fromUtf8("lb_note_susp_sentence"))
-      verticalLayout.addWidget(lb_susp_sentenc)
-      lb_src_sentence = QLabel(tab_1)
-      lb_src_sentence.setObjectName(_fromUtf8("lb_note_src_sentence"))
-      verticalLayout.addWidget(lb_src_sentence)
-      gridLayout.addLayout(verticalLayout, 4, 0, 1, 1)
-      line_2 = QFrame(tab_1)
-      line_2.setFrameShape(QFrame.HLine)
-      line_2.setFrameShadow(QFrame.Sunken)
-      line_2.setObjectName(_fromUtf8("line_2"))
-      gridLayout.addWidget(line_2, 5, 0, 1, 1)
       horizontalLayout = QHBoxLayout()
       horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
       verticalLayout_2 = QVBoxLayout()
@@ -186,6 +144,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_id.setObjectName(_fromUtf8("lb_note_id"))
       verticalLayout_2.addWidget(lb_note_id)
       horizontalLayout.addLayout(verticalLayout_2)
+      line_7 = QFrame(tab_1)
+      line_7.setFrameShape(QFrame.VLine)
+      line_7.setFrameShadow(QFrame.Sunken)
+      line_7.setObjectName(_fromUtf8("line_7"))
+      horizontalLayout.addWidget(line_7)
       verticalLayout_3 = QVBoxLayout()
       verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
       label_5 = QLabel(tab_1)
@@ -201,6 +164,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_type.setObjectName(_fromUtf8("lb_note_type"))
       verticalLayout_3.addWidget(lb_note_type)
       horizontalLayout.addLayout(verticalLayout_3)
+      line_8 = QFrame(tab_1)
+      line_8.setFrameShape(QFrame.VLine)
+      line_8.setFrameShadow(QFrame.Sunken)
+      line_8.setObjectName(_fromUtf8("line_8"))
+      horizontalLayout.addWidget(line_8)
       verticalLayout_4 = QVBoxLayout()
       verticalLayout_4.setObjectName(_fromUtf8("verticalLayout_4"))
       label_6 = QLabel(tab_1)
@@ -216,6 +184,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_projection.setObjectName(_fromUtf8("lb_note_projection"))
       verticalLayout_4.addWidget(lb_note_projection)
       horizontalLayout.addLayout(verticalLayout_4)
+      line_9 = QFrame(tab_1)
+      line_9.setFrameShape(QFrame.VLine)
+      line_9.setFrameShadow(QFrame.Sunken)
+      line_9.setObjectName(_fromUtf8("line_9"))
+      horizontalLayout.addWidget(line_9)
       verticalLayout_5 = QVBoxLayout()
       verticalLayout_5.setObjectName(_fromUtf8("verticalLayout_5"))
       label_7 = QLabel(tab_1)
@@ -226,11 +199,16 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       label_7.setAlignment(Qt.AlignCenter)
       label_7.setObjectName(_fromUtf8("label_7"))
       verticalLayout_5.addWidget(label_7)
-      lb_susp_offset = QLabel(tab_1)
-      lb_susp_offset.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
-      lb_susp_offset.setObjectName(_fromUtf8("lb_susp_offset"))
-      verticalLayout_5.addWidget(lb_susp_offset)
+      lb_note_susp = QLabel(tab_1)
+      lb_note_susp.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
+      lb_note_susp.setObjectName(_fromUtf8("lb_note_susp"))
+      verticalLayout_5.addWidget(lb_note_susp)
       horizontalLayout.addLayout(verticalLayout_5)
+      line_10 = QFrame(tab_1)
+      line_10.setFrameShape(QFrame.VLine)
+      line_10.setFrameShadow(QFrame.Sunken)
+      line_10.setObjectName(_fromUtf8("line_10"))
+      horizontalLayout.addWidget(line_10)
       verticalLayout_6 = QVBoxLayout()
       verticalLayout_6.setObjectName(_fromUtf8("verticalLayout_6"))
       label_8 = QLabel(tab_1)
@@ -241,11 +219,16 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       label_8.setAlignment(Qt.AlignCenter)
       label_8.setObjectName(_fromUtf8("label_8"))
       verticalLayout_6.addWidget(label_8)
-      lb_susp_length = QLabel(tab_1)
-      lb_susp_length.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
-      lb_susp_length.setObjectName(_fromUtf8("lb_susp_length"))
-      verticalLayout_6.addWidget(lb_susp_length)
+      lb_note_src = QLabel(tab_1)
+      lb_note_src.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
+      lb_note_src.setObjectName(_fromUtf8("lb_note_src"))
+      verticalLayout_6.addWidget(lb_note_src)
       horizontalLayout.addLayout(verticalLayout_6)
+      line_11 = QFrame(tab_1)
+      line_11.setFrameShape(QFrame.VLine)
+      line_11.setFrameShadow(QFrame.Sunken)
+      line_11.setObjectName(_fromUtf8("line_11"))
+      horizontalLayout.addWidget(line_11)
       verticalLayout_7 = QVBoxLayout()
       verticalLayout_7.setObjectName(_fromUtf8("verticalLayout_7"))
       label_9 = QLabel(tab_1)
@@ -261,6 +244,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_author.setObjectName(_fromUtf8("lb_note_author"))
       verticalLayout_7.addWidget(lb_note_author)
       horizontalLayout.addLayout(verticalLayout_7)
+      line_12 = QFrame(tab_1)
+      line_12.setFrameShape(QFrame.VLine)
+      line_12.setFrameShadow(QFrame.Sunken)
+      line_12.setObjectName(_fromUtf8("line_12"))
+      horizontalLayout.addWidget(line_12)
       verticalLayout_8 = QVBoxLayout()
       verticalLayout_8.setObjectName(_fromUtf8("verticalLayout_8"))
       label_10 = QLabel(tab_1)
@@ -276,6 +264,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_date.setObjectName(_fromUtf8("lb_note_date"))
       verticalLayout_8.addWidget(lb_note_date)
       horizontalLayout.addLayout(verticalLayout_8)
+      line_13 = QFrame(tab_1)
+      line_13.setFrameShape(QFrame.VLine)
+      line_13.setFrameShadow(QFrame.Sunken)
+      line_13.setObjectName(_fromUtf8("line_13"))
+      horizontalLayout.addWidget(line_13)
       verticalLayout_9 = QVBoxLayout()
       verticalLayout_9.setObjectName(_fromUtf8("verticalLayout_9"))
       label_11 = QLabel(tab_1)
@@ -291,6 +284,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_human_val.setObjectName(_fromUtf8("lb_note_human_val"))
       verticalLayout_9.addWidget(lb_note_human_val)
       horizontalLayout.addLayout(verticalLayout_9)
+      line_14 = QFrame(tab_1)
+      line_14.setFrameShape(QFrame.VLine)
+      line_14.setFrameShadow(QFrame.Sunken)
+      line_14.setObjectName(_fromUtf8("line_14"))
+      horizontalLayout.addWidget(line_14)
       verticalLayout_10 = QVBoxLayout()
       verticalLayout_10.setObjectName(_fromUtf8("verticalLayout_10"))
       label_12 = QLabel(tab_1)
@@ -307,45 +305,104 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       verticalLayout_10.addWidget(lb_note_machine_recog)
       horizontalLayout.addLayout(verticalLayout_10)
       gridLayout.addLayout(horizontalLayout, 6, 0, 1, 1)
-      horizontalLayout_2 = QHBoxLayout()
-      horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
-      spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_2.addItem(spacerItem2)
-      btn_prev_note = QPushButton(tab_1)
-      btn_prev_note.setObjectName(_fromUtf8("btn_prev_note"))
-      horizontalLayout_2.addWidget(btn_prev_note)
-      btn_next_note = QPushButton(tab_1)
-      btn_next_note.setObjectName(_fromUtf8("btn_next_note"))
-      horizontalLayout_2.addWidget(btn_next_note)
-      spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_2.addItem(spacerItem3)
-      gridLayout.addLayout(horizontalLayout_2, 7, 0, 1, 1)
-      line_4 = QFrame(tab_1)
-      line_4.setFrameShape(QFrame.HLine)
-      line_4.setFrameShadow(QFrame.Sunken)
-      line_4.setObjectName(_fromUtf8("line_4"))
-      gridLayout.addWidget(line_4, 8, 0, 1, 1)
       verticalLayout_13 = QVBoxLayout()
       verticalLayout_13.setObjectName(_fromUtf8("verticalLayout_13"))
       lb_src_info = QLabel(tab_1)
       lb_src_info.setObjectName(_fromUtf8("lb_src_info"))
       verticalLayout_13.addWidget(lb_src_info)
       text_src = QTextEdit(tab_1)
-      text_src.setReadOnly(True)
       text_src.setObjectName(_fromUtf8("text_src"))
       verticalLayout_13.addWidget(text_src)
-      gridLayout.addLayout(verticalLayout_13, 9, 0, 1, 1)
-
-      # extra child used for setData
-      action = QAction(tab_1)
-      action.setObjectName(_fromUtf8("case_extra_data"))
-      #
+      gridLayout.addLayout(verticalLayout_13, 10, 0, 1, 1)
+      horizontalLayout_2 = QHBoxLayout()
+      horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+      spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_2.addItem(spacerItem)
+      btn_prev_note = QPushButton(tab_1)
+      btn_prev_note.setObjectName(_fromUtf8("btn_prev_note"))
+      horizontalLayout_2.addWidget(btn_prev_note)
+      lb_note_current = QLabel(tab_1)
+      lb_note_current.setObjectName(_fromUtf8("lb_note_current"))
+      horizontalLayout_2.addWidget(lb_note_current)
+      label_3 = QLabel(tab_1)
+      label_3.setObjectName(_fromUtf8("label_3"))
+      horizontalLayout_2.addWidget(label_3)
+      lb_note_count = QLabel(tab_1)
+      lb_note_count.setObjectName(_fromUtf8("lb_note_count"))
+      horizontalLayout_2.addWidget(lb_note_count)
+      btn_next_note = QPushButton(tab_1)
+      btn_next_note.setObjectName(_fromUtf8("btn_next_note"))
+      horizontalLayout_2.addWidget(btn_next_note)
+      spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_2.addItem(spacerItem1)
+      gridLayout.addLayout(horizontalLayout_2, 8, 0, 1, 1)
+      line_2 = QFrame(tab_1)
+      line_2.setFrameShape(QFrame.HLine)
+      line_2.setFrameShadow(QFrame.Sunken)
+      line_2.setObjectName(_fromUtf8("line_2"))
+      gridLayout.addWidget(line_2, 5, 0, 1, 1)
+      horizontalLayout_3 = QHBoxLayout()
+      horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
+      spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_3.addItem(spacerItem2)
+      label_2 = QLabel(tab_1)
+      label_2.setObjectName(_fromUtf8("label_2"))
+      horizontalLayout_3.addWidget(label_2)
+      spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_3.addItem(spacerItem3)
+      gridLayout.addLayout(horizontalLayout_3, 2, 0, 1, 1)
+      verticalLayout_12 = QVBoxLayout()
+      verticalLayout_12.setObjectName(_fromUtf8("verticalLayout_12"))
+      case_details = QLabel(tab_1)
+      case_details.setObjectName(_fromUtf8("case_details"))
+      verticalLayout_12.addWidget(case_details)
+      line_5 = QFrame(tab_1)
+      line_5.setFrameShape(QFrame.HLine)
+      line_5.setFrameShadow(QFrame.Sunken)
+      line_5.setObjectName(_fromUtf8("line_5"))
+      verticalLayout_12.addWidget(line_5)
+      lb_susp_info = QLabel(tab_1)
+      lb_susp_info.setObjectName(_fromUtf8("lb_susp_info"))
+      verticalLayout_12.addWidget(lb_susp_info)
+      text_susp = QTextEdit(tab_1)
+      text_susp.setObjectName(_fromUtf8("text_susp"))
+      verticalLayout_12.addWidget(text_susp)
+      gridLayout.addLayout(verticalLayout_12, 0, 0, 1, 1)
+      line_4 = QFrame(tab_1)
+      line_4.setFrameShape(QFrame.HLine)
+      line_4.setFrameShadow(QFrame.Sunken)
+      line_4.setObjectName(_fromUtf8("line_4"))
+      gridLayout.addWidget(line_4, 9, 0, 1, 1)
+      verticalLayout = QVBoxLayout()
+      verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+      lb_susp_sentence = QLabel(tab_1)
+      lb_susp_sentence.setObjectName(_fromUtf8("lb_susp_sentence"))
+      verticalLayout.addWidget(lb_susp_sentence)
+      lb_src_sentence = QLabel(tab_1)
+      lb_src_sentence.setObjectName(_fromUtf8("lb_src_sentence"))
+      verticalLayout.addWidget(lb_src_sentence)
+      gridLayout.addLayout(verticalLayout, 4, 0, 1, 1)
+      line_3 = QFrame(tab_1)
+      line_3.setFrameShape(QFrame.HLine)
+      line_3.setFrameShadow(QFrame.Sunken)
+      line_3.setObjectName(_fromUtf8("line_3"))
+      gridLayout.addWidget(line_3, 1, 0, 1, 1)
+      line = QFrame(tab_1)
+      line.setFrameShape(QFrame.HLine)
+      line.setFrameShadow(QFrame.Sunken)
+      line.setObjectName(_fromUtf8("line"))
+      gridLayout.addWidget(line, 3, 0, 1, 1)
+      line_6 = QFrame(tab_1)
+      line_6.setFrameShape(QFrame.HLine)
+      line_6.setFrameShadow(QFrame.Sunken)
+      line_6.setObjectName(_fromUtf8("line_6"))
+      gridLayout.addWidget(line_6, 7, 0, 1, 1)
 
       # set default values
-      lb_susp_info.setText("<html><head/><body><p>[<span style=\" font-weight:600;\">Suspicious</span>] &nbsp;&nbsp;&nbsp; id = <span style=\" font-weight:600;\">000</span>, susp_name = <span style=\" font-weight:600;\">susp-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), origin_offset = <span style=\" font-weight:600;\">10</span></p></body></html>")
+      lb_susp_info.setText("<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>susp-1111</b>, length = <b>555</b> char(s), <b>1</b> word(s), <b>1</b> sentence(s), offset = <b>10</b>")
       text_susp.setText("Texto sospechoso")
-      label_2.setText("<html><head/><body><p><span style=\" font-weight:600;\">Annotation Details</span></p></body></html>")
-      lb_susp_sentenc.setText("Susp Sentence")
+      label_2.setText("<b>Annotation Details</b>")
+      lb_susp_sentence.setText("Susp Sentence")
       lb_src_sentence.setText("Src Sentence")
       label_4.setText("ID")
       lb_note_id.setText("1")
@@ -354,9 +411,9 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       label_6.setText("Projection")
       lb_note_projection.setText("Local")
       label_7.setText("Susp\nOffset / Len")
-      lb_susp_offset.setText("10")
+      lb_note_susp.setText("10")
       label_8.setText("Src\nOffset / Len")
-      lb_susp_length.setText("50")
+      lb_note_src.setText("50")
       label_9.setText("Author")
       lb_note_author.setText("Leonel")
       label_10.setText("Date")
@@ -367,8 +424,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_machine_recog.setText("False")
       btn_prev_note.setText("Prev")
       btn_next_note.setText("Next")
-      lb_src_info.setText("<html><head/><body><p>[<span style=\" font-weight:600;\">Source</span>]     id = <span style=\" font-weight:600;\">000</span>, src_name = <span style=\" font-weight:600;\">src-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), origin_offset = <span style=\" font-weight:600;\">10</span></p></body></html>")
+      lb_src_info.setText("<b>Source</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>src-1111</b>, length = <b>555</b> char(s), <b>1</b> word(s), <b>1</b> sentence(s), offset = <b>10</b>")
       text_src.setText("Texto fuente")
+      lb_note_current.setText("#")
+      label_3.setText("/")
+      lb_note_count.setText("Total")
 
       # shortcut
       QShortcut(Qt.CTRL + Qt.Key_W, tab_1, self.__ctrl_w)
@@ -389,35 +449,48 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
    def load_new_corpus(self):
       """Load a new corpus"""
 
-      # parser instance
-      __reader = TNLP_XML_Manager()
+      # select corpus file
+      xml_file = QFileDialog.getOpenFileName(self, u"Select corpus file", "", u"Corpus XML file (*.xml)")
 
-      if __reader.parse_xml('test/corpuses/TNLP/TNLP-test.xml'):
+      if not xml_file:
+         QMessageBox.critical(self, self.__appName, 'Operation canceled.')
+         return
+
+      if not QFile.exists(xml_file):
+         QMessageBox.critical(self, self.__appName, 'Invalid file.')
+         return
+
+      xml_file = str(xml_file)
+
+      # parser instance
+      self.__reader = TNLP_XML_Manager()
+
+      if self.__reader.parse_xml(xml_file):
          # corpus already loaded?
          __corpus_names = []
          for i in self.__corpus_list:
             __corpus_names.append(i.get_corpus_name())
-         if __reader.get_corpus_name() in __corpus_names:
-            QMessageBox.critical(self, self.__appName, 'Corpus <b>' + __reader.get_corpus_name() + ' </b>already loaded.')
+         if self.__reader.get_corpus_name() in __corpus_names:
+            QMessageBox.critical(self, self.__appName, 'Corpus <b>' + self.__reader.get_corpus_name() + ' </b>already loaded.')
             return
 
          # add a new tab for corpus
          tab = self.__create_new_corpus_tab()
          _cases_list = tab.children()[1].children()[2] # cases list
          _total_lb = tab.children()[1].children()[3] # total cases
-         self.corpusTabs.addTab(tab, QString(__reader.get_corpus_name()))
+         self.corpusTabs.addTab(tab, QString(self.__reader.get_corpus_name()))
 
          # create cases list
-         for i in range(__reader.get_corpus_total_cases()):
+         for i in range(self.__reader.get_corpus_total_cases()):
             i = i + 1
-            _tmp_case = __reader.get_case_summary(i)
+            _tmp_case = self.__reader.get_case_summary(i)
             listItem = QListWidgetItem(QIcon(plag_types[_tmp_case[0]][0]), QString("[" + _tmp_case[1] + "]: " + _tmp_case[2]))
             # data: list(index, plag_type_rgb_color)
             listItem.setData(Qt.UserRole, [_tmp_case[1], plag_types[_tmp_case[0]][1]])
             _cases_list.addItem(listItem)
 
-         _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
-         self.__corpus_list.append(__reader)
+         _total_lb.setText(QString('Total cases: <b>%1</b>').arg(self.__reader.get_corpus_total_cases()))
+         self.__corpus_list.append(self.__reader)
 
          QMessageBox.information(self, self.__appName, 'Corpus loaded.')
       else:
@@ -443,12 +516,18 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_data = _current.data(Qt.UserRole).toList()
       case_id = int(case_data[0].toString())
       case = self.__corpus_list[self.corpusTabs.currentIndex()].get_case_by_id(case_id)
+      annotations = self.__corpus_list[self.corpusTabs.currentIndex()].get_annotations_of_case(case_id)
 
       case_tab = self.__create_new_case_tab()
+      # save extra data
+      index = -1
+      if len(annotations) > 0: index = 0
+      case_tab.set_case_data(case, annotations, index)
+
       __cases.addTab(case_tab, _current.text())
       __cases.setCurrentIndex(__cases.count() - 1)
 
-      # locate working elements
+      '''# locate working elements
       __case_details = case_tab.findChild(QLabel, "case_details")
       __lb_susp_info = case_tab.findChild(QLabel, "lb_susp_info")
       __text_susp = case_tab.findChild(QTextEdit, "text_susp")
@@ -467,8 +546,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __btn_next_note = case_tab.findChild(QPushButton, "btn_next_note")
       __lb_src_info = case_tab.findChild(QLabel, "lb_src_info")
       __text_src = case_tab.findChild(QTextEdit, "text_src")
-      __case_extra_data = case_tab.findChild(QAction, "case_extra_data")
-      #__case_extra_data = __case_extra_data.data().toList()
+      __lb_note_current =case_tab.findChild(QAction, "lb_note_current")
+      __lb_note_count = case_tab.findChild(QAction, "lb_note_count")
 
       __annotations = self.__corpus_list[self.corpusTabs.currentIndex()].get_annotations_of_case(case_id)
       __selected_annotation = -1
@@ -476,8 +555,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          __selected_annotation = 0;
 
          # display first annotation
-         self.__show_annotation(__annotations[0])
-         '''__lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
+         self.__show_annotation(1)
+         __lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
          __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
          __lb_note_id.setText(__annotations[__selected_annotation]['id'])
          __lb_note_type.setText(__annotations[__selected_annotation]['phenomenon_type'])
@@ -489,27 +568,22 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          __lb_note_author.setText(__annotations[__selected_annotation]['author'])
          __lb_note_date.setText(__annotations[__selected_annotation]['annotation_date'])
          __lb_note_human_val.setText(__annotations[__selected_annotation]['validated_by_human_beings'])
-         __lb_note_machine_recog.setText(__annotations[__selected_annotation]['recognized_by_algorithms'])'''
+         __lb_note_machine_recog.setText(__annotations[__selected_annotation]['recognized_by_algorithms'])
       else:
-         __lb_note_susp_sentence.setText('-')
-         __lb_note_src_sentence.setText('-')
-         __lb_note_id.setText('-')
-         __lb_note_type.setText('-')
-         __lb_note_projection.setText('-')
-         __lb_note_susp.setText('-')
-         __lb_note_src.setText('-')
-         __lb_note_author.setText('-')
-         __lb_note_date.setText('-')
-         __lb_note_human_val.setText('-')
-         __lb_note_machine_recog.setText('-')
+         self.__show_no_annotations()'''
 
-      # save data for navigation system
-      __case_extra_data.setData([__annotations, __selected_annotation])
+      # locate working elements
+      __case_details = case_tab.findChild(QLabel, "case_details")
+      __lb_susp_info = case_tab.findChild(QLabel, "lb_susp_info")
+      __text_susp = case_tab.findChild(QTextEdit, "text_susp")
+      __lb_src_info = case_tab.findChild(QLabel, "lb_src_info")
+      __text_src = case_tab.findChild(QTextEdit, "text_src")
 
       # connect navigation buttons
+      __btn_prev_note = case_tab.findChild(QPushButton, "btn_prev_note")
+      __btn_next_note = case_tab.findChild(QPushButton, "btn_next_note")
       __btn_prev_note.clicked.connect(self.__show_prev_annotation)
       __btn_next_note.clicked.connect(self.__show_next_annotation)
-
 
       # update components
       __case_details.setText(QString("Plagiarism type: <b>%1</b>, Original corpus: <b>%2</b>, \
@@ -535,9 +609,6 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['src_snippet_sentences_count'])
          .arg(case['src_snippet_offset']))
       __text_src.setHtml('TODO: leer el fichero y poner el contenido aqui o hacerlo en el parser...')
-
-      # show the first annotation if there is any
-      #
 
       return
 
@@ -566,16 +637,25 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __cursor.mergeCharFormat(__format)'''
 
 
-   def __update_selected_case(self, _case):
+   def __update_selected_case(self, _tab_index):
       """Update selected case in case list"""
 
       # locate working elements
       __corpus = self.corpusTabs.currentWidget() # corpus
       __cases = __corpus.children()[2] # cases tab
       __cases_list = __corpus.children()[1].children()[2] # cases list
+
       # focus case
       if __cases.count() > 0:
-         __cases_list.setCurrentItem(__cases_list.findItems(__cases.tabText(_case), Qt.MatchCaseSensitive)[0])
+         __cases_list.setCurrentItem(__cases_list.findItems(__cases.tabText(_tab_index), Qt.MatchCaseSensitive)[0])
+
+         # get case data
+         (case, annotations, index) = __cases.widget(_tab_index).get_case_data()
+
+         if index < 0:
+            self.__show_no_annotations()
+         else:
+            self.__show_annotation(index, annotations, case)
 
 
    def show_corpus_info(self):
@@ -587,6 +667,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       corpus_info = self.__corpus_list[self.corpusTabs.currentIndex()].get_corpus_info()
 
+      #TODO Arreglar la forma en que se lee el diccionario aqui
       info = 'Corpus Information<br/><br/>'
       info += 'Name: ' + corpus_info[0] + '<br/>'
       info += 'Version: ' + corpus_info[1] + '<br/>'
@@ -664,39 +745,15 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
      # locate working elements
       __corpus = self.corpusTabs.currentWidget() # corpus
-      __cases = __corpus.children()[2] # cases tab
+      case_tab = __corpus.children()[2] # cases tab
+      case_tab = case_tab.currentWidget()
 
-      _navigation_data = __cases.currentWidget().findChild(QAction, "case_extra_data")
-      _annotations = _navigation_data.data().toList()
-      _index = _annotations[1].toInt()[0]
-      _annotations = _annotations[0].toList()
-      _result = []
+      (case, annotations, index) = case_tab.get_case_data()
 
-      if _index > 0:
-         # morph QVariant data to QString
-         for i in range(len(_annotations)):
-            _annotations[i] = _annotations[i].toMap()
-            _tmp = {}
-            keys = _annotations[i].keys()
-            for j in range(len(keys)):
-               keys[j] = str(keys[j])
-
-            values = _annotations[i].values()
-            for j in range(len(values)):
-               values[j] = str(values[j].toString())
-
-            for j in range(len(_annotations[i])):
-               _tmp[keys[j]] = values[j]
-
-            _annotations[i] = _tmp
-
-         _index -= 1
-         # update navigation data
-         _navigation_data.setData([_annotations, _index])
-         # show annotation info
-         self.__show_annotation(_annotations[_index])
-
-      return
+      if index > 0:
+         index -= 1
+         case_tab.set_case_data(case, annotations, index)
+         self.__show_annotation(index, annotations, case)
 
 
    def __show_next_annotation(self):
@@ -704,62 +761,44 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       # locate working elements
       __corpus = self.corpusTabs.currentWidget() # corpus
-      __cases = __corpus.children()[2] # cases tab
+      case_tab = __corpus.children()[2] # cases tab
+      case_tab = case_tab.currentWidget()
 
-      _navigation_data = __cases.currentWidget().findChild(QAction, "case_extra_data")
-      _annotations = _navigation_data.data().toList()
-      _index = _annotations[1].toInt()[0]
-      _annotations = _annotations[0].toList()
-      _result = []
+      (case, annotations, index) = case_tab.get_case_data()
 
-      if _index < len(_annotations) - 1:
-         # morph QVariant data to QString
-         for i in range(len(_annotations)):
-            _annotations[i] = _annotations[i].toMap()
-            _tmp = {}
-            keys = _annotations[i].keys()
-            for j in range(len(keys)):
-               keys[j] = str(keys[j])
-
-            values = _annotations[i].values()
-            for j in range(len(values)):
-               values[j] = str(values[j].toString())
-
-            for j in range(len(_annotations[i])):
-               _tmp[keys[j]] = values[j]
-
-            _annotations[i] = _tmp
-
-         _index += 1
-         # update navigation data
-         _navigation_data.setData([_annotations, _index])
-         # show annotation info
-         self.__show_annotation(_annotations[_index])
-
-      return
+      if index < len(annotations) - 1:
+         index += 1
+         case_tab.set_case_data(case, annotations, index)
+         self.__show_annotation(index, annotations, case)
 
 
-   def __show_annotation(self, _info):
+   def __show_annotation(self, _index, _annotations, _case):
       """Display annotation"""
 
       # locate working elements
       __corpus = self.corpusTabs.currentWidget() # corpus
       case_tab = __corpus.children()[2] # cases tab
-      __lb_note_susp_sentence = case_tab.findChild(QLabel, "lb_note_susp_sentence")
-      __lb_note_src_sentence = case_tab.findChild(QLabel, "lb_note_src_sentence")
+      case_tab = case_tab.currentWidget()
+
+      __lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
+      __lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
       __lb_note_id = case_tab.findChild(QLabel, "lb_note_id")
       __lb_note_type = case_tab.findChild(QLabel, "lb_note_type")
       __lb_note_projection = case_tab.findChild(QLabel, "lb_note_projection")
-      __lb_note_susp = case_tab.findChild(QLabel, "lb_susp_offset")
-      __lb_note_src = case_tab.findChild(QLabel, "lb_susp_length")
+      __lb_note_susp = case_tab.findChild(QLabel, "lb_note_susp")
+      __lb_note_src = case_tab.findChild(QLabel, "lb_note_src")
       __lb_note_author = case_tab.findChild(QLabel, "lb_note_author")
       __lb_note_date = case_tab.findChild(QLabel, "lb_note_date")
       __lb_note_human_val = case_tab.findChild(QLabel, "lb_note_human_val")
       __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
+      __lb_note_current = case_tab.findChild(QLabel, "lb_note_current")
+      __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
+
+      _info = _annotations[_index]
 
       # update components
-      __lb_note_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
-      __lb_note_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
+      __lb_susp_sentence.setText('<b>Suspicious sentence:</b> ' + 'Suspicious sentence extracted from susp snippet')
+      __lb_src_sentence.setText('<b>Source sentence:</b> ' + 'Source sentence extracted from src snippet')
       __lb_note_id.setText(_info['id'])
       __lb_note_type.setText(_info['phenomenon_type'])
       __lb_note_projection.setText(_info['projection'])
@@ -771,3 +810,50 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_date.setText(_info['annotation_date'])
       __lb_note_human_val.setText(_info['validated_by_human_beings'])
       __lb_note_machine_recog.setText(_info['recognized_by_algorithms'])
+      __lb_note_current.setText(str(_index + 1))
+      __lb_note_count.setText(str(len(_annotations)))
+
+
+   def __show_no_annotations(self):
+      """Display empty data when there are no annotations"""
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      case_tab = __corpus.children()[2] # cases tab
+      case_tab = case_tab.currentWidget()
+
+      __lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
+      __lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
+      __lb_note_id = case_tab.findChild(QLabel, "lb_note_id")
+      __lb_note_type = case_tab.findChild(QLabel, "lb_note_type")
+      __lb_note_projection = case_tab.findChild(QLabel, "lb_note_projection")
+      __lb_note_susp = case_tab.findChild(QLabel, "lb_note_susp")
+      __lb_note_src = case_tab.findChild(QLabel, "lb_note_src")
+      __lb_note_author = case_tab.findChild(QLabel, "lb_note_author")
+      __lb_note_date = case_tab.findChild(QLabel, "lb_note_date")
+      __lb_note_human_val = case_tab.findChild(QLabel, "lb_note_human_val")
+      __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
+      __lb_note_current = case_tab.findChild(QLabel, "lb_note_current")
+      __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
+
+      # update elements
+      __lb_susp_sentence.setText('-')
+      __lb_src_sentence.setText('-')
+      __lb_note_id.setText('-')
+      __lb_note_type.setText('-')
+      __lb_note_projection.setText('-')
+      __lb_note_susp.setText('-')
+      __lb_note_src.setText('-')
+      __lb_note_author.setText('-')
+      __lb_note_date.setText('-')
+      __lb_note_human_val.setText('-')
+      __lb_note_machine_recog.setText('-')
+      __lb_note_current.setText('-')
+      __lb_note_count.setText('-')
+
+
+   def __add_case(self):
+      '''Show Add Case Window'''
+
+      add = TNLP_AddCase(self.__reader, self)
+      add.show()

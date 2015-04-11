@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'TNLP_MW.ui'
 #
-# Created: Thu Apr  9 21:49:34 2015
+# Created: Fri Apr 10 22:43:39 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -169,8 +169,6 @@ class Ui_ToNgueLP_MW(object):
         self.actionExit.setObjectName(_fromUtf8("actionExit"))
         self.actionAdd_case = QtGui.QAction(ToNgueLP_MW)
         self.actionAdd_case.setObjectName(_fromUtf8("actionAdd_case"))
-        self.actionEdit_case = QtGui.QAction(ToNgueLP_MW)
-        self.actionEdit_case.setObjectName(_fromUtf8("actionEdit_case"))
         self.actionDelete_case = QtGui.QAction(ToNgueLP_MW)
         self.actionDelete_case.setObjectName(_fromUtf8("actionDelete_case"))
         self.actionAdd_annotation = QtGui.QAction(ToNgueLP_MW)
@@ -197,8 +195,8 @@ class Ui_ToNgueLP_MW(object):
         self.menuScripts.addAction(self.actionUpdate_XMLs_Info)
         self.menuHelp.addAction(self.actionAbout_ToNgueLP)
         self.menuHelp.addAction(self.actionUser_s_Manual)
-        self.menuCases.addAction(self.actionAdd_case)
-        self.menuCases.addAction(self.actionEdit_case)
+        self.menuCases.addAction(self.actionAdd_New_Case)
+        self.menuCases.addAction(self.actionEdit_Case)
         self.menuCases.addAction(self.actionDelete_case)
         self.menuAnnotations.addAction(self.actionAdd_annotation)
         self.menuAnnotations.addAction(self.actionEdit_annotation)
@@ -269,7 +267,6 @@ class Ui_ToNgueLP_MW(object):
         self.actionExit.setText(_translate("ToNgueLP_MW", "Exit", None))
         self.actionExit.setShortcut(_translate("ToNgueLP_MW", "Ctrl+Q", None))
         self.actionAdd_case.setText(_translate("ToNgueLP_MW", "Add case", None))
-        self.actionEdit_case.setText(_translate("ToNgueLP_MW", "Edit case", None))
         self.actionDelete_case.setText(_translate("ToNgueLP_MW", "Delete case", None))
         self.actionAdd_annotation.setText(_translate("ToNgueLP_MW", "Add annotation", None))
         self.actionEdit_annotation.setText(_translate("ToNgueLP_MW", "Edit annotation", None))

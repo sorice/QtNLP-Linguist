@@ -204,9 +204,9 @@ class TNLP_XML_Manager:
       return annotations
 
 
-   def add_case(self, _problem_type, _extension, _description, _plag_type,
-      _summary, _auto_summary, _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset,
-      _susp_length, _src_doc, _src_offset, _src_length): #OK
+   def add_case(self, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
+      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset,
+      _susp_length, _susp_sentences_count, _src_doc, _src_offset, _src_length, _src_sentences_count): #OK
       """Add a new case to the corpus"""
 
       #TODO validate all input data
@@ -215,7 +215,7 @@ class TNLP_XML_Manager:
 
       # select the correct group for the case
       for i in range(len(self.__groups)):
-         if self.__groups[i].getAttribute('NLP_problem_type') == NLP_problem_type:
+         if self.__groups[i].getAttribute('NLP_problem_type') == self.__NLP_problem_type:
             target = i
 
       actual_group = self.__groups[target]
@@ -239,6 +239,7 @@ class TNLP_XML_Manager:
       susp_snippet.setAttribute('doc', _susp_doc)
       susp_snippet.setAttribute('offset', str(_susp_offset))
       susp_snippet.setAttribute('length', str(_susp_length))
+      susp_snippet.setAttribute('sentences_count', str(_susp_sentences_count))
       case.appendChild(susp_snippet)
 
       # src snippet node
@@ -246,6 +247,7 @@ class TNLP_XML_Manager:
       src_snippet.setAttribute('doc', _src_doc)
       src_snippet.setAttribute('offset', str(_src_offset))
       src_snippet.setAttribute('length', str(_src_length))
+      susp_snippet.setAttribute('sentences_count', str(_src_sentences_count))
       case.appendChild(src_snippet)
 
       # add case to group
@@ -324,7 +326,8 @@ class TNLP_XML_Manager:
    def get_corpus_name(self):
       """Returns the corpus name"""
 
-      return 'TNLP'
+      if self.__parsed:
+         return self.__root_node.getAttribute('name')
 
 
    def get_case_summary(self, _index):
@@ -400,7 +403,7 @@ if __name__ == "__main__":
 
    print "\nADD CASE"
    print a.add_case("similarity","paragraph","desc","paraphrase","manual summary","auto summary",
-   "PAN_PC-15","12345", 'human', 'abelm','susp/susp-doc00560', '15', '30', 'src/src-doc01360', '60', '101')
+   "PAN_PC-15","12345", 'human', 'abelm','susp/susp-doc00560', '15', '30', 'src/src-doc01360', '60', '101', '5', '6')
 
    print "\nCORPUS TOTAL CASES: "
    print a.get_corpus_total_cases()

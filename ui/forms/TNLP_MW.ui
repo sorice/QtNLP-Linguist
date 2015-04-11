@@ -94,8 +94,8 @@
     <property name="title">
      <string>Cases</string>
     </property>
-    <addaction name="actionAdd_case"/>
-    <addaction name="actionEdit_case"/>
+    <addaction name="actionAdd_New_Case"/>
+    <addaction name="actionEdit_Case"/>
     <addaction name="actionDelete_case"/>
    </widget>
    <widget class="QMenu" name="menuAnnotations">
@@ -384,11 +384,6 @@
   <action name="actionAdd_case">
    <property name="text">
     <string>Add case</string>
-   </property>
-  </action>
-  <action name="actionEdit_case">
-   <property name="text">
-    <string>Edit case</string>
    </property>
   </action>
   <action name="actionDelete_case">
