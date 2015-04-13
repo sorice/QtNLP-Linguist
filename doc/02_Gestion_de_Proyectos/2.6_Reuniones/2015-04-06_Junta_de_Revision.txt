@@ -1,0 +1,117 @@
+Reunión de la Junta de Revisión
+Objetivo: Revisar el diseño de la versión 0.4.
+Asisten: Abel y Leonel.
+
+Objetivos desglosados:
+
+Nuevo pendiente para el próximo encuentro
+Abel- Mecanismo cálculo de las estadísticas de los snippets y los chunk y las sentences.
+Abel- Validaciones de todos los inputs.
+Abel- Arreglar el action de get_corpus_info
+Leo- Mecanismo de selección del texto.
+Leo- Asistente para adicionar caso y adicionar anotación.
+Leo- Función crear_corpus que genera el xml en blanco.
+Abel- En añadir caso si el grupo no existe que lo cree.
+Abel- Definir las listas que van en el Enum. -> Luego actualizar los combo box que se correspondan con estas listas actualizadas.
+
+*******************
+Nuevo hecho esta semana
+
+[OK]- Versión para windows/linux sin código fuente.
+
+*********
+
+[OK lo haré con un screenshot a la Main View, el Add Case y el Add Annotation hechos en el QtDesignner]4- Área para las anotaciones en la arq. de información de la GUI.
+A: Abel ver ideas de la interfaz Coco, incluida en las imágenes de los homólogos.[OK,13/03/2015]
+[OK quedará pendiente lo de añadir un check box para cuando sea necesario en la tipología de coordinación]A: Abel diseñar cambios en función de anotar la paráfrasis a nivel de oraciones.[OK, 15/02/2015]
+[OK]A: En el área de anotaciones se añade navegación a través de las oraciones que contiene el case.
+
+[OK]- Diseño del XML
+[OK]A: Al TNLP.xml adicionar al case_pair la cantidad de oraciones que contiene el caso.
+	-> Para "Añadir caso" el anotador debe marcar el rango.
+		-> Si el rango marcado no inicia y finaliza en una oración, ents ToNgueLP debe calcular el inicio y fin del rango para que se cumpla esto.
+[OK]A: Al TNLP.xml adicionar al "annotation" el número de la oración src y # de la oración susp.
+[OK]A: Eliminados muchas etiquetas redundantes, cambios de nombre, etc. Todo recogido en los commits de el proyecto. 
+
+Seguirá pendiente{P-1}1- En la siguiente iteración programar la inclusión del corpus modificado del PAN(significa todos los xmls en un solo XML para asemejarlo a P4P), así como el script para generarlo. (esto ayudará a que la salida de mi algoritmo también pueda ser convertida a un solo XML)
+
+[OK lo incluimos el xml]2- Un fragmento de plagio puede ser asociado a una tipología.
+A: Leonel incluye un plag_type para el fragmento.
+A: Abel pregunta a Alberto si es posible definir un typology para el fragmento.
+	-> Alberto dijo que hay que preguntar a Marta Vila y a Martí.
+
+[Seguirá pendiente, ya al menos tengo el PAN-PC-10]{P-1}3- Crear un caso a partir del P4P buscando los textos originales usados por Alberto del PAN-PC 2010.
+
+[OK]{P-1}5- Search_Case_List, va cogiendo forma pero me doy cuenta que tendremos que pensar este componente como los grandes, porque tu me pusiste sobre aviso, es esencial cuando haya 1000 casos en la lista, necesitaremos formas óptimas de filtrar, de lo contrario esto es una shit. Esto deberíamos discutirlo aquí, estudia lo que se puede hacer con este componente, porque solo así nuestras locas ideas sabremos si son posibles con ese componente de Qt o no.
+[OK, no se borrará el resumen se indicará que sea pequeño, está referido como 'keywords']A: Eliminar el resumen de la vista y poner solo los colores y el id o número del caso.
+[Seguirá pendiente] A: Generar el resumen automáticamente con la función de palabras significativas de Sunshine.
+
+[seguirá pendiente hasta que no cambie el código, y luego se generará para mejor comprensión de los que estudien el software]{P-1}6- Revisar con Leonel el Diagrama de Secuencias después que hagamos los mínimos en Qt para poder escribirlo con los nombre de las clases, objetos y cualquier otra definición necesaria.
+
+[P Leonel me lo enviará por @]{P-1}7- No me acuerdo de la documentación de los elementos en el QtAssistant. Cómo se busca? Cuál es la URL directa?
+
+[P]{P-1}8- Documentar los iconos utilizados, la URL en el sistema Ubuntu y además que colección es. Esto no lo he documentado en ningún lugar. Ponerlo en la documentación Sphinx de ToNgueLP.
+
+[OK]9- Implementada una batería de pruebas con python-mocker para el único script programado en ToNgueLP.[OK, 30/12/2014]
+A: Definir si vamos a realizar más baterías de prueba.(esto sin integración continua no tiene mucho sentido. [OK, definido que no haremos por ahora solo en el despliegue, 09/12/2015)
+
+[OK]10- Acta de la reunión del cierre de la iteración.
+A Abel Hacer acta de la junta de Febrero de TNLP. Revisar el acta anterior impresa y ver los pendientes, agregar. Y luego agregar también las actividades que salieron en el encuentro.[OK, 03/04/2015]
+
+[OK]11- Script Estado del Árbol para ver las diferencias entre las carpetas de PhD de Abel y de Leonel.
+A: 2015021101 Implementar un script para leer todo el árbol dentro de la carpeta 'Doctorado', y versionar este fichero, para que los miembros del equipo puedan ver lo que he agregado o quitado de una versión a otra.[OK, 14/2/2015, 3.5h]
+
+[OK]12- Mejorar el esquema de carpetas de la carpeta 'data'.
+A: Adicionados las carpetas susp y src en el './test/corpuses/TNLP'.[OK, Abel, 11/2/2015]
+A:  Organizar el corpus de ToNgueLP dentro de la carpeta 'corpuses' dentro de una carpeta 'ToNgueLP'. Ejemplo quedaría '00_ToNgueLP/data/corpuses/TNLP/susp', '00_ToNgueLP/data/corpuses/TNLP/src' y '00_ToNgueLP/data/corpuses/TNLP/TNLP.xml' [OK, Abel 11/2/2015, temporalmente para que la aplicación funcione]
+A: 2015021103- Dirección del susp y el src o ruta a partir de donde está la ruta del XML en el atributo que tiene que ver con el nombre del src_doc. Ej.: ahora aparece como 'src_doc:src-doc17890' quedaría entonces como 'src_doc:src/src-doc17890'.[OK, 13/2/2015]
+A : 2015021104- Adicionar al XML el resto de los cambios a tener en cuenta, y puestos en la hoja de Leonel(fijarme en CoCo Web)[OK, 13 y 14/02/2015]
+A: 2015021105- Hacer el README del XML.[OK, 5.5h, 15/02/2015]
+A: Abel Enviar a Leonel el TNLP.xml modificado, y el README.rst + README.html del TNLP.xml[OK, 17/02/2015]
+A: Abel Enviar al equipo de Camagüey TNLP.xml y README.rst y README.html.[OK, 17/02/2015]
+
+[OK]13- Código Fuente.
+[OK]A: Leonel arregla en el visual el mostrar el fragmento que se haga con la ruta embebida en el TNLP.xml, descrito en la tarea 2015021103
+[Ok, se cambió al pxdom]A: Leonel Cambiar el XML_read para la lib python2.7/xml/dom Y hacer el XML_write.
+[OK, ya se corrió el nuevo]A: Leonel reenviar el parser de TNLP ajustado al TNLP.xml pues de lo contrario el proyecto no se puede correr.
+[NO por ahora]A: 2015021102 Poner los compactados del PAN. Y por supuesto programar para que se pueda llamar esta implementación desde cualquier parte.
+[OK, resuelto con Qt]A: Se necesita implementar un método para descomponer los datos de tipo str que contienen fechas, para usarlas adecuadamente como es el caso de los datetime.date(), que genera un objeto cuyos datos año, mes, día son parte de la estructura del mismo. Objetivo: este código es para el XML_read que contendrá datos de tipo fecha guardados en una cadena de strings.
+
+
+[OK, no hacer evolus, hacer directo en el QtDesinner]14- Diseño
+A: Abel hacer prototipo de interfaz para el adicionar caso en Evolus Pencil.
+A: Agregar URLs al .VUE del doctorado.
+./Resultados/OK_18_2014-03-18_PAN_2014_Text_Alignment_Task-no_enviado_test10-y-test11[OK, 03/04/2015]
+
+Acuerdos de la junta de Revisión de Enero 2015
+****************************************************
+[NO analizar esto y diagramar lo nuevo que es mucho más grande que esta simple verificación]{P-2}A: Abel deberá diagramar lo que ya hizo en el UI de verificar el 'total_corpus_cases', pero ahora genérico para la verificación de todas las informaciones verificables automáticamente. Ej: total_real_cases, total_corpus_cases, o los casos nomenclados como <phenomenon type="literal_plagiarism"(esto se puede hacer automáticamente teniendo los casos con la función de string matching, usar cualquiera de la biblioteca externa que tengo que funciona con hash y otras cosas, ver mis experimentos de hash fingerprints. O usar el fuzzy para eliminar problemas de espacios, cambios menores, o una simple comparación de cadenas en python)
+[OK ya no hace falta se tira con la pos del click]{P-2}A: Leonel poner un margen en ToNgueLP = (total chars que puede visualizar el src_text_case-length_del_case)/2. Esto permitirá poner boundaries a los casos.
+{P-1}A:Leonel cambiar el 100% de los nombres de los ficheros con esta nueva regla: Usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP.
+[OK]A: Código de colores para las tipologías de plagio.[OK,16/12/2014]
+[OK]A: Actualizar el estilo de código de SXP.[OK, 05/02/2015]
+[P hasta que haga falta]{P-1}A: Analizar casos de P4P con lo que Alberto dijo para machear con casos del PAN.[P]
+[P esto para la versión 0.5]{P-1}A: El src_text debe tener el fragmento similar resaltado en el mismo color que el Case_List.[P]
+[P para la 0.5]{P-1}A: Modificar el Edit_Case_Bar a un área donde se puedan poner todos los elementos.[P] (solo el 50% se definió en esta reunión para implementar un área para agregar las anotaciones)
+[OK]A: Estudiar el componente Search Case List.[OK, mes de enero]
+[P]{P-1}A: Revisar diagrama de Secuencias y escribirlo con los nombres de las clases, etc.[P]
+[P Leo no lo encontró]{P-1}A: Volver a buscar y anotar los elementos de GUI del QtAssistant.[P]
+[P prioridad baja]{P-1}A: Documentar iconos utilizados con su nombre y colección original en Ubuntu.[P]
+
+Otras tareas:
+[No pendiente para la v0.6][P]- Leonel UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
+[P baja prioridad][P]- Implementar la lectura de los corpus desde un .zip.
+[P baja prioridad][P]- Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+[OK!!!!]{P-2}[P]- Leonel programar de forma experimental(alfa) 'Insertar un caso'.
+
+Miembros camagüeyanos del equipo:
+[P]- Correr el algoritmo de Abel y detectar similaridad en los 300 artículos de wikipedia para inicializar corpus de TNLP. 
+[P]- (como aún no se puede insertar casos en ToNgueLP) Deberá construir los snippet_pairs de forma manual.
+
+Objetivos de la junta de Revisión de Nov 2014
+******************************************************
+Revisar el diseño de la versión 0.3.
+Definir requisitos a programar en la siguiente iteración a cerrar el 15/marzo.
+
+Documentado por: Abel Meneses
+fecha: 31/11/2014
