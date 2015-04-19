@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'TNLP_MW.ui'
 #
-# Created: Sat Apr 11 13:06:53 2015
-#      by: PyQt4 UI code generator 4.10.4
+# Created: Sat Apr 18 01:29:28 2015
+#      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,16 +12,7 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+    _fromUtf8 = lambda s: s
 
 class Ui_ToNgueLP_MW(object):
     def setupUi(self, ToNgueLP_MW):
@@ -225,51 +216,51 @@ class Ui_ToNgueLP_MW(object):
         QtCore.QMetaObject.connectSlotsByName(ToNgueLP_MW)
 
     def retranslateUi(self, ToNgueLP_MW):
-        ToNgueLP_MW.setWindowTitle(_translate("ToNgueLP_MW", "ToNgueLP", None))
-        self.menuCorpus.setTitle(_translate("ToNgueLP_MW", "Corpus", None))
-        self.menuTools.setTitle(_translate("ToNgueLP_MW", "Tools", None))
-        self.menuConfig.setTitle(_translate("ToNgueLP_MW", "Config", None))
-        self.menuScripts.setTitle(_translate("ToNgueLP_MW", "Scripts", None))
-        self.menuHelp.setTitle(_translate("ToNgueLP_MW", "Help", None))
-        self.menuLogin.setTitle(_translate("ToNgueLP_MW", "Login", None))
-        self.menuCases.setTitle(_translate("ToNgueLP_MW", "Cases", None))
-        self.menuAnnotations.setTitle(_translate("ToNgueLP_MW", "Annotations", None))
-        self.toolBar_Main.setWindowTitle(_translate("ToNgueLP_MW", "toolBar", None))
-        self.toolBar_Fixed.setWindowTitle(_translate("ToNgueLP_MW", "toolBar_2", None))
-        self.toolBar_Cases.setWindowTitle(_translate("ToNgueLP_MW", "toolBar_3", None))
-        self.actionLoad_New_Corpus.setText(_translate("ToNgueLP_MW", "Load New Corpus", None))
-        self.actionAdd_New_Corpus_Doc.setText(_translate("ToNgueLP_MW", "Add New Corpus Doc", None))
-        self.actionCorpus_Information.setText(_translate("ToNgueLP_MW", "Corpus Information", None))
-        self.actionClose_Corpus.setText(_translate("ToNgueLP_MW", "Close Corpus", None))
-        self.actionAdd_Algorithm_Output.setText(_translate("ToNgueLP_MW", "Add Algorithm Output", None))
-        self.actionAdd_New_Case.setText(_translate("ToNgueLP_MW", "Add New Case", None))
-        self.actionEdit_Case.setText(_translate("ToNgueLP_MW", "Edit Case", None))
-        self.actionValidate_Case.setText(_translate("ToNgueLP_MW", "Validate Case", None))
-        self.action_Re_Define_Boundaries.setText(_translate("ToNgueLP_MW", "(Re)Define Boundaries", None))
-        self.actionView_Annotation.setText(_translate("ToNgueLP_MW", "View Annotation", None))
-        self.actionSave_Corpus.setText(_translate("ToNgueLP_MW", "Save Corpus", None))
-        self.actionSelect_Parser.setText(_translate("ToNgueLP_MW", "Select Parser", None))
-        self.actionSuggest_Parser.setText(_translate("ToNgueLP_MW", "Suggest Parser", None))
-        self.actionMain_View.setText(_translate("ToNgueLP_MW", "Main View", None))
-        self.actionComparison_View.setText(_translate("ToNgueLP_MW", "Comparison View", None))
-        self.actionDictionary_View.setText(_translate("ToNgueLP_MW", "Dictionary View", None))
-        self.actionConvert_Documents.setText(_translate("ToNgueLP_MW", "Convert Documents", None))
-        self.actionVerify_Corpus_and_Parser.setText(_translate("ToNgueLP_MW", "Verify Corpus and Parser", None))
-        self.actionGenerate_Output.setText(_translate("ToNgueLP_MW", "Generate Output", None))
-        self.actionCompare_Parser_Output_and_XML_Output.setText(_translate("ToNgueLP_MW", "Compare Parser Output and XML Output", None))
-        self.actionGenerate_XML_Output.setText(_translate("ToNgueLP_MW", "Generate XML Output", None))
-        self.actionCompare_Parser_and_XML_Output.setText(_translate("ToNgueLP_MW", "Compare Parser and XML Output", None))
-        self.actionCompare_XMLs.setText(_translate("ToNgueLP_MW", "Compare XMLs", None))
-        self.actionUpdate_XMLs_Info.setText(_translate("ToNgueLP_MW", "Update XMLs Info", None))
-        self.actionAbout_ToNgueLP.setText(_translate("ToNgueLP_MW", "About ToNgueLP", None))
-        self.actionHelp.setText(_translate("ToNgueLP_MW", "Help", None))
-        self.actionUser_s_Manual.setText(_translate("ToNgueLP_MW", "User\'s Manual", None))
-        self.actionExit.setText(_translate("ToNgueLP_MW", "Exit", None))
-        self.actionExit.setShortcut(_translate("ToNgueLP_MW", "Ctrl+Q", None))
-        self.actionAdd_case.setText(_translate("ToNgueLP_MW", "Add case", None))
-        self.actionDelete_case.setText(_translate("ToNgueLP_MW", "Delete case", None))
-        self.actionAdd_annotation.setText(_translate("ToNgueLP_MW", "Add annotation", None))
-        self.actionEdit_annotation.setText(_translate("ToNgueLP_MW", "Edit annotation", None))
-        self.actionDelete_annotation.setText(_translate("ToNgueLP_MW", "Delete annotation", None))
+        ToNgueLP_MW.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "ToNgueLP", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuCorpus.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Corpus", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuTools.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Tools", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuConfig.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Config", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuScripts.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Scripts", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuHelp.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Help", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuLogin.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Login", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuCases.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Cases", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuAnnotations.setTitle(QtGui.QApplication.translate("ToNgueLP_MW", "Annotations", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolBar_Main.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "toolBar", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolBar_Fixed.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "toolBar_2", None, QtGui.QApplication.UnicodeUTF8))
+        self.toolBar_Cases.setWindowTitle(QtGui.QApplication.translate("ToNgueLP_MW", "toolBar_3", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionLoad_New_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Load New Corpus", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAdd_New_Corpus_Doc.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add New Corpus Doc", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionCorpus_Information.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Corpus Information", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionClose_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Close Corpus", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAdd_Algorithm_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add Algorithm Output", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAdd_New_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add New Case", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionEdit_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Edit Case", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionValidate_Case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Validate Case", None, QtGui.QApplication.UnicodeUTF8))
+        self.action_Re_Define_Boundaries.setText(QtGui.QApplication.translate("ToNgueLP_MW", "(Re)Define Boundaries", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionView_Annotation.setText(QtGui.QApplication.translate("ToNgueLP_MW", "View Annotation", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave_Corpus.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Save Corpus", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSelect_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Select Parser", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSuggest_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Suggest Parser", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionMain_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Main View", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionComparison_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Comparison View", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionDictionary_View.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Dictionary View", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionConvert_Documents.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Convert Documents", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionVerify_Corpus_and_Parser.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Verify Corpus and Parser", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionGenerate_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Generate Output", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionCompare_Parser_Output_and_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare Parser Output and XML Output", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionGenerate_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Generate XML Output", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionCompare_Parser_and_XML_Output.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare Parser and XML Output", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionCompare_XMLs.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Compare XMLs", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionUpdate_XMLs_Info.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Update XMLs Info", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAbout_ToNgueLP.setText(QtGui.QApplication.translate("ToNgueLP_MW", "About ToNgueLP", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionHelp.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Help", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionUser_s_Manual.setText(QtGui.QApplication.translate("ToNgueLP_MW", "User\'s Manual", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionExit.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Exit", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionExit.setShortcut(QtGui.QApplication.translate("ToNgueLP_MW", "Ctrl+Q", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAdd_case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add case", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionDelete_case.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Delete case", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAdd_annotation.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Add annotation", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionEdit_annotation.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Edit annotation", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionDelete_annotation.setText(QtGui.QApplication.translate("ToNgueLP_MW", "Delete annotation", None, QtGui.QApplication.UnicodeUTF8))
 
 import resources_rc

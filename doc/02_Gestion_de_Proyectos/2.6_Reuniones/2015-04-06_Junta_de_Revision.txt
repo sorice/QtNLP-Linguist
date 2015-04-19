@@ -1,12 +1,14 @@
 Reunión de la Junta de Revisión
-Objetivo: Revisar el diseño de la versión 0.4.
+Objetivo: Revisar el diseño de la versión 0.4 y terminarlo.[OK, cumplido en un 80% el 13/06]
 Asisten: Abel y Leonel.
 
 Objetivos desglosados:
 
 Nuevo pendiente para el próximo encuentro
-Abel- Mecanismo cálculo de las estadísticas de los snippets y los chunk y las sentences.
-Abel- Validaciones de todos los inputs.
+Abel- Mecanismo cálculo de las estadísticas de los snippets.[OK, 16/04/2015]
+Abel- Mecanismo de cálculo de las estadísticas de los chunk y las sentences.
+Abel- Validación de todos los inputs del add_case.[OK, 18/04/2015]
+Abel- Validación de todos los inputs del add_annotation.
 Abel- Arreglar el action de get_corpus_info
 Leo- Mecanismo de selección del texto.
 Leo- Asistente para adicionar caso y adicionar anotación.
@@ -36,8 +38,8 @@ A: Abel ver ideas de la interfaz Coco, incluida en las imágenes de los homólog
 Seguirá pendiente{P-1}1- En la siguiente iteración programar la inclusión del corpus modificado del PAN(significa todos los xmls en un solo XML para asemejarlo a P4P), así como el script para generarlo. (esto ayudará a que la salida de mi algoritmo también pueda ser convertida a un solo XML)
 
 [OK lo incluimos el xml]2- Un fragmento de plagio puede ser asociado a una tipología.
-A: Leonel incluye un plag_type para el fragmento.
-A: Abel pregunta a Alberto si es posible definir un typology para el fragmento.
+[OK]A: Leonel incluye un plag_type para el fragmento.
+[OK]A: Abel pregunta a Alberto si es posible definir un typology para el fragmento.
 	-> Alberto dijo que hay que preguntar a Marta Vila y a Martí.
 
 [Seguirá pendiente, ya al menos tengo el PAN-PC-10]{P-1}3- Crear un caso a partir del P4P buscando los textos originales usados por Alberto del PAN-PC 2010.
@@ -106,7 +108,7 @@ Otras tareas:
 
 Miembros camagüeyanos del equipo:
 [P]- Correr el algoritmo de Abel y detectar similaridad en los 300 artículos de wikipedia para inicializar corpus de TNLP. 
-[P]- (como aún no se puede insertar casos en ToNgueLP) Deberá construir los snippet_pairs de forma manual.
+[P]- (como aún no se puede insertar casos en ToNgueLP) Deberá construir los snippet_pairs de forma manual.-> A partir de abril/2015 podrán hacerlo ya con el software.
 
 Objetivos de la junta de Revisión de Nov 2014
 ******************************************************

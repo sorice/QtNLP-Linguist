@@ -288,7 +288,7 @@ class TNLP_XML_Manager:
       src_snippet.setAttribute('doc', _src_doc)
       src_snippet.setAttribute('offset', str(_src_offset))
       src_snippet.setAttribute('length', str(_src_length))
-      susp_snippet.setAttribute('sentences_count', str(_src_sentences_count))
+      src_snippet.setAttribute('sentences_count', str(_src_sentences_count))
       case.appendChild(src_snippet)
 
       # add case to group
