@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'TNLP_MW.ui'
 #
-# Created: Sat Apr 11 13:06:53 2015
+# Created: Tue Apr 21 15:13:08 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -177,6 +177,9 @@ class Ui_ToNgueLP_MW(object):
         self.actionEdit_annotation.setObjectName(_fromUtf8("actionEdit_annotation"))
         self.actionDelete_annotation = QtGui.QAction(ToNgueLP_MW)
         self.actionDelete_annotation.setObjectName(_fromUtf8("actionDelete_annotation"))
+        self.actionCreate_Corpus = QtGui.QAction(ToNgueLP_MW)
+        self.actionCreate_Corpus.setObjectName(_fromUtf8("actionCreate_Corpus"))
+        self.menuCorpus.addAction(self.actionCreate_Corpus)
         self.menuCorpus.addAction(self.actionLoad_New_Corpus)
         self.menuCorpus.addAction(self.actionAdd_New_Corpus_Doc)
         self.menuCorpus.addAction(self.actionSave_Corpus)
@@ -271,5 +274,6 @@ class Ui_ToNgueLP_MW(object):
         self.actionAdd_annotation.setText(_translate("ToNgueLP_MW", "Add annotation", None))
         self.actionEdit_annotation.setText(_translate("ToNgueLP_MW", "Edit annotation", None))
         self.actionDelete_annotation.setText(_translate("ToNgueLP_MW", "Delete annotation", None))
+        self.actionCreate_Corpus.setText(_translate("ToNgueLP_MW", "Create Corpus", None))
 
 import resources_rc

@@ -24,6 +24,9 @@ from TNLP_Add_Case import TNLP_AddCase
 # import Add Annotation helper
 from TNLP_Add_Annotation import TNLP_AddAnnotation
 
+# import New Corpus helper
+from TNLP_New_Corpus import TNLP_NewCorpus
+
 try:
    _fromUtf8 = QString.fromUtf8
 except AttributeError:
@@ -61,6 +64,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionExit.triggered.connect(self.close)
       self.actionAdd_New_Case.triggered.connect(self.__add_case)
       self.actionAdd_annotation.triggered.connect(self.__add_annotation)
+      self.actionCreate_Corpus.triggered.connect(self.__create_corpus)
 
 
    def get_app_name(self):
@@ -895,3 +899,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       self.__update_selected_case(current_tab)
 
+
+   def __create_corpus(self):
+      '''Show Create Corpus Window'''
+
+      manager = TNLP_XML_Manager()
+
+      corpus = TNLP_NewCorpus(manager, self)
+      corpus.show()

@@ -46,6 +46,7 @@
     <property name="title">
      <string>Corpus</string>
     </property>
+    <addaction name="actionCreate_Corpus"/>
     <addaction name="actionLoad_New_Corpus"/>
     <addaction name="actionAdd_New_Corpus_Doc"/>
     <addaction name="actionSave_Corpus"/>
@@ -404,6 +405,11 @@
   <action name="actionDelete_annotation">
    <property name="text">
     <string>Delete annotation</string>
+   </property>
+  </action>
+  <action name="actionCreate_Corpus">
+   <property name="text">
+    <string>Create Corpus</string>
    </property>
   </action>
  </widget>
