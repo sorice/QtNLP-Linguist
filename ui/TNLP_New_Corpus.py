@@ -43,7 +43,7 @@ class TNLP_NewCorpus(QDialog, Ui_NewCopus):
       corpus_data['owners'] = str(self.le_owners.text())
       corpus_data['authors'] = str(self.le_authors.text())
       corpus_data['country'] = str(self.le_country.text())
-      corpus_data['creation_date'] = str(QDateTime.currentDateTime().toString('ddd MMM d yyyy hh:mm:ss '))
+      corpus_data['creation_date'] = str(QDateTime.currentDateTime().toString('MMM d yyyy hh:mm:ss '))
       corpus_data['last_modification_date'] = corpus_data['creation_date']
       corpus_data['xmlns'] = str('http://tnlp.github.com')
 

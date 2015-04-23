@@ -38,6 +38,9 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       self.te_susp_snippet.setText(self._case['susp_text'])
       self.te_src_snippet.setText(self._case['src_text'])
 
+      self.lb_susp_sentence.setWordWrap(True)
+      self.lb_src_sentence.setWordWrap(True)
+
       # signals and slots
       self.btn_add_annotation.clicked.connect(self.__add_annotation)
       self.te_susp_snippet.selectionChanged.connect(self.__susp_selection_changed)
@@ -87,20 +90,21 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
    def __susp_selection_changed(self):
       """Handle susp selection changed"""
 
-      self.__selection_changed(self.te_susp_snippet, self.lb_susp_offset, self.lb_susp_length)
+      self.__selection_changed(self.te_susp_snippet, self.lb_susp_sentence, self.lb_susp_offset, self.lb_susp_length)
 
 
    def __src_selection_changed(self):
       """Handle src selection changed"""
 
-      self.__selection_changed(self.te_src_snippet, self.lb_src_offset, self.lb_src_length)
+      self.__selection_changed(self.te_src_snippet, self.lb_src_sentence, self.lb_src_offset, self.lb_src_length)
 
 
-   def __selection_changed(self, _text, _offset, _len):
+   def __selection_changed(self, _text, _sentence, _offset, _len):
       """Updates components data"""
 
       cursor = _text.textCursor()
 
+      # check this... strip needed here ??
       txt = str(_text.toPlainText()).strip()
 
       if len(txt) == 0:
@@ -147,5 +151,6 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       cursor.movePosition(QTextCursor.Start)
 
       # update widgets
+      _sentence.setText(txt[x:y])
       _offset.setText(str(x))
       _len.setText(str(y - x))
