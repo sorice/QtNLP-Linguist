@@ -22,7 +22,7 @@
      <item>
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Annotate case:</string>
+        <string>Annotation for case</string>
        </property>
       </widget>
      </item>
@@ -121,6 +121,13 @@
    <item row="2" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QLabel" name="label_12">
@@ -148,7 +155,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="le_susp_sentence"/>
+        <widget class="QLabel" name="lb_susp_sentence">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -162,7 +173,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="le_susp_offset"/>
+        <widget class="QLabel" name="lb_susp_offset">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_5">
@@ -208,7 +223,7 @@
      </item>
     </layout>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -238,7 +253,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="le_src_sentence"/>
+        <widget class="QLabel" name="lb_src_sentence">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -252,7 +271,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="le_src_offset"/>
+        <widget class="QLabel" name="lb_src_offset">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_7">
@@ -298,7 +321,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_11">
      <item>
       <spacer name="horizontalSpacer">
@@ -342,6 +365,13 @@
      </item>
     </layout>
    </item>
+   <item row="3" column="0">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <tabstops>
@@ -349,11 +379,7 @@
   <tabstop>cb_type</tabstop>
   <tabstop>cb_projection</tabstop>
   <tabstop>te_susp_snippet</tabstop>
-  <tabstop>le_susp_sentence</tabstop>
-  <tabstop>le_susp_offset</tabstop>
   <tabstop>te_src_snippet</tabstop>
-  <tabstop>le_src_sentence</tabstop>
-  <tabstop>le_src_offset</tabstop>
   <tabstop>btn_add_annotation</tabstop>
   <tabstop>pushButton_2</tabstop>
  </tabstops>

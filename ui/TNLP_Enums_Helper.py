@@ -16,5 +16,12 @@ plag_types = {
 
 # Define phenomenom types used in annotations
 phenomenom_types = [
-   "lex_same_polarity"
+   #~ "lex_same_polarity"
+   "similarity",
+   "translation"
+]
+
+# Define text extension used in corpus
+text_extension = [
+   "paragraph"
 ]

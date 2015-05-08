@@ -21,7 +21,7 @@ class TNLP_XML_Manager:
       """Init global attributes"""
 
       self.__parsed = False
-      self.__xml_file = None
+      self.__xml_path = None
       self.__xml_document = None
       self.__root_node = None
       self.__cases_node = None
@@ -40,10 +40,10 @@ class TNLP_XML_Manager:
       # TODO: Validate parse(...) result
       # if no errors
       self.__root_node = self.__xml_document._get_documentElement()
-      # refer to this as self.__cases_node[0] because there is only one 'cases' node
       self.__groups = self.__root_node.getElementsByTagName('group')
-      # refer to this as self.__annotations_node[0] because there is only one 'annotations' node
-      self.__annotations_node = self.__root_node.getElementsByTagName('annotations')
+      # there is only ONE cases node
+      self.__cases_node = self.__root_node.getElementsByTagName('cases')[0]
+
       result = True
       self.__parsed = True
 
@@ -243,14 +243,24 @@ class TNLP_XML_Manager:
       #TODO validate all input data
 
       result = False
+      target = None
 
       # select the correct group for the case
       for i in range(len(self.__groups)):
-         if self.__groups[i].getAttribute('NLP_problem_type') == _problem_type:
+         if self.__groups[i].getAttribute('NLP_problem_type') == _problem_type and \
+            self.__groups[i].getAttribute('text_extension') == _extension:
             target = i
 
-      actual_group = self.__groups[target]
-      total_cases = len(self.__root_node.getElementsByTagName('case'))
+      # if group already exists
+      if target:
+         actual_group = self.__groups[target]
+      else: # create group
+         actual_group = self.__xml_document.createElement('group')
+         actual_group.setAttribute('NLP_problem_type', str(_problem_type))
+         actual_group.setAttribute('text_extension', str(_extension))
+         self.__cases_node.appendChild(actual_group)
+
+      #~ total_cases = len(self.__root_node.getElementsByTagName('case'))
 
       # calculate new case id
       ids = []
@@ -389,6 +399,49 @@ class TNLP_XML_Manager:
          case['plag_type'] = tmp_cases[_index - 1].getAttribute('plag_type')
 
       return (case['plag_type'], case['id'], case['annotator_summary'])
+
+
+   def create_corpus(self, _xml_file, _name, _version, _lang, _total_cases, _total_true_cases, _total_annotations,
+      _total_true_annotations, _license, _copyright, _owners, _authors, _country, _creation_date, _last_modification_date, _xmlns):
+      """Creata a new corpus XML file"""
+
+      dom = pxdom.getDOMImplementation('')
+      doc = dom.createDocument('', None, None)
+
+      # root node
+      corpus = doc.createElement('corpus')
+      corpus.setAttribute('name', _name)
+      corpus.setAttribute('version', _version)
+      corpus.setAttribute('lang', _lang)
+      corpus.setAttribute('total_cases', _total_cases)
+      corpus.setAttribute('total_true_cases', _total_true_cases)
+      corpus.setAttribute('total_annotations', _total_annotations)
+      corpus.setAttribute('total_true_annotations', _total_true_annotations)
+      corpus.setAttribute('license', _license)
+      corpus.setAttribute('copyright', _copyright)
+      corpus.setAttribute('owners', _owners)
+      corpus.setAttribute('authors', _authors)
+      corpus.setAttribute('country', _country)
+      corpus.setAttribute('creation_date', _creation_date)
+      corpus.setAttribute('last_modification_date', _last_modification_date)
+      corpus.setAttribute('xmlns', _xmlns)
+
+      cases = doc.createElement('cases')
+      corpus.appendChild(cases)
+
+      doc.appendChild(corpus)
+
+      # write corpus
+      serialiser = doc.implementation.createLSSerializer()
+      serialiser.writeToURI(doc, 'file:' + urllib.pathname2url(_xml_file))
+
+      return True
+
+
+   def get_xml_url(self):
+      """Return corpus url'"""
+
+      return self.__xml_path
 
 
    # auxiliar & private methods

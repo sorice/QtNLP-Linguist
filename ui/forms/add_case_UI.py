@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'add_case.ui'
 #
-# Created: Sat Apr 11 13:06:53 2015
-#      by: PyQt4 UI code generator 4.10.4
+# Created: Fri May  8 17:30:08 2015
+#      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,16 +12,7 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+    _fromUtf8 = lambda s: s
 
 class Ui_Add_Case(object):
     def setupUi(self, Add_Case):
@@ -240,38 +231,38 @@ class Ui_Add_Case(object):
         Add_Case.setTabOrder(self.btn_add_case, self.pushButton_2)
 
     def retranslateUi(self, Add_Case):
-        Add_Case.setWindowTitle(_translate("Add_Case", "Add Case", None))
-        self.label_19.setText(_translate("Add_Case", "Corpus name:", None))
-        self.lb_corpus_name.setText(_translate("Add_Case", "name", None))
-        self.label.setText(_translate("Add_Case", "Problem type:", None))
-        self.label_3.setText(_translate("Add_Case", "Description:", None))
-        self.label_5.setText(_translate("Add_Case", "Keywords:", None))
-        self.label_7.setText(_translate("Add_Case", "Original corpus id:", None))
-        self.cb_problem_type.setItemText(0, _translate("Add_Case", "similarity", None))
-        self.cb_problem_type.setItemText(1, _translate("Add_Case", "translation", None))
-        self.label_2.setText(_translate("Add_Case", "Text extension:", None))
-        self.label_4.setText(_translate("Add_Case", "Plagiarism type:", None))
-        self.label_6.setText(_translate("Add_Case", "Original corpus:", None))
-        self.label_8.setText(_translate("Add_Case", "Added by:", None))
-        self.cb_text_extension.setItemText(0, _translate("Add_Case", "paragraph", None))
-        self.label_13.setText(_translate("Add_Case", "Suspicious text:", None))
-        self.label_9.setText(_translate("Add_Case", "Doc name:", None))
-        self.label_10.setText(_translate("Add_Case", "Offset:", None))
-        self.label_11.setText(_translate("Add_Case", "Length:", None))
-        self.label_12.setText(_translate("Add_Case", "Sentences:", None))
-        self.le_susp_doc_name.setText(_translate("Add_Case", "susp/", None))
-        self.le_susp_offset.setText(_translate("Add_Case", "0", None))
-        self.lb_susp_length.setText(_translate("Add_Case", "0", None))
-        self.lb_susp_sentences_count.setText(_translate("Add_Case", "0", None))
-        self.label_18.setText(_translate("Add_Case", "Source text:", None))
-        self.label_17.setText(_translate("Add_Case", "Doc name:", None))
-        self.label_15.setText(_translate("Add_Case", "Offset:", None))
-        self.label_14.setText(_translate("Add_Case", "Length:", None))
-        self.label_16.setText(_translate("Add_Case", "Sentences:", None))
-        self.le_src_doc_name.setText(_translate("Add_Case", "src/", None))
-        self.le_src_offset.setText(_translate("Add_Case", "0", None))
-        self.lb_src_length.setText(_translate("Add_Case", "0", None))
-        self.lb_src_sentences_count.setText(_translate("Add_Case", "0", None))
-        self.btn_add_case.setText(_translate("Add_Case", "Add", None))
-        self.pushButton_2.setText(_translate("Add_Case", "Cancel", None))
+        Add_Case.setWindowTitle(QtGui.QApplication.translate("Add_Case", "Add Case", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_19.setText(QtGui.QApplication.translate("Add_Case", "Corpus name:", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_corpus_name.setText(QtGui.QApplication.translate("Add_Case", "name", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("Add_Case", "Problem type:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setText(QtGui.QApplication.translate("Add_Case", "Description:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_5.setText(QtGui.QApplication.translate("Add_Case", "Keywords:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setText(QtGui.QApplication.translate("Add_Case", "Original corpus id:", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_problem_type.setItemText(0, QtGui.QApplication.translate("Add_Case", "similarity", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_problem_type.setItemText(1, QtGui.QApplication.translate("Add_Case", "translation", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("Add_Case", "Text extension:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_4.setText(QtGui.QApplication.translate("Add_Case", "Plagiarism type:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_6.setText(QtGui.QApplication.translate("Add_Case", "Original corpus:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_8.setText(QtGui.QApplication.translate("Add_Case", "Added by:", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_text_extension.setItemText(0, QtGui.QApplication.translate("Add_Case", "paragraph", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_13.setText(QtGui.QApplication.translate("Add_Case", "Suspicious text:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_9.setText(QtGui.QApplication.translate("Add_Case", "Doc name:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_10.setText(QtGui.QApplication.translate("Add_Case", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_11.setText(QtGui.QApplication.translate("Add_Case", "Length:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_12.setText(QtGui.QApplication.translate("Add_Case", "Sentences:", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_susp_doc_name.setText(QtGui.QApplication.translate("Add_Case", "susp/", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_susp_offset.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_susp_length.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_susp_sentences_count.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_18.setText(QtGui.QApplication.translate("Add_Case", "Source text:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_17.setText(QtGui.QApplication.translate("Add_Case", "Doc name:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_15.setText(QtGui.QApplication.translate("Add_Case", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_14.setText(QtGui.QApplication.translate("Add_Case", "Length:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_16.setText(QtGui.QApplication.translate("Add_Case", "Sentences:", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_src_doc_name.setText(QtGui.QApplication.translate("Add_Case", "src/", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_src_offset.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_src_length.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_src_sentences_count.setText(QtGui.QApplication.translate("Add_Case", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_add_case.setText(QtGui.QApplication.translate("Add_Case", "Add", None, QtGui.QApplication.UnicodeUTF8))
+        self.pushButton_2.setText(QtGui.QApplication.translate("Add_Case", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
 
