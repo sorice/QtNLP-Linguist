@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8-sig -*-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 """
 .. module:: ToNgueLP_corpus_XML_read
