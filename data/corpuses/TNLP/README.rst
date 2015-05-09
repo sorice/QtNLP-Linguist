@@ -12,7 +12,7 @@ TNLP contiene 300 casos elaborados a partir de Wikipedia en español, con térmi
 El corpus está disponible totalmente para investigaciones en:
 	http://TNLP.reduc.edu.cu/corpus/es/computational-paraphrase-corpus-download
 
-[1] paper por escribir.
+Un análisis sobre el proceso de diseño y construcción del corpus bien detallado puede ser leído en el artículo **Spanish Corpus for Paraphrase Similarity and Text Re-Use Detection**.:cite:`Meneses-Abad2015`
 
 Folder Contents
 ================
@@ -89,7 +89,7 @@ Atributos de los **fragmentos** o *<snippet_#*:
 Anotaciones
 ^^^^^^^^^^^^^^^^^^^^^^^
  
-De la línea **[9]** a la **[23]** se describen las **[9]** **anotaciones**, o *<annotations*, hechas por lingüistas o anotadores del corpus. Las etiquetas usadas son: **[10]** *<case_pair*, **[11]** *<phenomenon*, **[12]** *<chunk_1* y **[13]** *<chunk_2*. El **[11]** *<case_pair* se corresponde con **[5]**; *<phenomenon* particularmente es de TNLP para describir el fenómeno de la paráfrasis, **ver** [Barron-Cedeno2013]_ , [Barron-Cedeno2013a]_ ; *<chunk_1* se refiere al trozo recortado del **fragmento** o *<snippet_1* que se está analizando, *<chunk_2* ibidem a *<chunck_1* pero para el *<snippet_2*.
+De la línea **[9]** a la **[23]** se describen las **[9]** **anotaciones**, o *<annotations*, hechas por lingüistas o anotadores del corpus. Las etiquetas usadas son: **[10]** *<case_pair*, **[11]** *<phenomenon*, **[12]** *<chunk_1* y **[13]** *<chunk_2*. El **[11]** *<case_pair* se corresponde con **[5]**; *<phenomenon* particularmente es de TNLP para describir el fenómeno de la paráfrasis, **ver** :cite:`Barron-Cedeno2012a` , :cite:`Vila2013a` ; *<chunk_1* se refiere al trozo recortado del **fragmento** o *<snippet_1* que se está analizando, *<chunk_2* ibidem a *<chunck_1* pero para el *<snippet_2*.
 
 Aunque no existen atributos para la etiqueta **anotaciones** o *<annotations*, esto permite, a los especialistas, agregar de NLP los atributos generales necesarios en función del para qué se utilizará el corpus creado.
 
@@ -102,18 +102,17 @@ Atributos de una **anotación** o *<annotation*:
 	* **annotation_date**			→ fecha de la anotación
 Atributos de la etiqueta *<phenomenon*:
 	* **type**			→ tipo de paráfrasis, ver `Tipos de paráfrasis <#id4>`_
-	* **projection**		→ impacto de la paráfrasis en el contexto [Vila2013]_
+	* **projection**		→ impacto de la paráfrasis en el contexto :cite:`Vila2013`
 Atributos de los **trozos** o *<chunks_#*:
 	* **chunk_offset**		→ posición dentro del fragmento donde comienza el trozo analizado en la anotación 
 		(*+<snippet_offset* daría su posición en el texto completo)
 	* **chunk_length**		→ tamaño del pedazo anotado
 
-:cite:`Bhagat2013`
 
 Tipos de paráfrasis 
 =======================
 
-Tomado de [Barron-Cedeno2013a]_
+Tomado de :cite:`Vila2013a`
 
 +---------------------------+-----------------------------------+-----------------------------------+
 |          Class            |           Tag             	|             Meaning               |
@@ -155,23 +154,7 @@ Tomado de [Barron-Cedeno2013a]_
 Referencias
 ============
 
-.. bibliography:: reference.bib
+.. bibliography:: TNLP.bib
   :style: plain
   :list: enumerated
   :enumtype: arabic
-___________________________________
-
-.. [Barron-Cedeno2013] **Article**. Barrón-Cedeño, A.; Vila, M.; Mart, M. A. & Rosso, P. **Plagiarism meets Paraphrasing: Insights for the Next Generation in Automatic Plagiarism Detection.** *Computational Linguistics*, 2013, 39, 50. `URL at MIT Press <http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00153>`_
-
-___________________________________
-
-.. [Vila2013] **Article**. M. Vila, M. A. Mart’, and H. Rodr’guez. **Corpus annotation with paraphrase types. A new annotation infrastructure.** *Language Resources and Evaluation*, 2013. `URL at Springer <http://www.springer.com/education+%26+language/linguistics/journal/10579>`_
-
-___________________________________
-
-.. [Barron-Cedeno2013a] **Manual**. Barron-Cedeno, A.; Vila, M.; Rodriguez, H. & Martí, M. A. **P4P, MSRP-A, and WRPA-authorship-A Corpora**. 2013. `URL at Universitat Barcelona <http://clic.ub.edu/en/users/marta-vila-rigat>`_ 
-
-___________________________________
-
-.. [Meneses-Abad2015] **Article**. Meneses-Abad, Abel and Salazar-Videaux, Leonel and Madera, Julio. **Spanish Corpus for Paraphrase Similarity and Text Re-Use Detection**. *Computational Linguistics*, 2015, march. `summited at <http://www.mitpressjournals.org>`_
-___________________________________
