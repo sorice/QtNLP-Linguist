@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'add_case_wizard_general.ui'
 #
-# Created: Fri May  8 17:30:09 2015
+# Created: Fri May  8 20:21:23 2015
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'new_corpus.ui'
 #
-# Created: Fri May  8 17:30:11 2015
+# Created: Fri May  8 20:21:24 2015
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
