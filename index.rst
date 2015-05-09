@@ -69,7 +69,7 @@ Arq Software
 Documentación
 ----------------
 
-  Conozca |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. El proyecto está documentado usando la metodología SXP (híbrido cubano de XP -SCRUM). Usted podrá encontrar aquí los artefactos finales entregados a los clientes de |EScorpus|, y los editables para su uso atendiendo al copyright especificado. :cite:`Bhagat2013`
+  Conozca |EScorpus| por su aspecto documental: ¿cómo se hizo? ¿que etapas fue recorriendo?, etc. El proyecto está documentado usando la metodología SXP (híbrido cubano de XP -SCRUM). Usted podrá encontrar aquí los artefactos finales entregados a los clientes de |EScorpus|, y los editables para su uso atendiendo al copyright especificado.
 
   .. toctree::
      :maxdepth: 2
@@ -101,9 +101,6 @@ Esta sección refiere algunos apuntes históricos del proyecto, así como datos 
 * :ref:`Breve Historia del Proyecto <History>`
 * :ref:`Release Notes <Release_notes>`
 * :ref:`Colaboradores <Colaborators>`
-
-.. bibliography:: reference.bib
-  :style:
 
 Copyright
 ***********

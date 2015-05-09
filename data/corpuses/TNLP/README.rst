@@ -154,7 +154,7 @@ Tomado de :cite:`Vila2013a`
 Referencias
 ============
 
-.. bibliography:: TNLP.bib
+.. bibliography:: ../../../doc/references.bib
   :style: plain
   :list: enumerated
   :enumtype: arabic

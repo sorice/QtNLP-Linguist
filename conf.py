@@ -90,7 +90,7 @@ pygments_style = 'sphinx'
 #modindex_common_prefix = []
 
 # File of Bibliography in bibtex format
-bibcite_bibdb = 'references'
+bibcite_bibdb = 'doc/references'
 style = 'APA'
 
 # -- Options for HTML output ---------------------------------------------------
