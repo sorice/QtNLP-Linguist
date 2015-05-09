@@ -108,6 +108,8 @@ Atributos de los **trozos** o *<chunks_#*:
 		(*+<snippet_offset* daría su posición en el texto completo)
 	* **chunk_length**		→ tamaño del pedazo anotado
 
+:cite:`Bhagat2013`
+
 Tipos de paráfrasis 
 =======================
 
@@ -153,6 +155,10 @@ Tomado de [Barron-Cedeno2013a]_
 Referencias
 ============
 
+.. bibliography:: reference.bib
+  :style: plain
+  :list: enumerated
+  :enumtype: arabic
 ___________________________________
 
 .. [Barron-Cedeno2013] **Article**. Barrón-Cedeño, A.; Vila, M.; Mart, M. A. & Rosso, P. **Plagiarism meets Paraphrasing: Insights for the Next Generation in Automatic Plagiarism Detection.** *Computational Linguistics*, 2013, 39, 50. `URL at MIT Press <http://www.mitpressjournals.org/doi/pdf/10.1162/COLI_a_00153>`_
