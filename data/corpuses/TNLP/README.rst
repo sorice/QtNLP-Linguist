@@ -12,7 +12,7 @@ TNLP contiene 300 casos elaborados a partir de Wikipedia en español, con térmi
 El corpus está disponible totalmente para investigaciones en:
 	http://TNLP.reduc.edu.cu/corpus/es/computational-paraphrase-corpus-download
 
-Un análisis sobre el proceso de diseño y construcción del corpus bien detallado puede ser leído en el artículo **Spanish Corpus for Paraphrase Similarity and Text Re-Use Detection**.:cite:`Meneses-Abad2015`
+Un análisis sobre el proceso de diseño y construcción del corpus bien detallado puede ser leído en el artículo **Spanish Corpus for Paraphrase Similarity and Text Re-Use Detection**. :cite:`Meneses-Abad2015`
 
 Folder Contents
 ================
@@ -101,7 +101,7 @@ Atributos de una **anotación** o *<annotation*:
 	* **artificial_validation**	→ si el caso ha sido verificado por el algoritmo baseline
 	* **annotation_date**			→ fecha de la anotación
 Atributos de la etiqueta *<phenomenon*:
-	* **type**			→ tipo de paráfrasis, ver `Tipos de paráfrasis <#id4>`_
+	* **type**			→ tipo de paráfrasis, ver `Tipos de paráfrasis <#id5>`_
 	* **projection**		→ impacto de la paráfrasis en el contexto :cite:`Vila2013`
 Atributos de los **trozos** o *<chunks_#*:
 	* **chunk_offset**		→ posición dentro del fragmento donde comienza el trozo analizado en la anotación 
@@ -156,5 +156,4 @@ Referencias
 
 .. bibliography:: ../../../doc/references.bib
   :style: plain
-  :list: enumerated
-  :enumtype: arabic
+  :cited:

@@ -13,3 +13,4 @@ OJO.txt
 *.directory
 /doc/.~*
 *.m
+/resources/README_files
