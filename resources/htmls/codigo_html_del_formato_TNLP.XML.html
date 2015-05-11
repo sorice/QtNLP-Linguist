@@ -4,52 +4,40 @@
  
  
  
+ 
  4
  5
- 
  6
+ 
+ 
  7
  8
  9
+ 
+ 
 10
 11
 12
-
 13
 14
 15
 16
-17
-
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="c">&lt;!-- &lt;!DOCTYPE report SYSTEM &quot;TNLP.dtd&quot;&gt; --&gt;</span>
-<span class="nt">&lt;corpus</span> <span class="cp">name=</span><span class="s">&quot;TNLP&quot;</span> <span class="cp">version=</span><span class="s">&quot;0.2&quot;</span> <span class="cp">lang=</span><span class="s">&quot;es&quot;</span> <span class="cp">total_cases=</span><span class="s">&quot;1&quot;</span> <span class="cp">total_true_cases=</span><span class="s">&quot;1&quot;</span> <span class="cp">total_annotations=</span><span class="s">&quot;2&quot;</span> <span class="cp">total_true_annotations=</span><span class="s">&quot;1&quot;</span> <span class="cp"></br>license=</span><span class="s">&quot;Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use&quot;</span> <span class="cp">copyright=</span><span class="s">&quot;copyleft&quot;</span> <span class="cp">owners=</span><span class="s">&quot;uclv,uc&quot;</span> <span class="cp"></br>authors=</span><span class="s">&quot;abel,leonel&quot;</span> <span class="cp">country=</span><span class="s">&quot;Cuba&quot;</span> <span class="cp">creation_date=</span><span class="s">&quot;Fry Jul 25 22:34:54 2014&quot;</span> <span class="cp">last_modification_date=</span><span class="s">&quot;Thu Jul 31 23:48:06 2014&quot;</span> <span class="cp"></br>xmlns =</span> <span class="s">&quot;http://tnlp.github.com&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;cases</span> <span class="cp">NLP_problem_type=</span><span class="s">&quot;similarity&quot;</span> <span class="cp">text_extension=</span><span class="s">&quot;paragraph&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;case_pair</span> <span class="cp">id=</span><span class="s">&quot;006&quot;</span> <span class="cp">case_pair_description=</span><span class="s">&quot;&quot;</span> <span class="cp">plag_type=</span><span class="s">&quot;paraphrase&quot;</span> <span class="cp">annotator_summary=</span><span class="s">&quot;magna aliquyam erat&quot;</span> <span class="cp"></br>        automatic_summary=</span><span class="s">&quot;&quot;</span> <span class="cp">original_corpus=</span><span class="s">&quot;PAN-PC-12&quot;</span> <span class="cp">original_corpus_id=</span><span class="s">&quot;unknown&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;snippet_1</span> <span class="cp">susp_doc=</span><span class="s">&quot;susp/susp-doc00539&quot;</span> <span class="cp">snippet_offset=</span><span class="s">&quot;966&quot;</span> <span class="cp">snippet_length=</span><span class="s">&quot;416&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;snippet_2</span> <span class="cp">src_doc=</span><span class="s">&quot;src/src-doc01529&quot;</span> <span class="cp">snippet_src_offset=</span><span class="s">&quot;827&quot;</span> <span class="cp">snippet_src_length=</span><span class="s">&quot;443&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/case_pair&gt;</span>
-    <span class="nt">&lt;/cases&gt;</span>
-   <span class="nt">&lt;annotations&gt;</span>
-        <span class="nt">&lt;case_pair</span> <span class="cp">id=</span><span class="s">&quot;006&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;annotation</span> <span class="cp">id=</span><span class="s">&quot;1&quot;</span> <span class="cp">author=</span><span class="s">&quot;abelm&quot;</span> <span class="cp">is_paraphrase=</span><span class="s">&quot;True&quot;</span> <span class="cp">human_validation=</span><span class="s">&quot;None&quot;</span> <span class="cp">artificial_validation=</span><span class="s">&quot;True&quot;</span> <span class="cp"></br>            annotation_date=</span><span class="s">&quot;2015/02/14&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;phenomenon</span> <span class="cp">type=</span><span class="s">&quot;lex_same_polarity&quot;</span> <span class="cp">projection=</span><span class="s">&quot;local&quot;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;chunk_1</span> <span class="cp">chunk_offset=</span><span class="s">&quot;30&quot;</span> <span class="cp">chunk_length=</span><span class="s">&quot;47&quot;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;chunk_2</span> <span class="cp">chunk_src_offset=</span><span class="s">&quot;14&quot;</span> <span class="cp">chunk_src_length=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;corpus</span> <span class="cp">cpme=</span><span class="s">&quot;TNLP&quot;</span> <span class="cp">version=</span><span class="s">&quot;0.2&quot;</span> <span class="cp">lang=</span><span class="s">&quot;es&quot;</span> <span class="cp">total_cases=</span><span class="s">&quot;1&quot;</span> <span class="cp">total_true_cases=</span><span class="s">&quot;1&quot;</span> <span class="cp"></br>total_annotations=</span><span class="s">&quot;2&quot;</span> <span class="cp">total_true_annotations=</span><span class="s">&quot;1&quot;</span> <span class="cp">license=</span><span class="s">&quot;CC 3.0 Share Alike Non-Commercial Use&quot;</span> <span class="cp"></br>copyright=</span><span class="s">&quot;copyleft&quot;</span> <span class="cp">owners=</span><span class="s">&quot;abel,uclv,uc&quot;</span> <span class="cp">authors=</span><span class="s">&quot;abel,leonel&quot;</span> <span class="cp">country=</span><span class="s">&quot;Cuba&quot;</span> <span class="cp"></br>creation_date=</span><span class="s">&quot;Fry Jul 25 22:34:54 2014&quot;</span> <span class="cp">last_modification_date=</span><span class="s">&quot;Thu Jul 31 23:48:06 2014&quot;</span> <span class="cp"></br>xmlns =</span> <span class="s">&quot;http://tnlp.github.com&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;cases&gt;</span>
+      <span class="nt">&lt;group</span> <span class="cp">NLP_problem_type=</span><span class="s">&quot;similarity&quot;</span> <span class="cp">text_extension=</span><span class="s">&quot;paragraph&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;case</span> <span class="cp">id=</span><span class="s">&quot;6&quot;</span> <span class="cp">description=</span><span class="s">&quot;&quot;</span> <span class="cp">plag_type=</span><span class="s">&quot;paraphrastic&quot;</span> <span class="cp">annotator_summary=</span><span class="s">&quot;key1 key2 key3&quot;</span> <span class="cp"></br>        automatic_summary=</span><span class="s">&quot;&quot;</span> <span class="cp">original_corpus=</span><span class="s">&quot;PAN-PC-12&quot;</span> <span class="cp">original_corpus_id=</span><span class="s">&quot;unknown&quot;</span> <span class="cp"></br>        generated_by=</span><span class="s">&quot;human&quot;</span> <span class="cp">generator_cpme=</span><span class="s">&quot;abel&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;susp_snippet</span> <span class="cp">doc=</span><span class="s">&quot;susp/susp-doc00539&quot;</span> <span class="cp">offset=</span><span class="s">&quot;966&quot;</span> <span class="cp">length=</span><span class="s">&quot;416&quot;</span> <span class="cp">sentences_count=</span><span class="s">&quot;5&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;src_snippet</span> <span class="cp">doc=</span><span class="s">&quot;src/src-doc01529&quot;</span> <span class="cp">offset=</span><span class="s">&quot;827&quot;</span> <span class="cp">length=</span><span class="s">&quot;443&quot;</span> <span class="cp">sentences_count=</span><span class="s">&quot;4&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;annotation</span> <span class="cp">id=</span><span class="s">&quot;1&quot;</span> <span class="cp">author=</span><span class="s">&quot;abelm&quot;</span> <span class="cp">is_paraphrase=</span><span class="s">&quot;True&quot;</span> <span class="cp">validated_by_human_beings=</span><span class="s">&quot;True&quot;</span> <span class="cp"></br>            recognized_by_algorithms=</span><span class="s">&quot;False&quot;</span> <span class="cp">algorithms_cpmes=</span><span class="s">&quot;abel-ngram1,leonel-svm5&quot;</span> <span class="cp"></br>            annotation_date=</span><span class="s">&quot;2015/02/14&quot;</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;phenomenon</span> <span class="cp">type=</span><span class="s">&quot;lex_same_polarity&quot;</span> <span class="cp">projection=</span><span class="s">&quot;local&quot;</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;susp_chunk</span> <span class="cp">offset=</span><span class="s">&quot;30&quot;</span> <span class="cp">length=</span><span class="s">&quot;47&quot;</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;src_chunk</span> <span class="cp">offset=</span><span class="s">&quot;14&quot;</span> <span class="cp">length=</span><span class="s">&quot;30&quot;</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;/annotation&gt;</span>
-            <span class="nt">&lt;annotation</span> <span class="cp">id=</span><span class="s">&quot;2&quot;</span> <span class="cp">author=</span><span class="s">&quot;abelm&quot;</span> <span class="cp">is_paraphrase=</span><span class="s">&quot;False&quot;</span> <span class="cp">human_validation=</span><span class="s">&quot;True&quot;</span> <span class="cp">artificial_validation=</span><span class="s">&quot;True&quot;</span> <span class="cp"></br>            annotation_date=</span><span class="s">&quot;2015/02/15&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;phenomenon</span> <span class="cp">type=</span><span class="s">&quot;None&quot;</span> <span class="cp">projection=</span><span class="s">&quot;None&quot;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;chunk_1</span> <span class="cp">chunk_offset=</span><span class="s">&quot;18&quot;</span> <span class="cp">chunk_length=</span><span class="s">&quot;8&quot;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;chunk_2</span> <span class="cp">chunk_src_offset=</span><span class="s">&quot;18&quot;</span> <span class="cp">chunk_src_length=</span><span class="s">&quot;6&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;/annotation&gt;</span>
-        <span class="nt">&lt;/case_pair&gt;</span>
-   <span class="nt">&lt;/annotations&gt;</span>
+         <span class="nt">&lt;/case&gt;</span>
+      <span class="nt">&lt;/group&gt;</span>
+   <span class="nt">&lt;/cases&gt;</span>
 <span class="nt">&lt;/corpus&gt;</span>
 </pre></div>
 </td></tr></table></div>
