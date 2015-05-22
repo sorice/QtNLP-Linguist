@@ -243,24 +243,21 @@ class TNLP_XML_Manager:
       #TODO validate all input data
 
       result = False
-      target = None
+      target = -1
 
-      # select the correct group for the case
       for i in range(len(self.__groups)):
-         if self.__groups[i].getAttribute('NLP_problem_type') == _problem_type and \
-            self.__groups[i].getAttribute('text_extension') == _extension:
-            target = i
+         if self.__groups[i].getAttribute('NLP_problem_type') == _problem_type:
+            if self.__groups[i].getAttribute('text_extension') == _extension:
+               target = i
 
       # if group already exists
-      if target:
+      if target <> -1:
          actual_group = self.__groups[target]
       else: # create group
          actual_group = self.__xml_document.createElement('group')
          actual_group.setAttribute('NLP_problem_type', str(_problem_type))
          actual_group.setAttribute('text_extension', str(_extension))
          self.__cases_node.appendChild(actual_group)
-
-      #~ total_cases = len(self.__root_node.getElementsByTagName('case'))
 
       # calculate new case id
       ids = []
@@ -298,7 +295,7 @@ class TNLP_XML_Manager:
       src_snippet.setAttribute('doc', _src_doc)
       src_snippet.setAttribute('offset', str(_src_offset))
       src_snippet.setAttribute('length', str(_src_length))
-      susp_snippet.setAttribute('sentences_count', str(_src_sentences_count))
+      src_snippet.setAttribute('sentences_count', str(_src_sentences_count))
       case.appendChild(src_snippet)
 
       # add case to group

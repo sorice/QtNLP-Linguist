@@ -352,11 +352,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
       horizontalLayout_2.addItem(spacerItem1)
       gridLayout.addLayout(horizontalLayout_2, 8, 0, 1, 1)
-      line_2 = QFrame(tab_1)
-      line_2.setFrameShape(QFrame.HLine)
-      line_2.setFrameShadow(QFrame.Sunken)
-      line_2.setObjectName(_fromUtf8("line_2"))
-      gridLayout.addWidget(line_2, 5, 0, 1, 1)
+      ###line_2 = QFrame(tab_1)
+      ###line_2.setFrameShape(QFrame.HLine)
+      ###line_2.setFrameShadow(QFrame.Sunken)
+      ###line_2.setObjectName(_fromUtf8("line_2"))
+      ###gridLayout.addWidget(line_2, 5, 0, 1, 1)
       horizontalLayout_3 = QHBoxLayout()
       horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
       spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -392,35 +392,35 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       gridLayout.addWidget(line_4, 9, 0, 1, 1)
       verticalLayout = QVBoxLayout()
       verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-      lb_susp_sentence = QLabel(tab_1)
-      lb_susp_sentence.setObjectName(_fromUtf8("lb_susp_sentence"))
-      verticalLayout.addWidget(lb_susp_sentence)
-      lb_src_sentence = QLabel(tab_1)
-      lb_src_sentence.setObjectName(_fromUtf8("lb_src_sentence"))
-      verticalLayout.addWidget(lb_src_sentence)
+      ###lb_susp_sentence = QLabel(tab_1)
+      ###lb_susp_sentence.setObjectName(_fromUtf8("lb_susp_sentence"))
+      ###verticalLayout.addWidget(lb_susp_sentence)
+      ###lb_src_sentence = QLabel(tab_1)
+      ###lb_src_sentence.setObjectName(_fromUtf8("lb_src_sentence"))
+      ###verticalLayout.addWidget(lb_src_sentence)
       gridLayout.addLayout(verticalLayout, 4, 0, 1, 1)
-      line_3 = QFrame(tab_1)
-      line_3.setFrameShape(QFrame.HLine)
-      line_3.setFrameShadow(QFrame.Sunken)
-      line_3.setObjectName(_fromUtf8("line_3"))
-      gridLayout.addWidget(line_3, 1, 0, 1, 1)
-      line = QFrame(tab_1)
-      line.setFrameShape(QFrame.HLine)
-      line.setFrameShadow(QFrame.Sunken)
-      line.setObjectName(_fromUtf8("line"))
-      gridLayout.addWidget(line, 3, 0, 1, 1)
-      line_6 = QFrame(tab_1)
-      line_6.setFrameShape(QFrame.HLine)
-      line_6.setFrameShadow(QFrame.Sunken)
-      line_6.setObjectName(_fromUtf8("line_6"))
-      gridLayout.addWidget(line_6, 7, 0, 1, 1)
+      ###line_3 = QFrame(tab_1)
+      ###line_3.setFrameShape(QFrame.HLine)
+      ###line_3.setFrameShadow(QFrame.Sunken)
+      ###line_3.setObjectName(_fromUtf8("line_3"))
+      ###gridLayout.addWidget(line_3, 1, 0, 1, 1)
+      ###line = QFrame(tab_1)
+      ###line.setFrameShape(QFrame.HLine)
+      ###line.setFrameShadow(QFrame.Sunken)
+      ###line.setObjectName(_fromUtf8("line"))
+      ###gridLayout.addWidget(line, 3, 0, 1, 1)
+      ###line_6 = QFrame(tab_1)
+      ###line_6.setFrameShape(QFrame.HLine)
+      ###line_6.setFrameShadow(QFrame.Sunken)
+      ###line_6.setObjectName(_fromUtf8("line_6"))
+      ###gridLayout.addWidget(line_6, 7, 0, 1, 1)
 
       # set default values
       lb_susp_info.setText("<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>susp-1111</b>, length = <b>555</b> char(s), <b>1</b> word(s), <b>1</b> sentence(s), offset = <b>10</b>")
       text_susp.setText("Texto sospechoso")
-      label_2.setText("<b>Annotation Details</b>")
-      lb_susp_sentence.setText("Susp Sentence")
-      lb_src_sentence.setText("Src Sentence")
+      #label_2.setText("<b>Annotations</b>")
+      ###lb_susp_sentence.setText("Susp Sentence")
+      ###lb_src_sentence.setText("Src Sentence")
       label_4.setText("ID")
       lb_note_id.setText("1")
       label_5.setText("Type")
@@ -752,8 +752,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = __corpus.children()[2] # cases tab
       case_tab = case_tab.currentWidget()
 
-      __lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
-      __lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
+      ######__lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
+      ###__lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
       __lb_note_id = case_tab.findChild(QLabel, "lb_note_id")
       __lb_note_type = case_tab.findChild(QLabel, "lb_note_type")
       __lb_note_projection = case_tab.findChild(QLabel, "lb_note_projection")
@@ -765,12 +765,14 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
       __lb_note_current = case_tab.findChild(QLabel, "lb_note_current")
       __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
+      __text_susp = case_tab.findChild(QTextEdit, "text_susp")
+      __text_src = case_tab.findChild(QTextEdit, "text_src")
 
       _info = _annotations[_index]
 
       # update components
-      __lb_susp_sentence.setText('<b>Suspicious sentence:</b> ' + _info['susp_sentence'])
-      __lb_src_sentence.setText('<b>Source sentence:</b> ' + _info['src_sentence'])
+      ###__lb_susp_sentence.setText('<b>Suspicious sentence:</b> ' + _info['susp_sentence'])
+      ###__lb_src_sentence.setText('<b>Source sentence:</b> ' + _info['src_sentence'])
       __lb_note_id.setText(_info['id'])
       __lb_note_type.setText(_info['phenomenon_type'])
       __lb_note_projection.setText(_info['projection'])
@@ -786,6 +788,50 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_count.setText(str(len(_annotations)))
 
 
+      # show annotation info
+      # suspicious text
+      cursor = QTextCursor(__text_susp.document())
+      # clear highlighted annotation
+      cursor.setPosition(0, QTextCursor.MoveAnchor)
+      cursor.setPosition(__text_susp.toPlainText().length(), QTextCursor.KeepAnchor)
+      format = QTextCharFormat()
+      font = QFont()
+      format.setFont(font)
+      cursor.setCharFormat(format)
+
+      # highlight annotation
+      cursor.setPosition(int(_info['susp_chunk_offset']))
+      cursor.setPosition(int(_info['susp_chunk_offset']) + int(_info['susp_chunk_length']), QTextCursor.KeepAnchor)
+      format = QTextCharFormat()
+      font = QFont()
+      font.setItalic(True)
+      font.setBold(True)
+      format.setFont(font)
+      format.setBackground(QBrush(Qt.green))
+      cursor.mergeCharFormat(format)
+
+      # source text
+      cursor = QTextCursor(__text_src.document())
+      # clear highlighted annotation
+      cursor.setPosition(0, QTextCursor.MoveAnchor)
+      cursor.setPosition(__text_src.toPlainText().length(), QTextCursor.KeepAnchor)
+      format = QTextCharFormat()
+      font = QFont()
+      format.setFont(font)
+      cursor.setCharFormat(format)
+
+      # highlight annotation
+      cursor.setPosition(int(_info['src_chunk_offset']))
+      cursor.setPosition(int(_info['src_chunk_offset']) + int(_info['src_chunk_length']), QTextCursor.KeepAnchor)
+      format = QTextCharFormat()
+      font = QFont()
+      font.setItalic(True)
+      font.setBold(True)
+      format.setFont(font)
+      format.setBackground(QBrush(Qt.green))
+      cursor.mergeCharFormat(format)
+
+
    def __show_no_annotations(self):
       """Display empty data when there are no annotations"""
 
@@ -794,8 +840,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = __corpus.children()[2] # cases tab
       case_tab = case_tab.currentWidget()
 
-      __lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
-      __lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
+      ###__lb_susp_sentence = case_tab.findChild(QLabel, "lb_susp_sentence")
+      ###__lb_src_sentence = case_tab.findChild(QLabel, "lb_src_sentence")
       __lb_note_id = case_tab.findChild(QLabel, "lb_note_id")
       __lb_note_type = case_tab.findChild(QLabel, "lb_note_type")
       __lb_note_projection = case_tab.findChild(QLabel, "lb_note_projection")
@@ -809,8 +855,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
 
       # update elements
-      __lb_susp_sentence.setText('-')
-      __lb_src_sentence.setText('-')
+      ###__lb_susp_sentence.setText('-')
+      ###__lb_src_sentence.setText('-')
       __lb_note_id.setText('-')
       __lb_note_type.setText('-')
       __lb_note_projection.setText('-')
