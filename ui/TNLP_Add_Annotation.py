@@ -74,7 +74,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       case_data['src_length'] = str(self.lb_src_length.text())
 
       if len(case_data['author']) == 0 or case_data['susp_length'] == '0' or case_data['src_length'] == '0':
-         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect annotation data. Please write the author and select the suspicios and source chunks.')
+         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect annotation data. Please write the author and select the suspicious and source chunks.')
          return;
 
       new_annotation = self.__xml.add_annotation(case_data['case_id'], case_data['author'],
