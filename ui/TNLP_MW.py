@@ -641,15 +641,16 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       #TODO Arreglar la forma en que se lee el diccionario aqui
       info = 'Corpus Information<br/><br/>'
-      info += 'Name: ' + corpus_info[0] + '<br/>'
-      info += 'Version: ' + corpus_info[1] + '<br/>'
-      info += 'Language: ' + corpus_info[2] + '<br/>'
-      info += 'Owners: ' + corpus_info[3] + '<br/>'
-      info += 'Authors: ' + corpus_info[4] + '<br/>'
-      info += 'Country: ' + corpus_info[5] + '<br/>'
-      info += 'Created: ' + corpus_info[6] + '<br/>'
-      info += 'Changed: ' + corpus_info[7] + '<br/>'
-      info += 'Total Cases:' + str(corpus_info[8]) + '<br/>'
+      info += 'Name: ' + corpus_info['name'] + '<br/>'
+      info += 'Version: ' + corpus_info['version'] + '<br/>'
+      info += 'Language: ' + corpus_info['lang'] + '<br/>'
+      info += 'Owners: ' + corpus_info['owners'] + '<br/>'
+      info += 'Authors: ' + corpus_info['authors'] + '<br/>'
+      info += 'Country: ' + corpus_info['country'] + '<br/>'
+      info += 'Created: ' + corpus_info['creation_date'] + '<br/>'
+      info += 'Changed: ' + corpus_info['last_modification_date'] + '<br/>'
+      info += 'Total Cases:' + str(corpus_info['total_cases']) + '<br/>'
+
 
       QMessageBox.information(self, self.__appName, info)
 
