@@ -150,7 +150,7 @@
        <item>
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>Suspicious sentence:</string>
+          <string>Suspicious chunk:</string>
          </property>
         </widget>
        </item>
@@ -248,7 +248,7 @@
        <item>
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>Source sentence:</string>
+          <string>Source chunk:</string>
          </property>
         </widget>
        </item>

@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>953</width>
-     <height>29</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCorpus">
@@ -57,6 +57,9 @@
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuTools">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Tools</string>
     </property>
@@ -65,11 +68,17 @@
     <addaction name="actionDictionary_View"/>
    </widget>
    <widget class="QMenu" name="menuConfig">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Config</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuScripts">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Scripts</string>
     </property>
@@ -80,6 +89,9 @@
     <addaction name="actionUpdate_XMLs_Info"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>
@@ -87,6 +99,9 @@
     <addaction name="actionUser_s_Manual"/>
    </widget>
    <widget class="QMenu" name="menuLogin">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Login</string>
     </property>
@@ -201,16 +216,19 @@
   </widget>
   <action name="actionLoad_New_Corpus">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/menu_corpus.png</normaloff>:/toolbar/icons/menu_corpus.png</iconset>
    </property>
    <property name="text">
-    <string>Load New Corpus</string>
+    <string>Load Corpus</string>
    </property>
   </action>
   <action name="actionAdd_New_Corpus_Doc">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/add_corpus_doc.png</normaloff>:/toolbar/icons/add_corpus_doc.png</iconset>
    </property>
    <property name="text">
@@ -219,7 +237,7 @@
   </action>
   <action name="actionCorpus_Information">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/corpus_info.png</normaloff>:/toolbar/icons/corpus_info.png</iconset>
    </property>
    <property name="text">
@@ -228,7 +246,7 @@
   </action>
   <action name="actionClose_Corpus">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/close_corpus.png</normaloff>:/toolbar/icons/close_corpus.png</iconset>
    </property>
    <property name="text">
@@ -237,7 +255,7 @@
   </action>
   <action name="actionAdd_Algorithm_Output">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/add_algorithm_output.png</normaloff>:/toolbar/icons/add_algorithm_output.png</iconset>
    </property>
    <property name="text">
@@ -246,16 +264,19 @@
   </action>
   <action name="actionAdd_New_Case">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/add_case.png</normaloff>:/toolbar/icons/add_case.png</iconset>
    </property>
    <property name="text">
-    <string>Add New Case</string>
+    <string>Add Case</string>
    </property>
   </action>
   <action name="actionEdit_Case">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/edit_case.png</normaloff>:/toolbar/icons/edit_case.png</iconset>
    </property>
    <property name="text">
@@ -264,7 +285,7 @@
   </action>
   <action name="actionValidate_Case">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/validate_case.png</normaloff>:/toolbar/icons/validate_case.png</iconset>
    </property>
    <property name="text">
@@ -273,7 +294,7 @@
   </action>
   <action name="action_Re_Define_Boundaries">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/redefine_boundaries.png</normaloff>:/toolbar/icons/redefine_boundaries.png</iconset>
    </property>
    <property name="text">
@@ -282,7 +303,7 @@
   </action>
   <action name="actionView_Annotation">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/toolbar/icons/view_annotation.png</normaloff>:/toolbar/icons/view_annotation.png</iconset>
    </property>
    <property name="text">
@@ -290,16 +311,25 @@
    </property>
   </action>
   <action name="actionSave_Corpus">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Save Corpus</string>
    </property>
   </action>
   <action name="actionSelect_Parser">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Select Parser</string>
    </property>
   </action>
   <action name="actionSuggest_Parser">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Suggest Parser</string>
    </property>
@@ -388,21 +418,30 @@
    </property>
   </action>
   <action name="actionDelete_case">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Delete case</string>
    </property>
   </action>
   <action name="actionAdd_annotation">
    <property name="text">
-    <string>Add annotation</string>
+    <string>Add Annotation</string>
    </property>
   </action>
   <action name="actionEdit_annotation">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Edit annotation</string>
    </property>
   </action>
   <action name="actionDelete_annotation">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Delete annotation</string>
    </property>

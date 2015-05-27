@@ -14,9 +14,31 @@ plag_types = {
    "good_quotation": (":/plag_type/pt_green", "#00ff00"),
 }
 
+# Define paraphrase types used in annotations
+paraphrase_types = [
+   "inflectional modal-verb",
+   "derivational changes",
+   "spelling-and-format",
+   "same-polarity",
+   "synthetic/analytic",
+   "opposite-polarity",
+   "converse",
+   "diathesis alternations negation",
+   "switching ellipsis coordination",
+   "subordination-and-nesting",
+   "punctuation-and-format",
+   "punctuation",
+   "direct/indirect-style",
+   "sentence-modality",
+   "syntax/discourse-structure",
+   "semantics",
+   "format/order",
+   "addition/deletion",
+   "identical entailment non-paraphrase"
+]
+
 # Define phenomenom types used in annotations
 phenomenom_types = [
-   #~ "lex_same_polarity"
    "similarity",
    "translation"
 ]

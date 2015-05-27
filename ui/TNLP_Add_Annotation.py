@@ -9,7 +9,7 @@ from PyQt4.QtGui import *
 from forms.add_annotation_UI import Ui_Add_Annotation
 
 # import constant types
-from TNLP_Enums_Helper import phenomenom_types
+from TNLP_Enums_Helper import paraphrase_types
 
 try:
    _fromUtf8 = QString.fromUtf8
@@ -32,7 +32,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       self.lb_case_name.setText('<b>[' + self._case['id'] + ']: ' + self._case['annotator_summary'] + '</b>')
 
       # load default data
-      for i in phenomenom_types:
+      for i in paraphrase_types:
          self.cb_type.addItem(i)
 
       self.te_susp_snippet.setText(self._case['susp_text'])
@@ -60,7 +60,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
 
       # get UI data
       case_data['case_id'] = self._case['id']
-      case_data['author'] = str(self.le_author.text())
+      case_data['author'] = str(self.le_author.text().trimmed())
       case_data['is_paraphrase'] = str('true')
       case_data['validated_by_human_beings'] = str('true')
       case_data['recognized_by_algorithms'] = str('false')
@@ -72,6 +72,10 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       case_data['susp_length'] = str(self.lb_susp_length.text())
       case_data['src_offset'] = str(self.lb_src_offset.text())
       case_data['src_length'] = str(self.lb_src_length.text())
+
+      if len(case_data['author']) == 0 or case_data['susp_length'] == '0' or case_data['src_length'] == '0':
+         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect annotation data. Please write the author and select the suspicious and source chunks.')
+         return;
 
       new_annotation = self.__xml.add_annotation(case_data['case_id'], case_data['author'],
          case_data['is_paraphrase'], case_data['validated_by_human_beings'],
@@ -117,11 +121,11 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       if p2 == len(txt): p2 -= 1
 
       if txt[p2] == '.':
-         x = txt.rfind('.', 0, p1)
+         x = txt.rfind(' ', 0, p1)
          y = p2
       else:
-         x = txt.rfind('.', 0, p1)
-         y = txt.find('.', p2, len(txt))
+         x = txt.rfind(' ', 0, p1)
+         y = txt.find(' ', p2, len(txt))
 
       if x == -1:
          x = 0
@@ -144,7 +148,12 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       cursor.setPosition(x)
       cursor.setPosition(y, QTextCursor.KeepAnchor)
       format = QTextCharFormat()
-      format.setBackground(QBrush(Qt.green))
+      format.setUnderlineStyle(QTextCharFormat.SpellCheckUnderline)
+      format.setUnderlineColor(QColor(Qt.red))
+      font = QFont()
+      font.setItalic(True)
+      font.setBold(True)
+      format.setFont(font)
       cursor.mergeCharFormat(format)
 
       cursor.clearSelection()

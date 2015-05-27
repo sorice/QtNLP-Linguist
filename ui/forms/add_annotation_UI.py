@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'add_annotation.ui'
 #
-# Created: Fri May  8 20:21:22 2015
+# Created: Wed May 27 04:28:48 2015
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -194,13 +194,13 @@ class Ui_Add_Annotation(object):
         self.cb_projection.setItemText(0, QtGui.QApplication.translate("Add_Annotation", "local", None, QtGui.QApplication.UnicodeUTF8))
         self.cb_projection.setItemText(1, QtGui.QApplication.translate("Add_Annotation", "global", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("Add_Annotation", "Suspicious snippet:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_10.setText(QtGui.QApplication.translate("Add_Annotation", "Suspicious sentence:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_10.setText(QtGui.QApplication.translate("Add_Annotation", "Suspicious chunk:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setText(QtGui.QApplication.translate("Add_Annotation", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_susp_offset.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("Add_Annotation", "Length:", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_susp_length.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.label_13.setText(QtGui.QApplication.translate("Add_Annotation", "Source snippet:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("Add_Annotation", "Source sentence:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_11.setText(QtGui.QApplication.translate("Add_Annotation", "Source chunk:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setText(QtGui.QApplication.translate("Add_Annotation", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_src_offset.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setText(QtGui.QApplication.translate("Add_Annotation", "Length:", None, QtGui.QApplication.UnicodeUTF8))
