@@ -174,9 +174,12 @@ class TNLP_XML_Manager:
 
       _corpus_dir = os.path.dirname(self.__xml_path) + '/'
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
-      _tmp_doc = _doc.read()
+      #~ print "alerta1: ", _snippet_doc
+      _tmp_doc = _doc.read().decode('utf8')
+      #~ _tmp_doc = unicode(_tmp_doc,'iso8859-1')
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
       _doc.close()
+      #~ print '%s: %s' % (_snippet_doc, _text)
 
       return _text
 
