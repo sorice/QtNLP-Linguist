@@ -10,6 +10,9 @@ from TNLP_Enums_Helper import *
 # convert dict to list to simplify access to values
 plag_types = list(plag_types)
 
+# import text normalization functions
+from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
+
 try:
    _fromUtf8 = QString.fromUtf8
 except AttributeError:
@@ -413,7 +416,10 @@ class TNLP_AddCase(QWizard):
       if not f.exists():
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
-
+      
+      convertWin_Into_UnixText(self, _file)
+      
+      f = QFile(_file)
       if f.open(QFile.ReadOnly):
          txt = QTextStream(f)
          susp_text.setText(txt.readAll())
@@ -447,7 +453,10 @@ class TNLP_AddCase(QWizard):
       if not f.exists():
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
-
+      
+      convertWin_Into_UnixText(self, _file)
+      
+      f = QFile(_file)
       if f.open(QFile.ReadOnly):
          txt = QTextStream(f)
          src_text.setText(txt.readAll())

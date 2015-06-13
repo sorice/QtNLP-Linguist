@@ -13,6 +13,7 @@
 
 from lib.python_contrib.pxdom import pxdom
 import os, urllib
+from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
 
 class TNLP_XML_Manager:
    """Helper to manage the TNLP.xml information file"""
@@ -173,6 +174,9 @@ class TNLP_XML_Manager:
       """Return from a specific text the snippet with the given offset and length."""
 
       _corpus_dir = os.path.dirname(self.__xml_path) + '/'
+      
+      convertWin_Into_UnixText(self, _corpus_dir + _snippet_doc + '.txt')
+      
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
       _tmp_doc = _doc.read().decode('utf8')
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
