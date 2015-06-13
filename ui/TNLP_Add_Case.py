@@ -53,7 +53,7 @@ class TNLP_AddCase(QWizard):
 
 
    def __create_general_page(self):
-      """Creates general page"""
+      """Creates de first page of the wizard, or the general data of a case."""
 
       page = QWizardPage()
       page.setSubTitle("General case data")
@@ -189,7 +189,7 @@ class TNLP_AddCase(QWizard):
 
 
    def __create_docs_page(self):
-      """Creates general page"""
+      """Creates de second page of the wizard, or the data of the susp and src docs."""
 
       page = QWizardPage()
       page.setSubTitle("Select suspicious and source documents")
@@ -361,12 +361,12 @@ class TNLP_AddCase(QWizard):
       susp_offset = str(self.page(1).findChild(QLabel, 'lb_susp_offset').text()).strip()
       susp_length = str(self.page(1).findChild(QLabel, 'lb_susp_length').text()).strip()
       susp_sentences_count = str(self.page(1).findChild(QLabel, 'lb_susp_sentences_count').text()).strip()
-      susp_text = str(self.page(1).findChild(QTextEdit, 'te_susp_text').toPlainText()).strip()
+      susp_text = unicode(self.page(1).findChild(QTextEdit, 'te_susp_text').toPlainText(), 'iso8859-1')
       src_doc = str(self.page(1).findChild(QLabel, 'lb_src_doc_name').text()).strip()
       src_offset = str(self.page(1).findChild(QLabel, 'lb_src_offset').text()).strip()
       src_length = str(self.page(1).findChild(QLabel, 'lb_src_length').text()).strip()
       src_sentences_count = str(self.page(1).findChild(QLabel, 'lb_src_sentences_count').text()).strip()
-      src_text = str(self.page(1).findChild(QTextEdit, 'te_src_text').toPlainText()).strip()
+      src_text = unicode(self.page(1).findChild(QTextEdit, 'te_src_text').toPlainText(), 'iso8859-1')
       automatic_summary = ""
       generated_by = "human"
 
@@ -524,15 +524,14 @@ class TNLP_AddCase(QWizard):
       """Updates components data"""
 
       cursor = _text_cmp.textCursor()
-
-      txt = str(_text_cmp.toPlainText()).strip()
+      
+      txt = unicode(_text_cmp.toPlainText(),'iso8859-1')
 
       if len(txt) == 0:
          return
-
       p1 = cursor.selectionStart()
       p2 = cursor.selectionEnd()
-
+      
       # set upper limit
       if p2 == len(txt): p2 -= 1
 

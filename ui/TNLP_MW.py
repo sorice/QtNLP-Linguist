@@ -416,7 +416,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       ###gridLayout.addWidget(line_6, 7, 0, 1, 1)
 
       # set default values
-      lb_susp_info.setText("<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>susp-1111</b>, length = <b>555</b> char(s), <b>1</b> word(s), <b>1</b> sentence(s), offset = <b>10</b>")
+      lb_susp_info.setText("<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>susp-1111</b>, length = <b>555</b> char(s), offset = <b>10</b>")
       text_susp.setText("Texto sospechoso")
       #label_2.setText("<b>Annotations</b>")
       ###lb_susp_sentence.setText("Susp Sentence")
@@ -441,7 +441,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       lb_note_machine_recog.setText("False")
       btn_prev_note.setText("Prev")
       btn_next_note.setText("Next")
-      lb_src_info.setText("<b>Source</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>src-1111</b>, length = <b>555</b> char(s), <b>1</b> word(s), <b>1</b> sentence(s), offset = <b>10</b>")
+      lb_src_info.setText("<b>Source</b>]&nbsp;&nbsp;&nbsp;id = <b>000</b>, doc-name = <b>src-1111</b>, length = <b>555</b> char(s), offset = <b>10</b>")
       text_src.setText("Texto fuente")
       lb_note_current.setText("#")
       label_3.setText("/")
@@ -564,20 +564,20 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['generated_by'])
          .arg(case['generator_name']))
       __lb_susp_info.setText(QString("[<b>Suspicious</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
-         length = <b>%2</b> char(s), <b>%3</b> words, <b>%4</b> sentence(s), offset = <b>%5</b>")
+         length = <b>%2</b> char(s), offset = <b>%3</b>")
          .arg(case['susp_snippet_doc'])
          .arg(case['susp_snippet_length'])
+         .arg(case['susp_snippet_offset'])
          .arg(str(0))
-         .arg(case['susp_snippet_sentences_count'])
-         .arg(case['susp_snippet_offset']))
+         .arg(case['susp_snippet_sentences_count']))
       __text_susp.setHtml(case['susp_text'])
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
-         length = <b>%2</b> char(s), <b>%3</b> words, <b>%4</b> sentence(s), offset = <b>%5</b>")
+         length = <b>%2</b> char(s), offset = <b>%3</b>")
          .arg(case['src_snippet_doc'])
          .arg(case['src_snippet_length'])
+         .arg(case['src_snippet_offset'])
          .arg(str(0))
-         .arg(case['src_snippet_sentences_count'])
-         .arg(case['src_snippet_offset']))
+         .arg(case['src_snippet_sentences_count']))
       __text_src.setHtml(case['src_text'])
 
       return
