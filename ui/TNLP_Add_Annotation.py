@@ -108,8 +108,7 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
 
       cursor = _text.textCursor()
 
-      # check this... strip needed here ??
-      txt = str(_text.toPlainText()).strip()
+      txt = unicode(_text.toPlainText(),'iso8859-1')
 
       if len(txt) == 0:
          return
@@ -134,8 +133,6 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
 
       if y == -1:
          y = len(txt)
-      else:
-         y += 1
 
       # clear document format
       cursor.setPosition(0)

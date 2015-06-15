@@ -28,7 +28,7 @@ from TNLP_Add_Annotation import TNLP_AddAnnotation
 from TNLP_New_Corpus import TNLP_NewCorpus
 
 try:
-   _fromUtf8 = QString.fromUtf8
+   _fromUtf8 = QString.Latin1
 except AttributeError:
    def _fromUtf8(s):
       return s
@@ -579,6 +579,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(str(0))
          .arg(case['src_snippet_sentences_count']))
       __text_src.setHtml(case['src_text'])
+      print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
 
       return
 
@@ -794,7 +795,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       cursor = QTextCursor(__text_susp.document())
       # clear highlighted annotation
       cursor.setPosition(0, QTextCursor.MoveAnchor)
-      cursor.setPosition(__text_susp.toPlainText().length(), QTextCursor.KeepAnchor)
+      cursor.setPosition(len(unicode(__text_susp.toPlainText(),'Latin-1')), QTextCursor.KeepAnchor)
       format = QTextCharFormat()
       font = QFont()
       format.setFont(font)
@@ -803,6 +804,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       # highlight annotation
       cursor.setPosition(int(_info['susp_chunk_offset']))
       cursor.setPosition(int(_info['susp_chunk_offset']) + int(_info['susp_chunk_length']), QTextCursor.KeepAnchor)
+      print 'len __text_susp:', unicode(__text_susp.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_susp.toPlainText(),'iso8859-1'))
       format = QTextCharFormat()
       font = QFont()
       font.setItalic(True)
@@ -815,7 +817,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       cursor = QTextCursor(__text_src.document())
       # clear highlighted annotation
       cursor.setPosition(0, QTextCursor.MoveAnchor)
-      cursor.setPosition(__text_src.toPlainText().length(), QTextCursor.KeepAnchor)
+      cursor.setPosition(len(unicode(__text_src.toPlainText(),'Latin-1')), QTextCursor.KeepAnchor)
+      print 'len __text_src:', unicode(__text_src.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_src.toPlainText(),'iso8859-1'))
       format = QTextCharFormat()
       font = QFont()
       format.setFont(font)

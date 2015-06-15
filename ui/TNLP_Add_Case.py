@@ -13,6 +13,10 @@ plag_types = list(plag_types)
 # import text normalization functions
 from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
 
+# import LETTERS to calculate especial chars.
+import string
+LETTERS = unicode(''.join([string.letters, string.digits,'Ññ']),'iso8859-1')
+
 try:
    _fromUtf8 = QString.fromUtf8
 except AttributeError:
@@ -510,6 +514,8 @@ class TNLP_AddCase(QWizard):
 
       # locate working elements
       _text = self.page(1).findChild(QTextEdit, 'te_susp_text')
+      #~ print 'type _text __susp_selection_changed', type(_text)
+
       _offset = self.page(1).findChild(QLabel, 'lb_susp_offset')
       _len = self.page(1).findChild(QLabel, 'lb_susp_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_susp_sentences_count')
@@ -522,6 +528,7 @@ class TNLP_AddCase(QWizard):
 
       # locate working elements
       _text = self.page(1).findChild(QTextEdit, 'te_src_text')
+      #~ print 'type _text __src_selection_changed', type(_text)
       _offset = self.page(1).findChild(QLabel, 'lb_src_offset')
       _len = self.page(1).findChild(QLabel, 'lb_src_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_src_sentences_count')
@@ -545,16 +552,18 @@ class TNLP_AddCase(QWizard):
       if p2 == len(txt): p2 -= 1
 
       if txt[p2] == '.':
-         x = txt.rfind('.', 0, p1)
          y = p2
       else:
-         x = txt.rfind('.', 0, p1)
          y = txt.find('.', p2, len(txt))
+
+      # Find first letter char of the sentence. Avoid PlainText problems.
+      x_temp = txt.rfind('.', 0, p1)
+      while txt[x_temp] not in LETTERS:
+         x = x_temp+1
+         x_temp+=1
 
       if x == -1:
          x = 0
-      else:
-         x += 1
 
       if y == -1:
          y = len(txt)
@@ -577,6 +586,8 @@ class TNLP_AddCase(QWizard):
 
       cursor.clearSelection()
       cursor.movePosition(QTextCursor.Start)
+      
+      #~ print 'len txt __selection_changed:', txt[x:y], ',', len(txt[x:y])
 
       # update widgets
       _offset.setText(str(x))
