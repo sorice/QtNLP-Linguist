@@ -28,7 +28,7 @@ from TNLP_Add_Annotation import TNLP_AddAnnotation
 from TNLP_New_Corpus import TNLP_NewCorpus
 
 try:
-   _fromUtf8 = QString.Latin1
+   _fromUtf8 = QString.fromUtf8
 except AttributeError:
    def _fromUtf8(s):
       return s
@@ -570,7 +570,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['susp_snippet_offset'])
          .arg(str(0))
          .arg(case['susp_snippet_sentences_count']))
+         
+      # Inyectando texto unicode dentro del QTextEdit
       __text_susp.setHtml(case['susp_text'])
+      print 'TNLP_MW: ', case['susp_text'], type(case['susp_text'])
+      
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
          length = <b>%2</b> char(s), offset = <b>%3</b>")
          .arg(case['src_snippet_doc'])
@@ -578,6 +582,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['src_snippet_offset'])
          .arg(str(0))
          .arg(case['src_snippet_sentences_count']))
+      
+      # Inyectando texto unicode dentro del QTextEdit
       __text_src.setHtml(case['src_text'])
       print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
 
@@ -767,6 +773,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
       __lb_note_current = case_tab.findChild(QLabel, "lb_note_current")
       __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
+      
+      # Encontrando los QTextEdit
       __text_susp = case_tab.findChild(QTextEdit, "text_susp")
       __text_src = case_tab.findChild(QTextEdit, "text_src")
 
@@ -795,7 +803,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       cursor = QTextCursor(__text_susp.document())
       # clear highlighted annotation
       cursor.setPosition(0, QTextCursor.MoveAnchor)
-      cursor.setPosition(len(unicode(__text_susp.toPlainText(),'Latin-1')), QTextCursor.KeepAnchor)
+      cursor.setPosition(len(unicode(__text_susp.toPlainText(),'iso8859-1')), QTextCursor.KeepAnchor)
       format = QTextCharFormat()
       font = QFont()
       format.setFont(font)
@@ -817,7 +825,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       cursor = QTextCursor(__text_src.document())
       # clear highlighted annotation
       cursor.setPosition(0, QTextCursor.MoveAnchor)
-      cursor.setPosition(len(unicode(__text_src.toPlainText(),'Latin-1')), QTextCursor.KeepAnchor)
+      cursor.setPosition(len(unicode(__text_src.toPlainText(),'iso8859-1')), QTextCursor.KeepAnchor)
       print 'len __text_src:', unicode(__text_src.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_src.toPlainText(),'iso8859-1'))
       format = QTextCharFormat()
       font = QFont()

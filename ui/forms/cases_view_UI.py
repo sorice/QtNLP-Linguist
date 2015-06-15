@@ -10,7 +10,7 @@
 from PyQt4 import QtCore, QtGui
 
 try:
-    _fromUtf8 = QtCore.QString.Latin1
+    _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
     _fromUtf8 = lambda s: s
 
@@ -295,48 +295,48 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.CodecForTr))
-        self.label_4.setText(QtGui.QApplication.translate("Form", "ID", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_id.setText(QtGui.QApplication.translate("Form", "1", None, QtGui.QApplication.CodecForTr))
-        self.label_5.setText(QtGui.QApplication.translate("Form", "Type", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_type.setText(QtGui.QApplication.translate("Form", "Same Polarity", None, QtGui.QApplication.CodecForTr))
-        self.label_6.setText(QtGui.QApplication.translate("Form", "Projection", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_projection.setText(QtGui.QApplication.translate("Form", "Local", None, QtGui.QApplication.CodecForTr))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_4.setText(QtGui.QApplication.translate("Form", "ID", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_id.setText(QtGui.QApplication.translate("Form", "1", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_5.setText(QtGui.QApplication.translate("Form", "Type", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_type.setText(QtGui.QApplication.translate("Form", "Same Polarity", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_6.setText(QtGui.QApplication.translate("Form", "Projection", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_projection.setText(QtGui.QApplication.translate("Form", "Local", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setText(QtGui.QApplication.translate("Form", "Susp\n"
-"Offset / Len", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_susp.setText(QtGui.QApplication.translate("Form", "10", None, QtGui.QApplication.CodecForTr))
+"Offset / Len", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_susp.setText(QtGui.QApplication.translate("Form", "10", None, QtGui.QApplication.UnicodeUTF8))
         self.label_8.setText(QtGui.QApplication.translate("Form", "Src\n"
-"Offset / Len", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_src.setText(QtGui.QApplication.translate("Form", "50", None, QtGui.QApplication.CodecForTr))
-        self.label_9.setText(QtGui.QApplication.translate("Form", "Author", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_author.setText(QtGui.QApplication.translate("Form", "Leonel", None, QtGui.QApplication.CodecForTr))
-        self.label_10.setText(QtGui.QApplication.translate("Form", "Date", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_date.setText(QtGui.QApplication.translate("Form", "07-04-2015", None, QtGui.QApplication.CodecForTr))
+"Offset / Len", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_src.setText(QtGui.QApplication.translate("Form", "50", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_9.setText(QtGui.QApplication.translate("Form", "Author", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_author.setText(QtGui.QApplication.translate("Form", "Leonel", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_10.setText(QtGui.QApplication.translate("Form", "Date", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_date.setText(QtGui.QApplication.translate("Form", "07-04-2015", None, QtGui.QApplication.UnicodeUTF8))
         self.label_11.setText(QtGui.QApplication.translate("Form", "Validated \n"
-"by Humans", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_human_val.setText(QtGui.QApplication.translate("Form", "True", None, QtGui.QApplication.CodecForTr))
+"by Humans", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_human_val.setText(QtGui.QApplication.translate("Form", "True", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("Form", "Artificially\n"
-"Recognized", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_machine_recog.setText(QtGui.QApplication.translate("Form", "False", None, QtGui.QApplication.CodecForTr))
-        self.lb_src_info.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Source</span>]     doc-name = <span style=\" font-weight:600;\">src-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None, QtGui.QApplication.CodecForTr))
+"Recognized", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_machine_recog.setText(QtGui.QApplication.translate("Form", "False", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_src_info.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Source</span>]     doc-name = <span style=\" font-weight:600;\">src-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.text_src.setHtml(QtGui.QApplication.translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Noto Sans\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto fuente</p></body></html>", None, QtGui.QApplication.CodecForTr))
-        self.btn_prev_note.setText(QtGui.QApplication.translate("Form", "Prev", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_current.setText(QtGui.QApplication.translate("Form", "#", None, QtGui.QApplication.CodecForTr))
-        self.label_3.setText(QtGui.QApplication.translate("Form", "/", None, QtGui.QApplication.CodecForTr))
-        self.lb_note_count.setText(QtGui.QApplication.translate("Form", "total", None, QtGui.QApplication.CodecForTr))
-        self.btn_next_note.setText(QtGui.QApplication.translate("Form", "Next", None, QtGui.QApplication.CodecForTr))
-        self.label_2.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">Annotation Details</span></p></body></html>", None, QtGui.QApplication.CodecForTr))
-        self.case_details.setText(QtGui.QApplication.translate("Form", "Case details", None, QtGui.QApplication.CodecForTr))
-        self.lb_susp_info.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Suspicious</span>]    doc-name = <span style=\" font-weight:600;\">susp-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None, QtGui.QApplication.CodecForTr))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto fuente</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_prev_note.setText(QtGui.QApplication.translate("Form", "Prev", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_current.setText(QtGui.QApplication.translate("Form", "#", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_3.setText(QtGui.QApplication.translate("Form", "/", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_note_count.setText(QtGui.QApplication.translate("Form", "total", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_next_note.setText(QtGui.QApplication.translate("Form", "Next", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">Annotation Details</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.case_details.setText(QtGui.QApplication.translate("Form", "Case details", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_susp_info.setText(QtGui.QApplication.translate("Form", "<html><head/><body><p>[<span style=\" font-weight:600;\">Suspicious</span>]    doc-name = <span style=\" font-weight:600;\">susp-1111</span>, length = <span style=\" font-weight:600;\">555</span> char(s), <span style=\" font-weight:600;\">1</span> word(s), <span style=\" font-weight:600;\">1</span> sentence(s), offset = <span style=\" font-weight:600;\">10</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.text_susp.setHtml(QtGui.QApplication.translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Noto Sans\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto sospechoso</p></body></html>", None, QtGui.QApplication.CodecForTr))
-        self.lb_susp_sentence.setText(QtGui.QApplication.translate("Form", "Susp Sentence", None, QtGui.QApplication.CodecForTr))
-        self.lb_src_sentence.setText(QtGui.QApplication.translate("Form", "Src Sentence", None, QtGui.QApplication.CodecForTr))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Texto sospechoso</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_susp_sentence.setText(QtGui.QApplication.translate("Form", "Susp Sentence", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_src_sentence.setText(QtGui.QApplication.translate("Form", "Src Sentence", None, QtGui.QApplication.UnicodeUTF8))
 

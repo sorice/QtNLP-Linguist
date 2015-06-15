@@ -23,15 +23,6 @@ except AttributeError:
    def _fromUtf8(s):
       return s
 
-try:
-    _encoding = QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QApplication.translate(context, text, disambig)
-
-
 class TNLP_AddCase(QWizard):
    def __init__(self, _xml_manager, parent = None):
       # init the parent
@@ -425,8 +416,9 @@ class TNLP_AddCase(QWizard):
       
       f = QFile(_file)
       if f.open(QFile.ReadOnly):
-         txt = QTextStream(f)
-         susp_text.setText(txt.readAll())
+         _txt = open(_file).read()
+         _text = unicode(_txt,'utf8')
+         susp_text.setText(_text)
 
          _dir = _file.right(_file.length() - QString(self.__working_dir).length())
          _dir = _dir.remove(0, 1)
@@ -462,8 +454,9 @@ class TNLP_AddCase(QWizard):
       
       f = QFile(_file)
       if f.open(QFile.ReadOnly):
-         txt = QTextStream(f)
-         src_text.setText(txt.readAll())
+         _txt = open(_file).read()
+         _text = unicode(_txt,'utf8')
+         src_text.setText(_text)
 
          _dir = _file.right(_file.length() - QString(self.__working_dir).length())
          _dir = _dir.remove(0, 1)
