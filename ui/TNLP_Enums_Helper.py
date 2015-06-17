@@ -16,25 +16,29 @@ plag_types = {
 
 # Define paraphrase types used in annotations
 paraphrase_types = [
-   "inflectional modal-verb",
+   "inflectional changes",
+   "modal-verb changes",
    "derivational changes",
    "spelling-and-format",
-   "same-polarity",
+   "same-polarity substitutions",
    "synthetic/analytic",
    "opposite-polarity",
-   "converse",
-   "diathesis alternations negation",
-   "switching ellipsis coordination",
+   "converse substitutions",
+   "diathesis alternations",
+   "negation switching",
+   "ellipsis",
+   "coordination changes",
    "subordination-and-nesting",
    "punctuation-and-format",
-   "punctuation",
-   "direct/indirect-style",
+   "direct/indirect-style alternations",
    "sentence-modality",
    "syntax/discourse-structure",
    "semantics",
-   "format/order",
+   "change-of-order",
    "addition/deletion",
-   "identical entailment non-paraphrase"
+   "identical",
+   "entailment",
+   "non-paraphrase"
 ]
 
 # Define phenomenom types used in annotations
