@@ -1,0 +1,19 @@
+Robótica evolutiva
+
+La Robótica Evolutiva (RE) es un área de la Robótica Autónoma en la que se desarrollan los controladores de los robots mediante la evolución al usar Algoritmos Genéticos.
+
+Habitualmente se evolucionan Redes Neuronales ya que se sigue el referente biológico y simplifica el diseño y la representación en el algoritmo genético.
+
+Historia
+
+La fundación de la RE está relacionada con trabajos en el CNR de Roma en los 90, pero la idea inicial de codificar el sistema de control de un robot en un genoma y evolucionarlo data de finales de los años 80.
+
+Cliff, Harvey y Husbands de COGS en la Universidad de Sussex introdujeron el término robótica evolutiva en el año 1993. En 1992 y 1993 dos equipos, Floreano y Mondada en la EPFL da Lausanne y el grupo de COGS informaron de los primeros experimentos de evolución artificial de robots autónomos.
+
+El éxito inicial de esta incipiente investigación lanzó una gran actividad que intentaba delimitar el potencial de esta aproximación al problema.
+
+Últimamente, la dificultad de crecimiento de la complejidad de las tareas, al igual que en la aproximación simbólica, ha orientado la atención al lado teórico de la disciplina abandonando el punto de vista de la ingeniería.
+
+Robótica Evolutiva
+
+La Robótica Evolutiva tiene varios objetivos, a menudo simultáneos. El punto de vista de la ingeniería crea controladores de robots para realizar tareas útiles en el mundo real. La Biología y otras ciencias de lo vivo obtienen simulaciones que reproducen fenómenos desde fisiológicos hasta ecológicos. La Filosofía de la Ciencia puede analizar sistemas con valor epistémico.

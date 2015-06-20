@@ -1,0 +1,40 @@
+OLTP
+
+OLTP es la sigla en inglés de Procesamiento de Transacciones En Línea (OnLine Transaction Processing) es un tipo de procesamiento que facilita y administra aplicaciones transaccionales, usualmente para entrada de datos y recuperación y procesamiento de transacciones (gestor transaccional). Los paquetes de software para OLTP se basan en la arquitectura cliente-servidor ya que suelen ser utilizados por empresas con una red informática distribuida.
+
+El término puede parecer ambiguo, ya que puede entenderse "transacción" en el contexto de las "transacciones computacionales" o de las "transacciones en bases de datos". También podría entenderse en términos de transacciones de negocios o comerciales. OLTP también se ha utilizado para referirse a la transformación en la que el sistema responde de inmediato a las peticiones del usuario. Un cajero automático de un banco es un ejemplo de una aplicación de procesamiento de transacciones comerciales.
+
+La tecnología OLTP se utiliza en innumerables aplicaciones, como en banca electrónica, procesamiento de pedidos, comercio electrónico, supermercados o industria.
+
+Requerimientos
+
+El procesamiento de transacciones en línea cada vez necesita más recursos para las transacciones que se propagan por una red y que pueden integrar a más de una empresa. Por esta razón, el software actual para sistemas OLTP utiliza procesamiento cliente-servidor y software de intermediación (middleware) que permite a las transacciones correr en diferentes plataformas en una red.
+
+En grandes aplicaciones, la eficiencia del OLTP puede depender de lo sofisticado que sea el software de gestión de transacciones (como CICS en plataformas IBM) o de que tácticas de optimización se utilizan para facilitar la gran cantidad de actualizaciones concurrentes que se pueden producir en una base de datos orientada a OLTP.
+
+En los sistemas de bases de datos descentralizados más exigentes, los programas de intermediación OLTP distribuyen el procesamiento de transacciones entre varios ordenadores en una red. A menudo OLTP se integra en una arquitectura orientada a servicios o en un servicio Web.
+
+Beneficios
+
+El procesamiento de transacciones en línea tiene dos claros beneficios: la simplicidad y la eficiencia.
+
+Sobre la simplicidad:
+- La reducción de la documentación y la obtención de previsiones de ingresos y gastos de forma más rápida y precisa son ejemplos de cómo OLTP hace las cosas más simples para las empresas.
+- También proporciona una base concreta para la estabilidad de una organización gracias a las actualizaciones oportunas.
+- Otro factor es la simplicidad de permitir a los consumidores la elección de la forma en que desean pagar, por lo que es mucho más atractivo que la de hacer transacciones.
+
+Sobre la eficiencia:
+- OLTP amplía la base de consumidores para una organización.
+- Los procesos individuales se ejecutan mucho más rápido.
+
+Inconvenientes
+
+OLTP es una gran herramienta para cualquier organización, aunque en su utilización hay algunas cuestiones en las que se debe pensar ya que pueden suponer un problema: la seguridad y los costes económicos o de tiempo.
+
+Sobre la seguridad:
+- Una de las ventajas de OLTP es también un posible problema. La disponibilidad a todo el mundo que estos sistemas ofrecen a las empresas hacen a sus bases de datos mucho más susceptibles a los intrusos y hackers.
+
+Sobre los costes:
+- En las transacciones B2B, las empresas deben ir fuera de línea (offline) para completar ciertos pasos de algunos procesos, causando que los compradores y proveedores pierdan algunos de los beneficios de eficiencia que el sistema proporciona.
+- Tan simple como es un sistema OLTP, la más simple perturbación en el sistema tiene el potencial de causar una gran cantidad de problemas, que a su vez pueden causar una pérdida de tiempo y dinero.
+- Otro coste económico es la posibilidad de que se produzcan fallos en el servidor, esto puede causar retrasos en el servicio e incluso la perdida de gran cantidad de información importante. Para eliminar este riesgo o, al menos mitigarlo, se debe invertir en mecanismos de seguridad.

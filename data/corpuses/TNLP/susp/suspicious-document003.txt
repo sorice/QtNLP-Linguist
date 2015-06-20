@@ -1,0 +1,17 @@
+Almacén operacional de los datos
+
+También llamado ODS (del inglés Operational Data Store) es un contenedor de datos activos, es decir operacionales que ayudan al soporte de decisiones y a la operación. Está entre un OLAP y un OLTP. Su función es integrar los datos al igual que en el Data warehouse pero con una ventana de actualización muy pequeña (del orden de minutos) y con mucho menos detalle. Básicamente, un almacén de datos es una colección de datos destinada a un ámbito determinado, que ayuda a la toma de desiciones en la entidad en la que se utiliza.
+
+Ejemplo
+
+Un OLTP me diría qué facturas no han sido liquidadas, el monto que falta por liquidar de cada una, cuando se espera que se paguen etc.
+
+Un OLAP me diría cuanto me debe el cliente, cuantas facturas son, el promedio de días que tarda en pagar...
+
+En un ODS un gerente podría enterarse a grandes rasgos si el cliente está listo para un cambio en los límites de crédito, si se puede o debe reestructurar la deuda y algunas otras notas que le haya escrito su predecesor o algún otro empleado.
+
+Hoy día se considera que la estructura informática de una empresa madura contiene OLTPs + Data warehouse + OLAPs + ODS + Minería de datos. Nótese el singular tanto en el Data warehouse y el ODS.
+
+Evolución de la estructura informática empresarial
+
+Desde mi experiencia personal una empresa tiende a tener los siguientes niveles de madurez:

@@ -1,0 +1,15 @@
+Diagrama de objetos
+
+En UML, diagrama que muestra una vista completa o parcial de los objetos de un sistema en un instante de ejecución específico.
+
+Descripción Formal
+
+El Object Management Group, en la especificación UML (versiones 2.1 y anteriores), definía al diagrama de objetos como:
+
+    "Un diagrama de objetos es un gráfico de instancias, incluyendo objetos y datos. Un diagrama de objetos es una instancia de un diagrama de clases; muestra una 'foto' del estado de un sistema en un punto de tiempo determinado."
+
+Los diagramas de objeto están ligados a los diagramas de clase y comparten virtualmente los mismos símbolos para la notación. Los diagramas de objetos pertenecen a la categoría de diagramas estructurales en UML.
+
+Generación y Uso
+
+Los diagramas de objetos se generan en las disciplinas de Arquitectura y diseño. Se utilizan para mostrar estructuras de datos y las interacciones que existen entre objetos en tiempo de ejecución.

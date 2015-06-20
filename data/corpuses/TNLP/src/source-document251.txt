@@ -1,0 +1,41 @@
+Búsqueda en profundidad
+
+Una Búsqueda en profundidad (en inglés DFS o Depth First Search) es un algoritmo que permite recorrer todos los nodos de un grafo o árbol (teoría de grafos) de manera ordenada, pero no uniforme. Su funcionamiento consiste en ir expandiendo todos y cada uno de los nodos que va localizando, de forma recurrente, en un camino concreto. Cuando ya no quedan más nodos que visitar en dicho camino, regresa (Backtracking), de modo que repite el mismo proceso con cada uno de los hermanos del nodo ya procesado.
+
+Análogamente existe el algoritmo de búsqueda en anchura (BFS o Breadth First Search).
+
+Pseudocódigo
+
+- Pseudocódigo para grafos
+
+  DFS(grafo G)
+     PARA CADA vertice u ∈ V[G] HACER
+             estado[u] ← NO_VISITADO
+             padre[u] ← NULO
+     tiempo ← 0
+     PARA CADA vertice u ∈ V[G] HACER
+             SI estado[u] = NO_VISITADO ENTONCES
+                     DFS_Visitar(u,tiempo)
+
+  DFS_Visitar(nodo u, int tiempo)
+     estado[u] ← VISITADO
+     tiempo ← tiempo + 1
+     d[u] ← tiempo
+     PARA CADA v ∈ Vecinos[u] HACER
+             SI estado[v] = NO_VISITADO ENTONCES
+                     padre[v] ← u
+                     DFS_Visitar(v,tiempo)
+     estado[u] ← TERMINADO
+     tiempo ← tiempo + 1
+     f[u] ← tiempo
+
+Arcos DF
+
+Si en tiempo de descubrimiento de u tenemos el arco (u,v):
+
+i. Si el estado de v es NO_VISITADO, entonces (u,v) ∈ DF,
+
+El tiempo de ejecución es O(|V|+|E|)
+
+Referencias
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 22.3: Depth-first search, pp.540–549.

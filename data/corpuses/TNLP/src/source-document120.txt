@@ -1,0 +1,136 @@
+Perceptrón
+
+El Perceptrón dentro del campo de las redes neuronales tiene dos acepciones. Puede referirse a un tipo de red neuronal artificial desarrollado por Frank Rosenblatt.Y dentro de la misma teoría de Frank Rosenblatt. También puede entenderse como la neurona artificial y unidad básica de inferencia en forma de discriminador lineal, es decir, un algoritmo capaz de generar un criterio para seleccionar un sub-grupo, de un grupo de componentes más grande. La limitación de este algoritmo es que si dibujamos en un plot estos elementos, se deben poder separar con un hiperplano los elementos "deseados" de los "no deseados". El perceptrón puede utilizarse con otros perceptrones u otro tipo de neurona artificial, para formar redes neuronales más complicadas.
+
+Definición
+
+El modelo biológico más simple de un perceptrón es una neurona y viceversa. Es decir, el modelo matemático más simple de una neurona es un perceptrón. La neurona es una célula especializada y caracterizada por poseer una cantidad indefinida de canales de entrada llamados dendritas y un canal de salida llamado axón. Las dendritas operan como sensores que recogen información de la región donde se hallan y la derivan hacia el cuerpo de la neurona que reacciona mediante una sinapsis que envía una respuesta hacia el cerebro, esto en el caso de los seres vivos.
+
+Una neurona sola y aislada carece de razón de ser. Su labor especializada se torna valiosa en la medida en que se asocia a otras neuronas, formando una red. Normalmente, el axón de una neurona entrega su información como "señal de entrada" a una dendrita de otra neurona y así sucesivamente. El perceptrón que capta la señal en adelante se entiende formando una red de neuronas, sean éstas biológicas o de sustrato semiconductor (compuertas lógicas).
+
+El perceptrón usa una matriz para representar las redes neuronales y es un discriminador terciario que traza su entrada x (un vector binario) a un único valor de salida f(x) (un solo valor binario) a través de dicha matriz.
+
+f(x) = \begin{cases}1 & \text{si }w \cdot x - u > 0\\0 & \text{en otro caso}\end{cases}
+
+Donde w es un vector de pesos reales y w \cdot x es el producto punto (que computa una suma ponderada). u es el 'umbral', el cual representa el grado de inhibición de la neurona, es un término constante que no depende del valor que tome la entrada.
+
+El valor de f(x) (0 o 1) se usa para clasificar x como un caso positivo o un caso negativo, en el caso de un problema de clasificación binario. El umbral puede pensarse de como compensar la función de activación, o dando un nivel bajo de actividad a la neurona del rendimiento. La suma ponderada de las entradas debe producir un valor mayor que u para cambiar la neurona de estado 0 a 1.
+
+Aprendizaje
+
+En el perceptrón, existen dos tipos de aprendizaje, el primero utiliza una tasa de aprendizaje mientras que el segundo no la utiliza. Esta tasa de aprendizaje amortigua el cambio de los valores de los pesos.1
+
+El algoritmo de aprendizaje es el mismo para todas las neuronas, todo lo que sigue se aplica a una sola neurona en el aislamiento. Se definen algunas variables primero:
+- el x(j) denota el elemento en la posición j en el vector de la entrada
+- el w(j) el elemento en la posición j en el vector de peso
+- el y denota la salida de la neurona
+- el \delta denota la salida esperada
+- el \alpha es una constante tal que 0<\alpha<1
+
+Los dos tipos de aprendizaje difieren en este paso. Para el primer tipo de aprendizaje, utilizando tasa de aprendizaje, utilizaremos la siguiente regla de actualización de los pesos:
+
+    w(j)' = w(j) + \alpha(\delta-y)x(j)\,
+
+Para el segundo tipo de aprendizaje, sin utilizar tasa de aprendizaje, la regla de actualización de los pesos será la siguiente:
+
+    w(j)' = w(j) + (\delta)x(j)
+
+Por lo cual, el aprendizaje es modelado como la actualización del vector de peso después de cada iteración, lo cual sólo tendrá lugar si la salida y difiere de la salida deseada \delta. Para considerar una neurona al interactuar en múltiples iteraciones debemos definir algunas variables más:
+- x_i denota el vector de entrada para la iteración i
+- w_i denota el vector de peso para la iteración i
+- y_i denota la salida para la iteración i
+- D_m = \{(x_1,y_1),\dots,(x_m,y_m)\} denota un periodo de aprendizaje de m iteraciones
+
+En cada iteración el vector de peso es actualizado como sigue:
+- Para cada pareja ordenada (x,y) en D_m = \{(x_1,y_1),\dots,(x_m,y_m)\}
+- Pasar (x_i, y_i, w_i) a la regla de actualización w(j)' = w(j) + \alpha(\delta-y)x(j)
+
+El periodo de aprendizaje D_m se dice que es separable linealmente si existe un valor positivo \gamma y un vector de peso w tal que: y_i \cdot\left( \langle w, x_i \rangle +u \right) > \gamma para todos los i.
+
+Novikoff (1962) probo que el algoritmo de aprendizaje converge después de un número finito de iteraciones si los datos son separables linealmente y el número de errores está limitado a: \left(\frac{2R}{\gamma}\right)^2.
+
+Sin embargo si los datos no son separables linealmente, la línea de algoritmo anterior no se garantiza que converja.
+
+Ejemplo
+
+Considere las funciones AND y OR, estas funciones son linealmente separables y por lo tanto pueden ser aprendidas por un perceptrón.
+
+La función XOR no puede ser aprendida por un único perceptrón puesto que requiere al menos de dos líneas para separar las clases (0 y 1). Debe utilizarse al menos una capa adicional de perceptrones para permitir su aprendizaje.
+
+Un perceptrón aprende a realizar la función binaria NAND con entradas x_1 \, y x_2 \,. Entradas: x_0 \,, x_1 \,, x_2 \,, donde x_0 \, se mantiene constante en 1.
+
+Umbral(t): 0.5
+
+Bias (b): 0
+
+Taza de aprendizaje (r): 0.1
+
+Conjunto de entrenamiento, que consiste en cuatro muestras: \{((1, 0, 0), 1), ((1, 0, 1), 1), ((1, 1, 0), 1), ((1, 1, 1), 0)\} \,
+
+En lo que sigue, los pesos finales de una iteración se convierten en los pesos iniciales de la siguiente. Cada ciclo sobre todas las muestras en el conjunto de entrenamiento está marcado con líneas gruesas.
+
+Entrada 	Pesos iniciales 	Salida 	Error 	Corrección 	Pesos finales
+Valores de sensor 	Salida deseada 	Sensor 	Suma 	Red
+x_0 	x_1 	x_2 	z 	w_0 	w_1 	w_2 	c_0 	c_1 	c_2 	s 	n 	e 	d 	w_0 	w_1 	w_2
+							x_0*w_0 	x_1*w_1 	x_2*w_2 	c_0+c_1+c_2 	if s>t then 1, else 0 	z-n 	r * e 	\Delta(x_0*d) 	\Delta(x_1*d) 	\Delta(x_2*d)
+1 	0 	0 	1 	0 	0 	0 	0 	0 	0 	0 	0 	1 	+0.1 	0.1 	0 	0
+1 	0 	1 	1 	0.1 	0 	0 	0.1 	0 	0 	0.1 	0 	1 	+0.1 	0.2 	0 	0.1
+1 	1 	0 	1 	0.2 	0 	0.1 	0.2 	0 	0 	0.2 	0 	1 	+0.1 	0.3 	0.1 	0.1
+1 	1 	1 	0 	0.3 	0.1 	0.1 	0.3 	0.1 	0.1 	0.5 	0 	0 	0 	0.3 	0.1 	0.1
+1 	0 	0 	1 	0.3 	0.1 	0.1 	0.3 	0 	0 	0.3 	0 	1 	+0.1 	0.4 	0.1 	0.1
+1 	0 	1 	1 	0.4 	0.1 	0.1 	0.4 	0 	0.1 	0.5 	0 	1 	+0.1 	0.5 	0.1 	0.2
+1 	1 	0 	1 	0.5 	0.1 	0.2 	0.5 	0.1 	0 	0.6 	1 	0 	0 	0.5 	0.1 	0.2
+1 	1 	1 	0 	0.5 	0.1 	0.2 	0.5 	0.1 	0.2 	0.8 	1 	-1 	-0.1 	0.4 	0 	0.1
+1 	0 	0 	1 	0.4 	0 	0.1 	0.4 	0 	0 	0.4 	0 	1 	+0.1 	0.5 	0 	0.1
+1 	0 	1 	1 	0.5 	0 	0.1 	0.5 	0 	0.1 	0.6 	1 	0 	0 	0.5 	0 	0.1
+1 	1 	0 	1 	0.5 	0 	0.1 	0.5 	0 	0 	0.5 	0 	1 	+0.1 	0.6 	0.1 	0.1
+1 	1 	1 	0 	0.6 	0.1 	0.1 	0.6 	0.1 	0.1 	0.8 	1 	-1 	-0.1 	0.5 	0 	0
+1 	0 	0 	1 	0.5 	0 	0 	0.5 	0 	0 	0.5 	0 	1 	+0.1 	0.6 	0 	0
+1 	0 	1 	1 	0.6 	0 	0 	0.6 	0 	0 	0.6 	1 	0 	0 	0.6 	0 	0
+1 	1 	0 	1 	0.6 	0 	0 	0.6 	0 	0 	0.6 	1 	0 	0 	0.6 	0 	0
+1 	1 	1 	0 	0.6 	0 	0 	0.6 	0 	0 	0.6 	1 	-1 	-0.1 	0.5 	-0.1 	-0.1
+1 	0 	0 	1 	0.5 	-0.1 	-0.1 	0.5 	0 	0 	0.5 	0 	1 	+0.1 	0.6 	-0.1 	-0.1
+1 	0 	1 	1 	0.6 	-0.1 	-0.1 	0.6 	0 	-0.1 	0.5 	0 	1 	+0.1 	0.7 	-0.1 	0
+1 	1 	0 	1 	0.7 	-0.1 	0 	0.7 	-0.1 	0 	0.6 	1 	0 	0 	0.7 	-0.1 	0
+1 	1 	1 	0 	0.7 	-0.1 	0 	0.7 	-0.1 	0 	0.6 	1 	-1 	-0.1 	0.6 	-0.2 	-0.1
+1 	0 	0 	1 	0.6 	-0.2 	-0.1 	0.6 	0 	0 	0.6 	1 	0 	0 	0.6 	-0.2 	-0.1
+1 	0 	1 	1 	0.6 	-0.2 	-0.1 	0.6 	0 	-0.1 	0.5 	0 	1 	+0.1 	0.7 	-0.2 	0
+1 	1 	0 	1 	0.7 	-0.2 	0 	0.7 	-0.2 	0 	0.5 	0 	1 	+0.1 	0.8 	-0.1 	0
+1 	1 	1 	0 	0.8 	-0.1 	0 	0.8 	-0.1 	0 	0.7 	1 	-1 	-0.1 	0.7 	-0.2 	-0.1
+1 	0 	0 	1 	0.7 	-0.2 	-0.1 	0.7 	0 	0 	0.7 	1 	0 	0 	0.7 	-0.2 	-0.1
+1 	0 	1 	1 	0.7 	-0.2 	-0.1 	0.7 	0 	-0.1 	0.6 	1 	0 	0 	0.7 	-0.2 	-0.1
+1 	1 	0 	1 	0.7 	-0.2 	-0.1 	0.7 	-0.2 	0 	0.5 	0 	1 	+0.1 	0.8 	-0.1 	-0.1
+1 	1 	1 	0 	0.8 	-0.1 	-0.1 	0.8 	-0.1 	-0.1 	0.6 	1 	-1 	-0.1 	0.7 	-0.2 	-0.2
+1 	0 	0 	1 	0.7 	-0.2 	-0.2 	0.7 	0 	0 	0.7 	1 	0 	0 	0.7 	-0.2 	-0.2
+1 	0 	1 	1 	0.7 	-0.2 	-0.2 	0.7 	0 	-0.2 	0.5 	0 	1 	+0.1 	0.8 	-0.2 	-0.1
+1 	1 	0 	1 	0.8 	-0.2 	-0.1 	0.8 	-0.2 	0 	0.6 	1 	0 	0 	0.8 	-0.2 	-0.1
+1 	1 	1 	0 	0.8 	-0.2 	-0.1 	0.8 	-0.2 	-0.1 	0.5 	0 	0 	0 	0.8 	-0.2 	-0.1
+1 	0 	0 	1 	0.8 	-0.2 	-0.1 	0.8 	0 	0 	0.8 	1 	0 	0 	0.8 	-0.2 	-0.1
+1 	0 	1 	1 	0.8 	-0.2 	-0.1 	0.8 	0 	-0.1 	0.7 	1 	0 	0 	0.8 	-0.2 	-0.1
+
+Este ejemplo se puede implementar en el siguiente código en Python.
+
+umbral = 0.5
+tasa_de_aprendizaje = 0.1
+pesos = [0, 0, 0]
+conjunto_de_entrenamiento = [((1, 0, 0), 1), ((1, 0, 1), 1), ((1, 1, 0), 1), ((1, 1, 1), 0)]
+ 
+def producto_punto(valores, pesos):
+    return sum(valor * pesos for valor, pesos in zip(valores, pesos))
+ 
+while True:
+    print('-' * 60)
+    contador_de_errores = 0
+    for vector_de_entrada, salida_deseada in conjunto_de_entrenamiento:
+        print(pesos)
+        resultado = producto_punto(vector_de_entrada, pesos) > umbral
+        error = salida_deseada - resultado
+        if error != 0:
+            contador_de_errores += 1
+            for indice, valor in enumerate(vector_de_entrada):
+                pesos[indice] += tasa_de_aprendizaje * error * valor
+    if contador_de_errores == 0:
+        break
+
+Referencias
+- Perceptrón Simple, Redes de Neuronas Artificiales, UC3M, RAI 2012.

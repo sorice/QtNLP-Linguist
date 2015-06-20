@@ -1,0 +1,188 @@
+Algoritmo de la colonia de hormigas
+
+En ciencias de la computación y en investigación operativa, el algoritmo de la colonia de hormigas, algoritmo hormiga u optimización por colonia de hormigas (Ant Colony Optimization, ACO) es una técnica probabilística para solucionar problemas computacionales que pueden reducirse a buscar los mejores caminos o rutas en grafos.
+
+Este algoritmo es un miembro de la familia de los algoritmos de colonia de hormigas, dentro de los métodos de inteligencia de enjambres. Inicialmente propuesto por Marco Dorigo en 1992 en su tesis de doctorado,1 2 el primer algoritmo surgió con el objetivo de buscar el camino óptimo en un grafo, basado en el comportamiento de las hormigas cuando estas están buscando un camino entre la colonia y una fuente de alimentos. La idea original se ha diversificado para resolver una amplia clase de problemas numéricos, y como resultado, han surgido gran cantidad de problemas nuevos, basándose en diversos aspectos del comportamiento de las hormigas.
+
+Descripción general
+
+Resumen
+
+En nuestro mundo natural, las hormigas (inicialmente) vagan de manera aleatoria, al azar, y una vez encontrada comida regresan a su colonia dejando un rastro de feromonas. Si otras hormigas encuentran dicho rastro, es probable que estas no sigan caminando aleatoriamente, puede que estas sigan el rastro de feromonas, regresando y reforzándolo si estas encuentran comida finalmente.
+
+Sin embargo, al paso del tiempo el rastro de feromonas comienza a evaporarse, reduciéndose así su fuerza de atracción. Cuanto más tiempo le tome a una hormiga viajar por el camino y regresar de vuelta otra vez, más tiempo tienen las feromonas para evaporarse. Un camino corto, en comparación, es marchado más frecuentemente, y por lo tanto la densidad de feromonas se hace más grande en caminos cortos que en los largos. La evaporación de feromonas también tiene la ventaja de evitar convergencias a óptimos locales. Si no hubiese evaporación en absoluto, los caminos elegidos por la primera hormiga tenderían a ser excesivamente atractivos para las siguientes hormigas. En este caso, el espacio de búsqueda de soluciones sería limitado.
+
+Por tanto, cuando una hormiga encuentra un buen camino entre la colonia y la fuente de comida, hay más posibilidades de que otras hormigas sigan este camino y con una retroalimentación positiva se conduce finalmente a todas las hormigas a un solo camino. La idea del algoritmo colonia de hormigas es imitar este comportamiento con "hormigas simulada" caminando a través de un grafo que representa el problema en cuestión.
+
+Detallado
+
+La idea original proviene de la observación de la explotación de los recursos alimentarios entre hormigas, en el que las habilidades cognitivas de las hormigas son individualmente limitadas y en conjunto son capaces de buscar el menor camino existente entre la fuente de comida y su nido o colonia.
+1. La primera hormiga encuentra la fuente de alimentos (F) a través de cualquier camino (a), entonces retorna a la colonia (N), dejando tras sí un rastro de feromonas;
+2. Las hormigas indiscriminadamente siguen cuatro caminos posibles, pero el fortalecimiento de la pista hace más atractivo la ruta más corta;
+3. Las hormigas toman la ruta más corta y largas porciones de otras rutas empiezan a perder su rastro de feromonas.
+
+En una seria de experimentos en una colonia de hormigas donde existe la elección de dos rutas de distancias diferentes que llevan hasta la fuente de comida, los biólogos observaron que las hormigas tienden a usar la ruta más corta.3 4 El siguiente modelo explica este comportamiento:
+1. Una hormiga (llamada “blitz”) vaga de manera aleatoria alrededor de la colonia.
+2. Si esta encuentra una fuente de comida, retorna a la colonia de manera más o menos directa, dejando tras sí un rastro de feromonas.
+3. Estas feromonas son atractivas, las hormigas más cercanas se verán atraídas por ellas y seguirán su pista de manera más o menos directa.
+4. Regresando a la colonia estas hormigas habrán fortalecido dicha ruta.
+5. Si existen dos rutas para que lleguen a la misma fuente de alimentos entonces, en una misma cantidad de tiempo dado, la ruta más corta será recorrida por más hormigas que la ruta más larga.
+6. La ruta más corta habrá aumentado en cantidad de feromonas y por tanto empezará a ser más atractiva.
+7. La ruta más larga irá desapareciendo debido a que las feromonas son volátiles.
+8. Finalmente, todas las hormigas habrán determinado y escogido el camino más corto.
+
+Las hormigas utilizan el entorno como medio de comunicación. Intercambian información de manera indirecta depositando feromonas en su trayectoria, detallando el estado de su trabajo. La información intercambiada tiene un ambiente local, solamente una hormiga ubicada cerca de donde las feromonas fueron depositadas va a tener una noción de estas. Este sistema es llamado "Estigmergia (Stigmergy)" y ocurre en muchas sociedades de animales (este sistema ha sido estudiado en el caso de la construcción de los pilares en los nidos de termitas). El mecanismo para resolver un problema demasiado complejo para ser abordado por hormigas solamente es un buen ejemplo de un sistema auto-organizado. Este sistema es basado en la retroalimentación positiva (el depósito de feromonas atrae otras hormigas y estas fortalecerán dicha retroalimentación) y la retroalimentación negativa (disipación de la ruta por evaporación). Teóricamente, si la cantidad de feromonas fue la misma en todas las rutas durante todo el tiempo, ninguna ruta fue elegida. Sin embargo, debido a la retroalimentación, una ligera variación en una arista amplificará y entonces se permitirá elegir una ruta. El algoritmo se moverá de un estado inestable en el que ninguna arista es más fuerte que otra, a un estado estable donde una ruta está compuesta por las aristas más fuertes.
+
+La filosofía básica del algoritmo implica el movimiento de una colonia de hormigas a través de los diferentes estados del problema influenciado por dos políticas de decisión a nivel local, rutas y atracción. De esta manera, cada hormiga incrementalmente construye una solución del problema. Cuando una hormiga completa una solución, o durante la fase de construcción, las hormigas evalúan la solución y modifican el valor de la ruta sobre las componentes utilizadas en la solución. Esta información de feromonas dirigirá la búsqueda de futuras hormigas. Además el algoritmo incluye dos mecanismos más, evaporación del rastro y acciones daemon. La evaporación del rastro reduce todos los valores de los rastros evitando la posibilidad de caer en óptimos locales. Las acciones daemon son usadas para desviar el proceso de búsqueda de una perspectiva local.
+
+Extensiones Comunes
+
+Estas son algunas de las variaciones más populares de los algoritmos de colonia de hormigas (ACO Algorithms).
+
+Sistema Elitista de Hormigas
+
+La mejor solución global deposita feromonas en cada iteración junto con todas las otras hormigas.
+
+Max-Min Sistema de Hormigas (MMAS)
+
+Agregada la cantidad máxima y mínima de feromonas [tmax,tmin] Solamente la mejor iteración deposita feromonas. Todas las aristas son inicializadas con tmax y re-inicializadas con tmax cuando se acerca a un estancamiento. 5
+
+Sistema de Colonia de Hormigas
+
+Se ha presentado anteriormente.6
+
+Sistema de Hormigas Basado en Ranking (ASrank)
+
+Todas las soluciones se clasifican de acuerdo su longitud. La cantidad de feromonas depositadas es ponderada para cada solución, de tal manera que las soluciones con los caminos más cortos depositan más feromonas que las soluciones que con los caminos más largos.
+
+Colonia de Hormigas Ortogonal Continua (COAC)
+
+El mecanismo de depósito de feromonas de COAC es permitir a las hormigas la búsqueda de soluciones en conjunto y efectiva. Usando un método de diseño ortogonal, las hormigas en un dominio factible pueden explorar las regiones elegidas de una manera rápida y eficiente, con mayor capacidad de búsqueda global y precisión. 7
+
+Optimización de Colonia de Hormigas con Lógica Difusa
+
+Este método introduce inteligencia difusa dentro de las hormigas para acelerar las habilidades de búsqueda. 8
+
+Convergencia
+
+Para algunas variaciones del algoritmo, es posible demostrar que es convergente. La primera evidencia de la convergencia del algoritmo colonia de hormigas fue hecha en el año 2000, el algoritmo de sistema de hormigas basado en grafos, y por tanto los algoritmos para ACS y MMAS. Como muchas metaheurísticas, es bastante difícil estimar la velocidad teórica de convergencia. En el año 2004, Zlochin y sus colegas9 demostraron que los algoritmos de tipo COA podrían asimilar los métodos de descenso de gradiente estocástico, sobre la entropía cruzada y estimaciones de algoritmos de distribución.
+
+Pseudo-code y Fórmulas
+
+  procedure ACO_MetaHeuristic
+    while(not_termination)
+       generateSolutions()
+       daemonActions()
+       pheromoneUpdate()
+    end while
+  end procedure
+
+Selección de Aristas
+
+Una hormiga es un simple agente computacional en el algoritmo de optimización colonia de hormigas. Se construye iterativamente una solución para el problema en cuestión. Las soluciones intermedias se denominan estados solución. En cada iteración del algoritmo, cada hormiga se mueve de un estado x a un estado y, correspondiendo a una solución intermedia más completa. Por tanto, cada hormiga k computa un conjunto A_k(x) de expansiones factibles de su estado actual en cada iteración y se mueve a una de estas de manera probabilística. Para una hormiga k, la probabilidad p_{xy}^k de moverse de un estado x a un estado y depende de la combinación de dos valores , de el atractivo \eta_{xy} del movimiento, computado por alguna heurística que indica a priori la conveniencia de dicho movimiento y el nivel de rastro \tau_{xy} del movimiento, indicando que tan competente ha sido en el pasado este en particular movimiento.
+
+El nivel de rastro representa a posteriori una indicación de la conveniencia de ese movimiento. Los rastros son actualizados por lo general cuando todas las hormigas han completado su solución, aumentando o disminuyendo los niveles de los rastros de los movimientos correspondientes que fueron partes de "buenas" o "malas" soluciones respectivamente.
+
+En general, la kth hormiga se mueve del estado x al estado y con probabilidad
+
+p_{xy}^k = \frac { (\tau_{xy}^{\alpha}) (\eta_{xy}^{\beta}) } { \sum (\tau_{xy}^{\alpha}) (\eta_{xy}^{\beta}) }
+
+donde
+
+\tau_{xy} es la cantidad de feromonas depositadas en la transición del estado x a y, 0 ≤ \alpha es un parámetro para controlar la influencia de \tau_{xy}, \eta_{xy} es la conveniencia del estado de transición xy (un conocimiento a priori , típicamente 1/d_{xy}, donde d es la distancia) and \beta ≥ 1 es un parámetro para controlar la influencia de \eta_{xy}.
+
+Actualización de Feromonas
+
+Cuando todas las hormigas han completado un solución, los rastros son actualizados por \tau_{xy} \leftarrow (1-\rho)\tau_{xy} + \sum_{k}\Delta \tau^{k}_{xy}
+
+donde
+
+\tau_{xy} es la cantidad de feromonas depositadas para un estado de transiciónxy, \rho es el coeficiente de evaporación de feromonas y \Delta \tau^{k}_{xy} es la cantidad de feromonas depositadas por la kth hormiga, típicamente dado para el Problema del Viajante (con movimientos correspondientes a los arcos del grafo) por \Delta \tau^{k}_{xy} = \begin{cases} Q/L_k & \mbox{if ant }k\mbox{ uses curve }xy\mbox{ in its tour} \\ 0 & \mbox{otherwise} \end{cases}
+
+donde L_k es el costo de la ruta de la kth hormiga (en la mayoría de los casos es la longitud) y Q es una constante.
+
+Aplicaciones
+
+Los algoritmos de optimización de colonias de hormigas son aplicados en muchos algoritmos de optimización combinatorios. Muchos métodos derivados han sido adaptados a problemas dinámicos en variables reales, problemas estocásticos, programación paralela y multi-objetivo. Incluso han sido usados para producir soluciones bastante cercanas a las soluciones óptimas del problema del viajante. Ellos tienen una ventaja sobre los enfoques: recocido simulado y los algoritmos genéticos en problemas similares cuando el grafo puede cambiar su estructura de manera dinámica, el algoritmo de colonia de hormigas puede seguir corriendo continuamente y adaptar los cambios en tiempo real. Esto es de interés en los campos de enrutamiento de redes y en los sistemas de transportes urbanos.
+
+El primer algoritmo de colonia de hormigas, llamado Ant System10 , tenía como objetivo resolver el problema del viajante, que consiste en encontrar el camino hamiltoniano más corto en un grafo completo. El algoritmo general es relativamente simple y está basado en un conjunto de hormigas, cada una haciendo una posible ruta entre las ciudades. En cada estado las hormigas eligen moverse de una ciudad a otra teniendo en cuenta las siguientes reglas:
+1. Debe visitar cada ciudad exactamente una vez;
+2. Una ciudad distante tiene menor posibilidad de ser elegida (Visibilidad);
+3. Cuanto más intenso es el rastro de feromonas de una arista entre dos ciudades, mayor es la probabilidad de que esa arista sea elegida;
+4. Después de haber completado su recorrido, la hormiga deposita más feromonas en todas las aristas, si la distancia es pequeña;
+5. Después de cada iteración, algunas feromonas son evaporadas.
+
+Los usos del algoritmo se utilizan para máquinas de aprendizaje y para problemas con una gran cantidad de datos. Por ejemplo, se ha estudiado crear un modelo del mantenimiento del cementerio donde las hormigas arraciman los cadáveres de sus semejantes.
+
+Esto se ha adaptado a la tarea de supervisión de las máquinas de aprendizaje, encargadas de agrupar los grupos de objetos que son similares. De hecho se han demostrado que tales formas modificadas de algoritmos dan un funcionamiento y una exactitud mejores que los métodos clásicos tales como el bien conocido k-means.
+
+Un ejemplo de aplicación de este tipo de algoritmos es la optimización de estructuras de hormigón armado, en especial, pilas de puentes 11
+
+Algoritmos Stigmergy
+
+En la práctica una gran cantidad de algoritmos se dicen llamar "algoritmos de colonia de hormigas", sin compartir ni siquiera el framework de optimización de colonias de hormigas canónicas (COA). En la práctica, el hecho de intercambiar información entre hormigas mediante el entorno (un principio llamado "Stigmergy") se considera suficiente para que un algoritmo pertenezca a la clase de algoritmos de colonia de hormigas. Este principio ha llevado a algunos a autores a crear el término "valor" para organizar los métodos y el comportamiento basado en la búsqueda de alimentos, clasificación de larvas, división del trabajo y en el transporte cooperativo.12
+
+Métodos Relacionados
+- Algoritmos genéticos (GA) mantienen un grupo de soluciones en vez de tener siempre una. El proceso de encontrar soluciones superiores imita al proceso de evolución, las soluciones existentes son combinadas o mutas con el objetivo de tener un nuevo grupo de soluciones, las soluciones que no aportan nada al proceso evolutivo se descartan, estas son soluciones de calidad inferior.
+- Recocido Simulado (SA) es una técnica relacionada con la optimización global que atraviesa el espacio de búsqueda mediante la generación de soluciones vecinas de la solución actual. Un vecino superior siempre es tomado y uno inferior es tomado de manera probabilística basado en las diferencias de calidad y un parámetro de temperatura. El parámetro de temperatura es modificado en medida del progreso del algoritmo para alterar la naturaleza de la búsqueda.
+- Búsqueda tabú (TS) es similar a recocido simulado, en ambos se atraviesa el espacio de solución probando con mutaciones de una solución individual. Mientras recocido simulado se queda solamente con una mutación, búsqueda tabú genera muchas mutaciones y se mueve a la solución de menor ganancia de las generadas. Para prevenir ciclos se crea y se mantiene una lista tabú con soluciones parciales o completas. Está prohibido pasar a una solución que contiene elementos en la lista tabú, la cual se actualiza en medida de que el algoritmo recorre el espacio de soluciones.
+- Sistema Inmune Artificial (AIS) algoritmos basado en el modelo de los sistemas inmunológicos de los vertebrados.
+- Enjambre de Partículas (PSO), método de Inteligencia de Enjambres.
+
+Historia
+
+Cronología de los algoritmos de optimización de colonias de hormigas.
+- 1959, Pierre-Paul Grassé inventó la teoría de Stigmergy para explicar el comportamiento de nidificación en las termitas;13
+- 1983,Deneubourg y sus colegas estudiaron el comportamiento colectivo de las hormigas,;14
+- 1989, el trabajo de Goss, Aron, Deneubourg y Pasteels sobre el comportamiento colectivo de las hormigas argentinas, que dará la idea de los algoritmos de optimización de colonias de hormigas3
+- 1991, M. Dorigo propone Ant System en su tesis doctoral (que se publicó en 19922 ). Un informe técnico extraído de la tesis y co-escrito por V. Maniezzo y Colorni A.15 fue publicado cinco años después;10
+- 1996, Publicación del artículo sobre Ant System;10
+- 1996, Hoos and Stützle intventaron MAX-MIN Ant System;5
+- 1997, Dorigo y Gambardella publicaron Ant Colony System;6
+- 1997, Schoonderwoerd y sus colegas desarrollaron la primera aplicación desarrollaron la primera aplicación para redes de telecomunicaciones;16
+- 1998, Dorigo lanza la primer conferencia dedicada a los algoritmos de Colonias de Hormigas;17
+- 1998, Stützle propone implementaciones en paralelo;18
+- 1999, Bonabeau, Dorigo and Theraulaz publican el libro que trata principalmente de las hormigas artificiales19
+- 2000, número especial de la revista Future Generation Computer Systems sobre los algoritmos de colonia de hormigas20
+- 2000, Gutjahr proporciona la primera evidencia de convergencia de un algoritmo de colonias de hormigas21
+- 2001, el primer uso de algoritmos de optimización de colonias de hormigas por las empresas (Eurobios y AntOptima);
+- 2001, Iredi y sus colegas publicaron el primer algoritmo multi-objetivo22
+- 2002, Bianchi and sus colegas sugieren el primer algoritmo para problemas estocásticos;23
+
+Referencias
+- A. Colorni, M. Dorigo et V. Maniezzo, Distributed Optimization by Ant Colonies, actes de la première conférence européenne sur la vie artificielle, Paris, France, Elsevier Publishing, 134-142, 1991.
+- M. Dorigo, Optimization, Learning and Natural Algorithms, PhD thesis, Politecnico di Milano, Italie, 1992.
+- S. Goss, S. Aron, J.-L. Deneubourg et J.-M. Pasteels, Self-organized shortcuts in the Argentine ant, Naturwissenschaften, volume 76, pages 579-581, 1989
+- J.-L. Deneubourg, S. Aron, S. Goss et J.-M. Pasteels, The self-organizing exploratory pattern of the Argentine ant, Journal of Insect Behavior, volume 3, page 159, 1990
+- T. Stützle et H.H. Hoos, MAX MIN Ant System, Future Generation Computer Systems, volume 16, pages 889-914, 2000
+- M. Dorigo et L.M. Gambardella, Ant Colony System : A Cooperative Learning Approach to the Traveling Salesman Problem, IEEE Transactions on Evolutionary Computation, volume 1, numéro 1, pages 53-66, 1997.
+- X Hu, J Zhang, and Y Li (2008). Orthogonal methods based ant colony search for solving continuous optimization problems. Journal of Computer Science and Technology, 23(1), pp.2-18.
+- Aloysius George, B. R. Rajakumar, Fuzzy Aided Ant Colony Optimization Algorithm to Solve Optimization Problem, Intelligent Informatics, Advances in Intelligent Systems and Computing, volume 182, pages 207-215.
+- M. Zlochin, M. Birattari, N. Meuleau, et M. Dorigo, Model-based search for combinatorial optimization: A critical survey, Annals of Operations Research, vol. 131, pp. 373-395, 2004.
+- M. Dorigo, V. Maniezzo, et A. Colorni, Ant system: optimization by a colony of cooperating agents, IEEE Transactions on Systems, Man, and Cybernetics--Part B , volume 26, numéro 1, pages 29-41, 1996.
+- Martínez F.J., González-Vidosa F., Hospitaler A. and Yepes V. (2010) "Heuristic optimization of RC bridge piers with rectangular hollow sections". Computers & Structures, 88:375-386.
+- A. Ajith; G. Crina; R. Vitorino (éditeurs), Stigmergic Optimization, Studies in Computational Intelligence , volume 31, 299 pages, 2006. ISBN 978-3-540-34689-0
+- P.-P. Grassé, La reconstruction du nid et les coordinations inter-individuelles chez Belicositermes natalensis et Cubitermes sp. La théorie de la Stigmergie : Essai d’interprétation du comportement des termites constructeurs, Insectes Sociaux, numéro 6, p. 41-80, 1959.
+- J.L. Denebourg, J.M. Pasteels et J.C. Verhaeghe, Probabilistic Behaviour in Ants : a Strategy of Errors?, Journal of Theoretical Biology, numéro 105, 1983.
+- Dorigo M., V. Maniezzo et A. Colorni, Positive feedback as a search strategy, rapport technique numéro 91-016, Dip. Elettronica, Politecnico di Milano, Italy, 1991
+- R. Schoonderwoerd, O. Holland, J. Bruten et L. Rothkrantz, Ant-based load balancing in telecommunication networks, Adaptive Behaviour, volume 5, numéro 2, pages 169-207, 1997
+- M. Dorigo, ANTS’ 98, From Ant Colonies to Artificial Ants : First International Workshop on Ant Colony Optimization, ANTS 98, Bruxelles, Belgique, octobre 1998.
+- T. Stützle, Parallelization Strategies for Ant Colony Optimization, Proceedings of PPSN-V, Fifth International Conference on Parallel Problem Solving from Nature, Springer-Verlag, volume 1498, pages 722-731, 1998.
+- É. Bonabeau, M. Dorigo et G. Theraulaz, Swarm intelligence, Oxford University Press, 1999.
+- M. Dorigo , G. Di Caro et T. Stützle, Special issue on "Ant Algorithms", Future Generation Computer Systems, volume 16, numéro 8, 2000
+- W.J. Gutjahr, A graph-based Ant System and its convergence, Future Generation Computer Systems, volume 16, pages 873-888, 2000.
+- S. Iredi, D. Merkle et M. Middendorf, Bi-Criterion Optimization with Multi Colony Ant Algorithms, Evolutionary Multi-Criterion Optimization, First International Conference (EMO’01), Zurich, Springer Verlag, pages 359-372, 2001.
+- L. Bianchi, L.M. Gambardella et M.Dorigo, An ant colony optimization approach to the probabilistic traveling salesman problem, PPSN-VII, Seventh International Conference on Parallel Problem Solving from Nature, Lecture Notes in Computer Science, Springer Verlag, Berlin, Allemagne, 2002.
+
+Publicaciones (seleccionadas)
+- M. Dorigo, 1992. Optimization, Learning and Natural Algorithms, PhD thesis, Politecnico di Milano, Italy.
+- M. Dorigo, V. Maniezzo & A. Colorni, 1996. "Ant System: Optimization by a Colony of Cooperating Agents", IEEE Transactions on Systems, Man, and Cybernetics–Part B, 26 (1): 29–41.
+- M. Dorigo & L. M. Gambardella, 1997. "Ant Colony System: A Cooperative Learning Approach to the Traveling Salesman Problem". IEEE Transactions on Evolutionary Computation, 1 (1): 53–66.
+- M. Dorigo, G. Di Caro & L. M. Gambardella, 1999. "Ant Algorithms for Discrete Optimization". Artificial Life, 5 (2): 137–172.
+- E. Bonabeau, M. Dorigo et G. Theraulaz, 1999. Swarm Intelligence: From Natural to Artificial Systems, Oxford University Press. ISBN 0-19-513159-2
+- M. Dorigo & T. Stützle, 2004. Ant Colony Optimization, MIT Press. ISBN 0-262-04219-3
+- M. Dorigo, 2007. "Ant Colony Optimization". Scholarpedia.
+- C. Blum, 2005 "Ant colony optimization: Introduction and recent trends". Physics of Life Reviews, 2: 353-373
+- M. Dorigo, M. Birattari & T. Stützle, 2006 Ant Colony Optimization: Artificial Ants as a Computational Intelligence Technique. TR/IRIDIA/2006-023
+- Mohd Murtadha Mohamad,"Articulated Robots Motion Planning Using Foraging Ant Strategy",Journal of Information Technology - Special Issues in Arti?cial Intelligence, Vol.20, No. 4 pp. 163–181, December 2008, ISSN0128-3790.
+- N. Monmarché, F. Guinand & P. Siarry (eds), "Artificial Ants", August 2010 Hardback 576 pp. ISBN 978-1-84821-194-0.

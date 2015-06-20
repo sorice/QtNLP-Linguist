@@ -1,0 +1,31 @@
+Oracle Database
+
+Oracle Database es un sistema de gestión de base de datos objeto-relacional (u ORDBMS por el acrónimo en inglés de Object-Relational Data Base Management System), desarrollado por Oracle Corporation.
+
+Se considera a Oracle Database como uno de los sistemas de bases de datos más completos, destacando:
+- soporte de transacciones.
+- estabilidad.
+- escalabilidad.
+- soporte multiplataforma.
+
+Su dominio en el mercado de servidores empresariales ha sido casi total hasta hace poco; recientemente sufre la competencia del Microsoft SQL Server de Microsoft y de la oferta de otros RDBMS con licencia libre como PostgreSQL, MySQL o Firebird. Las últimas versiones de Oracle han sido certificadas para poder trabajar bajo GNU/Linux.
+
+Historia
+
+Oracle surge en 1977 bajo el nombre de SDL (Software Development Laboratories ); luego, en 1979, SDL cambia su nombre por Relational Software, Inc. (RSI). La fundación de Software Development Laboratories (SDL) fue motivada principalmente a partir de un estudio sobre los SGBD (Sistemas Gestores de Base de Datos) de George Koch. Computer World definió este estudio como uno de los más completos jamás escritos sobre bases de datos. Este artículo incluía una comparativa de productos que erigía a Relational Software como el más completo desde el punto de vista técnico. Esto se debía a que usaba la filosofía de las bases de datos relacionales, algo que por aquella época era todavía desconocido.
+
+En la actualidad, Oracle (Nasdaq: ORCL) todavía encabeza la lista. La tecnología Oracle se encuentra prácticamente en todas las industrias alrededor del mundo y en las oficinas de 98 de las 100 empresas Fortune 100. Oracle es la primera compañía de software que desarrolla e implementa software para empresas 100 por ciento activado por Internet a través de toda su línea de productos: base de datos, aplicaciones comerciales y herramientas de desarrollo de aplicaciones y soporte de decisiones. Oracle es el proveedor mundial líder de software para administración de información, y la segunda empresa de software.
+
+Oracle, a partir de la versión 10g Release 2, cuenta con 7 ediciones:
+- Oracle Database Enterprise Edition (EE).
+- Oracle Database Standard Edition (SE).
+- Oracle Database Standard Edition One (SE1).
+- Oracle Database Express Edition (XE).
+- Oracle Database Personal Edition (PE).
+- Oracle Database Lite Edition (LE).
+
+La única edición gratuita es la Express Edition, que es compatible con las demás ediciones de Oracle Database 10gR2 y Oracle Database 11g.
+
+Recientemente, Oracle adquirió Sun Microsystems y con ella la empresa encargada comercial de MySQL.
+
+La última versión de Oracle es la versión 11g, liberada en el mes de julio de 2012, es un RDBMS portable ya que se puede instalar en los sistemas operativos y tiene la capacidad de BDD es alta ya que soporta hasta 4 peta bytes de información.

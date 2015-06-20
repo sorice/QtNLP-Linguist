@@ -1,0 +1,15 @@
+Bot
+
+Un bot (aféresis de robot) es un programa informático, imitando el comportamiento de un humano. En sitios wiki, como Wikipedia (véase "Wikipedia:Bot"), un bot puede realizar funciones rutinarias de edición. En otros sitios, como Youtube, el bot puede responder a cuestiones sobre el propio contenido del sitio (bots conversacionales).
+
+En sitios de chat en línea (IRC o MSN), algunos bots fueron utilizados para simular una persona, intentando hacer creer al "ciberinterlocutor" que chateaban con una persona real. Es por ello que, aquellos sitios que hacen un uso positivo de los bots, como Wikipedia o Encarta, tienen reglas muy estrictas para su uso. En el pasado, la propia Wikipedia fue víctima de bots maliciosos creados para vandalizar de forma masiva los artículos (véase vandalbots).
+
+En el ambiente de los videojuegos, se conoce como bot a programas que son capaces de jugar por sí mismos el juego en cuestión (también conocidos como borgs). La calidad del bot en este caso viene determinada por su capacidad de vencer (y en qué términos) el videojuego. Los bots para juegos CRPG (computer role-playing games) son particularmente conocidos ya que este tipo de aplicaciones requieren una gran capacidad de estrategia para ganarlos. Es muy habitual también usar este término en los juegos denominados 'shooters', en los que sustituyen a un jugador humano cuando no hay contrincantes disponibles o en juego offline.
+
+Asimismo, otros bots pueden abrir cuentas en sitios de correo electrónico gratuito, por lo que ahora la mayoría de esos sitios cuenta con un paso adicional en el que el usuario debe escribir una palabra presentada en formato gráfico algo muy difícil de interpretar para un bot.
+
+La palabra bot es parte de la jerga informática y no es seguro si será sustituida por una equivalente en español, se incorporará al idioma, o se usará la palabra original de la cual procede, robot.
+
+Es importante distinguir que bot es una definición funcional, y no hace diferencias en cuanto a su implementación. Un bot puede estar diseñado en cualquier lenguaje de programación, funcionar en un servidor o en un cliente, o ser un agente móvil, etc.
+
+A veces son llamados Sistemas Expertos pues muchos se especializan en una función específica.

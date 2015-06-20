@@ -1,0 +1,147 @@
+Repositorio
+
+Un repositorio, depósito o archivo es un sitio centralizado donde se almacena y mantiene información digital, habitualmente bases de datos o archivos informáticos.
+
+Etimología
+
+El origen de la palabra española «repositorio» deriva del latín «repositorium», que significa armario o alacena. Este término está recogido en el Diccionario de la Real Academia donde se define como el «lugar donde se guarda algo».
+
+Características generales
+
+Los datos almacenados en un repositorio pueden distribuirse a través de una red informática, como Internet, o de un medio físico, como un disco compacto. Pueden ser de acceso público o estar protegidos y necesitar de una autentificación previa. Los repositorios más conocidos son los de carácter académico e institucional. Los repositorios suelen contar con sistemas de respaldo y mantenimiento preventivo y correctivo, lo que hace que la información se pueda recuperar en el caso que la máquina quede inutilizable. A esto se lo conoce como preservación digital,1 y requiere un exhaustivo trabajo de control de calidad e integridad para realizarse correctamente.2
+
+Depositar no debe confundirse con publicar. El depósito en los repositorios es una manera de comunicar públicamente los trabajos de los investigadores, aumentando su difusión: los autores ponen disponibles en acceso abierto una versión de los artículos que han publicado en revistas, tradicionales o de acceso abierto.[cita requerida] Para ello, los sistemas de repositorios suelen integrarse e interoperar con otros sistemas y aplicaciones web.3 4 Asimismo, los repositorios cumplen un rol importante en la formación universitaria.5
+
+Algunas instituciones promueven el uso de sus repositorios como un servicio adicional para el investigador. Otras instituciones poseen mandatos propios que obligan a los autores o investigadores a depositar sus publicaciones (o determinados tipos, como por ej. tesis doctorales) en el repositorio institucional, con fines de visibilidad, impacto y preservación.6 En algunos países, como por ejemplo Argentina, se han promulgado leyes de acceso abierto que promueven la implementación y uso de los repositorios de instituciones sustentadas con fondos públicos,7 mientras que otros países están trabajando en la aprobación de leyes similares, como por ejemplo México.8
+
+Software
+
+La elección del software es una cuestión crucial para la implementación de un depósito de objetos digitales. Existen distintos modelos de tecnología según su origen y forma de adquisición: gratuito o comercial, software propietario o de código abierto, modelo de servicio de software. En cualquier caso, deben cumplir con los siguientes requisitos:
+- Apoyo a los diferentes formatos de archivo, escalabilidad, extensibilidad y mantenimiento del sistema.
+- Aceptación de estándares de metadatos, descriptivos, de conservación, administrativos.
+- Interoperatividad: cumplir con los principales protocolos de intercambio de registros de información ( OAI-PMH, Z39.50 ).
+- Localización permanente de los documentos, mediante la incorporación de identificadores persistentes de objetos digitales como DOI, Handle.
+- Aplicaciones de búsqueda y visualización de metadatos.
+- Interfaz de búsqueda a texto completo.
+- Autenticación y autorización de usuarios.
+- Personalización del software (API).
+
+Algunos de los productos más conocidos de software para repositorios institucionales son:
+- Bepress9 (software comercial, pago de licencia y honorarios de suscripción).
+- CONTENTdm10 (software comercial, desarrollado por la OCLC).
+- DSpace (software gratuito, de código abierto desarrollado por el MIT y Hewlett Packard Labs).
+- Eprints11 (gratuito, de código abierto desarrollado por la University of Southampton).
+- Greenstone ( software gratuito y multilingüe de código abierto, bajo licencia según el GNU General Public Licence).
+- Open Repository12 (software comercial, servicio de establecimiento y mantenimiento desarrollado por BioMed Central).
+
+Marco legal
+
+Las obras incluidas en un repositorio deben cumplir con las leyes vigentes sobre los derechos que los creadores tienen de su obra. Se consideran dos tipos de derechos: morales y patrimoniales. Los derechos morales son permanentes, irrenunciables, inexpropiables y no prescriben. Los derechos patrimoniales o de copyright son económicos, transferibles y de duración limitada en el tiempo. Los derechos patrimoniales, generalmente, son de explotación. Este derecho, suele cederse a terceros mediante la firma de un contrato. La cesión total o parcial de este derecho puede ser de cuatro tipos: reproducción, distribución, comunicación pública y transformación. Las instituciones académicas tienen que articular las condiciones legales de los repositorios contemplando los derechos de explotación, de depósito y de acceso a los contenidos. Estos aspectos pueden estar afectados por las cesiones de derechos de explotación que los investigadores han aceptado en los contratos editoriales.
+
+Muchos autores ceden todos los derechos a las editoriales que publican sus trabajos. Esto significa que éste pierde la propiedad de explotación hasta la conclusión del contrato firmado (excepcionalmente el autor podría utilizarlo con fines didácticos o para uso personal). Las consecuencias de esta cesión exclusiva son múltiples y afectan de modo considerable a la publicación, distribución y usos de los trabajos. Hay opciones contractuales alternativas a la cesión exclusiva, como son la cesión parcial (en la que se establecen unos derechos para el autor y otros -como la publicación o la distribución-, para el editor) o la no cesión (en la que el autor retiene el copyright pero otorga al editor el permiso, mediante licencia, para publicar la obra).
+
+Entre las diferentes alternativas a la cesión total y exclusiva de los derechos de explotación de una obra se encuentran las siguientes:
+- Publicación en revistas de acceso abierto (un listado exhaustivo se encuentra en DOAJ).
+- Publicación en revistas de suscripción que permiten el auto-archivo en repositorios abiertos.
+- Publicación en revistas de suscripción que no exigen una cesión exclusiva.
+- Enmienda de la licencia del editor.
+- Optar por una licencia alternativa (por ejemplo Creative Commons, Licencias abiertas Colorluris,13 Open Data Commons14 ).
+
+Repositorios científicos
+
+Unión Europea
+
+PubMed Central: Se trata de un repositorio temático con un enorme éxito lo cual ha dado pie a que se haya creado una red llamada PMI International con el objeto de establecer archivos abiertos en colaboración con instituciones locales de cada país. Se encuentra especializado en Medicina. Se ha convertido en una fuente de referencia para investigadores de todo el mundo.
+
+DSpace@Cambridge: Se trata de un servicio de la Universidad de Cambrigde gestionado por la biblioteca y el servicio de informática. Ofrece artículos, tesis, informes técnicos en diferentes formatos. Su objetivo es preservar y difundir los materiales digitales creados por personas vinculadas o no a la universidad.
+
+Repositorios Internacionales
+
+Social Science Research Network (SSRN): Se trata de un repositorio online de investigación académica dentro de las Ciencias Sociales y Humanidades. Permite compartir de una forma rápida y eficaz los trabajos entre autores y lectores. Su objetivo es difundir  la investigación en Ciencias Sociales.
+
+AQUATIC COMMONS: se trata de un repositorio digital que cubre temas ambientes marinos naturales, estuarios de agua salobre y de agua fresca. Incluye todos los aspectos de la ciencia, tecnología, administración y conservación de estos ambientes, sus organismos y recursos, y los aspectos económicos, sociológicos y legales.
+
+América Latina
+
+Red de repositorios latinoamericanos
+
+Esta red15 tiene como objetivo proporcionar una herramienta de fácil acceso a las publicaciones electrónicas en texto completo en diferentes repositorios latinoamericanos. Permite realizar búsquedas simultáneas a través de una sola interfaz, en 75 universidades de Argentina, Brasil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, Guyana, Honduras, México, Perú, Puerto Rico, Trinidad y Tobago y Uruguay.
+
+Argentina
+
+SeDiCI
+
+SeDiCI es el repositorio Institucional de la Universidad Nacional de La Plata. El repositorio se creó en el 2003 para albergar, preservar y difundir, a través de su sitio web, las creaciones y producciones intelectuales, científicas y artísticas de los diversos actores de la universidad (alumnos, profesores e investigadores). Dado que SeDICI se adhiere a las políticas de acceso abierto, todo su acervo está disponible de forma libre y gratuita, contando en su gran mayoría con los documentos a texto completo. En el repositorio se incluyen: libros, ebooks, artículos, tesis, tesinas, obras artísticas, revistas, reseñas y documentos legales, entre otros.
+
+Chile
+
+Captura
+
+Es el repositorio de la Universidad de Chile que ofrece acceso abierto a las publicaciones de los académicos e investigadores.16
+
+Colombia
+
+Son accesibles los repositorios de la Universidad Nacional de Colombia (Repositorio UNAL) y de la Universidad Industrial de Santander (RIUIS). Ambos ofrecen información académica y científica producida en su ámbito: tesis de grado, posgrado e investigaciones originales. La información es gratuita y se obtiene en formato pdf.
+
+Ecuador
+
+ESPE
+
+El repositorio digital de la Escuela Politécnica del Ejército contiene información y contenido digital orientado a fortalecer la investigación científica y el desarrollo profesional tanto para docentes como para estudiantes. Dispone de bases de datos digitales con gran contenido de información y documentos producidos en la misma universidad, como proyectos de tesis o publicaciones de los docentes, para que sirvan de referente a futuros proyectos y artículos. El repositorio ESPE se creó en 2011.
+
+España
+
+Acceda
+
+Acceda es el repositorio digital de la Universidad de Las Palmas de Gran Canaria (ULPGC) basado en la tecnología DSpace. Fue creado en octubre de 2009 por la Biblioteca universitaria para recoger la producción científica, en abierto, generada por la comunidad de la ULPGC: docentes, investigadores, estudiantes y personal de administración y servicios. Acceda17 es una plataforma OAI-PMH que sigue las especificaciones Open AIRE, Hispana y Driver y las políticas de Acceso abierto. También incluye la aplicación BUStreaming que convierte los vídeos y audios a Flash y los ofrece en streaming y cuenta con un sistema de auto publicación18 . En 2014, superaba los 8000 documentos19 entre tesis, trabajos de grado y postgrado, revistas y material didáctico para la investigación.
+
+Digital.CSIC
+
+Digital.CSIC es un repositorio científico multidisciplinar de documentos digitales que recoge los resultados de la labor investigadora realizada en todos y cada uno de los centros e institutos del Centro Superior de Investigaciones Científicas (CSIC) y otras instituciones, en acceso abierto. Digital.CSIC se creó en 2006 como resultado de la firma de la Declaración de Berlín por parte de la Presidencia del CSIC mediante la que el CSIC se comprometió a difundir la investigación de su comunidad científica en acceso abierto.20
+
+Hispana
+
+Hispana reúne las colecciones digitales de archivos, bibliotecas y museos ajustadas a la Iniciativa de Archivos Abiertos promovida por la Unión Europea. Además, agrega contenidos a las bases de datos de colecciones digitales. Entre estas colecciones destacan los repositorios institucionales de las universidades españolas y las bibliotecas digitales de las Comunidades Autónomas que ofrecen acceso a diversos materiales como libros impresos, fotografías, etc.21
+
+Recyt
+
+Se trata de una plataforma donde se encuentran revistas científicas españolas de calidad. Cuenta con una parte pública y una parte privada donde se pueden revisar y editar artículos y publicaciones científicas.22
+
+Recolecta
+
+Recolecta es una plataforma creada y administrada por la Fundación Española para la Ciencia y la Tecnología (FECYT) que permite el acceso libre y gratuito a toda la producción científica depositada en los repositorios españoles.23
+
+Venezuela
+
+Algunas universidades venezolanas disponen de repositorios institucionales, tales como la Universidad Simón Bolívar (USB), disponible desde 2011 a través de Esopo, la Universidad de los Andes (Saber ULA) y la Universidad Central de Venezuela (Saber UCV).
+
+Notas y referencias
+
+- De Giusti, Marisa Raquel; Lira, Ariel Jorge; Villarreal, Gonzalo Luján; Texier, José (noviembre 2012). «Las actividades y el planeamiento de la preservación en un repositorio institucional». BIREDIAL - Conferencia Internacional Acceso Abierto, Comunicación Científica y Preservación Digital. Consultado el 7 de mayo de 2014.
+- De Giusti, Marisa Raquel; Oviedo, Néstor Fabián; Lira, Ariel Jorge; Villarreal, Gonzalo Luján (17 de octubre de 2013). «Control de integridad y calidad en repositorios DSpace». III Conferencia de Bibliotecas y Repositorios Digitales de América Latina (BIREDIAL) y VIII Simposio Internacional de Bibliotecas Digitales (SIBD) (Costa Rica, 2013):  pp. 14. Consultado el 7 de mayo de 2014.
+- De Giusti, Marisa Raquel; Lira, Ariel Jorge; Villarreal, Gonzalo Luján; Terruzzi, Franco Agustín (2013). Infraestructura interoperable alrededor del repositorio institucional SEDICI. Consultado el 7 de mayo de 2014.
+- De Giusti, Marisa Raquel; Marmonti, Emiliano Horacio; Vila, Maria Marta; Sobrado, Ariel; Villarreal, Gonzalo (2006). «Tecnologías para propagar los contenidos de una Biblioteca Digital». IV Simposio Internacional de Bibliotecas Digitales:  pp. 18.
+- Texier, José; De Giusti, Marisa Raquel; Oviedo, Néstor; Villarreal, Gonzalo Luján; Lira, Ariel Jorge (18 de octubre de 2012). «El uso de repositorios y su importancia para la educación en Ingeniería». World Engineering Education Forum (WEEF 2012) "Educación en Ingeniería para el Desarrollo Sostenible y la inclusión social":  pp. 10. ISSN 978-987-1896-03-5. Consultado el 7 de mayo de 2014.
+- Universidad Nacional de La Plata (2011). Resolución no. 78/11. Consultado el 7 de mayo de 2014.
+- SEDICI (14 de noviembre de 2013). «La Ley de Acceso Abierto a la Información Científica ya es una realidad» (en es). Consultado el 7 de mayo de 2014.
+- SEDICI (19 de marzo de 2014). «México aprueba una ley para la creación de un repositorio nacional» (en es). Consultado el 7 de mayo de 2014.
+- Digital Commons. «Open Access Institutional Repository Software. Bepress». Consultado el 24 de marzo de 2014.
+- OCLC. «CONTENTdm Digital Collection Management Software». Consultado el 24 de marzo de 2014.
+- «Eprints - Digital Repository Software». Consultado el 24 de marzo de 2014.
+- «Open Repository». Consultado el 24 de marzo de 2014.
+- ColorIURIS. «Licencias ColorIURIS». Consultado el 24 de marzo de 2014.
+- Open Data Commons. «Licenses Open Data Commons». Consultado el 24 de marzo de 2014.
+- Universidad de Chile. Sistema de Servicios de Información y Bibliotecas. «Red de repositorios latinoamericanos». Consultado el 23 de octubre de 2013.
+- «Captura: repositorio académico de la Universidad de Chile». Consultado el 23 de octubre de 2013.
+- «Acceda: documentación científica de la ULPGC en abierto». Consultado el 18 de octubre de 2013.
+- «Buenas prácticas para publicar documentación en Acceda». Consultado el 18 de octubre de 2013.
+- «Más de 8000 documentos». Acceda: documentación científica de la ULPGC en abierto. Consultado el 16 de agosto de 2014.
+- Políticas de Digital.CSIC
+- Secretaría de Estado de Cultura. «Hispana». Gobierno de España. Ministerio de Educación, Cultura y Deporte. Consultado el 27 de enero de 2014.
+- FECYT. «Recyt». Gobierno de España. Ministerio de Economía y Competitividad. Consultado el 27 de enero de 2014.
+- Gobierno de España. Ministerio de Economía y Competitividad. FECYT. «Recolecta: recolector de ciencia abierta». Consultado el 24 de julio de 2013.
+
+Bibliografía adicional
+
+-Bailey, Charles W. (2010). Transforming Scholarly Publishing Through Open Access: A Bibliography (en inglés). Houston, Texas: Digital Scholarship. ISBN 9781453780817. OCLC 665761974.
+- Calzada Prado, Francisco Javier (2010). Repositorios, bibliotecas digitales y CRAI: los objetos digitales de aprendizaje en la educación superior. Buenos Aires: Alfagrama. ISBN 978-987-1305-57-5. OCLC 688336344.

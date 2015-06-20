@@ -1,0 +1,131 @@
+Metodología de desarrollo de software
+
+Metodología de desarrollo de software en ingeniería de software es un marco de trabajo usado para estructurar, planificar y controlar el proceso de desarrollo en sistemas de información.1
+
+Introducción
+
+Una metodología de desarrollo de software se refiere a un framework que es usado para estructurar, planear y controlar el proceso de desarrollo en sistemas de información.
+
+A lo largo del tiempo, una gran cantidad de métodos han sido desarrollados diferenciándose por su fortaleza y debilidad.
+
+El framework para metodología de desarrollo de software consiste en:
+- Una filosofía de desarrollo de programas de computacion con el enfoque del proceso de desarrollo de software
+- Herramientas, modelos y métodos para asistir al proceso de desarrollo de software
+
+Estos frameworks son a menudo vinculados a algún tipo de organización, que además desarrolla, apoya el uso y promueve la metodología. La metodología es a menudo documentada en algún tipo de documentación formal.
+
+Historia
+
+El desarrollo de los sistemas tradicionales de ciclo de vida se originó en la década de 1960 para desarrollar a gran escala funcional de sistemas de negocio en una época de grandes conglomerados empresariales. La idea principal era continuar el desarrollo de los sistemas de información en una muy deliberada, estructurada y metódica, reiterando cada una de las etapas del ciclo de vida. Los sistemas de información en torno a las actividades resueltas pesadas para el procesamiento de datos y rutinas de cálculo.
+
+Metodologías de Desarrollo de Software tiene como objetivo presentar un conjunto de técnicas tradicionales y modernas de modelado de sistemas que permitan desarrollar software de calidad, incluyendo heurísticas de construcción y criterios de comparación de modelos de sistemas.
+
+Para tal fin se describen, fundamentalmente, herramientas de Análisis y Diseño Orientado a Objetos (UML), sus diagramas, especificación, y criterios de aplicación de las mismas. Como complemento se describirán las metodologías de desarrollo de software que utilizan dichas herramientas, ciclos de vida asociados y discusión sobre el proceso de desarrollo de software más adecuado para las diferentes aplicaciones ejemplos que se presentarán. Principalmente, se presentará el Proceso Unificado el cual utiliza un ciclo de vida iterativo e incremental.
+
+- Kendall y Kendall
+
+I. Identificación del problema, oportunidades y objetivos. II. Determinación de los requerimientos de información. III. Análisis de las necesidades del sistema. IV. Diseño del sistema recomendado. V. Desarrollo y documentacion del software. VI. Pruebas y mantenimiento del sistema. VII. Implantación y evaluación del sistema.
+
+- James Senn
+
+I. Ciclo de vida y desarrollo del sistema. II. Desarrollo por análisis estructurado III. Prototipo del sistema.
+
+- Llorens Fabregas
+
+I. Requerimientos. II. Analisis/Diseño. III. Construcción. IV. Pruebas. V. Producción y mantenimiento.
+
+- Jonas Montilva
+
+I. Definir el proyecto. II. Análisis del contexto. III. Definición de los requerimientos. IV. Diseño preliminar. V. Diseño detallado.
+
+- Roger Pressman
+
+I. Análisis de los requerimientos del Software. II. Diseño. III. Genaracion de codigo. IV. Pruebas. V. Mantenimiento.
+
+Metodologías de desarrollo de software
+
+1970
+- Programación estructurada sol desde 1969
+- Programación estructurada Jackson desde 1975
+
+1980
+- Structured Systems Analysis and Design Methodology (SSADM) desde 1980
+- Structured Analysis and Design Technique (SADT) desde 1980
+- Ingeniería de la información (IE/IEM) desde 1981
+
+1990
+- Rapid application development (RAD) desde 1991.
+- Programación orientada a objetos (OOP) a lo largo de la década de los 90's
+- Virtual finite state machine (VFSM) desde 1990s
+- Dynamic Systems Development Method desarrollado en UK desde 1995.
+- Scrum (desarrollo), en la última parte de los 90's
+- Rational Unified Process (RUP) desde 1999.
+- Extreme Programming(XP) desde 1999
+
+Nuevo milenio
+- Enterprise Unified Process (EUP) extensiones RUP desde 2002
+- Constructionist design methodology (CDM) desde 2004 por Kristinn R. Thórisson
+- Agile Unified Process (AUP) desde 2005 por Scott Ambler
+
+Enfoques de desarrollo de software
+
+Cada metodología de desarrollo de software tiene más o menos su propio enfoque para el desarrollo de software. Estos son los enfoques más generales, que se desarrollan en varias metodologías específicas. Estos enfoques son los siguientes:1
+- Modelo en cascada: Framework lineal.
+- Prototipado: Framework iterativo.
+- Incremental: Combinación de framework lineal e iterativo.
+- Espiral: Combinación de framework lineal e iterativo.
+- RAD: Rapid Application Development, framework iterativo.
+
+Modelo en cascada
+
+Es un proceso secuencial de desarrollo en el que los pasos de desarrollo son vistos hacia abajo (como en una cascada de agua) a través de las fases de análisis de las necesidades, el diseño, implantación, pruebas (validación), la integración, y mantenimiento. La primera descripción formal del modelo de cascada se cita a menudo a un artículo publicado por Winston Royce W.2 en 1970, aunque Royce no utiliza el término "cascada" de este artículo.
+
+Los principios básicos del modelo de cascada son los siguientes:1
+- El proyecto está dividido en fases secuenciales, con cierta superposición y splashback aceptable entre fases.
+- Se hace hincapié en la planificación, los horarios, fechas, presupuestos y ejecución de todo un sistema de una sola vez.
+- Un estricto control se mantiene durante la vida del proyecto a través de la utilización de una amplia documentación escrita, así como a través de comentarios y aprobación / signoff por el usuario y la tecnología de la información de gestión al final de la mayoría de las fases antes de comenzar la próxima fase.
+
+Prototipado
+
+El prototipado permite desarrollar modelos de aplicaciones de software que permiten ver la funcionalidad básica de la misma, sin necesariamente incluir toda la lógica o características del modelo terminado. El prototipado permite al cliente evaluar en forma temprana el producto, e interactuar con los diseñadores y desarrolladores para saber si se está cumpliendo con las expectativas y las funcionalidades acordadas.Los Prototipos no poseen la funcionalidad total del sistema pero si condensa la idea principal del mismo, Paso a Paso crece su funcionalidad, y maneja un alto grado de participación del usuario.
+
+Incremental
+
+Provee una estrategia para controlar la complejidad y los riesgos, desarrollando una parte del producto software reservando el resto de aspectos para el futuro.
+
+Los principios básicos son:
+- Una serie de mini-Cascadas se llevan a cabo, donde todas las fases de la cascada modelo de desarrollo se han completado para una pequeña parte de los sistemas, antes de proceder a la próxima incremental.
+- Se definen los requisitos antes de proceder con lo evolutivo, se realiza un mini-Cascada de desarrollo de cada uno de los incrementos del sistema.
+- El concepto inicial de software, análisis de las necesidades, y el diseño de la arquitectura y colectiva básicas se definen utilizando el enfoque de cascada, seguida por iterativo de prototipos, que culmina en la instalación del prototipo final.
+
+Espiral
+
+Los principios básicos son:
+- La atención se centra en la evaluación y reducción del riesgo del proyecto dividiendo el proyecto en segmentos más pequeños y proporcionar más facilidad de cambio durante el proceso de desarrollo, así como ofrecer la oportunidad de evaluar los riesgos y con un peso de la consideración de la continuación del proyecto durante todo el ciclo de vida.
+- Cada viaje alrededor de la espiral atraviesa cuatro cuadrantes básicos: (1) determinar objetivos, alternativas, y desencadenantes de la iteración; (2) Evaluar alternativas; Identificar y resolver los riesgos; (3) desarrollar y verificar los resultados de la iteración, y (4) plan de la próxima iteración.3
+- Cada ciclo comienza con la identificación de los interesados y sus condiciones de ganancia, y termina con la revisión y examinación.3
+
+Rapid Application Development (RAD)
+
+El desarrollo rápido de aplicaciones (RAD) es una metodología de desarrollo de software, que implica el desarrollo iterativo y la construcción de prototipos. El desarrollo rápido de aplicaciones es un término originalmente utilizado para describir un proceso de desarrollo de software introducido por James Martin en 1991.
+
+Principios básicos:
+- Objetivo clave es para un rápido desarrollo y entrega de una alta calidad en un sistema de relativamente bajo coste de inversión.
+- Intenta reducir el riesgos inherente del proyecto partiéndolo en segmentos más pequeños y proporcionar más facilidad de cambio durante el proceso de desarrollo.
+- Orientación dedicada a producir sistemas de alta calidad con rapidez, principalmente mediante el uso de iteración por prototipos (en cualquier etapa de desarrollo), promueve la participación de los usuarios y el uso de herramientas de desarrollo computarizadas. Estas herramientas pueden incluir constructores de Interfaz gráfica de usuario (GUI), Computer Aided Software Engineering (CASE) las herramientas, los sistemas de gestión de bases de datos (DBMS), lenguajes de programación de cuarta generación, generadores de código, y técnicas orientada a objetos.
+- Hace especial hincapié en el cumplimiento de la necesidad comercial, mientras que la ingeniería tecnológica o la excelencia es de menor importancia.
+- Control de proyecto implica el desarrollo de prioridades y la definición de los plazos de entrega. Si el proyecto empieza a aplazarse, se hace hincapié en la reducción de requisitos para el ajuste, no en el aumento de la fecha límite.
+- En general incluye Joint application development (JAD), donde los usuarios están intensamente participando en el diseño del sistema, ya sea a través de la creación de consenso estructurado en talleres, o por vía electrónica.
+- La participación activa de los usuarios es imprescindible.
+- Iterativamente realiza la producción de software, en lugar de enfocarse en un prototipo.
+- Produce la documentación necesaria para facilitar el futuro desarrollo y mantenimiento.
+
+Otros enfoques de desarrollo de software
+- Metodologías de desarrollo Orientado a objetos, Diseño orientado a objetos (OOD) de Grady Booch, también conocido como Análisis y Diseño Orientado a Objetos (OOAD). El modelo incluye seis diagramas: de clase, objeto, estado de transición, la interacción, módulo, y el proceso.
+- Top-down programming, evolucionado en la década de 1970 por el investigador de IBM Harlan Mills (y Niklaus Wirth) en Desarrollo Estructurado.
+- Proceso Unificado, es una metodología de desarrollo de software, basado en UML. Organiza el desarrollo de software en cuatro fases, cada una de ellas con la ejecución de una o más iteraciones de desarrollo de software: creación, elaboración, construcción, y las directrices. Hay una serie de herramientas y productos diseñados para facilitar la aplicación. Una de las versiones más populares es la de Rational Unified Process.
+
+Referencia
+- SELECTING A DEVELOPMENT APPROACH. Revalidated: March 27, 2008. Retrieved 27 Oct 2008.
+- Wasserfallmodell > Entstehungskontext, Markus Rerych, Institut für Gestaltungs- und Wirkungsforschung, TU-Wien. Accessed on line November 28, 2007.
+- (Boehm, 2000)

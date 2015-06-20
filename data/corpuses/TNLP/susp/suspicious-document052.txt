@@ -1,0 +1,46 @@
+Procedimientos almacenados autocreables
+
+Un procedimiento almacenado autocreable es un grupo de instrucciones que llevan a cabo un procedimiento definido, que se termina de crear a través del envío de parámetros. En lo sucesivo los llamaremos "Au_Sp".
+
+Introducción
+
+Los Au_Sp constan de 2 partes:
+
+        La primera parte, son los parámetros que recibe, los cuales terminarán de crear en forma la instrucción.
+        La segunda parte es un bloque de instrucción de un procedimiento predefinido.
+
+Los Au_Sp se deben entender como rutinas preestablecidas para la automatización de procesos redundantes o que se repiten periódicamente, y por tanto no son procedimientos que se crean sin nada de código escrito, ya que para ello existen plantillas o templates. Los Au_Sp usan como principal herramienta el poder hacer uso del envío de parámetros, así como de instrucciones que permitan la creación de una instrucción a través de éstos como es el caso de la instrucción EXECUTE de SQL Server.
+
+El término Au_Sp es una manera de catalogar una aplicación de los procedimientos almacenados, y la definición de este tipo de procedimiento está basada en la definición de procedimiento almacenado y en los usos que se han dado por los diversos administradores de DBA, y en los ejemplos de creación de los mismos descritos en el libro "Writing Stored Procedures with Microsoft SQL Server" de Howard Sams, así como de los diversos ejemplos que se encuentran actualmente en Internet.
+
+Los Au_Sp son creados cuando se tiene un procedimiento igual que se corre en varias tablas, bases o periódicamente. Ven su utilidad sobre todo en aplicaciones que manejan procedimientos estandarizados en tablas de estructuras similares o idénticas. Podemos compararlos con las rutinas que se encuentran en un archivo.bas en el lenguaje Visual Basic o bien como una clase para los que programan en C/C++ o Java ya que como la definición de procedimientos almacenados indica, estas líneas de código sólo esperan su ejecución para realizar una instrucción, y agregamos la versatilidad del trabajo con parámetros. Así podemos crear un Au_Sp que contenga una estructura o plantilla para una tabla en una base de datos específica.
+
+Ejemplo
+
+Éste es un ejemplo de este tipo de procedimiento (este ejemplo está basado en el manejador SQL Server). Este ejemplo crea una tabla con una estructura definida, en una base de datos específica, este procedimiento debe ser creado en la base de datos MASTER. Este procedimiento es llamado por una función todos los días a las 00:10 otorgándole como nombre de tabla HYS_"FECHAACTUAL".
+
+    SET QUOTED_IDENTIFIER OFF 
+    GO
+    SET ANSI_NULLS OFF 
+    GO
+    CREATE PROCEDURE sp_Crear_Tabla_Recicle
+        (@BaseDeDatos SYSNAME,@TablaRecicle SYSNAME)  AS
+        DECLARE @INSTRUCCION1 CHAR(2000)
+        DECLARE @INSTRUCCION2 CHAR(2000)
+    SELECT @INSTRUCCION1='' +
+        'CREATE TABLE [' + @BaseDeDatos + '].[dbo].[' + @TablaRecicle + '] (' +
+        '[Id_Reciclaje] [numeric](18, 0) IDENTITY (1, 1) NOT NULL,' +
+        '[Fecha_Exportacion] [datetime] NOT NULL,' +
+        '[Nombre] [char] (40) COLLATE database_default NOT NULL,' +
+        '[Paterno] [char] (30) COLLATE database_default NOT NULL,' +
+        '[Materno] [char] (30) COLLATE database_default NOT NULL,' +
+        ') ON [PRIMARY] '
+    SELECT @INSTRUCCION2='' +
+        'ALTER TABLE [' + @BaseDeDatos + '].[dbo].['+@TablaRecicle+'] WITH NOCHECK ADD  ' +
+        'CONSTRAINT [DF_'+@TablaRecicle+'_Paterno] DEFAULT ('+CHAR(39)+CHAR(39)+') FOR [Paterno],' +
+        'CONSTRAINT [DF_'+@TablaRecicle+'_Materno] DEFAULT ('+CHAR(39)+CHAR(39)+') FOR [Materno],' +
+        'CONSTRAINT [DF_'+@TablaRecicle+'_Resultado] DEFAULT ('+CHAR(39)+CHAR(39)+') FOR [Resultado],' +
+        'CONSTRAINT [PK_'+@TablaRecicle+'] PRIMARY KEY  CLUSTERED ' +
+        '(' +
+            '	[Id_Reciclaje]' +
+        ')  ON [PRIMARY] '

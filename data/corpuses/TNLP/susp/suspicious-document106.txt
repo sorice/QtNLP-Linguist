@@ -1,0 +1,7 @@
+Inteligencia de enjambre
+
+La inteligencia de enjambre es una rama de la Inteligencia artificial que se basa en el comportamiento colectivo de sistemas descentralizados y auto-organizados
+
+Los sistemas de inteligencia de enjambre están constituidos típicamente de agentes simples que interactúan entre ellos y con su ambiente. Los agentes siguen reglas simples y, aunque no existe una estructura de control que dictamine el comportamiento de cada uno de ellos, las interacciones locales entre los agentes conduce a la emergencia de un comportamiento global complejo. Ejemplos en la naturaleza incluyen colonias de hormigas, alineamiento de aves en vuelo, comportamiento de rebaños, crecimiento bacteriano y comportamiento de cardumenes.
+
+La aplicación de los principios de enjambres a robots se llamado Robótica de enjambres, mientras que el término Inteligencia de enjambre se refiere al conjunto general de algoritmos.

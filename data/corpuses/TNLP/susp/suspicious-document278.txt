@@ -1,0 +1,148 @@
+Ordenamiento por cuentas
+
+El ordenamiento por cuentas (counting sort en inglés) es un algoritmo de ordenamiento en el que se cuenta el número de elementos de cada clase para luego ordenarlos. Sólo puede ser utilizado por tanto para ordenar elementos que sean contables (como los números enteros en un determinado intervalo, pero no los números reales, por ejemplo).
+
+El primer paso consiste en averiguar cuál es el intervalo dentro del que están los datos a ordenar (valores mínimo y máximo). Después se crea un vector de números enteros con tantos elementos como valores haya en el intervalo [mínimo, máximo], y a cada elemento se le da el valor 0 (0 apariciones). Tras esto se recorren todos los elementos a ordenar y se cuenta el número de apariciones de cada elemento (usando el vector que hemos creado). Por último, basta con recorrer este vector para tener todos los elementos ordenados.
+
+Ejemplo
+
+Considérese la siguiente lista de números:
+
+ Lista sin ordenar: 2, 5, 3, 2, 7, 5, 3, 2, 2
+
+Para ordenarla con este algoritmo, seguimos estos pasos:
+
+- Buscar el mínimo y el máximo
+
+ Mínimo = 2
+ Máximo = 7
+
+- Crear el vector auxiliar
+
+ vaux = nuevo vector(2,7) de enteros
+
+- Recorrer la lista de números y contar elementos, debe fijarse como el valor en la lista de entrada se usa como índice en el vector auxiliar
+
+ Al final, 
+   vAux(2) = 4  porque aparece 4 veces en la lista
+   vAux(3) = 2    "       "    2   "          "
+   vAux(4) = 0  porque no aparece en la lista ninguna vez
+   vAux(5) = 2  porque aparece 2 veces en la lista
+   vAux(6) = 0  porque no aparece en la lista ninguna vez
+   vAux(7) = 1  porque aparece 1 vez en la lista 
+
+- Recorriendo el vector auxiliar obtenemos la lista de números ordenada
+
+   listaValores(0) = 2  El valor 2, se repite 4 veces.
+   listaValores(1) = 2
+   listaValores(2) = 2
+   listaValores(3) = 2
+   -
+   listaValores(4) = 3  El valor 3 se repite 2 veces
+   listaValores(5) = 3
+   -
+   listaValores(6) = 5  El valor 5 se repite 2 veces
+   listaValores(7) = 5  
+   -
+   listaValores(8) = 7  El valor 7 sólo aparece 1 vez
+   -
+   -
+   Lista ordenada = 2, 2, 2, 2, 3, 3, 5, 5, 7
+
+Características
+
+Se trata de un algoritmo estable cuya complejidad computacional es O(n+k), siendo n el número de elementos a ordenar y k el tamaño del vector auxiliar (máximo - mínimo).
+
+La eficiencia del algoritmo es independiente de lo casi ordenado que estuviera anteriormente. Es decir no existe un mejor y peor caso, todos los casos se tratan iguales.
+
+El algoritmo counting, no se ordena in situ, sino que requiere de una memoria adicional.
+
+Limitaciones
+
+El algoritmo posee una serie de limitaciones que obliga a que sólo pueda ser utilizado en determinadas circunstancias.
+
+Sólo ordena números enteros, no vale para ordenar cadenas y es desaconsejable para ordenar números decimales. Teóricamente se puede, pero debería recrear en la matriz auxiliar tantas posiciones como decimales quepan entre 2 números consecutivos, si se restringe a 1 o 2 decimales podría ser asequible un número mayor de decimales puede llegar a suponer una memoria auxiliar impracticable.
+
+Otra limitación (por ineficiencia) incluso con números enteros es cuando el rango entre el mayor y el menor es muy grande. Imaginemos una lista de 1000 elementos, donde el menor es el 0 y el mayor 123456789. Ordenar esta lista supondría crear una matriz auxiliar de 123456790 elementos. Una cantidad muy elevada de memoria para ordenar sólo 1000 elementos. También supondría un desperdicio de tiempo pués la matriz auxiliar para trasvasar a la lista ordenada debe recorrerse entera, aunque sólo se reasignarán 1000 valores de los 123456790 elementos.
+
+Con lenguajes de programación que no permitan definir vectores cuyo primer índice sea un valor distinto de 0 ó 1 es necesario realizar una traducción de los valores. Por ejemplo, si el intervalo es (4,10) y el vector auxiliar comprende el rango (1-7), para cada elemento se deberá incrementar el contador de la posición en 3.
+
+Un modo de hacer este algoritmo más práctico, es guardar varios elementos en un índice de la matriz, pero en este caso la matriz ya no es de valores enteros sino que contiene algún tipo de estructura de datos. Así es posible por ejemplo ordenar números con decimales. Por ejemplo si en la matriz auxiliar en el índice 5, metemos todas las apariciones de la lista cuyo valor está en el rango 5.0 - 5.99. Luego con cada elemento en cada índice se realiza un nuevo ordenamiento. cuando se usan este tipo de técnicas, el algoritmo ya se considera otro, denominado: bucket sort.
+
+Pseudocódigo
+
+Se han añadido los comentarios pertinentes para aclarar las partes que fueren más dudosas.
+
+   comentario: listaValores es una matriz de valores enteros.
+   Entrada Función counting_sort(listaValores)
+      ListaVariables
+         minValor    comentario: el valor del elemento menor en la lista
+         maxValor    comentario: el valor del elemento mayor en la lista
+         vAux        comentario: una matriz de elementos auxiliar de tanto elementos como 
+                                  define el rango minValor a maxValor 
+         i, j, n     comentario: contadores de bucle
+         valor       comentario: valor del elemento actual en el bucle
+         tamaño      comentario: cantidad de elementos en listaValores
+ 
+      Previos      
+         comentario: Buscar valor mínimo y máximo
+         LlamadaaFuncion BuscarLimites(listaValores, minValor, maxValor)
+ 
+         comentario: Crea el vector auxiliar, con todos sus elementos a 0
+         vAux = NuevoVector(minValor,maxValor)
+ 
+         comentario: Obtiene la cantidad de elementos que contiene la matriz
+         tamaño = TotalElementosEn(listaValores)
+ 
+         comentario: Contar elementos. En el índice expresado por el valor, se van contando
+                     las veces que aparece dicho valor en la matriz de entrada 
+         comentario: Este bucle realiza una matriz de conteo, cada valor indica cuantas veces
+                     aparece el valor representado por el índice en la lista de valores.
+      Inicio   
+         i = 0 
+         Hacer Mientras (i < tamaño)
+              valor = listaValores(i)
+              vAux(valor] = vAux(valor) + 1
+              i = i + 1
+         Repetir
+ 
+         comentario: Trasvasar la matriz de conteo a la lista, que queda así ya ordenada
+ 
+         i = minValor 
+         j = 0
+         Hacer Mientras (i < maxValor)
+            comentario: Si para el índice 'i' se contó 1 o más elementos, transferir a la lista  
+            Si vAux(i) > 0 Entonces       
+               Para n Repetir Desde 1 Hasta vAux(i) 
+                  listaValores(j) = i 
+                  j = j + 1
+               Siguiente n
+            Fin si
+         Repetir 
+      Fin
+   Salida Función
+ 
+ 
+   comentario: Esta función auxiliar busca y devuelve el mayor y menor elementos de una matriz
+   Entrada Función BuscarLimites(listaValores, minValor, maxValor)
+      Variables
+         i      comentario: contador del bucle        
+ 
+      Inicio
+         minValor = listaValores(0)
+         maxValor = minValor
+ 
+         Para i Repetir Desde 1 Hasta TotalElementosEn(ListaValores)
+            Si listaValores(i) < minValor entonces 
+               minValor = listaValores(i)
+            Ó Si listaValores(i) > maxValor entonces
+               maxValor = listaValores(i)
+            Fin Si
+         Siguiente i
+      Fin                 
+   Salida Función
+
+Referencias
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 8.2: Counting sort, pp.168–170.
+- Donald Knuth. The Art of Computer Programming, Volume 3: Sorting and Searching, Second Edition. Addison-Wesley, 1998. ISBN 0-201-89685-0. Section 5.2, Sorting by counting, pp.75–80.
+- Seward, Harold H. Information sorting in the application of electronic digital computers to business operations Masters thesis. MIT 1954.

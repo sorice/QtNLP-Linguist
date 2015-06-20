@@ -1,0 +1,320 @@
+C (lenguaje de programación)
+
+C es un lenguaje de programación creado en 1972 por Dennis M. Ritchie en los Laboratorios Bell como evolución del anterior lenguaje B, a su vez basado en BCPL.
+
+Al igual que B, es un lenguaje orientado a la implementación de Sistemas Operativos, concretamente Unix. C es apreciado por la eficiencia del código que produce y es el lenguaje de programación más popular para crear software de sistemas, aunque también se utiliza para crear aplicaciones.
+
+Se trata de un lenguaje de tipos de datos estáticos, débilmente tipificado, de medio nivel pero con muchas características de bajo nivel. Dispone de las estructuras típicas de los lenguajes de alto nivel pero, a su vez, dispone de construcciones del lenguaje que permiten un control a muy bajo nivel. Los compiladores suelen ofrecer extensiones al lenguaje que posibilitan mezclar código en ensamblador con código C o acceder directamente a memoria o dispositivos periféricos.
+
+La primera estandarización del lenguaje C fue en ANSI, con el estándar X3.159-1989. El lenguaje que define este estándar fue conocido vulgarmente como ANSI C. Posteriormente, en 1990, fue ratificado como estándar ISO (ISO/IEC 9899:1990). La adopción de este estándar es muy amplia por lo que, si los programas creados lo siguen, el código es portátil entre plataformas y/o arquitecturas.
+
+Filosofía
+
+Uno de los objetivos de diseño del lenguaje C es que sólo sean necesarias unas pocas instrucciones en lenguaje máquina para traducir cada elemento del lenguaje, sin que haga falta un soporte intenso en tiempo de ejecución. Es muy posible escribir C a bajo nivel de abstracción; de hecho, C se usó como intermediario entre diferentes lenguajes.
+
+En parte a causa de ser de relativamente bajo nivel y de tener un modesto conjunto de características, se pueden desarrollar compiladores de C fácilmente. En consecuencia, el lenguaje C está disponible en un amplio abanico de plataformas (más que cualquier otro lenguaje). Además, a pesar de su naturaleza de bajo nivel, el lenguaje se desarrolló para incentivar la programación independiente de la máquina. Un programa escrito cumpliendo los estándares e intentando que sea portátil puede compilarse en muchos computadores.
+
+C se desarrolló originalmente (conjuntamente con el sistema operativo Unix, con el que ha estado asociado mucho tiempo) por programadores para programadores. Sin embargo, ha alcanzado una popularidad enorme, y se ha usado en contextos muy alejados de la programación de software de sistema, para la que se diseñó originalmente.
+
+Características
+
+Propiedades
+- Un núcleo del lenguaje simple, con funcionalidades añadidas importantes, como funciones matemáticas y de manejo de archivos, proporcionadas por bibliotecas.
+- Es un lenguaje muy flexible que permite programar con múltiples estilos. Uno de los más empleados es el estructurado "no llevado al extremo" (permitiendo ciertas licencias de ruptura).
+- Un sistema de tipos que impide operaciones sin sentido.
+- Usa un lenguaje de preprocesado, el preprocesador de C, para tareas como definir macros e incluir múltiples archivos de código fuente.
+- Acceso a memoria de bajo nivel mediante el uso de punteros.
+- Interrupciones al procesador con uniones.
+- Un conjunto reducido de palabras clave.
+- Por defecto, el paso de parámetros a una función se realiza por valor. El paso por referencia se consigue pasando explícitamente a las funciones las direcciones de memoria de dichos parámetros.
+- Punteros a funciones y variables estáticas, que permiten una forma rudimentaria de encapsulado y polimorfismo.
+- Tipos de datos agregados (struct) que permiten que datos relacionados (como un empleado, que tiene un id, un nombre y un salario) se combinen y se manipulen como un todo (en una única variable "empleado").
+
+Carencias
+- Recolección de basura nativa, sin embargo se encuentran a tal efecto bibliotecas como la "libgc" desarrollada por Sun Microsystems, o el Recolector de basura de Boehm.
+- Soporte para programación orientada a objetos, aunque la implementación original de C++ fue un preprocesador que traducía código fuente de C++ a C.
+- Funciones anidadas, aunque GCC tiene esta característica como extensión.
+- Soporte nativo para programación multihilo.
+
+Aunque la lista de las características útiles de las que carece C es larga, este factor ha sido importante para su aceptación, porque escribir rápidamente nuevos compiladores para nuevas plataformas, mantiene lo que realmente hace el programa bajo el control directo del programador, y permite implementar la solución más natural para cada plataforma. Ésta es la causa de que a menudo C sea más eficiente que otros lenguajes. Típicamente, sólo la programación cuidadosa en lenguaje ensamblador produce un código más rápido, pues da control total sobre la máquina, aunque los avances en los compiladores de C y la complejidad creciente de los microprocesadores modernos han reducido gradualmente esta diferencia.
+
+En algunos casos, una característica inexistente puede aproximarse. Por ejemplo, la implementación original de C++ consistía en un preprocesador que traducía código fuente C++ a C. La mayoría de las funciones orientadas a objetos incluyen un puntero especial, que normalmente recibe el nombre "this", que se refiere al objeto al que pertenece la función. Mediante el paso de este puntero como un argumento de función, esta funcionalidad puede desempeñarse en C. Por ejemplo, en C++ se puede escribir:
+
+stack.push(val);
+
+Mientras que en C se podría escribir:
+
+push(stack, val);
+
+Donde el argumento stack es un puntero a una struct equivalente al puntero this de C++, que es un puntero a un objeto.
+
+Historia
+
+Desarrollo inicial
+
+El desarrollo inicial de C se llevó a cabo en los Laboratorios Bell de AT&T entre 1969 y 1973; según Ritchie, el periodo más creativo tuvo lugar en 1972. Se le dio el nombre "C" porque muchas de sus características fueron tomadas de un lenguaje anterior llamado "B".
+
+Hay muchas leyendas acerca del origen de C y el sistema operativo con el que está íntimamente relacionado, Unix. Algunas de ellas son:
+- El desarrollo de C fue el resultado del deseo de los programadores de jugar con Space Travel. Habían estado jugando en el mainframe de su compañía, pero debido a su poca capacidad de proceso y al tener que soportar 100 usuarios, Thompson y Ritchie no tenían suficiente control sobre la nave para evitar colisiones con los asteroides. Por ese motivo decidieron portar el juego a un PDP-7 de la oficina que no se utilizaba; pero esa máquina no tenía sistema operativo, así que decidieron escribir uno. Finalmente decidieron portar el sistema operativo del PDP-11 que había en su oficina, pero era muy costoso, pues todo el código estaba escrito en lenguaje ensamblador. Entonces decidieron usar un lenguaje de alto nivel y portátil para que el sistema operativo se pudiera portar fácilmente de un ordenador a otro. Consideraron usar B, pero carecía de las funcionalidades necesarias para aprovechar algunas características avanzadas del PDP-11. Entonces empezaron a crear un nuevo lenguaje, C.
+- La justificación para obtener el ordenador original que se usó para desarrollar Unix fue crear un sistema que automatizase el archivo de patentes. La versión original de Unix se desarrolló en lenguaje ensamblador. Más tarde, el lenguaje C se desarrolló para poder reescribir el sistema operativo.
+
+En 1973, el lenguaje C se había vuelto tan potente que la mayor parte del kernel Unix, originalmente escrito en el lenguaje ensamblador PDP-11/20, fue reescrita en C. Éste fue uno de los primeros núcleos de sistema operativo implementados en un lenguaje distinto al ensamblador. (Algunos casos anteriores son el sistema Multics, escrito en PL/I, y Master Control Program para el B5000 de Burroughs, escrito en ALGOL en 1961).
+
+El C de Kernighan y Ritchie
+
+En 1978, Ritchie y Brian Kernighan publicaron la primera edición de El lenguaje de programación C, también conocido como La biblia de C. Este libro fue durante años la especificación informal del lenguaje. El lenguaje descrito en este libro recibe habitualmente el nombre de "el C de Kernighan y Ritchie" o simplemente "K&R C" (La segunda edición del libro cubre el estándar ANSI C, descrito más abajo).
+
+Kernighan y Ritchie introdujeron las siguientes características al lenguaje:
+- El tipo de datos struct.
+- El tipo de datos long int.
+- El tipo de datos unsigned int.
+- Los operadores =+ y =- fueron sustituidos por += y -= para eliminar la ambigüedad sintáctica de expresiones como i=-10, que se podría interpretar bien como i =- 10 o bien como i = -10.
+
+El C de Kernighan y Ritchie es el subconjunto más básico del lenguaje que un compilador debe de soportar. Durante muchos años, incluso tras la introducción del ANSI C, fue considerado "el mínimo común denominador" en el que los programadores debían programar cuando deseaban que sus programas fueran transportables, pues no todos los compiladores soportaban completamente ANSI, y el código razonablemente bien escrito en K&R C es también código ANSI C válido.
+
+En las primeras versiones del lenguaje, la definición de funciones se hacía mediante un 'prototipo de función' (function prototype), el cual indicaba al compilador el tipo de retorno de la función. Aunque este método tiene una gran desventaja respecto al nuevo, debido a que no comprueba el número ni el tipo en la lista de argumentos; en otras palabras, es mucho más fácil cometer errores al hacer una llamada a una función con argumentos incorrectos.
+
+Ejemplo del "viejo estilo":
+
+int power(); /* Podria haberse omitido (*) */
+ 
+power()
+int a, b;
+{
+    int n;
+    for (n = 1; b > 0; --b)
+        n *= a;
+    return n;
+}
+
+Ejemplo de la nueva definición:
+
+int power(int a, int b)
+{
+    int n;
+    for (n = 1; b > 0; --b)
+        n *= a;
+    return n;
+}
+
+(*) Por defecto, el tipo de retorno en C es int, por lo que la declaración entera int power(); podría haberse omitido.
+
+En los años siguientes a la publicación del C de Kernighan y Ritchie, se añadieron al lenguaje muchas características no oficiales, que estaba soportadas por los compiladores de AT&T, entre otros. Algunas de estas características eran:
+- Funciones void y el tipo de datos void *.
+- Funciones que retornaban tipos de datos struct o union (en lugar de punteros).
+- Asignación de tipos de datos struct.
+- Calificador const, que hace que un objeto sea de sólo lectura.
+- Una biblioteca estándar, que incorporaba la mayoría de las funcionalidades implementadas por varios desarrolladores de compiladores.
+- Enumeraciones.
+
+ANSI C e ISO C
+
+A finales de la década de 1970, C empezó a sustituir a BASIC como lenguaje de programación de microcomputadores predominante. Durante la década de 1980 se empezó a usar en los IBM PC, lo que incrementó su popularidad significativamente. Al mismo tiempo, Bjarne Stroustrup empezó a trabajar con algunos compañeros de Bell Labs para añadir funcionalidades de programación orientada a objetos a C. El lenguaje que crearon, llamado C++, es hoy en día el lenguaje de programación de aplicaciones más común en el sistema operativo Microsoft Windows; mientras que C sigue siendo más popular en el entorno Unix. Otro lenguaje que se desarrolló en esa época, Objective C, también añadió características de programación orientada a objetos a C. Aunque hoy en día no es tan popular como C++, se usa para desarrollar aplicaciones Cocoa para Mac OS X.
+
+En 1983, el Instituto Nacional Estadounidense de Estándares organizó un comité, X3j11, para establecer una especificación estándar de C. Tras un proceso largo y arduo, se completó el estándar en 1989 y se ratificó como el "Lenguaje de Programación C" ANSI X3.159-1989. Esta versión del lenguaje se conoce a menudo como ANSI C, o a veces como C89 (para distinguirla de C99).
+
+En 1990, el estándar ANSI (con algunas modificaciones menores) fue adoptado por la Organización Internacional para la Estandarización (ISO) en el estándar ISO/IEC 9899:1990. Esta versión se conoce a veces como C90. No obstante, "C89" y "C90" se refieren en esencia al mismo lenguaje.
+
+Uno de los objetivos del proceso de estandarización del ANSI C fue producir una extensión al C de Kernighan y Ritchie, incorporando muchas funcionalidades no oficiales. Sin embargo, el comité de estandarización incluyó también muchas funcionalidades nuevas, como prototipos de función, y un preprocesador mejorado. También se cambió la sintaxis de la declaración de parámetros para hacerla semejante a la empleada habitualmente en C++:
+
+main(argc, argv)
+    int  argc;
+    char **argv;
+{
+ 
+...
+}
+
+pasó a ser
+
+int main(int argc, char *argv[]) {
+...
+}
+
+ANSI C está soportado hoy en día por casi la totalidad de los compiladores. La mayoría del código C que se escribe actualmente está basado en ANSI C. Cualquier programa escrito sólo en C estándar sin código que dependa de un hardware determinado funciona correctamente en cualquier plataforma que disponga de una implementación de C compatible. Sin embargo, muchos programas han sido escritos de forma que sólo pueden compilarse en una cierta plataforma, o con un compilador concreto, esto puede ser debido a diversos motivos:
+- La utilización de bibliotecas no estándar, como interfaces gráficas de usuario.
+- El uso de compiladores que no cumplen las especificaciones del estándar.
+- El uso de tipos de datos suponiendo que tendrán el mismo tamaño u orden de los bits en todas las plataformas.
+
+La macro __STDC__ puede usarse para dividir el código en secciones ANSI y K&R para el compilador.
+
+# if __STDC__
+extern int getopt(int,char * const *,const char *);
+# else
+extern int getopt();
+# endif
+
+Algunos programadores recomiendan usar "#if __STDC__", como en el ejemplo, en lugar de "#ifdef __STDC__" porque algunos compiladores le asignan el valor cero a __STDC__ para indicar que no son compatibles con ANSI.
+
+En el siguiente ejemplo, el programa pide al usuario que introduzca un número. El programa dividirá dicho número entre 2 e imprimirá el resultado mientras que este sea par, y terminará cuando el número sea impar:
+
+#include <stdio.h>
+ 
+int main(void) {
+	int numero;
+	fputs("Introduzca un numero entero par: ", stdout);
+ 
+	scanf("%d", &numero);
+	if (!numero) {
+		fputs("Error: numero no valido.\n", stderr);
+		return -1;
+	}
+ 
+	int i = 1;
+	while (numero%2 == 0) {
+		printf ("%.3d| %d/2 =", i++, numero);
+		numero /=2;
+		printf("%d\n", numero);
+	}
+ 
+	printf ("No se puede seguir dividiendo: El numero %d es impar.\n", numero);
+	return 0;
+}
+
+C99
+
+Tras el proceso de estandarización de ANSI, la especificación del lenguaje C permaneció relativamente estable durante algún tiempo, mientras que C++ siguió evolucionando. Sin embargo, el estándar continuó bajo revisión a finales de la década de 1990, lo que llevó a la publicación del estándar ISO 9899:1999 en 1999. Este estándar se denomina habitualmente "C99". Se adoptó como estándar ANSI en marzo de 2000.
+
+Las nuevas características de C99 incluyen:
+- Funciones inline.
+- Las variables pueden declararse en cualquier sitio (como en C++), en lugar de poder declararse sólo tras otra declaración o al comienzo de una declaración compuesta.
+- Muchos tipos de datos, incluyendo long long int (para reducir el engorro de la transición de 32 bits a 64 bits), un tipo de datos booleano, y un tipo complex que representa números complejos.
+- Arrays de longitud variable.
+- Soporte para comentarios de una línea que empiecen con //, como en BCPL o en C++, característica para la que muchos compiladores habían dado soporte por su cuenta.
+- muchas funciones nuevas, como snprintf()
+- algunos headers nuevos, como stdint.h.
+
+Una consideración importante es que hasta la publicación de este estándar, C había sido mayormente un subconjunto estricto del C++. Era muy sencillo "actualizar" un programa de C hacia C++ y mantener ese código compilable en ambos lenguajes. Sin embargo, el nuevo estándar agrega algunas características que C++ no admite, como por ejemplo los inicializadores estáticos de estructuras. También define al tipo "bool" de una manera que no es exactamente la del C++.
+
+El compilador GCC, entre muchos otros, soportan hoy en día la mayoría de las nuevas características de C99. Sin embargo, este nuevo estándar ha tenido poca acogida entre algunos desarrolladores de compiladores, como Microsoft y Borland, que se han centrado en C++. Brandon Bray, de Microsoft, dijo a este respecto:
+
+    "En general, hemos visto poca demanda de muchas características de C99. Algunas características tienen más demanda que otras, y consideraremos incluirlas en versiones futuras siempre que sean compatibles con C++."2
+
+C11
+
+C11 (antes conocido como C1X) es un nombre informal para ISO/IEC 9899:2011,3 el último estándar publicado para C. El borrador final, N1570,4 fue publicado en abril de 2011. El nuevo estándar superó su última revisión el 10 de octubre de 2011 y fue oficialmente ratificado por la ISO y publicado el 8 de diciembre de 2011.
+
+Ventajas
+- Lenguaje muy eficiente puesto que es posible utilizar sus características de bajo nivel para realizar implementaciones óptimas.
+- A pesar de su bajo nivel es el lenguaje más portado en existencia, habiendo compiladores para casi todos los sistemas conocidos.
+- Proporciona facilidades para realizar programas modulares y/o utilizar código o bibliotecas existentes.
+
+Inconvenientes
+
+El mayor problema que presenta el lenguaje C frente a los lenguajes de tipo de dato dinámico es la gran diferencia en velocidad de desarrollo: es más lento programar en C, sobre todo para el principiante. La razón estriba en que el compilador de C se limita a traducir código sin apenas añadir nada. La gestión de la memoria es un ejemplo clásico: en C el programador ha de reservar y liberar la memoria explícitamente. En otros lenguajes (como BASIC, Matlab o C#) la memoria es gestionada de forma transparente para el programador. Esto alivia la carga de trabajo humano y en muchas ocasiones previene errores, aunque también supone mayor carga de trabajo para el procesador.
+
+El mantenimiento en algunos casos puede ser más difícil y costoso que con ciertos lenguajes de más alto nivel. El código en C se presta a sentencias cortas y enrevesadas de difícil interpretación[cita requerida].
+
+Cabe destacar el contexto y época en la que fue desarrollado C. En aquellos tiempos existían muy pocos programadores, los cuales, a su vez, eran prácticamente todos expertos en el área. De esta manera, se asumía que los programadores eran conscientes de sus trabajos y capaces de manejar perfectamente el lenguaje. Por esta razón es muy importante que los recién iniciados adopten buenas prácticas a la hora de escribir en C y manejar la memoria, como por ejemplo un uso intensivo de indentación y conocer a fondo todo lo que implica el manejo de punteros y direcciones de memoria.
+
+Variantes
+
+Desde el inicio del lenguaje han surgido varias ramas de evolución que han generado varios lenguajes:
+- Objective-C es un primer intento de proporcionar soporte para la programación orientada a objetos en C, pero actualmente usado en Mac OS X, iOS y GNUstep.
+- C++ (pronunciado C Plus Plus) diseñado por Bjarne Stroustrup fue el segundo intento de proporcionar orientación a objetos a C y es la variante más difundida y aceptada. Esta versión combina la flexibilidad y el acceso de bajo nivel de C con las características de la programación orientada a objetos como abstracción, encapsulación y ocultación.
+
+También se han creado numerosos lenguajes inspirados en la sintaxis de C, pero que no son compatibles con él:
+- Java, que une una sintaxis inspirada en la del C++ con una orientación a objetos más similar a la de Smalltalk y Objective C.
+- JavaScript, un lenguaje de scripting creado en Netscape e inspirado en la sintaxis de Java diseñado para dar a las páginas web mayor interactividad. A la versión estandarizada se la conoce como ECMAScript.
+- C# (pronunciado C Sharp) es un lenguaje desarrollado por Microsoft derivado de C/C++ y Java.
+
+Proceso de compilación
+
+La compilación de un programa C se realiza en varias fases que normalmente son automatizadas y ocultadas por los entornos de desarrollo:
+1. Preprocesado consistente en modificar el código fuente en C según una serie de instrucciones (denominadas directivas de preprocesado) simplificando de esta forma el trabajo del compilador. Por ejemplo, una de las acciones más importantes es la modificación de las inclusiones (#include) por las declaraciones reales existentes en el archivo indicado.
+2. Compilación que genera el código objeto a partir del código ya preprocesado.
+3. Enlazado que une los códigos objeto de los distintos módulos y bibliotecas externas (como las bibliotecas del sistema) para generar el programa ejecutable final.
+
+Ejemplo de código
+
+El siguiente programa imprime en pantalla la frase "Hola Mundo" (C99).
+
+// necesario para utilizar printf()
+# include <stdio.h>
+ 
+int main(void)
+{
+	printf("Hola Mundo\n");
+	return 0;
+}
+
+El siguiente escribe "Hola Mundo" en C89
+
+/* comentarios con '//' no permitidos en C89, sí en C99 */
+# include <stdio.h>  /* necesario para utilizar printf */
+ 
+main() /* tipo 'int' de retorno implícito */
+{
+	printf ("Hola Mundo\n") ;
+	return 0;
+}
+
+Estructura de control "else if"
+
+if (condicion 1) {
+ 
+    sentencia 1
+ 
+} else if (condicion 2){
+ 
+    sentencia 2
+ 
+} else if (condicion n){
+ 
+    sentencia n
+ 
+} else {
+ 
+  sentencias por defecto
+}
+
+Herramientas de programación
+
+Al programar en C, es habitual usar algunas herramientas de programación de uso muy extendido, sobre todo en entorno de tipo unix:
+- make: Herramienta para automatizar el proceso de compilación, enlazado, etc.
+- lint: Herramienta utilizada para detectar código sospechoso, confuso o incompatible entre distintas arquitecturas
+- valgrind: Herramienta utilizada para detectar posibles fugas de memoria.
+- gdb : Debugger de GNU utilizado para seguir la ejecución del programa.
+- dbx : Debugger que suele venir instalado con todos los UNIX.
+- ddd : Interfaz gráfico para el depurador gdb o dbx.
+
+Aplicabilidad
+
+Hecho principalmente para la fluidez de programación en sistemas UNIX. Se usa también para el desarrollo de otros sistemas operativos como Windows o GNU/Linux. Igualmente para aplicaciones de escritorio como GIMP, cuyo principal lenguaje de programación es C.
+
+De la misma forma, es muy usado en aplicaciones científicas (para experimentos informáticos, físicos, químicos, matemáticos, entre otros, parte de ellos conocidos como modelos y simuladores), industriales (industria robótica, cibernética, sistemas de información y base de datos para la industria petrolera y petroquímica. Predominan también todo lo que se refiere a simulación de máquinas de manufactura), simulaciones de vuelo (es la más delicada, ya que se tienen que usar demasiados recursos tanto de hardware como de software para desarrollar aplicaciones que permitan simular el vuelo real de una aeronave. Se aplica por tanto, en diversas áreas desconocidas por gran parte de los usuarios noveles.
+
+Los ordenadores de finales de los 90 son varios órdenes de magnitud más potentes que las máquinas en que C se desarrolló originalmente. Programas escritos en lenguajes de tipo dinámico y fácil codificación (Ruby, Python, Perl...) que antaño hubieran resultado demasiado lentos, son lo bastante rápidos como para desplazar en uso a C. Aun así, se puede seguir encontrando código C en grandes desarrollos de animaciones, modelados y escenas en 3D en películas y otras aplicaciones multimedia.
+
+Actualmente, los grandes proyectos de software se dividen en partes, dentro de un equipo de desarrollo. Aquellas partes que son más "burocráticas" o "de gestión" con los recursos del sistema, se suelen realizar en lenguajes de tipo dinámico o de guion (script), mientras que aquellas partes "críticas", por su necesidad de rapidez de ejecución, se realizan en un lenguaje de tipo compilado, como C o C++. Si, después de hacer la división, las partes críticas no superan un cierto porcentaje del total (aproximadamente el 10%) entonces todo el desarrollo se realiza con lenguajes dinámicos. Si la parte crítica no llega a cumplir las expectativas del proyecto, se comparan las alternativas de una inversión en nuevo hardware frente a invertir en el coste de un programador para que reescriba dicha parte crítica[cita requerida].
+
+Aplicaciones embebidas
+
+C es el lenguaje común para programar sistemas embebidos.[cita requerida] El código ligero que un compilador C genera, combinado con la capacidad de acceso a capas del software cercanas al hardware son la causa de su popularidad en estas aplicaciones.
+
+Una característica donde C demuestra comodidad de uso particularmente valiosa en sistemas embebidos es la manipulación de bits. Los sistemas contienen registros mapeados en memoria (en inglés, MMR) a través de los cuales los periféricos se configuran. Estos registros mezclan varias configuraciones en la misma dirección de memoria, aunque en bits distintos. Con C es posible modificar fácilmente uno de estos bits sin alterar el resto. Por ejemplo:
+
+int *mmr; /* puntero al registro que queremos modificar */
+mmr = 0x40008ABC; /* dirección de memoria del registro */
+ 
+* mmr |= 1<<7; /* pone a 1 el bit 8 sin modificar los demás */
+* mmr &= ~(1<<12) /* pone a 0 el bit 13 sin modificar los demás */
+
+Este tipo de manipulación es muy tediosa o sencillamente imposible en otros lenguajes de alto nivel, dado que se utilizan operaciones comunes del lenguaje ensamblador como las operaciones a nivel bit OR, AND, SHL y CPL pero que están disponibles en el lenguaje C.
+
+Otras características de C consideradas desventajas en la programación para PC -como la ausencia de control de memoria automático- se convierten en ventajas cuando los sistemas embebidos necesitan código pequeño y optimizado. Ese es el caso de los sistemas basados en microcontroladores de poca potencia como el intel 8051 o muchos sistemas ARM.
+
+Bibliotecas C
+
+Una biblioteca de C es una colección de funciones utilizadas en el lenguaje de programación C. Las bibliotecas más comunes son la biblioteca estándar de C y la biblioteca del estándar ANSI C, la cual provee las especificaciones de los estándares que son ampliamente compartidas entre bibliotecas. La biblioteca ANSI C estándar, incluye funciones para la entrada y salida de archivos, alojamiento de memoria y operaciones con datos comunes: funciones matemáticas, funciones de manejo de cadenas de texto y funciones de hora y fecha.
+
+Otras bibliotecas C son aquellas utilizadas para desarrollar sistemas Unix, las cuales proveen interfaces hacia el núcleo. Estas funciones son detalladas en varios estándares tales como POSIX y el Single UNIX Specification.
+
+Ya que muchos programas han sido escritos en el lenguaje C existe una gran variedad de bibliotecas disponibles. Muchas bibliotecas son escritas en C debido a que C genera código objeto rápido; los programadores luego generan interfaces a la biblioteca para que las rutinas puedan ser utilizadas desde lenguajes de mayor nivel, tales como Java, Perl y Python.
+
+Referencias
+1. Dennis M. Ritchie (Enero de 1993). «The Development of the C Language» (en inglés). Consultado el 01-01-2008. «The scheme of type composition adopted by C owes considerable debt to Algol 68, although it did not, perhaps, emerge in a form that Algol's adherents would approve of.».
+2. «Content not found».
+3. http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=57853
+4. WG14 N1570 Committee Draft — April 12, 2011
+

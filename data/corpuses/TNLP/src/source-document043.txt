@@ -1,0 +1,168 @@
+MySQL
+
+MySQL es un sistema de gestión de bases de datos relacional, multihilo y multiusuario con más de seis millones de instalaciones.1 MySQL AB —desde enero de 2008 una subsidiaria de Sun Microsystems y ésta a su vez de Oracle Corporation desde abril de 2009— desarrolla MySQL como software libre en un esquema de licenciamiento dual.
+
+Por un lado se ofrece bajo la GNU GPL para cualquier uso compatible con esta licencia, pero para aquellas empresas que quieran incorporarlo en productos privativos deben comprar a la empresa una licencia específica que les permita este uso. Está desarrollado en su mayor parte en ANSI C.
+
+Al contrario de proyectos como Apache, donde el software es desarrollado por una comunidad pública y los derechos de autor del código están en poder del autor individual, MySQL es patrocinado por una empresa privada, que posee el copyright de la mayor parte del código. Esto es lo que posibilita el esquema de licenciamiento anteriormente mencionado. Además de la venta de licencias privativas, la compañía ofrece soporte y servicios. Para sus operaciones contratan trabajadores alrededor del mundo que colaboran vía Internet. MySQL AB fue fundado por David Axmark, Allan Larsson y Michael Widenius.
+
+MySQL es usado por muchos sitios web grandes y populares, como Wikipedia,2 Google3 4 (aunque no para búsquedas), Facebook,5 6 7 Twitter,8 Flickr,9 y YouTube.10
+
+Lenguajes de programación
+
+Existen varias interfaces de programación de aplicaciones que permiten, a aplicaciones escritas en diversos lenguajes de programación, acceder a las bases de datos MySQL, incluyendo C, C++, C#, Pascal, Delphi (vía dbExpress), Eiffel, Smalltalk, Java (con una implementación nativa del driver de Java), Lisp, Perl, PHP, Python, Ruby, Gambas, REALbasic (Mac y Linux), (x)Harbour (Eagle1), FreeBASIC, y Tcl; cada uno de estos utiliza una interfaz de programación de aplicaciones específica. También existe una interfaz ODBC, llamado MyODBC que permite a cualquier lenguaje de programación que soporte ODBC comunicarse con las bases de datos MySQL. También se puede acceder desde el sistema SAP, lenguaje ABAP.
+
+Aplicaciones
+
+MySQL es muy utilizado en aplicaciones web, como Drupal o phpBB, en plataformas (Linux/Windows-Apache-MySQL-PHP/Perl/Python), y por herramientas de seguimiento de errores como Bugzilla. Su popularidad como aplicación web está muy ligada a PHP, que a menudo aparece en combinación con MySQL.
+
+MySQL es una base de datos muy rápida en la lectura cuando utiliza el motor no transaccional MyISAM, pero puede provocar problemas de integridad en entornos de alta concurrencia en la modificación. En aplicaciones web hay baja concurrencia en la modificación de datos y en cambio el entorno es intensivo en lectura de datos, lo que hace a MySQL ideal para este tipo de aplicaciones. Sea cual sea el entorno en el que va a utilizar MySQL, es importante monitorizar de antemano el rendimiento para detectar y corregir errores tanto de SQL como de programación.11
+
+Especificaciones
+
+Plataformas
+
+MySQL funciona sobre múltiples plataformas, incluyendo:
+- AIX
+- BSD
+- FreeBSD
+- HP-UX
+- Kurisu OS
+- GNU/Linux
+- Mac OS X
+- NetBSD
+- OpenBSD
+- OS/2 Warp
+- QNX
+- SGI IRIX
+- Solaris
+- SunOS
+- SCO OpenServer
+- SCO UnixWare
+- Tru64
+- eBD
+- Windows 95, Windows 98, Windows NT, Windows 2000, Windows XP, Windows Vista, Windows 7, Windows 8 y Windows Server (2000, 2003, 2008 y 2012).
+- OpenVMS18
+
+Características adicionales
+- Usa GNU Automake, Autoconf, y Libtool para portabilidad
+- Uso de multihilos mediante hilos del kernel.
+- Usa tablas en disco b-tree para búsquedas rápidas con compresión de índice
+- Tablas hash en memoria temporales
+- El código MySQL se prueba con Purify (un detector de memoria perdida comercial) así como con Valgrind, una herramienta GPL.
+- Completo soporte para operadores y funciones en cláusulas select y where.
+- Completo soporte para cláusulas group by y order by, soporte de funciones de agrupación
+- Seguridad: ofrece un sistema de contraseñas y privilegios seguro mediante verificación basada en el host y el tráfico de contraseñas está cifrado al conectarse a un servidor.
+- Soporta gran cantidad de datos. MySQL Server tiene bases de datos de hasta 50 millones de registros.
+- Se permiten hasta 64 índices por tabla (32 antes de MySQL 4.1.2). Cada índice puede consistir desde 1 hasta 16 columnas o partes de columnas. El máximo ancho de límite son 1000 bytes (500 antes de MySQL 4.1.2).
+- Los clientes se conectan al servidor MySQL usando sockets TCP/IP en cualquier plataforma. En sistemas Windows se pueden conectar usando named pipes y en sistemas Unix usando ficheros socket Unix.
+- En MySQL 5.0, los clientes y servidores Windows se pueden conectar usando memoria compartida.
+- MySQL contiene su propio paquete de pruebas de rendimiento proporcionado con el código fuente de la distribución de MySQL.
+
+Características
+
+Inicialmente, MySQL carecía de elementos considerados esenciales en las bases de datos relacionales, tales como integridad referencial y transacciones. A pesar de ello, atrajo a los desarrolladores de páginas web con contenido dinámico, justamente por su simplicidad.
+
+Poco a poco los elementos de los que carecía MySQL están siendo incorporados tanto por desarrollos internos, como por desarrolladores de software libre. Entre las características disponibles en las últimas versiones se puede destacar:
+- Amplio subconjunto del lenguaje SQL. Algunas extensiones son incluidas igualmente.
+- Disponibilidad en gran cantidad de plataformas y sistemas.
+- Posibilidad de selección de mecanismos de almacenamiento que ofrecen diferentes velocidades de operación, soporte físico, capacidad, distribución geográfica, transacciones...
+- Transacciones y claves foráneas.
+- Conectividad segura.
+- Replicación.
+- Búsqueda e indexación de campos de texto.
+
+MySQL es un sistema de administración de bases de datos. Una base de datos es una colección estructurada de tablas que contienen datos. Esta puede ser desde una simple lista de compras a una galería de pinturas o el vasto volumen de información en una red corporativa. Para agregar, acceder a y procesar datos guardados en un computador, usted necesita un administrador como MySQL Server. Dado que los computadores son muy buenos manejando grandes cantidades de información, los administradores de bases de datos juegan un papel central en computación, como aplicaciones independientes o como parte de otras aplicaciones.
+
+MySQL es un sistema de administración relacional de bases de datos. Una base de datos relacional archiva datos en tablas separadas en vez de colocar todos los datos en un gran archivo. Esto permite velocidad y flexibilidad. Las tablas están conectadas por relaciones definidas que hacen posible combinar datos de diferentes tablas sobre pedido.
+
+MySQL es software de fuente abierta. Fuente abierta significa que es posible para cualquier persona usarlo y modificarlo. Cualquier persona puede bajar el código fuente de MySQL y usarlo sin pagar. Cualquier interesado puede estudiar el código fuente y ajustarlo a sus necesidades. MySQL usa el GPL (GNU General Public License) para definir qué puede hacer y qué no puede hacer con el software en diferentes situaciones. Si usted no se ajusta al GPL o requiere introducir código MySQL en aplicaciones comerciales, usted puede comprar una versión comercial licenciada.
+
+Características distintivas
+
+Las siguientes características son implementadas únicamente por MySQL:
+- Permite escoger entre múltiples motores de almacenamiento para cada tabla. En MySQL 5.0 éstos debían añadirse en tiempo de compilación, a partir de MySQL 5.1 se pueden añadir dinámicamente en tiempo de ejecución:
+    - Los hay nativos como MyISAM, Falcon, Merge, InnoDB, BDB, Memory/heap, MySQL Cluster, Federated, Archive, CSV, Blackhole y Example
+    - Desarrollados por partners como solidDB, NitroEDB, ScaleDB, TokuDB, Infobright (antes Brighthouse), Kickfire, XtraDB, IBM DB2. InnoDB Estuvo desarrollado así pero ahora pertenece también a Oracle.
+    - Desarrollados por la comunidad como memcache, httpd, PBXT y Revision.
+- Agrupación de transacciones, reuniendo múltiples transacciones de varias conexiones para incrementar el número de transacciones por segundo.
+
+Tipos de compilación del servidor
+
+Hay tres tipos de compilación del servidor MySQL:
+- Estándar: Los binarios estándar de MySQL son los recomendados para la mayoría de los usuarios, e incluyen el motor de almacenamiento InnoDB.
+- Max (No se trata de MaxDB, que es una cooperación con SAP): Los binarios incluyen características adicionales que no han sido lo bastante probadas o que normalmente no son necesarias.
+- MySQL-Debug: Son binarios que han sido compilados con información de depuración extra. No debe ser usada en sistemas en producción porque el código de depuración puede reducir el rendimiento.
+
+Especificaciones del código fuente
+
+MySQL está escrito en una mezcla de C y C++. Hay un documento que describe algunas de sus estructuras internas en http://dev.mysql.com/doc/internals/en (en inglés).
+
+Desarrollo del proyecto
+
+El desarrollo de MySQL se fundamenta en el trabajo de los desarrolladores contratados por la empresa MySQL AB quienes se encargan de dar soporte a los socios comerciales y usuarios de la comunidad MySQL y dar solución a los problemas encontrados por los usuarios. Los usuarios o miembros de la comunidad MySQL pueden reportar bugs revisando el manual en línea [2] que contiene las soluciones a problemas encontrados; el historial de cambios [3]; la base de datos bugs [4] que contiene bugs reportados y solucionados y en las listas de correo MySQL [5].
+
+A través de las listas de correo los usuarios pueden enviar preguntas y éstas serán contestadas por desarrolladores brindándoles mejor soporte.
+
+Otras funcionalidades de las listas de correo
+- Anuncios: informan sobre nuevas versiones de MySQL y programas relacionados.
+- MySQL: lista principal de discusión de MySQL y sql.
+- Bugs: permite a la gente buscar y arreglar bugs.
+- Temas internos: para gente que trabaja con el código de MySQL. Es el fórum para discutir sobre el desarrollo de MySQL.
+- MySQLdoc: para gente que trabaja en documentación.
+- Pruebas de rendimiento: para gente interesada en temas de rendimiento no sólo de MySQL, sino de otros motores de bases de datos.
+- Empaquetadores: para discusiones sobre empaquetamiento y distribución de MySQL.
+- Java: discusiones sobre MySQL Server y Java.
+
+Otras listas de correo son: MyODBC, Herramientas GUI, Cluster, Dotnet, PlusPlus y Perl.
+
+Adicional a las listas de correo, se encuentra el soporte de IRC de la comunidad MySQL. Además, hay soporte a través de foros [6] agrupados en categorías tales como: Migración, Uso de MySQL, Conectores MySQL, Tecnología MySQL y Negocios.
+
+Estructuras organizativas/asociativas o de decisión
+
+La dirección y el patrocinio de los proyectos MySQL están a cargo de la empresa MySQL AB quien posee el copyrigth del código fuente MySQL, su logo y marca registrada. MySQL, Inc. y MySQL GmbH son ejemplos de empresas subsidiarias de MySQL AB. Están establecidas en los Estados Unidos y Alemania respectivamente. MySQL AB, cuenta con más de 200 empleados en más de 20 países y funcionan bajo la estrategia de teletrabajo.
+
+En enero del 2008 Sun Microsystems anuncia su compra. En abril del 2009 Oracle anunció la compra de Sun Microsystems.19
+
+Industria relacionada
+
+La industria radica en la venta de productos software y de algunos servicios relacionados a numerosas empresas que utilizan estos productos.
+
+MySQL AB clasifica los productos así:
+- MySQL Enterprise: incluye MySQL Enterprise Server, Monitoreo de la red MySQL, servicios de consulta y soporte de producción MySQL.
+- MySQL Cluster
+- MySQL Embedded Database.
+- MySQL Drivers: para JDBC, ODBC y.Net
+- MySQL Tools: MySQL Administrator, MySQL Query Browser, and the MySQL Migration Toolkit.
+- MaxDB: MaxDB es una base de datos de código abierto certificada para SAP/R3.
+
+Los ingresos de esta empresa por la venta de licencias privativas de sus productos y los servicios suma los U$12 millones.
+
+MySQL en cifras
+- Según las cifras del fabricante, existirían más de seis millones de copias de MySQL funcionando en la actualidad, lo que supera la base instalada de cualquier otra herramienta de bases de datos.
+- El tráfico del sitio web de MySQL AB superó en 2004 al del sitio de IBM.
+
+Licencia
+
+La licencia GNU GPL de MySQL obliga a que la distribución de cualquier producto derivado (aplicación) se haga bajo esa misma licencia. Si un desarrollador desea incorporar MySQL en su producto pero desea distribuirlo bajo otra licencia que no sea la GNU GPL, puede adquirir una licencia comercial de MySQL que le permite hacer justamente eso.
+
+Referencias
+- MySQL :: Dispelling the Myths
+- «Wikimedia servers — System architecture». Wikimedia Meta-Wiki. Wikimedia Foundation. Consultado el 17 de septiembre de 2012.
+- Urlocker, M. Zack (13 de diciembre de 2005). «Google Runs MySQL». The Open Force. M. Zack Urlocker. Consultado el 3 de agosto de 2010. «AdWords was built using the MySQL database».
+- Claburn, Thomas (24 April 2007). «Google Releases Improved MySQL Code». InformationWeek (CPM Media). Consultado el 30 November 2008.
+- Callaghan, Mark (13 April 2010). «MySQL at Facebook». YouTube (Google). Consultado el 3 August 2010. «x,000 servers, ... Master-slave replication, InnoDB»
+- Sobel, Jason (21 de diciembre de 2007). «Keeping Up». The Facebook Blog. Facebook. Consultado el 30 de octubre de 2008.
+- Malik, Om (25 de abril de 2008). «Facebook’s Insatiable Hunger for Hardware». GigaOM. GigaOmniMedia. Consultado el 30 de octubre de 2008.
+- Cole, Jeremy (14 April 2011). «Big and Small Data at @Twitter». YouTube (Google). Consultado el 20 October 2011.
+- «MySQL Customer: Flickr». MySQL Customers. Oracle. Consultado el 17 de septiembre de 2012.
+- «MySQL Customer: YouTube». MySQL Customers. Oracle. Consultado el 17 de septiembre de 2012.
+- mtop: monitoreo de carga en MySQL
+- «B.3. Changes in Release 3.23.x (Lifecycle Support Ended)». Oracle. Consultado el 24 de agosto de 2010.
+- «B.2. Changes in Release 4.0.x (Lifecycle Support Ended)». Oracle. Consultado el 24 de agosto de 2010.
+- «B.1. Changes in Release 4.1.x (Lifecycle Support Ended)». Oracle. Consultado el 24 de agosto de 2010.
+- «C.1. Changes in Release 5.0.x (Production)». Oracle. Consultado el 24 de agosto de 2010.
+- «C.1. Changes in Release 5.1.x (Production)». Oracle. Consultado el 24 de agosto de 2010.
+- «C.1. Changes in Release 5.5.x (Development)». Oracle. Consultado el 24 de agosto de 2010.
+- [1]
+- http://www.elpais.com/articulo/internet/Oracle/adquiere/Sun/Microsystems/5710/millones/elpeputec/20090420elpepunet_3/Tes

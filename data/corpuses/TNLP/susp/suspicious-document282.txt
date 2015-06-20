@@ -1,0 +1,140 @@
+Pila (informática)
+
+Una pila (stack en inglés) es una lista ordenada o estructura de datos en la que el modo de acceso a sus elementos es de tipo LIFO (del inglés Last In First Out, último en entrar, primero en salir) que permite almacenar y recuperar datos. Esta estructura se aplica en multitud de ocasiones en el área de informática debido a su simplicidad y ordenación implícita de la propia estructura.
+
+Para el manejo de los datos se cuenta con dos operaciones básicas: apilar (push), que coloca un objeto en la pila, y su operación inversa, retirar (o desapilar, pop), que retira el último elemento apilado.
+
+En cada momento sólo se tiene acceso a la parte superior de la pila, es decir, al último objeto apilado (denominado TOS, Top of Stack en inglés). La operación retirar permite la obtención de este elemento, que es retirado de la pila permitiendo el acceso al siguiente (apilado con anterioridad), que pasa a ser el nuevo TOS.
+
+Por analogía con objetos cotidianos, una operación apilar equivaldría a colocar un plato sobre una pila de platos, y una operación retirar a retirarlo.
+
+Las pilas suelen emplearse en los siguientes contextos:
+- Evaluación de expresiones en notación postfija (notación polaca inversa).
+- Reconocedores sintácticos de lenguajes independientes del contexto
+- Implementación de recursividad.
+
+Historia
+
+El método de pila para la evaluación de expresiones fue propuesto en 1955 y dos años después patentado por Friedrich L. Bauer, quién recibió en 1988 el premio "IEEE Computer Society Pioneer Award" por su trabajo en el desarrollo de dicha estructura de datos.
+
+Pila como tipo abstracto de datos
+
+A modo de resumen tipo de datos, la pila es un contenedor de nodos y tiene dos operaciones básicas: push (o apilar) y pop (o desapilar). 'Push' añade un nodo a la parte superior de la pila, dejando por debajo el resto de los nodos. 'Pop' elimina y devuelve el actual nodo superior de la pila. Una metáfora que se utiliza con frecuencia es la idea de una pila de platos en una cafetería con muelle de pila. En esa serie, sólo la primera placa es visible y accesible para el usuario, todas las demás placas permanecen ocultas. Como se añaden las nuevas placas, cada nueva placa se convierte en la parte superior de la pila, escondidos debajo de cada plato, empujando a la pila de placas. A medida que la placa superior se elimina de la pila, la segunda placa se convierte en la parte superior de la pila. Dos principios importantes son ilustrados por esta metáfora: En primer lugar la última salida es un principio, la segunda es que el contenido de la pila está oculto. Sólo la placa de la parte superior es visible, por lo que para ver lo que hay en la tercera placa, el primer y segundo platos tendrán que ser retirados.
+
+Operaciones
+
+Una pila cuenta con 2 operaciones imprescindibles: apilar y desapilar, a las que en las implementaciones modernas de las pilas se suelen añadir más de uso habitual.
+- Crear: se crea la pila vacía. (constructor)
+- Tamaño: regresa el número de elementos de la pila. (size)
+- Apilar: se añade un elemento a la pila.(push)
+- Desapilar: se elimina el elemento frontal de la pila.(pop)
+- Cima: devuelve el elemento que esta en la cima de la pila. (top o peek)
+- Vacía: devuelve cierto si la pila está sin elementos o falso en caso de que contenga uno. (empty).
+
+Implementación
+
+Un requisito típico de almacenamiento de una pila de n elementos es O(n). El requisito típico de tiempo de O(1) las operaciones también son fáciles de satisfacer con un array o con listas enlazadas simples.
+
+Estructuras de datos relacionadas
+
+El tipo base de la estructura FIFO (el primero en entrar es el primero en salir)es la cola, y la combinación de las operaciones de la pila y la cola es proporcionado por el deque. Por ejemplo, el cambio de una pila en una cola en un algoritmo de búsqueda puede cambiar el algoritmo de búsqueda en primera profundidad (en inglés, DFS) por una búsqueda en amplitud (en inglés, BFS). Una pila acotada es una pila limitada a un tamaño máximo impuesto en su especificación.
+
+Pilas Hardware
+
+Un uso muy común de las pilas a nivel de arquitectura hardware es la asignación de memoria.
+
+Arquitectura básica de una pila
+
+Una pila típica es un área de la memoria de los computadores con un origen fijo y un tamaño variable. Al principio, el tamaño de la pila es cero. Un puntero de pila, por lo general en forma de un registro de hardware, apunta a la más reciente localización en la pila; cuando la pila tiene un tamaño de cero, el puntero de pila de puntos en el origen de la pila.
+
+Las dos operaciones aplicables a todas las pilas son:
+- Una operación apilar, en el que un elemento de datos se coloca en el lugar apuntado por el puntero de pila, y la dirección en el puntero de pila se ajusta por el tamaño de los datos de partida.
+- Una operación desapilar: un elemento de datos en la ubicación actual apuntado por el puntero de pila es eliminado, y el puntero de pila se ajusta por el tamaño de los datos de partida.
+
+Hay muchas variaciones en el principio básico de las operaciones de pila. Cada pila tiene un lugar fijo en la memoria en la que comienza. Como los datos se añadirán a la pila, el puntero de pila es desplazado para indicar el estado actual de la pila, que se expande lejos del origen (ya sea hacia arriba o hacia abajo, dependiendo de la aplicación concreta).
+
+Por ejemplo, una pila puede comenzar en una posición de la memoria de mil, y ampliar por debajo de las direcciones, en cuyo caso, los nuevos datos se almacenan en lugares que van por debajo de 1000, y el puntero de pila se decrementa cada vez que un nuevo elemento se agrega. Cuando un tema es eliminado de la pila, el puntero de pila se incrementa.
+
+Los punteros de pila pueden apuntar al origen de una pila o de un número limitado de direcciones, ya sea por encima o por debajo del origen (dependiendo de la dirección en que crece la pila), sin embargo el puntero de pila no puede cruzar el origen de la pila. En otras palabras, si el origen de la pila está en la dirección 1000 y la pila crece hacia abajo (hacia las direcciones 999, 998, y así sucesivamente), el puntero de pila nunca debe ser incrementado más allá de 1000 (para 1001, 1002, etc.) Si un desapilar operación en la pila hace que el puntero de pila se deje atrás el origen de la pila, una pila se produce desbordamiento. Si una operación de apilar hace que el puntero de pila incremente o decremente más allá del máximo de la pila, en una pila se produce desbordamiento.
+
+La pila es visualizada ya sea creciente de abajo hacia arriba (como pilas del mundo real), o, con el máximo elemento de la pila en una posición fija, o creciente, de izquierda a derecha, por lo que el máximo elemento se convierte en el máximo a "la derecha". Esta visualización puede ser independiente de la estructura real de la pila en la memoria. Esto significa que rotar a la derecha es mover el primer elemento a la tercera posición, la segunda a la primera y la tercera a la segunda. Aquí hay dos equivalentes visualizaciones de este proceso:
+
+ Manzana                                            Plátano
+ 
+ Plátano       ==rotar a la derecha==>              Fresa
+ 
+ Fresa                                              Manzana
+
+
+ Fresa                                             Manzana
+ 
+ Plátano       ==rotar a la izquierda==>           Fresa
+ 
+ Manzana                                           Plátano
+
+Una pila es normalmente representada en los ordenadores por un bloque de celdas de memoria, con los "de abajo" en una ubicación fija, y el puntero de pila de la dirección actual de la "cima" de células de la pila. En la parte superior e inferior se utiliza la terminología con independencia de que la pila crece realmente a la baja de direcciones de memoria o direcciones de memoria hacia mayores.
+
+Apilando un elemento en la pila,se ajusta el puntero de pila por el tamaño de elementos (ya sea decrementar o incrementar, en función de la dirección en que crece la pila en la memoria), que apunta a la próxima celda, y copia el nuevo elemento de la cima en área de la pila. Dependiendo de nuevo sobre la aplicación exacta, al final de una operación de apilar, el puntero de pila puede señalar a la siguiente ubicación no utilizado en la pila, o tal vez apunte al máximo elemento de la pila. Si la pila apunta al máximo elemento de la pila, el puntero de pila se actualizará antes de que un nuevo elemento se apile, si el puntero que apunta a la próxima ubicación disponible en la pila, que se actualizará después de que el máximo elemento se apile en la pila.
+
+Desapilando es simplemente la inversa de apilar. El primer elemento de la pila es eliminado y el puntero de pila se actualiza, en el orden opuesto de la utilizada en la operación de apilar.
+
+Soporte de Hardware
+
+Muchas CPUs tienen registros que se pueden utilizar como punteros de pila. Algunos, como el Intel x86, tienen instrucciones especiales que implícitamente el uso de un registro dedicado a la tarea de ser un puntero de pila. Otros, como el DEC PDP-11 y de la familia 68000 de Motorola tienen que hacer frente a los modos de hacer posible la utilización de toda una serie de registros como un puntero de pila. La serie Intel 80x87 numérico de coprocessors tiene un conjunto de registros que se puede acceder ya sea como una pila o como una serie de registros numerados. Algunos microcontroladores, por ejemplo algunos PICs, tienen un fondo fijo de pila que no es directamente accesible. También hay una serie de microprocesadores que aplicar una pila directamente en el hardware:
+- Computer vaqueros MuP21
+- Harris RTX línea
+- Novix NC4016
+
+Muchas pilas basadas en los microprocesadores se utilizan para aplicar el lenguaje de programación Forth en el nivel de microcódigo. Pila también se utilizaron como base de una serie de mainframes y miniordenadores. Esas máquinas fueron llamados pila de máquinas, el más famoso es el Burroughs B5000
+
+Soporte de Software
+
+En programas de aplicación escrito en un lenguaje de alto nivel, una pila puede ser implementada de manera eficiente, ya sea usando vectores o listas enlazadas. En LISP no hay necesidad de aplicar la pila, puesto que las funciones apilar y desapilar están disponibles para cualquier lista. Adobe PostScript también está diseñada en torno a una pila que se encuentra directamente visible y manipuladas por el programador. El uso de las pilas está muy presente en el desarrollo de software por ello la importancia de las pilas como tipo abstracto de datos.
+
+Expresión de evaluación y análisis sintáctico
+
+Se calcula empleando la notación polaca inversa utilizando una estructura de pila para los posibles valores. Las expresiones pueden ser representadas en prefijo, infijo, postfijo. La conversión de una forma de la expresión a otra forma necesita de una pila. Muchos compiladores utilizan una pila para analizar la sintaxis de las expresiones, bloques de programa, etc. Antes de traducir el código de bajo nivel. La mayoría de los lenguajes de programación son de contexto libre de los idiomas que les permite ser analizados con máquinas basadas en la pila.
+
+Por ejemplo, el cálculo: ((1 + 2) * 4) + 3, puede ser anotado como en notación postfija con la ventaja de no prevalecer las normas y los paréntesis necesario:
+
+1 2 + 4 * 3 +
+
+La expresión es evaluada de izquierda a derecha utilizando una pila:
+- Apilar cuando se enfrentan a un operando y
+- Desafilar dos operandos y evaluar el valor cuando se enfrentan a una operación.
+- Apilar el resultado.
+
+De la siguiente manera (la Pila se muestra después de que la operación se haya llevado a cabo):
+
+ ENTRADA         OPERACIÓN                 PILA
+ 
+ 1             Apilar operando             1
+ 2             Apilar operando             1, 2
+ +             Añadir                      3
+ 4             Apilar operando             3, 4
+ *             Multiplicar                 12
+ 3             Apilar operando             12, 3
+ +             Añadir                      15 
+
+
+El resultado final, 15, se encuentra en la parte superior de la pila al final del cálculo.
+
+Tiempo de ejecución de la gestión de memoria
+
+Artículo principal: Pila basada en la asignación de memoria y Pila máquina. Una serie de lenguajes de programación están orientadas a la pila, lo que significa que la mayoría definen operaciones básicas (añadir dos números, la impresión de un carácter) cogiendo sus argumentos de la pila, y realizando de nuevo los valores de retorno en la pila. Por ejemplo, PostScript tiene una pila de retorno y un operando de pila, y también tiene un montón de gráficos estado y un diccionario de pila.
+
+Forth utiliza dos pilas, una para pasar argumentos y una subrutina de direcciones de retorno. El uso de una pila de retorno es muy común, pero el uso poco habitual de un argumento para una pila legible para humanos es el lenguaje de programación Forth razón que se denomina una pila basada en el idioma.
+
+Muchas máquinas virtuales también están orientadas hacia la pila, incluida la p-código máquina y la máquina virtual Java.
+
+Casi todos los entornos de computación de tiempo de ejecución de memoria utilizan una pila especial PILA para tener información sobre la llamada de un procedimiento o función y de la anidación con el fin de cambiar al contexto de la llamada a restaurar cuando la llamada termina. Ellos siguen un protocolo de tiempo de ejecución entre el que llama y el llamado para guardar los argumentos y el valor de retorno en la pila. Pila es una forma importante de apoyar llamadas anidadas o a funciones recursivas. Este tipo de pila se utiliza implícitamente por el compilador para apoyar CALL y RETURN estados (o sus equivalentes), y no es manipulada directamente por el programador.
+
+Algunos lenguajes de programación utilizar la pila para almacenar datos que son locales a un procedimiento. El espacio para los datos locales se asigna a los temas de la pila cuando el procedimiento se introduce, y son borradas cuando el procedimiento termina. El lenguaje de programación C es generalmente aplicado de esta manera. Utilizando la misma pila de los datos y llamadas de procedimiento tiene importantes consecuencias para la seguridad (ver más abajo), de los que un programador debe ser consciente, a fin de evitar la introducción de graves errores de seguridad en un programa.
+
+Solucionar problemas de búsqueda
+
+La búsqueda de la solución de un problema, es independientemente de si el enfoque es exhaustivo u óptimo, necesita espacio en la pila. Ejemplos de búsqueda exhaustiva métodos son fuerza bruta y backtraking. Ejemplos de búsqueda óptima a explorar métodos,son branch and bound y soluciones heurísticas. Todos estos algoritmos utilizan pilas para recordar la búsqueda de nodos que se han observado, pero no explorados aún. La única alternativa al uso de una pila es utilizar la recursividad y dejar que el compilador sea recursivo (pero en este caso el compilador todavía está utilizando una pila interna). El uso de pilas es frecuente en muchos problemas, que van desde almacenar la profundidad de los árboles hasta resolver crucigramas o jugar al ajedrez por ordenador. Algunos de estos problemas pueden ser resueltos por otras estructuras de datos como una cola.
+
+Seguridad
+
+La seguridad a la hora de desarrollar software usando estructuras de datos de tipo pila es un factor a tener en cuenta debido a ciertas vulnerabilidad que un uso incorrecto de éstas puede originar en la seguridad de nuestro software o en la seguridad del propio sistema que lo ejecuta. Por ejemplo, algunos lenguajes de programación usan una misma pila para almacenar los datos para un procedimientos y el link que permite retornar a su invocador. Esto significa que el programa introduce y extrae los datos de la misma pila en la que se encuentra información crítica con las direcciones de retorno de las llamadas a procedimiento, supongamos que al introducir datos en la pila lo hacemos en una posición errónea de manera que introducimos datos de mayor tamaño al soportado por la pila corrompiendo así las llamadas a procedimientos, provocaríamos un fallo en nuestro programa. Ésta técnica usada de forma maliciosa (es similar, pero en otro ámbito al buffer overflow) permitiría a un atacante modificar el funcionamiento normal de nuestro programa y nuestro sistema, y es al menos una técnica útil si no lo evitamos en lenguajes muy populares como el ejemplo C++.

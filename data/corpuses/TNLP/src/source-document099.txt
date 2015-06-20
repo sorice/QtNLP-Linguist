@@ -1,0 +1,175 @@
+Clasificador bayesiano ingenuo
+
+En teoría de la probabilidad y minería de datos, un clasificador Bayesiano ingenuo es un clasificador probabilístico fundamentado en el teorema de Bayes y algunas hipótesis simplificadoras adicionales. Es a causa de estas simplificaciones, que se suelen resumir en la hipótesis de independencia entre las variables predictoras, que recibe el apelativo de ingenuo.
+
+Introducción
+
+En términos simples, un clasificador de Bayes ingenuo asume que la presencia o ausencia de una característica particular, no está relacionada con la presencia o ausencia de cualquier otra característica, dada la clase variable. Por ejemplo , una fruta puede ser considerada como una manzana si es roja, redonda, y alrededor de 7 cm de diámetro . Un clasificador de Bayes ingenuo considera que cada una de estas características contribuye de manera independiente a la probabilidad de que esta fruta es una manzana, independientemente de la presencia o ausencia de las otras características.
+
+Para otros modelos de probabilidad, los clasificadores de Bayes ingenuo se pueden entrenar de manera muy eficiente en un entorno de aprendizaje supervisado. En muchas aplicaciones prácticas, la estimación de parámetros para los modelos Bayes ingenuo utiliza el método de máxima verosimilitud, en otras palabras, se puede trabajar con el modelo ingenuo de Bayes sin aceptar probabilidad bayesiana o cualquiera de los métodos bayesianos.
+
+Una ventaja del clasificador de Bayes ingenuo es que sólo se requiere una pequeña cantidad de datos de entrenamiento para estimar los parámetros (las medias y las varianzas de las variables) necesarias para la clasificación. Como las variables independientes se asumen, sólo es necesario determinar las varianzas de las variables de cada clase y no toda la matriz de covarianza.
+
+Concepto Probabilístico
+
+En abstracto, el modelo de probabilidad para un clasificador es
+
+    p(C \vert F_1,\dots,F_n)\,
+
+sobre una variable dependiente C, con un pequeño número de resultados (o clases). Esta variable está condicionada por varias variables independientes desde F_1 a F_n. El problema es que si el número n de variables independientes es grande (o cuando éstas pueden tomar muchos valores), entonces basar este modelo en tablas de probabilidad se vuelve imposible. Por lo tanto el modelo se reformula para hacerlo más manejable:
+
+Usando el teorema de Bayes se escribe:
+
+    p(C \vert F_1,\dots,F_n) = \frac{p(C) \ p(F_1,\dots,F_n\vert C)}{p(F_1,\dots,F_n)}. \,
+
+Lo anterior podría reescribirse en lenguaje común como:
+
+    Posterior = \frac{Anterior*Probabilidad}{Evidencia}. \,
+
+En la práctica sólo importa el numerador, ya que el denominador no depende de C y los valores de F_i son datos, por lo que el denominador es, en la práctica, constante.
+
+El numerador es equivalente a una probabilidad compuesta:
+
+    p(C, F_1, \dots, F_n)\,
+
+que puede ser reescrita como sigue, aplicando repetidamente la definición de probabilidad condicional:
+
+    p(C, F_1, \dots, F_n)\,
+
+        = p(C) \ p(F_1,\dots,F_n\vert C)
+
+        = p(C) \ p(F_1\vert C) \ p(F_2,\dots,F_n\vert C, F_1)
+
+        = p(C) \ p(F_1\vert C) \ p(F_2\vert C, F_1) \ p(F_3,\dots,F_n\vert C, F_1, F_2)
+
+        = p(C) \ p(F_1\vert C) \ p(F_2\vert C, F_1) \ p(F_3\vert C, F_1, F_2) \ p(F_4,\dots,F_n\vert C, F_1, F_2, F_3)
+
+
+... y así sucesivamente. Ahora es cuando la asunción "naïve" de independencia condicional entra en juego: se asume que cada F_i es independiente de cualquier otra F_j para j\neq i. Esto significa que
+
+    p(F_i \vert C, F_j) = p(F_i \vert C)\,
+
+por lo que la probabilidad compuesta puede expresarse como
+
+    p(C, F_1, \dots, F_n) = p(C) \ p(F_1\vert C) \ p(F_2\vert C) \ p(F_3\vert C) \ \cdots\,
+
+    = p(C) \prod_{i=1}^n p(F_i \vert C).\,
+
+Esto significa que haciendo estas asunciones, la distribución condicional sobre la variable clasificaroria C puede expresarse de la siguiente manera:
+
+    p(C \vert F_1,\dots,F_n) = \frac{1}{Z} p(C) \prod_{i=1}^n p(F_i \vert C)
+
+donde Z es un factor que depende sólo de F_1,\dots,F_n, es decir, constante si los valores de F_i son conocidos.
+
+Estimación de parámetros y modelo de eventos
+
+Todos los parámetros del modelo (por ejemplo, clases prioris y características de las distribuciones de probabilidad) se puede aproximar con frecuencias relativas del conjunto de entrenamiento. Estas son las estimaciones de máxima verosimilitud de las probabilidades. Una clase priori se puede calcular asumiendo clases equiprobables (es decir, priori = 1/ (número de clases)), o mediante el cálculo de una estimación de la probabilidad de clase del conjunto de entrenamiento (es decir, (el priori de una clase dada) = (número de muestras en la clase) / (número total de muestras)). Para la estimación de los parámetros de la distribución de una característica, se debe asumir una distribución o generar modelos de estadística no paramétrica de las características del conjunto de entrenamiento.
+
+Las hipótesis sobre las distribuciones de características son llamadas el modelo de eventos del Clasificador Bayesiano Ingenuo. La distribución multinomial y la distribución de Bernoulli son populares para características discretas como las encontradas en la clasificación de documentos (incluyendo el filtrado de spam). Estas hipótesis conducen a dos modelos distintos, que a menudo se confunden. Cuando se trata con los datos continuos, una hipótesis típica es que los valores continuos asociados con cada clase se distribuyen según una Distribución normal.
+
+Por ejemplo, supongamos que los datos de entrenamiento contienen un atributo continuo, x. En primer lugar, segmentar los datos por la clase, y a continuación, calcular la media y la varianza de x en cada clase. Donde \mu_c es la normal de x asociado a la clase c, y \sigma^2_c es la varianza de x asociado a la clase c. Entonces, la densidad de probabilidad de un cierto valor dada una clase, P(x=v|c), se puede calcular agregando v en la ecuación de una distribución Normal con parámetros \mu_c y \sigma^2_c. Es decir:
+
+P(x=v|c)=\tfrac{1}{\sqrt{2\pi\sigma^2_c}}\,e^{ -\frac{(v-\mu_c)^2}{2\sigma^2_c} }
+
+Otra técnica común para la manipulación de valores continuos es usar binning para discretizar los valores de las características, obteniendo un nuevo conjunto de características de la distribución de Bernoulli. En general, el método de distribución es una mejor opción si hay pocos datos de entrenamiento, o si se conoce la distribución precisa de los datos. El método de discretización tiende a ser mejor si hay una gran cantidad de datos de entrenamiento, ya que va a aprender para adaptarse a la distribución de los datos. Bayes Ingenuo se utiliza normalmente cuando está disponible una gran cantidad de datos (los modelos más caros computacionalmente pueden lograr una mayor precisión), se prefiere generalmente el método de discretización que el método de distribución.
+
+Corrección de muestras
+
+Si el valor de la clase y de la función dada no ocurren juntas en los datos de entrenamiento, entonces la estimación basada en la probabilidad de frecuencia será cero. Esto es un problema, ya que acabará con toda la información de las otras probabilidades cuando se multiplican. Por lo tanto a menudo es necesario incorporar una pequeña corrección de muestreo, llamada pseudocontador con toda la probabilidad estimada, de tal manera que no hay probabilidad alguna para que dé exactamente cero.
+
+Construcción de un clasificador del modelo de probabilidad
+
+Hasta ahora la discusión ha derivado del modelo de características independientes, es decir, el modelo de probabilidad de Bayes ingenuo. El clasificador Bayes Ingenuo combina este modelo con una regla de decisión. La primera regla en común, es para recoger la hipótesis del más probable, también conocido como el máximo a posteriori o MAP. El clasificador Bayer (la función \mathrm{classify}) se define como:
+
+    \mathrm{classify}(f_1,\dots,f_n) = \underset{c}{\operatorname{argmax}} \ p(C=c) \displaystyle\prod_{i=1}^n p(F_i=f_i\vert C=c).
+
+Discusión
+
+A pesar del hecho de que los clasificadores con mayor alcance son a menudo inexactos, el clasificador de Bayes ingenuo tiene varias propiedades que lo hacen sorprendentemente útil en la práctica. En particular, el desacoplamiento de la clase de distribuciones condicionales significa que cada distribución se puede estimar de forma independiente como una distribución dimensional. Esto ayuda a aliviar los problemas derivados de la Maldición de la dimensión, tales como la necesidad de conjuntos de datos que se escalan exponencialmente con el número de características. Mientras Bayes ingenuo a menudo falla para producir una buena estimación de las probabilidades de clase correctas, puede no ser un requisito para muchas otras aplicaciones. Por ejemplo, el clasificador ingenuo de Bayes hará correctamente la regla de clasificación del MAP de decisión tanto como mayor sea la probabilidad de la clase correcta respecto a las demás clases. Esto es cierto independientemente de si la estimación de la probabilidad es ligeramente, o incluso completamente inexacta. De esta manera, el clasificador general puede ser lo suficientemente robusto como para ignorar deficiencias graves en su modelo de probabilidad ingenua subyacente.
+
+Ejemplo
+
+Clasificación de sexo
+
+Problema: Clasificar una persona en hombre o mujer basándonos en las características de sus medidas: peso, altura y número de pie.
+
+Entrenamiento
+
+Entrenamiento previo.
+
+sexo 	altura (pies) 	peso (lbs) 	número de pie (inches)
+hombre 	6 	180 	12
+hombre 	5.92 (5'11") 	190 	11
+hombre 	5.58 (5'7") 	170 	12
+hombre 	5.92 (5'11") 	165 	10
+mujer 	5 	100 	6
+mujer 	5.5 (5'6") 	150 	8
+mujer 	5.42 (5'5") 	130 	7
+mujer 	5.75 (5'9") 	150 	9
+
+Haciendo una distribución Gaussiana extraemos los datos y obtenemos la media y la varianza de cada característica.
+
+sexo 	media (altura) 	varianza (altura) 	media (peso) 	varianza (peso) 	media (foot size) 	varianza (foot size)
+hombre 	5.855 	3.5033e-02 	176.25 	1.2292e+02 	11.25 	9.1667e-01
+mujer 	5.4175 	9.7225e-02 	132.5 	5.5833e+02 	7.5 	1.6667e+00
+
+En este caso nos encontramos en una distribución equiprobable, es decir que tienen la misma probabilidad. P(hombre)=0.5 y P(mujer)=0.5.
+
+Testing
+
+Ahora recibimos unos datos para ser clasificado como hombre o mujer
+
+sex 	altura (pies) 	peso (lbs) 	numero de pie(inches)
+muestra 	6 	130 	8
+
+Ahora nos interesa saber la probabilidad a posteriori de los dos casos, según es hombre o mujer.
+
+hombre
+
+    posteriori (hombre) = \frac{P(hombre) \, p(altura | hombre) \, p(peso | hombre) \, p(numero de pie | hombre)}{Evidencia} 
+
+mujer
+
+    posteriori (mujer) = \frac{P(mujer) \, p(altura | mujer) \, p(peso | mujer) \, p(numero de pie | mujer)}{Evidencia} 
+
+La evidencia (también denominada constante de normalización) se puede calcular:
+
+
+    evidence = P(hombre) \, p(altura | hombre) \, p(peso | hombre) \, p(numero de pie | hombre) 
+    + P(mujer) \, p(altura | mujer) \, p(peso | mujer) \, p(numero de pie | mujer) 
+
+
+En este caso nos encontramos en una distribución equiprobable, es decir que tienen la misma probabilidad. P(hombre)=0.5 y P(mujer)=0.5.
+
+    P(\mbox{hombre}) = 0.5 
+
+    p(\mbox{altura} | \mbox{hombre}) = \frac{1}{\sqrt{2\pi \sigma^2}}\exp\left(\frac{-(6-\mu)^2}{2\sigma^2}\right) \approx 1.5789,
+
+
+donde \mu = 5.855 y \sigma^2 = 3.5033e-02 son los parámetros de la distribución normal que han sido determinados previamente en el entrenamiento .
+
+
+    p(\mbox{peso} | \mbox{hombre}) = 5.9881e-06 
+
+    p(\mbox{NumeroDePie} | \mbox{hombre}) = 1.3112e-3 
+
+
+    \mbox{posteriori (hombre)} = \mbox{el producto} = 6.1984e-09 
+
+
+    P(\mbox{mujer}) = 0.5 
+
+    p(\mbox{altura} | \mbox{mujer}) = 2.2346e-1 
+
+    p(\mbox{peso} | \mbox{mujer}) = 1.6789e-2 
+
+    p(\mbox{numero de pie} | \mbox{mujer}) = 2.8669e-1 
+
+
+    \mbox{posteriori (mujer)} = \mbox{el producto} = 5.3778e-04 
+
+
+En este caso el numerador a posteriori más grande es el de la mujer, por eso determinamos que los datos son de mujer.
+
+Referencias
+- Traducción de:. «Naive Bayes classifier» (en inglés). Consultado el 23 de Novembre del 2013.

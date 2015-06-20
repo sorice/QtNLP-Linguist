@@ -1,0 +1,58 @@
+Ley de Brooks
+
+La Ley de Brooks es un principio utilizado en el desarrollo de software que afirma que "añadir más efectivos a un proyecto de software en retraso, lo retrasará más".1 Fue acuñado por Fred Brooks en su trabajo de 1975 The Mythical Man-Month. El corolario de la ley de Brooks es que cuando se incorpora una persona en un proyecto, éste se ralentiza en lugar de acelerarse. Brooks también afirmó que "Nueve mujeres no pueden tener un bebé en un mes".
+
+Significado del término
+
+Según el propio libro de Brooks, la ley es una "frívola sobresimplificación",1 pero se hace eco de la idea. Brooks destaca dos factores principales que explican el porqué de la ley:
+1. Nuevas personas en un proyecto necesitan tiempo para ser productivos. Brooks denomina este lapso el tiempo de rampa de subida ("ramp up time"). Los proyectos de software son complejos esfuerzos de ingeniería, y a los nuevos trabajadores en el proyecto hay que enseñarles primero sobre el trabajo que se realizó anteriormente; esta formación requiere tiempo entre aquellos que ya estaban trabajando en el proyecto, disminuyendo su productividad de forma temporal hasta que los nuevos trabajadores tengan una contribución neta. Cada nuevo trabajador también tiene que integrarse en un equipo compuesto por numerosos ingenieros, que han de ayudar en la formación en sus áreas de conocimiento, día a día. Además, es posible que los nuevos miembros del proyecto de por sí tengan una productividad incluso negativa; por ejemplo, si introducen errores en el software por desconocimiento.
+2. Aumento de los costes generales (en tiempo) a medida que aumenta el tamaño del proyecto. El número de canales de comunicación diferentes aumenta con el número de personas de forma exponencial; si se dobla el número de personas en el proyecto, el resultado es 4 veces más conversaciones. Todos aquellos que trabajan en un tema necesitan estar sincronizados entre ellos, de forma que si crece el número de personas, también crecerá el tiempo invertido en tratar de averiguar lo que hace el resto.
+
+Excepciones y posibles soluciones
+
+La ley de Brooks se cita a menudo para justificar que los proyectos no se terminan a tiempo, a pesar de los esfuerzos gestores. Sin embargo, hay algunos puntos clave de la ley de Brooks que permiten excepciones y abren la puerta a posibles soluciones.2 3
+
+El primer punto es que la ley de Brooks se suele aplicar a proyectos que tienen retraso.4 Se puede volver a controlar (o mantener bajo control) si se refuerza el equipo en fases previas.5 También es importante determinar si un proyecto se encuentra realmente en retraso o si las estimaciones iniciales fueron demasiado optimistas, algo frecuente. Corregir la planificación es la mejor manera de disponer de una ventana de tiempo fiable y útil para finalizar el proyecto.6
+
+La cantidad, calidad y papel de la gente que se incorpora al proyecto son factores a tener en cuenta. Una vía simple de evitar la ley en un proyecto en retraso es añadir más gente de la necesaria, de forma que la capacidad extra compensa el overhead en comunicación y formación.7 Los buenos programadores o especialistas se pueden incorporar con menos necesidad de tiempo para su formación.8 También se puede incorporar personal para realizar otras tareas relacionadas con el proyecto, por ejemplo documentación o garantía de calidad en caso de que la tarea esté disponible, así se disminuye el tiempo de la rampa de subida.9
+
+Una buena labor de gestión y desarrollo también ayuda a reducir el impacto de la ley de Brooks. Las prácticas modernas de integración continua, desarrollo guiado por pruebas, y desarrollo iterativo reducen significativamente el overhead de comunicación entre los desarrolladores, permitiendo mejor escalabilidad. También nuevas herramientas para el desarrollo de software y su documentación son de ayuda a minimizar el tiempo de rampa de subida, haciendo más sencilla la incorporación al proyecto. Los patrones de diseño simplifican la distribución del trabajo, dado que el equipo completo puede realizar el trabajo dentro del patrón que se le asignó. Los patrones de diseño definen las reglas que han de seguir los programadores, simplifica la comunicación por medio del uso de un lenguaje estándar y proporciona consistencia y escalabilidad. Finalmente, una buena segmentación ayuda minimizando el overhead entre los miembros del proyecto. Los problemas menores se resuelven en equipos pequeños y un equipo superior es responsable de la integración del sistema. Para poder trabajar así es necesario segmentar el problema de forma correcta; en caso contrario, puede empeorar el problema, impidiendo la comunicación entre los programadores que trabajan en diferentes partes del problema que están directamente relacionados, aunque el plan del proyecto afirme que no los están.
+
+Algunos autores -véase, por ejemplo, Creating a Software Engineering Culture de Karl E. Wiegers – han recalcado la importancia de los aspectos sociales y políticos del clima de trabajo como determinantes de la efectividad de los programadores individuales y del equipo del proyecto como un todo. En lugar de depender de "héroes" para llevar a cabo la tarea con esfuerzos extraordinarios, Wiegers afirma que un equipo de individuales de cualidades ordinarias pueden proveer resultados a tiempo de forma periódica con el ambiente de trabajo correcto. Los esfuerzos para mejorar la efectividad de los equipos puede mitigar sino eliminar, las consecuencias de la ley de Brooks.
+
+Desarrollo de software de código abierto
+
+En comparación con el desarrollo de software tradicional, los proyectos de código abierto tienen una metodología diferente (véase La catedral y el bazar). Los proyectos de código abierto de gran escala tienen un vasto número de participantes que se encargar en programar y garantizar la calidad, utilizando canales de comunicación de bajo coste (como el correo electrónico) para comunicarse. Este tipo de proyectos se escalan bien, a pesar de la Ley de Brooks, debido a varias razones:
+- Conceptos de gestión como "cantidad de trabajadores", "tamaño del equipo" y "hoja de ruta" no son análogos en proyectos corporativos y de código abierto; por ello no es posible aplicar la Ley de Brooks de forma equiparable a ambos.
+- Los proyectos de código abierto de gran escala tienen la capacidad de hacer uso de muchos usuarios que prueban el código, encontrando los errores más rápido (también conocido por la Ley de Linus);
+- Los que testean pueden leer y analizar el código, ayudando a los desarrolladores a determinar los errores de forma más rápida;10
+- Trabajo en paralelo eficiente, reduciendo el overhead de comunicación;11
+- Un contexto social en el que los contribuyentes lo hace de forma voluntaria, junto con un estilo de dirección sin obligación;12
+- Menos confianza en métodos de gestión tradicionales para reducir esfuerzos de duplicados.13
+- Una asignación más eficiente de las tareas, tal y como sugirió Yochai Benkler en Coase's Penguin.
+
+Algunas de estas razones, tales como el trabajo en paralelo, podrían aplicarse teóricamente a ambos, los proyectos abiertos y los cerrados.
+
+Notas
+- Frederick P. Brooks, Jr. "The Mythical Man Month". 1995. Addison-Wesley.
+- "In spite of Brooks’ Law, adding people to a late project remains commonplace" ... "I have evangelized this well-worn software engineering chestnut many times myself, but I no longer think it’s true". (McConnell, 1999)
+- "The trouble is that there are important exceptions that many people do not take the time to consider when using Brooks’s law to justify something". (Berkun, 2006)
+- "Implicit in those projects is that it applies only to the final phases of a project. The question is, How do you know whether you’re in a project’s final phases?" (McConnell, 1999)
+- "We have found that adding people to a late project will always increase its cost, but the project may not always be late since there may be sufficient schedule to absorb them and the project may not be at maximum staffing. Only under certain degree of sequential constraints among project tasks will the project be delayed." (Hsia, Hsu, Kung, 1999)
+- Late chaotic projects are likely to be much later than the project manager thinks--project completion isn’t three weeks away, it’s six months away. Go ahead and add staff. You’ll have time for them to become productive. Your project will still be later than your plan, but that’s not a result of Brooks’ Law. It’s a result of underestimating the project in the first place." (McConnell, 1999)
+- "Gordon and Lamb studied Brooks's Law and suggested that the best way to recover from a slipping schedule is to add more people than might be expected to be necessary, and to add them early." (Hsia, Hsu, Kung, 1999)
+- "The law assumes that all added manpower is equal, which is not true. Given the choice of adding a good programmer, who knows the code base and is friends with half the team, I’d consider it." (Berkun, 2006)
+- "The sad but popular approach is to throw people in without much explanation and let everyone figure it out for themselves. But if the manager clarifies why Sally and Rupert are joining, and defines good roles for them, with input from the team, they’ll be set up to make a smooth transition." (Berkun, 2006)
+- "There are still more reasons that source-code–level bug reporting tends to be very efficient. They center around the fact that a single error can often have multiple possible symptoms, manifesting differently depending on details of the user's usage pattern and environment. ... On the other hand, suppose many people are trying trace paths in parallel while doing rapid releases. Then it is likely one of them will find the easiest path immediately, and nail the bug in a much shorter time." (Eric S. Raymond, 1999, "How Many Eyeballs Tame Complexity")
+- "But on open-source projects, the halo developers work on what are in effect separable parallel subtasks and interact with each other very little; code changes and bug reports stream through the core group, and only within that small core group do we pay the full Brooksian overhead" (Eric S. Raymond, 1999, "How Many Eyeballs Tame Complexity")
+- "19: Provided the development coordinator has a communications medium at least as good as the Internet, and knows how to lead without coercion, many heads are inevitably better than one." (Eric S. Raymond, 1999, "The Social Context of Open-Source")
+- "John Hasler has suggested an interesting explanation for the fact that duplication of effort doesn't seem to be a net drag on open-source development. He proposes what I'll dub Hasler's Law: the costs of duplicated work tend to scale sub-qadratically (sic) with team size—that is, more slowly than the planning and management overhead that would be needed to eliminate them." (Eric S. Raymond, 1999, "Notes")
+
+Referencias
+- Steve McConnell. "Brooks' Law Repealed," IEEE Software, vol. 16, no. 6, pp. 6-8, Nov/Dec, 1999. Also available at the authors website (Brooks's Law repealed?).
+- Pei Hsia, Chih-tung Hsu, David C. Kung. "Brooks' Law Revisited: A System Dynamics Approach," compsac, p. 370, Twenty-Third Annual International Computer Software and Applications Conference, 1999.
+- R. L. Gordon and J. C. Lamb. "A Close Look at Brooks' Law," Datamation, June 977, pp. 81-86.
+- Berkun, Scott (11 de enero de 2006). «Exceptions to Brooks’ Law». Consultado el 28-07-2008.
+- Brooks's Law and open source: The more the merrier?
+- Brooks' Law Is Applicable To Many Collaborative People Activities
+- Eric S. Raymond (1999). The Cathedral & the Bazaar. O'Reilly. ISBN 1-56592-724-9.

@@ -1,0 +1,21 @@
+Heurística (informática)
+
+En computación, dos objetivos fundamentales son encontrar algoritmos con buenos tiempos de ejecución y buenas soluciones, usualmente las óptimas. Una heurística es un algoritmo que abandona uno o ambos objetivos; por ejemplo, normalmente encuentran buenas soluciones, aunque no hay pruebas de que la solución no pueda ser arbitrariamente errónea en algunos casos; o se ejecuta razonablemente rápido, aunque no existe tampoco prueba de que siempre será así. Las heurísticas generalmente son usadas cuando no existe una solución óptima bajo las restricciones dadas (tiempo, espacio, etc.), o cuando no existe del todo.
+
+A menudo, pueden encontrarse instancias concretas del problema donde la heurística producirá resultados muy malos o se ejecutará muy lentamente. Aun así, estas instancias concretas pueden ser ignoradas porque no deberían ocurrir nunca en la práctica por ser de origen teórico. Por tanto, el uso de heurísticas es muy común en el mundo real.
+
+Heurísticas para encontrar el camino más corto
+
+Para problemas de búsqueda del camino más corto el término tiene un significado más específico. En este caso una heurística es una función matemática, h(n) definida en los nodos de un árbol de búsqueda , que sirve como una estimación del coste del camino más económico de un nodo dado hasta el nodo objetivo. Las heurísticas se usan en los algoritmos de búsqueda informada como la búsqueda egoísta. La búsqueda egoísta escogerá el nodo que tiene el valor más bajo en la función heurística. A* expandirá los nodos que tienen el valor más bajo para g(n)+h(n) , donde g(n) es el coste (exacto) del camino desde el estado inicial al nodo actual. Cuando h(n) es admisible, esto es si h(n) nunca sobrestima los costes de encontrar el objetivo; A* es probablemente óptimo.
+
+Un problema clásico que usa heurísticas es el puzzle-n. Contar el número de casillas mal colocadas y encontrar la suma de la distancia Manhattan entre cada bloque y su posición al objetivo son heurísticas usadas a menudo para este problema. se realiza a partir de la categoría gramatical
+
+Efecto de las heurísticas en el rendimiento computacional
+
+En cualquier problema de búsqueda donde hay b opciones en cada nodo y una profundidad d al nodo objetivo, un algoritmo de búsqueda ingenuo deberá buscar potencialmente entre b^d nodos antes de encontrar la solución. Las heurísticas mejoran la eficiencia de los algoritmos de búsqueda reduciendo el factor de ramificación de b a (idealmente) una constante b*.
+
+Aunque cualquier heurística admisible devolverá una respuesta óptima, una heurística que devuelve un factor de ramificación más bajo es computacionalmente más eficiente para el problema en particular. Puede demostrarse que una heurística h_2(n) es mejor que otra h_1(n), si h_2(n) domina h_1(n), esto quiere decir que h_1(n) > h_2(n) para todo n.
+
+Heurísticas en la inteligencia artificial
+
+Muchos algoritmos en la inteligencia artificial son heurísticos por naturaleza, o usan reglas heurísticas. Un ejemplo reciente es SpamAssassin que usa una amplia variedad de reglas heurísticas para determinar cuando un correo electrónico es spam. Cualquiera de las reglas usadas de forma independiente pueden llevar a errores de clasificación, pero cuando se unen múltiples reglas heurísticas, la solución es más robusta y creíble. Esto se llama alta credibilidad en el reconocimiento de patrones (extraído de las estadísticas en las que se basa). Cuando se usa la palabra heurística en el procesamiento del lenguaje basado en reglas, el reconocimiento de patrones o el procesamiento de imágenes, es usada para referirse a las reglas.

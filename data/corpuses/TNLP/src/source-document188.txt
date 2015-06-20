@@ -1,0 +1,48 @@
+Historias de usuario
+
+Una historia de usuario es una representación de un requisito de software escrito en una o dos frases utilizando el lenguaje común del usuario. Las historias de usuario son utilizadas en las metodologías de desarrollo ágiles para la especificación de requisitos (acompañadas de las discusiones con los usuarios y las pruebas de validación). Cada historia de usuario debe ser limitada, esta debería poderse escribir sobre una nota adhesiva pequeña. Dentro de la metodología XP las historias de usuario deben ser escritas por los clientes.
+
+Las historias de usuario son una forma rápida de administrar los requisitos de los usuarios sin tener que elaborar gran cantidad de documentos formales y sin requerir de mucho tiempo para administrarlos. Las historias de usuario permiten responder rápidamente a los requisitos cambiantes.
+
+Características
+
+Las historias de usuario deben ser:
+- Independientes unas de otras: De ser necesario, combinar las historias dependientes o buscar otra forma de dividir las historias de manera que resulten independientes.
+- Negociables: La historia en si misma no es lo suficientemente explícita como para considerarse un contrato, la discusión con los usuarios debe permitir esclarecer su alcance y éste debe dejarse explícito bajo la forma de pruebas de validación.
+- Valoradas por los clientes o usuarios: Los intereses de los clientes y de los usuarios no siempre coinciden, pero en todo caso, cada historia debe ser importante para alguno de ellos más que para el desarrollador.
+- Estimables: Un resultado de la discusión de una historia de usuario es la estimación del tiempo que tomará completarla. Esto permite estimar el tiempo total del proyecto.
+- Pequeñas: Las historias muy largas son difíciles de estimar e imponen restricciones sobre la planificación de un desarrollo iterativo. Generalmente se recomienda la consolidación de historias muy cortas en una sola historia.
+- Verificables: Las historias de usuario cubren requerimientos funcionales, por lo que generalmente son verificables. Cuando sea posible, la verificación debe automatizarse, de manera que pueda ser verificada en cada entrega del proyecto.
+
+Uso
+
+Las historias de usuario conforman la parte central de muchas metodologías de desarrollo ágil, tales como XP; Estas definen lo que se debe construir en el proyecto de software, tienen una prioridad asociada definida por el cliente de manera de indicar cuales son las más importantes para el resultado final, serán divididas en tareas y su tiempo será estimado por los desarrolladores. Generalmente se espera que la estimación de tiempo de cada historia de usuario se sitúe entre unas 10 horas y un par de semanas. Estimaciones mayores a dos semanas son indicativo de que la historia es muy compleja y debe ser dividida en varias historias.
+
+Al momento de implementar las historias, los desarrolladores deben tener la posibilidad de discutirlas con los clientes. El estilo sucinto de las historias podría dificultar su interpretación, podría requerir conocimientos de base sobre el modelo o podría haber cambiado desde que fue escrita.
+
+Cada historia de usuario debe tener en algún momento pruebas de validación asociadas, lo que permitirá al desarrollador, y más tarde al cliente, verificar si la historia ha sido completada. Como no se dispone de una formulación de requisitos precisa, la ausencia de pruebas de validación concertadas abre la posibilidad de discusiones largas y no constructivas al momento de la entrega del producto.
+
+Si bien el estilo puede ser libre, la historia de usuario debe responder a tres preguntas: ¿Quién se beneficia?, ¿qué se quiere? y ¿cuál es el beneficio? Por ello, algunos autores1 recomiendan redactar las historias de usuario según el formato:
+
+    Como (rol) quiero (algo) para poder (beneficio).
+
+Beneficios
+- Al ser muy corta, ésta representa requisitos del modelo de negocio que pueden implementarse rápidamente (días o semanas)
+- Necesitan poco mantenimiento
+- Mantienen una relación cercana con el cliente
+- Permite dividir los proyectos en pequeñas entregas
+- Permite estimar fácilmente el esfuerzo de desarrollo
+- Es ideal para proyectos con requisitos volátiles o no muy claros
+
+Limitaciones
+-Sin pruebas de validación pueden quedar abiertas a distintas interpretaciones haciendo difícil utilizarlas como base para un contrato
+- Se requiere un contacto permanente con el cliente durante el proyecto lo cual puede ser difícil o costoso
+- Pueden resultar difíciles las pruebas de usuario, que sólo se ven en las metodologías SCRUM para escalar a proyectos grandes
+- Requiere desarrolladores muy competentes
+
+Referencias
+- Mike Cohn, "User Stories Applied", 2004, Addison Wesley, ISBN 0-321-20568-5
+
+Bibliografía
+- Daniel H. Steinberg and Daniel W. Palmer: Extreme Software Engineering, Pearson Education, Inc., ISBN 0-13-047381-2
+- Mike Cohn: Agile Estimating and Planning, 2006, Prentice Hall, ISBN 0-13-147941-5

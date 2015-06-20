@@ -1,0 +1,17 @@
+Ascensión de colinas
+
+Un algoritmo de búsqueda de ascensión de colinas es aquel que para resolver un determinado problema, utiliza una metaheurística, que consiste en avanzar continuamente en dirección del valor creciente en el espacio de estados.
+
+El algoritmo de ascensión de colinas es extremadamente sencillo de implementar. Es simplemente un bucle que constantemente se desplaza en la dirección de un valor ascendente. Como no mantiene un árbol de búsqueda, la estructura de datos del nodo sólo tiene que registrar el estado actual y su evaluación.
+
+Suele llamarse a esta búsqueda algoritmo voraz local, porque toma un estado vecino "bueno" sin pensar en la próxima acción.
+
+La ascensión de colinas tiene serios problemas; generalmente se atasca sin obtener una solución al problema. Los motivos son:
+
+Máximo local: Es una cima cuya altura es superior a de sus estados vecinos, pero que es inferior a la cima más alta en todo el espacio de estados. Una vez que ha alcanzado un máximo local, el algoritmo se detiene, a pesar de que no se haya llegado a una solución, o al menos a una solución óptima.
+
+Meseta: Son áreas del espacio de estados en donde la función de evaluación es plana. Puede ser un máximo local plano o una terraza. La búsqueda realizará podría ser incapaz de encontrar su camino.
+
+Terraza: Es un tipo de meseta, en la que luego de la planicie hay vecinos con valores ascendentes.
+
+Riscos: Son laderas con pendientes muy pronunciadas, por lo que es fácil para una búsqueda llegar a la cima del risco; sin embargo, puede suceder que la pendiente se aproxime demasiado gradualmente a un pico. A menos que existan operadores que se desplacen directamente por la cima del risco, la búsqueda oscilará de un lado al otro, obteniendo muy poco avance.

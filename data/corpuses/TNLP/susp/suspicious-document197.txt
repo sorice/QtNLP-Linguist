@@ -1,0 +1,68 @@
+Manifiesto ágil
+
+El 17 de febrero de 2001 diecisiete críticos de los modelos de mejora del desarrollo de software basados en procesos, convocados por Kent Beck, quien había publicado un par de años antes Extreme Programming Explained, libro en el que exponía una nueva metodología denominada Extreme Programming, se reunieron en Snowbird, Utah para tratar sobre técnicas y procesos para desarrollar software. En la reunión se acuñó el término “Métodos Ágiles” para definir a los métodos que estaban surgiendo como alternativa a las metodologías formales (CMMI, SPICE) a las que consideraban excesivamente “pesadas” y rígidas por su carácter normativo y fuerte dependencia de planificaciones detalladas previas al desarrollo.
+
+Los integrantes de la reunión resumieron los principios sobre los que se basan los métodos alternativos en cuatro postulados, lo que ha quedado denominado como Manifiesto Ágil.
+
+Hasta 2005 han sido frecuentes las posturas radicales entre los defensores de los modelos de procesos y los defensores de modelos ágiles, quizá más ocupados en descalificar al otro que en estudiar sus métodos y conocerlos para mejorar los propios.
+
+En el Manifiesto Ágil, firmado por Kent Beck, Mike Beedle, Arie van Bennekum, Alistair Cockburn, Ward Cunningham, Martin Fowler, James Grenning, Jim Highsmith, Andrew Hunt, Ron Jeffries, Jon Kern, Brian Marick, Robert Cecil Martin, Steve Mellor, Ken Schwaber, Jeff Sutherland y Dave Thomas,1 se expone que:
+
+Estamos poniendo al descubierto mejores métodos para desarrollar software, haciéndolo y ayudando a otros a que lo hagan. Con este trabajo hemos llegado a valorar:
+- A los individuos y su interacción, por encima de los procesos y las herramientas.
+- El software que funciona, por encima de la documentación exhaustiva.
+- La colaboración con el cliente, por encima de la negociación contractual.
+- La respuesta al cambio, por encima del seguimiento de un plan.
+
+Aunque hay valor en los elementos de la derecha, valoramos más los de la izquierda.
+	
+Valores del Manifiesto Ágil
+
+Valorar más a los individuos y su interacción que a los procesos y las herramientas
+
+Este es posiblemente el principio más importante del manifiesto. Por supuesto que los procesos ayudan al trabajo. Son una guía de operación. Las herramientas mejoran la eficiencia, pero sin personas con conocimiento técnico y actitud adecuada, no producen resultados.
+
+Las empresas suelen predicar muy alto que sus empleados son lo más importante, pero la realidad es que en los años 90 la teoría de producción basada en procesos, la reingeniería de procesos ha dado a estos más relevancia de la que pueden tener en tareas que deben gran parte de su valor al conocimiento y al talento de las personas que las realizan.
+
+Los procesos deben ser una ayuda y un soporte para guiar el trabajo. Deben adaptarse a la organización, a los equipos y a las personas; y no al revés. La defensa a ultranza de los procesos lleva a postular que con ellos se pueden conseguir resultados extraordinarios con personas mediocres, y lo cierto es que este principio es peligroso cuando los trabajos necesitan creatividad e innovación/
+
+Valorar más el software que funciona que la documentación exhaustiva
+
+Poder ver anticipadamente cómo se comportan las funcionalidades esperadas sobre prototipos o sobre las partes ya elaboradas del sistema final ofrece una retroalimentación muy estimulante y enriquecedor que genera ideas imposibles de concebir en un primer momento; difícilmente se podrá conseguir un documento que contenga requisitos detallados antes de comenzar el proyecto.
+
+El manifiesto no afirma que no hagan falta. Los documentos son soporte de la documentación, permiten la transferencia del conocimiento, registran información histórica, y en muchas cuestiones legales o normativas son obligatorios, pero se resalta que son menos importantes que los productos que funcionan. Menos trascendentales para aportar valor al producto.
+
+Los documentos no pueden sustituir, ni pueden ofrecer la riqueza y generación de valor que se logra con la comunicación directa entre las personas y a través de la interacción con los prototipos. Por eso, siempre que sea posible debe preferirse, y reducir al mínimo indispensable el uso de documentación, que genera trabajo que no aporta un valor directo al producto.
+
+Si la organización y los equipos se comunican a través de documentos, además de perder la riqueza que da la interacción con el producto, estos documentos se acaban empleando de forma defensiva como barricadas ante departamentos o personas.
+
+Valorar más la colaboración con el cliente que la negociación contractual
+
+Las prácticas ágiles están especialmente indicadas para productos difíciles de definir con detalle en el principio, o que si se definieran así tendrían al final menos valor que si se van enriqueciendo con retro-información continua durante el desarrollo. También para los casos en los que los requisitos van a ser muy inestables por la velocidad del entorno de negocio.
+
+Para el desarrollo ágil el valor del resultado no es consecuencia de haber controlado una ejecución conforme a procesos, sino de haber sido implementado directamente sobre el producto. Un contrato no aporta valor al producto. Es una formalidad que establece líneas divisorias entre responsabilidades, que fija los referentes para posibles disputas contractuales entre cliente y proveedor.
+
+En el desarrollo ágil el cliente es un miembro más del equipo, que se integra y colabora en el grupo de trabajo. Los modelos de contrato por obra no encajan.
+
+Valorar más la respuesta al cambio que el seguimiento de un plan
+
+Para un modelo de desarrollo que surge de entornos inestables, que tienen como factor inherente el cambio y la evolución rápida y continua, resulta mucho más valiosa la capacidad de respuesta que la de seguimiento y aseguramiento de planes pre-establecidos. Los principales valores de la gestión ágil son la anticipación y la adaptación; diferentes a los de la gestión de proyectos ortodoxa: planificación y control para evitar desviaciones sobre el plan.
+
+Principios del Manifiesto Ágil
+
+Tras los cuatro valores descritos, los firmantes redactaron los siguientes, como los principios que de ellos se derivan:
+- Nuestra principal prioridad es satisfacer al cliente a través de la entrega temprana y continua de software de valor.
+- Son bienvenidos los requisitos cambiantes, incluso si llegan tarde al desarrollo. Los procesos ágiles se doblegan al cambio como ventaja competitiva para el cliente.
+- Entregar con frecuencia software que funcione, en periodos de un par de semanas hasta un par de meses, con preferencia en los periodos breves.
+- Las personas del negocio y los desarrolladores deben trabajar juntos de forma cotidiana a través del proyecto.
+- Construcción de proyectos en torno a individuos motivados, dándoles la oportunidad y el respaldo que necesitan y procurándoles confianza para que realicen la tarea.
+- La forma más eficiente y efectiva de comunicar información de ida y vuelta dentro de un equipo de desarrollo es mediante la conversación cara a cara.
+- El software que funciona es la principal medida del progreso.
+- Los procesos ágiles promueven el desarrollo sostenido. Los patrocinadores, desarrolladores y usuarios deben mantener un ritmo constante de forma indefinida.
+- La atención continua a la excelencia técnica enaltece la agilidad.
+- La simplicidad como arte de maximizar la cantidad de trabajo que no se hace, es esencial.
+- Las mejores arquitecturas, requisitos y diseños emergen de equipos que se auto-organizan.
+- En intervalos regulares, el equipo reflexiona sobre la forma de ser más efectivo y ajusta su conducta en consecuencia.
+
+Referencias
+- Firmantes del Manifiesto Ágil

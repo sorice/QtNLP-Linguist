@@ -1,0 +1,37 @@
+Lenguaje de consulta
+
+Un lenguaje de consulta es un lenguaje informático usado para hacer consultas en bases de datos y sistemas de información.
+
+Los lenguajes de consulta pueden ser clasificados de acuerdo a si son lenguajes de consulta de bases de datos o lenguajes de consulta de recuperación de información. Algunos ejemplos son:
+- .QL es un lenguaje de consulta propietario orientado a objetos para consultar bases de datos relacionales;1
+- Common Query Language (CQL) un lenguaje formal para representar consultas para sistemas de recuperación de información como índices web o catálogos bibliográficos.
+- CODASYL;
+- D es un lenguaje de consulta para sistemas de administración de bases de datos verdaderamente relacionales (truly relational database management systems - TRDBMS);2
+- DMX es un lenguaje para modelos de minería de datos;
+- Datalog es un lenguaje de consulta para bases de datos deductivas;
+- ERROL es un lenguaje de consulta sobre el modelo entidad-relación (ERM), especialmente diseñado para bases de datos relacionales;
+- Gellish English es un lenguaje que puede ser usado para consultas en bases de datos Gellish English,3 para diálogos (pedidos y respuestas) como también para modelado de información y modelado de conocimiento;
+- ISBL es un lenguaje de consulta para PRTV, uno de los más recientes sistemas de administración de bases de datos;
+- LDAP es un protocolo de aplicación para consultar y modificar servicios de directorios corriendo sobre TCP/IP.
+- MQL es un lenguaje de consulta de quimioinformática para búsqueda de subestructuras permitiendo propiedades nominales y numéricas;
+- MDX es un lenguaje de consulta para bases de datos OLAP;
+- OQL es un lenguaje de consulta de objetos;
+- OCL (Object Constraint Language - lenguaje de restricciones de objetos). Pese a su nombre, OCL es también un lenguaje de consulta de objetos y un estándar OMG.
+- OPath, pensado para el uso consultando almacenes WinFS;
+- Poliqarp Query Language es un lenguaje de consulta especial diseñado para analizar texto con anotaciones. Usado en el motor de búsqueda Poliqarp;4
+- QUEL es un lenguaje de acceso a bases de datos relacionales, muy similar a SQL;
+- SMARTS es el estándar de quimioinformática para búsqueda de subestructuras;5
+- SPARQL es un lenguaje de consulta para grafos RDF;
+- SQL es un lenguaje de consulta muy reconocido para bases de datos relacionales;
+- SuprTool es un lenguaje de consulta propietario para SuprTool,6 un programa de acceso a bases de datos para obtener datos en Image/SQL (TurboIMAGE) y bases de datos Oracle;
+- TMQL Topo Magic Queeen Lion es un lenguaje de consulta para Topic Maps;
+- XQuery es un lenguaje de consulta para fuentes de datos XML;
+- EPL es un lenguaje de consulta para el procesado de eventos complejos en tiempo real;
+
+Referencias
+- «Semmle documentation». Consultado el 23-07-2008.
+- Antoni Kokot y David West. «Non SQL Query Languages». Consultado el 23-07-2008.
+- «Gellish - A Product Modeling Language». Consultado el 23-07-2008.
+- «IPI PAN Corpus website». Consultado el 25-07-2008.
+- «SMARTS - A Language for Describing Molecular Patterns». Consultado el 25-07-2008.
+- «Suprtool Quick Reference Guide». Consultado el 23-07-2008.

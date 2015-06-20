@@ -1,0 +1,20 @@
+Base de conocimiento
+
+Una Base de Conocimiento (o knowledge base en inglés; KB, kb o Δ) es un tipo especial de base de datos para la gestión del conocimiento. Provee los medios para la recolección, organización y recuperación computarizada de conocimiento.
+
+Tipos
+
+Las bases de conocimiento se han clasificado en dos grandes grupos:
+- Bases de conocimiento legibles por máquinas, diseñadas para almacenar conocimiento en una forma legible por el computador, usualmente con el fin de obtener razonamiento deductivo automático aplicado a ellas. Contienen una serie de datos, usualmente en la forma de reglas que describen el conocimiento de manera lógicamente consistente. Operadores lógicos como Y (conjunción), O (disyunción), condición lógica y negación son utilizada para aumentarla desde el conocimiento atómico. En consecuencia la deducción clásica puede ser utilizada para razonar sobre el conocimiento en la base de conocimiento. Este tipo de bases de conocimiento son utilizadas por la Web semántica
+- Bases de conocimiento legibles por Humanos están diseñadas para permitir a las personas acceder al conocimiento que ellas contienen, principalmente para propósitos de aprendizaje. Estas son comúnmente usadas para obtener y manejar conocimiento explicito de las organizaciones, incluyen artículos, white papers, manuales de usuario y otros. El principal beneficio que proveen las bases de conocimiento es proporcionar medios de descubrir soluciones a problemas ya resueltos, los cuales podrían ser aplicados como base a otros problemas dentro o fuera de la misma área de conocimiento.
+
+El más importante aspecto de una base de conocimiento es la calidad de la información que esta contiene. Las Mejores Bases de Conocimiento tienen artículos cuidadosamente redactados que se mantiene al día, un excelente sistema de recuperación de información (Motor de Búsqueda), y un delicado formato de contenido y estructura de clasificación. Una Base de Conocimiento puede usar una ontología para especificar su estructura(tipos de entidades y relaciones) y su esquema de clasificación. Una ontología, junto con un grupo de instancias de sus clases constituyen una Base de Conocimiento.
+
+Determinando qué tipo de información es capturada, y dónde se encuentra la información en una base de conocimiento es algo que es determinado por los procesos que respaldan al sistema. Una estructura robusta de procesos es la columna vertebral de cualquier Base de Conocimiento. Algunas Bases de Conocimiento tienen un componente de inteligencia artificial. Este tipo de Bases de Conocimiento pueden sugerir soluciones a problemas esporádicos en la retroalimentación por el usuario, y son capaces de aprender de la experiencia (sistemas expertos). Representación de Conocimiento, Razonamiento automatizado y argumentación son las áreas activas de la investigación de la inteligencia artificial.
+
+Ejemplos de instalaciones
+
+La Escuela de Medicina de Tufts University ha creado una infraestructura de software llamada the Tufts University Sciences Knowledgebase, TUSK. Sirve como base de conocimiento de información curricular para las escuelas de ciencias de la salud en Tufts (médica, dental, veterinaria, salud pública, nutrición, ciencias biomédicas). Esta infraestructura es compartida con tres escuelas de medicina en los Estados Unidos, tres en África una en la India. La infraestructura permite a las instituciones crear un base de conocimiento al servicio de las necesidades locales1.
+
+Referencias
+- Tufts University Sciences Knowledgebase vision

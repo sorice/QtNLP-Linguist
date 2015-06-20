@@ -1,0 +1,118 @@
+Optimización de software
+
+La optimización de software es el proceso de modificación de un software para hacer que algún aspecto del mismo funcione de manera más eficiente y/o utilizar menos recursos (mayor rendimiento). En general, un programa puede ser optimizado para que se ejecute más rápidamente, o sea capaz de operar con menos memoria u otros recursos, o consuman menos energía.1
+
+General
+
+La palabra "optimización", comparte la misma raíz que "óptimo", es raro que el proceso de optimización produzca un sistema verdaderamente óptimo. El sistema optimizado típicamente sólo será óptimo en una aplicación o para una audiencia. Se podría reducir la cantidad de tiempo que un programa se toma para realizar alguna tarea logrando que consuma más memoria. En una aplicación donde el espacio de la memoria es un bien escaso, se podría elegir un algoritmo más lento con el fin de utilizar menos memoria. A menudo no existe una solución de diseño que funcione bien en todos los casos, en estos casos los ingenieros de hacer trades-offs para optimizar los atributos de mayor interés. Además, el esfuerzo que se requiere para hacer una pieza de software completamente óptima - incapaz de cualquier mejora adicional - es casi siempre más de lo razonable que los beneficios que brinda, de modo que el proceso de optimización puede ser detenido antes de que una solución óptima ha sido completamente alcanzado.
+
+Trade-Offs
+
+La optimización general se centra en la mejora de uno o dos aspectos del rendimiento: el tiempo de ejecución, uso de memoria, espacio en disco, ancho de banda, el consumo de energía o algún otro recurso. Para ello se requiere un trade-off, donde uno de los factores se optimiza a expensas de los demás. Por ejemplo, aumentar el tamaño de caché mejora el rendimiento del tiempo de ejecución, aunque también aumenta el consumo de memoria. Otras ventajas y desventajas comunes incluyen la claridad del código y la concisión.
+
+Hay casos en que el programador que realiza la optimización debe decidir para hacer mejor el software para algunas operaciones pero con esto, lograra hacer otras operaciones menos eficientes. Estas compensaciones pueden ser a veces de carácter no técnico - como cuando un competidor publica un resultado de referencia que debe ser batido con el fin de mejorar el éxito comercial, pero esta caracterista logra que el software sea menos eficiente. Tales cambios son a veces burlonamente llamado "pessimizations".2
+
+En algunos casos, un fragmento de código puede ser tan optimizado como para ser de forma no intencional ofuscado. Esto puede conducir a dificultades en el mantenimiento del código.
+
+Cuellos de botella
+
+La optimización puede incluir buscar cuellos de botellas, una parte critica de código que es la principal consumidora de los recursos necesarios, a veces conocida como hot-spot.
+
+En ciencias de la computación el principio de Pareto se puede aplicar a la optimización de recursos observando que el 80% de los recursos son típicamente usados por el 20% de las operaciones en promedio. En ingeniería de software es a menudo una mejor aproximación decir que el 90% del tiempo de ejecución de un programa se gasta en ejecutar el 10% del código (conocido como la ley 90/10 en este contexto).
+
+En algunos casos, agregar más memoria puede ayudar a hacer que un programa se ejecute más rápido. Por ejemplo un programa de filtrado leerá comúnmente cada línea la filtrara y mostrara esa línea inmediatamente. Esto solo usa suficiente memoria para una línea, pero el rendimiento es típicamente muy pobre. El rendimiento se puede mejorar leyendo un archivo completo y luego escribir los datos filtrados, pero usa más memoria. Cachear los resultados es similarmente efectivo y también requiere más uso de memoria.
+
+Niveles de optimización
+
+La optimización puede ocurrir en una serie de niveles:
+- Nivel de diseño: En el nivel más alto, el diseño puede ser optimizado para aprovechar al máximo los recursos disponibles. La implementación de un proyecto se beneficiará de una buena selección de algoritmos eficientes y la aplicación de estos algoritmos se beneficiarán de la escritura de código de buena calidad. El diseño arquitectónico de un sistema mayoritariamente afecta a su rendimiento. La elección del algoritmo afecta la eficiencia más que cualquier otro elemento del diseño y, desde que la elección del algoritmo suele ser lo primero que hay que decidir, los argumentos en contra de la "optimización prematura" temprana pueden ser difíciles de justificar.
+- Nivel de código fuente: Evitar la codificación de mala calidad también puede mejorar el rendimiento, evitando ralentizaciones obvias. Después de eso, sin embargo, algunas optimizaciones pueden disminuir el mantenimiento. Algunas optimizaciones en la actualidad se pueden realizar por los compiladores optimizadores.
+- Nivel de armado: Entre el código y el nivel de compilación, directivas y flags pueden ser usados para ajustar las opciones de rendimiento en el código fuente y el compilador respectivamente, como el uso del preprocesador para desactivar características innecesarias de software, o la optimización de los modelos de procesadores específicos o capacidades de hardware.
+- Nivel de compilación: El uso de un compilador optimizador tiende a asegurar que el programa ejecutable se optimiza por lo menos tanto como el compilador puede predecir.
+- Nivel ensamblador: En el nivel más bajo, la escritura de código utilizando lenguaje ensamblador, diseñado para una plataforma de hardware particular, pueden producir el código más eficiente y compacta si el programador se aprovecha de todo el repertorio de instrucciones de la máquina.
+- Tiempo de ejecución: Los compiladores just-in- time y los programadores de ensamblador pueden ser capaz de realizar la optimización en tiempo de ejecución exdiendo la capacidad de los compiladores estáticos, ajustando dinámicamente los parámetros de acuerdo con la entrada actual u otros factores.
+
+Optimizaciones en dependencia e independencia de la plataforma
+
+La optimización de código se puede clasificar en términos generales como técnicas dependientes de la plataforma e independientes de la plataforma. Si bien estos últimos son eficaces en la mayoría o todas las plataformas, las técnicas dependientes de la plataforma utilizan propiedades específicas de una plataforma, o se basan en parámetros en función de la plataforma única o incluso en el procesador. Escribir o producir diferentes versiones del mismo código para diferentes procesadores por lo tanto, podría ser necesaria. Por ejemplo, en el caso de la optimización a nivel de compilación, las técnicas independientes de la plataforma son técnicas genéricas (tales como el desarme de ciclos, la reducción en las llamadas a función, las rutinas eficiente de la memoria, reducción en las condiciones, etc), eso impacta en la arquitectura de CPU en una similar manera. Generalmente, estos sirven para reducir la longitud total del instruction path length necesario para completar el programa y/o reducir el uso total de memoria durante el proceso. Por otra parte, las técnicas dependientes de la plataforma implican la planificación de instrucciones, el paralelismo a nivel de instrucción, paralelismo a nivel de datos, las técnicas de optimización de memoria caché (es decir, parámetros que difieren entre las distintas plataformas) y la planificación de instrucciones óptima puede ser diferente incluso en diferentes procesadores de la misma arquitectura.
+
+Diferentes algoritmos
+
+Las tareas de cálculo se puede realizar de varias formas diferentes con diferentes eficiencia. Por ejemplo, considere el siguiente fragmento de código en C cuya intención es obtener la suma de todos los números enteros de 1 a N:
+
+int i, sum = 0;
+for (i = 1; i <= N; ++i) {
+  sum += i;
+}
+printf("sum: %d\n", sum);
+
+Este código puede (suponiendo que no hay desbordamiento aritmético) ser reescrito utilizando una fórmula matemática como:
+
+int sum = N * (1 + N) / 2;
+printf("sum: %d\n", sum);
+
+La optimización, a veces se realiza automáticamente por un compilador de optimización, es seleccionar un método (algoritmo) que sea computacionalmente más eficiente, manteniendo la misma funcionalidad. Sin embargo, una mejora significativa en el rendimiento a menudo se puede lograr mediante la eliminación de alguna funcionalidad extraña.
+
+La optimización no siempre es un proceso obvio ni evidente. En el ejemplo anterior, la optimización en realidad puede ser más lenta que la versión original si N fuera suficientemente pequeño y el hardware en particular pasa a ser mucho más rápido en la realización de operaciones de suma y de bucle de multiplicación y división.
+
+Macros
+
+La optimización durante el desarrollo de código usando macros toma formas diferentes en diferentes lenguajes.
+
+En algunos lenguajes procedurales, tales como C, las macros se implementan mediante la sustitución de palabras. Hoy en día, las funciones inline se pueden utilizar como una alternativa de tipo seguro en muchos casos. En ambos casos, se puede invertir más tiempo de compilación en el cuerpo de la función inline para llevar a cabo las optimizaciones del compilador, incluyendo plegamiento de constantes, que puede mover algunos cálculos a tiempo de compilación.
+
+En muchos lenguajes de programación funcionales las macros se implementan utilizando sustitución en tiempo de parseado durante el parseo del árbol de sintaxis abstracta , la cual se afirma que los hace más seguros de usar. Dado que en muchos casos la interpretación se utiliza, que es una manera de asegurarse de que tales cálculos sólo se realizan en tiempo de análisis, y a veces la única manera.
+
+Lisp originó este estilo de macros y estos son a menudo llamados "Lisp-like macros". Un efecto similar puede conseguirse mediante el uso de las plantillas de metaprogramación en C++.
+
+En ambos casos, el trabajo se hace en tiempo de compilación. La diferencia entre las macros de C, por un lado, y macros Lisp y plantilla de metaprogramación de C++ por otro lado, es que las últimas herramientas permiten realizar cálculos arbitrarios en tiempo de compilación/tiempo de parseo, mientras que la expansión de las macros de C no realiza ninguna computación, y se basa en la capacidad del optimizador para llevarla a cabo. Además, las macros de C no apoyan directamente la recursión o iteración, por lo que no son turing completo.
+
+Como con cualquier optimización, sin embargo, a menudo es difícil predecir dónde las herramientas de este tipo tienen el mayor impacto antes de que el proyecto este completo.
+
+Optimización automática y manual
+
+La optimización puede ser automatizada por compiladores o realizadas por los programadores. Las ganancias se limitan generalmente para la optimización local, y mayor para las optimizaciones globales. Por lo general, la optimización más potente es encontrar un algoritmo superior.
+
+La optimización de un sistema en su conjunto se suele realizar por los programadores, ya que es demasiado complejo para los optimizadores automatizados. En esta situación, los programadores o administradores del sistema explícitamente cambian el código de manera que el sistema en general tenga un mejor rendimiento. Aunque se puede producir una mayor eficacia, es mucho más caro que las optimizaciones automatizados.
+
+Se suelen utilizar profilers para encontrar las secciones del programa que está tomando la mayor cantidad de recursos - el cuello de botella. Ocasionalmente se puede creer en dónde está el cuello de botella, pero esta intuición no siempre es correcta. La optimización de una pieza insignificante de código suele hacer poco para ayudar al rendimiento general.
+
+Cuando el cuello de botella es localizado, la optimización general comienza con un replanteamiento del algoritmo utilizado en el programa. A menudo, un algoritmo particular se puede adaptar específicamente a un problema particular, para proporcionar un mejor rendimiento que un algoritmo genérico. Por ejemplo, la tarea de clasificar una gran lista de artículos se realiza normalmente con una rutina quicksort, que es uno de los algoritmos genéricos más eficientes. Pero si alguna característica de los elementos es explotable (por ejemplo, ya están dispuestos en un orden particular), un método diferente se puede utilizar con mejores resultados.
+
+Después de que el programador esté razonablemente seguro de que el mejor algoritmo se selecciona, la optimización de código puede comenzar. Los bucles pueden ser desenrollados (para reducir la sobrecarga, aunque esto a menudo puede conducir a una menor velocidad si se sobrecarga la memoria caché de CPU), usar tipos de datos lo más pequeño posible, la aritmética de enteros puede usarse en lugar de coma flotante, y así sucesivamente.
+
+La optimización a veces tiene el efecto secundario de socavar la legibilidad. Así, las optimizaciones de código deben ser cuidadosamente documentadas (preferentemente con comentarios en línea), y debe evaluarse su efecto sobre el desarrollo futuro.
+
+Cuando optimizar
+
+La optimización puede reducir la legibilidad y agregar código que se utiliza sólo para mejorar el rendimiento. Esto puede complicar programas o sistemas, lo que hace que sean más difíciles de mantener y depurar. Como resultado, la optimización o el rendimiento a menudo se realiza al final de la etapa de desarrollo. Donald Knuth hizo las siguientes declaraciones sobre la optimización:
+
+    "Debemos olvidarnos de las pequeñas eficiencias, por ejemplo, el 97% del tiempo: la optimización prematura es la raíz de todos los males".3
+
+    (También se atribuyo la cita a Tony Hoare algunos años después,4 aunque esto podría haber sido un error ya que Hoare dice no haber acuñado la frase.5 )
+
+    "En las disciplinas de ingeniería ya establecidas, una mejoría del 12% fácil de obtener, no se considera marginal y creo que el mismo punto de vista debe prevalecer en la ingeniería de software"3
+
+"Optimización prematura" es una frase usada para describir una situación en la que un programador permite consideraciones de rendimiento que afectan al diseño de una pieza de código. Esto puede resultar en un diseño que no es tan limpio como podría haber sido o código que es incorrecto, ya que el código se complica por la optimización y el programador puede llegar a cometer errores a causa de esto.
+
+Al decidir si se debe optimizar una parte específica del programa, la ley de Amdahl debería ser considerada siempre: el impacto sobre el programa en general depende en gran medida de cuánto tiempo se gasta realmente en esa parte específica, que no siempre es claro al considerar el código sin un análisis del rendimiento.6
+
+Un mejor enfoque es por lo tanto el diseñar en primer lugar, desde el diseño realizar el código para luego ver qué partes deben ser optimizadas. Un diseño simple y elegante es a menudo más fácil de optimizar en esta etapa, y el profiling puede revelar problemas inesperados de rendimiento que no han sido abordadas por la optimización prematura.
+
+En la práctica, a menudo es necesario para mantener los objetivos de rendimiento en mente durante el diseño de software, pero el programador equilibra los objetivos de diseño y la optimización.
+
+Tiempo que toma optimizar
+
+A veces el tiempo que se tarda en optimizar puede ser en si mismo un problema.
+
+Optimizar un código existente no agrega nuevas características, y peor, puede llegar a agregar bugs en código que previamente no los tenía. Debido a que la optimización manual a veces hace el código menos claro que el código no optimizado, la optimización puede impactar en la compatibilidad como consecuencia. La optimización tiene un precio y es importante asegurar que invertir en eso será beneficioso.
+
+Un optimizador automático puede en sí ser optimizado, ya sea para mejorar aún más la eficiencia de los programas que produce o bien acelerar su propio funcionamiento. Una compilación realizada con la optimización activada por lo general toma más tiempo, aunque esto suele ser un problema sólo cuando los programas son bastante grandes.
+
+Referencias
+- Robert Sedgewick, Algorithms, 1984, p. 84
+- pessimizations http://www.google.com.ar/search?aq=f&ie=UTF-8&q=pessimizations
+- a b Knuth, Donald (December 1974). «Structured Programming with go to Statements». ACM Journal Computing Surveys 6 (4):  p. 268.
+- The Errors of Tex, in Software—Practice & Experience, Volume 19, Issue 7 (July 1989), pp. 607–685, reprinted in his book Literate Programming (p. 276)
+- Tony Hoare, a 2004 email
+- Principios cuantitativos de diseño de computadoras http://mixteco.utm.mx/~merg/AC/2009/2.7-principios_cuantitativos.html

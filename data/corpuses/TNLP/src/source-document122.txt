@@ -1,0 +1,56 @@
+Procesamiento de lenguajes naturales
+
+El procesamiento de lenguajes naturales —abreviado PLN, o NLP del idioma inglés Natural Language Processing— es un campo de las ciencias de la computación, inteligencia artificial y lingüística que estudia las interacciones entre las computadoras y el lenguaje humano. El PLN se ocupa de la formulación e investigación de mecanismos eficaces computacionalmente para la comunicación entre personas y máquinas por medio de lenguajes naturales. El PLN no trata de la comunicación por medio de lenguajes naturales de una forma abstracta, sino de diseñar mecanismos para comunicarse que sean eficaces computacionalmente —que se puedan realizar por medio de programas que ejecuten o simulen la comunicación—. Los modelos aplicados se enfocan no sólo a la comprensión del lenguaje de por sí, sino a aspectos generales cognitivos humanos y a la organización de la memoria. El lenguaje natural sirve sólo de medio para estudiar estos fenómenos. Hasta la década de 1980, la mayoría de los sistemas de PNL se basaban en un complejo conjunto de reglas diseñadas a mano. A partir de finales de 1980, sin embargo, hubo una revolución en PNL con la introducción de algoritmos de aprendizaje automático para el procesamiento del lenguaje.
+
+Historia
+
+La historia del PLN empieza desde 1950, aunque existe trabajo encontrado desde periodos anteriores. En 1950, Alan Turing publicó Computing machinery and intelligence el cual proponía lo que hoy llamamos test de turing como criterio de inteligencia. El experimento de Georgetown en 1954 involucro traducción automática de mas de sesenta oraciones del Ruso al Ingles. Los autores clamaron que en tres o cinco años la traducción automática seria un problema resuelto. El progreso real en traducción automática fue más lento y después del reporte ALPAC en 1996, el cual demostró que la investigación había tenido un bajo desempeño. Más tarde investigación a menor escala en traducción automática se llevó a cabo hasta finales de 1980, cuando se desarrollaron los primeros sistemas de traducción automática estadística. Esto se debió tanto al aumento constante del poder de cómputo resultante de la Ley de Moore y la disminución gradual del predominio de las teorías lingüísticas de Noam Chomsky (por ejemplo, la Gramática Transformacional), cuyos fundamentos teóricos desalentaron el tipo de lingüística de corpus, que se basa el enfoque de aprendizaje de máquinas para el procesamiento del lenguaje. Algunos de los primeros algoritmos de aprendizaje automático utilizados, tales como árboles de decisión, sistemas producidos de sentencias si-entonces similares a las reglas escritas a mano.
+
+Dificultades en el procesamiento de lenguajes naturales
+
+Ambigüedad
+El lenguaje natural es inherentemente ambiguo a diferentes niveles:
+- A nivel léxico, una misma palabra puede tener varios significados, y la selección del apropiado se debe deducir a partir del contexto oracional o conocimiento básico. Muchas investigaciones en el campo del procesamiento de lenguajes naturales han estudiado métodos de resolver las ambigüedades léxicas mediante diccionarios, gramáticas, bases de conocimiento y correlaciones estadísticas.
+- A nivel referencial, la resolución de anáforas y catáforas implica determinar la entidad lingüística previa o posterior a que hacen referencia.
+- A nivel estructural, se requiere de la semántica para desambiguar la dependencia de los sintagmas preposicionales que conducen a la construcción de distintos árboles sintácticos. Por ejemplo, en la frase Rompió el dibujo de un ataque de nervios.
+- A nivel pragmático, una oración, a menudo, no significa lo que realmente se está diciendo. Elementos tales como la ironía tienen un papel importante en la interpretación del mensaje.
+
+Para resolver estos tipos de ambigüedades y otros, el problema central en el PLN es la traducción de entradas en lenguaje natural a una representación interna sin ambigüedad, como árboles de análisis.
+
+Detección de separación entre las palabras
+
+En la lengua hablada no se suelen hacer pausas entre palabra y palabra. El lugar en el que se debe separar las palabras a menudo depende de cuál es la posibilidad que mantenga un sentido lógico tanto gramatical como contextual. En la lengua escrita, idiomas como el chino mandarín tampoco tienen separaciones entre las palabras.
+
+Recepción imperfecta de datos
+
+Acentos extranjeros, regionalismos o dificultades en la producción del habla, errores de mecanografiado o expresiones no gramaticales, errores en la lectura de textos mediante OCR
+
+
+Componentes
+- Análisis morfológico. El análisis de las palabras para extraer raíces, rasgos flexivos, unidades léxicas compuestas y otros fenómenos.
+- Análisis sintáctico. El análisis de la estructura sintáctica de la frase mediante una gramática de la lengua en cuestión.
+- Análisis semántico. La extracción del significado de la frase, y la resolución de ambigüedades léxicas y estructurales.
+- Análisis pragmático. El análisis del texto más allá de los límites de la frase, por ejemplo, para determinar los antecedentes referenciales de los pronombres.
+- Planificación de la frase. Estructurar cada frase del texto con el fin de expresar el significado adecuado.
+- Generación de la frase. La generación de la cadena lineal de palabras a partir de la estructura general de la frase, con sus correspondientes flexiones, concordancias y restantes fenómenos sintácticos y morfológicos.
+
+Aplicaciones
+
+Las principales tareas de trabajo en el PLN son:
+- Síntesis del discurso
+- Análisis del lenguaje
+- Comprensión del lenguaje
+- Reconocimiento del habla
+- Síntesis de voz
+- Generación de lenguajes naturales
+- Traducción automática
+- Respuesta a preguntas
+- Recuperación de la información
+- Extracción de la información
+
+Referencias
+- El procesamiento del lenguaje natural, tecnología en transición. Jaime Carbonell. Congreso de la Lengua Española, Sevilla, 1992
+- Lenguas y tecnologías de la información. Ángel G. Jordán. Congreso de la Lengua Española, Sevilla, 1992
+- Extracción y Recuperación de Información. Según patrones: léxicos, sintácticos, semánticos y de discurso
+- Entrevista a Antonio Valderrábanos (Bitext) sobre buscadores y procesamiento del lenguaje natural
+- Presentación 'La Web semántica'

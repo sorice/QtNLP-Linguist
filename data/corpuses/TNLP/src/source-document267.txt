@@ -1,0 +1,19 @@
+Función recursiva
+
+En lógica matemática y computación, las funciones recursivas o también conocidas como funciones recursivas-μ son una clase de funciones de los números naturales en los números naturales que son «computables» en un sentido intuitivo. De hecho, en teoría de la computabilidad se demuestra que las funciones recursivas son precisamente las funciones que pueden ser calculadas con el formalismo de cómputo más general conocido como lo son las máquinas de Turing. Las funciones recursivas están relacionadas con las funciones primitivas recursivas y su definición inductiva se construye basándose en la de las funciones primitivas recursivas (estas se obtienen por medio de recursión primitiva y composición de funciones iniciales). No toda función recursiva es primitiva recursiva. El ejemplo más conocido es la función de Ackermann.
+
+Existen otros sistemas formales equivalentes en cuanto a poder de expresión, por ejemplo el Cálculo Lambda y las cadenas de Markov.
+
+Definición
+
+Para definir las funciones recursivas se toma la definición de las funciones primitivas recursivas, para permitir funciones parciales, agregando el operador de búsqueda o minimización no acotada como sigue:
+
+    Si f(x,z1,z2,...,zn) es una función parcial sobre los naturales con n+1 argumentos x, z1,...,zn, la función μx f es la función parcial con argumentos z1,...,zn que retorna el más pequeño x tal que f(0,z1,z2,...,zn), f(1,z1,z2,...,zn), ..., f(x,z1,z2,...,zn) están todas definidas y f(x,z1,z2,...,zn) = 0, si un tal x existe; en caso contrario, μx f no está definida para los valores particulares de los argumentos z1,...,zn.
+
+Se puede verificar que la especificación del mínimo valor de x, junto con el resto de la definición idéntica a la de las funciones primitivas recursivas, implican el axioma de búsqueda acotada de las funciones primitivas recursivas.
+
+El conjunto de las funciones recursivas parciales está definido como el más pequeño conjunto de funciones parciales con cualquier número de argumentos de los naturales en los naturales que contiene el cero, el sucesor y las funciones de proyección, tales que la composición, la recursión primitiva y la búsqueda no acotada son operaciones cerradas en este conjunto.
+
+El conjunto de las funciones recursivas totales es el subconjunto de las funciones recursivas parciales que además son funciones totales.
+
+En la tesis de Church-Turing se establece el paralelo entre máquinas de Turing que no se detienen para ciertas entradas y el resultado indefinido de una función recursiva parcial. El operador de búsqueda no acotada no puede ser definido usando las reglas de definición de las funciones primitivas recursivas, dado que no se dispone en ellas de un mecanismo de iteración no acotada por el cual podría no encontrarse el resultado de una función.

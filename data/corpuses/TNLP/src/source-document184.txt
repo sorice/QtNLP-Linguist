@@ -1,0 +1,22 @@
+Entropía del software
+
+La entropía del software es el incremento del deterioro y desorden del software a medida que se hacen modificaciones o se agrega código.
+
+En un trabajo sobre Ingeniería de software por Ivar Jacobson y otros1 describe la entropía del software como sigue:
+
+- La segunda ley de la termodinámica, en principio, afirma que el desorden de un sistema cerrado no puede reducirse, sólo puede permanecer sin cambios o aumentar. Una medida de este desorden es la entropía. Esta ley también parece plausible para los sistemas de software; Cuando un sistema es modificado, su desorden o entropía, siempre aumenta. Esto es conocido como entropía del software.
+
+- En desarrollo de software, hay teorías similares; ver a Lehman (1985),2 quien propuso una serie de leyes, de los cuales dos eran, básicamente, como sigue:
+
+    1. Un programa de computadora que es usado se modificará
+    2. Cuando un programa es modificado, su complejidad aumentará, siempre que uno no trabaje activamente contra esto.
+
+Andrew Hunt y David Thomas utilizan la metáfora reparando ventanas rotas de criminología para evitar la entropía del software en el desarrollo de software.3
+
+El proceso de refactorización de código puede resultar en la reducción gradual en la entropía del software.
+
+Referencias
+- Jacobson, Ivar; Christerson, Magnus; Jonsson, Patrik; Övergaard, Gunnar (1992), Object-Oriented Software Engineering: A Use Case Driven Approach, ACM Press. Addison–Wesley, pp. 69–70, ISBN 0-201-54435-0
+- Lehman, M. M.; Belady, L.A. (1985), Program evolution: processes of software change, Academic Press Professional, Inc., San Diego, CA
+- Hunt, Andrew; Thomas, David (1999), The Pragmatic Programmer, Addison Wesley, ISBN 0-201-61622-X – Item 4 (of 22 tips) is Don't Live with Broken Windows.
+- Definition of software entropy on Webopedia

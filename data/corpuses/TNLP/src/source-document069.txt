@@ -1,0 +1,76 @@
+SQLite
+
+SQLite es un sistema de gestión de bases de datos relacional compatible con ACID, contenida en una relativamente pequeña (~275 kiB)2 biblioteca escrita en C. SQLite es un proyecto de dominio público1 creado por D. Richard Hipp.
+
+A diferencia de los sistema de gestión de bases de datos cliente-servidor, el motor de SQLite no es un proceso independiente con el que el programa principal se comunica. En lugar de eso, la biblioteca SQLite se enlaza con el programa pasando a ser parte integral del mismo. El programa utiliza la funcionalidad de SQLite a través de llamadas simples a subrutinas y funciones. Esto reduce la latencia en el acceso a la base de datos, debido a que las llamadas a funciones son más eficientes que la comunicación entre procesos. El conjunto de la base de datos (definiciones, tablas, índices, y los propios datos), son guardados como un sólo fichero estándar en la máquina host. Este diseño simple se logra bloqueando todo el fichero de base de datos al principio de cada transacción.
+
+En su versión 3, SQLite permite bases de datos de hasta 2 Terabytes de tamaño, y también permite la inclusión de campos tipo BLOB.
+
+El autor de SQLite ofrece formación, contratos de soporte técnico y características adicionales como compresión y cifrado.
+
+Características
+
+La biblioteca implementa la mayor parte del estándar SQL-92, incluyendo transacciones de base de datos atómicas, consistencia de base de datos, aislamiento, y durabilidad (ACID), triggers y la mayor parte de las consultas complejas.
+
+SQLite usa un sistema de tipos inusual. En lugar de asignar un tipo a una columna como en la mayor parte de los sistemas de bases de datos SQL, los tipos se asignan a los valores individuales. Por ejemplo, se puede insertar un string en una columna de tipo entero (a pesar de que SQLite tratará en primera instancia de convertir la cadena en un entero). Algunos usuarios consideran esto como una innovación que hace que la base de datos sea mucho más útil, sobre todo al ser utilizada desde un lenguaje de scripting de tipos dinámicos. Otros usuarios lo ven como un gran inconveniente, ya que la técnica no es portable a otras bases de datos SQL. SQLite no trataba de transformar los datos al tipo de la columna hasta la versión 3.
+
+Varios procesos o hilos pueden acceder a la misma base de datos sin problemas. Varios accesos de lectura pueden ser servidos en paralelo. Un acceso de escritura sólo puede ser servido si no se está sirviendo ningún otro acceso concurrentemente. En caso contrario, el acceso de escritura falla devolviendo un código de error (o puede automáticamente reintentarse hasta que expira un tiempo de expiración configurable). Esta situación de acceso concurrente podría cambiar cuando se está trabajando con tablas temporales. Sin embargo, podría producirse un interbloqueo debido al multihilo.[1] Este punto fue tratado en la versión 3.3.4, desarrollada el 11 de febrero de 2006.
+
+Existe un programa independiente de nombre sqlite que puede ser utilizado para consultar y gestionar los ficheros de base de datos SQLite. También sirve como ejemplo para la escritura de aplicaciones utilizando la biblioteca SQLite.
+
+Lenguajes de programación
+
+- La biblioteca puede ser usada desde programas en C/C++, aunque están disponibles enlaces para Tcl y muchos otros lenguajes de programación interpretado.
+- SQLite se encuentra embebido en el REALbasic framework, haciendo posible que aplicaciones desarrolladas en REALbasic para Windows, Linux o Mac OS X usen la base de datos SQLite.
+- Existe un módulo DBI/DBD para Perl disponible en CPAN, DBD::SQLite, no es una interface para SQLite, sino que incluye el motor completo de SQLite en sí mismo por lo cual no necesita ningún software adicional.
+- Python incluye soporte para SQLite nativamente desde la versión 2.5 incorporado en la Biblioteca Estándar como el módulo sqlite3 3 . Para versiones anteriores de Python, el módulo no está incoporado y debe instalarse (su nombre es PySQLite)4 .
+- Hay otro módulo para Visual Basic 6 llamado VBSqlite
+- Desde Delphi se puede usar SQLite a través de los componentes libres ZeosLib.
+- PHP incluye SQLite, desde la versión 5. SQLite también funciona con PHP 4 pero no viene incluido en él. Para más detalles vea el manual y PECL info.
+- Desde Java se puede acceder mediante el driver de SQLite JDBC
+- Desde .NET se puede acceder usando el proyecto de código abierto System.Data.SQLite
+- Desde Lazarus 0.9.8 y Free Pascal 2.0.0, SQLite está disponibles para programadores de Pascal. Tutorial: «Lazarus Database Tutorial, Lazarus and SQLite» (en inglés).
+- Mac OS X v10.4 incluye SQLite, y es una de las opciones en la Core Data API de Apple. AppleScript puede abrir, crear, y manipular base de datos SQLite por medio de la aplicación de ayuda "Database Events" de Mac OS X 10.4.
+- BlitzMAX posee un MOD que permite trabajar con bases de datos SQLite. Para más detalles y descarga del MOD vea [2].
+- El componente de base de datos (gb.db) de Gambas soporta SQLite en sus versiones 1, 2 y 3
+- El lenguaje de programación de vídeo juegos Bennu tiene un mod de SQlite disponible
+- El lenguaje de programación de scripting para Windows AutoIt v.3.x a traves de la DLL SQLite.dll.
+
+Software que utiliza SQLite
+
+SQLite es utilizado en un gran variedad de aplicaciones, destacando las siguientes:
+- Adobe Photoshop Elements utiliza SQLite como motor de base de datos en su última versión del producto (la 6.0) en sustitución del Microsoft Access, utilizado en las versiones anteriores.5
+- Clementine usa SQLite para guardar su colección de datos por defecto.
+- Kexi usa SQLite como un motor de base de datos interno por defecto.
+- Mozilla Firefox usa SQLite para almacenar, entre otros, las cookies, los favoritos, el historial y las direcciones de red válidas.5
+- Los desarrolladores de OpenOffice.org han considerado incluir SQLite en el modelo de base de datos de Base, pero esto depende en gran manera del progreso de sqlite-sdbc-driver, que está todavía en estado de alpha. Actualmente han decidido usar HSQLDB.
+- Varias aplicaciones de Apple utilizan SQLite, incluyendo Apple Mail y el gestor de RSS que se distribuye con Mac OS X. El software Aperture de Apple guarda la información de las imágenes en una base de datos SQLite, utilizando la API Core Data.5
+- El navegador web Opera usa SQLite para la gestión de bases de datos WebSQL.
+- Skype es otra aplicación de gran despliegue que utiliza SQLite.6 5
+- SQLFilter, un plugin para OmniPeek, usa SQLite para indexar paquetes en una base de datos para poder se consultada por medio de SQL.
+- The New Yorker guarda el índice para un set de DVD conteniendo todos los números publicados por la revista.
+- XBMC Media Center (antes conocido como "XBox Media Center") es un reproductor de medios de audio, video, fotos, etc de código libre (open source) multi-plataforma a la vez que un centro de entretenimiento. Usa SQLite para administrar las librerías de música, video y fotografías, listas de reproducción y bookmarks entre otras utilidades menores.
+
+Debido a su pequeño tamaño, SQLite es muy adecuado para los sistemas integrados, y también está incluido en:
+- Android7 5
+- BlackBerry
+- Windows Phone 8
+- Google Chrome5
+- iOS5
+- Firefox OS
+- Maemo
+- MeeGo
+- Symbian OS5
+- webOS
+
+Publicaciones
+- Owens, Mike (2006). The Definitive Guide to SQLite. Apress. ISBN 1-59059-673-0.
+
+Referencias
+- a b «SQLite Copyright». SQLite. Consultado el 28 de diciembre de 2010.
+- «Distinctive Features Of SQLite». SQLite (3 de Marzo, 2008). Consultado el 5 de Abril, 2010.
+- Python Standard Library Reference, Capítulo 11.13. sqlite3 — DB-API 2.0 interface for SQLite databases (en inglés)
+- PySQLite: Bindings para Python
+- a b c d e f g h «Well-known Users of SQLite» (en inglés). SQLite. Consultado el 25-09-2011.
+- «Skype client using SQLite?». Mail-archive.com (28-08-2007). Consultado el 14-06-2010.
+- package android.database.sqlite

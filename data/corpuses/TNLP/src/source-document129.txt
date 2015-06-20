@@ -1,0 +1,57 @@
+Reconocimiento de locutores
+
+El reconocimiento de locutores pertenece a la rama de la inteligencia artificial y consiste en la identificación automática de una persona a través de su voz. El hecho de poder distinguir un locutor de otro está relacionado mayoritariamente con las características fisiológicas y los hábitos lingüísticos de cada uno de ellos. El reconocimiento conlleva un procesado de audio que permite extraer este conjunto de rasgos inherentes al locutor y la posterior búsqueda de posibles coincidencias mediante un proceso de reconocimiento de patrones.
+
+Arquitectura del sistema
+
+Un sistema de reconocimiento de locutor está formado por dos secciones: entrenamiento y test. A pesar de compartir una estructura similar en cuanto a los módulos que las conforman tienen una función bien diferenciada.
+- La sección de entrenamiento tiene la finalidad de registrar locutores mediante un micrófono para extraer sus características y guardarlas en la base de datos.
+- La sección de test se centra en registrar a un locutor y extraer las características para poder compararlas con las que se encuentran almacenadas en la base de datos. Finalmente, después de obtener posibles coincidencias, el sistema presenta al locutor susceptible de ser el buscado.
+
+Adquisición de datos
+
+La adquisición de datos es esencial tanto para la parte de entrenamiento como para la de test. Para poder introducir locutores al sistema es necesario un transductor acústico-eléctrico, ya que la voz se propaga en forma de ondas y para poder extraer características es necesario transformar la presión sonora en un señal eléctrica y así poder proceder a su digitalización.
+
+El tipo de micrófono, la frecuencia de muestreo y la cuantización realizada en la captación del audio deberá adecuarse a la ancho de banda de la voz y sus características. Hay factores externos al locutor como la elección de los parámetros anteriores, la relación señal ruido (SNR) de las muestras grabadas o la utilización de micrófonos con diferentes curvas de respuesta frecuencial que pueden influir negativamente en el resultado.
+
+Extracción de características
+
+Una vez digitalizado, el audio se procesa para extraer el listado de características elegidas, las cuales se llaman descriptores de audio. Estos descriptores contienen las características acústicas de la señal que utilizará el clasificador para compararlos con el listado almacenado en la base de datos. Las características a analizar pueden ser diversas pero se suelen utilizar los descriptores de audio de bajo nivel debido a la naturaleza de la fuente. Estos descriptores presentan un bajo nivel de abstracción y se limitan a describir características espectrales, paramétricas y temporales de la señal de audio.
+
+Para poder asociar las características de los descriptores a los archivos de audio correspondientes se utilizan los metadatos, datos sobre datos. Uno de los standards utilizados para esta tarea es el standard MPEG-7, el cual permite la gestión de estos metadatos, facilitando así el acceso a esta información en el momento de la búsqueda.
+
+Clasificación
+
+El módulo clasificador tiene acceso tanto a la parte de entrenamiento como a la de test. Este módulo hace de puente entre ambas partes encargándose de comparar los vectores de características a buscar con los vectores de los modelos de locutor que contiene la base de datos. Su tarea computacional consiste en encontrar coincidencias y como resultado extrae una serie de probabilidades de los locutores en la base de datos susceptibles de ser el buscado. La decisión puede ser diferente dependiendo de la configuración del sistema.
+
+Sistema cerrado
+
+Un sistema cerrado da por supuesto que el locutor que se quiere identificar se encuentra ya almacenado en la base de datos. El locutor con más probabilidades a la salida del clasificador, que comparte más características con el locutor a buscar, será la salida resultante del sistema.
+
+Sistema abierto
+
+Un sistema abierto es más complejo, ya que el locutor que se quiere identificar no está necesariamente en la base de datos. El clasificador debe tener en cuenta no sólo la más alta probabilidad, sino que también debe establecer si la semejanza es suficiente para dar un positivo. Si las probabilidades de un modelo de locutor se consideran suficientes como para suponer una coincidencia se presenta al candidato como resultado de la búsqueda, en caso contrario la salida es "locutor desconocido".
+
+Aplicaciones
+
+El desarrollo de tecnologías encargadas de reconocer automáticamente a una persona mediante su voz ha experimentado un creciente interés en los últimos años debido a sus múltiples aplicaciones.
+
+Campo 	Ejemplos
+Control de acceso 	Acceso a instalaciones físicas
+					Acceso a un ordenador
+Transacciones de autenticación 	Comercio electrónico
+								Transacciones bancarias
+Servicio personalizado 	Aplicaciones de domótica
+Gestión de audio 	Indexación automática de contenidos de audio
+Refuerzo de la ley 	Comprobación de que se cumple la libertad condicional
+Forense 	Identificación de personas a través de grabaciones para validar pruebas
+
+Farrús, Mireia (2008). «Fusing prosodic and acoustic information for speaker recognition». Thesis.
+
+Identificación o autenticación
+- La identificación de locutor consiste en encontrar su identidad. Debido a que el locutor a buscar puede estar registrado en la base de datos o no estarlo, se suele utilizar un sistema abierto, pues en caso de no estar en la base de datos la identificación no sería posible y el locutor debería considerarse desconocido.
+- En el caso de la autenticación se utiliza un sistema cerrado, pues en este caso el locutor da su identidad y para verificarlo es necesario acceder a su modelo de voz guardado en la base de datos . Hay dos posibles salidas para este sistema, la correspondencia entre el locutor y quien dice ser o la no correspondencia.
+
+Dependientes o independientes del texto
+- Los sistemas dependientes del texto utilizan la misma palabra o frase tanto en la parte de entrenamiento como en la de test. Estas palabras suelen ser contraseñas privadas en aplicaciones de seguridad.
+- Los sistemas independientes del texto no se basan en ninguna palabra o frase en concreto y no necesitan ningún tipo de cooperación por parte del locutor a buscar, pues con la voz ya es suficiente. Estos sistemas se utilizan a menudo en campos de investigación forense o judicial, para identificar a locutores o verificar alguna identidad.

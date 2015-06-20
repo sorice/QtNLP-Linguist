@@ -1,0 +1,655 @@
+Lista (informática)
+
+En Ciencias de la Computación, una lista enlazada es una de las estructuras de datos fundamentales, y puede ser usada para implementar otras estructuras de datos. Consiste en una secuencia de nodos, en los que se guardan campos de datos arbitrarios y una o dos referencias, enlaces o punteros al nodo anterior o posterior. El principal beneficio de las listas enlazadas respecto a los vectores convencionales es que el orden de los elementos enlazados puede ser diferente al orden de almacenamiento en la memoria o el disco, permitiendo que el orden de recorrido de la lista sea diferente al de almacenamiento.
+
+Una lista enlazada es un tipo de dato autorreferenciado porque contienen un puntero o enlace (en inglés link, del mismo significado) a otro dato del mismo tipo. Las listas enlazadas permiten inserciones y eliminación de nodos en cualquier punto de la lista en tiempo constante (suponiendo que dicho punto está previamente identificado o localizado), pero no permiten un acceso aleatorio. Existen diferentes tipos de listas enlazadas: listas enlazadas simples, listas doblemente enlazadas, listas enlazadas circulares y listas enlazadas doblemente circulares.
+
+Las listas enlazadas pueden ser implementadas en muchos lenguajes. Lenguajes tales como Lisp y Scheme tiene estructuras de datos ya construidas, junto con operaciones para acceder a las listas enlazadas. Lenguajes imperativos u orientados a objetos tales como C o C++ y Java, respectivamente, disponen de referencias para crear listas enlazadas.
+
+Historia
+
+Las listas enlazadas fueron desarrolladas en 1955-56 por Cliff Shaw y Herbert Simon en RAND Corporation, como la principal estructura de datos para su Lenguaje de Procesamiento de la Información (IPL). IPL fue usado por los autores para desarrollar varios programas relacionados con la inteligencia artificial, incluida la Máquina de la Teoría General, el Solucionador de Problemas Generales, y un programa informático de ajedrez. Se publicó en IRE Transactions on Information Theory en 1956, y en distintas conferencias entre 1957-1959, incluida Proceedings of the Western Joint Computer en 1957 y 1958, y en Information Processing (Procendents de la primera conferencia internacional del procesamiento de la información de la Unesco) en 1959. El diagrama clásico actual, que consiste en bloques que representan nodos de la lista con flechas apuntando a los sucesivos nodos de la lista, apareció en Programming the Logic Theory Machine, de Newell y Shaw. Newell y Simon fueron reconocidos por el ACM Turing Award en 1975 por “hacer contribuciones básicas a la inteligencia artificial, a la psicología del conocimiento humano y al procesamiento de las listas”.
+
+El problema de los traductores del procesamiento natural del lenguaje condujo a Victor Yngve del Instituto Tecnológico de Massachusetts (MIT) a usar listas enlazadas como estructura de datos en su COMIT, lenguaje de programación para computadoras, que investigó en el campo de la Lingüística computacional. Un informe de este lenguaje, titulado “A programming language for mechanical translation” apareció en Mechanical Translation en 1958.
+
+LISP, el principal procesador de listas, fue creado en 1958. Una de las mayores estructuras de datos de LISP es la lista enlazada.
+
+En torno a los 60, la utilidad de las listas enlazadas y los lenguajes que utilizaban estas estructuras como su principal representación de datos estaba bien establecida. Bert Green, del Lincoln Laboratory del MIT, publicó un estudio titulado Computer languages for symbol manipulation en IRE Transaction on Human Factors in Electronics en marzo de 1961 que resumía las ventajas de las listas enlazadas. Un posterior artículo, A Comparison of list-processing computer languages de Bobrow y Raphael, aparecía en Communications of the ACM en abril de 1964.
+
+Muchos sistemas operativos desarrollados por la empresa Technical Systems Consultants (originalmente de West Lafayette Indiana y después de Raleigh, Carolina del Norte) usaron listas enlazadas simples como estructuras de ficheros. Un directorio de entrada apuntaba al primer sector de un fichero y daba como resultado porciones de la localización del fichero mediante punteros. Los sistemas que utilizaban esta técnica incluían Flex (para el Motorola 6800 CPU), mini-Flex (la misma CPU) y Flex9 (para el Motorola 6809 CPU). Una variante desarrollada por TSC se comercializó a Smoke Signal Broadcasting en California, usando listas doblemente enlazadas del mismo modo.
+
+El sistema operativo TSS, desarrollado por IBM para las máquinas System 360/370, usaba una lista doblemente enlazada para su catálogo de ficheros de sistema. La estructura de directorios era similar a Unix, donde un directorio podía contener ficheros u otros directorios que se podían extender a cualquier profundidad. Una utilidad fue creada para arreglar problemas del sistema después de un fallo desde las porciones modificadas del catálogo de ficheros que estaban a veces en memoria cuando ocurría el fallo. Los problemas eran detectados por comparación de los enlaces posterior y anterior por consistencia. Si el siguiente de ellos era corrupto y el anterior enlace del nodo infectado era encontrado, el enlace posterior era asignado al nodo marcado con el enlace anterior.
+
+Tipos de listas enlazadas
+
+Listas enlazadas lineales
+
+Listas simples enlazadas
+
+La lista enlazada básica es la lista enlazada simple la cual tiene un enlace por nodo. Este enlace apunta al siguiente nodo (o indica que tiene la dirección en memoria del siguiente nodo) en la lista, o al valor NULL o a la lista vacía, si es el último nodo.
+
+Listas doblemente enlazadas
+
+Un tipo de lista enlazada más sofisticado es la lista doblemente enlazada o lista enlazadas de dos vías. Cada nodo tiene dos enlaces: uno apunta al nodo anterior, o apunta al valor NULL si es el primer nodo; y otro que apunta al nodo siguiente, o apunta al valor NULL si es el último nodo.
+
+En algún lenguaje de muy bajo nivel, XOR-Linking ofrece una vía para implementar listas doblemente enlazadas, usando una sola palabra para ambos enlaces, aunque esta técnica no se suele utilizar.
+
+Listas enlazadas circulares
+
+En una lista enlazada circular, el primer y el último nodo están unidos juntos. Esto se puede hacer tanto para listas enlazadas simples como para las doblemente enlazadas. Para recorrer una lista enlazada circular podemos empezar por cualquier nodo y seguir la lista en cualquier dirección hasta que se regrese hasta el nodo original. Desde otro punto de vista, las listas enlazadas circulares pueden ser vistas como listas sin comienzo ni fin. Este tipo de listas es el más usado para dirigir buffers para “ingerir” datos, y para visitar todos los nodos de una lista a partir de uno dado.
+
+Listas enlazadas simples circulares
+
+Cada nodo tiene un enlace, similar al de las listas enlazadas simples, excepto que el siguiente nodo del último apunta al primero. Como en una lista enlazada simple, los nuevos nodos pueden ser solo eficientemente insertados después de uno que ya tengamos referenciado. Por esta razón, es usual quedarse con una referencia solamente al último elemento en una lista enlazada circular simple, esto nos permite rápidas inserciones al principio, y también permite accesos al primer nodo desde el puntero del último nodo. 1
+
+Listas enlazadas doblemente circulares
+
+En una lista enlazada doblemente circular, cada nodo tiene dos enlaces, similares a los de la lista doblemente enlazada, excepto que el enlace anterior del primer nodo apunta al último y el enlace siguiente del último nodo, apunta al primero. Como en una lista doblemente enlazada, las inserciones y eliminaciones pueden ser hechas desde cualquier punto con acceso a algún nodo cercano. Aunque estructuralmente una lista circular doblemente enlazada no tiene ni principio ni fin, un puntero de acceso externo puede establecer el nodo apuntado que está en la cabeza o al nodo cola, y así mantener el orden tan bien como en una lista doblemente enlazada.
+
+Nodos centinelas
+
+A veces las listas enlazadas tienen un nodo centinela (también llamado falso nodo o nodo ficticio) al principio o al final de la lista, el cual no es usado para guardar datos. Su propósito es simplificar o agilizar algunas operaciones, asegurando que cualquier nodo tiene otro anterior o posterior, y que toda la lista (incluso alguna que no contenga datos) siempre tenga un “primer y último” nodo.
+
+Aplicaciones de las listas enlazadas
+
+Las listas enlazadas son usadas como módulos para otras muchas estructuras de datos, tales como pilas, colas y sus variaciones.
+
+El campo de datos de un nodo puede ser otra lista enlazada. Mediante este mecanismo, podemos construir muchas estructuras de datos enlazadas con listas; esta practica tiene su origen en el lenguaje de programación Lisp, donde las listas enlazadas son una estructura de datos primaria (aunque no la única), y ahora es una característica común en el estilo de programación funcional.
+
+A veces, las listas enlazadas son usadas para implementar vectores asociativos, y estas en el contexto de las llamadas listas asociativas. Hay pocas ventajas en este uso de las listas enlazadas; hay mejores formas de implementar éstas estructuras, por ejemplo con árboles binarios de búsqueda equilibrados. Sin embargo, a veces una lista enlazada es dinámicamente creada fuera de un subconjunto propio de nodos semejante a un árbol, y son usadas más eficientemente para recorrer ésta serie de datos.
+
+Ventajas
+
+Como muchas opciones en programación y desarrollo, no existe un único método correcto para resolver un problema. Una estructura de lista enlazada puede trabajar bien en un caso pero causar problemas en otros. He aquí una lista con algunas de las ventajas más comunes que implican las estructuras de tipo lista. En general, teniendo una colección dinámica donde los elementos están siendo añadidos y eliminados frecuentemente e importa la localización de los nuevos elementos introducidos se incrementa el beneficio de las listas enlazadas.
+
+Listas enlazadas vs. vectores o matrices
+
+	Vector 	Lista Enlazada
+Indexado 	O(1) 	O(n)
+Inserción / Eliminación al final 	O(1) 	O(1) or O(n)2
+Inserción / Eliminación en la mitad 	O(n) 	O(1)
+Persistencia 	No 	Simples sí
+Localidad 	Buena 	Mala
+
+Las listas enlazadas poseen muchas ventajas sobre los vectores. Los elementos se pueden insertar en una lista indefinidamente mientras que un vector tarde o temprano se llenará o necesitará ser redimensionado, una costosa operación que incluso puede no ser posible si la memoria se encuentra fragmentada.
+
+En algunos casos se pueden lograr ahorros de memoria almacenando la misma ‘cola’ de elementos entre dos o más listas – es decir, la lista acaba en la misma secuencia de elementos. De este modo, uno puede añadir nuevos elementos al frente de la lista manteniendo una referencia tanto al nuevo como a los viejos elementos - un ejemplo simple de una estructura de datos persistente.
+
+Por otra parte, los vectores permiten acceso aleatorio mientras que las listas enlazadas sólo permiten acceso secuencial a los elementos. Las listas enlazadas simples, de hecho, solo pueden ser recorridas en una dirección. Esto hace que las listas sean inadecuadas para aquellos casos en los que es útil buscar un elementos por su índice rápidamente, como el heapsort. El acceso secuencial en los vectores también es más rápido que en las listas enlazadas.
+
+Otra desventaja de las listas enlazadas es el almacenamiento extra necesario para las referencias, que a menudos las hacen poco prácticas para listas de pequeños datos como caracteres o valores booleanos.
+
+También puede resultar lento y abusivo el asignar memoria para cada nuevo elemento. Existe una variedad de listas enlazadas que contemplan los problemas anteriores para resolver los mismos. Un buen ejemplo que muestra los pros y contras del uso de vectores sobre listas enlazadas es la implementación de un programa que resuelva el problema de Josephus. Este problema consiste en un grupo de personas dispuestas en forma de círculo. Se empieza a partir de una persona predeterminadas y se cuenta n veces, la persona n-ésima se saca del círculo y se vuelve a cerrar el grupo. Este proceso se repite hasta que queda una sola persona, que es la que gana. Este ejemplo muestra las fuerzas y debilidades de las listas enlazadas frente a los vectores, ya que viendo a la gente como nodos conectados entre sí en una lista circular se observa como es más fácil suprimir estos nodos. Sin embargo, se ve como la lista perderá utilidad cuando haya que encontrar a la siguiente persona a borrar. Por otro lado, en un vector el suprimir los nodos será costoso ya que no se puede quitar un elemento sin reorganizar el resto. Pero en la búsqueda de la n-ésima persona tan sólo basta con indicar el índice n para acceder a él resultando mucho más eficiente.
+
+Doblemente enlazadas vs. simplemente enlazadas
+
+Las listas doblemente enlazadas requieren más espacio por nodo y sus operaciones básicas resultan más costosas pero ofrecen una mayor facilidad para manipular ya que permiten el acceso secuencial a lista en ambas direcciones. En particular, uno puede insertar o borrar un nodo en un número fijo de operaciones dando únicamente la dirección de dicho nodo (Las listas simples requieren la dirección del nodo anterior para insertar o suprimir correctamente). Algunos algoritmos requieren el acceso en ambas direcciones.
+
+Circulares enlazadas vs. lineales enlazadas
+
+Las listas circulares son más útiles para describir estructuras circulares y tienen la ventaja de poder recorrer la lista desde cualquier punto. También permiten el acceso rápido al primer y último elemento por medio de un puntero simple.
+
+Nodos centinelas (header nodes)
+
+La búsqueda común y los algoritmos de ordenación son menos complicados si se usan los llamados Nodos Centinelas o Nodos Ficticios, donde cada elemento apunta a otro elemento y nunca a nulo. El Nodo Centinela o Puntero Cabeza contiene, como otro, un puntero siguiente que apunta al que se considera como primer elemento de la lista. También contiene un puntero previo que hace lo mismo con el último elemento. El Nodo Centinela es definido como otro nodo en una lista doblemente enlazada, la asignación del puntero frente no es necesaria y los puntero anterior y siguiente estarán apuntando a sí mismo en ese momento. Si los punteros anterior y siguiente apuntan al Nodo Centinela la lista se considera vacía. En otro caso, si a la lista se le añaden elementos ambos puntero apuntarán a otros nodos. Estos Nodos Centinelas simplifican muchos las operaciones pero hay que asegurarse de que los punteros anterior y siguiente existen en cada momento. Como ventaja eliminan la necesidad de guardar la referencia al puntero del principio de la lista y la posibilidad de asignaciones accidentales. Por el contrario, usan demasiado almacenamiento extra y resultan complicados en algunas operaciones.
+
+Listas enlazadas usando vectores de nodos
+
+Los lenguajes que no aceptan cualquier tipo de referencia pueden crear uniones reemplazando los punteros por índices de un vector. La ventaja es de mantener un vector de entradas, donde cada entrada tiene campos enteros indicando el índice del siguiente elemento del vector. Pueden haber nodos sin usarse. Si no hay suficiente espacio, pueden usarse vectores paralelos.
+
+Entonces una lista enlazada puede ser construida, creado un vector con esta estructura, y una variable entera para almacenar el índice del primer elemento. (ver en la sección de implementaciones).
+
+Las utilidades de esta propuesta son:
+- La lista enlazada puede ser movida sobre la memoria y también ser rápidamente serializada para almacenarla en un disco o transferirla sobre una red.
+- Especialmente para una lista pequeña, los vectores indexados pueden ocupar mucho menos espacio que un conjunto de punteros.
+- La localidad de referencia puede ser mejorada guardando los nodos juntos en memoria y siendo reordenados periódicamente.
+
+Algunas desventajas son:
+- Incrementa la complejidad de la implementación.
+- Usar un fondo general de memoria deja más memoria para otros datos si la lista es más pequeña de lo esperado ó si muchos nodos son liberados.
+- El crecimiento de un vector cuando está lleno no puede darse lugar (o habría que redimensionarlo) mientras que encontrar espacio para un nuevo nodo en una lista resulta posible y más fácil.
+
+Por estas razones, la propuesta se usa principalmente para lenguajes que no soportan asignación de memoria dinámica. Estas desventajas se atenúan también si el tamaño máximo de la lista se conoce en el momento en el que el vector se crea.
+
+Lenguajes soportados
+
+Muchos lenguajes de programación tales como Lisp y Scheme tienen listas enlazadas simples ya construidas. En muchos lenguajes de programación, estas listas están construidas por nodos, cada uno llamado cons o celda cons. Las celdas cons tienen dos campos: el car, una referencia del dato al nodo, y el cdr, una referencia al siguiente nodo. Aunque las celdas cons pueden ser usadas para construir otras estructuras de datos, este es su principal objetivo.
+
+En lenguajes que soportan tipos abstractos de datos o plantillas, las listas enlazadas ADTs o plantillas están disponibles para construir listas enlazadas. En otros lenguajes, las listas enlazadas son típicamente construidas usando referencias junto con el tipo de dato record.
+
+En la sección de implementaciones hay un ejemplo completo en C y en Maude
+
+Almacenamiento interno y externo
+
+Cuando se construye una lista enlazada, nos enfrentamos a la elección de si almacenar los datos de la lista directamente en los nodos enlazados de la lista, llamado almacenamiento interno, o simplemente almacenar una referencia al dato, llamado almacenamiento externo. El almacenamiento interno tiene la ventaja de hacer accesos a los datos más eficientes, requiriendo menos almacenamiento global, teniendo mejor referencia de localidad, y simplifica la gestión de memoria para la lista (los datos son alojados y desalojados al mismo tiempo que los nodos de la lista).
+
+El almacenamiento externo, por otro lado, tiene la ventaja de ser más genérico, en la misma estructura de datos y código máquina puede ser usado para una lista enlazada, no importa cual sea su tamaño o los datos. Esto hace que sea más fácil colocar el mismo dato en múltiples listas enlazadas. Aunque con el almacenamiento interno los mismos datos pueden ser colocados en múltiples listas incluyendo múltiples referencias siguientes en la estructura de datos del nodo, esto podría ser entonces necesario para crear rutinas separadas para añadir o borrar celdas basadas en cada campo. Esto es posible creando listas enlazadas de elementos adicionales que usen almacenamiento interno usando almacenamiento externo, y teniendo las celdas de las listas enlazadas adicionales almacenadas las referencias a los nodos de las listas enlazadas que contienen los datos.
+
+En general, si una serie de estructuras de datos necesita ser incluida en múltiples listas enlazadas, el almacenamiento externo es el mejor enfoque. Si una serie de estructuras de datos necesitan ser incluidas en una sola lista enlazada, entonces el almacenamiento interno es ligeramente mejor, a no ser que un paquete genérico de listas genéricas que use almacenamiento externo esté disponible. Asimismo, si diferentes series de datos que pueden ser almacenados en la misma estructura de datos son incluidos en una lista enlazada simple, entonces el almacenamiento interno puede ser mejor.
+
+Otro enfoque que puede ser usado con algunos lenguajes implica tener diferentes estructuras de datos, pero todas tienen los campos iniciales, incluyendo la siguiente (y anterior si es una lista doblemente enlazada) referencia en la misma localización. Después de definir estructuras distintas para cada tipo de dato, una estructura genérica puede ser definida para que contenga la mínima cantidad de datos compartidos por todas las estructuras y contenidos al principio de las estructuras. Entonces las rutinas genéricas pueden ser creadas usando las mínimas estructuras para llevar a cabo las operaciones de los tipos de las listas enlazadas, pero separando las rutinas que pueden manejar los datos específicos. Este enfoque es usado a menudo en rutinas de análisis de mensajes, donde varios tipos de mensajes son recibidos, pero todos empiezan con la misma serie de campos, generalmente incluyendo un campo para el tipo de mensaje. Las rutinas genéricas son usadas para añadir nuevos mensajes a una cola cuando son recibidos, y eliminarlos de la cola en orden para procesarlos. El campo de tipo de mensaje es usado para llamar a la rutina correcta para procesar el tipo específico de mensaje.
+
+En la sección implementaciones (en este mismo artículo) se expone código referente a este tema.
+
+Hay que notar que cuando usamos almacenamiento externo, se necesita dar un paso extra para extraer la información del nodo y hacer un casting dentro del propio tipo del dato. Esto es porque ambas listas, de familias y miembros, son almacenadas en dos listas enlazadas usando la misma estructura de datos (nodo), y este lenguaje no tiene tipos paramétricos.
+
+Si conocemos el número de familias a las que un miembro puede pertenecer en tiempo de compilación, el almacenamiento interno trabaja mejor. Si, sin embargo, un miembro necesita ser incluido en un número arbitrario de familias, sabiendo el número específico de familias solo en tiempo de ejecución, el almacenamiento externo será necesario.
+
+Agilización de la búsqueda
+
+Buscando un elemento específico en una lista enlazada, incluso si esta es ordenada, normalmente requieren tiempo O (n) (búsqueda lineal). Esta es una de las principales desventajas de listas enlazadas respecto a otras estructuras. Además algunas de las variantes expuestas en la sección anterior, hay numerosas vías simples para mejorar el tiempo de búsqueda.
+
+En una lista desordenada, una forma simple para decrementar el tiempo de búsqueda medio es el mover al frente de forma heurística, que simplemente mueve un elemento al principio de la lista una vez que es encontrado. Esta idea, útil para crear cachés simples, asegura que el ítem usado más recientemente es también el más rápido en ser encontrado otra vez.
+
+Otro enfoque común es indizar una lista enlazada usando una estructura de datos externa más eficiente. Por ejemplo, podemos construir un árbol rojo-negro o una tabla hash cuyos elementos están referenciados por los nodos de las listas enlazadas. Pueden ser construidos múltiples índices en una lista simple. La desventaja es que estos índices puede necesitar ser actualizados cada vez que un nodo es añadido o eliminado (o al menos, antes que el índice sea utilizado otra vez).
+
+Estructuras de datos relacionadas
+
+Tanto las pilas como las colas son a menudo implementadas usando listas enlazadas, y simplemente restringiendo el tipo de operaciones que son soportadas.
+
+La skip list, o lista por saltos, es una lista enlazada aumentada con capas de punteros para saltos rápidos sobre grandes números de elementos, y descendiendo hacía la siguiente capa. Este proceso continúa hasta llegar a la capa inferior, la cual es la lista actual.
+
+Un árbol binario puede ser visto como un tipo de lista enlazada donde los elementos están enlazados entre ellos mismos de la misma forma. El resultado es que cada nodo puede incluir una referencia al primer nodo de una o dos listas enlazadas, cada cual con su contenido, formando así los subárboles bajo el nodo.
+
+Una lista enlazada desenrollada es una lista enlazada cuyos nodos contiene un vector de datos. Esto mejora la ejecución de la caché, siempre que las listas de elementos estén contiguas en memoria, y reducen la sobrecarga de la memoria, porque necesitas menos metadatos para guardar cada elemento de la lista.
+
+Una tabla hash puede usar listas enlazadas para guardar cadenas de ítems en la misma posición de la tabla hash.
+
+Implementaciones
+
+Aquí se expone el código necesario para complementar el artículo a fin de poder realizar una lectura ágil sobre el artículo y a su vez quien necesite el código pueda fácilmente encontrar el mismo si está contenido.
+
+Operaciones sobre listas enlazadas
+
+Cuando se manipulan listas enlazadas, hay que tener cuidado con no usar valores que hayamos invalidado en asignaciones anteriores. Esto hace que los algoritmos de insertar y borrar nodos en las listas sean algo especiales. A continuación se expone el pseudocódigo para añadir y borrar nodos en listas enlazadas simples, dobles y circulares.
+
+Listas enlazadas lineales
+
+Listas simples enlazadas
+
+Nuestra estructura de datos tendrá dos campos. Vamos a mantener la variables PrimerNodos que siempre apunta al primer nodo de tal lista, ó nulo para la lista vacía.
+
+ record Node {
+    data // El dato almacenado en el nodo
+    next // Una referencia al nodo siguiente, nulo para el último nodo
+ }
+
+ record List {
+     Node PrimerNodo   // Apunta al primer nodo de la lista; nulo para la lista vacía
+ }
+
+El recorrido en una lista enlazada es simple, empezamos por el primer nodo y pasamos al siguiente hasta que la lista llegue al final.
+
+ node := list.PrimerNodo
+ while node not null {
+     node := node.next
+ }
+
+El siguiente código inserta un elemento a continuación de otro en una lista simple. El diagrama muestra como funciona.
+
+ function insertAfter(Node node, Node newNode) {
+     newNode.next := node.next
+     node.next    := newNode
+ }
+
+Insertar al principio de una lista requiere una función por separado. Se necesita actualizar PrimerNodo.
+
+ function insertBeginning(List list, Node newNode) {
+     newNode.next   := list.firstNode
+     list.firstNode := newNode
+ }
+
+De forma similar, también tenemos funciones para borrar un nodo dado ó para borrar un nodo del principio de la lista. Ver diagrama.
+
+ function removeAfter(Node node) { 
+     obsoleteNode := node.next
+     node.next := node.next.next
+     destroy obsoleteNode
+ }
+
+ function removeBeginning(List list) { 
+     obsoleteNode := list.firstNode
+     list.firstNode := list.firstNode.next          
+     destroy obsoleteNode
+ }
+
+Advertimos que BorrarPrincipio pone PrimerNodo a nulo cuando se borra el último elemento de la lista. Adjuntar una lista enlazada a otra puede resultar ineficiente a menos que se guarde una referencia a la cola de la lista, porque si no tendríamos que recorrer la lista en orden hasta llegar a la cola y luego añadir la segunda lista.
+
+Listas doblemente enlazadas
+
+Con estas listas es necesario actualizar muchos más punteros pero también se necesita menos información porque podemos usar un puntero para recorrer hacia atrás y consultar elementos. Se crean nuevas operaciones y elimina algunos casos especiales. Añadimos el campo anterior a nuestros nodos, apuntando al elemento anterior, y UltimoNodo a nuestra estructura, el cual siempre apunta al último elemento de la lista. PrimerNodo y UltimoNodo siempre están a nulo en la lista vacía.
+
+ record Node {
+    data // El dato almacenado en el nodo
+    next // Una referencia al nodo siguiente, nulo para el último nodo
+    prev // Una referencia al nodo anterior, nulo para el primer nodo
+ }
+
+ record List {
+     Node firstNode   // apunta al primer nodo de la lista; nulo para la lista vacía
+     Node lastNode    // apunta al último nodo de la lista; nulo para la lista vacía
+ }
+
+Formas de recorrer la lista:
+
+Hacia Delante
+
+ node := list.firstNode
+ while node ≠ null
+     <do something with node.data>
+     node := node.next
+
+Hacia Atrás
+
+ node := list.lastNode
+ while node ≠ null
+     <do something with node.data>
+     node := node.prev
+
+Estas funciones simétricas añaden un nodo después o antes de uno dado:
+
+
+ function insertAfter(List list, Node node, Node newNode)
+     newNode.prev := node
+     newNode.next := node.next
+     if node.next = null
+         node.next := newNode
+         list.lastNode := newNode
+     else
+         node.next.prev := newNode
+         node.next := newNode
+
+ function insertBefore(List list, Node node, Node newNode)
+     newNode.prev := node.prev
+     newNode.next := node
+     if node.prev is null
+         node.prev := newNode
+         list.firstNode := newNode
+     else
+         node.prev.next := newNode
+         node.prev := newNode
+
+También necesitamos una función para insertar un nodo al comienzo de una lista posiblemente vacía.
+
+ function insertBeginning(List list, Node newNode)
+     if list.firstNode = null
+         list.firstNode := newNode
+         list.lastNode  := newNode
+         newNode.prev := null
+         newNode.next := null
+     else
+         insertBefore (list, list.firstNode, newNode)
+
+Una función simétrica que inserta al final:
+
+ function insertEnd(List list, Node newNode)
+     if list.lastNode = null
+         insertBeginning (list, newNode)
+     else
+         insertAfter (list, list.lastNode, newNode)
+
+Borrar un nodo es fácil, solo requiere usar con cuidado firstNode y lastNode.
+
+ function remove(List list, Node node)
+   if node.prev = null
+       list.firstNode := node.next
+   else
+       node.prev.next := node.next
+   if node.next = null
+       list.lastNode := node.prev
+   else
+       node.next.prev := node.prev
+   destroy node
+
+Una consecuencia especial de este procedimiento es que borrando el último elemento de una lista se ponen PrimerNodo y UltimoNodo a nulo, habiendo entonces un problema en una lista que tenga un único elemento.
+
+Listas enlazadas circulares
+
+Estas pueden ser simples o doblemente enlazadas. En una lista circular todos los nodos están enlazados como un círculo, sin usar nulo. Para listas con frente y final (como una cola), se guarda una referencia al último nodo de la lista. El siguiente nodo después del último sería el primero de la lista. Los elementos se pueden añadir por el final y borrarse por el principio en todo momento. Ambos tipos de listas circulares tienen la ventaja de poderse recorrer completamente empezando desde cualquier nodo. Esto nos permite normalmente evitar el uso de PrimerNodo y UltimoNodo, aunque si la lista estuviera vacía necesitaríamos un caso especial, como una variable UltimoNodo que apunte a algún nodo en la lista o nulo si está vacía. Las operaciones para estas listas simplifican el insertar y borrar nodos en una lista vacía pero introducen casos especiales en la lista vacía.
+
+Listas enlazadas doblemente circulares
+
+Asumiendo que someNodo es algún nodo en una lista no vacía, esta lista presenta el comienzo de una lista con someNode.
+
+Hacia Delante
+
+ node := someNode
+ do
+     do something with node.value
+     node := node.next
+ while node != someNode
+
+Hacia Atrás
+
+ node := someNode
+ do
+     do something with node.value
+     node := node.prev
+ while node := someNode
+
+
+Esta función inserta un nodo en una lista enlazada doblemente circular después de un elemento dado:
+
+ function insertAfter(Node node, Node newNode)
+     newNode.next := node.next
+     newNode.prev := node
+     node.next.prev := newNode
+     node.next      := newNode
+
+Para hacer "insertBefore", podemos simplificar "insertAfter (node.prev, newNode)". Insertar un elemento en una lista que puede estar vacía requiere una función especial.
+
+ function insertEnd(List list, Node node)
+     if list.lastNode = null
+         node.prev := node
+         node.next := node
+     else
+         insertAfter (list.lastNode, node)
+     list.lastNode := node
+
+Para insertar al principio simplificamos "insertAfter (list.lastNode, node)".
+
+ function remove(List list, Node node)
+     if node.next = node
+         list.lastNode := null
+     else
+         node.next.prev := node.prev
+         node.prev.next := node.next
+         if node = list.lastNode
+             list.lastNode := node.prev;
+     destroy node
+
+Como una lista doblemente enlazada, "removeAfter" y "removeBefore" puede ser implementada con "remove (list, node.prev)" y "remove (list, node.next)".
+
+Listas enlazadas usando vectores de nodos
+
+Previamente se crea una estructura que contiene los apuntadores:
+
+record Entry {
+    integer next; // índice de la nueva entrada en el vector
+    integer prev; // entrada previa
+    string name;
+    real balance;
+ }
+
+Y finalmente se declara el vector: integer listHead;
+
+Entry Records[1000];
+
+Implementación de una lista enlazada en C
+
+Las listas enlazadas son típicamente construidas usando referencias junto con el tipo de dato record
+
+#include <stdio.h>   /* for printf */
+#include <stdlib.h>  /* for malloc */
+ 
+typedef struct ns {
+	int data;
+	struct ns *next;
+} node;
+ 
+node *list_add(node **p, int i) {
+    /* algunos compiladores no requieren un casting del valor del retorno para malloc  */
+    node *n = (node *)malloc(sizeof(node));
+    if (n == NULL)
+        return NULL;
+    n->next = *p;                                                                            
+    *p = n;
+    n->data = i;
+    return n;
+}
+ 
+void list_remove(node **p) { /* borrar cabeza*/
+    if (*p != NULL) {
+        node *n = *p;
+	*p = (*p)->next;
+	free(n);
+    }
+}
+ 
+node **list_search(node **n, int i) {
+    while (*n != NULL) {
+        if ((*n)->data == i) {
+            return n;
+        }
+        n = &(*n)->next;
+    }
+    return NULL;
+}
+ 
+void list_print(node *n) {
+    if (n == NULL) {
+        printf("lista esta vacía\n");
+    }
+    while (n != NULL) {
+        printf("print %p %p %d\n", n, n->next, n->data);
+        n = n->next;
+    }
+}
+ 
+int main(void) {
+    node *n = NULL;
+ 
+    list_add(&n, 0); /* lista: 0 */
+    list_add(&n, 1); /* lista: 1 0 */
+    list_add(&n, 2); /* lista: 2 1 0 */
+    list_add(&n, 3); /* lista: 3 2 1 0 */
+    list_add(&n, 4); /* lista: 4 3 2 1 0 */
+    list_print(n);
+    list_remove(&n);            /* borrar primero(4) */
+    list_remove(&n->next);      /* borrar nuevo segundo (2) */
+    list_remove(list_search(&n, 1)); /* eliminar la celda que contiene el 1 (primera) */
+    list_remove(&n->next);      /* eliminar segundo nodo del final(0)*/
+    list_remove(&n);            /* eliminar ultimo nodo (3) */
+    list_print(n);
+ 
+    return 0;
+}
+
+Implementación de una lista enlazada en C++
+
+#include <iostream>    // Para cout
+#include <sstream>     // Utilizado para validar entradas del teclado
+#include <new>         // Utilizado para validad reservacion de memoria al utilizar el operator NEW.
+using namespace std
+ 
+struct camera_t {
+     int idcam;
+     string serial;
+     int idroom;
+     camera_t *next;
+ };
+ 
+ 
+//Insertar al principio de una lista requiere una función por separado. Se necesita actualizar PrimerNodo.
+void list_add(camera_t **node_cam)
+{
+    camera_t *newnode = new (nothrow) camera_t;
+    if(newnode==NULL){
+        cout << "Error. No possible allocate memory to new node.";
+    }
+    else{
+        newnode->next = *node_cam;
+        *node_cam = newnode;
+        cout << "Hola";
+    }
+}
+ 
+//El recorrido en una lista enlazada es simple, empezamos por el primer nodo y pasamos al siguiente hasta
+// que la lista llegue al final.
+void list_print(camera_t *node_cam)
+{
+    if (node_cam == NULL){
+        cout << "Lista vacia";
+    }
+    else{
+        while (node_cam!=NULL)
+        {
+            cout << "idcam: " << node_cam->idcam << "\nName: " << node_cam->name << "\nModel: " << node_cam->model;
+            cout << "\nSerial: " << node_cam->serial << "\nIdRoom: " << node_cam->idroom << "\nNameRoom: " << node_cam->room;
+            cout << "\n\n";
+            node_cam = node_cam->next;
+        }
+    }
+}
+ 
+int main(void)
+{
+     string mystr;
+     camera_t *node_cam = 0;
+ 
+     cout << "Ingrese los datos de la camara." << endl;
+ 
+     list_add(&node_cam);
+ 
+     cout << "Indentificador de camara: 23";
+     node_cam->idcam = N_globalCamera;
+     node_cam->name = "PanSonyc";
+     cout << "Precione una tecla para regresar al menu principal.";
+     getline(cin,mystr);
+ 
+    list_print(node_cam);
+}
+
+Implementación de una lista enlazada en Maude
+
+fmod LISTA-GENERICA {X :: TRIV} is
+    
+protecting NAT .
+
+*** tipos
+    
+sorts ListaGenNV{X} ListaGen{X} .
+    
+subsort ListaGenNV{X} < ListaGen{X} .
+
+*** generadores
+    
+op crear : -> ListaGen{X} [ctor] .
+    
+op cons : X$Elt ListaGen{X} -> ListaGenNV{X} [ctor] .
+
+*** constructores
+    
+op _::_ : ListaGen{X} ListaGen{X} -> ListaGen{X} [assoc id: crear ] . *** concatenacion
+    
+op invertir : ListaGen{X} -> ListaGen{X} .
+    
+op resto    : ListaGenNV{X} -> ListaGen{X} .
+
+*** selectores
+    
+op primero : ListaGenNV{X} -> X$Elt .
+    
+op esVacia? : ListaGen{X} -> Bool . 
+    
+op longitud : ListaGen{X} -> Nat .
+
+*** variables
+    
+vars L L1 L2 : ListaGen{X} .
+    
+vars E E1 E2 : X$Elt .
+
+*** ecuaciones
+    
+eq esVacia?(crear) = true .
+eq esVacia?(cons(E, L)) = false .
+
+    
+eq primero(cons(E, L)) = E .
+    
+eq resto(cons(E, L)) = L .
+
+    
+eq longitud(crear) = 0 .
+eq longitud(cons(E, L)) = 1 + longitud(L) .
+ 
+eq cons(E1, L1) :: cons(E2, L2) = cons(E1, L1 :: cons(E2, L2)) .
+
+    
+eq invertir(crear) = crear .
+eq invertir(cons(E, L)) = invertir(L) :: cons(E, crear) .
+
+
+endfm
+
+Ejemplos de almacenamiento interno y externo
+
+Suponiendo que queremos crear una lista enlazada de familias y sus miembros. Usando almacenamiento interno, la estructura podría ser como la siguiente:
+
+ record member { // miembro de una familia 
+     member next
+     string firstName
+     integer age
+ }
+ record family { // // la propia familia 
+     family next
+     string lastName
+     string address
+     member members // de la lista de miembros de la familia
+ }
+
+Para mostrar una lista completa de familias y sus miembros usando almacenamiento interno podríamos escribir algo como esto:
+
+ aFamily := Families // comienzo de la lista de familias
+ while aFamily ≠ null { // bucle a través de la lista de familias
+     print information about family
+     aMember := aFamily.members // coger cabeza de esta lista de miembros de esta familia
+     while aMember ≠ null { //bucle para recorrer la lista de miembros
+         print information about member
+         aMember := aMember.next
+     }
+     aFamily := aFamily.next
+ }
+
+Usando almacenamiento externo, nosotros podríamos crear las siguientes estructuras:
+
+
+ record node { // estructura genérica de enlace
+     node next
+     pointer data // puntero genérico del dato al nodo
+ }
+ record member { // estructura de una familia
+     string firstName
+     integer age
+ }
+
+ record family { // estructura de una familia
+     string lastName
+     string address
+     node members // cabeza de la lista de miembros de esta familia
+ }
+
+Para mostrar una lista completa de familias y sus miembros usando almacenamiento externo, podríamos escribir:
+
+ famNode := Families // comienzo de la cabeza de una lista de familias
+ while famNode ≠ null { // bucle de lista de familias
+     aFamily = (family) famNode.data // extraer familia del nodo
+     print information about family
+     memNode := aFamily.members // coger lista de miembros de familia
+     while memNode ≠ null { bucle de lista de miembros
+         aMember := (member) memNode.data // extraer miembro del nodo
+         print information about member
+         memNode := memNode.next
+     }
+     famNode := famNode.next
+ }
+
+Referencias
+1. Preiss, Bruno R. (1999), Data Structures and Algorithms with Object-Oriented Design Patterns in Java, Wiley, p. page 97, 165, ISBN 0471-34613-6
+2. If maintaining a link to the tail of the list, time is O(1); if the entire list must be searched to locate the tail link, O(n)
+- National Institute of Standards and Technology (August 16, 2004). Definition of a linked list. Retrieved December 14, 2004.
+- Antonakos, James L. and Mansfield, Kenneth C., Jr. Practical Data Structures Using C/C++ (1999). Prentice-Hall. ISBN 0-13-280843-9, pp. 165–190
+- Collins, William J. Data Structures and the Java Collections Framework (2002,2005) New York, NY: McGraw Hill. ISBN 0-07-282379-8, pp. 239–303
+- Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L.; Stein, Clifford Introductions to Algorithms (2003). MIT Press. ISBN 0-262-03293-7, pp. 205–213, 501–505
+- Green, Bert F. Jr. (1961). Computer Languages for Symbol Manipulation. IRE Transactions on Human Factors in Electronics. 2 pp. 3-8.
+- McCarthy, John (1960). Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I. Communications of the ACM. [1] HTML DVI PDF PostScript
+- Donald Knuth. Fundamental Algorithms, Third Edition. Addison-Wesley, 1997. ISBN 0-201-89683-4. Sections 2.2.3–2.2.5, pp.254–298.
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 10.2: Linked lists, pp.204–209.
+- Newell, Allen and Shaw, F. C. (1957). Programming the Logic Theory Machine. Proceedings of the Western Joint Computer Conference. pp. 230-240.
+- Parlante, Nick (2001). Linked list basics. Stanford University. PDF
+- Sedgewick, Robert Algorithms in C (1998). Addison Wesley. ISBN 0-201-31452-5, pp. 90–109
+- Shaffer, Clifford A. A Practical Introduction to Data Structures and Algorithm Analysis (1998). NJ: Prentice Hall. ISBN 0-13-660911-2, pp. 77–102
+- Wilkes, Maurice Vincent (1964). An Experiment with a Self-compiling Compiler for a Simple List-Processing Language. Annual Review in Automatic Programming 4, 1. Published by Pergamon Press.
+- Wilkes, Maurice Vincent (1964). Lists and Why They are Useful. Proceeds of the ACM National Conference, Philadelphia 1964 (ACM Publication P-64 page F1-1); Also Computer Journal 7, 278 (1965).
+- Kulesh Shanmugasundaram (April 4, 2005). Linux Kernel Linked List Explained.

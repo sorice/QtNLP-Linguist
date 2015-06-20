@@ -1,0 +1,43 @@
+Desarrollo guiado por pruebas
+
+Desarrollo guiado por pruebas de software, o Test-driven development (TDD) es una práctica de ingenieria de sofware que involucra otras dos prácticas: Escribir las pruebas primero (Test First Development) y Refactorización (Refactoring). Para escribir las pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En primer lugar, se escribe una prueba y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido.
+
+Requisitos
+
+Para que funcione el desarrollo guiado por pruebas, el sistema que se programa tiene que ser lo suficientemente flexible como para permitir que sea probado automáticamente. Cada prueba será suficientemente pequeña como para que permita determinar unívocamente si el código probado pasa o no la verificación que ésta le impone. El diseño se ve favorecido ya que se evita el indeseado "sobre diseño" de las aplicaciones y se logran interfaces más claras y un código más cohesivo. Frameworks como JUnit proveen de un mecanismo para manejar y ejecutar conjuntos de pruebas automatizadas.
+
+Ciclo de desarrollo conducido por pruebas
+
+En primer lugar se debe definir una lista de requisitos y después se ejecuta el siguiente ciclo:
+1. Elegir un requisito: Se elige de una lista el requerimiento que se cree que nos dará mayor conocimiento del problema y que a la vez sea fácilmente implementable.
+2. Escribir una prueba: Se comienza escribiendo una prueba para el requisito. Para ello el programador debe entender claramente las especificaciones y los requisitos de la funcionalidad que está por implementar. Este paso fuerza al programador a tomar la perspectiva de un cliente considerando el código a través de sus interfaces.
+3. Verificar que la prueba falla: Si la prueba no falla es porque el requerimiento ya estaba implementado o porque la prueba es errónea.
+4. Escribir la implementación: Escribir el código más sencillo que haga que la prueba funcione. Se usa la metáfora "Déjelo simple" ("Keep It Simple, Stupid" (KISS)).
+5. Ejecutar las pruebas automatizadas: Verificar si todo el conjunto de pruebas funciona correctamente.
+6. Eliminación de duplicación: El paso final es la refactorización, que se utilizará principalmente para eliminar código duplicado. Se hacen de a una vez un pequeño cambio y luego se corren las pruebas hasta que funcionen.
+7. Actualización de la lista de requisitos: Se actualiza la lista de requisitos tachando el requisito implementado. Asimismo se agregan requisitos que se hayan visto como necesarios durante este ciclo y se agregan requerimientos de diseño (P. ej que una funcionalidad esté desacoplada de otra).
+
+Tener un único repositorio universal de pruebas facilita complementar TDD con otra práctica recomendada por los procesos ágiles de desarrollo, la "Integración Frecuente". Integrar frecuentemente nuestro trabajo con el del resto del equipo de desarrollo permite ejecutar toda batería de pruebas y así descubrir si nuestra última versión es compatible con el resto del sistema. Es recomendable y menos costoso corregir pequeños problemas cada pocas horas que enfrentarse a problemas enormes cerca de la fecha de entrega fijada.
+
+Características
+
+Una ventaja de esta forma de programación es el evitar escribir código innecesario ("You Ain't Gonna Need It" (YAGNI)). Se intenta escribir el mínimo código posible, y si el código pasa una prueba aunque sepamos que es incorrecto nos da una idea de que tenemos que modificar nuestra lista de requerimientos agregando uno nuevo.
+
+La generación de pruebas para cada funcionalidad hace que el programador confíe en el código escrito. Esto permite hacer modificaciones profundas del código (posiblemente en una etapa de mantenimiento del programa) pues sabemos que si luego logramos hacer pasar todas las pruebas tendremos un código que funcione correctamente.
+
+Otra característica del Test Driven Development es que requiere que el programador primero haga fallar los casos de prueba. La idea es asegurarse de que los casos de prueba realmente funcionen y puedan recoger un error.
+
+Ventajas
+
+Los programadores que utilizan el desarrollo guiado por pruebas en un proyecto virgen encuentran que en raras ocasiones tienen la necesidad de utilizar el depurador o debugger.
+
+A pesar de los elevados requisitos iniciales de aplicar esta metodología, el desarrollo guiado por pruebas (TDD) puede proporcionar un gran valor añadido en la creación de software, produciendo aplicaciones de más calidad y en menos tiempo. Ofrece más que una simple validación del cumplimiento de los requisitos, también puede guiar el diseño de un programa. Centrándose en primer lugar en los casos de prueba uno debe imaginarse cómo los clientes utilizarán la funcionalidad (en este caso, los casos de prueba). Por lo tanto, al programador solo le importa la interfaz y no la implementación. Esta ventaja es similar al diseño por convenio pero se parece a él por los casos de prueba más que por las aserciones matemáticas.
+
+El poder del TDD radica en la capacidad de avanzar en pequeños pasos cuando se necesita. Permite que un programador se centre en la tarea actual y la primera meta es, a menudo, hacer que la prueba pase. Inicialmente no se consideran los casos excepcionales y el manejo de errores. Estos, se implementan después de que se haya alcanzado la funcionalidad principal. Otra ventaja es que, cuando es utilizada correctamente, se asegura de que todo el código escrito está cubierto por una prueba. Esto puede dar al programador un mayor nivel de confianza en el código.
+
+Limitaciones
+
+El desarrollo guiado por pruebas requiere que las pruebas puedan automatizarse. Esto resulta complejo en los siguientes dominios:
+- Interfaces Gráfica de usuario (GUIs), aunque hay soluciones parciales propuestas.
+- Objetos distribuidos, aunque los objetos simulados (MockObjects) pueden ayudar.
+- Bases de datos. Hacer pruebas de código que trabaja con base de datos es complejo porque requiere poner en la base de datos unos datos conocidos antes de hacer las pruebas y verificar que el contenido de la base de datos es el esperado después de la prueba. Todo esto hace que la prueba sea costosa de codificar, aparte de tener disponible una base de datos que se pueda modificar libremente.

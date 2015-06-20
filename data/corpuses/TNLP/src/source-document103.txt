@@ -1,0 +1,44 @@
+Hopfield (RNA)
+
+Una red de Hopfield es una forma de red neuronal artificial recurrente inventada por John Hopfield. Las redes de Hopfield se usan como sistemas de Memoria asociativa con unidades binarias. Están diseñadas para converger a un mínimo local, pero la convergencia a uno de los patrones almacenados no está garantizada.
+
+Estructura
+
+Las unidades de las redes Hopfield son binarias, es decir, solo tienen dos valores posibles para sus estados y el valor se determina si las unidades superan o no un determinado umbral. Los valores posibles pueden ser 1 ó -1, o bien 1 ó 0. Así, las dos definiciones posibles para la unidad i de activación, a_i , son las siguientes:
+
+(1) a_i \leftarrow \left\{\begin{matrix} 1 & \mbox {si }\sum_{j}{w_{ij}s_j}>\theta_i, \\ -1 & \mbox {en caso contrario.}\end{matrix}\right.
+
+(2) a_i \leftarrow \left\{\begin{matrix} 1 & \mbox {si }\sum_{j}{w_{ij}s_j}>\theta_i, \\ 0 & \mbox {en caso contrario.}\end{matrix}\right.
+
+Donde:
+
+    w_{ij} es la fuerza del peso de la conexión de la unidad j a la unidad i (peso de conexión).
+    s_j es el estado de la unidad j.
+    \theta_i es el umbral de la unidad i.
+
+Las conexiones en una red de Hopfield suelen tener las siguientes restricciones:
+
+    w_{ii}=0, \forall i (ninguna unidad tiene relación con ella misma)
+    w_{ij} = w_{ji}, \forall i,j (conexiones simétricas)
+
+Representación gráfica de la función de activación de una red Hopfield.
+
+Normalmente se requiere que los pesos sean simétricos para que la función de energía disminuya de forma monótona mientras sigue las reglas de activación, ya que si se utilizan pesos no simétricos la red podría mostrar un comportamiento periódico o caótico. Sin embargo, Hopfield consideró que este comportamiento caótico se limita a zonas relativamente pequeñas del espacio de fases, no influyendo en la capacidad de la red para actuar como contenido direccionable en el sistema de memoria asociativa.
+
+Las redes Hopfield poseen un valor escalar asociado a cada estado de la red, conocido como energía (E) de la red, donde:
+
+    E = -\frac12\sum_{i,j}{w_{ij}{s_i}{s_j}}+\sum_i{\theta_i\ s_i}
+
+Este valor se denomina energía, porque la definición asegura que si las unidades son elegidas al azar para actualizar sus valores de activación la red convergerá a estados que son mínimos locales de la función de energía (que se considera una función de Lyapunov). Así, si un estado es un mínimo local en la función de energía será un estado estable de la red. Hay que tener en cuenta que esta función de energía pertenece a una clase general de modelos en física, denominados Modelos de Ising, los cuales a su vez son un caso partículas de las redes de Markov, donde la medida de probabilidad asociada, llamada medida de Gibbs, tiene la propiedad de Márkov.
+
+Ejecución
+
+En cada paso se escoge un nodo al azar. El comportamiento del nodo es entonces determinista: se mueve a un estado para minimizar la energía de él mismo y de los nodos circundantes. (a diferencia de la máquina de Boltzmann cuya regla de actualización es estocástica.)
+
+Entrenamiento
+
+El entrenamiento de una red de Hopfield consiste en reducir la energía de los estados que la red debe "recordar". Esto convierte a la red en un sistema de memoria direccionable, es decir, la red "recordará" un estado si se le da solo parte de dicho estado. Esto la hace útil para recuperar una entrada distorsionada usando un estado de la red obtenido durante el entrenamiento y que es más similar al estado obtenido con la entrada actual. Esto se llama memoria asociativa, ya que recupera la memoria en base a la similitud. Por ejemplo, si entrenamos una red Hopfield con cinco unidades para que el estado (1, 0, 1, 0, 1) sea un mínimo de energía, y le damos a la red el estado (1, 0, 0, 0, 1) esta convergirá a (1, 0, 1, 0, 1). Así, la red estará adecuadamente capacitada cuando la energía de los estados que la red debe recordar son mínimos locales.
+
+Referencias
+- J. J. Hopfield (Abril 1982). «Neural networks and physical systems with emergent collective computational abilities» (en inglés). Proceedings of the National Academy of Sciences of the USA 79 (8):  pp. 2554-2558.
+- Rojas, Raul (1996). «Capítulo 13: The Hopfield model». En Springer. Neural Networks - A Systematic Introduction (en inglés). pp. 335–370. ISBN 978-3540605058.

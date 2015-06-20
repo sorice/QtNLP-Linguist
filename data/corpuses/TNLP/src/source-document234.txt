@@ -1,0 +1,308 @@
+Algoritmo de Euclides
+
+El algoritmo de Euclides es un método antiguo y eficaz para calcular el máximo común divisor (MCD). Fue originalmente descrito por Euclides en su obra Elementos. El algoritmo de Euclides extendido es una ligera modificación que permite además expresar al máximo común divisor como una combinación lineal. Este algoritmo tiene aplicaciones en diversas áreas como álgebra, teoría de números y ciencias de la computación entre otras. Con unas ligeras modificaciones suele ser utilizado en computadoras electrónicas debido a su gran eficiencia.
+
+Algoritmo original de Euclides
+
+En la concepción griega de la matemática, los números se entendían como magnitudes geométricas. Un tema recurrente en la geometría griega es el de la conmensurabilidad de dos segmentos: dos segmentos (números) AB y CD son conmensurables cuando existe un tercer segmento PQ el cual cabe exactamente un número entero de veces en los primeros dos, es decir, PQ «mide» (mensura: medida) a los segmentos AB y CD.
+
+No cualquier par de segmentos es conmensurable, como encontraron los pitagóricos cuando establecen que el lado y la diagonal de un cuadrado no son conmensurables, pero en el caso de dos segmentos conmensurables se desea hallar la mayor medida común posible.
+
+Euclides describe en la proposición VI I.2 de sus Elementos un método que permite hallar la mayor medida común posible de dos números (segmentos) que no sean primos entre sí, aunque de acuerdo a la época tal método se explica en términos geométricos, lo que se ilustra en la siguiente transcripción.
+
+    Para encontrar la máxima medida común de dos números que no sean primos entre sí.
+
+    Sean AB y CD los dos números que no son primos uno al otro. Se necesita entonces encontrar la máxima medida común de AB y CD.
+
+    Si CD mide AB entonces es una medida común puesto que CD se mide a sí mismo. Y es manifiesto que también es la mayor medida pues nada mayor a CD puede medir a CD. Pero si CD no mide a AB entonces algún número quedará de AB y CD, el menor siendo continuamente restado del mayor y que medirá al número que le precede. Porque una unidad no quedará pues si no es así, AB y CD serán primos uno del otro [Prop. VII.1], lo cual es lo contrario de lo que se supuso.
+
+    Por tanto, algún número queda que medirá el número que le precede. Y sea CD midiendo BE dejando EA menor que sí mismo y sea EA midiendo DF dejando FC menor que sí mismo y sea FC medida de AE. Entonces, como FC mide AE y AE mide DF, FC será entonces medida de DF. Y también se mide a sí mismo. Por tanto también medirá todo CD. Y CD mide a BE. Entonces CF mide a BE y también mide a EA. Así mide a todo BA y también mide a CD. Esto es, CF mide tanto a AB y CD por lo que es una medida común de AB y CD.
+
+    Afirmo que también es la mayor medida común posible porque si no lo fuera, entonces un número mayor que CF mide a los números AB y CD, sea éste G. Dado que G mide a CD y CD mide a BE, G también mide a BE. Además, mide a todo BA por lo que mide también al residuo AE. Y AE mide a DF por lo que G también mide a DF. Mide también a todo DC por lo que mide también al residuo CF, es decir el mayor mide al menor, lo cual es imposible.
+	
+    Por tanto, ningún número mayor a CF puede medir a los números AB y CD. Entonces CF es la mayor medida común de AB y CD, lo cual se quería demostrar.
+    Euclides. Elementos VII.2
+
+En lenguaje moderno, el algoritmo se describe como sigue:
+1. Dados dos segmentos AB y CD (con AB>CD), restamos CD de AB tantas veces como sea posible. Si no hay residuo, entonces CD es la máxima medida común.
+2. Si se obtiene un residuo EA, éste es menor que CD y podemos repetir el proceso: restamos EA tantas veces como sea posible de CD. Si al final no queda un residuo, EA es la medida común. En caso contrario obtenemos un nuevo residuo FC menor a EA.
+3. El proceso se repite hasta que en algún momento no se obtiene residuo. Entonces el último residuo obtenido es la mayor medida común.
+
+El hecho de que los segmentos son conmesurables es clave para asegurar que el proceso termina tarde o temprano
+
+Algoritmo de Euclides tradicional
+
+Al dividir a entre b (números enteros), se obtiene un cociente q y un residuo r. Es posible demostrar que el máximo común divisor de a y b es el mismo que el de b y r(Sea c el máximo común divisor de a y b,.Como a=bq+r y c divide a a y a b divide también a r. Si existiera otro número mayor que c que divide a b y a r, también dividiría a a , por lo que c no sería el mcd de a y b, lo que contradice la hipótesis). Éste es el fundamento principal del algoritmo. También es importante tener en cuenta que el máximo común divisor de cualquier número a y 0 es precisamente a. Para fines prácticos, la notación \mathrm{mcd}(a,b) significa máximo común divisor de a y b.
+
+Según lo antes mencionado, para calcular el máximo común divisor de 2366 y 273 se puede proseguir de la siguiente manera:
+
+Paso 	Operación 	Significado
+1 	2366 dividido entre 273 es 8 y sobran 182 	\mathrm{mcd}(2366,273)=\mathrm{mcd}(273,182)
+2 	273 dividido entre 182 es 1 y sobran 91 	\mathrm{mcd}(273,182)=\mathrm{mcd}(182,91)
+3 	182 dividido entre 91 es 2 y sobra 0 	\mathrm{mcd}(182,91)=\mathrm{mcd}(91,0)
+
+La secuencia de igualdades \mathrm{mcd}(2366,273)=\mathrm{mcd}(273,182)=\mathrm{mcd}(182,91)=\mathrm{mcd}(91,0) implican que \mathrm{mcd}(2366,273)=\mathrm{mcd}(91,0). Dado que \mathrm{mcd}(91,0)=91, entonces se concluye que \mathrm{mcd}(2366,273)=91. Este mismo procedimiento se puede aplicar a cualesquiera dos números naturales. En general, si se desea encontrar el máximo común divisor de dos números naturales a y b, se siguen las siguientes reglas:
+
+    Si b=0 entonces \mathrm{mcd}(a,b)=a y el algoritmo termina
+    En otro caso, \mathrm{mcd}(a,b)=\mathrm{mcd}(b,r) donde r es el resto de dividir a entre b. Para calcular \mathrm{mcd}(b,r) se utilizan estas mismas reglas
+
+Asuma que llamamos a=r_0 y b=r_1. Aplicando estas reglas se obtiene la siguiente secuencia de operaciones:
+
+Paso 	Operación 	Significado
+1 	r_0 dividido entre r_1 es q_1 y sobran r_2 	\mathrm{mcd}(r_0,r_1)=\mathrm{mcd}(r_1,r_2)
+2 	r_1 dividido entre r_2 es q_2 y sobran r_3 	\mathrm{mcd}(r_1,r_2)=\mathrm{mcd}(r_2,r_3)
+3 	r_2 dividido entre r_3 es q_3 y sobran r_4 	\mathrm{mcd}(r_2,r_3)=\mathrm{mcd}(r_3,r_4)
+\vdots 	\vdots 	\vdots
+n 	r_{n-1} dividido entre r_n es q_n y sobran r_{n+1} 	\mathrm{mcd}(r_{n-1},r_n)=\mathrm{mcd}(r_n,r_{n+1})
+n+1 	r_n dividido entre r_{n+1} es q_{n+1} y sobra 0 	\mathrm{mcd}(r_n,r_{n+1})=\mathrm{mcd}(r_{n+1},0)
+
+Como la sucesión de residuos va disminuyendo, al final un residuo tiene que ser cero y es en ese momento cuando el algoritmo termina. El máximo común divisor es precisamente r_{n+1} (el último residuo que no es cero).
+
+Generalización
+
+En realidad el algoritmo de Euclides funciona no sólo para los números naturales, sino para cualesquiera elementos en los que exista una "división con residuo". A este tipo de divisiones se les llama divisiones euclidianas y a los conjuntos donde se puede definir dicha división se les llama dominios euclídeos. Por ejemplo, el conjunto de los números enteros y el de los polinomios con coeficientes racionales son dominios euclídeos porque podemos definir una división con residuo (véase División polinomial). De esta manera, se puede calcular el máximo común divisor de dos números enteros o de dos polinomios.
+
+Por ejemplo, para calcular el máximo común divisor de los polinomios P(x)=x^5+2x^3+x y Q(x)=x^4-1 el algoritmo de Euclides sugiere la siguiente secuencia de operaciones:
+
+Paso 	Operación 	Significado
+1 	x^5+2x^3+x dividido entre x^4-1 es x y sobra 2x^3+2x 	\mathrm{mcd}(x^5+2x^3+x,x^4-1)=\mathrm{mcd}(x^4-1,2x^3+2x)
+2 	x^4-1 dividido entre 2x^3+2x es \textstyle{\frac12x} y sobra -x^2-1 	\mathrm{mcd}(x^4-1,2x^3+2x)=\mathrm{mcd}(2x^3+2x,-x^2-1)
+3 	2x^3+2x dividido entre -x^2-1 es -2x y sobra 0 	\mathrm{mcd}(2x^3+2x,-x^2-1)=\mathrm{mcd}(-x^2-1,0)
+
+De esta manera se concluye que su máximo común divisor es -x^2-1.
+
+Descripción formal
+
+Se puede expresar este algoritmo de manera más formal usando pseudocódigo. En este caso la expresión "x \; \bmod \; y" significa "el residuo de dividir x entre y" (véase Aritmética modular).
+
+Algoritmo 1 de Euclides
+
+Entrada: Valores a y b pertenecientes a un dominio euclídeo
+
+Salida: Un máximo común divisor de a y b
+
+    r_0\gets a, r_1\gets b
+    i\gets1
+    Mientras r_i\neq 0 haga lo siguiente:
+        r_{i+1}\gets r_{i-1}\;\bmod\; r_i
+        i\gets i+1
+    El resultado es: r_{i-1}
+
+Vale la pena notar que este algoritmo no es eficiente ser implementado directamente en una computadora, ya que requeriría memorizar todos los valores de r_i.
+
+Algoritmo de Euclides extendido
+
+El algoritmo de Euclides extendido permite, además de encontrar un máximo común divisor de dos números enteros a y b, expresarlo como la mínima combinación lineal de esos números, es decir, encontrar números enteros s y t tales que \mathrm{mcd}(a,b)=a s+b t. Esto se generaliza también hacia cualquier dominio euclideano.
+
+Fundamentos
+
+Existen varias maneras de explicar el algoritmo de Euclides extendido, una de las más comunes consiste en la siguiente:
+1. Usar el algoritmo tradicional de Euclides. En cada paso, en lugar de "a dividido entre b es q y de resto r" se escribe la ecuación a=b q+r (véase algoritmo de la división).
+2. Se despeja el resto de cada ecuación.
+3. Se sustituye el resto de la última ecuación en la penúltima, y la penúltima en la antepenúltima y así sucesivamente hasta llegar a la primera ecuación, y en todo paso se expresa cada resto como combinación lineal.
+
+Sin embargo, en areas de la comprensión y memorización de este algoritmo, es conveniente conocer la siguiente caracterización. Para multiplicar dos matrices de tamaño 2\times 2 se usa la siguiente fórmula (véase Producto de matrices):
+
+    (1)\begin{bmatrix}e&f\\g&h\end{bmatrix}\times\begin{bmatrix}a&b\\c&d\end{bmatrix}=\begin{bmatrix}e a+f c&e b+f d\\g a+h c&g b+h d\end{bmatrix}
+
+Supóngase que se utiliza el algoritmo de Euclides tradicional para calcular los valores q_i y r_i que ahí se describen. Por cada valor q_i calculado se puede formar la matriz \textstyle Q_i=\begin{bmatrix}0&1\\1&-q_i\end{bmatrix}. Usando la ecuación (1) de manera repetida se puede calcular el producto las primeras i matrices de este tipo:
+
+    \begin{bmatrix}s_i&t_i\\s_{i+1}&t_{i+1}\end{bmatrix}=\begin{bmatrix}0&1\\1&-q_i\end{bmatrix}\times \begin{bmatrix}0&1\\1&-q_{i-1}\end{bmatrix}\times\cdots\times \begin{bmatrix}0&1\\1&-q_1\end{bmatrix}
+
+Resulta ser que los valores s_i y t_i tienen la propiedad de que r_i=a s_i+b t_i, es decir, expresan a r_i como una combinación lineal de a y b. Particularmente, como \mathrm{mcd}(a,b)=r_{n+1} entonces se tiene \mathrm{mcd}(a,b)=a s_{n+1}+b t_{n+1}, lo cual es la solución del problema. Esta propiedad no debería ser sorprendente, pues esta multiplicación de matrices equivale al método antes descrito donde se substituye cada ecuación en la anterior. Es importante calcular Q_i\times\cdots\times Q_3\times Q_2\times Q_1 en ese mismo orden. La matriz Q_1 aparece en el extremo derecho y la matriz Q_i en el izquierdo.
+
+Regresando al primer ejemplo, la sucesión de cocientes es q_1=8, q_2=1 y q_3=2. Entonces se puede calcular
+
+    \begin{bmatrix}-1&9\\3&-26\end{bmatrix}=\begin{bmatrix}0&1\\1&-2\end{bmatrix}\times \begin{bmatrix}0&1\\1&-1\end{bmatrix}\times \begin{bmatrix}0&1\\1&-8\end{bmatrix}
+
+Utilizando el primer renglón de esta matriz se puede leer que 91=2366(-1)+273(9), es decir, se ha encontrado la manera de expresar al máximo común divisor de 2366 y 273 como una combinación lineal.
+
+Descripción formal
+
+Para expresar el algoritmo de Euclides extendido es conveniente notar la manera en que se calculan los valores s_i y t_i con la multiplicación de matrices:
+
+    \begin{bmatrix}s_i&t_i\\s_{i+1}&t_{i+1}\end{bmatrix} = \begin{bmatrix}s_i&t_i\\s_{i-1}-q_is_i&t_{i-1}-q_it_i\end{bmatrix} = \begin{bmatrix}0&1\\1&-q_i\end{bmatrix}\times\begin{bmatrix}s_{i-1}&t_{i-1}\\s_i&t_i\end{bmatrix}
+
+De esta manera s_{i+1} = s_{i-1}-q_is_i y además t_{i+1} = t_{i-1}-q_it_i. Por lo tanto el algoritmo en pseudocódigo se puede expresar como sigue:
+
+Algoritmo 2 de Euclides extendido
+
+Entrada: Valores a y b pertenecientes a un dominio euclídeo
+
+Salida: Un máximo común divisor de a y b, y valores s y t tales que \mathrm{mcd}(a,b)=as+bt
+
+    r_0\gets a, r_1\gets b, s_0\gets 1, t_0\gets 0, s_1\gets 0, t_1\gets 1
+    i\gets 1
+    Mientras r_i\neq0 haga lo siguiente:
+        Divida r_{i-1} entre r_i para obtener el cociente q_i y el residuo r_{i+1}
+        s_{i+1}\gets s_{i-1}-q_is_i
+        t_{i+1}\gets t_{i-1}-q_it_i
+        i\gets i+1
+    El resultado es: r_{i-1} es un máximo común divisor de a y b y se expresa r_{i-1}=as_{i-1}+bt_{i-1}
+
+Aplicaciones
+
+Simplificar fracciones
+
+Al momento de hacer cálculos con fracciones, es de gran importancia saber cómo simplificarlas. Por ejemplo, la fracción \textstyle\frac{65}{91} es equivalente con \textstyle\frac 5 7 (véase Número racional). De manera más general, \textstyle\frac ab=\frac {ca}{cb} siempre que c\ne0. Para reducir una fracción cualquiera \textstyle\frac a b, sólo se necesita dividir a y b entre su máximo común divisor.
+
+Por ejemplo, si se desea reducir \textstyle\frac{166}{249}, primero se usa el algoritmo de Euclides para encontrar \mathrm{mcd}(166,249)=83. Se hacen las divisiones \textstyle 166\div 83 = 2 y \textstyle 249\div 83 = 3. Luego entonces se concluye que \textstyle\frac{166}{249}=\frac 2 3.
+
+Fracciones continuas
+
+La sucesión de divisiones que se efectúan al seguir algoritmo de Euclides puede ser utilizada para expresar una fracción cualquiera \textstyle\frac a b como fracción continua. Esto se debe a que si a = bq + r y r\neq 0, entonces
+
+    (3)\frac a b = q + \frac 1 {\frac b r}
+
+Por ejemplo, para encontrar el máximo común divisor de 93164 y 5826 el algoritmo genera la siguiente secuencia de divisiones:
+
+Paso 	Operación 	Significado
+1 	93164 dividido entre 5826 es 15 y sobran 5774 	93164=5826\times 15+5774
+2 	5826 dividido entre 5774 es 1 y sobran 52 	5826=5774\times 1+52
+3 	5774 dividido entre 52 es 111 y sobran 2 	5774=52\times 111+2
+4 	52 dividido entre 2 es 26 y sobra 0 	52=2\times 26+0
+
+Todas estas ecuaciones las podemos hacer parecidas a la ecuación ( 3):
+
+    \textstyle\frac{93164}{5826}=15+ \frac 1 {\frac{5826}{5774}}
+    \textstyle\frac{5826}{5774}=1+ \frac 1 {\frac{5774}{52}}
+    \textstyle\frac{5774}{52}=111+ \frac 1 {\frac{52}{2}}
+    \textstyle\frac{52}{2}=26
+
+Si se sustituye la segunda ecuación en la primera, se obtiene
+
+    \frac{93164}{5826}=15+ \frac 1 {1+ \frac 1 {\frac{5774}{52}}}
+
+Si se repite este proceso de substitución entonces se obtiene la expresión deseada:
+
+    \frac{93164}{5826}=15+ \frac 1 {1+ \frac 1 {111+ \frac 1 {26}}}
+
+De manera más general, la fracción continua encontrada con este algoritmo siempre es de la forma
+
+    \frac{a}{b}=q_1+ \frac 1 {q_2+ \frac 1 {q_3+ \frac 1 {\ddots q_{n-1}+ \frac 1 {q_n}}}}
+
+
+Inversos modulares
+
+Decimos que dos números enteros son congruentes módulo m (aunque también se puede generalizar para cualquier otro dominio euclídeo) si al dividirlos entre m obtenemos el mismo residuo (véase Congruencia). Por ejemplo, 7 es congruente con 12 módulo 5 porque al dividir 7 entre 5 y 12 entre 5, en ambos casos obtenemos el mismo residuo (que es 2). Cuando a es congruente con b módulo m se escribe a\equiv b\pmod m, en el ejemplo anterior se tiene 7\equiv 12\pmod 5. Supóngase que se conocen los valores de a, b y m, pero que se desconoce el valor x de la siguiente ecuación:
+
+    (2)a x\equiv b\pmod m
+
+Basta con encontrar un valor a^{-1} que tenga la característica de que a^{-1} a\equiv 1\pmod m, pues de esta manera al multiplicar la ecuación (2) por a^{-1} se tendría la solución deseada:
+
+    x\equiv a^{-1} b\pmod m
+
+Al valor a^{-1} se le llama inverso modular de a módulo m. Desafortunadamente este valor no siempre existe. Por ejemplo, con a=4 y m=6 no existe ningún número entero entero a^{-1} tal que a^{-1} 4\equiv 1\pmod 6. De hecho este valor existe si y sólo si \mathrm{mcd}(a,m)=1 (la condición de existencia de soluciones depende de que \mathrm{mcd}(a,m)|b , mientras que la unicidad depende de que el \mathrm{mcd}(a,m)=1). Más aún, si al usar el algoritmo de Euclides extendido (ahora con b=m) se obtiene 1=as+mt, entonces el valor s es el inverso modular de a módulo m. Por ejemplo, se desea resolver la ecuación
+
+    5 x\equiv 2\pmod 9
+
+Entonces con el algoritmo de Euclides extendido se calcula que \mathrm{mcd}(5,9)=1=5(2)+9(-1). Como \mathrm{mcd}(5,9)=1 entonces 5 tiene un inverso modular. Más aún, como 1=5(2)+9(-1), entonces ese inverso es 2. Entonces
+
+    x\equiv 2(2)\pmod 9
+
+Es decir que el valor de x es 4.
+
+Complejidad del algoritmo
+
+El teorema de Lamé afirma que el caso peor para este algoritmo es cuando se le pide calcular el máximo común divisor de dos números consecutivos de la sucesión de Fibonacci. Por ejemplo, si se desea calcular el máximo común divisor de f_{10}=55 y f_{11}=89 se obtiene la siguiente secuencia de operaciones:
+
+Paso 	Operación 	Significado
+1 	89 dividido entre 55 es 1 y sobran 34 	\mathrm{mcd}(89,55)=\mathrm{mcd}(55,34)
+2 	55 dividido entre 34 es 1 y sobran 21 	\mathrm{mcd}(55,34)=\mathrm{mcd}(34,21)
+3 	34 dividido entre 21 es 1 y sobran 13 	\mathrm{mcd}(34,21)=\mathrm{mcd}(21,13)
+4 	21 dividido entre 13 es 1 y sobran 8 	\mathrm{mcd}(21,13)=\mathrm{mcd}(13,8)
+5 	13 dividido entre 8 es 1 y sobran 5 	\mathrm{mcd}(13,8)=\mathrm{mcd}(8,5)
+6 	8 dividido entre 5 es 1 y sobran 3 	\mathrm{mcd}(8,5)=\mathrm{mcd}(5,3)
+7 	5 dividido entre 3 es 1 y sobran 2 	\mathrm{mcd}(5,3)=\mathrm{mcd}(3,2)
+8 	3 dividido entre 2 es 1 y sobran 1 	\mathrm{mcd}(3,2)=\mathrm{mcd}(2,1)
+9 	2 dividido entre 1 es 2 y sobra 0 	\mathrm{mcd}(2,1)=\mathrm{mcd}(1,0)
+
+En este ejemplo se observa que con estos dos números de dos dígitos decimales, se necesita hacer 9 divisiones. En general, el número de divisiones efectuadas por el algoritmo nunca supera 5 veces el número de dígitos que tienen estos números. En términos de complejidad computacional, esto significa que se requieren O(\log n) divisiones para calcular el máximo común divisor de n y m donde n>m.
+
+El número promedio de divisiones efectuadas por el algoritmo se estuvo investigando desde 1968, pero sólo hasta apenas el año 2002, Brigitte Vallée demostró que si los dos números se pueden representar con n bits, entonces el número promedio de divisiones necesarias es \textstyle{\frac{\pi^2}{6}n}.
+
+Sin embargo, no basta con saber el número de divisiones. Hay que recordar que el algoritmo de Euclides funciona tanto para polinomios como para números enteros, y en general, cualquier dominio Euclídeo. En cada caso, la complejidad del algoritmo depende del número de divisiones efectuadas y del costo de cada división. En el caso de los polinomios, el número de divisiones es O(\log n) donde n es el grado de los polinomios.
+
+Implementación en pseudocódigo
+
+En general, los algoritmos 1 y 2 no son muy apropiados para implementarse directamente en un lenguaje de programación, especialmente porque consumen mucha memoria. Si no se necesitan los valores intermedios, y sólo se desea calcular el máximo común divisor de dos números enteros, conviene usar estas variantes:
+Algoritmo de Euclides tradicional implementado de manera recurrente
+
+Función \mathrm{mcd}(a,b):
+
+    Si b=0 entonces:
+
+        El resultado es a 
+
+    En otro caso:
+
+        El resultado es \mathrm{mcd}(b,a\;\bmod \; b)
+
+Algoritmo de Euclides tradicional implementado de manera iterativa
+
+Función \mathrm{mcd}(a,b):
+
+    Mientras b\ne0 haga lo siguiente:
+
+        (a,b)\gets(b,a\;\bmod \; b)
+
+    El resultado es a 
+
+Algoritmo de Euclides extendido implementado de manera recurrente
+
+Función {\rm Euclides}(a,b):
+
+    Si b=0 entonces:
+
+        El resultado es (a,1,0)
+
+    En otro caso:
+
+        (d,s,t)\gets{\rm Euclides}(b,a\;\bmod \; b)
+        El resultado es (d,t,s-(a\div b) t)
+
+Algoritmo de Euclides extendido implementado de manera iterativa
+
+Función {\rm Euclides}(a,b):
+
+    (s,t,s^\prime,t^\prime)\gets(1,0,0,1)
+    Mientras b\ne0 haga lo siguiente:
+
+        Divida a entre b para obtener un cociente q y un residuo r 
+        (a,s,t,b,s^\prime,t^\prime)\gets(b,s^\prime,t^\prime,r,s-s^\prime q,t-t^\prime q)
+
+    El resultado es (a,s,t)
+
+Algoritmo de Euclides extendido implementado de manera iterativa con matrices
+
+Función {\rm Euclides}(a,b):
+
+    Q\gets\begin{pmatrix}1&0\\0&1\end{pmatrix}
+    Mientras b\ne0 haga lo siguiente:
+
+        Divida a entre b para obtener un cociente q y un residuo r 
+        Q\gets\begin{pmatrix}0&1\\1&-q\end{pmatrix}\times Q
+        (a,b)\gets(b,r)
+
+    El resultado es (a,Q_{1 1},Q_{1 2})
+
+Acerca de la notación empleada:
+- x\gets y significa "asigne a la variable x el valor actual de y". En lenguajes como C, Java, C#, Python y Visual Basic esto significa simplemente x = y. En otros lenguajes como Pascal se traduce en a := b, en Maxima es a : b, en R, S y Ocaml es x <- y, e inclusive se utiliza la flecha x ← y como el caso de APL.
+- (x,y,z)\gets(a,b,c) significa que primero se evalúan los valores a,b,c y luego se asigna x\gets a,y\gets b,z\gets c, etc. En lenguajes como Python, Ruby o Maxima esta instrucción tiene una estructura muy similar, como por ejemplo en Python: (x,y,z) = (a,b,c). En otros lenguajes es necesario el uso de variables auxiliares, como por ejemplo en lenguaje C: aux1 = b; aux2 = c; x = a; y = aux1; z = aux2;.
+- a\div b significa "el cociente de dividir a entre b". A esta operación se le conoce también como la división truncada porque trunca la parte fraccionaria del número. En muchos lenguajes de programación esto se implementa simplemente como a/b. Otras maneras son a\b (Visual Basic) , a div b (Pascal) o bien a//b (Python 3).
+- a\; \bmod \; b significa "el residuo de dividir a entre b". A esta operación se le conoce simplemente como módulo. En muchos lenguajes de programación se implementa como a % b, mientras que en otros es a mod b (Visual Basic o Pascal) o bien a rem b (Ada).
+
+Referencias
+- von zur Gathen, Joachim; Gerhard, Jürgen (2003). «The Euclidean Algorithm». Modern Computer Algebra. Cambridge University Press. ISBN 0-521-82646-2.
+- Shoup, Victor (2008). «Euclid’s algorithm». A Computational Introduction to Number Theory and Algebra. Cambridge University Press. ISBN 978-0-521-85154-1.
+- Johnsonbaugh, Richard (2005). «Introducción a la teoría de números». Matemáticas Discretas. México: PEARSON EDUCACIÓN. ISBN 970-26-0637-3.
+- Ralph P. Grimaldi (1998). «Propiedades de los números enteros: Inducción matemática». Matemáticas Discreta y Combinatoria. México: Addison Wesley Longman de México. ISBN 968-444-324-2.
+- Lipschutz, Seymour; Lipson, Marc (2009). «Propiedades de los enteros». Matemáticas Discretas. McGraw-Hill. ISBN 978-970-10-7236-3.
+- Brassard, Gilles; Bratley, Paul (1997). «Análisis de algoritmos». Fundamentos de Algoritmia. Madrid: PRENTICE HALL. ISBN 84-89660-00-X.
+- Vallée, Brigitte (2002). «Dynamical Analysis of \alpha-Euclidean Algorithms». Journal of Algorithms 44 (1). ISSN 0196-6774 , pp. 246-285.
+- Cormen, Thomas; Leiserson, Charles; Rivest, Ronald; Stein, Clifford (2009). «Number-Theoretic Algorithms». Introduction to Algorithms. The MIT Press. ISBN 978-0-262-53305-8.
+- Barrera Mora, Fernando (2005). «Definiciones y resultados generales». Introducción a la Teoría de Grupos. Publicaciones Electrónicas de la Sociedad Matemática Mexicana. ISBN 968-9161-02-4.
+- Cárdenas, Humberto; Lluis, Emilio; Raggi, Francisco; Tomás, Francisco (2004). «Divisibilidad». Álgebra Superior. México: Trillas. ISBN 968-24-3783-0.
+- Pérez Seguí, María Luisa (2006). «Divisibilidad». Teoría de Números. Instituto de Matemáticas, UNAM. ISBN 970-32-1170-0.
+- Sánchez Velázquez, Jesús (1998). «Algoritmos para números grandes». Introducción al análisis de algoritmos. México: Trillas. ISBN 968-24-4341-5.
+- Baldor, Aurelio (2008). «Máximo común divisor». Álgebra. México: Grupo Editorial Patria. ISBN 978-970-817-000-0.

@@ -1,0 +1,54 @@
+Base de datos jerárquica
+
+Una base de datos jerárquica es un tipo de sistema de gestión de bases de datos que, como su nombre indica, almacena la información en una estructura jerárquica que enlaza los registros en forma de estructura de árbol (similar a un árbol visto al revés), en donde un nodo padre de información puede tener varios nodos hijo, y así sucesivamente.
+
+Esta relación jerárquica no es estrictamente obligatoria, de manera que pueden establecerse relaciones entre nodos hermanos, y en este caso, la estructura en forma de árbol se convierte en una estructura en forma de grafo dirigido (esta variante se denomina Bases de datos de red).
+
+Cómo funcionan
+
+A diferencia del modelo relacional, el modelo jerárquico no diferencia una vista lógica de una vista física de la base de datos. De manera que las relaciones entre datos se establecen siempre a nivel físico, es decir, mediante referencia a direcciones físicas del medio de almacenamiento (sectores y pistas).
+
+Los datos se almacenan en la forma de registros, el equivalente a las tuplas del modelo relacional. Cada registro consta de un conjunto de campos, el equivalente a los atributos del modelo relacional. Un conjunto de registros con los mismos campos se denomina fichero (record type, en inglés), el equivalente a las relaciones del modelo relacional.
+
+El modelo jerárquico facilita relaciones padre-hijo, es decir, relaciones 1:N (de uno a varios) del modelo relacional. Pero a diferencia de éste último, las relaciones son unidireccionales. En justicia, dichas relaciones son hijo-padre, pero no padre-hijo. Por ejemplo, el registro de un empleado (nodo hijo) puede relacionarse con el registro de su departamento (nodo padre), pero no al contrario. Esto implica que solamente se puede consultar la base de datos desde los nodos hoja hacia el nodo raíz. La consulta en el sentido contrario requiere una búsqueda secuencial por todos los registros de la base de datos (por ejemplo, para consultar todos los empleados de un departamento). En las bases de datos jerárquicas no existen índices que faciliten esta tarea[cita requerida].
+
+Obsérvese que, a priori, no existen relaciones N:M (de muchos a muchos) en el modelo jerárquico. Salvo que se simulen mediante varias relaciones 1:N. No obstante, esto puede provocar problemas de inconsistencia, ya que el gestor de base de datos no controla estas relaciones.
+
+Como ya se ha mencionado, las relaciones se establecen mediante punteros entre registros. Es decir, un registro hijo contiene la dirección física en el medio de almacenamiento de su registro padre. Esto tiene una ventaja fundamental sobre las bases de datos relacionales: el rendimiento. El acceso de un registro a otro es prácticamente inmediato sin necesidad de consultar tablas de correspondencia.
+
+Las relaciones jerárquicas entre diferentes tipos de datos pueden hacer que sea muy sencillo responder a determinadas preguntas, pero muy difícil el contestar a otras.
+
+Limitaciones del modelo jerárquico
+
+A continuación se mencionan los problemas típicos de las bases de datos jerárquicas y que no existen en las bases de datos relacionales. Todos estos problemas derivan del hecho de que el sistema gestor de base de datos no implementa ningún control sobre los propios datos, sino que queda en manos de las aplicaciones garantizar que se cumplen las condiciones invariantes que se requieran (por ejemplo, evitar la duplicidad de registros). Dado que todas las aplicaciones están sujetas a errores y fallos, esto es imposible en la práctica. Además dichas condiciones suelen romperse ex profeso por motivos operativos (generalmente, ajustes debidos a cambios en el negocio) sin evaluarse sus consecuencias.
+
+Duplicidad de registros
+
+No se garantiza la inexistencia de registros duplicados. Esto también es cierto para los campos "clave". Es decir, no se garantiza que dos registros cualesquiera tengan diferentes valores en un subconjunto concreto de campos.
+
+Integridad referencial
+
+No existe garantía de que un registro hijo esté relacionado con un registro padre válido. Por ejemplo, es posible borrar un nodo padre sin eliminar antes los nodos hijo, de manera que éstos últimos están relacionados con un registro inválido o inexistente..
+
+Desnormalización
+
+Este no es tanto un problema del modelo jerárquico como del uso que se hace de él. Sin embargo, a diferencia del modelo relacional, las bases de datos jerárquicas no tienen controles que impidan la desnormalización de una base de datos. Por ejemplo, no existe el concepto de campos clave o campos únicos.
+
+La desnormalización permite ingresar redundancia de una forma controlada, seguir a una serie de pasos conlleva a:
+- Combinar las relaciones
+- Duplicar los atributos no claves
+- Introducción de grupos repetitivos
+- Crear tablas de extracción
+
+Cuando se debe desnormalizar:
+- Se debe desnormalizar para optimizar el esquema relacional
+- Para hacer referencia a la combinación de 2 relaciones que forman una sola relación
+
+Ejemplo:
+Proveedor (Nro_proveedor, calle, ciudad, cod_postal, descripción) La relación Proveedor esta desnormalizada, ya que para normalizarla deberíamos crear una tabla con ciudad y código postal
+
+Gestores de bases de datos jerárquicas
+- Adabas
+- GT.M
+- IMS
+- Focus

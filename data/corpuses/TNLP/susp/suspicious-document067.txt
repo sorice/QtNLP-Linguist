@@ -1,0 +1,54 @@
+Sistema de procesamiento de transacciones
+
+Un sistema de procesamiento de transacciones (TPS por sus siglas en inglés) es un tipo de sistema de información que recolecta, almacena, modifica y recupera toda la información generada por las transacciones producidas en una organización. Una transacción es un evento que genera o modifica los datos que se encuentran eventualmente almacenados en un sistema de información. Para que un sistema informático pueda ser considerado como un TPS, este debe superar el test ACID.
+
+Desde un punto de vista técnico, un TPS monitoriza los programas transaccionales (un tipo especial de programas). La base de un programa transaccional está en que gestiona los datos de forma que estos deben ser siempre consistentes (por ejemplo, si se realiza un pago con una tarjeta electrónica, la cantidad de dinero de la cuenta sobre la que realiza el cargo debe disminuir en la misma cantidad que la cuenta que recibe el pago, de no ser así, ninguna de las dos cuentas se modificará), si durante el transcurso de una transacción ocurriese algún error, el TPS debe poder deshacer las operaciones realizadas hasta ese instante. Si bien este tipo de integridad es que debe presentar cualquier operación de procesamiento de transacciones por lotes, es particularmente importante para el procesamiento de transacciones on-line: si, por ejemplo, un sistema de reserva de billetes de una línea aérea es utilizado simultáneamente por varios operadores, tras encontrar un asiento vacío, los datos sobre la reserva de dicho asiento deben ser bloqueados hasta que la reserva se realice, de no ser así, otro operador podría tener la impresión de que dicho asiento está libre cuando en realidad está siendo reservado en ese mismo instante. Sin las debidas precauciones, en una transacción podría ocurrir una reserva doble. Otra función de los monitores de transacciones es la detección y resolución de interbloqueos (deadlock), y cortar transacciones para recuperar el sistema en caso de fallos masivos.
+
+Tipos de sistemas de procesamiento de transacciones
+
+Diferencias con el procesamiento por lotes
+
+El procesamiento por lotes no es un procesamiento de transacciones. El procesamiento por lotes implica procesar varias transacciones al mismo tiempo, y no se dispone inmediatamente de los resultados del resto de transacciones cuando comienza cada una de ellas para un mejor funcionamiento de un sistema.1
+
+Características de los sistemas de procesamiento de transacciones
+
+Respuesta rápida
+
+En este tipo de sistemas resulta crítico que exista un rendimiento elevado con tiempos de respuesta cortos. Una empresa no puede permitirse tener clientes esperando por una respuesta del SPT; el tiempo total transcurrido desde que se inicia la transacción hasta que se produce la salida correspondiente debe ser del orden de unos pocos segundos o menos.
+
+Fiabilidad
+
+Muchas organizaciones basan su fiabilidad en los SPT; un fallo en un SPT afectará negativamente a las operaciones o incluso parará totalmente el negocio. Para que un SPT sea efectivo, su tasa de fallos debe ser muy baja. En caso de fallo de un SPT, debe existir algún mecanismo que permita una recuperación rápida y precisa del sistema. Esto convierte en esencial la existencia procedimientos de copia de seguridad y de recuperación ante fallos correctamente diseñados.
+
+Inflexibilidad
+
+Un SPT requiere que todas las transacciones sean procesadas exactamente de la misma forma, independientemente del usuario, el cliente o la hora del día. Si los SPT fuesen flexibles, habría entonces demasiadas posibilidades de ejecutar operaciones no estándar. Por ejemplo, una aerolínea comercial necesita aceptar de forma consistente reservas de vuelos realizadas por un gran número de agencias de viaje distintas; aceptar distintos datos de transacción de cada agencia de viajes supondría un problema.
+
+Procesamiento controlado
+
+El procesamiento en un SPT debe apoyar las operaciones de la organización. Por ejemplo, si una organización establece roles y responsabilidades para determinados empleados, el SPT debe entonces mantener y reforzar este requisito.
+
+Propiedades ACID: Una primera definición
+Artículo principal: ACID
+
+Atomicidad
+
+Los cambios de estado provocados por una transacción son atómicos: o bien ocurren todos o bien no ocurre ninguno. Estos cambios incluyen tanto modificaciones de la base de datos, como envío de mensajes o acciones sobre los transductores.2
+
+Consistencia
+
+Una transacción es una transformación de estado correcta. Las acciones consideradas en su conjunto no violan ninguna de las restricciones de integridad asociadas al estado. Esto implica que la transacción debe ser un programa correcto.2
+
+Aislamiento
+
+Incluso cuando varias transacciones se ejecuten de forma concurrente, para cada transacción T debe parecer que el resto de transacciones se han ejecutado antes o después de T, pero no antes y después.2
+
+Durabilidad
+
+Una vez que una transacción ha finalizado con éxito (compromiso), cambia hacia un estado estable a prueba de fallos.2
+
+
+Referencias
+
+- NSW HSC Online
+- a b c d WICS TP Chapter 1

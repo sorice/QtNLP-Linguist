@@ -1,0 +1,45 @@
+Diagrama de estructura compuesta
+
+Un diagrama de estructura es un tipo de diagrama en el Lenguaje de Modelado Unificado (UML), que muestra la estructura interna de una clase y las colaboraciones que esta estructura hace posibles. Esto puede incluir partes internas, puertas mediante las cuales, las partes interactúan con cada una de las otras o mediante las cuales, instancias de la clase interactúan con las partes y con el mundo exterior, y conectores entre partes o puertas. Una estructura compuesta es un conjunto de elementos interconectados que colaboran en tiempo de ejecución para lograr algún propósito. Cada elemento tiene algún rol definido en la colaboración.
+
+Conceptos de estructura compuesta
+
+Las entidades de estructura compuesta claves identificadas en la especificación UML 2.0 son: clasificadores estructurados, partes, puertas, conectores, y colaboraciones.
+
+Parte
+
+Una parte representa un rol jugado en tiempo de ejecución por una instancia de una clase o por una colección de instancias. La parte puede nombrar solamente un rol, una superclase abstracta, o puede nombrar una clase concreta específica. La parte puede incluir un factor de multiplicidad (cardinalidad), tal como el [0..*] mostrado para Viewer en el diagrama.
+
+Puerta
+
+Una puerta es un punto de interacción que puede ser usado para conectar clasificadores estructurados con sus partes y con el ambiente. Las puertas pueden opcionalmente especificar los servicios que proveen y los servicios que requieren de otras partes del sistema. En el diagrama, cada uno de los cuadrados pequeños es una puerta. Cada puerta tiene un tipo y esta etiquetado con un nombre, tal como "var", "indVar1", or "view" en el diagrama. Las puertas pueden contener un factor de multiplicidad, por ejemplo [3].
+
+Las puertas pueden ya sea delegar los requerimientos recibidos a partes internas, o pueden entregarlos directamente para el comportamiento del clasificador estructurado en el que la puerta está contenido. Las puertas públicas que son visibles en el ambiente son mostradas sobre el borde (límite o frontera), mientras que las puertas protegidas que no son visibles en el ambiente son mostradas dentro de la frontera (borde o límite). Todas las puertas en el diagrama son privadas, excepto por la puerta view a lo largo del límite derecho de FibonacciSystem.
+
+Conector
+
+Un conector une dos o más entidades, permitiéndoles interactuar en tiempo de ejecución. Un conector es representado por una línea que une una combinación de partes, puertas y clasificadores estructurados. El diagrama muestra tres conectores entre puertas, y un conector entre un clasificador estructurado y una parte.
+
+Colaboración
+
+Una colaboración es generalmente más abstracta que un clasificador estructurado. Ésta es mostrada como un óvalo sin relleno conteniendo los roles que las instancias pueden jugar en la colaboración.
+
+Clasificador estructurado
+
+Un ClasificadorEstructurado representa una clase, frecuentemente una clase abstracta, cuyo comportamiento puede ser completa o parcialmente descrito mediante interacciones entre partes.
+
+Un ClasificadorEncapsulado es un tipo de clasificador estructurado que contiene puertas. En el diagrama abajo, ambos FibonacciSystem y Variable son clasificadores encapsulados, porque ambos tienen puertas a lo largo de sus límites.
+
+Ejemplo de diagrama de estructura compuesta
+
+Como ejemplo, considere un modo posible de modelar la producción de la Sucesión de Fibonacci.
+
+Este diagrama de estructura compuesta UML 2.0 especifica que las instancias de la clase 'FibonacciSystem' están compuestas de varias partes. La superior de estas partes está identificada como teniendo el clasificador 'FibonacciFunction'. Tres de las partes son identificadas por el rol que ellas juegan dentro de instancias del FibonacciSystem – el rol NMinus2, el rol NMinus1, y el rol N. La quinta parte, identificada por su clasificador Viewer, incluye una especificación de multiplicidad. En tiempo de ejecución puede haber 0 o más instancias de Viewer o de alguna subclase concreta de Viewer.
+
+En tiempo de ejecución las instancias de clase que implementan estos tres roles deben proveer los servicios especificados por la interfaz IVar mediante sus puertas var. Una de tales clases es Variable, mostrada sobre el diagrama con una puerta llamada var de tipo Var que realiza la interfaz IVar.
+
+La puerta llamada "view" es una puerta no-pública que puede ser usada por una instancia de FibonacciSystem para acceder a la(s) instancia(s) opcional(es) de Viewer.
+
+Trabajando con hp
+
+Las Herramientas de modelado UML 2.0 debiesen proveer un diagrama de estructura compuesta separado. Los iconos de dibujo son típicamente etiquetados Classifier (clasificador estructurado o clasificador encapsulado), Part, Port, Connector, y Collaboration.

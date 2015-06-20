@@ -1,0 +1,51 @@
+Método de desarrollo de sistemas dinámicos
+
+El método de desarrollo de sistemas dinámicos (en inglés Dynamic Systems Development Method o DSDM) es un método que provee un framework para el desarrollo ágil de software, apoyado por su continua implicación del usuario en un desarrollo iterativo y creciente que sea sensible a los requerimientos cambiantes, para desarrollar un sistema que reuna las necesidades de la empresa en tiempo y presupuesto. Es uno de un número de métodos de desarrollo ágil de software y forma parte del alianza ágil.
+
+DSDM fue desarrollado en el Reino Unido en los años 90 por un consorcio de proveedores y de expertos en la materia del desarrollo de sistemas de información (IS), el consorcio de DSDM, combinando sus experiencias de mejores prácticas. El consorcio de DSDM es una organización no lucrativa y proveedor independiente, que posee y administra el framework. La primera versión fue terminada en enero de 1995 y publicada en febrero de 1995. La versión actualmente en uso (abril de 2006) es la versión 4.2: El framework para el Negocio Centralizado Desarrollado lanzado en mayo de 2003.
+
+Como extensión del Desarrollo rápido de aplicaciones (RAD), DSDM se centra en los proyectos de sistemas de información que son caracterizados por presupuestos y agendas apretadas. DSDM trata los problemas que ocurren con frecuencia en el desarrollo de los sistemas de información en lo que respecta a pasar sobre tiempo y presupuesto y otras razones comunes para la falta en el proyecto tal como falta de implicación del usuario y de la comisión superior de la gerencia.
+
+DSDM consiste en 3 fases: fase del pre-proyecto, fase del ciclo de vida del proyecto, y fase del post-proyecto. La fase del ciclo de vida del proyecto se subdivide en 5 etapas:
+1. estudio de viabilidad,
+2. estudio de la empresa,
+3. iteración del modelo funcional,
+4. diseño e iteración de la estructura, e
+5. implementación.
+
+DSDM reconoce que los proyectos son limitados por el tiempo y los recursos, y los planes acorde a las necesidades de la empresa. Para alcanzar estas metas, DSDM promueve el uso del RAD con el consecuente peligro que demasiadas esquinas estén cortadas. DSDM aplica algunos principios, roles, y técnicas.
+
+En algunas circunstancias, hay posibilidades para integrar contenido de otros métodos, tal como el Proceso Unificado de Rational (RUP), Programación Extrema (XP), y Proyectos en ambientes controlados (PRINCE2), para complementar el DSDM en la realización de un proyecto. Otro método ágil que tiene semejanzas proceso y concepto con DSDM es Scrum.
+
+Principios del DSDM
+
+Hay 9 principios subyacentes al DSDM consistentes en cuatro fundamentos y cinco puntos de partida para la estructura del método. Estos principios forman los pilares del desarrollo mediante DSDM.
+- Involucrar al cliente es la clave para llevar un proyecto eficiente y efectivo, donde ambos, cliente y desarrolladores, comparten un entorno de trabajo para que las decisiones puedan ser tomadas con precisión.
+- El equipo del proyecto debe tener el poder para tomar decisiones que son importantes para el progreso del proyecto, sin esperar aprobación de niveles superiores.
+- DSDM se centra en la entrega frecuente de productos, asumiendo que entregar algo temprano es siempre mejor que entregar todo al final. Al entregar el producto frecuentemente desde una etapa temprana del proyecto, el producto puede ser verificado y revisado allí donde la documentación de registro y revisión puede ser tenida en cuenta en la siguiente fase o iteración.
+- El principal criterio de aceptación de entregables en DSDM reside en entregar un sistema que satisface las actuales necesidades de negocio. No está dirigida tanto a proporcionar un sistema perfecto que resuelva todas las necesidades posibles del negocio, si no que centra sus esfuerzos en aquellas funcionalidades críticas para alcanzar las metas establecidas en el proyecto/negocio.
+- El desarrollo es iterativo e incremental, guiado por la realimentación de los usuarios para converger en una solución de negocio precisa.
+- Todos los cambios durante el desarrollo son reversibles.
+- El alcance de alto nivel y los requerimientos deberían ser base-lined antes de que comience el proyecto.
+- Las pruebas son realizadas durante todo el ciclo vital del proyecto. Esto tiene que hacerse para evitar un caro coste extraordinario en arreglos y mantenimiento del sistema después de la entrega.
+- La comunicación y cooperación entre todas las partes interesadas en el proyecto es un prerrequisito importante para llevar un proyecto efectivo y eficiente.
+
+DSDM también se apoya en otros principios (también llamadas asunciones).
+- Ningún sistema es construido a la perfección en el primer intento (El principio de pareto - regla 80/20). En el proceso de desarrollar un sistema de información, el 80% del beneficio de la empresa proviene del 20% de los requisitos del sistema, así DSDM comienza implementando primero este 20% de requisitos para cumplir con el 80% de las necesidades de la empresa, lo que es suficientemente bueno tanto en cuanto los usuarios estén ínitmamente involucrados en el proceso de desarrollo y en una posición de asegurar que el 20% restante no causará serias consecuencias al negocio. Implementar la totalidad de requerimientos a menudo causa que un proyecto supere plazos y presupuestos, así la mayoría de las veces es innecesario construir la solución perfecta.
+- La entrega del proyecto debería ser a tiempo, respetando presupuestos y con buena calidad.
+- DSDM solo requiere que cada paso del desarrollo se complete lo suficiente como para que empiece el siguiente paso. De este modo una nueva iteración del proyecto puede comenzar sin tener que esperar a que la previa se complete enteramente. Y con cada nueva iteración el sistema se mejora incrementalmente. Recuérdese que las necesidades del negocio cambian constantemente y a cualquier ritmo con el tiempo.
+- Ambas técnicas de Desarrollo y Gestión del proyectos están incluidas en DSDM.
+- Además de desarrollar nuevos SI, DSDM puede ser usado también en proyectos de ampliación de sistemas TI actuales o incluso en proyectos de cambio no relacionados con las TI.
+- La Evaluación de riesgos debiera centrarse en entregar función de negocio, no en el proceso de construcción.
+- La gestión recompensa la entrega de productos más que la consecución de tareas.
+- La Estimación debería estar basada en la funcionalidad del negocio en lugar de líneas de código.
+
+Referencias
+- The DSDM Consortium
+- Coleman and Verbruggen: A quality software process for rapid application development, Software Quality Journal 7, p. 107-1222 (1998)
+- Beynon-Davies and Williams: The diffusion of information systems development methods, Journal of Strategic Information Systems 12 p. 29-46 (2003)
+- Brinkkemper, Saeki and Harmsen: Assembly Techniques for Method Engineering, Advanced Information Systems Engineering, Proceedings of CaiSE'98, Springer Verlag (1998)
+- Abrahamsson, Salo, Ronkainen, Warsta Agile Software Development Methods: Review and Analysis, VTT Publications 478, p. 61-68 (2002)
+- Tuffs, Stapleton, West, Eason Inter-operability of DSDM with the Rational Unified Process, DSDM Consortium, Issue 1, p. 1-29 (1999)
+- Rietmann DSDM in a bird’s eye view, DSDM Consortium, p. 3-8 (2001)
+- iSDLC integrated Systems Development Life Cycle

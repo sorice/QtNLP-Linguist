@@ -1,0 +1,43 @@
+Requisito (sistemas)
+
+En la ingeniería de sistemas, un requisito es una necesidad documentada sobre el contenido, forma o funcionalidad de un producto o servicio. Se usa en un sentido formal en la ingeniería de sistemas, ingeniería de software e ingeniería de requisitos.
+
+En la ingeniería clásica, los requisitos se utilizan como datos de entrada en la etapa de diseño del producto. Establecen qué debe hacer el sistema, pero no cómo hacerlo.
+
+La fase de captura, elicitación y registro de requisitos puede estar precedida por una fase de análisis conceptual del proyecto. Esta fase puede dividirse en recolección de requisitos, análisis de consistencia e integridad, definición en términos descriptivos para los desarrolladores y un esbozo de especificación, previo al diseño completo.
+
+¿Qué es un requisito?
+- Condición o capacidad que un usuario necesita para poder resolver un problema o lograr un objetivo (IEEE).
+- Condición o capacidad que debe exhibir o poseer un sistema para satisfacer un contrato, estándar, especificación, u otra documentación formalmente impuesta (IEEE).
+- Una condición o capacidad que debe ser conformada por el sistema (RUP).
+- Algo que el sistema debe hacer o una cualidad que el sistema debe poseer (Robertson - Robertson).
+
+Requisitos en ingeniería de software y sistemas
+
+En ingeniería de sistemas existen tres tipos de requisitos.
+- Un requisito funcional puede ser una descripción de lo que un sistema debe hacer. Este tipo de requisito especifica algo que el sistema entregado debe ser capaz de realizar.
+- Un requisito no funcional: de rendimiento, de calidad, etc; especifica algo sobre el propio sistema, y cómo debe realizar sus funciones. Algunos ejemplos de aspectos solicitables son la disponibilidad, el testeo, el mantenimiento, la facilidad de uso, etc.
+- Otros tipos de limitaciones externas, que afectan en una forma indirecta al producto. Estas pueden ir desde la compatibilidad con cierto sistema operativo hasta la adecuación a leyes o regulaciones aplicables al producto
+
+Una colección de requisitos describe las características o atributos del sistema deseado. Se omite el cómo debe lograrse su implementación, ya que esto debe ser decidido en la etapa de diseño por los diseñadores.
+
+En la ingeniería de software se aplica el mismo significado, sólo que el énfasis está puesto en el propio software.
+
+Pseudorrequisitos: Son aquellos referidos al entorno donde sera instalado o implementado el sistema, que determinan en gran medida su desarrollo, pueden ser cuestiones como hardware y software. [cita requerida]
+
+Características
+
+Los requisitos bien formulados deben satisfacer varias características. Si no lo hacen, deben ser reformulados hasta hacerlo.
+- Necesario: Lo que pida un requisito debe ser necesario para el producto.
+- No ambiguo: El texto debe ser claro, preciso y tener una única interpretación posible.
+- Conciso: Debe redactarse en un lenguaje comprensible por los inversores en lugar de uno de tipo técnico y especializado, aunque aun así debe referenciar los aspectos importantes.
+- Consistente: Ningún requisito debe entrar en conflicto con otro requisito diferente, ni con parte de otro. Asimismo, el lenguaje empleado entre los distintos requisitos debe ser consistente también.
+- Completo: Los requisitos deben contener en sí mismos toda la información necesaria, y no remitir a otras fuentes externas que los expliquen con más detalle.
+- Alcanzable: Un requisito debe ser un objetivo realista, posible de ser alcanzado con el dinero, el tiempo y los recursos disponibles.
+- Verificable: Se debe poder verificar con absoluta certeza, si el requisito fue satisfecho o no. Esta verificación puede lograrse mediante inspección, análisis, demostración o testeo.
+
+Estas características suelen ser subjetivas, es decir, no pueden ser calculadas de forma automática por ningún sistema. Por ello, se tiende a utilizar métricas o indicadores que sí que pueden ser calculados de forma automática y que, de algún modo, pueden contribuir a ponderar las anteriores características.
+
+Análisis de requisitos
+
+La etapa en que se estudian los requisitos para verificar que estén correctamente adecuados a las características mencionadas es conocida como Análisis de requisitos. En la misma se enfocan e intentan solucionar las deficiencias que los requisitos puedan tener.

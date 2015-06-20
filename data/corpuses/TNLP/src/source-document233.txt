@@ -1,0 +1,74 @@
+Algoritmo de Dijkstra
+
+El algoritmo de Dijkstra, también llamado algoritmo de caminos mínimos, es un algoritmo para la determinación del camino más corto dado un vértice origen al resto de vértices en un grafo con pesos en cada arista. Su nombre se refiere a Edsger Dijkstra, quien lo describió por primera vez en 1959.
+
+La idea subyacente en este algoritmo consiste en ir explorando todos los caminos más cortos que parten del vértice origen y que llevan a todos los demás vértices; cuando se obtiene el camino más corto desde el vértice origen, al resto de vértices que componen el grafo, el algoritmo se detiene. El algoritmo es una especialización de la búsqueda de costo uniforme, y como tal, no funciona en grafos con aristas de coste negativo (al elegir siempre el nodo con distancia menor, pueden quedar excluidos de la búsqueda nodos que en próximas iteraciones bajarían el costo general del camino al pasar por una arista con costo negativo).
+
+Algoritmo
+
+Teniendo un grafo dirigido ponderado de N nodos no aislados, sea x el nodo inicial, un vector D de tamaño N guardará al final del algoritmo las distancias desde x al resto de los nodos.
+1. Inicializar todas las distancias en D con un valor infinito relativo ya que son desconocidas al principio, exceptuando la de x que se debe colocar en 0 debido a que la distancia de x a x sería 0.
+2. Sea a = x (tomamos a como nodo actual).
+3. Recorremos todos los nodos adyacentes de a, excepto los nodos marcados, llamaremos a estos nodos no marcados vi.
+4. Para el nodo actual, calculamos la distancia tentativa desde dicho nodo a sus vecinos con la siguiente fórmula: dt(vi) = Da + d(a,vi). Es decir, la distancia tentativa del nodo ‘vi’ es la distancia que actualmente tiene el nodo en el vector D más la distancia desde dicho el nodo ‘a’ (el actual) al nodo vi. Si la distancia tentativa es menor que la distancia almacenada en el vector, actualizamos el vector con esta distancia tentativa. Es decir: Si dt(vi) < Dvi → Dvi = dt(vi)
+5. Marcamos como completo el nodo a.
+6. Tomamos como próximo nodo actual el de menor valor en D (puede hacerse almacenando los valores en una cola de prioridad) y volvemos al paso 3 mientras existan nodos no marcados.
+
+Una vez terminado al algoritmo, D estará completamente lleno.
+
+Complejidad
+
+Orden de complejidad del algoritmo: O(|V|2+|E|) = O(|V|2) sin utilizar cola de prioridad, O((|E|+|V|) log |V|) utilizando cola de prioridad (por ejemplo un montículo).
+
+Podemos estimar la complejidad computacional del algoritmo de Dijkstra (en términos de sumas y comparaciones). El algoritmo realiza a lo más n-1 iteraciones, ya que en cada iteración se añade un vértice al conjunto distinguido. Para estimar el número total de operaciones basta estimar el número de operaciones que se llevan a cabo en cada iteración. Podemos identificar el vértice con la menor etiqueta entre los que no están en Sk realizando n-1 comparaciones o menos. Después hacemos una suma y una comparación para actualizar la etiqueta de cada uno de los vértices que no están en Sk. Por tanto, en cada iteración se realizan a lo sumo 2(n-1) operaciones, ya que no puede haber más de n-1 etiquetas por actualizar en cada iteración. Como no se realizan más de n-1 iteraciones, cada una de las cuales supone a lo más 2(n-1) operaciones, llegamos al siguiente teorema.
+
+TEOREMA: El Algoritmo de Dijkstra realiza O(n2) operaciones (sumas y comparaciones) para determinar la longitud del camino más corto entre dos vértices de un grafo ponderado simple, conexo y no dirigido con n vértices.
+
+Pseudocódigo
+
+Estructura de datos auxiliar: Q = Estructura de datos Cola de prioridad (se puede implementar con un montículo)
+
+   DIJKSTRA (Grafo G, nodo_fuente s)       
+       para u ∈ V[G] hacer
+           distancia[u] = INFINITO
+           padre[u] = NULL
+       distancia[s] = 0
+       adicionar (cola, (s, distancia[s]))
+       mientras que cola no es vacía hacer
+           u = extraer_mínimo(cola)
+           para todos v ∈ adyacencia[u] hacer
+               si distancia[v] > distancia[u] + peso (u, v) hacer
+                   distancia[v] = distancia[u] + peso (u, v)
+                   padre[v] = u
+                   adicionar(cola,(v, distancia[v]))
+
+Otra versión en pseudocódigo sin cola de prioridad
+
+función Dijkstra (Grafo G, nodo_salida s)
+  //Usaremos un vector para guardar las distancias del nodo salida al resto
+  entero distancia[n] 
+  //Inicializamos el vector con distancias iniciales
+  booleano visto[n] 
+  //vector de boleanos para controlar los vértices de los que ya tenemos la distancia mínima
+  para cada w ∈ V[G] hacer
+     Si (no existe arista entre s y w) entonces
+         distancia[w] = Infinito //puedes marcar la casilla con un -1 por ejemplo
+     Si_no
+         distancia[w] = peso (s, w)
+     fin si 
+  fin para
+  distancia[s] = 0
+  visto[s] = cierto
+  //n es el número de vértices que tiene el Grafo
+  mientras que (no_estén_vistos_todos) hacer 
+     vértice = coger_el_mínimo_del_vector distancia y que no esté visto;
+     visto[vértice] = cierto;
+     para cada w ∈ sucesores (G, vértice) hacer
+         si distancia[w]>distancia[vértice]+peso (vértice, w) entonces
+            distancia[w] = distancia[vértice]+peso (vértice, w)
+         fin si
+     fin para 
+  fin mientras
+fin función.
+
+Al final tenemos en el vector distancia en cada posición la distancia mínima del vértice salida a otro vértice cualquiera.

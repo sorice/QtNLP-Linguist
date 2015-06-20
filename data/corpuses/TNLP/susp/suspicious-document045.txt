@@ -1,0 +1,90 @@
+NoSQL
+
+En informática, NoSQL (a veces llamado "no sólo SQL") es una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico del sistema de gestión de bases de datos relacionales (RDBMS) en aspectos importantes, el más destacado es que no usan SQL como el principal lenguaje de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad), y habitualmente escalan bien horizontalmente.
+
+Por lo general, los investigadores académicos se refieren a este tipo de bases de datos como almacenamiento estructurado, término que abarca también las bases de datos relacionales clásicas. A menudo, las bases de datos NoSQL se clasifican según su forma de almacenar los datos, y comprenden categorías como clave-valor, las implementaciones de BigTable, bases de datos documentales, y Bases de datos orientadas a grafos.
+
+Los sistemas de bases de datos NoSQL crecieron con las principales compañías de Internet, como Google, Amazon, Twitter y Facebook. Estas tenían que enfrentarse a desafíos con el tratamiento de datos que las tradicionales RDBMS no solucionaban [cita requerida]. Con el crecimiento de la web en tiempo real existía una necesidad de proporcionar información procesada a partir de grandes volúmenes de datos que tenían unas estructuras horizontales más o menos similares. Estas compañías se dieron cuenta de que el rendimiento y sus propiedades de tiempo real eran más importantes que la coherencia, en la que las bases de datos relacionales tradicionales dedicaban una gran cantidad de tiempo de proceso[cita requerida].
+
+En ese sentido, a menudo, las bases de datos NoSQL están altamente optimizadas para las operaciones recuperar y agregar, y normalmente no ofrecen mucho más que la funcionalidad de almacenar los registros (p.ej. almacenamiento clave-valor). La pérdida de flexibilidad en tiempo de ejecución, comparado con los sistemas SQL clásicos, se ve compensada por ganancias significativas en escalabilidad y rendimiento cuando se trata con ciertos modelos de datos.[cita requerida]
+
+Historia del término
+
+Carlo Strozzi usó el término NoSQL en 1998 para referirse a su base de datos. Era una base de datos open-source, ligera, que no ofrecía un interface SQL, pero sí seguía el modelo relacional1 (Strozzi sugiere que, ya que el actual movimiento NoSQL "Se sale completamente del modelo relacional, debería, por tanto, haberse llamado 'NoREL', o algo así.")2
+
+Eric Evans, un empleado de Rackspace, reintrodujo el término NoSQL cuando Johan Oskarsson de Last.fm quiso organizar un evento para discutir bases de datos distribuidas de código abierto. El nombre intentaba recoger el número creciente de bases de datos no relacionales y distribuidas que no garantizaban ACID, atributo clave en las RDBMS clásicas.
+
+Arquitectura
+
+Típicamente las bases de datos relacionales modernas han mostrado poca eficiencia en determinadas aplicaciones que usan los datos de forma intensiva, incluyendo el indexado de un gran número de documentos, la presentación de páginas en sitios que tienen gran tráfico, y en sitios de streaming audiovisual. Las implementaciones típicas de RDBMS se han afinado o bien para una cantidad pequeña pero frecuente de lecturas y escrituras o para un gran conjunto de transacciones que tiene pocos accesos de escritura. Por otro lado NoSQL puede servir gran cantidad de carga de lecturas y escrituras.
+
+Implementaciones de NoSQL usadas en el mundo real incluyen los 3TB de los marcadores verdes de Digg (indicados para señalar las historias votadas por otros en la red social; aunque duró menos de 3 meses y fue abandonado); los 6 TB de la base de datos del “ENSEMBLE” de la Comisión Europea usado en los modelos de comparación y calidad del aire, y los 50 TB de la búsqueda de la bandeja de entrada de Facebook.
+
+Las arquitecturas NoSQL frecuentemente aportan escasas garantías de consistencia, tales como consistencia de eventos o transaccional restringida a ítems únicos de datos. Algunos sistemas, sin embargo, aportan todas las garantías de los sistemas ACID en algunas instancias añadiendo una capa intermedia (como por ejemplo, AppScale o CloudTPS). Hay dos sistemas que han sido desplegados y que aportan aislamiento snapshot para almacenamientos de columna: El sistema Percolator de Google (basado en el sistema BigTable) y el sistema transaccional de Hbase desarrollado por la universidad de Waterloo. Estos sistemas, desarrollados de forma independiente, usan conceptos similares para conseguir transacciones ACID distribuidas de múltiples filas con garantías de aislamiento snapshot para el sistema subyacente de almacenamiento en esa columna, sin sobrecarga extra en la gestión de los datos, despliegue en el sistema de middleware, ni mantenimiento introducido por la capa de middleware.
+
+Bastantes sistemas NoSQL emplean una arquitectura distribuida, manteniendo los datos de forma redundante en varios servidores, usando frecuentemente una tabla hash distribuida. De esta forma, el sistema puede realmente escalar añadiendo más servidores, y el fallo en un servidor puede ser tolerado.
+
+Algunos defensores de NoSQL promueven interfaces simples tales como los arrays asociativos o los pares clave-valor. Otros sistemas, tales como las bases de datos nativas en XML, promueven el soporte del estándar Xquery. Los sistemas más novedosos tales como CloudTPS también soportan unión de queries.
+
+Ventajas
+- Estos sistemas responden a las necesidades de escalabilidad horizontal que tienen cada vez más empresas.3
+- Pueden manejar enormes cantidades de datos.
+- No generan cuellos de botella.
+- Escalamiento sencillo.
+- Diferentes DBs NoSQL para diferentes proyectos.
+- Se ejecutan en clusters de máquinas baratas.
+
+Sistemas
+
+Bases de datos documentales
+- CouchDB, de Apache CouchDB
+- MongoDB, de 10gen
+- RavenDB, de Hibernating Rhinos.
+- BaseX
+- djondb
+- eXist
+- SimpleDB, de Amazon
+- IBM Lotus Domino
+- Terrastore
+
+Bases de datos en grafo
+- Neo4j
+- DEX/Sparksee
+- AllegroGraph
+- OrientDB
+- InfiniteGraph
+- Sones GraphDB
+- InfoGrid
+- HyperGraphDB
+
+Bases de datos clave/valor
+- Cassandra, de Apache The Apache Cassandra
+- BigTable, de Google
+- Dynamo, de Amazon
+- MongoDB
+- Project Voldemort, de LinkedIn
+- Riak
+- Redis
+- Oracle NoSQL [1]
+
+Bases de datos multivalor
+- OpenQM
+- Extensible storage engine
+
+Bases de datos orientadas a objetos
+- ObjectDB
+- Zope Object Database
+- db4o
+- GemStone S
+- Objectivity/DB
+
+Bases de datos tabular
+- HBase, de Apache
+- BigTable, de Google
+- LevelDB, versión abierta de BigTable
+- Hypertable
+
+Referencias
+- Lith, Adam; Jakob Mattson (2010). «Investigating storage solutions for large data: A comparison of well performing and scalable data storage solutions for real time extraction and batch insertion of data» (PDF) págs. 70. Göteborg: Department of Computer Science and Engineering, Chalmers University of Technology. Consultado el 12 de mayo de 2011. «Carlo Strozzi first used the term NoSQL in 1998 as a name for his open source relational database that did not offer a SQL interface[...]».
+- «NoSQL Relational Database Management System: Home Page». Strozzi.it (2 de octubre de 2007). Consultado el 29 de marzo de 2010.
+- Twitter planifica la migración de MySQL a Cassandra DB en barrapunto

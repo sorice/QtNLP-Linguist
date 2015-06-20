@@ -1,0 +1,66 @@
+Base de datos biológica
+
+Una base de datos biológica es una biblioteca de información sobre ciencias de la vida, recogida de experimentos científicos, literatura publicada, tecnología de experimentación de alto rendimiento, y análisis computacional.1 Contiene información de áreas de investigación incluyendo genómica, proteómica, metabolómica, expresión génica mediante microarrays, y filogenética.2 La información contenida en bases de datos biológicas incluye funciones, estructura y localización (tanto celular como cromosómica) de genes, efectos clínicos de mutaciones, así como similitudes de secuencias y estructuras biológicas.
+
+Para entender las bases de datos biológicas son importantes los conceptos de bases de datos relacionales de las ciencias de la computación, y los conceptos de recuperación de información de las bibliotecas digitales. El diseño de estas bases de datos, su desarrollo y su gestión a largo plazo, forman un área nuclear de la disciplina de la bioinformática.3 El contenido de los datos incluye secuencias génicas, descripciones textuales, atributos y clasificaciones ontológicas, anotaciones, y datos en forma tabular. Estos son descritos a menudo como datos semi-estructurados, y se pueden representar como tablas, registros delimitados por claves, y estructuras XML. Son comunes las referencias cruzadas entre bases de datos usando números de acceso (identificadores únicos de registros de secuencias de proteínas o ADN) como claves foráneas.
+
+Descripción
+
+Las bases de datos biológicas se han convertido en un instrumento importante para ayudar a los científicos a comprender y explicar una serie de fenómenos biológicos desde la estructura biomolecular y su interacción, hasta el metabolismo completo de los organismos y a la comprensión de la evolución de las especies. Este conocimiento ayuda a facilitar la lucha contra las enfermedades, ayuda en el desarrollo de medicamentos, y en el descubrimiento de las relaciones básicas entre las especies en la historia de la vida.
+
+El conocimiento biológico se distribuye entre múltiples bases de datos generales y especializadas. Esto a veces hace que sea difícil garantizar la coherencia de la información. Las bases de datos biológicas tienen referencias cruzadas con otras bases de datos con el número de acceso como una forma de vincular sus conocimientos relacionados con el conjunto.
+
+Un recurso importante para la búsqueda de bases de datos biológicos es un tema anual de la revista Nucleic Acids Research (NAR). Un artículo acerca de las bases de datos en NAR está disponible gratuitamente y se clasifican muchas de las bases de datos en línea a disposición del público relacionadas con la biología y bioinformática.
+
+Bases de datos de secuencias
+
+Uno de los tipos de bases de datos más usuales en bioinformática, son las bases de datos de secuencias. Estas son una gran colección de secuencias de ADN, proteínas y otras, que son almacenadas en computadoras. Una base de datos puede incluir secuencias de un sólo organismo, como la base da datos que contiene todas las proteínas de la Saccharomyces cerevisiae, o puede incluir secuencias de todos los organismo cuyo ADN ha sido secuenciado.
+
+Existen bases de datos primarias, que contienen información directa de la secuencia, estructura o patrón de expresión de ADN o proteína, y secundarias que contienen datos e hipótesis derivados del análisis de las bases de datos primarias, como mutaciones, relaciones evolutivas, agrupación por familias o funciones, implicación en enfermedades, etc.
+
+Problemas por los formatos de entrada
+
+Un problema fundamental en todas las grandes bases de datos genómicas es que los registros provienen de una gran variedad de fuentes, desde investigadores individuales hasta grandes centros de secuenciamiento. Como resultado, las secuencias mismas y principalmente las anotaciones biológicas adjuntas a estas secuencias, varían notablemente en calidad. También hay mucha redundancia ya que muchos laboratorios ingresan a menudo secuencias que son idénticas o muy similares a otras en la base de datos.
+
+Muchas anotaciones no están basadas en experimentos de laboratorio sino en resultados de búsquedas de secuencias similares de secuencias previamente anotadas. Por supuesto, una vez que una secuencia es anotada basándose en su similitud con otra, puede servir como base para futuras anotaciones. Esto conduce al problema de las anotaciones transitivas, porque puede haber varias de esas secuencias transferidas por similitud de secuencia entre una base de datos de registro real y la información experimental de laboratorio. Por lo tanto, siempre hay observar el sentido biológico de las anotaciones en las principales bases de datos de secuencias con un considerable grado de escepticismo, a menos que pueda ser verificada por referencias a artículos publicados con la descripción de la alta calidad de los datos experimentales, o al menos por referencia a una secuencia de la base de datos arreglada por un humano.
+
+Principales bases de datos
+
+De nucleótidos
+
+La colaboración de las tres bases de datos más importantes hace posible acceder a casi toda la información de secuencias de ADN desde cualquiera de sus tres sedes:
+- EMBL-BANK en el Instituto europeo de Bioinformática (EBI)
+- DNA Data Bank of Japan (DDBJ) en el Centro de Información Biológica (CIB)
+- GenBank en el Centro Nacional de Información Biotecnológica (NCBI)
+
+Si bien son mantenidas por distintos organismos en distintos países, existe una coordinación entre las distintas bases. Una secuencia enviada a cualquiera de las bases se verá reflejada en las otras dos en aproximadamente una semana, ya que esa es la frecuencia de actualización entre las distintas bases genéticas. Por este motivo es indistinto que base se use para enviar nuevas secuencias, aunque normalmente los europeos utilizan EMBL-BANK y los americanos GenBank.
+
+De proteínas
+
+Bases de datos de secuencias de aminoácidos.
+- Swiss-Prot contiene secuencias anotadas o comentadas, es decir, cada secuencia ha sido revisada, documentada y enlazada a otras bases de datos.
+- TrEMBL por Translation of EMBL Nucleotide Sequence Database incluye la traducción de todas las secuencias codificantes derivadas del (EMBL-BANK) y que todavía no han podido ser anotadas en Swiss-Prot.
+- PIR por Protein Information Resource está dividida en cuatro sub-bases que tienen un nivel de anotación decreciente.
+- ENZYME enlaza la clasificación de actividades enzimáticas completa a las secuencias de Swiss-Prot.
+- PROSITE contiene información sobre la estructura secundaria de proteínas, familias, dominios, etc.
+- InterPro integra la información de diversas bases de datos de estructura secundaria como PROSITE, proporcionando enlaces a otras bases de datos e información más extensa.
+- Protein Data Bank (PDB) es la base de datos de estructura terciaria 3-D de proteínas que han sido cristalizadas.
+
+De genomas
+- Ensembl integra genomas eucariotas grandes, por el momemto contiene genoma humano, ratón, rata, fugu, zebrafish, mosquito, Drosophila, C. elegans, y C. briggsae.
+- Genomes server y TIGR son portales con información o enlaces de todos los genomas secuenciados por el momento, desde virus a humanos.
+- Wormbase es el portal del genoma de gusano C. elegans.
+- Flybase es el portal de la mosca del vinagre Drosophila melanogaster.
+
+Otras
+- Taxonomy es el portal de clasificación taxonómica de organismos
+- Pubmed da acceso gratuito al índice de publicaciones de la Biblioteca Nacional de Medicina (NLM), con enlaces a artículos completos
+- OMIM por Online Mendelian Inheritance in Man es un catálogo de genes humanos relacionados con informaciones genéticas.
+- Xenobase es el portal del organismo modelo Xenopus laevis
+- TAIR (The Arabidopsis Information Resource) es el portal de la planta modelo Arabidopsis thaliana
+- GYPSY, base de datos de elementos genéticos móviles.
+
+Referencias
+- Attwood T.K., Gisel A., Eriksson N-E. and Bongcam-Rudloff E. (2011). «Concepts, Historical Milestones and the Central Place of Bioinformatics in Modern Biology: A European Perspective». Bioinformatics - Trends and Methodologies. InTech. Consultado el 8 Jan 2012.
+- Altman RB (March 2004). «Building successful biological databases». Brief. Bioinformatics 5 (1):  pp. 4–5. PMID 15153301.
+- Bourne P (August 2005). «Will a biological database be different from a biological journal?». PLoS Comput. Biol. 1 (3):  pp. 179–81. doi:10.1371/journal.pcbi.0010034. PMID 16158097.

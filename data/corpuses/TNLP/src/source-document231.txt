@@ -1,0 +1,145 @@
+Algoritmo de búsqueda
+
+Un algoritmo de búsqueda es aquel que está diseñado para localizar un elemento con ciertas propiedades dentro de una estructura de datos; por ejemplo, ubicar el registro correspondiente a cierta persona en una base de datos, o el mejor movimiento en una partida de ajedrez.
+
+La variante más simple del problema es la búsqueda de un número en un vector.
+
+Búsqueda dicotómica
+
+Elementos necesarios en una búsqueda :
+
+log2(n) donde n = elementos de la búsqueda
+
+Ejemplo: log2(1.000.000) ≈ 20
+
+Búsqueda secuencial
+
+Se utiliza cuando el vector no está ordenado o no puede ser ordenado previamente. Consiste en buscar el elemento comparándolo secuencialmente (de ahí su nombre) con cada elemento del arreglo hasta encontrarlo, o hasta que se llegue al final. La existencia se puede asegurar cuando el elemento es localizado, pero no podemos asegurar la no existencia hasta no haber analizado todos los elementos del arreglo. A continuación se muestra el pseudocódigo del algoritmo:[cita requerida]
+
+Datos de entrada:
+  vec: vector en el que se desea buscar el dato
+  tam: tamaño del vector. Los subíndices válidos van desde 0 hasta tam-1 inclusive.
+  dato: elemento que se quiere buscar.
+
+Variables
+  pos: posición actual en el arreglo
+
+pos = 0
+Mientras pos < tam:
+ Si vec[pos] == dato devolver verdadero y/o pos, de lo contrario:
+ pos = pos + 1
+Fin (Mientras)
+Devolver falso,
+
+    C
+
+int busquedaSimple(int  vector[n], int n, int dato) {
+ 
+    int i;
+ 
+    for(i=0; i<n; i++){
+        if(dato==vector[i]) {
+            return i;
+            break;
+        }
+    }
+ 
+    return -1;
+ 
+}
+
+Búsqueda dicotómica (binaria)
+
+Se utiliza cuando el vector en el que queremos determinar la existencia de un elemento está previamente ordenado. Este algoritmo reduce el tiempo de búsqueda considerablemente, ya que disminuye exponencialmente el número de iteraciones necesarias.
+
+Está altamente recomendado para buscar en arrays de gran tamaño. Por ejemplo, en uno conteniendo 50.000.000 elementos, realiza como máximo 26 comparaciones (en el peor de los casos).
+
+Para implementar este algoritmo se compara el elemento a buscar con un elemento cualquiera del array (normalmente el elemento central): si el valor de éste es mayor que el del elemento buscado se repite el procedimiento en la parte del array que va desde el inicio de éste hasta el elemento tomado, en caso contrario se toma la parte del array que va desde el elemento tomado hasta el final. De esta manera obtenemos intervalos cada vez más pequeños, hasta que se obtenga un intervalo indivisible. Si el elemento no se encuentra dentro de este último entonces se deduce que el elemento buscado no se encuentra en todo el array.
+
+A continuación se presenta el pseudocódigo del algoritmo, tomando como elemento inicial el elemento central del array.
+
+Datos de entrada:
+  vec: vector en el que se desea buscar el dato
+  tam: tamaño del vector. Los subíndices válidos van desde 0 hasta tam-1 inclusive.
+  dato: elemento que se quiere buscar.
+
+Variables
+  centro: subíndice central del intervalo
+  inf: límite inferior del intervalo
+  sup: límite superior del intervalo
+
+inf = 0
+sup = tam-1
+
+Mientras inf <= sup:
+  centro = ((sup - inf) / 2) + inf // División entera: se trunca la fracción
+  Si vec[centro] == dato devolver verdadero y/o pos, de lo contrario:
+   Si dato < vec[centro] entonces:
+    sup = centro - 1
+   En caso contrario:
+    inf = centro + 1
+Fin (Mientras)
+Devolver Falso
+
+
+    C
+
+int busquedaBinaria(int  vector[], int n, int dato)
+{
+   int centro,inf=0,sup=n-1;
+ 
+   while(inf<=sup){
+     centro=(sup+inf)/2;
+     if(vector[centro]==dato) return centro;
+     else if(dato < vector [centro] ){
+	sup=centro-1;
+     }
+     else {
+       inf=centro+1;
+     }
+   }
+   return -1;
+}
+
+Implementación recursiva en C++ [cita requerida]
+
+    C++
+
+ #include <iostream>
+ #include <vector>
+ 
+ bool busqueda_dicotomica(const vector<int> &v, int principio, int fin, int &x){
+     bool res;
+     if(principio <= fin){
+         int m = (principio + fin)/2;
+         if(x < v[m]) res = busqueda_dicotomica(v, principio, m-1, x);
+         else if(x > v[m]) res = busqueda_dicotomica(v, m+1, fin, x);
+         else res = true;
+     }else res = false;
+     return res;
+ }
+ /*{Post: Si se encuentra devuelve true, sino false}*/
+
+Implementación recursiva en Python
+
+    Python
+
+def busquedaBinaria (numeros, inicio, fin, elemento):
+    if (inicio == fin): return numeros [inicio] == elemento
+ 
+    centro = (inicio + fin) // 2
+ 
+    if (elemento < numeros [centro]):
+        return busquedaBinaria (numeros, inicio, centro, elemento)
+ 
+    elif (elemento > numeros [centro]):
+        return busquedaBinaria (numeros, centro + 1, fin, elemento)
+ 
+    else: return True
+ 
+ 
+def busqueda (numeros, elemento):
+    if (numeros == None) or (numeros == []):
+        return False
+ 
+    else: return busquedaBinaria (numeros, 0, len (numeros) - 1, elemento)

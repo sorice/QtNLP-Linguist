@@ -1,0 +1,9 @@
+Inteligencia computacional
+
+Inteligencia Computacional (IC) es una rama de la inteligencia artificial centrada en el estudio de mecanismos adaptativos para permitir el comportamiento inteligente de sistemas complejos y cambiantes. Se presenta como una alternativa a la GOFAI ("Good Old-Fashioned Artificial Intelligence"), tratando de no confiar en algoritmos heurísticos tan habituales en la Inteligencia Artificial más tradicional. Dentro de la Inteligencia Computacional podemos encontrar técnicas como las Redes Neuronales, Computación Evolutiva, Swarm Intelligence, Sistemas Inmunes Artificiales o Sistemas difusos. También se relaciona con técnicas como los Fractales, Teoría del Caos, Wavelets, Autómata celular, etc.
+
+La Inteligencia Computacional combina elementos de aprendizaje, adaptación, evolución y Lógica difusa para crear programas que son, en cierta manera, inteligentes. La investigación en Inteligencia Computacional no rechaza los métodos estadísticos, pero muy a menudo aporta una vista complementaria. Las Redes Neuronales son una rama de la inteligencia computacional muy relacionada con el aprendizaje automático.
+
+Referencias
+- Computational Intelligence: An Introduction by Andries Engelbrecht. Wiley & Sons. ISBN 0-470-84870-7
+- Computational Intelligence: A Logical Approach by David Poole, Alan Mackworth, Randy Goebel. Oxford University Press. ISBN 0-19-510270-3

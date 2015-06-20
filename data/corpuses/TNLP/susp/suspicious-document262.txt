@@ -1,0 +1,83 @@
+Criba de Eratóstenes
+
+La criba de Eratóstenes es un algoritmo que permite hallar todos los números primos menores que un número natural dado n. Se forma una tabla con todos los números naturales comprendidos entre 2 y n, y se van tachando los números que no son primos de la siguiente manera: Comenzando por el 2, se tachan todos sus múltiplos; comenzando de nuevo, cuando se encuentra un número entero que no ha sido tachado, ese número es declarado primo, y se procede a tachar todos sus múltiplos, así sucesivamente. El proceso termina cuando el cuadrado del mayor número confirmado como primo es mayor que n.
+
+Determinemos, mediante el siguiente ejemplo, el proceso para determinar la lista de los números primos menores de 20.
+
+    Primer paso: listar los números naturales comprendidos entre 2 y 20.
+
+        2 	3 	4 	5 	6 	7 	8 	9 	10 	11 	12 	13 	14 	15 	16 	17 	18 	19 	20
+
+    2. Segundo paso: Se toma el primer número no rayado ni marcado, como número primo.
+
+        2 	3 	4 	5 	6 	7 	8 	9 	10 	11 	12 	13 	14 	15 	16 	17 	18 	19 	20
+
+    3. Tercer paso: Se tachan todos los múltiplos del número que se acaba de indicar como primo.
+
+        2 	3 	4 	5 	6 	7 	8 	9 	10 	11 	12 	13 	14 	15 	16 	17 	18 	19 	20
+
+    4. Cuarto paso: Si el cuadrado del primer número que no ha sido rayado ni marcado es inferior a 20, entonces se repite el segundo paso. Si no, el algoritmo termina, y todos los enteros no tachados son declarados primos.
+
+Como 3² = 9 < 20, se vuelve al segundo paso:
+
+        2 	3 	4 	5 	6 	7 	8 	9 	10 	11 	12 	13 	14 	15 	16 	17 	18 	19 	20
+
+En el cuarto paso, el primer número que no ha sido tachado ni marcado es 5. Como su cuadrado es mayor que 20, el algoritmo termina y se consideran primos todos los números que no han sido tachados.
+
+Como resultado se obtienen los números primos comprendidos entre 2 y 20, y estos son: 2, 3, 5, 7, 11, 13, 17, 19.
+
+Refinamiento
+
+Un refinamiento de la criba consiste en tachar los múltiplos del k-ésimo número primo pk, comenzando por pk2 pues en los anteriores pasos se habían tachado los múltiplos de pk correspondientes a todos los anteriores números primos, esto es, 2pk, 3pk, 5pk,..., hasta (pk-1)pk. El algoritmo acabaría cuando p2k>n ya que no habría nada que tachar.1
+
+Otro refinamiento consiste en generar una lista sólo con números impares (pues los números pares distintos de 2 se sabe que no son primos), e ir tachando los múltiplos de los números primos mediante incrementos de 2p, es decir, los múltiplos impares (2k+1)p de cada primo p. Esto aparece en el algoritmo original. 1
+
+Pseudocódigo
+Algoritmo Criba de Eratóstenes (Complejidad O(n~\log n~\log\log n))
+
+Entrada: Un número natural n
+
+Salida: El conjunto de números primos anteriores a n (incluyendo n)
+
+    Escriba todos los números naturales desde 2 hasta n
+    Para i desde 2 hasta \lfloor \sqrt n\rfloor haga lo siguiente:
+        Si i no ha sido marcado entonces:
+            Para j desde i hasta n\div i haga lo siguiente:
+                Ponga una marca en i\times j
+    El resultado es: Todos los números sin marca
+
+Acerca de la notación:
+
+    \lfloor x\rfloor es la función parte entera de x
+    a\div b es el cociente de dividir a entre b
+
+Para su implementación en una computadora, normalmente se maneja un vector de tipo lógico con n elementos. De esta manera, la posición i contiene el valor Verdadero como representación de que i ha sido marcado y Falso en otro caso.
+
+Criba de Euler
+
+Una forma especial de la criba de Eratóstenes aplicada se puede encontrar en la demostración del producto de Euler para la función zeta de Riemann por parte de Leonhard Euler, y muestra una forma original de obtener dicho producto, utilizando una modificación de dicha criba. La función zeta de Riemann se representa como
+
+    \zeta(s) = 1+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\frac{1}{5^s}+ \cdots 
+
+Multiplicando ambos miembros por \textstyle \frac{1}{2^s} se obtiene una nueva serie, y restando esta nueva serie a la serie original miembro a miembro y término a término, se eliminan todos los términos cuyas bases son múltiplos de 2 — En la criba de Eratóstenes se tachan —.
+
+    \left(1-\frac{1}{2^s}\right)\zeta(s) = 1+\frac{1}{3^s}+\frac{1}{5^s}+\frac{1}{7^s}+\frac{1}{9^s}+ \cdots 
+
+Repitiendo el mismo proceso sobre el siguiente término, \textstyle \frac{1}{3^s} , se eliminan todos los términos cuyas bases son múltiplos de 3:
+
+    \left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{2^s}\right)\zeta(s) = 1+\frac{1}{5^s}+\frac{1}{7^s}+\frac{1}{11^s}+\frac{1}{13^s}+ \cdots 
+
+Puede comprobarse que la parte de la derecha se está cribando, de manera que repitiendo este proceso indefidamente:
+
+    \cdots \left(1-\frac{1}{11^s}\right)\left(1-\frac{1}{7^s}\right)\left(1-\frac{1}{5^s}\right)\left(1-\frac{1}{3^s}\right)\left(1-\frac{1}{2^s}\right)\zeta(s) = 1 
+
+se obtiene un producto sobre todos los números primos p, que puede escribirse de forma simplificada como:
+
+    \zeta(s) = \prod_{p} \frac{1}{1-p^{-s}}.
+
+Notas
+1. Horsley, Rev. Samuel, F. R. S., "Κόσκινον Ερατοσθένους or, The Sieve of Eratosthenes. Being an account of his method of finding all the Prime Numbers"
+
+Referencias
+- Samuel Horsley (1772). «\text{KO}\Sigma \text{KINON EPATO}\Sigma \Theta \text{ENO}\Upsilon \Sigma. or, The Sieve of Eratosthenes. Being an Account of His Method of Finding All the Prime Numbers, by the Rev. Samuel Horsley, F. R. S.». Philosophical Transactions (1683-1775) 62.
+- Walter Mora F.. «Criba de Eratóstenes». Revista digital Matemática: Educación e Internet 7 (2).

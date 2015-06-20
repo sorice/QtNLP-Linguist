@@ -1,0 +1,92 @@
+Lenguaje de alto nivel
+
+Un lenguaje de programación se caracteriza por expresar los algoritmos de una manera adecuada a la capacidad cognitiva humana, en lugar de la capacidad ejecutora de las máquinas.
+
+En los primeros lenguajes, la limitación era que se orientaban a un área específica y sus instrucciones requerían de una sintaxis predefinida. Se clasifican como lenguajes procedimentales o lenguajes de bajo nivel. Otra limitación de estos es que se requiere de ciertos conocimientos de programación para realizar las secuencias de instrucciones lógicas. Los lenguajes de alto nivel se crearon para que el usuario común pudiese solucionar un problema de procesamiento de datos de una manera más fácil y rápida.
+
+Por esta razón, a finales de los años 1950 surgió un nuevo tipo de lenguajes de programación que evitaba estos inconvenientes, a costa de ceder un poco en las ventajas. Estos lenguajes se llaman de tercera generación o de nivel alto, en contraposición a los de bajo nivel o de nivel próximo a la máquina.
+
+Ventajas e inconvenientes
+
+Ventajas:
+- Genera un código más sencillo y comprensible.
+- Escribir un código válido para diversas máquinas y, posiblemente, sistemas operativos.
+
+Inconvenientes
+- Reducción de velocidad al ceder el trabajo de bajo nivel a la máquina.
+- Algunos requieren que la máquina cliente posea una determinada plataforma.
+
+Principales lenguajes de nivel alto
+- VB.NET
+- Ada
+- ALGOL
+- BASIC
+- C Sharp
+- FORTRAN
+- Java
+- Lisp
+- Modula-2
+- Pascal
+- Perl
+- PHP
+- PL/1
+- PL/SQL
+- Python
+- Ruby
+- Matlab
+- C++
+
+Principales lenguajes de nivel medio
+- C
+
+FORTRAN
+
+Abreviatura de Fórmula Translator (traductor de fórmulas), fue definido alrededor del año 1954, y disponible para el público en 1957 en los Estados Unidos por la compañía IBM.1 Es el más antiguo de los lenguajes de alto nivel, pues antes de su aparición todos los programas se escribían en lenguaje ensamblador o en lenguaje máquina.
+
+Es un lenguaje especializado en aplicaciones técnicas y científicas, caracterizándose por su potencia en los cálculos matemáticos, pero estando limitado en las aplicaciones de gestión, manejo de archivos, tratamiento de cadenas de caracteres y edición de informes.
+
+A lo largo de su existencia han aparecido diferentes versiones, entre las que destaca la realizada en 1966 por ANSI (American National Standard Institute) en la que se definieron nuevas reglas del lenguaje y se efectuó la independencia del mismo con respecto a la "máquina", es decir, comenzó la transportabilidad del lenguaje. Esta versión se denominó FORTRAN IV o FORTRAN 66. En 1977, apareció una nueva versión más evolucionada que se llamó FORTRAN V o FORTRAN 77, esta versión está reflejada en el documento «ANSI X3.9-1978: Programming Language FORTRAN» y define dos niveles del lenguaje denominados FORTRAN 77 completo y FORTRAN 77 básico, siendo el segundo un subconjunto del primero. Esta última versión incluye además instrucciones para el manejo de cadenas de caracteres y de archivos, así como otras para la utilización de técnicas de programación estructurada. Estas características hacen que el lenguaje también sea válido para determinadas aplicaciones de gestión.
+
+COBOL
+
+Es el lenguaje más usado en las aplicaciones de gestión, creado en 1960 por un comité denominado CODASYL, patrocinado por el Departamento de Defensa de los Estados Unidos, a fin de disponer de un lenguaje universal para aplicaciones comerciales como expresa su nombre (COmmon Business Oriented Language).
+
+Entre sus características se pueden citar su parecido al lenguaje natural (inglés), es auto- documentado y tiene gran capacidad en el manejo de archivos, así como en la edición de informes escritos. Entre sus inconvenientes están sus rígidas reglas de formatos de escritura, la necesidad de describir todos los elementos al máximo detalle, la extensión excesiva en sus sentencias e incluso duplicación en algunos casos, la inexistencia de funciones matemáticas y, por último, su no adecuación a las técnicas de programación estructurada.
+
+PL/1
+
+Fue creado a comienzos de los años 60 por IBM para ser usado en sus equipos del sistema 360. El PL/I (Programming Language 1) se desarrolló inspirándose en los lenguajes ALGOL, COBOL y FORTRAN, tomando las mejores características de los anteriores y añadiendo algunas nuevas, con el objetivo de obtener un lenguaje lo más general posible, útil para aplicaciones técnico-científicas, comerciales, de proceso de textos, de bases de datos y de programación de sistemas.
+
+Entre sus novedades está su gran libertad en el formato de escritura de los programas, soportar la programación estructurada y el diseño modular. No obstante, no ha superado a sus progenitores en sus aplicaciones específicas debido en parte a su amplitud y por ello, al tamaño de su compilador, que hasta ahora sólo se podía instalar en grandes equipos.
+
+BASIC
+
+Fue diseñado por los profesores John G. Kemeny y Thomas E. Kurtz del Dartmouth College en 19642 con el objetivo principal de conseguir un lenguaje fácil de aprender para los principiantes, como se indica en su nombre Beginner’s All-purpose Symbolic Instruction Code (Código de instrucción simbólico de propósito general para principiantes).
+
+Entre sus principales novedades están las de ser un lenguaje interpretado y de uso conversacional, útil para aplicaciones técnicas y de gestión. Estas características, unidas a la popularización de las microcomputadoras y computadoras personales, ha hecho que su utilización se haya extendido enormemente, a la vez que ha propiciado el surgimiento de una gran diversidad de versiones que extienden y adaptan a necesidades particulares el lenguaje original. Existen multitud de intérpretes y compiladores del lenguaje.
+
+PASCAL
+
+Fue creado por el matemático suizo Niklaus Wirth en 1970, basándose en el lenguaje AL-GOL, en cuyo diseño había participado en los años 60. Su nombre proviene del filósofo y matemático francés del siglo xvii Blaise Pascal, que inventó la primera máquina de tipo mecánico para sumar.
+
+Aunque en principio la idea del diseñador era proporcionar un lenguaje adecuado para la enseñanza de los conceptos y técnicas de programación, con el tiempo ha llegado a ser un lenguaje ampliamente utilizado en todo tipo de aplicaciones, poseyendo grandes facilidades para la programación de sistemas y diseño de gráficos.
+
+Aporta los conceptos de tipo de datos, programación estructurada y diseño descendente, entre otros, además de haberse convertido en predecesor de otros lenguajes más modernos, como MODULA-2 y ADA.
+
+C/C++
+
+Fue creado en 1972 por Dennis Ritchie a partir del trabajo elaborado por su colega de los laboratorios Bell Telephone, Ken Thompson. Estos habían diseñado con anterioridad el sistema operativo UNIX, y su intención al desarrollar el lenguaje C fue la de conseguir un lenguaje idóneo para la programación de sistemas que fuese independiente de la máquina con el cual escribir su sistema UNIX.
+
+Aunque fue diseñado inicialmente para la programación de sistemas, posteriormente su uso se ha extendido a aplicaciones técnico-científicas, de bases de datos, de proceso de textos, etc.
+
+La utilización óptima de este lenguaje se consigue dentro de su entorno natural, que es el sistema operativo UNIX. Entre sus características destaca el uso de programación estructurada para resolver tareas de nivel bajo, así como la amplia librería de rutinas de que dispone.
+
+ADA
+
+Es el último intento de obtener un único lenguaje para todo tipo de aplicaciones e incluye los últimos avances en técnicas de programación. Su diseño fue encargado por el Departamento de Defensa de los Estados Unidos a la empresa Honeywell-Bull después de una selección rigurosa entre varias propuestas realizadas sobre una serie de requerimientos del lenguaje y de haber evaluado negativamente veintitrés lenguajes existentes. De éstos se seleccionaron como base para la creación del nuevo lenguaje el PASCAL, el ALGOL y el PL/I. La estandarización del lenguaje se publicó en 1983 con el nombre de ADA en honor de la considerada primera programadora de la historia Augusta Ada Byron, condesa de Lovelace.
+
+Entre las características del lenguaje se encuentran la compilación separada, los tipos abstractos de datos, programación concurrente, programación estructurada, libertad de formatos de escritura, etc., presentando como principal inconveniente su gran extensión.
+
+Referencias
+1. (en inglés) «FORTRAN - The Pioneering Programming Language» Web oficial de IBM. Consultado el 13 de enero de 2013.
+2. Ficha de Thomas E. Kurtz Dartmouth College. Consultado el 13 de enero de 2013.

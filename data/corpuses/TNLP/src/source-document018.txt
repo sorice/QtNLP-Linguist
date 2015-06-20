@@ -1,0 +1,18 @@
+Columna (base de datos)
+
+El término campo es frecuentemente intercambiable con el de columna, aunque muchos consideran más correcto usar el término campo (o valor de campo) para referirse específicamente al simple elemento que existe en la intersección entre una fila y una columna. Por ejemplo, una tabla que representa compañías pudo tener las siguientes columnas:
+- ID(identificador entero, único a cada fila)
+- Nombre (texto)
+- Dirección 1 (texto)
+- Dirección 2 (texto)
+- Ciudad (identificador entero, proviene de una tabla separada de ciudades, de la que cualquier información del estado o del país puede ser tomada)
+- Código postal (texto)
+- Industria (identificador entero, Proviene de una tabla separada de industrias)
+    etc.
+
+Cada fila proporcionaría un valor de los datos para cada columna y después sería entendida como solo simple valor de datos estructurado, en este caso representando a una compañía. Más formalmente, cada fila puede ser interpretada como una variable relacional, compuesta por un conjunto de tuplas, con cada tupla consistiendo en los dos elementos: el nombre de la columna relevante y el valor que esta fila proporciona para esa columna.
+
+	Columna 1 	Columna 2
+Fila 1 	Fila 1 Columna 1 	Fila 1 Columna 2
+Fila 2 	Fila 2 Columna 1 	Fila 2 Columna 2
+Fila 3 	Fila 3 Columna 1 	Fila 3 Columna 2

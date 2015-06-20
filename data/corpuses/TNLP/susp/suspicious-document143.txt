@@ -1,0 +1,27 @@
+Simulación de multitudes
+
+La simulación de multitudes es el proceso de simular el movimiento de un gran número de objetos o personajes, apareciendo ocasionalmente por ejemplo en gráficos 3D por computadora para películas. Mientras se simulan estas multitudes, se toma en cuenta la interacción del comportamiento humano observado, para replicar la conducta colectiva.
+
+La necesidad de una simulación de multitudes surge cuando una escena necesita más personajes de los que pueden ser animados de forma práctica usando sistemas convencionales, tales como esqueletos/huesos. Simular multitudes ofrece las ventajas de ser rentable así como permitir el control total de cada personaje o agente simulado.
+
+Los animadores típicamente crean una biblioteca de movimientos, ya sea para el personaje entero o para partes del cuerpo individuales. Para simplificar el proceso, estas animaciones son a veces horneadas como morphs. De manera alternativa, los movimientos pueden ser generados procesalmente, es decir, automáticamente coreografeados por software.
+
+Los actuales movimientos e interacciones de la multitud son típicamente hechos en una de dos formas:
+
+Movimiento de partículas
+
+Los personajes son adjuntados a partículas puntuales, que son entonces animados mediante la simulación del viento, gravedad, atracciones, y colisiones. El método de partículas es usualmente barato de implementar, y puede ser hecho en la mayoría de las paqueterías de software 3D. Sin embargo, el método no es muy realista debido a que es difícil dirigir las entidades individuales cuando es necesario, y porque el movimiento está generalmente limitado a una superficie plana.
+
+IA de multitud
+
+A las entidades, llamadas también agentes, se les da inteligencia artificial, que guía a la entidades basadas en una o más funciones tales como vista, audición, emoción básica, nivel de energía, nivel de agresividad, etc. Se les otorga a las entidades de metas y entonces interactúan entre sí como lo harían los miembros de una multitud real. Son en ocasiones programadas para responder a cambios en el ambiente, permitiéndoseles escalar colinas, saltar sobre hoyos, subir escaleras, etc. Este sistema es mucho más realista que el movimiento de partículas, pero es muy costoso de programar e implementar.
+
+Los ejemplos más notables de simulación de IA pueden ser vistos en las películas de New Line Cinema El Señor de los Anillos, donde ejércitos de IA de muchos miles de soldados pelearon entre sí. La simulación de multitud fue hecha utilizando el software MASSIVE de Weta Digital.
+
+Sociología
+
+Simulación de multitudes puede referirse también a las simulaciones basadas en dinámica de grupos y psicología multitudinaria, usadas en ocasiones en el planeamiento de la seguridad pública. En este caso, el enfoque es solo el comportamiento de la multitud, y no el realismo visual de la simulación. Las multitudes han sido estudiadas como un interés científico desde finales del siglo XIX. Mucha investigación se ha enfocado en el comportamiento social colectivo de la gente en reuniones sociales, asambleas, protestas, rebeliones, conciertos, eventos deportivos y ceremonias religiosas. La percepción de la conducta natural del ser humano en distintos tipos de situaciones estresantes permitirá que mejores modelos sean creados, los cuales pueden ser usados para desarrollar estrategias de control de multitudes.
+
+Equipos de respuesta a emergencias tales como policías, la Guardia Nacional, militares e incluso voluntarios deben someterse a algún tipo de entrenamiento de control de multitides. Usando los principios investigados del comportamiento humano en multitudes se les puede dar a los diseñadores de entrenamiento para desastres más elementos que incorporar para crear desastres simulados realistas. El comportamiento de la multitud puede ser observado durante condiciones con y sin pánico. Cuando los eventos naturales y no naturales llevan a los ideales sociales a una situación caótica y retorcida, tales como los eventos del 9/11 y el huracán Katrina, las capacidades sociales de la humanidad son verdaderamente puestas a prueba. Los programas militares están tomando más en cuenta el entrenamiento simulado, incluyendo respuestas a emergencias, debido a su tecnología rentable así como lo efectivo que el aprendizaje puede ser transferido al mundo real. Muchos eventos que pueden comenzar controlados pueden tener un giro en los eventos que lleve a situaciones catastróficas, donde las decisiones necesitan ser hechas en el momento. Es en estas situaciones en las cuales el entendimiento de las multitudes dinámicas podría jugar un papel vital en reducir el riesgo de una anarquía potencial.
+
+Técnicas de modelado de multitudes varían desde aproximaciones holísticas o de red para entender los aspectos individualistas o de comportamiento de cada agente. Por ejemplo el Modelo de Fuerza Social describe una necesidad de los individuos para encontrar un balance entre la interacción social y la interacción física. Una aproximación que incorpora ambos aspectos, y es capaz de adaptarse dependiendo de la situación, describiría mejor el comportamiento humano natural, incorporando siempre alguna medida de imprevisibilidad. Con el uso de modelos multi-agente el entendimiento de estos comportamientos complejos se ha vuelto una tarea mucho más comprensible. Con el uso de este tipo de software, los sistemas pueden ahora ser probados bajo condiciones extremas, y simular condiciones sobre largos periodos de tiempo en materia de segundos.

@@ -1,0 +1,71 @@
+Tercera forma normal
+
+La tercera forma normal (3NF) es una forma normal usada en la normalización de bases de datos. La 3NF fue definida originalmente por E.F. Codd1 en 1971. La definición de Codd indica que una tabla está en 3NF si y solo si las tres condiciones siguientes se cumplen:
+- La tabla está en la segunda forma normal (2NF)
+- Ningún atributo no-primario de la tabla es dependiente transitivamente de una clave primaria
+- Es una relación que no incluye ningún atributo clave
+
+Un atributo no-primario es un atributo que no pertenece a ninguna clave candidata. Una dependencia transitiva es una dependencia funcional X → Z en la cual Z no es inmediatamente dependiente de X, pero sí de un tercer conjunto de atributos Y, que a su vez depende de X. Es decir, X → Z por virtud de X → Y e Y → Z.
+
+Una formulación alternativa de la definición de Codd, dada por Carlo Zaniolo2 en 1982, es ésta: Una tabla está en 3NF si y solo si, para cada una de sus dependencias funcionales X → A, por lo menos una de las condiciones siguientes se mantiene:
+- X contiene A, ó
+- X es una superclave, ó
+- A es un atributo primario (es decir, A está contenido dentro de una clave candidata)
+
+La definición de Zaniolo tiene la ventaja de dar un claro sentido de la diferencia entre la 3NF y la más rigurosa forma normal de Boyce-Codd (BCNF). La BCNF simplemente elimina la tercera alternativa ("A es un atributo primario").
+
+"Nada excepto la clave"
+
+Un memorable resumen de la definición de Codd de la 3NF, siendo paralelo al compromiso tradicional de dar evidencia verdadera en un tribunal de justicia, fue dado por Bill Kent: cada atributo no-clave "debe proporcionar un hecho sobre la clave, la clave entera, y nada más excepto la clave".3 Una variación común complementa esta definición con el juramento: "con la ayuda de Codd".4
+
+Requerir que los atributos no-clave sean dependientes en "la clave completa" asegura que una tabla esté en 2NF; un requerimiento posterior que los atributos no-clave sean dependientes de "nada excepto la clave" asegura que la tabla esté en 3NF.
+
+Chris Date refiere al resumen de Kent como "una intuitiva atractiva caracterización" de la 3NF, y observa que con una ligera adaptación puede servir como definición ligeramente más fuerte de la forma normal de Boyce-Codd: "Cada atributo debe representar un hecho acerca de la clave, la clave entera, y nada excepto la clave".5 La versión 3NF de la definición es más débil que la variación de BCNF de Date, pues el anterior se refiere solamente a asegurarse de que los atributos no-clave son dependientes en las claves. Los atributos primarios (que son claves o partes de claves) no deben ser funcionalmente dependientes en absoluto; cada uno de ellos representa un hecho sobre la clave en el sentido de proporcionar parte o toda la clave en sí misma. Debe ser observado que esta regla se aplica solamente a los atributos funcionalmente dependientes, ya que aplicándola a todos los atributos prohibiría implícitamente claves de candidato compuestas, puesto que cada parte de cualquiera de tales claves violaría la cláusula de "clave completa"..
+
+Ejemplo
+
+Un ejemplo de una tabla 2NF que falla en satisfacer los requerimientos de la 3NF es:
+Ganadores del torneo Torneo 	Año 	Ganador 	Fecha de nacimiento del ganador
+Indiana Invitational 	1998 	Al Fredrickson 	21 de julio de 1975
+Cleveland Open 	1999 	Bob Albertson 	28 de septiembre de 1968
+Des Moines Masters 	1999 	Al Fredrickson 	21 de julio de 1975
+Indiana Invitational 	1999 	Chip Masterson 	14 de marzo de 1977
+
+La única clave candidata es {Torneo, Año}.
+
+La violación de la 3NF ocurre porque el atributo no primario Fecha de nacimiento del ganador es dependiente transitivamente de {Torneo, Año} vía el atributo no primario Ganador. El hecho de que la Fecha de nacimiento del ganador es funcionalmente dependiente en el Ganador hace la tabla vulnerable a inconsistencias lógicas, pues no hay nada que impida a la misma persona ser mostrada con diferentes fechas de nacimiento en diversos registros.
+
+Para expresar los mismos hechos sin violar la 3NF, es necesario dividir la tabla en dos:
+
+Ganadores del torneo Torneo 	Año 	Ganador
+Indiana Invitational 	1998 	Al Fredrickson
+Cleveland Open 	1999 	Bob Albertson
+Des Moines Masters 	1999 	Al Fredrickson
+Indiana Invitational 	1999 	Chip Masterson
+
+            Fecha de nacimiento del jugador Ganador 	Fecha de nacimiento
+            Chip Masterson 	14 de marzo de 1977
+            Al Fredrickson 	21 de julio de 1975
+            Bob Albertson 	28 de septiembre de 1968
+
+Las anomalías de actualización no pueden ocurrir en estas tablas, las cuales están en 3NF.
+
+Derivación de las condiciones de Zaniolo
+
+La definición de 3NF ofrecida por Carlo Zaniolo en 1982, y dada arriba, es probada así: Sea X → A un FD no trivial (es decir, uno donde X no contiene a A) y sea A un atributo no clave. También sea Y una clave de R. Entonces Y → X. Por lo tanto A no es dependiente transitivo de Y, si y solo si el X → Y, es decir, si y solo si X es una superclave.6
+
+Normalización más allá de la 3NF
+
+La mayoría de las tablas 3NF están libres anomalías de actualización, inserción, y borrado. Ciertos tipos de tablas 3NF, que en la práctica raramente se encuentran, son afectadas por tales anomalías; éstas son tablas que no satisfacen la forma normal de Boyce-Codd (BCNF) o, si satisfacen la BCNF, son insuficientes para satisfacer las formas normales más altas 4NF o 5NF.
+
+Referencias
+- Codd, E.F. "Further Normalization of the Data Base Relational Model." (Presented at Courant Computer Science Symposia Series 6, "Data Base Systems," New York City, May 24th-25th, 1971.) IBM Research Report RJ909 (August 31st, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
+- Zaniolo, Carlo. "A New Normal Form for the Design of Relational Database Schemata." ACM Transactions on Database Systems 7(3), September 1982.
+- Kent, William. "A Simple Guide to Five Normal Forms in Relational Database Theory", Communications of the ACM 26 (2), Feb. 1983, pp. 120-125.
+- The author of a 1989 book on database management credits one of his students with coming up with the "so help me Codd" addendum. Diehr, George. Database Management (Scott, Foresman, 1989), p. 331.
+- Date, C.J. An Introduction to Database Systems (7th ed.) (Addison Wesley, 2000), p. 379.
+- Zaniolo, p. 494.
+
+Lectura adicional
+- Date, C. J. (1999), An Introduction to Database Systems (8th ed.). Addison-Wesley Longman. ISBN 0-321-19784-4.
+- Kent, W. (1983) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM, vol. 26, pp. 120-125

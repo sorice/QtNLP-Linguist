@@ -1,0 +1,10 @@
+Robótica autónoma
+
+La Robótica autónoma es el área de la Robótica que desarrolla robots capaces de desplazarse y actuar sin intervención humana. Para ello el robot debe percibir su entorno y actuar de forma adecuada, además de llevar a cabo su tarea.
+
+La Robótica ha tenido grandes avances en entornos estructurados, en los que el controlador del robot puede tener un mapa detallado de su entorno. Conforme decrece el grado de estructuración del entorno las tareas se tornan más complejas. Esto ocurre cuando el robot es móvil y debe tener información de su posición en el mapa interno. Los mecanismos pueden ser absolutos o relativos, por ejemplo, usando GPS y odometría, respectivamente.
+
+En entornos no estructurados la solución a través de mapa no es viable, por lo que se toman caminos en los que no se usa la Inteligencia Artificial clásica, con un control centralizado, sino la Inteligencia Artificial basada en Multiagentes (originaria en el trabajo de Rodney Brooks y su arquitectura de subsunción), o en planteamientos conexionistas usando redes neuronales. La disciplina que usa Algoritmos Genéticos para evolucionar Redes Neuronales se denomina Robótica Evolutiva.1
+
+Referencias
+- Investigación en Robótica Evolutiva en castellano

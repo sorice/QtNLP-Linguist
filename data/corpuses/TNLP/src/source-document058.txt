@@ -1,0 +1,11 @@
+Rollback
+
+En tecnologías de base de datos, un rollback es una operación que devuelve a la base de datos a algún estado previo. Los Rollbacks son importantes para la integridad de la base de datos, a causa de que significan que la base de datos puede ser restaurada a una copia limpia incluso después de que se han realizado operaciones erróneas. Son cruciales para la recuperación de crashes de un servidor de base de datos; realizando rollback(devuelto) cualquier transacción que estuviera activa en el tiempo del crash, la base de datos es restaurada a un estado consistente.
+
+En SQL, ROLLBACK es un comando que causa que todos los cambios de datos desde la última sentencia BEGIN WORK, o START TRANSACTION sean descartados por el sistema de gestión de base de datos relacional (RDBMS), para que el estado de los datos sea "rolled back"(devuelto) a la forma en que estaba antes de que aquellos cambios tuvieran lugar.
+
+Una sentencia ROLLBACK también publicará cualquier savepoint existente que puediera estar en uso.
+
+En muchos dialectos de SQL, ROLLBACKs son específicos de la conexión. Esto significa que si se hicieron dos conexiones a la misma base de datos, un ROLLBACK hecho sobre una conexión no afectará a cualesquiera otras conexiones. Esto es vital para el buen funcionamiento de la Concurrencia.
+
+La funcionalidad de rollback está normalmente implementada con un Log de transacciones, pero puede también estar implementada mediante control de concurrencia multiversión.

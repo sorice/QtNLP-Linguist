@@ -1,0 +1,33 @@
+Ordenamiento por casilleros
+
+El ordenamiento por casilleros (bucket sort o bin sort, en inglés) es un algoritmo de ordenamiento que distribuye todos los elementos a ordenar entre un número finito de casilleros. Cada casillero sólo puede contener los elementos que cumplan unas determinadas condiciones. En el ejemplo esas condiciones son intervalos de números. Las condiciones deben ser excluyentes entre sí, para evitar que un elemento pueda ser clasificado en dos casilleros distintos. Después cada uno de esos casilleros se ordena individualmente con otro algoritmo de ordenación (que podría ser distinto según el casillero), o se aplica recursivamente este algoritmo para obtener casilleros con menos elementos. Se trata de una generalización del algoritmo Pigeonhole sort. Cuando los elementos a ordenar están uniformemente distribuidos la complejidad computacional de este algoritmo es de O(n).
+
+El algoritmo contiene los siguientes pasos:
+1. Crear una colección de casilleros vacíos
+2. Colocar cada elemento a ordenar en un único casillero
+3. Ordenar individualmente cada casillero
+4. devolver los elementos de cada casillero concatenados por orden
+
+Pseudocódigo
+
+función bucket-sort(elementos, n) 
+  casilleros ← colección de n listas
+  para i = 1 hasta longitud(elementos) hacer
+    c ← buscar el casillero adecuado
+    insertar elementos[i] en casillero[c]
+  fin para
+  para i = 1 hasta n hacer
+    ordenar(casilleros[i])
+  fin para
+  devolver la concatenación de casilleros[1],..., casilleros[n]
+
+Aquí elementos es la lista de datos a ordenar y n el número de casilleros que queremos usar. Para buscar el casillero adecuado para un elemento se puede utilizar la técnica que más convenga, según cómo queramos ordenar los datos. La función ordenar puede ser cualquier función de ordenamiento, incluso la propia bucket-sort.
+
+Algoritmo del cartero
+
+El algoritmo del cartero (inglés: postman's sort) es una variante del bucket sort utilizada cuando los elementos a ordenar disponen de varias claves y/o subclaves. El nombre de este algoritmo viene del ejemplo de las oficinas postales; allí cuando hay que clasificar una carta para que llegue a su destino primero se clasifica según el país de destino, luego la ciudad o la región, después según la calle o el barrio de destino, etc. Es decir, este algoritmo utiliza varias claves para hacer ordenamientos sucesivos. La complejidad computacional es de O(cn), siendo c el número de claves que se utilizan para clasificar.
+
+Referencias
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 8.4: Bucket sort, pp.174–177.
+- Paul E. Black "Postman's Sort" from Dictionary of Algorithms and Data Structures at NIST.
+- Robert Ramey The Postman's Sort C Users Journal Aug. 1992

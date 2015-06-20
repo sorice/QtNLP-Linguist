@@ -1,0 +1,229 @@
+Teoría de grafos
+
+La teoría de grafos (también llamada teoría de las gráficas) es un campo de estudio de las matemáticas y las ciencias de la computación, que estudia las propiedades de los grafos (también llamadas gráficas, que no se debe confundir con las gráficas que tienen una acepción muy amplia) estructuras que constan de dos partes, el conjunto de vértices, nodos o puntos; y el conjunto de aristas, líneas o lados (edges en inglés) que pueden ser orientados o no.
+
+La teoría de grafos es una rama de la Matemática discreta y de las aplicadas, y es un tratado que usa diferentes conceptos de diversas áreas como Análisis combinatorio, Álgebra abstracta, probabilidad, geometría de polígonos, aritmética y topología.
+
+Actualmente ha tenido mayor preponderancia en el campo de la informática, las ciencias de la computación y telecomunicaciones.
+
+Historia
+
+El origen de la teoría de grafos se remonta al siglo XVIII con el problema de los puentes de Königsberg, el cual consistía en encontrar un camino que recorriera los siete puentes del río Pregel (54°42′12″N 20°30′56″E) en la ciudad de Königsberg, actualmente Kaliningrado, de modo que se recorrieran todos los puentes pasando una sola vez por cada uno de ellos. El trabajo de Leonhard Euler sobre el problema titulado Solutio problematis ad geometriam situs pertinentis1 (La solución de un problema relativo a la geometría de la posición) en 1736, es considerado el primer resultado de la teoría de grafos. También se considera uno de los primeros resultados topológicos en geometría (que no depende de ninguna medida). Este ejemplo ilustra la profunda relación entre la teoría de grafos y la topología.
+
+Luego, en 1847, Gustav Kirchhoff utilizó la teoría de grafos para el análisis de redes eléctricas publicando sus leyes de los circuitos para calcular el voltaje y la corriente en los circuitos eléctricos, conocidas como leyes de Kirchhoff, considerado la primera aplicación de la teoría de grafos a un problema de ingeniería.
+
+En 1852 Francis Guthrie planteó el problema de los cuatro colores el cual afirma que es posible, utilizando solamente cuatro colores, colorear cualquier mapa de países de tal forma que dos países vecinos nunca tengan el mismo color. Este problema, que no fue resuelto hasta un siglo después por Kenneth Appel y Wolfgang Haken en 1976, puede ser considerado como el nacimiento de la teoría de grafos. Al tratar de resolverlo, los matemáticos definieron términos y conceptos teóricos fundamentales de los grafos.
+
+En 1857, Arthur Cayley estudió y resolvió el problema de enumeración de los isómeros, compuestos químicos con idéntica composición (fórmula) pero diferente estructura molecular. Para ello representó cada compuesto, en este caso hidrocarburos saturados CnH2n+2, mediante un grafo árbol donde los vértices representan átomos y las aristas la existencia de enlaces químicos.
+
+El término «grafo», proviene de la expresión H«graphic notation» usada por primera vez por Edward Frankland2 y posteriormente adoptada por Alexander Crum Brown en 1884, y hacía referencia a la representación gráfica de los enlaces entre los átomos de una molécula.
+
+El primer libro sobre teoría de grafos fue escrito por Dénes Kőnig y publicado en 1936.3
+
+Aplicaciones
+
+Gracias a la teoría de grafos se pueden resolver diversos problemas como por ejemplo la síntesis de circuitos secuenciales, contadores o sistemas de apertura. Se utiliza para diferentes áreas por ejemplo, Dibujo computacional, en toda las áreas de Ingeniería.
+
+Los grafos se utilizan también para modelar trayectos como el de una línea de autobús a través de las calles de una ciudad, en el que podemos obtener caminos óptimos para el trayecto aplicando diversos algoritmos como puede ser el algoritmo de Floyd.
+
+Para la administración de proyectos, utilizamos técnicas como PERT en las que se modelan los mismos utilizando grafos y optimizando los tiempos para concretar los mismos.
+
+La teoría de grafos también ha servido de inspiración para las ciencias sociales, en especial para desarrollar un concepto no metafórico de red social que sustituye los nodos por los actores sociales y verifica la posición, centralidad e importancia de cada actor dentro de la red. Esta medida permite cuantificar y abstraer relaciones complejas, de manera que la estructura social puede representarse gráficamente. Por ejemplo, una red social puede representar la estructura de poder dentro de una sociedad al identificar los vínculos (aristas), su dirección e intensidad y da idea de la manera en que el poder se transmite y a quiénes.
+
+Se emplea en problemas de control de producción, para proyectar redes de ordenadores, para diseñar módulos electrónicos modernos y proyectar sistemas físicos con parámetros localizados (mecánicos, acústicos y eléctricos).
+
+Se usa para la solución de problemas de genética y problemas de automatización de la proyección (SAPR). Apoyo matemático de los sistemas modernos para el procesamiento de la información. Acude en las investigaciones nucleares (técnica de diagramas de Feynman).4
+
+Los grafos son importantes en el estudio de la biología y hábitat. El vértice representa un hábitat y las aristas (o "edges" en inglés) representa los senderos de los animales o las migraciones. Con esta información, los científicos pueden entender cómo esto puede cambiar o afectar a las especies en su hábitat.
+
+Tipos de grafos
+- Grafo simple. o simplemente grafo es aquel que acepta una sola arista uniendo dos vértices cualesquiera. Esto es equivalente a decir que una arista cualquiera es la única que une dos vértices específicos. Es la definición estándar de un grafo.
+- Multigrafo. o pseudografo son grafos que aceptan más de una arista entre dos vértices. Estas aristas se llaman múltiples o lazos (loops en inglés). Los grafos simples son una subclase de esta categoría de grafos. También se les llama grafos no-dirigido.
+- Grafo dirigido. Son grafos en los cuales se ha añadido una orientación a las aristas, representada gráficamente por una flecha
+- Grafo etiquetado. Grafos en los cuales se ha añadido un peso a las aristas (número entero generalmente) o un etiquetado a los vértices.
+- Grafo aleatorio. Grafo cuyas aristas están asociadas a una probabilidad.
+- Hipergrafo. Grafos en los cuales las aristas tienen más de dos extremos, es decir, las aristas son incidentes a 3 o más vértices.
+- Grafo infinito. Grafos con conjunto de vértices y aristas de cardinal infinito.
+
+Representación de grafos
+
+Existen diferentes formas de representar un grafo (simple), además de la geométrica y muchos métodos para almacenarlos en una computadora. La estructura de datos usada depende de las características del grafo y el algoritmo usado para manipularlo. Entre las estructuras más sencillas y usadas se encuentran las listas y las matrices, aunque frecuentemente se usa una combinación de ambas. Las listas son preferidas en grafos dispersos porque tienen un eficiente uso de la memoria. Por otro lado, las matrices proveen acceso rápido, pero pueden consumir grandes cantidades de memoria.
+
+Estructura de lista
+- lista de incidencia - Las aristas son representadas con un vector de pares (ordenados, si el grafo es dirigido), donde cada par representa una de las aristas.5
+- lista de adyacencia - Cada vértice tiene una lista de vértices los cuales son adyacentes a él. Esto causa redundancia en un grafo no dirigido (ya que A existe en la lista de adyacencia de B y viceversa), pero las búsquedas son más rápidas, al costo de almacenamiento extra.
+- lista de grados - También llamada secuencia de grados o sucesión gráfica de un grafo no-dirigido es una secuencia de números, que corresponde a los grados de los vértices del grafo.
+
+Estructuras matriciales
+- Matriz de adyacencia - El grafo está representado por una matriz cuadrada M de tamaño n^2, donde n es el número de vértices. Si hay una arista entre un vértice x y un vértice y, entonces el elemento m_{x, y} es 1, de lo contrario, es 0.
+- Matriz de incidencia - El grafo está representado por una matriz de A (aristas) por V (vértices), donde [vértice, arista] contiene la información de la arista (1 - conectado, 0 - no conectado)
+
+Problemas de teoría de grafos
+
+Ciclos y caminos hamiltonianos
+
+Un ciclo es una sucesión de aristas adyacentes, donde no se recorre dos veces la misma arista, y donde se regresa al punto inicial. Un ciclo hamiltoniano tiene además que recorrer todos los vértices exactamente una vez (excepto el vértice del que parte y al cual llega).
+
+Por ejemplo, en un museo grande (al estilo del Louvre), lo idóneo sería recorrer todas las salas una sola vez, esto es buscar un ciclo hamiltoniano en el grafo que representa el museo (los vértices son las salas, y las aristas los corredores o puertas entre ellas).
+
+Se habla también de Camino hamiltoniano si no se impone regresar al punto de partida, como en un museo con una única puerta de entrada. Por ejemplo, un caballo puede recorrer todas las casillas de un tablero de ajedrez sin pasar dos veces por la misma: es un camino hamiltoniano. Ejemplo de un ciclo hamiltoniano en el grafo del dodecaedro.
+
+Hoy en día, no se conocen métodos generales para hallar un ciclo hamiltoniano en tiempo polinómico, siendo la búsqueda por fuerza bruta de todos los posibles caminos u otros métodos excesivamente costosos. Existen, sin embargo, métodos para descartar la existencia de ciclos o caminos hamiltonianos en grafos pequeños.
+
+El problema de determinar la existencia de ciclos hamiltonianos, entra en el conjunto de los NP-completos.
+
+Grafos planos
+
+Cuando un grafo o multigrafo se puede dibujar en un plano sin que dos segmentos se corten, se dice que es plano.
+
+Un juego muy conocido es el siguiente: Se dibujan tres casas y tres pozos. Todos los vecinos de las casas tienen el derecho de utilizar los tres pozos. Como no se llevan bien en absoluto, no quieren cruzarse jamás. ¿Es posible trazar los nueve caminos que juntan las tres casas con los tres pozos sin que haya cruces?
+
+Cualquier disposición de las casas, los pozos y los caminos implica la presencia de al menos un cruce.
+
+Sea Kn el grafo completo con n vértices, Kn, p es el grafo bipartito de n y p vértices.
+
+El juego anterior equivale a descubrir si el grafo bipartito completo K3,3 es plano, es decir, si se puede dibujar en un plano sin que haya cruces, siendo la respuesta que no. En general, puede determinarse que un grafo no es plano, si en su diseño puede encontrase una estructura análoga (conocida como menor) a K5 o a K3,3.
+
+Establecer qué grafos son planos no es obvio, y es un problema que tiene que ver con topología.
+
+Coloración de grafos
+
+Si G=(V, E) es un grafo no dirigido, una coloración propia de G, ocurre cuando coloreamos los vértices de G de modo que si {a, b} es una arista en G entonces a y b tienen diferentes colores. (Por lo tanto, los vértices adyacentes tienen colores diferentes). El número mínimo de colores necesarios para una coloración propia de G es el número cromático de G y se escribe como C (G). Sea G un grafo no dirigido sea λ el número de colores disponibles para la coloración propia de los vértices de G. Nuestro objetivo es encontrar una función polinomial P (G,λ), en la variable λ, llamada polinomio cromático de G, que nos indique el número de coloraciones propias diferentes de los vértices de G, usando un máximo de λ colores.
+
+Descomposición de polinomios cromáticos. Si G=(V, E) es un grafo conexo y e pertenece a Ε, entonces: P (G,λ)=P (G+e,λ)+P (G/e,λ), donde G/e es el grafo se obtene por contracción de aristas.
+
+Para cualquier grafo G, el término constante en P (G,λ) es 0
+
+Sea G=(V, E) con |E|>0 entonces, la suma de los coeficientes de P (G,λ) es 0.
+
+Sea G=(V, E), con a, b pertenecientes al conjunto de vértices V pero {a, b}=e, no perteneciente a al conjunto de aristas E. Escribimos G+e para el grafo que se obtiene de G al añadir la arista e={a, b}. Al identificar los vértices a y b en G, obtenemos el subgrafo G++e de G.0000
+
+Teorema de los cuatro colores
+
+Otro problema famoso relativo a los grafos: ¿Cuántos colores son necesarios para dibujar un mapa político, con la condición obvia que dos países adyacentes no puedan tener el mismo color? Se supone que los países son de un solo pedazo, y que el mundo es esférico o plano. En un mundo en forma de toroide; el teorema siguiente no es válido:
+
+Cuatro colores son siempre suficientes para colorear un mapa.
+
+El mapa siguiente muestra que tres colores no bastan: Si se empieza por el país central a y se esfuerza uno en utilizar el menor número de colores, entonces en la corona alrededor de a alternan dos colores. Llegando al país h se tiene que introducir un cuarto color. Lo mismo sucede en i si se emplea el mismo método.
+
+La forma precisa de cada país no importa; lo único relevante es saber qué país toca a qué otro. Estos datos están incluidos en el grafo donde los vértices son los países y las aristas conectan los que justamente son adyacentes. Entonces la cuestión equivale a atribuir a cada vértice un color distinto del de sus vecinos.
+
+Hemos visto que tres colores no son suficientes, y demostrar que con cinco siempre se llega, es bastante fácil. Pero el teorema de los cuatro colores no es nada obvio. Prueba de ello es que se han tenido que emplear ordenadores para acabar la demostración (se ha hecho un programa que permitió verificar una multitud de casos, lo que ahorró muchísimo tiempo a los matemáticos). Fue la primera vez que la comunidad matemática aceptó una demostración asistida por ordenador, lo que creó en su día una cierta polémica dentro de la comunidad matemática.
+
+Caracterización de grafos
+
+Grafos simples
+
+Un grafo es simple si a lo más existe una arista uniendo dos vértices cualesquiera. Esto es equivalente a decir que una arista cualquiera es la única que une dos vértices específicos.
+
+Un grafo que no es simple se denomina multigrafo.
+
+Grafos conexos
+
+Un grafo es conexo si cada par de vértices está conectado por un camino; es decir, si para cualquier par de vértices (a, b), existe al menos un camino posible desde a hacia b.
+
+Un grafo es doblemente conexo si cada par de vértices está conectado por al menos dos caminos disjuntos; es decir, es conexo y no existe un vértice tal que al sacarlo el grafo resultante sea disconexo.
+
+Es posible determinar si un grafo es conexo usando un algoritmo Búsqueda en anchura (BFS) o Búsqueda en profundidad (DFS).
+
+En términos matemáticos la propiedad de un grafo de ser (fuertemente) conexo permite establecer con base en él una relación de equivalencia para sus vértices, la cual lleva a una partición de éstos en "componentes (fuertemente) conexas", es decir, porciones del grafo, que son (fuertemente) conexas cuando se consideran como grafos aislados. Esta propiedad es importante para muchas demostraciones en teoría de grafos. 
+
+Grafos completos
+
+Un grafo es completo si existen aristas uniendo todos los pares posibles de vértices. Es decir, todo par de vértices (a, b) debe tener una arista e que los une.
+
+El conjunto de los grafos completos es denominado usualmente \mathbb{K}, siendo \mathbb{K}_n el grafo completo de n vértices.
+
+Un \mathbb{K}_n, es decir, grafo completo de n vértices tiene exactamente \frac{n(n-1)}{2} aristas.
+
+La representación gráfica de los \mathbb{K}_n como los vértices de un polígono regular da cuenta de su peculiar estructura.
+
+Grafos bipartitos
+
+Un grafo G es bipartito si puede expresarse como G = \{V_1 \cup V_2, A\} (es decir, sus vértices son la unión de dos grupos de vértices), bajo las siguientes condiciones:
+- V_1 y V_2 son disjuntos y no vacíos.
+- Cada arista de A une un vértice de V1 con uno de V2.
+- No existen aristas uniendo dos elementos de V1; análogamente para V2.
+
+Bajo estas condiciones, el grafo se considera bipartito, y puede describirse informalmente como el grafo que une o relaciona dos conjuntos de elementos diferentes, como aquellos resultantes de los ejercicios y puzzles en los que debe unirse un elemento de la columna A con un elemento de la columna B.
+
+Homeomorfismo de grafos
+
+Dos grafos G_1 y G_2 son homeomorfos si ambos pueden obtenerse a partir del mismo grafo con una sucesión de subdivisiones elementales de aristas.
+
+Árboles
+
+Un grafo que no tiene ciclos y que conecta a todos los puntos, se llama un árbol. En un grafo con n vértices, los árboles tienen exactamente n - 1 aristas, y hay nn-2 árboles posibles. Su importancia radica en que los árboles son grafos que conectan todos los vértices utilizando el menor número posible de aristas. Un importante campo de aplicación de su estudio se encuentra en el análisis filogenético, el de la filiación de entidades que derivan unas de otras en un proceso evolutivo, que se aplica sobre todo a la averiguación del parentesco entre especies; aunque se ha usado también, por ejemplo, en el estudio del parentesco entre lenguas.
+
+Grafos ponderados o etiquetados
+
+En muchos casos, es preciso atribuir a cada arista un número específico, llamado valuación, ponderación o coste según el contexto, y se obtiene así un grafo valuado.
+Formalmente, es un grafo con una función v: A → R+.
+
+Por ejemplo, un representante comercial tiene que visitar n ciudades conectadas entre sí por carreteras; su interés previsible será minimizar la distancia recorrida (o el tiempo, si se pueden prever atascos). El grafo correspondiente tendrá como vértices las ciudades, como aristas las carreteras y la valuación será la distancia entre ellas.
+Y, de momento, no se conocen métodos generales para hallar un ciclo de valuación mínima, pero sí para los caminos desde a hasta b, sin más condición.
+
+Diámetro
+
+En un grafo, la distancia entre dos vértices es el menor número de aristas de un recorrido entre ellos. El diámetro, en una figura como en un grafo, es la mayor distancia de entre todos los pares de puntos de la misma.
+
+El diámetro de los Kn es 1, y el de los Kn,p es 2. Un diámetro infinito puede significar que el grafo tiene una infinidad de vértices o simplemente que no es conexo. También se puede considerar el diámetro promedio, como el promedio de las distancias entre dos vértices.
+
+El mundo de Internet ha puesto de moda esa idea del diámetro: Si descartamos los sitios que no tienen enlaces, y escogemos dos páginas web al azar: ¿En cuántos clics se puede pasar de la primera a la segunda? El resultado es el diámetro de la Red, vista como un grafo cuyos vértices son los sitios, y cuyas aristas son lógicamente los enlaces.
+
+En el mundo real hay una analogía: tomando al azar dos seres humanos del mundo, ¿En cuántos saltos se puede pasar de uno a otro, con la condición de sólo saltar de una persona a otra cuando ellas se conocen personalmente? Con esta definición, se estima que el diámetro de la humanidad es de... ¡ocho solamente!
+
+Este concepto refleja mejor la complejidad de una red que el número de sus elementos.
+
+Algoritmos importantes
+- Algoritmo de búsqueda en anchura (BFS)
+- Algoritmo de búsqueda en profundidad (DFS)
+- Algoritmo de búsqueda A*
+- Algoritmo del vecino más cercano
+- Ordenación topológica de un grafo
+- Algoritmo de cálculo de los componentes fuertemente conexos de un grafo
+- Algoritmo de Dijkstra
+- Algoritmo de Bellman-Ford
+- Algoritmo de Prim
+- Algoritmo de Ford-Fulkerson
+- Algoritmo de Kruskal
+- Algoritmo de Floyd-Warshall
+
+Investigadores relevantes en Teoría de grafos
+- Alon, Noga
+- Berge, Claude
+- Bollobás, Béla
+- Brightwell, Graham
+- Chung, Fan
+- Dirac, Gabriel Andrew
+- Dijkstra, Edsger
+- Edmonds, Jack
+- Erdős, Paul
+- Euler, Leonhard
+- Faudree, Ralph
+- Golumbic, Martin
+- Graham, Ronald
+- Harary, Frank
+- Heawood, Percy John
+- Kaufmann, Walter Arnold
+- Kőnig, Dénes
+- Kuratowski, Kazimierz
+- Lovász, László
+- Nešetřil, Jaroslav
+- Rényi, Alfréd
+- Ringel, Gerhard
+- Robertson, Neil
+- Seymour, Paul
+- Szemerédi, Endre
+- Thomas, Robin
+- Thomassen, Carsten
+- Turán, Pál
+- Tutte, W. T.
+- Whitney, Hassler
+
+Referencias
+1. Euler, L. (1736). «Solutio problematis ad geometriam situs pertinentis». Commentarii Academiae Scientiarum Imperialis Petropolitanae 8. 128-140.
+2. http://booklens.com/l-r-foulds/graph-theory-applications pag 7
+3. Tutte, W.T. (2001), Graph Theory, Cambridge University Press, p. 30, ISBN 978-0-521-79489-3.
+4. Gorbátov:«Fundamentos de la matemática discreta»
+5. Ejemplo de una lista de incidencia

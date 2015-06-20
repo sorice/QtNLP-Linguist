@@ -1,0 +1,21 @@
+Caja negra (sistemas)
+
+En teoría de sistemas y física, se denomina caja negra a aquel elemento que es estudiado desde el punto de vista de las entradas que recibe y las salidas o respuestas que produce, sin tener en cuenta su funcionamiento interno. En otras palabras, de una caja negra nos interesará su forma de interactuar con el medio que le rodea (en ocasiones, otros elementos que también podrían ser cajas negras) entendiendo qué es lo que hace, pero sin dar importancia a cómo lo hace. Por tanto, de una caja negra deben estar muy bien definidas sus entradas y salidas, es decir, su interfaz; en cambio, no se precisa definir ni conocer los detalles internos de su funcionamiento.
+
+Justificación
+
+Un sistema formado por módulos que cumplan las características de caja negra será más fácil de entender ya que permitirá dar una visión más clara del conjunto. El sistema también será más robusto y fácil de mantener, en caso de ocurrir un fallo, éste podrá ser aislado y abordado más ágilmente.
+
+Caja negra y programación modular
+
+En programación modular, donde un programa (o un algoritmo) es dividido en módulos, en la fase de diseño se buscará que cada módulo sea una caja negra dentro del sistema global que es el programa que se pretende desarrollar, de esta manera se consigue una independencia entre los módulos que facilita su implementación separada por un equipo de trabajo donde cada miembro va a encargarse de implementar una parte (un módulo) del programa global; el implementador de un módulo concreto deberá conocer como es la comunicación con los otros módulos (la interfaz), pero no necesitará conocer como trabajan esos otros módulos internamente; en otras palabras, para el desarrollador de un módulo, idealmente, el resto de módulos serán cajas negras.
+
+Pruebas de software
+
+En pruebas de software, conociendo una función específica para la que fue diseñado el producto, se pueden diseñar pruebas que demuestren que dicha función está bien realizada. Dichas pruebas son llevadas a cabo sobre la interfaz del software, es decir, de la función, actuando sobre ella como una caja negra, proporcionando unas entradas y estudiando las salidas para ver si concuerdan con las esperadas.
+
+Caja negra vs 'Cajanegrizar'
+
+Este concepto de caja negra utilizado en física, informática y disciplinas técnicas o tecnológicas en general, aunque está relacionado, no debe confundirse con el 'Cajanegrismo'; éste es un concepto más vinculado a la sociología que hace referencia al hecho de que las personas solemos olvidarnos del funcionamiento interno de las cosas (generalmente nuevos dispositivos tecnológicos) a medida que nos familiarizamos con ellos y terminamos por asimilarlos como de uso cotidiano. A este proceso de olvidar el funcionamiento interno de las cosas se le conoce con el nombre de 'cajanegrizar'.
+
+Se podría decir que la principal diferencia entre ambos conceptos es que mientras el primero, el estudio de un sistema como una caja negra, es un proceso de abstracción, el segundo, el 'cajanegrismo', es más bien un proceso de olvido.

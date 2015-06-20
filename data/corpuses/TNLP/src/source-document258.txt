@@ -1,0 +1,25 @@
+Componente fuertemente conexo
+
+En la Teoría de grafos, un grafo dirigido es llamado fuertemente conexo si para cada par de vértices u y v existe un camino de u hacia v y un camino de v hacia u. Los componentes fuertemente conexos (CFC) de un grafo dirigido son sus subgrafos máximos fuertemente conexos. Estos subgrafos forman una partición del grafo.
+
+Un subgrafo fuertemente conexo es máximo si contiene todos los vértices del grafo o si al agregarle un vértice cualquiera deja de ser fuertemente conexo.
+
+El cálculo de los componentes fuertemente conexos de un grafo es uno de los problemas fundamentales de la Teoría de los grafos. El primer algoritmo que trabaja en tiempo lineal para resolver este problema fue propuesto por Robert Tarjan1 en 1970 a base de una búsqueda en profundidad (depth-first search). Otros algoritmos aparecen en los principales textos sobre algorítmica.2 3
+
+La complejidad de este algoritmo es O(V+E).
+
+Algoritmo
+
+Sea G=(V,E)\, un grafo dirigido:
+1. Aplicar búsqueda en profundidad sobre G
+2. Calcular el grafo traspuesto.
+3. Aplicar búsqueda en profundidad sobre G^ t (el grafo traspuesto) iniciando la búsqueda en los nodos de mayor a menor tiempo de finalización obtenidos en la primera ejecución de búsqueda en profundidad (paso 1)
+4. El resultado será un bosque de árboles. Cada árbol es un componente fuertemente conexo.
+
+Las dos búsquedas en profundidad y la construcción del grafo reverso consumen tiempo lineal, de manera que el tiempo total es también lineal. En 2002, se publicó4 una prueba de corrección de este algorítmo.
+
+Referencias
+1. R.E. Tarjan, Depth-First search and linear graph algorithms, SIAM J. Comp. 1 (1972) 146-60.
+2. A.V. Aho, J.E. Hopcroft, J.D. Ullman, Data Structures ans Algorithms, Addison-Wesley, MA, 1983.
+3. T.H. Cormen, C.E. Leiserson, R.L. Rivest, Introduction to Algorithms, MIT Press, Cambridge, MA, 1990.
+4. I. Wegener, A simplified correctness proof for a well-known algorithm computing strongly connected components, Information Processing Letters, 83 (2002) 17-19.

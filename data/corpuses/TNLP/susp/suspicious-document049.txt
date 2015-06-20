@@ -1,0 +1,133 @@
+Plataforma G
+
+G es una tecnología Cloud Computing desarrollada por la compañía gnúbila, que gracias a su entorno de desarrollo basado en XML, garantiza su interoperabilidad con otros sistemas de Información preexistentes y su orientación nativa hacia aplicativos WEB promueven la construcción de repositorios de información distribuidos, y entornos de gestión cada vez más descentralizados. La principal novedad de la tecnología G reside en la aplicación combinada de técnicas de extracción de la información y el estándar XML (eXtended Markup Language) para acometer las tareas de estructuración e integración de fuentes de información heterogéneas. Estas tareas están guiadas por un conjunto predefinido de metadatos y esquemas lógicos de las fuentes de información.
+
+Arquitectura
+
+G propone una arquitectura multicapa, donde cada una de las fuentes de información (capa de datos) es recubierta por una interfaz (wrapper), el cual permitirá la extracción, acceso y consulta de la información contenida en la fuente. Para interactuar con estas interfaces se utilizará el lenguaje XML. La segunda capa (capa de integración) tendrá como primer objetivo representar el esquema global de todas las fuentes de información, así como los metadatos que han sido extraídos de ellas. También se encargará de procesar las consultas de los clientes y distribuirlas a las interfaces correspondientes. Por último, deberá recoger la información recuperada (que estará en formato XML) e integrarla bajo el esquema global. Todo ello se realiza utilizando un sistema de almacenamiento y búsqueda de documentos XML. Finalmente, la tercera capa contendrá todas las aplicaciones cliente que procesarán las peticiones de los usuarios finales delegando consultas en formato XML a la capa intermedia, y recogiendo y personalizando los resultados.
+
+multitenant
+    G provee soporte shared-everything multitenancy para la base de datos y el servidor de aplicaciones. Este soporte se logra a nivel de GPaaS y no virtualizando máquinas. El soporte multitenant en GPaaS es orientado a metadatos, por lo que es posible identificar e implementar políticas de cada tenant de acuerdo a dichos metadatos.
+
+Nativa cloud'
+    Gracias a su arquitectura G provee escalabilidad elástica, autoaprovisionamiento y soporta un gran número de tenants y usuarios a partir de una instalación lógica única.
+
+G como base de datos
+
+En G como un sistema de gestión de base de datos (SGBD) donde cada nodo es un descriptor. Las relaciones se representan por flechas que conectan los nodos y los datos se organizan en registros de longitud variable, donde cada registro es un conjunto de pares clave / valor, de modo que cada uno contiene toda la información que le concierne: relaciones descripción y valores de los campos. Esto permite omitir el uso de tablas o caracterizaciones globales de un determinado grupo de registros. Así mismo, los registros de un mismo tipo no tienen porqué tener las mismas relaciones o campos.
+
+Además, G también puede ser utilizada como una herramienta de integración de bases de datos tradicionales debido a que cuenta con conectores entre bases de datos JDBC/ODBC (Java DataBase Connectivity, Open DataBase Connectivity).
+
+Base de datos no relacional y no estructurada
+    G provee una base de datos no estructurada orientada a grafos. Los datos en G son almacenados en objetos que a su vez son agrupados por tipos. A pesar que los objetos de cierto tipo sean semánticamente homogéneos, la estructura de cada objeto puede ser diferentes. Esta flexibilidad permite a G que gestione los datos utilizando diferentes modelos como relacional, jerárquico, analítico y de red.
+
+Gestión de datos a partir de múltiples bases de datos
+    G permite cargar información de bases de datos externas ubicando los datos en una capa de caché que se encarga de mantener la integridad y disponibilidad de la información en relación a sus fuentes de datos originales.
+
+Soporte para el almacenamiento masivo de datos
+    G permite particionar los datos de entrada y programar la ejecución de inserciones a través de un conjunto de máquinas, proporcionando soporte para el almacenamiento masivo de datos y procesamiento de alto rendimiento.
+
+Base de datos multitenant
+    En una única instalación de G es posible manejar hasta 1000 bases de datos en un servidor de arquitectura PC como Intel, sin degradar el rendimiento de la máquina a medida que van creciendo los datos.
+
+Modelo de datos
+
+Los datos se agrupan por tipos y todos los tipos tienen un valor común en determinado campo. Los tipos de datos se clasifican por medio de una metamarca (Y). Estos campos del sistema están precedidos del prefijo D (System Data ó Dato del Sistema) para poder diferenciarlos de los campos definidos por el usuario, de tal modo que se representan como D.y. Los campos definidos por el usuario son polimórficos, es decir, no tienen restricciones de dato ni estructura. Este “polimorfismo” es una gran ventaja única de la plataforma G ya que su formato es variable de acuerdo a las necesidades del usuario y no necesita ser designado previamente, por ejemplo: no hay necesidad de establecer el tamaño del tipo entero o la longitud del string para las cadenas de caracteres. Los datos se agrupan en dos campos: los definidos por el usuario y los de metainformación, estos últimos son internos del sistema.
+
+Los campos de metainformación o campos de código utilizados son:
+- D.y = Identificador de clase [Tabla en modelo Entidad/Relación]
+- D.k = Identificador único del registro en la BDs.
+- D.i = Identificador único del registro para cada D.y
+- D.x = Identificador de texto
+- D.u = Identificador del registro
+- D.gu = Grupo propietario del registro
+- time = Fecha de creación del registro
+- time1 = Última fecha de modificación del registro
+- -OID = Campo de relación con otra clase
+
+Seguridad e integridad de los Datos
+
+G tiene políticas de seguridad y tratamiento de datos que garantizan la persistencia de los mismos. La plataforma guarda cifrados todos los datos codificados, contraseñas, identificadores de usuario y demás datos claves; y el resultado del cifrado, lo codifica para mayor seguridad. Además, G también permite generar firmas digitales y cifrar zonas de datos.
+
+Modelo de Consultas
+
+Mediante la plataforma G se pueden realizar consultas de modo sencillo, debido a que soporta el modelo más conocido del mercado, SQL:
+
+<g:query select all from D where D.y=cliente></:g>
+
+Pero como en G no existen tablas, este también soporta otros modelos más adecuados para grafos:
+
+<query D.y =cliente>
+
+El modelo de consultas se orienta de manera “transtipo”, por ejemplo: <query familia=stuff> devuelve todos los tipos cuya familia es stuff (productos, pedidos, facturas, etc). Para restringir la búsqueda al tipo pedido se escribe <query familia=staff D.y=pedido>. Y al igual que otros modelos, G soporta la funcionalidad de GROUPBY y HAVING, así como los comandos AVG y SUM.
+
+G como middleware SOA
+
+Como servidor de aplicaciones, G implementa bibliotecas que permiten interactuar con el SGBD añadiendo funciones que simplifican la selección de parámetros y gestión de diferentes aplicaciones web.
+
+Además, con la reciente convergencia de la web y los servicios Grid, así como el amplio reconocimiento del paradigma SOA; Grid se ha empezado a materializar en tecnologías concretas y es el caso del middleware de G en donde los servicios web y los servicios Grid están enmarcados dentro de una arquitectura orientada a servicios.
+
+G como entorno de desarrollo
+
+G facilita herramientas flexibles de modelado de datos para una generación medio-automática de aplicaciones. La plataforma también provee infraestructura para el rápido desarrollo de aplicaciones basadas en entorno web, u orientadas a WAP (Wireless Application Protocol).
+
+El ciclo de desarrollo de G comienza con documentos XML los cuales son usados como ejemplos de la información que será procesada. Hay dos pasos generales a seguir: primero, G genera y llena automáticamente una nueva base de datos y el prototipo de una aplicación completa, incluyendo la capacidad de búsquedas dinámicas y la actualización de la base de datos por medio de una interfaz de red. En el siguiente paso los desarrolladores completan la aplicación final modificando el prototipo usando un sistema de escritura basado en plantillas, similar al de los entornos ASP de Microsoft o PHP.
+
+El uso de plantillas permite la programación mediante marcas que luego se sustituyen automáticamente por código estándar HTML, ejecutando y procesando datos para que los interprete el navegador.
+
+G como generador de aplicaciones web
+
+G provee una suite de herramientas de negocio que permite generar portales y aplicaciones web que incluyen una variedad de servicios con orientación Web 2.0 en pro de incrementar la productividad y fortalecer los procesos de gestión, interacción y colaboración propios de una compañía. Las soluciones generadas con esta suite ofrecen en un solo escritorio toda la información, las aplicaciones y funcionalidades de uso diario requeridas por los roles comprometidos, permitiendo crear, compartir, administrar y presentar información de manera descentralizada utilizando flujos de trabajo para mantener el control de los procesos e incrementando así la productividad y creando al mismo tiempo un esquema organizado y rápido para mantener a los stakeholders, informados y concentrados en los objetivos del negocio.
+
+Entre los servicios que podrá incluir están los Media Blogs, Video On Demand, gestión de Contenidos RSS, Clasificados, CRM, ERP, Tienda Virtual, Gestión de usuarios entre otros.
+
+Cloud Computing
+
+GPaaS es una plataforma desarrollada con la tecnología G para el desarrollo, despliegue y ejecución de aplicaciones empresariales cuyo core es un servidor multitenant de aplicaciones y base de datos extendido para soporte cloud que provee funcionalidades de gestión y federación de datos, gestión de contenido multimedia, integración de aplicaciones, adaptadores, soporte de lenguaje natural, gestión de metadatos, gestión de reglas y orquestación de servicios, entre otros.
+
+Desde el punto de vista de desarrollo y despliegue, GPaaS provee un framework de desarrollo, un contenedor de aplicaciones que soporta interfaces de usuario, lógica de negocio, integración de servicios, acceso a datos y funcionalidades para el soporte de infraestructura como autenticación, autorización, gestión de sesiones, integridad de transacciones, confiabilidad, disponibilidad y escalabilidad.
+
+Portabilidad
+    GPaaS corre sobre cualquier sistema operativo estándar disponible en el mercado (Windows, Windows Server, Unix, AIX, Z/OS, Solaris, Linux) y sobre cualquier plataforma de hardware (Intel, PPC, Mainframes). Esto permite el despliegue de la plataforma on-premise y para integración con otras soluciones provee conectores JDBC, ODBC, APIs para C y Cobol y wrappers para Oracle, DB2, SQL Server, MySQL facilitando la integración con sistemas legacy y bases de datos externas.
+
+Autoaprovisionamiento automático y monitoreo
+    GPaaS provee un servicio responsable por almacenar la información de los contenedores de aplicaciones y conoce cómo son usados. De la misma manera existe un servicio para el control y monitoreo encargado de verificar periódicamente la disponibilidad de contenedores. Las capacidades de monitoreo son responsables por el ajuste del rendimiento y alta disponibilidad de las aplicaciones distribuidas.
+
+Migración de aplicaciones
+    Para las empresas que cuentan con infraestructura tecnológica instalada y que están buscando renovar su tecnología, GPaaS permite migrar evolutivamente las aplicaciones on-premise al cloud, ya que cuenta con conectores JDBC y ODBC, APIs para C y Cobol y wrappers para Oracle, DB2, SQL Server y MySQL.
+
+Soporte multilenguaje
+    GPaaS provee herramientas para ejecutar código .NET y Java. También soporta PHP, Ruby, Perl y Python. Los contenedores de aplicaciones son comunes para los lenguajes soportados, por lo tanto, es posible compartir variables entre aplicaciones que corren en el mismo contenedor. Por lo tanto, si las empresas ya cuentan con aplicaciones construidas con PHP, Java, .NET, Ruby, Perl, Python, C y Cobol, GPaaS ofrece una única plataforma para la ejecución de todas las aplicaciones, compartiendo datos entre ellas y soportando naturalmente el crecimiento de datos y usuarios.
+
+Abstracción en el desarrollo
+    GPaaS provee un framework de desarrollo más productivo que el tradicional gracias a su enfoque por metadatos. GPaaS utiliza metadatos para los datos, vistas, privilegios, describir aplicaciones, distribución en clúster, políticas de sesión, triggers, workflows, esquemas y conceptos.
+
+Escalabilidad transparente
+    GPaaS gestiona la transparencia en la escalabilidad a través de los metadatos, sin necesidad de escribir código, replicar datos o ajustar el diseño de la aplicación. GPaaS provee además herramientas para la monitorización y triggers para el autoescalamiento.
+
+Desarrollo de aplicaciones en cualquier dominio
+    GPaaS puede ser utilizado para construir aplicaciones en cualquier dominio. De hecho ha sido usado para desarrollar aplicaciones en sectores como banca, administración pública, sanidad y la industria ferroviaria entre otros. GPaaS provee una serie de plantillas genéricas que pueden ser utilizadas y personalizadas por los desarrolladores tales como, gestión de usuarios, gestión de repositorios y documentos, librerías estándares para validaciones y uso general.
+
+Compatibilidad con entornos de desarrollo comunes
+    GPaaS provee plug-ins para Eclipse orientado a los desarrolladores de Java y para VisualDev orientado a los desarrolladores de .NET . Además provee APIs que se integran con Symfony para los desarrolladores de PHP.
+
+Entorno de desarrollo online
+    Usando GDeveloper, los desarrolladores pueden diseñar el modelo de datos, crear objetos, manipular campos y formularios. Estas funcionalidades las pueden utilizan en línea ya que el entorno de desarrollo es web y permite crear y configurar un ambiente colaborativo para el desarrollo y gestión de la aplicación.
+
+Ciclo de vida de las aplicaciones
+    GDeveloper gestionar el ciclo de vida del desarrollo de aplicaciones, desde los prototipos hasta la distribución a los usuarios finales. Para ello, provee entorno de desarrollo colaborativo en donde es posible crear equipos de desarrollo, gestionar versiones, desplegar en producción, entre otras funcionalidades.
+
+G como generador de redes sociales
+
+G ofrece una plataforma para el desarrollo de mediablogs que faciliten y propicien la creación de una red social cohesionada a la cual se le incorporen servicios transaccionales. Se trata de una potente herramienta de networking facilitadora y dinamizadora de comunidades virtuales.
+
+La plataforma de redes sociales permite la creación de entornos temáticos, con Blogs y vistas multimedia que permiten transmitir videos, comentar, compartir experiencias, e interactuar socialmente a los usuarios en un entorno colaborativo que se integre con servicios empresariales. Esta plataforma está dirigida hacia un modelo de Redes Sociales orientadas al Conocimiento, Gestión del Cambio y Desarrollo Económico y Regional, para propósitos fundamentalmente profesionales -incluyendo el turismo, el crecimiento e intercambio económico, la distribución de conocimiento, el ocio y la cultura, los deportes- además de propiciar networking, y –en definitiva- la "transformación de la Sociedad". Todo ello, lógicamente, con una perspectiva global e internacional, favoreciendo las "comunidades virtuales locales", e impulsando y fomentando la implantación de la Sociedad de la Información en todos los ámbitos de la actividad económica y social de cada ciudad, estado, país y región.
+
+G como plataforma de inteligencia de negocios
+
+G ofrece a las empresas una plataforma de inteligencia de negocios que apoya la toma de decisiones, mide y optimiza las áreas de marketing, ventas y servicios. También permite medir el rendimiento de las iniciativas de e-business, comparar tendencias de los canales de venta, investigar patrones de compra de clientes clave, e identificar oportunidades para definir estrategias de negocios. La plataforma de inteligencia de negocio de G ofrece las siguientes capacidades:
+- Informes de rendimiento operativo, financiero, comportamiento del cliente, eficacia de sitios web, efectividad de marketing, y actividades de integración de negocios.
+- Apoyo a la gestión de la empresa, marketing y ventas y servicio al cliente con ayuda de informes pre construidos.
+- Extracción, transformación y carga de datos en las bases de datos de apoyo a la toma de decisiones para crear informes personalizados o modificar los informes pre construidos a través de un potente entorno gráfico
+- Análisis de páginas web, informes, análisis de cubos, o hojas de cálculo de Microsoft Excel
+- Importación de información de más de 40 diferentes fuentes de datos incluyendo las principales bases de datos

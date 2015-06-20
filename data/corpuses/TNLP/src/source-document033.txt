@@ -1,0 +1,31 @@
+Lenguaje de definición de datos
+
+Un lenguaje de definición de datos (Data Definition Language, DDL por sus siglas en inglés) es un lenguaje proporcionado por el sistema de gestión de base de datos que permite a los usuarios de la misma llevar a cabo las tareas de definición de las estructuras que almacenarán los datos así como de los procedimientos o funciones que permitan consultarlos.
+
+Un Data Definition Language o Lenguaje de descripción de datos ( DDL ) es un lenguaje de programación para definir estructuras de datos . El término DDL fue introducido por primera vez en relación con el modelo de base de datos CODASYL, donde el esquema de la base de datos ha sido escrito en un lenguaje de descripción de datos que describe los registros, los campos, y "conjuntos" que conforman el usuario modelo de datos. Más tarde fue usado para referirse a un subconjunto de SQL, pero ahora se utiliza en un sentido genérico para referirse a cualquier lenguaje formal para describir datos o estructuras de información, como los esquemas XML .
+
+SQL
+
+A diferencia de muchos lenguajes de descripción de datos, SQL utiliza una colección de verbos imperativo cuyo efecto es modificar el esquema de la base de datos, añadiendo, cambiando o eliminando las definiciones de tablas y otros objetos. Estas declaraciones se pueden mezclar libremente con otras sentencias SQL, por lo que el DDL no es realmente una lengua independiente. La declaración más común es CREATE TABLE. El lenguaje de programación SQL, el más difundido entre los gestores de bases de datos, admite las siguientes sentencias de definición: CREATE, DROP y ALTER, cada una de las cuales se puede aplicar a las tablas, vistas, procedimientos almacenados y triggers de la base de datos.
+
+Sentencia CREATE
+
+Create - Para crear una nueva base de datos, tabla, índice, o consulta almacenada. Una sentencia CREATE en SQL crea un objeto dentro de un sistema de gestión de bases de datos relacionales (RDBMS). Los tipos de objetos que se pueden crear depende del RDBMS que esté siendo utilizado, pero la mayoría soportan la creación de tablas, índices, usuarios, sinónimos y bases de datos. Algunos sistemas (como PostgreSQL ) permiten CREATE, y otros comandos DDL, en el interior de una transacción y por lo tanto puede ser revertido. Otras que se incluyen dentro del DDL, pero que su existencia depende de la implementación del estándar SQL que lleve a cabo el gestor de base de datos son GRANT y REVOKE, los cuales sirven para otorgar permisos o quitarlos, ya sea a usuarios específicos o a un rol creado dentro de la base de datos.
+
+Sentencia CREATE TABLE
+
+Un comando CREATE muy común es el CREATE TABLE. El uso típico es:
+
+CREATE [TEMPORARY] TABLE [nombre de la tabla] ( [definiciones de columna] ) [parámetros de la tabla].
+
+Sentencia DROP
+
+SIRVE PARA BORRAR LA TABLA EN ESPECIFICO.
+
+DROP TABLE NOMBRE_DE_TABLA;
+
+Sentencia ALTER
+
+Se utiliza para hacer modificaciones en sentencias SQL Para eliminar una tabla de una base de datos tenemos la sentencia DROP TABLE. Con ella quitamos una o varias definiciones de tabla y todos los datos, índices, desencadenadores, restricciones y especificaciones de permisos que tengan esas tablas. Las vistas o procedimientos almacenados que hagan referencia a la tabla quitada se deben quitar explícitamente con DROP VIEW o DROP PROCEDURE. Su sintaxis es:
+
+   DROP TABLE [nbBaseDatos.[nbEsquema].|nbEsquema.]nbTabla[ ,...n ] [ ; ]

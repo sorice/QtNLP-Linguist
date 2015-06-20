@@ -1,0 +1,124 @@
+Realidad simulada
+
+La realidad simulada es la proposición que sugiere que la realidad podría ser una simulación, quizás por ordenador, a un grado indistinguible de la "verdadera" realidad. Contendría mentes conscientes que podrían saber o no que están viviendo dentro de una simulación. En su versión más fuerte, la "hipótesis de simulación" afirma que es posible, e incluso probable, que estemos viviendo en la realidad en tal simulación.
+
+Este concepto es diferente del concepto actual de realidad virtual, tecnológicamente alcanzable. La realidad virtual es fácilmente distinguible de la experiencia de "verdadera" realidad; los participantes nunca dudan acerca de la naturaleza de lo que experimentan. La Realidad simulada, en cambio, sería difícil o imposible de distinguir de la "verdadera" realidad.
+
+La idea de una realidad simulada abarca varias cuestiones:
+- ¿Es posible, incluso por principio, decir si estamos en una realidad simulada?
+- ¿Hay alguna diferencia entre una realidad simulada y una realidad "real"?
+- ¿Cómo deberíamos comportarnos si supiéramos que vivimos en una realidad simulada?
+
+Tipos de simulación
+
+Interfaz ordenador-cerebro
+
+Podría considerarse que cada visión de la realidad simulada podría ser a la vez un esquema dentro de cada simulación, o sea todas podrían ser posibles, o la descripción de una misma que podría sustentar la existencia de todas. En una simulación de interfaz cerebro-ordenador, cada participante entra desde fuera y conecta directamente su cerebro al ordenador de la simulación. El ordenador le transfiere datos sensoriales e interpreta sus deseos y acciones como respuesta. En esta forma de simulación los participantes interactúan con el mundo simulado y reciben una retroalimentación de él. El participante puede incluso recibir un reajuste para olvidar temporalmente que está dentro de un mundo virtual (es decir, "traspasa el velo"). Mientras tanto, dentro de la simulación, la conciencia de los participantes se representa por un avatar, que podría tener diferente aspecto que la verdadera apariencia del participante (véase Matrix).
+
+Comunicaciones de simulación de cerebro
+
+Si uno fuera efectivamente a comunicarse con el cerebro, debería crearse o descubrirse un código o secuencia para enviar información entre la parte de nuestro cerebro que habla y la que escucha.
+
+Gente virtual
+
+En una simulación de gente virtual, cada habitante es un nativo del mundo simulado. Ellos no tienen un cuerpo "real" en la realidad externa. Mejor dicho, cada uno es una entidad completamente simulada, poseyendo un apropiado nivel de conciencia que se implementa usando la lógica de la propia simulación, es decir, su propia física. De ese modo, podrían ser descargados de una simulación a otra o incluso archivados y resucitados en una fecha posterior. Es también posible que una entidad simulada pudiera moverse por completo fuera de la simulación por medios de transferencia mental a un cuerpo sintético. Otra forma de obtener un habitante de la realidad virtual fuera de su mundo simulado sería "clonar" la entidad tomando un ejemplo de su ADN virtual y creando un ser en el mundo real con ese modelo. El resultado no traería la "mente" de la entidad fuera de su simulación, pero su cuerpo podría haber nacido en el mundo real.
+
+Esta categoría se subdivide en dos tipos más:
+- Gente virtual-mundo virtual, en el cual una realidad externa se simularía separadamente de las consciencias artificiales;
+- Simulación solipsista en la cual la consciencia se simula y el "mundo" participante percibe que existe sólo en el interior de sus mentes.
+
+Emigración
+
+En una simulación de emigración, el participante ingresa desde la realidad exterior, como en la interfaz ordenador-cerebro, pero en un grado más alto. Al entrar, el participante puede utilizar una variedad de métodos hipotéticos para participar en la realidad simulada por medio de transferencia mental para transferir temporalmente su procesamiento mental a una persona virtual.
+
+Cuando termina la simulación, la mente del participante es restaurada junto con las nuevas memorias y experiencia obtenidas (como en la película El piso 13, o en Neuromante).
+
+Además, existe la opción (también en Piso 13) de que una persona completamente virtual, nacida en la simulación, desee escapar (después de "despertar") y consecuentemente tenga éxito al ser transferida a una persona de la realidad externa. Esto significaría salir (emigrar) y transformarse mientras tanto en una persona "real". En este caso particular, dado que el que emigra de la simulación no tenía una persona de la realidad externa asociado (usuario con un "cuerpo real"), esta persona virtual sería transferida en un "neonato" de la realidad exterior (asumiendo que sea posible), o en uno ya existente, aún si es un usuario de la simulación o no. Si es un usuario, estaría previamente asociado con otro habitante del mundo simulado y así al "tomarse" (o fundirse) con este habitante "especial" que emigra, podría escoger destruir al antiguo habitante o abandonarlo (dejarlo en el mundo simulado sin un usuario/actor temporalmente o permanentemente). O si ni lo destruye ni lo abandona, sino que desea seguir "actuando" en la simulación y escoger el mismo habitante anterior (el que no emigró), lo haría ahora como un usuario transformado ("mejorado" con una persona virtual emigrada o completamente siendo esa persona virtual previa, si lo escogió y si es posible, y así seguir actuando en la simulación utilizando otra persona virtual.
+
+Finalmente, existe la opción de una realidad simulada que sea construida dramáticamente y modificada utilizando materia del mundo real y energía en un contenedor o cuarto, como en "Holodeck" en Star Trek. Al entrar en ese espacio, la persona del mundo real se sentirá efectivamente inmersa en el ambiente simulado, con una variedad de métodos potenciales para convencer al usuario de la presencia de movimiento, gravedad, ambientes y así en adelante, y el usuario presumiblemente capaz de interactuar (o no) con la realidad simulada.
+
+Mezcla
+
+Una simulación entrelazada tiene ambos tipos de conciencia: "actores" de la realidad externa que visitan (con una interfaz ordenador-cerebro) o emigran, y la gente virtual que son nativos de la simulación y por lo tanto carecen de cuerpo físico en la realidad exterior.
+
+Las películas de la Matrix muestran ese tipo entrelazado de simulación: contienen sólo mentes humanas (sus cuerpos físicos permanecen afuera), pero también programas de software conscientes que controlan varios aspectos del reino virtual.
+
+Argumentos
+
+Vivimos en una simulación
+
+La idea de que los seres humanos viven en una realidad simulada apareció por primera vez en la historia "El túnel bajo el mundo" de Frederick Pohl (publicada en 1955) y fue expandida por el roboticista Hans Moravec. Más tarde, el filósofo Nick Bostrom desarrolló un argumento ampliado examinando la probabilidad de que nuestra realidad sea un simulacro.1 En la historia de Pohl, el protagonista se entera que ha muerto en la realidad pero su conciencia vive en una realidad simulada diseñada para probar estrategias de mercado para los simuladores. Moravec fue el primero en decir que los humanos podían "recrear el pasado" a través de una simulación muy avanzada en su libro de divulgación científica, Mind Children: The Future of Robot and Human Intelligence (1988). Subsecuentemente, arguyó que nosotros mismos podemos estar viviendo en una simulación en su contribución a Thinking Robots, an Aware Internet, and Cyberpunk Librarians (1992), que fue preparada para la LITA (Library and Information Technology Association). En su segundo libro, Robot: Mere Machine to Transcendent Mind (1999), Moravec reitera su creencia de que probablemente vivimos en una simulación.
+
+Argumento de Nick Bostrom
+
+Diez años después de que Moravec publicara el argumento de la simulación (y 3 años después de su actualización en el segundo libro de divulgación científica) el filósofo Nick Bostrom investigó la posibilidad de que estemos viviendo en una simulación.1 Una versión simplificada de su argumento procede como sigue:
+
+    i. Es posible que una civilización pueda crear una simulación computarizada que contenga individuos con inteligencia artificial.
+    ii. Dicha civilización probablemente ejecutaría muchas -algunos dicen que miles de millones- de esas simulaciones (sólo por diversión; para investigación; etc.)
+    iii. Un individuo simulado dentro de la simulación no sabría necesariamente que está dentro de una simulación -vive su vida diaria en lo que considera que es el "mundo real".
+
+Entonces la pregunta crucial es -si uno acepta que las tesis 1, 2 y 3 son al menos posibles- ¿cuál de las siguientes es más probable?
+
+    a. ¿Somos esa civilización que desarrolla simulaciones de IA y que no está dentro de una a su vez? O,
+    b. ¿Somos una de las muchas (miles de millones) de las simulaciones que ha ejecutado? (Recordar el punto iii.)
+
+Para mayores detalles, su argumento intenta probar la tricotomía, de que:
+
+    alguna
+
+	- raza inteligente nunca llegará al nivel tecnológico donde puedan ejecutar simulaciones de la realidad (o esto es imposible en principio); o
+    - razas que lleguen a ese nivel no tienden a ejecutar dichas simulaciones; o
+    - estamos casi seguramente viviendo en una simulación como esa.
+
+El argumento de Bostrom utiliza la premisa de que dada tecnología lo suficientemente avanzada, es posible simular en su totalidad planetas habitados o aún hábitats mayores o aún universos enteros como simulaciones cuánticas en bolsillos de tiempo/espacio, incluyendo a toda la gente en ellos, en un computador, y la gente simulada puede ser totalmente consciente, y hay tantas personas como gente no simulada.
+
+Un caso particular que se ilustra en el ensayo original propone el escenario donde asumimos que la raza humana podría llegar a ese nivel tecnológico sin destruirse ellos mismos en el proceso (i.e. negamos la primera hipótesis); y una vez que hemos alcanzado dicho nivel todavía estaríamos interesados en la historia, el pasado y nuestros ancestros, y que no habría restricciones legales o morales para ejecutar dichas simulaciones (negamos la segunda hipótesis)-entonces
+- es probable que ejecutemos un número muy grande de las llamadas simulaciones de ancestros para estudiar nuestro pasado;
+- y que, en el mismo razonamiento, muchas de esas simulaciones también ejecuten subsimulaciones, y de ahí en adelante;
+- y dado el hecho de que ahora es imposible decir si vivimos en una del vasto número de simulaciones del universo ancestro original, la probabilidad es que lo anterior es cierto.
+
+Suposiciones como la de que la raza humana (u otra especie inteligente) podría llegar a ese nivel tecnológico sin destruirse a ellos mismos depende del valor de la ecuación de Drake, que da el número de especies tecnológicas que se comunican por medio de ondas de radio en una galaxia en un momento dado del tiempo. La ecuación expandida busca el número de civilizaciones posthumanas que existirán en cualquier universo dado. Si el promedio para todos los universos, reales o simulados, es mayor o igual a uno dicha civilización que existiría en la historia de cada universo, entonces la probabilidad es abrumadora a favor de la proposición de que la civilización promedio está en una simulación, asumiendo que dichos universos simulados son posibles y tales civilizaciones desearían ejecutarlas.
+
+El punto omega de Frank J. Tipler
+
+El físico Frank J. Tipler vislumbra un escenario similar al del argumento de Nick Bostrom. Tipler mantiene que es un escenario cosmología físicamente requerido en el lejano futuro del universo: a medida que el universo llega al fin en una singularidad gravitacional durante el Big Crunch, la capacidad computacional del universo es capaz de incrementarse a una tasa suficiente que acelera exponencialmente más rápido que lo que corre el tiempo. En principio, una simulación ejecutada en este computador universal puede continuar para siempre en sus propios términos, aún si el tiempo tiene sólo una duración finita.
+
+El profesor Tipler identifica esta singularidad final y su estado de capacidad de información infinita con Dios. De acuerdo al Profesor Tipler y al Profesor David Deutsch, las implicaciones de esta teoría para los humanos del presente es que el computador cósmico esencialmente podrá resucitar a todos los que han vivido, al recrear todos los estados cerebrales cuánticos posibles dentro de la simulación principal, algo que recuerda las ideas de resurrección de Nikolai Fyodorovich Fyodorov. Esto se manifestaría como una realidad simulada. Desde la perspectiva del habitante, el punto Omega representa una vida después de la muerte, que podría tomar formas inimaginables dada su naturaleza virtual. A primera vista, la hipótesis de Tipler requiere algún medio por el cual los habitantes del futuro lejano puedan recuperar información histórica para poder hacer reencarnar a sus ancestros en una vida después de la muerte simulada. Sin embargo, si tienen acceso a capacidad de computación infinita, ése no es un problema en lo más mínimo -pueden simplemente simular "todos los mundo posibles". El argumento de Tipler también puede unirse con el argumento de Nick Bostrom ya mencionado de la probabilidad. Si el punto Omega simulará un número infinito de mundos virtuales entonces sería infinitamente más probable que nuestra realidad esté en alguno de esos mundos simulados, en vez de en el solitario mundo real que creó el punto Omega.
+
+La teoría del punto Omega de Tipler predice un eventual Big Crunch, que algunos piensan que es un escenario improbable en virtud de observaciones astronómicas recientes.2
+
+Tipler ha cambiado su visión para acomodarla a un universo en aceleración debida a una constante cosmológica positiva. Propone los túneles cuánticos de bariones como medio para propulsar naves interestelares. Afirma que si los bariones en el universo fueran aniquilados por este proceso, esto forzaría el campo de Higgs hacia su absoluto vacío, cancelando la constante cosmológica positiva, deteniendo la aceleración y permitiendo que el universo colapse en el punto Omega
+
+Realidad simulada en la ficción
+
+Novelas
+- Simulacron-3, de Daniel Galouye.
+- La vida es sueño (1635), Pedro Calderón de la Barca (1600–1681).
+
+Películas
+- Abre los ojos (1997), de Alejandro Amenábar (remake: Vanilla Sky, 2001)
+- Avalon (2001), de Mamoru Oshii
+- Avatar (2009), de James Cameron
+- Brainscan (1994), de John Flynn
+- Brainstorm (1983), de Douglas Trumbull
+- Cube 2: Hypercube, (2002) escrita por Sean Hood
+- Dark City (1998), de Alex Proyas
+- eXistenZ (1999), de David Cronenberg
+- Inception (2010), de Christopher Nolan
+- Jacob's Ladder (1990), de Adrian Lyne
+- Lost Highway (1997), de David Lynch
+- Surrogates (2009), de Jonathan Mostow
+- The Island (2005), de Michael Bay
+- La serie de Matrix (1999–2003), de los hermanos Wachowski
+- The Nines (2007)
+- The Thirteenth Floor (1999), de Josef Rusnak
+- Total Recall (1990), de Paul Verhoeven
+- Tron (1982), de Walt Disney Pictures
+- The Truman Show (1998)
+- Welt am Draht (1973), adaptación alemana de la novela Simulacron-3
+- Vanilla Sky (2001), de Cameron Crowe
+- Welcome to Blood City (1977), de Peter Sasdi
+
+Referencias
+- a b Are You Living in a Computer Simulation? por Nick Bostrom. Julio de 2002. Consultado el 21 de diciembre de 2006
+- Although see Lawrence M. Krauss and Michael S. Turner, "Geometry and Destiny," General Relativity and Gravitation, Vol. 31, No. 10 (Octubre de 1999), pp. 1453-1459. Also at arXiv:astro-ph/9904020, 1 de abril de 1999.

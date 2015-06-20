@@ -1,0 +1,31 @@
+MOLAP
+
+MOLAP es el acrónimo inglés de Multidimensional Online Analytical Processing, es decir, 'procesamiento analítico multidimensional en línea' .
+
+Se trata de una alternativa a la tecnología ROLAP (OLAP-Relacional). Aunque ambos tipos de herramientas están diseñadas para realizar análisis de datos a través de un modelo de datos multidimensional, MOLAP se diferencia significativamente en que requiere un preprocesamiento y almacenamiento de la información contenida en el cubo OLAP. MOLAP almacena estos datos en una matriz de almacenamiento multidimensional optimizada, más que en una base de datos relacional (o en un ROLAP).
+
+MOLAP vs. ROLAP
+
+Ventajas de MOLAP
+- Consultas rápidas debido a la optimización del rendimiento de almacenamiento, la indexación multidimensional y la memoria caché.
+- Ocupa menor tamaño en disco en comparación con los datos almacenados en base de datos relacional debido a técnicas de compresión.
+- Automatización del procesamiento de los datos agregados de mayor nivel.
+- Muy compacto para conjuntos de datos de pocas dimensiones.
+- El modelo de almacenamiento en vectores/matrices proporciona una indexación natural.
+- Eficaz extracción de datos lograda gracias a la pre-estructuración de los datos agregados.
+
+Desventajas de MOLAP
+- La etapa de procesamiento (carga de datos) puede ser bastante larga, sobre todo para grandes volúmenes de datos. Normalmente, esto se puede evitar con un procesamiento incremental, es decir, sólo el procesamiento de los datos que han cambiado (por lo general, los nuevos datos) en lugar de volver a procesar de todo el conjunto de datos.
+- Las herramientas MOLAP tradicionalmente tienen dificultades para consultar con modelos con dimensiones muy altas (del orden de millones de miembros).
+- Algunas herramientas MOLAP (por ejemplo, Essbase) tienen dificultades para actualizar y consultar los modelos con más de diez dimensiones. Este límite varía en función de la complejidad y la cardinalidad de las dimensiones de que se trate. También depende de la cantidad de hechos o medidas almacenados. Otras herramientas MOLAP (por ejemplo, Microsoft Análisis Services o Applix TM1) puede manejar cientos de dimensiones.
+- El enfoque MOLAP introduce redundancia en los datos.
+
+Tendencias
+
+La mayoría de las herramientas comerciales OLAP utilizan ahora un "Híbrido OLAP" (HOLAP), que permite al diseñador del modelo decidir qué parte de los datos se almacenarán en MOLAP y que parte en el ROLAP.
+
+Productos
+
+Ejemplos de productos comerciales que utilizan MOLAP son Oracle OLAP, Microsoft Analysis Services, Essbase, icCube Server, Infor OLAP y TM1|Applix TM1.
+
+También existe un servidor MOLAP con una versión en código abierto llamado PALO. También se utiliza en Microsoft SQL server en la mayoría de sus versiones.

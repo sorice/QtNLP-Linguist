@@ -1,0 +1,68 @@
+ROLAP
+
+ROLAP significa Procesamiento Analítico OnLine Relacional, es decir, se trata de sistemas y herramientas OLAP (Procesamiento Analítico OnLine) construidos sobre una base de datos relacional. Es una alternativa a la tecnología MOLAP (Multidimensional OLAP) que se construye sobre bases de datos multidimensionales. Ambos tipos de herramientas, tanto ROLAP como MOLAP, están diseñadas para realizar análisis de datos a través del uso de modelos de datos multidimensionales, aunque en el caso de ROLAP estos modelos no se implementan sobre un sistema multidimensional, sino sobre un sistema relacional clásico.
+
+Introducción
+
+Los sistemas ROLAP difieren significativamente de los MOLAP en que los primeros no requieren, en principio, la computación previa ni el almacenamiento de la información, ya que pueden acceder directamente a la fuente de dichos datos, las herramientas ROLAP acceden a los datos de una base de datos relacional y generan consultas SQL para calcular la información al nivel apropiado cuando un usuario final lo requiere.
+
+Aunque las aplicaciones ROLAP se construyen sobre sistemas de bases de datos relacionales, generalmente estas bases de datos deben ser diseñadas cuidadosamente para el uso de ROLAP. Una base de datos diseñada para procesamiento de transacciones (OLTP) no funcionará bien como base de datos ROLAP. Este diseño específico puede conllevar la creación de tablas de base de datos adicionales (tablas resumen o agregaciones) las cuales resumen los datos en cualquier combinación deseada de dimensiones. Este mecanismo puede agilizar el acceso a datos precalculados mejorando el rendimiento del sistema ROLAP, pero, en este caso, se debe crear una copia adicional de los datos si estos no se grabaron directamente en las tablas ROLAP, sino que provienen de tablas OLTP. Sin embargo, dado que se trata, en ambos casos (ROLAP y OLTP), de una base de datos relacional, pueden utilizarse cualquiera de las técnicas existentes para el acceso y gestión de la misma y la migración de datos entre bases de datos relacionales.
+
+Diseño de tablas para una herramienta ROLAP
+
+En un sistema ROLAP, la información se almacena en tablas de una base de datos relacional. En este diseño tiene una especial importancia la denominada tabla de hechos, que es donde se almacena la historia de alguna magnitud relevante para la empresa que necesita ser estudiada de forma exhaustiva, como por ejemplo, las ventas.
+
+Adicionalmente, esta tabla de hechos estará ligada a otras tablas en las que se almacenarán los parámetros en función de los cuales varía la magnitud a estudiar, estos parámetros reciben el nombre de dimensiones; típicamente, para el caso del estudio de la magnitud ventas, las dimensiones podrían ser: el tiempo (por días, semanas, horas, ... según interese), los productos, las zonas geográficas (regiones, países, ciudades, códigos postales, ...), los clientes, los almacenes o centros de producción, las promociones, etc.
+
+Finalmente, el diseño de estas tablas dará lugar a una estructura en cuyo centro estará la tabla de hechos y, alrededor de ésta y relacionadas con ella, estarán las tablas para las dimensiones, dando lugar a un esquema en estrella.
+
+Podría darse el caso de que se quisiera jerarquizar alguna de las dimensiones, por ejemplo, el tiempo se podría indicar por días, pero quizá interese poder agruparlo por semanas, por meses, por cuatrimestres y/o por años; los clientes se podrían clasificar por sexos (hombre, mujer); los productos podrían estar agrupados por categorías, etc. La construcción de este diseño implicaría añadir nuevas tablas que se relacionarían con las dimensiones de la tabla de hechos central. A este diseño se le llama esquema en copo de nieve.
+
+Una vez finalizado el diseño de este sistema, se tiene una estructura que se identifica con un cubo OLAP. Un almacén de datos dispondrá de varios de estos cubos, uno por cada magnitud (o conjunto de magnitudes si éstas dependen de las mismas dimensiones) de interés para la empresa.
+
+ROLAP vs. MOLAP
+
+Se discuten seguidamente las ventajas y desventajas de ROLAP, centrándose en aquellos aspectos que son comunes de la mayoría de las herramientas ROLAP y MOLAP disponibles hoy. En algún caso podría haber herramientas que sean una excepción de las generalizaciones que a continuación se indican.
+
+Ventajas de ROLAP
+
+La construcción de herramientas OLAP sobre sistemas relacionales presenta algunas ventajas frente a los sistemas multidimensionales:
+- ROLAP se considera más escalable para manejar grandes volúmenes de datos, especialmente modelos con dimensiones de gran cardinalidad (por ejemplo, con millones de miembros).
+- Hay disponible una gran variedad de herramientas de carga de datos para sistemas relacionales; además, existe la posibilidad de ajustar el código ETL (Extract, Transform, Load) a un modelo de datos particular. Con todo esto se consigue que los tiempos de carga sean generalmente mucho menores que con las cargas MOLAP automatizadas.
+- Los datos se almacenan en una base de datos relacional estándar que puede ser accedida por cualquier herramienta de generación de informes SQL (reporting). Estas herramientas no tienen que ser necesariamente de tipo OLAP.
+- Las herramientas MOLAP tienden a sufrir un bajo rendimiento cuando consultan elementos como descripciones textuales.
+- Obviando el almacenamiento de datos del modelo multidimensional, es posible modelar datos con éxito que de otro modo no se ajustarían en un modelo dimensional estricto.
+
+Desventajas de ROLAP
+
+Hay un consenso general en la industria de que las herramientas ROLAP tienen menor rendimiento que las herramientas MOLAP.
+- El proceso de carga de tablas agregadas debe ser gestionado por código ETL personalizado. Las herramientas ROLAP no disponen de mecanismos automáticos para realizar esta tarea, lo que significa que se necesita más tiempo de desarrollo de código.
+- Muchos desarrolladores de modelos dimensionales ROLAP ignoran el paso de crear tablas agregadas. En este caso el rendimiento de una consulta se ve afectado porque entonces se necesita consultar las tablas con datos más detallados. Esto puede evitarse parcialmente añadiendo tablas agregadas adicionales, sin embargo no es práctico crear tablas agregadas para todas las combinaciones posibles de dimensiones/atributos.
+- Los sistemas ROLAP se construyen sobre bases de datos de propósito general, por lo que hay algunas funcionalidades especiales propias de las herramientas MOLAP que no están disponibles en los sistemas ROLAP (tales como el indexado jerárquico especial). Sin embargo, las herramientas ROLAP modernas van supliendo estas carencias con las últimas mejoras en el lenguaje SQL tales como los operadores CUBE y ROLLUP, las vistas de cubo DB2, así como otras extensiones SQL OLAP. Estas mejoras SQL pueden mitigar las diferencias frente a las herramientas MOLAP.
+- Dado que las herramientas ROLAP se basan en SQL para todos los cálculos, no son apropiadas cuando el modelo realiza muchos cómputos que no se traducen bien en SQL (por ejemplos: presupuestos, asignaciones, informes financieros y otros escenarios).
+
+Rendimiento de ROLAP
+
+OLAP Survey
+
+En la industria OLAP, se percibe como ROLAP es capaz de escalar a grandes volúmenes de datos, pero sufre de un rendimiento menor en la ejecución de consultas (comparado con MOLAP). El OLAP Survey, la mayor encuesta independiente a través de los principales productos OLAP, duranter 5 años (2001 a 2005), encontró que las compañías que usan ROLAP informan de menor rendimiento que aquellas que usan MOLAP. Sin embargo, se pueden entrever asuntos menores que pueden tomarse en cuenta cuando se interpretan los resultados de dicha encuesta:
+- Las herramientas ROLAP son seleccionadas generalmente por compañías con grandes volúmenes de datos (gran cardinalidad de dimensiones), debido a que a la escalabilidad superior de ROLAP, y la misma encuesta también confirma esto consistentemente. En la encuesta OLAP 3 resultados de herramientas ROLAP tuvieron un volumen de datos medio de 312 GB comparados a los 4 GB para herramientas MOLAP. Obviamente, mayores volúmenes de datos requieren mayores tiempos de consulta.
+- La encuesta también muestra que las herramientas ROLAP tienen 7 veces más usuarios que las herramientas MOLAP dentro de cada compañía. Los sistemas con más usuarios tenderán a sufrir más problemas de rendimiento en tiempos pico de uso.
+- Hay también una cuestión sobre la complejidad del modelo, medido por número de dimensiones y riqueza de los cálculos. La encuesta no ofrece una forma buena de controlar estas variaciones en los datos analizados.
+
+Caída del rendimiento y flexibilidad
+
+Algunas compañías usan ROLAP porque quieren reutilizar las tablas de las bases de datos relacionales existentes, frecuentemente estas tablas no tendrán un diseño óptimo para uso OLAP. La flexibilidad de las herramientas ROLAP permite que funcionen, pero el rendimiento decae si no se ha realizado un diseño adecuado de las tablas. Las herramientas MOLAP en cambio forzarían a que los datos sean recargados en un diseño OLAP óptimo.
+
+Tendencias
+
+El coste adicional de los procesos ETL para migrar datos a una herramienta MOLAP y el pobre rendimiento de consulta en los sistemas ROLAP ha generado que la mayoría de las herramientas comerciales OLAP usen un modelo "OLAP Híbrido" (HOLAP), el cual permite al diseñador del sistema decidir que porción de los datos serán almacenados en modo multidimensional (MOLAP) y que porción de los datos en modo relacional (ROLAP)....
+
+Productos
+
+Algunas ejemplos de productos comerciales que usan ROLAP son:
+- Oracle Business Intelligence Enterprise Edition
+- Microsoft Analysis Services
+- MicroStrategy
+- Business Objects
+- Mondrian (servidor open source ROLAP)

@@ -1,0 +1,226 @@
+Reconocimiento de Objetos
+
+Reconocimiento de objetos - en visión por computadoras es la tarea para encontrar e identificar objetos en una imagen o secuencia de video. Los humanos reconocemos una multitud de objetos en imágenes con poco esfuerzo, a pesar del hecho que la imagen del objeto puede variar un poco en diferentes puntos de vista, en diferentes tamaños o escala e incluso cuando están trasladados o rotados. Los objetos pueden ser reconocidos cuando están parcialmente obstruidos desde una vista. No obstante esta tarea es un desafío para los sistemas de visión por computadoras. Para este problema se han implementado muchos métodos durante múltiples décadas.
+
+Aproximación basada en modelos de objetos como CAD
+- Detector de bordes
+- Primal sketch
+- Marr, Mohan and Nevatia
+- Lowe
+- Olivier Faugeras
+
+Reconocimiento por partes
+- Cilindros Generalizados (Thomas Binford)
+- Geons (Biederman)
+- Dickinson, Forsyth and Ponce
+
+Métodos basados en apariencia
+- Usa imágenes de ejemplo (llamadas plantillas o prototipos) de los objetos para realizar
+- Los objetos se ven diferentes bajo una variedad de condiciones:
+    - Cambios en la iluminación o color
+    - Cambios en la dirección de observación
+    - Cambios en tamaño / forma
+- Es improbable para un solo prototipo tener éxito de fuente fidedigna. Sin embargo es imposible representar todas las apariencias de un objeto
+1. Emparejamiento de bordes
+        - Usa técnicas de detección de bordes, tales como Algoritmo de Canny, para encontrar los bordes.
+        - Cambios en la iluminación y color usualmente no tiene mucho efecto en los bordes de la imagen
+        - Estrategia:
+            - Detecta bordes en la plantilla y la imagen
+            - Compara los bordes de la imagen para encontrar la plantilla
+            - Debe considerar el rango de las posibles posiciones de la plantilla
+        - Medida:
+            - Bueno – cuenta el número de bordes superpuestos. No es robusto a cambios en la forma
+            - Mejor – Cuenta el número de pixeles del borde de la plantilla con alguna distancia de un borde en la imagen de búsqueda
+            - Óptimo – Determina la distribución de probabilidad de la distancia para el borde próximo en la imagen de búsqueda (si la plantilla esta en posición correcta). Estima la probabilidad de cada posición de la plantilla generando imagen
+2. Búsqueda Divide y Vencerás
+        - Estrategia:
+            - Considera todas las posiciones como un conjunto (una celda en el espacio de las posiciones)
+            - Determina el salto menor en la puntuación en la mejor puntuación de la celda
+            - Si el salto es muy largo, poda la celda
+            - Si el salto no es muy largo divide la celda en subceldas y tratas cada subcelda recursivamente
+            - Paras cuando la celda sea “suficientemente pequeña”
+        - Distinto a la búsqueda multi-resolución, esta técnica garantiza encontrar todas las parejas que cumplan el criterio (asumiendo que el menor salto es exacto)
+        - Encontrando el salto:
+            - Para encontrar el menor salto sobre la mejor puntuación, considerando la puntuación para la posición de la plantilla representada por el centro de la celda
+            - Substraiga el cambio máximo de la posición “central” para cualquier posición en la celda(ocurre en las esquinas de la celda)
+        - Las complejidades se generan a partir de la determinación de los saltos en la distancia
+3. Emparejamiento por escala de grises
+        - Las esquinas son (en su mayor parte) robusto a cambios en la iluminación, sin embargo desperdician mucha información
+        - Debes computar la distancia de pixel como una función de la posición del pixel y la intensidad del mismo
+        - Puede ser aplicado a imágenes en colores también
+4. Emparejamiento del gradiente
+        - Otra forma de ser robusto a los cambios de la iluminación sin desperdiciar mucha información para comparar el gradiente de las imágenes
+        - El emparejamiento se realiza como el emparejamiento por escala de grises
+        - Alternativa simple: Usa la correlación (normalizada)
+5. Histograma de las respuestas receptivas del campo
+        - Evita explícitos campos de correspondencia
+        - Relaciones entre distintos puntos de la imagen implícitamente codificado en las respuestas receptivas del campo
+        - Swain and Ballard (1991),1 Schiele and Crowley (2000),2 Linde and Lindeberg (2004, 2012)3 4
+6. Grandes modelbases
+        - Un acercamiento hacia la búsqueda eficiente de la base de datos para una imagen específica para usar eigenvectors de las planillas (llamados eigenfaces)
+        - Modelbases son una colección de modelos geométricos de el objeto que quieres reconocer
+
+Métodos basados en características
+- una búsqueda es usada para encontrar emparejamientos factibles entre las características del objeto y las características de la imagen.
+- la principal restricción es que la única posición del objeto debe contar para todos los emparejamientos factibles.
+- métodos que extraen características de un objeto para ser reconocidas y la imagen donde buscar.
+        - parches de superficie
+        - esquina
+        - bordes lineales
+1. Árboles de interpretación
+        - Un método de búsqueda de emparejamientos factibles, es buscar a través de un árbol.
+        - Cada nodo en el árbol representa un conjunto de emparejamientos.
+            - El nodo raíz representa el conjunto vacío.
+            - Cada nodo es la unión de los emparejamientos en el nodo padre y un emparejamiento adicional.
+            - Un comodín es usado para características sin pareja.
+        - Los nodos son “podados” cuando el conjunto de emparejamientos no es factible.
+            - Un nodo podado no tiene hijos.
+        - Históricamente significante y aun en uso, pero menos común.
+2. Conjeturar y prueba
+        - Idea General:
+            - Conjeturar una correspondencia entre una colección de características de la imagen y otra de las características del objeto.
+            - Luego use esto para generar una hipótesis sobre la proyección de la coordenada del frame del objeto para el frame de la imagen
+            - Use esta hipotética proyección para generar una representación del objeto. Este paso es usualmente conocido como backprojection.
+            - Compra la imagen representada con la imagen, y, si las dos son suficientemente similar, acepta la hipótesis.
+        - Obteniendo la hipótesis:
+            - Hay variadas formas de generar hipótesis.
+            - Cuando los parámetros intrínsecos de la cámara son conocidos, la hipótesis es equivalente a la hipotética posición y orientación – la pose – para el objeto.
+            - Utilice restricciones geométricas.
+            - Construye una correspondencia para un conjunto pequeño de características del objeto a cada subconjunto correctamente clasificado de puntos de la imagen.(Estas son las hipótesis)
+        - Tres acercamientos básicos:
+            - Obteniendo la Hipótesis por consistencia de la pose
+            - Obteniendo la Hipótesis por agrupamiento de la pose
+            - Obteniendo la Hipótesis por uso de invariantes
+        - El costo de búsqueda es también redundante, pero puede ser mejorado usando aleatoriedad y/o agrupamiento.
+            - Aleatoriedad
+            § Examinando pequeños conjuntos de características de la imagen hasta que la probabilidad del objeto perdido se vuelva pequeña.
+            § Para cada conjunto de características de la imagen ,todos los posibles conjuntos coincidentes de las características del modelo deben considerarse.
+            § Fórmula:
+                    ( 1 – Wc)k = Z
+                    W = la fracción de puntos de la imagen que son “buenos” (w ~ m/n)
+                    c = el número de correspondencias necesarias.
+                    k = el número de pruebas
+                    Z = la probabilidad de cada prueba usando una (o más) correspondencias incorrectas
+            - Agrupamiento
+            § Si podemos determinar grupos de puntos que tienen la probabilidad de venir del mismo objeto, podemos reducir el número de hipótesis que necesita ser examinadas.
+3. Consistencia de pose
+        - También llamado Alineación, desde que el objeto alineado a la imagen.
+        - Correspondencia entre características de la imagen y características del modelo no son independientes – Restricción geométrica
+        - Un pequeño número de correspondencias produce la posición del objeto – los otros deben ser consistentes con estos.
+        - Idea General:
+            - Si conjeturamos un emparejamientos entre un grupo de características de imagen suficientemente grande y un grupo de características de objeto suficientemente grande, entonces podemos recuperar los parámetros perdidos por la cámara de su hipótesis(y así representar el resto del objeto).
+        - Estrategia:
+            - Generar hipótesis usando un pequeño número de correspondencias (por ejemplo triples de puntos para reconocimiento 3D)
+            - Proyecta otras características del modelo dentro de la imagen (backproject) y verificar correspondencias adicionales.
+        - Usa el menor número de correspondencias necesarias para logras la pose discreta del objeto
+4. Agrupamiento de la pose
+        - Idea General:
+            - Cada objeto encabeza tantos conjuntos correctos de correspondencia, cada uno el cual tiene apenas la misma pose.
+            - Vote en la pose. Use un array acumulador que represente el espacio de la pose para cada objeto.
+            - Esto es esencialmente una Transformada de Hough
+        - Estrategia:
+            - Por cada objeto, establece un array acumulador que representa el espacio de la pose – cada elemento en el array acumulador corresponde a un “cubo” en el espacio de la postura.
+            - Luego toma cada grupo de frames de la imagen , y conjeturas una correspondencia entre esta y cada grupo de frames en cada objeto.
+            - Para cada una de estas correspondencias ,determinar parámetros de pose y haga una entrada al array acumulador para el objeto actual en el valor de la pose.
+            - Si hay un gran número de en cualquier array acumulador, esto puede ser interpretado como evidencia para la presencia del objeto en es pose.
+            - Esta evidencia puede ser comprobada usando métodos de verificación.
+        - Note que este método usa un conjunto de correspondencias, en vez de correspondencias individuales.
+            - La implementación es sencilla, desde que cada conjunto produce un pequeño número de poses posibles del objeto.
+        - Mejora
+            - La resistencia al ruido de este método puede ser mejorada por no contando los votos para el objeto en las poses donde el voto es obviamente inconfiable.
+            § Para cada ejemplo, en casos donde, si el objeto estaba en la pose, el grupo de frames del objeto seria invisible.
+            - Estas mejoras son suficientes para producir sistemas de trabajo.
+5. Invarianza
+        - Hay propiedades geométricas que son invariante para la transformación de la cámara.
+        - Más fácilmente desarrollado para imágenes de objetos planos, pero se puede aplicar a otros casos también.
+6. Geometric hashing
+        - Un algoritmo que usa invariantes geométricas para votar por hipótesis de objetos.
+        - Similar a agrupamiento de pose, sin embargo en lugar de votar en pose, ahora votamos en geometría.
+        - Una técnica originalmente desarrollada para emparejar características contra una base de datos de tales características.
+        - Extensamente usada para reconocimiento de patrones, CAD/CAM, etc.
+        - Es difícil escoger el tamaño del cubo.
+        - Es duro saber lo que significa “suficiente”. Por lo tanto puede haber algún peligro que la tabla se atasque.
+7. Scale-invariant feature transform (SIFT)
+        - Puntos clave de los objetos son extraídos primero de un conjunto de imágenes de referencia y guardadas en una base de datos.
+        - Un objeto es reconocido en una nueva imagen comparando individualmente cada característica de la nueva imagen con su base de datos y encontrando una característica candidata a emparejar basado en la distancia Euclidiana de sus vectores característicos.
+        - Lowe (2004)5 6
+8. Speeded Up Robust Features (SURF)
+        - Un robusto detector y descriptor de imágenes.
+        - La versión estándar es varias veces más rápida que SIFT y exigido por sus autores de ser más robusto contra diferentes transformaciones de la imagen que SIFT.
+        - Based on sums of approximated 2D Haar wavelet responses and made efficient use of integral images.
+        - Bay et al (2008)7
+
+Otros Enfoques
+- 3D cues
+- Biologically inspired object recognition
+- Artificial neural networks and Deep learning
+- Contexto
+- Explicit and implicit 3D object models
+- Fast indexing
+- Global scene representations
+- Gradient histograms
+- Grammars
+- Intraclass transfer learning
+- Leveraging internet data
+- Reflectividad
+- Sombreado plano
+- Template matching
+- Textura
+- Topic models
+- Aprendizaje no supervisado
+- Window-based detection
+- Deformable Part Model
+- Bingham distribution8
+
+Aplicaciones
+
+Los métodos de reconocimiento de objetos tiene las siguientes aplicaciones:
+- Android Eyes - Object Recognition9
+- Image panoramas10
+- Marca de agua digital11
+- Global robot localization12
+- Detección de caras13
+- Reconocimiento óptico de caracteres14
+- Manufacturing Quality Control15
+- Content-Based Image Indexing16
+- Object Counting and Monitoring17
+- Automated vehicle parking systems18
+- Visual Positioning and tracking19
+- Video Stabilization20
+
+Otros Estudios
+- Daniilides and Eklundh, Edelman.
+- Roth, Peter M. and Winter, Martin.
+
+Notas
+- M. J. Swain and D. H. Ballard "Colour indexing", International Journal of Computer Vision, 7:1, 11-32, 1991.
+- B. Schiele and J. L. Crowley "Recognition without correspondence using multidimensional receptive field histograms", International Journal of Computer Vision, 36:1, 31-50, 2000
+- O. Linde and T. Lindeberg "Object recognition using composed receptive field histograms of higher dimensionality", Proc. International Conference on Pattern Recognition (ICPR'04), Cambridge, U.K. II:1-6, 2004.
+- O. Linde and T. Lindeberg "Composed complex-cue histograms: An investigation of the information content in receptive field based image descriptors for object recognition", Computer Vision and Image Understanding, 116:4, 538-560, 2012.
+- Lowe, D. G., “Distinctive image features from scale-invariant keypoints”, International Journal of Computer Vision, 60, 2, pp. 91-110, 2004.
+- Lindeberg, Tony (2012). «Scale invariant feature transform». Scholarpedia 7 (5):  pp. 10491.
+- H. Bay, A. Ess, T. Tuytelaars and L. van Gool, "Speeded-up robust features (SURF)", Computer Vision and Image Understanding, 110:3, 2008, pages 346–359
+- «Better robot vision». KurzweilAI. Consultado el 09-10-2013.
+- «Android Eyes Computer Vision».Martha J. Farah "Visual Agnosia", Computer Vision Computing Cognitive Neuroscience, MIT Press, 2011-05-01, Pages 760-781, ISSN 1468-4233 [1]
+- Brown, M., and Lowe, D.G., "Recognising Panoramas," ICCV, p. 1218, Ninth IEEE International Conference on Computer Vision (ICCV'03) - Volume 2, Nice,France, 2003
+- Li, L., Guo, B., and Shao, K., " Geometrically robust image watermarking using scale-invariant feature transform and Zernike moments," Chinese Optics Letters, Volume 5, Issue 6, pp. 332-335, 2007.
+- Se,S., Lowe, D.G., and Little, J.J.,"Vision-based global localization and mapping for mobile robots", IEEE Transactions on Robotics, 21, 3 (2005), pp. 364-375.
+- Thomas Serre, Maximillian Riesenhuber, Jennifer Louie, Tomaso Poggio, "On the Role of Object-Specific features for Real World Object Recognition in Biological Vision." Artificial Intelligence Lab, and Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Center for Biological and Computational Learning, Mc Govern Institute for Brain Research, Cambridge, MA, USA
+- Anne Permaloff and Carl Grafton, "Optical Character Recognition" Political Science and Politics, Vol. 25, No. 3 (Sep., 1992), pp. 523-531
+- Christian Demant, Bernd Streicher-Abel, Peter Waszkewitz, "Industrial image processing: visual quality control in manufacturing" Reconocimiento de Objetos en Google Libros.
+- Nuno Vasconcelos "Image Indexing with Mixture Hierarchies" Compaq Computer Corporation, Proc. IEEE Conference in Computer Vision and Pattern Recognition, Kauai, Hawaii, 2001
+- Janne Heikkila, Olli Silven, "A real-time system for monitoring of cyclists and pedestrians", Image and Vision Computing, Volume 22, Issue 7, Visual Surveillance, 1 July 2004, Pages 563-570, ISSN 0262-8856
+- Ho Gi Jung, Dong Suk Kim, Pal Joo Yoon, Jaihie Kim, "Structure Analysis Based Parking Slot Marking Recognition for Semi-automatic Parking System" Structural, Syntactic, and Statistical Pattern Recognition, Springer Berlin / Heidelberg, 2006
+- S. K. Nayar, H. Murase, and S.A. Nene, "Learning, Positioning, and tracking Visual appearance" Proc. Of IEEE Intl. Conf. on Robotics and Automation, San Diego, May 1994
+- Por favor, pon la referencia que aparece aquí.
+
+Referencias
+- Elgammal, Ahmed "CS 534: Computer Vision 3D Model-based recognition", Dept of Computer Science, Rutgers University;
+- Hartley, Richard and Zisserman, Andrew "Multiple View Geometry in computer vision", Cambridge Press, 2000, ISBN 0-521-62304-9.
+- Roth, Peter M. and Winter, Martin “Survey of Appearance-Based Methods for Object Recognition”, Technical Report ICG-TR-01/08, Inst. for Computer Graphics and Vision, Graz University of Technology, Austria; January 15, 2008.
+- Collins, Robert "Lecture 31: Object Recognition: SIFT Keys", CSE486, Penn State
+- IPRG Image Processing - Online Open Research Group
+- O. Ahmad, J. Debayle, and J. C. Pinoli. "A geometric-based method for recognizing overlapping polygonalshaped and semi-transparent particles in gray tone images", Pattern Recognition Letters 32(15), 2068–2079,2011.
+- O. Ahmad, J. Debayle, N. Gherras, B. Presles, G. Févotte, and J. C. Pinoli. "Recognizing overlapped particles during a crystallization process from in situ video images for measuring their size distributions.",In 10th SPIE International Conference on Quality Control by Artificial Vision (QCAV), Saint-Etienne, France,June 2011.
+- O. Ahmad, J. Debayle, N. Gherras, B. Presles, G. Févotte, and J. C. Pinoli. "Quantification of overlapping polygonal-shaped particles based on a new segmentation method of in situ images during crystallization.",Journal of Electronic Imaging, 21(2), 021115, 2012.
+- This outline displayed as a mindmap, at wikimindmap.com

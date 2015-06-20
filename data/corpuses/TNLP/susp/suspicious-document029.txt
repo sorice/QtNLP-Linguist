@@ -1,0 +1,89 @@
+Inteligencia empresarial
+
+Se denomina inteligencia empresarial, inteligencia de negocios o BI (del inglés business intelligence), al conjunto de estrategias y aspectos relevantes enfocadas a la administración y creación de conocimiento sobre el medio, a través del análisis de los datos existentes en una organización o empresa.
+
+Es posible diferenciar datos, informaciones y conocimientos, conceptos en los que se centra la inteligencia empresarial, ya que como sabemos, un dato es algo vago, por ejemplo "10 000", la información es algo más preciso, por ejemplo "Las ventas del mes de mayo fueron de 10 000", y el conocimiento se obtiene mediante el análisis de la información, por ejemplo "Las ventas del mes de mayo fueron 10 000. Mayo es el mes más bajo en ventas". Aquí es donde la BI entra en juego, ya que al obtener conocimiento del negocio una vez capturada la información de todas las áreas en la empresa, es posible establecer estrategias y determinar cuáles son las fortalezas y las debilidades.
+
+Definición
+
+El término inteligencias empresariales se refiere al uso de datos en una empresa para facilitar la toma de decisiones. Abarca la comprensión del funcionamiento actual de la empresa, bien como la anticipación de acontecimientos futuros, con el objetivo de ofrecer conocimientos para respaldar las decisiones empresariales.
+
+Las herramientas de inteligencia se basan en la utilización de un sistema de información de inteligencia que se forma con distintos datos extraídos de los datos de producción, con información relacionada con la empresa o sus ámbitos y con datos económicos.
+
+Mediante las herramientas y técnicas ELT (extraer, cargar y transformar), o actualmente ETL (extraer, transformar y cargar) se extraen los datos de distintas fuentes, se depuran y preparan (homogeneización de los datos) para luego cargarlos en un almacén de datos.
+
+La vida o el periodo de éxito de un software de inteligencia de negocios dependerá únicamente del éxito de su uso en beneficio de la empresa; si esta empresa es capaz de incrementar su nivel financiero, administrativo y sus decisiones mejoran la actuación de la empresa, el software de inteligencia de negocios seguirá presente mucho tiempo, en caso contrario será sustituido por otro que aporte mejores y más precisos resultados.
+
+Finalmente, las herramientas de inteligencia analítica posibilitan el modelado de las representaciones basadas en consultas para crear un cuadro de mando integral que sirve de base para la presentación de informes.
+
+Historia
+
+En un artículo de 1958, el investigador de IBM Hans Peter Luhn utiliza el término Inteligencia de Negocio. Se define la inteligencia como: "La capacidad de comprender las interrelaciones de los hechos presentados en tal forma como para orientar la acción hacia una meta deseada".
+
+La inteligencia de negocios, tal como se entiende, hoy en día se dice que ha evolucionado desde los sistemas de apoyo a las decisiones que se inició en la década de 1960 y desarrollado a lo largo de mediados de los años 80's. DSS se originó en los modelos por computadora, creado para ayudar en la toma de decisiones y la planificación. Desde DSS, data warehouses, sistemas de información ejecutiva, OLAP e inteligencia de negocios entraron en principio centrándose a finales de los años 80's.
+
+En 1989, Howard Dresner (más tarde, un analista de Gartner Group) propuso la "inteligencia de negocios" como un término general para describir "los conceptos y métodos para mejorar la toma de decisiones empresariales mediante el uso de sistemas basados ​​en hechos de apoyo". No fue hasta finales de 1990 que este uso estaba muy extendido.
+
+Características
+
+Este conjunto de herramientas y metodologías tienen en común las siguientes características:
+- Accesibilidad a la información. Los datos son la fuente principal de este concepto. Lo primero que deben garantizar este tipo de herramientas y técnicas será el acceso de los usuarios a los datos con independencia de la procedencia de éstos.
+- Apoyo en la toma de decisiones. Se busca ir más allá en la presentación de la información, de manera que los usuarios tengan acceso a herramientas de análisis que les permitan seleccionar y manipular sólo aquellos datos que les interesen.
+- Orientación al usuario final. Se busca independencia entre los conocimientos técnicos de los usuarios y su capacidad para utilizar estas herramientas.
+
+Niveles de realización de BI
+
+De acuerdo a su nivel de complejidad se pueden clasificar las soluciones de Business Intelligence en:
+
+Informes
+- Informes predefinidos
+- Informes a la medida
+- Consultas (Query) / Cubos OLAP (On-Line Analytic Processing).
+- Alertas
+
+Análisis
+- Análisis estadístico
+- Pronósticos (Forecasting)
+- Modelado predictivo o Minería de datos (Data Mining)
+- Optimización
+- Minería de Procesos
+
+Inteligencia de Empresas
+
+La Inteligencia de Empresas es el concepto más amplio del uso de la inteligencia en las organizaciones. Desde distintas perspectivas, la inteligencia de empresas ha ido emergiendo a partir de la contribución de muchas áreas del conocimiento: market intelligence (inteligencia de mercados), competitive intelligence (Inteligencia Competitiva), business intelligence (inteligencia empresarial).
+
+Este concepto ha sido muy utilizado en el mundo de la tecnología con distintos significados como inteligencia de negocios, strategic foresight (Inteligencia Estratégica), corporate intelligence (Inteligencia Corporativa), vigilancia tecnológica, prospectiva tecnológica, etc.
+
+Inteligencia de Mercados internacionales "La estrategia"
+
+La estrategia debe ser vista como un proceso creativo, buscar nuevas formas de hacer las cosas, de generar valor en el mundo de continuo cambio, y ser efectivo en el corto plazo por lo cual se necesita:
+
+Inteligencia para crear y compartir el conocimiento.
+
+La habilidad para integrar y administrar este conocimiento.
+
+La imaginación para visualizar acciones alternativas a las usuales y analizar sus consecuencias.
+
+La pericia para manejar los recursos y atender las necesidades actuales sin dejar de construir el futuro deseable.1
+
+Así como en mercadotecnia se tienen las 4 p's también en inteligencia de mercados se tienen 4 P's2
+- PLAN: curso de acción conscientemente determinado.
+- POSICIÓN: un medio para ubicar a la organización (nicho, rentas, dominio).
+- PATRÓN: es un modelo que implica consistencia.
+- PERSPECTIVA: una manera particular de percibir el mundo (concepto, cultura, ideología).
+
+Con la globalización, la competencia se convierte en hipercompetencia para lo cual hay que reaccionar con rapidez, sorpresa, anticipación, también hay que cambiar las reglas del juego y hacer productos innovadores integrales para demostrar superioridad ante la competencia.3
+
+Referencias
+- Mtra, Edalhi Moreno, conferencia mercados internacionales itesm Pue
+- Mintzberg H, 1997
+- Mtra, Edalhi Moreno, conferencia mercados internacionales itesm Pue
+
+Bibliografía
+- Amara, Roy (1981), The Futures Field. Futurist, February, April and June 1981.
+- Hamel, G., & Prahalad, C.K. (1994), Competing for the future. Boston, MA: Harvard Business School Press.
+- Rohrbeck, Rene & Gemuenden, H.G. (2008) Strategic Foresight in Multinational Companies: Building a Best-Practice Framework from Case Studies, R&D Management Conference 2008 "Emerging methods in R&D management": Ottawa, Canadá.
+- Rohrbeck, R., S. Mahdjour, S. Knab, T. Frese (2009) Benchmarking Report - Strategic Foresight in Multinational Companies, Report of the European Corporate Foresight Group: Berlín, Germany.
+- Schwarz, J.-O. (2008) Assessing the future of futures studies in management, Futures, Vol. 40, Iss. 3, 237-246.
+- Slaughter, Richard A. (1995), Futures for the Third Millennium. Prospect Media, St. Leonards, NSW, Australia, ISBN 1-86316 148-1.
+- Slaughter, Richard A. (2004), Futures Beyond Dystopia: Creating Social Foresight. RoutledgeFarmer, London, UK, ISBN 978-0-415-30270-8

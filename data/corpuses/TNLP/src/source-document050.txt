@@ -1,0 +1,232 @@
+PostgreSQL
+
+PostgreSQL es un Sistema de gestión de bases de datos relacional orientado a objetos y libre, publicado bajo la licencia BSD.
+
+Como muchos otros proyectos de código abierto, el desarrollo de PostgreSQL no es manejado por una empresa y/o persona, sino que es dirigido por una comunidad de desarrolladores que trabajan de forma desinteresada, altruista, libre y/o apoyados por organizaciones comerciales. Dicha comunidad es denominada el PGDG (PostgreSQL Global Development Group).
+
+Nombre del producto
+
+El uso de caracteres en mayúscula en el nombre PostgreSQL puede confundir a algunas personas a primera vista. Las distintas pronunciaciones de "SQL" pueden llevar a confusión. Los desarrolladores de PostgreSQL lo pronuncian /poːst ɡɹɛs kjuː ɛl/;. Es también común oír abreviadamente como simplemente "Postgres", el que fue su nombre original. Debido a su soporte del estándar SQL entre la mayor parte de bases de datos relacionales, la comunidad consideró cambiar el nombre al anterior Postgres. Sin embargo, el PostgreSQL Core Team anunció en 2007 que el producto seguiría llamándose PostgreSQL. El nombre hace referencia a los orígenes del proyecto como la base de datos "post-Ingres", y los autores originales también desarrollaron la base de datos Ingres.
+
+Historia
+
+PostgreSQL ha tenido una larga evolución, la cual se inicia en 1982 con el proyecto Ingres en la Universidad de Berkeley. Este proyecto, liderado por Michael Stonebraker, fue uno de los primeros intentos en implementar un motor de base de datos relacional. Después de haber trabajado un largo tiempo en Ingres y de haber tenido una experiencia comercial con el mismo, Michael decidió volver a la Universidad en 1985 para trabajar en un nuevo proyecto sobre la experiencia de Ingres, dicho proyecto fue llamado post-ingres o simplemente POSTGRES.
+
+El proyecto post-ingres pretendía resolver los problemas con el modelo de base de datos relacional que habían sido aclarados a comienzos de los años 1980. El principal de estos problemas era la incapacidad del modelo relacional de comprender "tipos", es decir, combinaciones de datos simples que conforman una única unidad. Actualmente estos son llamados objetos. Se esforzaron en introducir la menor cantidad posible de funcionalidades para completar el soporte de tipos. Estas funcionalidades incluían la habilidad de definir tipos, pero también la habilidad de describir relaciones - las cuales hasta ese momento eran ampliamente utilizadas pero mantenidas completamente por el usuario. En Postgres la base de datos «comprendía» las relaciones y podía obtener información de tablas relacionadas utilizando reglas. Postgres usó muchas ideas de Ingres pero no su código.
+
+La siguiente lista muestra los hitos más importantes en la vida del proyecto Postgres.
+- 1986: se publicaron varios papers que describían las bases del sistema.
+- 1988: ya se contaba con una versión utilizable.
+- 1989: el grupo publicaba la versión 1 para una pequeña comunidad de usuarios.
+- 1990: se publicaba la versión 2 la cual tenía prácticamente reescrito el sistema de reglas.
+- 1991: publicación de la versión 3, esta añadía la capacidad de múltiples motores de almacenamiento.
+- 1993: crecimiento importante de la comunidad de usuarios, la cual demandaba más características.
+- 1994: después de la publicación de la versión 4, el proyecto terminó y el grupo se disolvió.
+
+Después de que el proyecto POSTGRES terminara, dos graduados de la universidad, Andrew Yu y Jolly Chen, comenzaron a trabajar sobre el código de POSTGRES, esto fue posible dado que POSTGRES estaba licenciado bajo la BSD, y lo primero que hicieron fue añadir soporte para el lenguaje SQL a POSTGRES, dado que anteriormente contaba con un intérprete del lenguaje de consultas QUEL (basado en Ingres), creando así el sistema al cual denominaron Postgres95.
+
+Para el año 1996 se unieron al proyecto personas ajenas a la Universidad como Marc Fournier de Hub.Org Networking Services, Bruce Momjian y Vadim B. Mikheev quienes proporcionaron el primer servidor de desarrollo no universitario para el esfuerzo de desarrollo de código abierto y comenzaron a trabajar para estabilizar el código de Postgres95.
+
+En el año 1996 decidieron cambiar el nombre de Postgres95 de tal modo que refleje la característica del lenguaje SQL y lo terminaron llamando PostgreSQL, cuya primera versión de código abierto fue lanzada el 1 de agosto de 1996. La primera versión formal de PostgreSQL (6.0) fue liberada en enero de 1997. Desde entonces, muchos desarrolladores entusiastas de los motores de base de datos se unieron al proyecto, coordinaron vía Internet y entre todos comenzaron a incorporar muchas características al motor.
+
+Aunque la licencia permitía la comercialización de PostgreSQL, el código no se desarrolló en principio con fines comerciales, algo sorprendente considerando las ventajas que PostgreSQL ofrecía. La principal derivación se originó cuando Paula Hawthtorn (un miembro del equipo original de Ingres que se pasó a Postgres) y Michael Stonebraker conformaron Illustra Information Technologies para comercializar Postgres.
+
+En 2000, ex inversionistas de Red Hat crearon la empresa Great Bridge para comercializar PostgreSQL y competir contra proveedores comerciales de bases de datos. Great Bridge auspició a varios desarrolladores de PostgreSQL y donó recursos de vuelta a la comunidad, pero a fines de 2001 cerró debido a la dura competencia de compañías como Red Hat y pobres condiciones del mercado.
+
+En 2001, Command Prompt, Inc. lanzó Mammonth PostgreSQL, la más antigua distribución comercial de PostgreSQL. Continúa brindando soporte a la comunidad PostgreSQL a través del auspicio de desarrolladores y proyectos, incluyendo PL/Perl, PL/php y el alojamiento de proyectos de comunidades como PostgreSQL Build Farm.
+
+En enero de 2005, PostgreSQL recibió apoyo del proveedor de base de datos Pervasive Software, conocido por su producto Btrieve que se utilizaba en la plataforma Novell Netware. Pervasive anunció soporte comercial y participación comunitaria y logró algo de éxito. Sin embargo, en julio de 2006 dejó el mercado de soporte de PostgreSQL.
+
+A mediados de 2005 otras dos compañías anunciaron planes para comercializar PostgreSQL con énfasis en nichos separados de mercados. EnterpriseDB añadió funcionalidades que le permitían a las aplicaciones escritas para trabajar con Oracle ser más fáciles de ejecutar con PostgreSQL. Greenplum contribuyó mejoras directamente orientadas a aplicaciones de Data Warehouse e Inteligencia de negocios, incluyendo el proyecto BizGres.
+
+En octubre de 2005, John Loiacono, vicepresidente ejecutivo de software en Sun Microsystems comentó: "No estamos yendo tras el OEM de Microsoft pero estamos viendo a PostgreSQL ahora", aunque no se dieron especificaciones en ese momento. Para noviembre de 2005, Sun Solaris 10 (lanzamiento 6/06) incluía PostgreSQL.
+
+En agosto de 2007 EnterpriseDB anunció el Postgres Resource Center y EnterpriseDB Postgres, diseñados para ser una completamente configurada distribución de PostgreSQL incluyendo muchos módulos contribuidos y agregados. EnterpriseDB Postgres fue renombrado Postgres Plus en marzo de 2008.
+
+El proyecto PostgreSQL continúa haciendo lanzamientos principales anualmente y lanzamientos menores de reparación de bugs, todos disponibles bajo la licencia BSD, y basados en contribuciones de proveedores comerciales, empresas aportantes y programadores de código abierto mayormente.
+
+Características
+
+Algunas de sus principales características son, entre otras:
+
+Alta concurrencia
+
+Mediante un sistema denominado MVCC (Acceso concurrente multiversión, por sus siglas en inglés) PostgreSQL permite que mientras un proceso escribe en una tabla, otros accedan a la misma tabla sin necesidad de bloqueos. Cada usuario obtiene una visión consistente de lo último a lo que se le hizo commit. Esta estrategia es superior al uso de bloqueos por tabla o por filas común en otras bases, eliminando la necesidad del uso de bloqueos explícitos...
+
+Amplia variedad de tipos nativos
+
+PostgreSQL provee nativamente soporte para:
+- Números de precisión arbitraria.
+- Texto de largo ilimitado.
+- Figuras geométricas (con una variedad de funciones asociadas).
+- Direcciones IP (IPv4 e IPv6).
+- Bloques de direcciones estilo CIDR.
+- Direcciones MAC.
+- Arrays.
+
+Adicionalmente los usuarios pueden crear sus propios tipos de datos, los que pueden ser por completo indexables gracias a la infraestructura GiST de PostgreSQL. Algunos ejemplos son los tipos de datos GIS creados por el proyecto PostGIS.
+
+Otras características
+- Claves ajenas también denominadas Llaves ajenas o Claves Foráneas (foreign keys).
+- Disparadores (triggers): Un disparador o trigger se define como una acción específica que se realiza de acuerdo a un evento, cuando éste ocurra dentro de la base de datos. En PostgreSQL esto significa la ejecución de un procedimiento almacenado basado en una determinada acción sobre una tabla específica. Ahora todos los disparadores se definen por seis características:
+    - El nombre del disparador o trigger
+    - El momento en que el disparador debe arrancar
+    - El evento del disparador deberá activarse sobre...
+    - La tabla donde el disparador se activará
+    - La frecuencia de la ejecución
+    - La función que podría ser llamada
+    - La función no es correcta
+
+Entonces combinando estas seis características, PostgreSQL le permitirá crear una amplia funcionalidad a través de su sistema de activación de disparadores (triggers).
+- Vistas.
+- Integridad transaccional.
+- Herencia de tablas.
+- Tipos de datos y operaciones geométricas.
+- Soporte para transacciones distribuidas. Permite a PostgreSQL integrarse en un sistema distribuido formado por varios recursos (p.ej, una base de datos PostgreSQL, otra Oracle, una cola de mensajes IBM MQ JMS y un ERP SAP) gestionado por un servidor de aplicaciones donde el éxito ("commit") de la transacción global es el resultado del éxito de las transacciones locales. Más información en inglés en http://www.theserverside.com/discussions/thread.tss?thread_id=21385#95297 y en http://java.sun.com/javaee/technologies/jta/index.jsp.
+
+Funciones
+
+Bloques de código que se ejecutan en el servidor. Pueden ser escritos en varios lenguajes, con la potencia que cada uno de ellos da, desde las operaciones básicas de programación, tales como bifurcaciones y bucles, hasta las complejidades de la programación orientada a objetos o la programación funcional.
+
+Los disparadores (triggers en inglés) son funciones enlazadas a operaciones sobre los datos.
+
+Algunos de los lenguajes que se pueden usar son los siguientes:
+- Un lenguaje propio llamado PL/PgSQL (similar al PL/SQL de oracle).
+- C.
+- C++.
+- Java PL/Java web.
+- PL/Perl.
+- plPHP.
+- PL/Python.
+- PL/Ruby.
+- PL/sh.
+- PL/Tcl.
+- PL/Scheme.
+- Lenguaje para aplicaciones estadísticas R por medio de PL/R.
+
+PostgreSQL soporta funciones que retornan "filas", donde la salida puede tratarse como un conjunto de valores que pueden ser tratados igual a una fila retornada por una consulta (query en inglés).
+
+Las funciones pueden ser definidas para ejecutarse con los derechos del usuario ejecutor o con los derechos de un usuario previamente definido. El concepto de funciones, en otros DBMS, son muchas veces referidas como "procedimientos almacenados" (stored procedures en inglés).
+
+Ventajas
+
+-Seguridad en términos generales -Integridad en BD: restricciones en el dominio -Integridad referencial - Afirmaciones (Assertions) -Disparadores (Tiggers) -Autorizaciones -Conexión a DBMS -Transacciones y respaldos
+
+Productos alrededor de PostgreSQL
+
+El PGDG solo desarrolla el Motor de Datos y un número pequeño de utilidades, para potenciar el trabajo con PostgreSQL suele ser necesario añadir utilidades externas creadas especialmente para este motor, algunas de estas herramientas son:
+
+Historial de liberaciones
+
+Liberación 	Primera liberación 	Última versión menor 	Última liberación 	----
+0.01 	1995-05-01 	0.03 	1995-07-21 	
+1.0 	1995-09-05 	1.09 	No 1996-11-04 	
+6.0 	1997-01-29 	− 		
+6.1 	1997-06-08 	6.1.1 	No 1997-07-22 	
+6.2 	1997-10-02 	6.2.1 	No 1997-10-17 	
+6.3 	1998-03-01 	6.3.2 	No 1998-04-07 	
+6.4 	1998-10-30 	6.4.2 	No 1998-12-20 	
+6.5 	1999-06-09 	6.5.3 	No 1999-10-13 	
+7.0 	2000-05-08 	7.0.3 	No 2000-11-11 	
+7.1 	2001-04-13 	7.1.3 	No 2001-08-15 	
+7.2 	2002-02-04 	7.2.8 	No 2005-05-09 	
+7.3 	2002-11-27 	7.3.21 	No 2008-01-07 	
+7.4 	2003-11-17 	7.4.30 	No 2010-10-04 	
+8.0 	2005-01-19 	8.0.26 	No 2010-10-04 	
+8.1 	2005-11-08 	8.1.23 	No 2010-12-16 	
+8.2 	2006-12-05 	8.2.23 	No 2011-09-26 	
+8.3 	2008-02-04 	8.3.23 	No 2013-02-07 	
+8.4 	2009-07-01 	8.4.22 	No 2014-07-24 	
+9.0 	2010-09-20 	9.0.18 	Sí 2014-07-24 	
+9.1 	2011-09-12 	9.1.14 	Sí 2014-07-24 	
+9.2 	2012-09-10 	9.2.9 	Sí 2014-07-24 	
+9.3 	2013-09-09 	9.3.5 	Sí 2014-07-24 	
+Sí Soportado por la comunidad
+No Sin soporte de la comunidad1
+
+Alternativas Comerciales
+
+Gracias a su licencia BSD, se permite la utilización del código para ser comercializado. Uno de los casos ejemplo es la de Enterprise DB (Postgresql Plus), la cual incluye varios agregados y una interfaz de desarrollo basada en Java. Entre otras empresas que utilizan Postgresql para comercializar se encuentra CyberTech (Alemania), con su producto CyberCluster.
+
+GIS
+
+PostGIS
+    Extensión que añade soporte de objetos geográficos a PostgreSQL y permite realizar análisis mediante consultas SQL espaciales o mediante conexión a aplicaciones GIS (Sistema de Información Geográfica).
+
+Replicación
+
+PgCluster
+    Replicación multi maestro.
+
+Slony-I
+    Replicación maestro esclavo.
+
+PyReplica
+    Replicación maestro esclavo y multi maestro asincrónica.
+
+Herramientas de administración
+
+PgAdmin3
+    Entorno de escritorio visual. Instalable en plataformas Linux, FreeBSD, Solaris, Mac OSX y Windows. Permite conectarse a bases de datos PostgreSQL que estén ejecutándose en cualquier plataforma.
+    Facilita la gestión y administración de bases de datos ya sea mediante instrucciones SQL o con ayuda de un entorno gráfico. Permite acceder a todas las funcionalidades de la base de datos; consulta, manipulación y gestión de datos, incluso opciones avanzadas como manipulación del motor de replicación Slony-I
+
+PgAccess
+    Entorno de escritorio visual.
+
+PhpPgAdmin
+    Entorno web.
+
+psql
+    Cliente de consola.
+
+Database Master
+    Entorno de escritorio visual.
+
+Búsqueda de texto
+
+Full text search
+    Incluido en el núcleo a partir de la versión 8.3.
+    Via Tsearch2 y OpenFTS para versiones anteriores a la 8.3.
+
+XML
+
+XML/XSLT soporte
+    Via XPath extensiones en la sección contrib.
+
+Usuarios destacados
+- .org, .info, .mobi y .aero registros de dominios por Afilias.2
+- La American Chemical Society.
+- BASF.
+- IMDb.
+- Skype.
+- TiVo.
+- Penny Arcade.
+- Sony Online.3
+- U.S. Departamento de Trabajo.
+- USPS.
+- VeriSign.
+- Pictiger.com
+- Wisconsin Circuit Court Access con 6 * 180GB DBs replicados en tiempo real.
+- OpenACS y .LRN.
+- INEGI.
+- IFE.
+
+Premios
+
+PostgreSQL ha recibido los siguientes reconocimientos:4
+- 1999 LinuxWorld Editor's Choice Award for Best Database
+- 2000 Linux Journal Editors' Choice Awards for Best Database
+- 2002 Linux New Media Editors Choice Award for Best Database
+- 2003 Linux Journal Editors' Choice Awards for Best Database
+- 2004 Linux New Media Award For Best Database
+- 2004 Linux Journal Editors' Choice Awards for Best Database
+- 2004 ArsTechnica Best Server Application Award
+- 2005 Linux Journal Editors' Choice Awards for Best Database
+- 2006 Linux Journal Editors' Choice Awards for Best Database
+- 2008 Developer.com Product of the Year, Database Tool
+
+Referencias
+- «Versioning policy». PostgreSQL Global Development Group. Consultado el 2012-01-30.
+- PostgreSQL affiliates.ORG domain
+- Sony Online opts for open-source database over Oracle
+- «PostgreSQL, Award Winning Software». postgresql.org (19-01-2008). Consultado el 31-01-2008.

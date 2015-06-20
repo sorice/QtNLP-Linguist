@@ -1,0 +1,137 @@
+Red neuronal artificial
+
+Las redes de neuronas artificiales (denominadas habitualmente como RNA o en inglés como: "ANN"1 ) son un paradigma de aprendizaje y procesamiento automático inspirado en la forma en que funciona el sistema nervioso de los animales. Se trata de un sistema de interconexión de neuronas que colaboran entre sí para producir un estímulo de salida. En inteligencia artificial es frecuente referirse a ellas como redes de neuronas o redes neuronales.
+
+Historia
+
+Los primeros modelos de redes neuronales datan de 1943 por los neurólogos McCulloch y Pitts. Años más tarde, en 1949, Donald Hebb desarrolló sus ideas sobre el aprendizaje neuronal, quedando reflejado en la "regla de Hebb". En 1958, Rosemblatt desarrolló el perceptrón simple, y en 1960, Widrow y Hoff desarrollaron el ADALINE, que fue la primera aplicación industrial real.
+
+En los años siguientes, se redujo la investigación, debido a la falta de modelos de aprendizaje y el estudio de Minsky y Papert sobre las limitaciones del perceptrón. Sin embargo, en los años 80, volvieron a resurgir las RNA gracias al desarrollo de la red de Hopfield, y en especial, al algoritmo de aprendizaje de retropropagación (BackPropagation) ideado por Rumelhart y McLellan en 1986 que fue aplicado en el desarrollo de los perceptrones multicapa. 2
+
+Propiedades
+
+Una red neuronal se compone de unidades llamadas neuronas. Cada neurona recibe una serie de entradas a través de interconexiones y emite una salida. Esta salida viene dada por tres funciones:
+1. Una función de propagación (también conocida como función de excitación), que por lo general consiste en el sumatorio de cada entrada multiplicada por el peso de su interconexión (valor neto). Si el peso es positivo, la conexión se denomina excitatoria; si es negativo, se denomina inhibitoria.
+2. Una función de activación, que modifica a la anterior. Puede no existir, siendo en este caso la salida la misma función de propagación.
+3. Una función de transferencia, que se aplica al valor devuelto por la función de activación. Se utiliza para acotar la salida de la neurona y generalmente viene dada por la interpretación que queramos darle a dichas salidas. Algunas de las más utilizadas son la función sigmoidea (para obtener valores en el intervalo [0,1]) y la tangente hiperbólica (para obtener valores en el intervalo [-1,1]).
+
+Diseño y programación de una RNA (red neuronal artificial)
+
+Con un paradigma convencional de programación en ingeniería del software, el objetivo del programador es modelar matemáticamente (con distintos grados de formalismo) el problema en cuestión y posteriormente formular una solución (programa) mediante un algoritmo codificado que tenga una serie de propiedades que permitan resolver dicho problema. En contraposición, la aproximación basada en las RNA parte de un conjunto de datos de entrada suficientemente significativo y el objetivo es conseguir que la red aprenda automáticamente las propiedades deseadas. En este sentido, el diseño de la red tiene menos que ver con cuestiones como los flujos de datos y la detección de condiciones, y más que ver con cuestiones tales como la selección del modelo de red, la de las variables a incorporar y el preprocesamiento de la información que formará el conjunto de entrenamiento. Asimismo, el proceso por el que los parámetros de la red se adecuan a la resolución de cada problema no se denomina genéricamente programación sino que se suele denominar entrenamiento neuronal.
+
+Por ejemplo en una red que se va a aplicar al diagnóstico de imágenes médicas; durante la fase de entrenamiento el sistema recibe imágenes de tejidos que se sabe son cancerígenos y tejidos que se sabe son sanos, así como las respectivas clasificaciones de dichas imágenes. Si el entrenamiento es el adecuado, una vez concluido, el sistema podrá recibir imágenes de tejidos no clasificados y obtener su clasificación sano/no sano con un buen grado de seguridad. Las variables de entrada pueden ser desde los puntos individuales de cada imagen hasta un vector de características de las mismas que se puedan incorporar al sistema (por ejemplo, procedencia anatómica del tejido de la imagen o la edad del paciente al que se le extrajo la muestra).
+
+Estructura
+
+La mayoría de los científicos coinciden en que una RNA es muy diferente en términos de estructura de un cerebro animal. Al igual que el cerebro, una RNA se compone de un conjunto masivamente paralelo de unidades de proceso muy simples y es en las conexiones entre estas unidades donde reside la inteligencia de la red. Sin embargo, en términos de escala, un cerebro es muchísimo mayor que cualquier RNA creada hasta la actualidad, y las neuronas artificiales también son más simples que su contrapartida animal.
+
+Biológicamente, un cerebro aprende mediante la reorganización de las conexiones sinápticas entre las neuronas que lo componen. De la misma manera, las RNA tienen un gran número de procesadores virtuales interconectados que de forma simplificada simulan la funcionalidad de las neuronas biológicas. En esta simulación, la reorganización de las conexiones sinápticas biológicas se modela mediante un mecanismo de pesos, que son ajustados durante la fase de aprendizaje. En una RNA entrenada, el conjunto de los pesos determina el conocimiento de esa RNA y tiene la propiedad de resolver el problema para el que la RNA ha sido entrenada.
+
+Por otra parte, en una RNA, además de los pesos y las conexiones, cada neurona tiene asociada una función matemática denominada función de transferencia. Dicha función genera la señal de salida de la neurona a partir de las señales de entrada. La entrada de la función es la suma de todas las señales de entrada por el peso asociado a la conexión de entrada de la señal. Algunos ejemplos de entradas son la función escalón de Heaviside, la lineal o mixta, la sigmoide y la función gaussiana, recordando que la función de transferencia es la relación entre la señal de salida y la entrada.
+
+Ventajas
+
+Las redes neuronales artificiales (RNA) tienen muchas ventajas debido a que están basadas en la estructura del sistema nervioso, principalmente el cerebro.
+- Aprendizaje: Las RNA tienen la habilidad de aprender mediante una etapa que se llama etapa de aprendizaje. Esta consiste en proporcionar a la RNA datos como entrada a su vez que se le indica cuál es la salida (respuesta) esperada.
+- Auto organización: Una RNA crea su propia representación de la información en su interior, quitándole esta tarea al usuario.
+- Tolerancia a fallos: Debido a que una RNA almacena la información de forma redundante, ésta puede seguir respondiendo de manera aceptable aun si se daña parcialmente.
+- Flexibilidad: Una RNA puede manejar cambios no importantes en la información de entrada, como señales con ruido u otros cambios en la entrada (por ejemplo si la información de entrada es la imagen de un objeto, la respuesta correspondiente no sufre cambios si la imagen cambia un poco su brillo o el objeto cambia ligeramente).
+- Tiempo real: La estructura de una RNA es paralela, por lo cual si esto es implementado con computadoras o en dispositivos electrónicos especiales, se pueden obtener respuestas en tiempo real.
+
+Tipología de las RNA
+
+Modelos
+
+Existe una serie de modelos que aparecen en la mayoría de estudios académicos y la bibliografía especializada.
+- Perceptrón
+- Adaline
+- Perceptrón multicapa
+- Memorias asociativas
+- Máquina de Boltzmann
+- Máquina de Cauchy
+- Propagación hacia atrás (backpropagation)
+- Redes de Elman
+- Redes de Hopfield
+- Red de contrapropagación
+- Redes de neuronas de base radial
+- Redes de neuronas de aprendizaje competitivo
+- Mapas Autoorganizados (RNA) (Redes de Kohonen)
+- Crecimiento dinámico de células
+- Gas Neuronal Creciente
+- Redes ART (Adaptative Resonance Theory)
+
+Topología
+
+Una primera clasificación de las redes de neuronas artificiales que se suele hacer es en función del patrón de conexiones que presenta. Así se definen tres tipos básicos de redes:
+- Dos tipos de redes de propagación hacia delante o acíclicas en las que todas las señales van desde la capa de entrada hacia la salida sin existir ciclos, ni conexiones entre neuronas de la misma capa de red neuronal y su clasificación.
+    - Monocapa. Ejemplos: perceptrón, Adaline.
+    - Multicapa. Ejemplos: perceptrón multicapa.
+- Las redes recurrentes que presentan al menos un ciclo cerrado de activación neuronal. Ejemplos: Elman, Hopfield, máquina de Boltzmann.
+
+Aprendizaje
+
+Una segunda clasificación que se suele hacer es en función del tipo de aprendizaje de que es capaz (si necesita o no un conjunto de entrenamiento supervisado). Para cada tipo de aprendizaje encontramos varios modelos propuestos por diferentes autores:
+- Aprendizaje supervisado: necesitan un conjunto de datos de entrada previamente clasificado o cuya respuesta objetivo se conoce. Ejemplos de este tipo de redes son: el perceptrón simple, la red Adaline, el perceptrón multicapa, red backpropagation, y la memoria asociativa bidireccional.
+- Aprendizaje no supervisado o autoorganizado: no necesitan de tal conjunto previo. Ejemplos de este tipo de redes son: las memorias asociativas, las redes de Hopfield, la máquina de Boltzmann y la máquina de Cauchy, las redes de aprendizaje competitivo, las redes de Kohonen o mapas autoorganizados y las redes de resonancia adaptativa (ART).
+- Redes híbridas: son un enfoque mixto en el que se utiliza una función de mejora para facilitar la convergencia. Un ejemplo de este último tipo son las redes de base radial.
+- Aprendizaje reforzado: se sitúa a medio camino entre el supervisado y el autoorganizado.
+
+Tipo de entrada
+
+Finalmente también se pueden clasificar las RNAs según sean capaces de procesar información de distinto tipo en:
+- Redes analógicas: procesan datos de entrada con valores continuos y, habitualmente, acotados. Ejemplos de este tipo de redes son: Hopfield, Kohonen y las redes de aprendizaje competitivo.
+- Redes discretas: procesan datos de entrada de naturaleza discreta; habitualmente valores lógicos booleanos. Ejemplos de este segundo tipo de redes son: las máquinas de Boltzmann y Cauchy, y la red discreta de Hopfield.
+
+Aplicaciones
+
+Las características de las RNA las hacen bastante apropiadas para aplicaciones en las que no se dispone a priori de un modelo identificable que pueda ser programado, pero se dispone de un conjunto básico de ejemplos de entrada (previamente clasificados o no). Asimismo, son altamente robustas tanto al ruido como a la disfunción de elementos concretos y son fácilmente paralelizables.
+
+Esto incluye problemas de clasificación y reconocimiento de patrones de voz, imágenes, señales, etc. Asimismo se han utilizado para encontrar patrones de fraude económico, hacer predicciones en el mercado financiero, hacer predicciones de tiempo atmosférico, etc.
+
+También se pueden utilizar cuando no existen modelos matemáticos precisos o algoritmos con complejidad razonable, por ejemplo la red de Kohonen ha sido aplicada con un éxito más que razonable al clásico problema del viajante (un problema para el que no se conoce solución algorítmica de complejidad polinómica).
+
+Otro tipo especial de redes neuronales artificiales se ha aplicado en conjunción con los algoritmos genéticos (AG) para crear controladores para robots. La disciplina que trata la evolución de redes neuronales mediante algoritmos genéticos se denomina Robótica Evolutiva. En este tipo de aplicación el genoma del AG lo constituyen los parámetros de la red (topología, algoritmo de aprendizaje, funciones de activación, etc.) y la adecuación de la red viene dada por la adecuación del comportamiento exhibido por el robot controlado (normalmente una simulación de dicho comportamiento).
+
+Ejemplos
+
+Quake II Neuralbot
+
+Un bot es un programa que simula a un jugador humano. El Neuralbot es un bot para el juego Quake II que utiliza una red neuronal artificial para decidir su comportamiento y un algoritmo genético para el aprendizaje. Es muy fácil probarlo para ver su evolución. Más información aquí [1]
+
+Clasificador No Sesgado de Proteínas
+
+Es un programa que combina diversas técnicas computacionales con el objetivo de clasificar familias de proteínas. Un posible método consiste en utilizar métricas adaptativas como por ejemplo: mapas autoorganizados y algoritmos genéticos.
+
+El problema de clasificación no sesgada basada en la expresión de las proteínas en Aminoácidos puede reducirse, conceptualmente, a lo siguiente:
+- La identificación de grupos de proteínas que compartan características comunes.
+- La determinación de las razones estructurales por las cuales las proteínas en cuestión se agrupan de la manera indicada.
+- Evitar la idea de establecer criterios de clasificación (“sesgados”) fundamentados en ideas preconcebidas para lograr su clasificación. En este sentido, hay dos asuntos que considerar:
+    - Cómo lograr la caracterización de las proteínas de manera no sesgada
+    - Cómo lograr lo anterior sin apelar a medidas de agrupamiento que, a su vez, impliquen algún tipo de sesgo sobre dicho agrupamiento.
+
+Las RNA han sido aplicadas a un número en aumento de problemas en la vida real y de considerable complejidad, donde su mayor ventaja es en la solución de problemas que son bastante complejos para la tecnología actual, tratándose de problemas que no tienen una solución algorítmica o cuya solución algorítmica es demasiado compleja para ser encontrada.
+
+En general, debido a que son parecidas a las del cerebro humano, las RNA son bien nombradas ya que son buenas para resolver problemas que el humano puede resolver pero las computadoras no. Estos problemas incluyen el reconocimiento de patrones y la predicción del tiempo. De cualquier forma, el humano tiene capacidad para el reconocimiento de patrones, pero la capacidad de las redes neuronales no se ve afectada por la fatiga, condiciones de trabajo, estado emocional, y compensaciones.
+
+Se conocen cinco aplicaciones tecnológicas extendidas:
+1. Reconocimiento de textos manuscritos
+2. Reconocimiento del habla
+3. Simulación de centrales de producción de energía
+4. Detección de explosivos
+5. Identificación de blancos de radares
+
+Herramientas de software
+
+Existen muchas herramientas de software que implementan redes neuronales artificiales, tanto libres como comerciales como, por ejemplo:
+- Emergent
+- FANN
+- Neural Designer
+- NeuroIntelligence
+- Neuroph
+- NeuroSolutions
+- Synapse
+- OpenNN
+
+Referencias
+- Aunque en francés se utiliza el acrónimo ANN (de Artificial Neural Networks) para referirse a este campo de la computación en este artículo se utilizará su equivalente castellano RNA.
+- Redes de Neuronas Artificiales, Redes de Neuronas Artificiales, UC3M, RAI 2012.

@@ -1,0 +1,7 @@
+Commit
+
+En el contexto de la Ciencia de la computación y la gestión de datos, commit (acción de comprometer) se refiere a la idea de consignar un conjunto de cambios "tentativos, o no permanentes". Un uso popular es al final de una transacción de base de datos.
+
+Una sentencia COMMIT en SQL finaliza una transacción de base de datos dentro de un sistema gestor de base de datos relacional (RDBMS) y pone visibles todos los cambios a otros usuarios. El formato general es emitir una sentencia BEGIN WORK, una o más sentencias SQL, y entonces la sentencia COMMIT. Alternativamente, una sentencia ROLLBACK se puede emitir, la cual deshace todo el trabajo realizado desde que se emitió BEGIN WORK. Una sentencia COMMIT publicará cualquiera de los savepoints (puntos de recuperación) existentes que puedan estar en uso.
+
+En términos de transacciones, lo opuesto de commit para descartar los cambios "en tentativa" de una transacción, es un rollback.

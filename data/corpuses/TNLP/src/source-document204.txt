@@ -1,0 +1,24 @@
+Peor es mejor
+
+Peor es mejor, o estilo Nueva Jersey, es el nombre de una técnica de desarrollo de software, o filosofía de diseño, en la cual la simplicidad en la interfaz y en la implementación es más importante que cualquier otra propiedad del sistema (incluyendo corrección, consistencia y completitud).
+
+Origen
+
+El experto en Lisp Richard P. Gabriel creó el concepto en 1989 y lo presentó en Lisp: good news, bad news, how to win big (Lisp: buenas noticias, malas noticias, cómo triunfar). Una sección del artículo, titulada El surgimiento de "Peor es mejor", fue ampliamente difundida a comienzos de 1991.
+
+Descripción
+- Simplicidad: el diseño debe ser simple en su implementación y en su interfaz. Sin embargo, la simplicidad de la implementación es más importante que la de la interfaz. Esta propiedad es la más importante en el diseño.
+- Corrección: el diseño debe ser correcto en todos los aspectos observables, pero ser simple es ligeramente mejor que ser correcto.
+- Consistencia: el diseño no debe ser exageradamente inconsistente, pero en algunos casos la consistencia puede ser sacrificada por simplicidad. Para evitar inconsistencias o complejidad en la implementación, es preferible eliminar las partes del diseño que manejan circunstancias poco comunes.
+- Completitud: el diseño debe incluir tantas situaciones importantes como sea práctico. Todos los casos que son razonablemente esperados deben ser incluidos. La completitud puede ser sacrificada en favor de cualquier otra cualidad, y de hecho debe sacrificarse siempre que se arriesgue la simplicidad de la implementación. La consistencia puede sacrificarse para lograr completitud si se conserva la simplicidad. En especial, la consistencia de la interfaz es de poco valor.
+
+Contraste con el enfoque MIT
+
+Además, Gabriel contrasta esta filosofía con el llamado enfoque MIT (también conocido como Lo correcto), y afirma que Peor es mejor produce software más exitoso. Dado que el programa inicial es básicamente bueno, es más fácil trasladarlo a nuevas máquinas y situaciones, su implementación inicial tomará mucho menos tiempo y esfuerzo, y su uso se difundirá mucho antes. Una vez distribuido habrá presión para mejorar su funcionalidad, pero los usuarios ya habrán sido condicionados a aceptar menos de Lo correcto. "Por lo tanto, el software peor-es-mejor ganará aceptación primero, luego condicionará a sus usuarios a esperar menos, y posteriormente será mejorado a un punto que sea casi lo correcto. En términos concretos, aun cuando en 1987 los compiladores de Lisp eran tan buenos como los de C, hay muchos más expertos que quieren mejorar los compiladores de C que los que quieren mejorar los compiladores de Lisp."
+
+Otras ideas estrechamente relacionadas son importantes en la filosofía de diseño de Unix y en el movimiento de código abierto.
+
+El ensayo de Gabriel fue una respuesta a la conferencia "Más es menos", un ataque al diseño de software inflado. En ese entonces, Unix y el lenguaje de programación C habían superado a Lisp como el ambiente de desarrollo dominante en la comunidad de investigación en ciencias computacionales, y las relaciones entre los laboratorios Bell y las comunidades de inteligencia artificial del MIT eran altamente competitivas.
+
+Bibliografía
+- Lisp: Good News, Bad News, How to Win Big, Richard P. Gabriel.

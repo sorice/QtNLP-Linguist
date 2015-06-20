@@ -1,0 +1,69 @@
+Pruebas funcionales
+
+Una prueba funcional es una prueba basada en la ejecución, revisión y retroalimentación de las funcionalidades previamente diseñadas para el software. Las pruebas funcionales se hacen mediante el diseño de modelos de prueba que buscan evaluar cada una de las opciones con las que cuenta el paquete informático. Dicho de otro modo son pruebas específicas, concretas y exhaustivas para probar y validar que el software hace lo que debe y sobre todo, lo que se ha especificado.
+
+Fases
+
+Las pruebas funcionales se dividen en las siguientes fases:
+
+Análisis de requisitos (Planificación)
+
+En esta fase se inicia la elaboración del modelo jerárquico de requisitos de prueba partiendo de los procesos funcionales que soporta el producto o activo de software a evaluar. A partir de las funcionalidades se elaborará el plan de pruebas. Hay que obtener toda la información posible de las aplicaciones sobre las cuales se realizarán las pruebas. Esta información se deberá conseguir de toda la documentación disponible sobre su funcionamiento y hablando con el personal responsable de la misma.
+
+Diseño del plan de pruebas (Preparación)
+
+En esta fase se identifica, acuerda y especifican los atributos y características de calidad que se van a probar. El objetivo es diseñar las pruebas para que tengan la mayor probabilidad de encontrar defectos con la mínima cantidad de esfuerzo y tiempo. Serán pruebas que se llevarán a cabo a través de la interfaz gráfica del software (GUI). Es decir, demostrar que las funciones del software son operativas, que la entrada se acepta de forma adecuada y que se produce una salida correcta, así como que la integridad de la información externa se mantiene. Se crearán casos de prueba divididos en pasos (steps) para cada acción a realizar con un resultado esperado asociado, que podrá ser verificado. Durante la fase de diseño también se especifican los datos de entrada necesarios para que los casos de pruebas definidos puedan ser ejecutados (ya sea buscando el éxito de la prueba, o bien el fallo).
+
+Ejecución
+
+En esta fase se ejecutarán los casos de prueba anteriormente diseñados de forma manual. Hay que seguir al detalle el guión establecido dejando cierta libertad al tester para detectar situaciones anómalas no contempladas. Las baterías de pruebas serán ejecutadas como mínimo una vez antes del paso a producción, independientemente de las ejecuciones anteriores. Los casos de prueba fallados se reportarán a los desarrolladores para su corrección hasta que su resultado sea correcto.
+
+Gestión de Incidencias (Defectos)
+
+La gestión de incidencias es una parte implícita de la fase de ejecución, pero que al tener una alta importancia en las pruebas funcionales, diferenciamos como una etapa independiente. Cuando al realizar la acción de un step el resultado obtenido no es el esperado, habrá que abrir o reportar una incidencia para que el equipo de desarrollo tenga constancia del error. La gestión de incidencias es el principal canal de comunicación con el equipo de desarrollo. Las incidencias han de ser claras y con todo lujo de detalle, tienen que describir el error para que el equipo de desarrollo pueda comprenderlo perfectamente, reproducirlo, localizarlo y poder solucionarlo. Se deberá mantener una continua comunicación con el equipo de desarrollo para conocer el estado de los defectos y poder realizar las repruebas necesarias para su cierre.
+
+Según ejecución
+
+Las pruebas funcionales pueden ser, según su ejecución:
+
+Manuales
+
+Las pruebas funcionales manuales son las que ejecuta un tester como si fuese un usuario pero siguiendo una serie de pasos establecidos o test plan, diseñado en el análisis de los requisitos para garantizar que hace lo que debe (casos positivos), que no falla (casos negativos) y que es lo que se ha solicitado. El tester realizará las acciones indicadas en cada step del caso de prueba comprobando que se cumple el resultado esperado. Si el resultado es distinto al esperado, se reportará un defecto con todo detalle: descripción, datos utilizados, capturas de pantalla, etc. para facilitar la solución del defecto por parte de los desarrolladores.
+
+Automáticas
+
+Las pruebas funcionales automáticas son pruebas funcionales que se automatizan para "ahorrar tiempo de pruebas". A partir de los casos de prueba de las pruebas manuales, se automatizan los casos de prueba que se repitan en las ejecuciones. Esos casos suelen ser los más importantes (happy flow) de los módulos o procesos de negocio "vitales" de la aplicación, es decir, los procesos que siempre tienen que funcionar y que bajo ningún concepto pueden fallar. El objetivo de las pruebas funcionales automáticas es comprobar que nada de lo probado con anterioridad ha dejado de funcionar como debería.
+
+Según tipo de pruebas
+
+Las pruebas funcionales pueden ser, según tipo de pruebas:
+
+Pruebas exploratorias
+
+Son aquellas pruebas a través de las cuales, simultáneamente, se obtiene un aprendizaje y conocimiento de la aplicación a probar a la vez que se genera un valor desde el primer momento. Ayudan a la integración de la fase de pruebas de una forma mucho más rápida, pues permiten al tester elaborar un guion de pruebas que utilizará para el diseño de los futuros planes de pruebas. Estas pruebas son realmente útiles a la hora de probar aplicaciones ya desarrolladas, es decir, aquellas pruebas de software que no comienzan a la vez que el desarrollo. Para realizar las pruebas funcionales exploratorias se identificarán los distintos procesos de negocio o módulos de la aplicación y se le dará al tester libertad, poniéndose en la piel de un usuario, para probarlos. Estas pruebas exploratorias deberán ejecutarse sobre la última versión cerrada disponible de la aplicación.
+
+Pruebas de regresión
+
+El objetivo de las pruebas de regresión es eliminar el efecto onda, es decir, comprobar que cambios realizados en el software no introducen un comportamiento no deseado o errores adicionales en otros módulos o partes no modificados. Las pruebas de regresión se deben llevar a cabo cada vez que se hace un cambio en el sistema, tanto para corregir un error como para realizar una mejora. No es suficiente probar sólo los componentes modificados o añadidos, o las funciones que en ellos se realizan, sino que también es necesario controlar que las modificaciones no produzcan efectos negativos sobre el mismo u otros componentes. Este tipo de pruebas tiene que garantizar que tras un cambio en el software, al menos la funcionalidad más importante sigue funcionando. Para este tipo de pruebas lo ideal es automatizar los casos que validen que estas partes siguen funcionando, pues se ejecutarán de manera repetitiva a lo largo del ciclo de vida del software.
+
+Pruebas de compatibilidad
+
+Las pruebas de compatibilidad son pruebas funcionales realizadas en diferentes entornos como en cada navegador de internet, sistema operativo o dispositivo, para garantizar el correcto funcionamiento del aplicativo en todos los medios. El mismo software puede presentar errores dependiendo de dónde se ejecute: funcionales (botones y enlaces pueden dejar de funcionar, producen errores de sistema o simplemente no realizan la funcionalidad esperada), estéticos (pueden descuadrarse frames de la aplicación, no cargarse imágenes, desaparecer enlaces o botones y textos).
+
+Pruebas de integración
+
+Las pruebas de integración son pruebas funcionales entre dos o más sistemas. El objetivo de las pruebas de integración es verificar el correcto ensamblaje entre los distintos componentes una vez que han sido probados unitariamente con el fin de comprobar que interactúan correctamente a través de sus interfaces, cubren la funcionalidad establecida y se ajustan a los requisitos.
+
+Pruebas de aceptación
+
+El objetivo de las pruebas de aceptación es validar que un sistema cumple con el funcionamiento esperado y permitir al usuario de dicho sistema que determine su aceptación, desde el punto de vista de su funcionalidad y rendimiento. En las pruebas de aceptación, la ejecución y aprobación final corresponden al usuario o cliente, que es el que valida y verifica que el alcance es el correcto.
+
+Metodologías
+
+La metodología estándar o en cascada
+
+Es una metodología lineal. Se ordenan rigurosamente las etapas del proceso de tal forma que el inicio de cada etapa debe esperar a la finalización de la etapa anterior. El equipo de pruebas trabaja de forma paralela al equipo de desarrollo y empieza a ejecutar o pasar las pruebas una vez el desarrollo está completado.
+
+Las metodologías ágiles
+
+Se basan en el desarrollo iterativo e incremental, donde los requerimientos y soluciones evolucionan mediante la colaboración de grupos auto-organizados y multidisciplinarios, minimizando riesgos desarrollando en lapsos cortos de tiempo. Estos lapsos se denominan "Iteración". Cada iteración del ciclo de vida incluye: planificación, análisis de requerimientos, diseño, codificación, revisión y documentación. Una iteración no debe agregar demasiada funcionalidad para justificar el lanzamiento del producto al mercado, pero la meta es tener algo tangible (sin errores) al final de cada iteración. Al final de cada iteración el equipo vuelve a evaluar las prioridades del proyecto.

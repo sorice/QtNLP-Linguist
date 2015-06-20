@@ -1,0 +1,101 @@
+Desarrollo iterativo y creciente
+
+Desarrollo iterativo y creciente (o incremental) es un proceso de desarrollo de software creado en respuesta a las debilidades del modelo tradicional de cascada.
+
+Básicamente este modelo de desarrollo, que no es más que un conjunto de tareas agrupadas en pequeñas etapas repetitivas (iteraciones),1 es uno de los más utilizados en los últimos tiempos ya que, como se relaciona con novedosas estrategias de desarrollo de software y una programación extrema, es empleado en metodologías diversas.
+
+El modelo consta de diversas etapas de desarrollo en cada incremento, las cuales inician con el análisis y finalizan con la instauración y aprobación del sistema.2
+
+Concepto de desarrollo iterativo y creciente
+
+Se planifica un proyecto en distintos bloques temporales que se le denominan iteración. En una iteración se repite un determinado proceso de trabajo que brinda un resultado más completo para un producto final, de forma que quien lo utilice reciba beneficios de este proyecto de manera creciente.
+
+Para llegar a lograr esto, cada requerimiento debe tener un completo desarrollo en una única iteración que debe de incluir pruebas y una documentación para que el equipo pueda cumplir con todos los objetivos que sean necesarios y esté listo para ser dado al cliente. Así se evita tener riesgosas actividades en el proyecto finalizado.
+
+Lo que se busca es que en cada iteración los componentes logren evolucionar el producto dependiendo de los completados de las iteraciones antecesoras, agregando más opciones de requisitos y logrando así un mejoramiento mucho más completo.
+
+Una manera muy primordial para dirigir al proceso iterativo incremental es la de priorizar los objetivos y requerimientos en función del valor que ofrece el cliente.3
+
+Para apoyar el desarrollo de proyectos por medio de este modelo se han creado frameworks (entornos de trabajo), de los cuales los dos más famosos son el Rational Unified Process y el Dynamic Systems Development Method. El desarrollo incremental e iterativo es también una parte esencial de un tipo de programación conocido como Extreme Programming y los demás frameworks de desarrollo rápido de software.
+
+Ciclo de vida
+
+La idea principal detrás de mejoramiento iterativo es desarrollar un sistema de programas de manera incremental, permitiéndole al desarrollador sacar ventaja de lo que se ha aprendido a lo largo del desarrollo anterior, incrementando, versiones entregables del sistema. El aprendizaje viene de dos vertientes: el desarrollo del sistema, y su uso (mientras sea posible). Los pasos claves en el proceso son comenzar con una implementación simple de los requerimientos del sistema, e iterativamente mejorar la secuencia evolutiva de versiones hasta que el sistema completo esté implementado. En cada iteración, se realizan cambios en el diseño y se agregan nuevas funcionalidades y capacidades al sistema.
+
+Básicamente este modelo se basa en dos premisas:
+- Los usuarios nunca saben bien que es lo que necesitan para satisfacer sus necesidades.
+- En el desarrollo, los procesos tienden a cambiar.4
+
+El proceso en sí mismo consiste de:
+- Etapa de inicialización
+- Etapa de iteración
+- Lista de control de proyecto
+
+Consideraciones sobre el momento de aplicación
+
+Para integrar la usabilidad en un proceso de desarrollo, no es suficiente con asignar técnicas de usabilidad a actividades de desarrollo, puesto que no todas las técnicas de usabilidad son aplicables en cualquier momento de un desarrollo iterativo. Por ejemplo, las técnicas para desarrollar el concepto del producto están concebidas para su aplicación en en los primeros esfuerzos del desarrollo, cuando las necesidades se identifican y el esquema general del sistema se establece. Aunque es aconsejable aplicarlas también más tarde, para refinar el concepto, su principal esfuerzo de aplicación esta en las tareas iniciales de desarrollo.5
+
+Etapa de inicialización
+
+Se crea una versión del sistema. La meta de esta etapa es crear un producto con el que el usuario pueda interactuar, y por ende retroalimentar el proceso. Debe ofrecer una muestra de los aspectos claves del problema y proveer una solución lo suficientemente simple para ser comprendida e implementada fácilmente. Para guiar el proceso de iteración se crea una lista de control de proyecto, que contiene un historial de todas las tareas que necesitan ser realizadas. Incluye cosas como nuevas funcionalidades para ser implementadas, y areas de rediseño de la solución ya existente. Esta lista de control se revisa periódica y constantemente como resultado de la fase de análisis.
+
+Etapa de iteración
+
+Esta etapa involucra el rediseño e implementación de una tarea de la lista de control de proyecto, y el análisis de la versión más reciente del sistema. La meta del diseño e implementación de cualquier iteración es ser simple, directa y modular, para poder soportar el rediseño de la etapa o como una tarea añadida a la lista de control de proyecto. El código puede, en ciertos casos, representar la mayor fuente de documentación del sistema. El análisis de una iteración se basa en la retroalimentación del usuario y en el análisis de las funcionalidades disponibles del programa. Involucra el análisis de la estructura, modularidad, usabilidad, confiabilidad, eficiencia y eficacia (alcanzar las metas). La lista de control del proyecto se modifica bajo la luz de los resultados del análisis.
+
+Las guías primarias que guían la implementación y el análisis incluyen:
+- Cualquier dificultad en el diseño, codificación y prueba de una modificación debería apuntar a la necesidad de rediseñar o recodificar.
+- Las modificaciones deben ajustarse fácilmente a los módulos fáciles de encontrar y a los aislados. Si no es así, entonces se requiere algún grado de rediseño.
+- Las modificaciones a las tablas deben ser especialmente fáciles de realizar. Si dicha modificación no ocurre rápidamente, se debe aplicar algo de rediseño.
+- Las modificaciones deben ser más fáciles de hacer conforme avanzan las iteraciones. Si no es así, hay un problema primordial usualmente encontrado en un diseño débil o en la proliferación excesiva de parches al sistema.
+- Los parches normalmente deben permanecer solo por una o dos iteraciones. Se hacen necesarios para evitar el rediseño durante una fase de implementación.
+- La implementación existente debe ser analizada frecuentemente para determinar qué tal se ajusta a las metas del proyecto.
+- Las facilidades para analizar el programa deben ser utilizadas cada vez para ayudar en el análisis de implementaciones parciales.
+- La opinión del usuario debe ser solicitada y analizada para indicar deficiencias en la implementación referida por él.
+
+Caso práctico
+
+La mejora iterativa fue exitosamente aplicada al desarrollo de una familia extensa de compiladores para una familia de lenguajes de programación en una gama de arquitecturas de hardware. Un conjunto de 17 versiones del sistema se desarrollaron en un lugar, generando 17 mil líneas de código fuente de lenguaje de alto nivel (6500 de código ejecutable). El sistema posteriormente fue desarrollado en dos sitios diferentes, llegando a dos versiones diferentes del lenguaje base: una versión esencialmente se enfocaba en aplicaciones matemáticas, añadiendo números reales y varias funciones matemáticas, y la otra se centró en añadir capacidades para escribir del compilador. Cada iteración fue analizada del punto de vista de los usuarios (las capacidades del lenguaje fueron determinadas en parte por las necesidades del usuario) y el punto de vista del desarrollador (el diseño del compilador evolucionó para ser más fácilmente modificable, por ejemplo, para añadir nuevos tipos de datos). Mediciones tales como acoplamiento y modularización fueron seguidas sobre múltiples versiones.
+
+Características
+
+Usando análisis y mediciones como guías para el proceso de mejora es una diferencia mayor entre las mejoras iterativas y el desarrollo rápido de aplicaciones, principalmente por dos razones:
+- Provee de soporte para determinar la efectividad de los procesos y de la calidad del producto.
+- Permite estudiar y después mejorar y ajustar el proceso para el ambiente en particular.
+
+Estas mediciones y actividades de análisis pueden ser añadidas a los métodos de desarrollo rápido existentes.
+
+De hecho, el contexto de iteraciones múltiples conlleva ventajas en el uso de mediciones. Las medidas a veces son difíciles de comprender en lo absoluto, aunque en los cambios relativos en las medidas a través de la evolución del sistema puede ser muy informativo porque proveen una base de comparación. Por ejemplo, un vector de medidas m1, m2,..., mn puede ser definido para caracterizar varios aspectos del producto en cierto punto, como pueden ser el esfuerzo total realizado, los cambios, los defectos, los atributos lógico, físico y dinámico, consideraciones del entorno, etcétera. Así el observador puede decir como las características del producto como el tamaño, la complejidad, el acoplamiento y la cohesión incrementan o disminuyen en el tiempo. También puede monitorearse el cambio relativo de varios aspectos de un producto o pueden proveer los límites de las medidas para apuntar a problemas potenciales y anomalías.
+
+Ventajas del desarrollo incremental
+- En este modelo los usuarios no tienen que esperar hasta que el sistema completo se entregue para hacer uso de él. El primer incremento cumple los requerimientos más importantes de tal forma que pueden utilizar el software al instante.
+- Los usuarios pueden utilizar los incrementos iniciales como prototipos y obtener experiencia sobre los requerimientos de los incrementos posteriores del sistema.
+- Existe muy pocas probabilidades de riesgo en el sistema. Aunque se pueden encontrar problemas en algunos incrementos, lo normal es que el sistema se entregue sin inconvenientes al usuario.
+- Ya que los sistemas de más alta prioridad se entregan primero, y los incrementos posteriores se integran entre ellos, es muy poco probable que los sistemas más importantes sean a los que se les hagan más pruebas. Esto quiere decir que es menos probable que los usuarios encuentren fallas de funcionamiento del software en las partes más importantes del sistema.6
+
+Ventajas del desarrollo iterativo
+- En el desarrollo de este modelo se da la retroalimentación muy temprano a los usuarios.
+- Permite separar la complejidad del proyecto, gracias a su desarrollo por parte de cada iteración o bloque.
+- El producto es consistente y puntual en el desarrollo.
+- Los productos desarrollados con este modelo tienen una menor probabilidad de fallar.
+- Se obtiene un aprendizaje en cada iteración que es aplicado en el desarrollo del producto y aumenta las experiencias para próximos proyectos.7
+
+Debilidades de este modelo de desarrollo
+- La entrega temprana de los proyectos produce la creación de sistemas demasiados simples que a veces se ven un poco monótonos a los ojos del personal que lo recibe.6
+- La mayoría de los incrementos se harán en base de las necesidades de los usuarios. Los incrementos en si ya son estipulados desde antes de la entrega del proyecto, sin embargo hay que ver cómo se maneja el producto para ver si necesita otros cambios además de los estipulados antes de la entrega del proyecto. Este problema no se ve frecuentemente ya que la mayoría de las veces los incrementos estipulados suplen satisfactoriamente al usuario.6
+- Los incrementos no deben constar de muchas líneas de código ya que la idea de los incrementos es agregar accesorios al programa principal (o funcional), para que este tenga una y mil formas de desenvolverse en su tarea; llenar los incrementos de muchas líneas de código provocaría que se perdiera la objetividad o base de lo que se trata el desarrollo incremental.6
+- Requiere de un cliente involucrado durante todo el curso del proyecto. Hay clientes que simplemente no estarán dispuestos a invertir el tiempo necesario.
+- El trato con el cliente debe basarse en principios éticos y colaboración mutua, más que trabajar cada parte independientemente, defendiendo sólo su propio beneficio.8
+- La entrega de un programa que es parcial pero funcional puede hacer vulnerable al programa debido a la falta de robustez en su sistema, provocando que agentes ajenos puedan interferir con el correcto funcionamiento del programa en sí.6
+- Infunde responsabilidad en el equipo de desarrollo al trabajar directamente con el cliente, requiriendo de profesionales sobre el promedio.
+- Sufre fuertes penalizaciones en proyectos en los cuales los requerimientos están previamente definidos, o para proyectos "todo/nada" en los cuales se requiere que se completen en un 100% el producto para ser implementado (por ejemplo, licitaciones) otro punto muy importante es asegurarnos de que el trabajo se pueda cumplir tomando en cuenta los costos que podamos usar en nuestros propios recursos.
+
+Referencias
+- Proceso de Desarrollo Iterativo| http://fernandosoriano.com.ar/?p=13
+- Desarrollo de software. Ciclo de vida iterativo incremental| https://jummp.wordpress.com/2011/03/31/desarrollo-de-software-ciclo-de-vida-iterativo-incremental/
+- Desarrollo iterativo e incremental| http://www.proyectosagiles.org/desarrollo-iterativo-incremental
+- Modelo Iterativo| http://procesosoftware.wikispaces.com/Modelo+Iterativo
+- Constantine, L. L., Lockwood, L. A. D.: Software for Use: A Practical Guide to the Models and Methods of Usage - Centred Design. Addison - Wesley ( 1999)
+- Ian Sommerville (2005). «Entrega Incremental». Ingeniería del Software, Séptima edición edición... España: Pearson.
+- Proceso de Desarrollo Iterativo| http://fernandosoriano.com.ar/?p=13
+- Desarrollo iterativo e incremental| http://www.proyectosagiles.org/desarrollo-iterativo-incremental

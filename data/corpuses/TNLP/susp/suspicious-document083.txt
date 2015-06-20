@@ -1,0 +1,11 @@
+Algoritmo esperanza-maximización
+
+El algoritmo esperanza-maximización o algoritmo EM se usa en estadística para encontrar estimadores de máxima verosimilitud de parámetros en modelos probabilísticos que dependen de variables no observables. El algoritmo EM alterna pasos de esperanza (paso E), donde se computa la esperanza de la verosimilitud mediante la inclusión de variables latentes como si fueran observables, y un paso de maximización (paso M), donde se computan estimadores de máxima verosimilitud de los parámetros mediante la maximización de la verosimilitud esperada del paso E. Los parámetros que se encuentran en el paso M se usan para comenzar el paso E siguiente, y así el proceso se repite.
+
+Historia
+
+El algoritmo EM fue expuesto por Arthur Dempster, Nan Laird y Donald Rubin de la Royal Statistical Society en una publicación de 1977. Los autores señalan que el método ya había sido "propuesto muchas veces en situaciones especiales" por otros autores, pero la publicación de 1977 generaliza el método y desarrolla la teoría detrás de él. A partir de ese momento muchas variantes y modificaciones del algoritmo original propuesto han aparecido, pero la base matemática subyacente no ha cambiado.
+
+Aplicaciones
+
+El algoritmo EM se utiliza frecuentemente para algoritmos de agrupamiento en aprendizaje automático y visión artificial, para aprender Modelos ocultos de Márkov y Mixturas de Gaussianas, utilizadas en procesos de clasificación o reconocimiento. De esta forma, por su capacidad para manejar información faltante y observar variables ocultas, se está convirtiendo en una herramienta importante en muchos procesos de aprendizaje automático. Además, en psicometría, es casi indispensable para estimación de parámetros de items y habilidades latentes de teoría de respuesta al ítem.

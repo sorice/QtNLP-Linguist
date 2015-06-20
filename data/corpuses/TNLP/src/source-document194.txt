@@ -1,0 +1,69 @@
+Lean software development
+
+La metodología de desarrollo de software Lean, es una traducción de los principios y las prácticas de la forma de producir LEAN, hacia el área del desarrollo de software. Inicialmente, originado en el Sistema de Producción de Toyota y ahora, apoyado por una corriente que está surgiendo desde la comunidad Ágil. Este método ofrece todo un marco teórico sólido y basado en la experiencia, para las prácticas ágiles de gestión.
+
+Origen
+
+El término de desarrollo de software Lean tiene origen en un libro del mismo nombre, escrito por Mary Poppendieck y Tom Poppendieck. El libro presenta los tradicionales principios Lean en forma modificada, así como un conjunto de 22 instrumentos y herramientas y las comparaciones con otras prácticas ágiles. La participación de Mary y Tom en la comunidad del desarrollo ágil de software, incluyendo charlas en varias conferencias, ha dado lugar a dichos conceptos, que son más ampliamente aceptados en la comunidad de desarrollo ágil. Ejemplos de ello sería la utilización del término "Lean-Agile" por empresas de consultoría como NetObjectives Pace y CC, así como la inclusión de algunos de estos conceptos.
+
+Los principios Lean
+
+El desarrollo Lean puede resumirse en siete principios, similares a los principios de manufactura esbelta.
+
+Eliminar los desperdicios
+
+Todo lo que no añade valor al cliente se considera un desperdicio:
+- Código y funcionalidades innecesarias
+- Retraso en el proceso de desarrollo de software
+- Requisitos poco claros
+- Burocracia
+- Comunicación interna lenta
+
+Con el fin de poder eliminar los desperdicios deberíamos ser capaces de reconocerlos y encontrarlos. Si alguna actividad podría ser excluida o el mismo resultado podría ser logrado sin ella, esta actividad es considerada un desperdicio. Los procesos y funcionalidades extra que no son usados por el cliente son desperdicios. Las esperas ocasionadas por otras actividades, equipos o procesos son desperdicio. Los defectos y la baja calidad son los desperdicios. Los gastos de gestión que no producen valor real son desperdicios. Se utiliza una técnica llamada value stream mapping (o mapa de flujo de valor) para distinguir y reconocer los desperdicios. El segundo paso consiste en señalar las fuentes de los desperdicios y eliminarlos. Lo mismo debe hacerse iterativamente hasta que incluso los procesos y procedimientos que parecían esenciales sean eliminados.
+
+Ampliar el aprendizaje
+
+El desarrollo de software es un proceso de aprendizaje continuo, a ello se le suman los retos de los equipos de desarrollo y el tamaño del producto final. El mejor enfoque para encarar una mejora en el ambiente de desarrollo de software es ampliar el aprendizaje. La acumulación de defectos debe evitarse ejecutando las pruebas tan pronto como el código está escrito en lugar de añadir más documentación o planificación detallada. Las distintas ideas podrían ser probadas escribiendo código e integrándolo. El proceso de recopilación de requisitos de usuarios podría simplificarse mediante la presentación de las pantallas de los usuarios finales para que estos puedan hacer sus aportes. El proceso de aprendizaje es acelerado con el uso iteraciones cortas cada una de ellas acompañada de refactorización y sus pruebas de integración.
+
+Incrementando la retroalimentación mediante reuniones cortas con los clientes se ayuda a determinar la fase actual de desarrollo y se ajustan los esfuerzos para introducir mejoras en el futuro. Durante las reuniones, tanto los clientes como el equipo de desarrollo, logran aprender sobre el alcance del problema y buscan posibles soluciones para un mejor desarrollo. Por lo tanto, los clientes comprenden mejor sus necesidades basándose en el resultado de los esfuerzos del desarrollo y los desarrolladores aprenden a satisfacer mejor estas necesidades.
+
+Otra idea para ampliar el aprendizaje es a través de la integración del cliente en el ambiente de desarrollo para concentrar la comunicación en las soluciones futuras y no en las soluciones posibles, promoviendo así el nacimiento de la solución a través del diálogo con el cliente.
+
+Decidir lo más tarde posible
+
+El desarrollo de software está siempre asociado con cierto grado de incertidumbre, los mejores resultados se alcanzan con un enfoque basado en opciones por lo que se pueden retrasar las decisiones tanto como sea posible hasta que éstas se basen en hechos y no en suposiciones y pronósticos inciertos. Cuanto más complejo es un proyecto, más capacidad para el cambio debe incluirse en éste, así que debe permitirse el retraso de los compromisos importantes y cruciales. El enfoque iterativo promueve este principio: la capacidad de adaptarse a los cambios y corregir los errores, ya que un error podría ser muy costoso si se descubre después de la liberación del sistema.
+
+Un enfoque de desarrollo de software ágil puede llevarles opciones rápidamente a los clientes, lo que implica, retrasar algunas decisiones cruciales hasta que los clientes hayan reconocido mejor sus necesidades. Esto también permite la adaptación tardía a los cambios y previene las costosas decisiones delimitadas por la tecnología. Esto no significa que no haya planificación involucrada en el proceso, por el contrario, las actividades de planificación deben centrarse en las diferentes opciones y se les adapta a la situación actual; así como, se deben clarificar las situaciones confusas estableciendo las pautas para una acción rápida. Evaluar las diferentes opciones es eficaz tan pronto como queda claro que ellos no son libres, pero proporcionando la flexibilidad necesaria para una tardía toma de decisiones.
+
+Reaccionar tan rápido como sea posible
+
+En la era de la rápida evolución tecnológica, no es el más grande quien sobrevive, sino el más rápido. Cuanto antes se entrega el producto final sin defectos considerables más pronto se pueden recibir comentarios y se incorporan en la siguiente iteración. Cuanto más cortas sean las iteraciones, mejor es el aprendizaje y la comunicación dentro del equipo. Sin velocidad, las decisiones no pueden ser postergadas. La velocidad asegura el cumplimiento de las necesidades actuales del cliente y no lo que éste requería para ayer. Esto les da la oportunidad de demorarse pensando lo que realmente necesitan, hasta que adquieran un mejor conocimiento. Los clientes valoran la entrega rápida de un producto de calidad.
+
+La ideología de producción Just In Time podría aplicarse a programas de desarrollo, reconociendo sus necesidades específicas y el ambiente. Lo anterior se logra mediante la presentación de resultados , la necesidad de dejar que el equipo se organizarse y dividiendo las tareas para lograr el resultado necesario para una iteración específica.
+
+Al principio, el cliente dispone los requisitos necesarios. Esto podría ser simplemente presentar los requisitos en pequeñas fichas o historias y los desarrolladores estimarán el tiempo necesario para la aplicación de cada tarjeta. Así, la organización del trabajo cambia en sistema autopropulsado: cada mañana durante una reunión inicial cada miembro del equipo evalúa lo que se ha hecho ayer, lo que hay que hacer hoy y mañana y pregunta por cualquier nueva entrada necesaria de parte de sus colegas o del cliente. Esto requiere la transparencia del proceso, que es también beneficioso para la comunicación del equipo.
+
+Otra idea clave del Sistema de Desarrollo de Producto de la Toyota se establece a base de diseño. Si un nuevo sistema de frenos es necesario para un coche, por ejemplo, tres equipos pueden diseñar soluciones al mismo problema. Cada equipo aprende sobre el ambiente del problema y diseños de una posible solución. Cuando una solución se considera irrazonable, se desecha. Al final de un periodo, los diseños sobrevivientes se comparan y se elige uno, quizá con algunas modificaciones basadas en el aprendizaje de los demás, un gran ejemplo de compromiso aplazado hasta el último momento posible. Las decisiones en el software también podrían beneficiarse de esta práctica para minimizar el riesgo provocado por un solo gran diseño realizado por adelantado.
+
+Potenciar el equipo
+
+Ha habido una creencia tradicional en la mayoría de las empresas acerca de la toma de decisiones en la organización: los administradores dicen a los trabajadores cómo hacer su propio trabajo. En una técnica llamada Work-Out, los roles cambian: a los directivos se les enseña a escuchar a los desarrolladores, de manera que éstos puedan explicar mejor qué acciones podrían tomarse, así como ofrecer sugerencias para mejoras. Los directores de proyecto más experimentados simplemente han declarado la clave de éxito de los proyectos: "Buscar la buena gente y dejarles hacer su propio trabajo".
+
+Otra creencia errónea ha sido considerar a las personas como recursos. Las personas podrían ser los recursos desde el punto de vista de una hoja de datos estadísticos, pero en el desarrollo de software, así como cualquier organización de negocios, las personas necesitan algo más que la lista de tareas y la seguridad de que no será alterada durante la realización de las tareas. Las personas necesitan motivación y un propósito superior para el cual trabajar: un objetivo alcanzable dentro de la realidad con la garantía de que el equipo puede elegir sus propios compromisos. Los desarrolladores deberían tener acceso a los clientes; el jefe de equipo debe proporcionar apoyo y ayuda en situaciones difíciles, así como asegurarse de que el escepticismo no arruine el espíritu de equipo.
+
+Crear la integridad
+
+El siempre exigente cliente debe tener una experiencia general del sistema. A esto se le llama percepción de integridad: ¿Cómo es publicitado, entregado, implementado y accedido? ¿Es su uso intuitivo? ¿Precio? ¿Hasta qué punto resuelve los problemas?. Integridad Conceptual significa que los componentes separados del sistema funcionan bien juntos, como en un todo, logrando equilibrio entre la flexibilidad, mantenibilidad, eficiencia y capacidad de respuesta. Esto podría lograrse mediante la comprensión del dominio del problema y resolviéndolo al mismo tiempo, no secuencialmente. La información necesaria es recibida por los pequeños lotes, no en una vasta cantidad y con una preferible comunicación cara a cara, sin ninguna documentación por escrito. El flujo de información debe ser constante en ambas direcciones, a partir del cliente a los desarrolladores y viceversa, evitando así la gran y estresante cantidad de información después de un largo periodo de desarrollo en el aislamiento.
+
+Una de las maneras más saludables hacia una arquitectura integrante es la refactorización. Cuantas más funcionalidades se añaden a las del sistema, mas se pierde del código base para futuras mejoras. Así como en la Programación extrema (XP), la refactorización es mantener la sencillez, la claridad, la cantidad mínima de funcionalidades en el código. Las repeticiones en el código son signo de un mal diseño de código y deben evitarse. El completo y automatizado proceso de construcción debe ir acompañada de una suite completa y automatizada de pruebas, tanto para desarrolladores y clientes que tengan la misma versión, sincronización y semántica que el sistema actual. Al final, la integridad debe ser verificada con una prueba global, garantizando que el sistema hace lo que el cliente espera que haga. Las pruebas automatizadas también son consideradas como parte del proceso de producción y, por tanto, si no agregan valor deben considerarse residuos. Las pruebas automatizadas no deberían ser un objetivo, sino, un medio para un fin; específicamente para la reducción de defectos.
+
+Véase todo el conjunto
+
+Los sistemas de software hoy en día no son simplemente la suma de sus partes, sino también el producto de sus interacciones. Los defectos en el software tienden a acumularse durante el proceso de desarrollo por medio de la descomposición de las grandes tareas en pequeñas tareas y de la normalización de las diferentes etapas de desarrollo. Las causas reales de los defectos deben ser encontradas y eliminadas. Cuanto más grande sea el sistema, más serán las organizaciones que participan en su desarrollo y más partes son las desarrolladas por diferentes equipos y mayor es la importancia de tener bien definidas las relaciones entre los diferentes proveedores con el fin de producir una buena interacción entre los componentes del sistema.
+
+La manera de pensar ofrecida Lean tiene que ser bien entendida por todos los miembros de un proyecto antes de aplicarlo de manera concreta en una situación de la vida real.
+
+"Piensa en grande, actúa en pequeño, equivócate rápido; aprende con rapidez" estas consignas resumen la importancia de comprender el terreno y la idoneidad de implementar los principios Lean lo largo del proceso de desarrollo de software. Sólo cuando todos los principios de Lean se aplican al mismo tiempo, combinado con un fuerte "sentido común" en relación con el ambiente de trabajo, hay una base para el éxito en el desarrollo de software.
+
+Notas y referencias
+- Poppendieck, M., Poppendieck, T., Lean software development: an agile toolkit for software development managers.

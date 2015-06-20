@@ -1,0 +1,35 @@
+Algoritmo evolutivo
+
+Los algoritmos evolutivos son métodos de optimización y búsqueda de soluciones basados en los postulados de la evolución biológica. En ellos se mantiene un conjunto de entidades que representan posibles soluciones, las cuales se mezclan, y compiten entre sí, de tal manera que las más aptas son capaces de prevalecer a lo largo del tiempo, evolucionando hacia mejores soluciones cada vez.
+
+Los algoritmos evolutivos, y la computación evolutiva, son una rama de la inteligencia artificial. Son utilizados principalmente en problemas con espacios de búsqueda extensos y no lineales, en donde otros métodos no son capaces de encontrar soluciones en un tiempo razonable.
+
+Siguiendo la terminología de la teoría de la evolución, las entidades que representan las soluciones al problema se denominan individuos o cromosomas, y el conjunto de éstos, población. Los individuos son modificados por operadores genéticos, principalmente el sobrecruzamiento, que consiste en la mezcla de la información de dos o más individuos; la mutación, que es un cambio aleatorio en los individuos; y la selección, consistente en la elección de los individuos que sobrevivirán y conformarán la siguiente generación. Dado que los individuos que representan las soluciones más adecuadas al problema tienen más posibilidades de sobrevivir, la población va mejorando gradualmente.
+
+Paradigmas
+
+Suele hablarse de tres paradigmas principales de algoritmos evolutivos:
+- Programación evolutiva
+- Estrategias evolutivas
+- Algoritmos genéticos
+
+Cada uno de estos paradigmas se originó independientemente y con distintas motivaciones. Actualmente, los algoritmos tienden a combinar características de éstos tres y a incluir mecanismos de otros campos de estudio, tales como el aprendizaje automático, otros algoritmos de búsqueda, o diferentes estructura de datos. Algunas de las tendencias actuales son las siguientes:
+- Evolución diferencial
+- Modelos probabilísticos
+- Evolución simulada
+- Algoritmos culturales
+- Algoritmos meméticos
+- Programación genética
+
+Comparación de algoritmos evolutivos
+
+La tabla siguiente presenta algunas diferencias entre los distintos tipos de algoritmos evolutivos. Las características indicadas en esta tabla corresponden a las implementaciones originales. Actualmente las diferencias entre ellos tienden a borrarse a medida que se transfieren características de uno a otro, haciendo difícil la distinción.
+
+Algoritmo 	codificación 	selección 	operadores 	reinserción 	parametrización 	aplicación original/principal 	observaciones
+Algoritmo genético 	binaria 	al azar, basado en función de desempeño (ruleta, torneo) 	Aplicados según probabilidad: cruzamiento (1 o 2 puntos, uniforme, etc), mutación (negación de bit, al azar) 	reemplazo de padres por hijos manteniendo al mejor individuo de la población anterior 	fija 	optimización discreta 	
+Estrategia evolutiva 	discreta o continua 	aleatoria 	diseñadas de acuerdo al problema a resolver: recombinación (optativa), mutación 	elegida deterministamente, mediante ranking de mejor descendencia ((\mu / \rho , \lambda)-ES) o padres y descendencia ((\mu / \rho + \lambda)-ES) 	self-adaptive 	optimización general 	notación \mu: número de padres, \rho: número de individuos elegidos para evolucionar, \lambda: descendencia
+Programación evolutiva 	 ? 	 ? 	diseñadas de acuerdo al problema a resolver: recombinación, mutación 	 ? 	 ? 	 ? 	
+Programación genética 	árboles 	 ? 	sobrecruzamiento (intercambio de ramas), mutación (cambio en contenido de nodo o toda la rama) 	 ? 	 ? 	evolución de programas (generalmente en lisp) 	
+Algoritmo memético 	cualquiera 	 ? 	distintos operadores de búsqueda local 	 ? 	 ? 	También llamado algoritmo lamarckiano, búsqueda local genética, algoritmo evolutivo híbrido, o algoritmo evolutivo baldwiniano 	
+Algoritmo cultural 	cualquiera 	 ? 	cualquiera 	 ? 	 ? 	optimización general, simulación social 	cuenta además con un espacio de creencias, en donde se guarda experiencia adquirida durante la búsqueda
+Evolución diferencial 	continua 	aleatoria 	mutación y recombinación, el resultado del primero es operado con el segundo 	comparando el resultado de los operadores y los individuos de la generación anterior 	Fija, de dos parámetros que controlan la velocidad del cambio, F y GR 	optimización continua 	el operador de mutación, bastante singular, de hecho combina individuos elegidos aleatoriamente

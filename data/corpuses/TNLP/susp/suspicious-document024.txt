@@ -1,0 +1,109 @@
+Extract, transform and load
+
+Extract, Transform and Load («extraer, transformar y cargar», frecuentemente abreviado ETL) es el proceso que permite a las organizaciones mover datos desde múltiples fuentes, reformatearlos y limpiarlos, y cargarlos en otra base de datos, data mart, o data warehouse para analizar, o en otro sistema operacional para apoyar un proceso de negocio.
+
+Los procesos ETL también se pueden utilizar para la integración con sistemas heredados.
+
+Extraer
+
+La primera parte del proceso ETL consiste en extraer los datos desde los sistemas de origen. La mayoría de los proyectos de almacenamiento de datos fusionan datos provenientes de diferentes sistemas de origen. Cada sistema separado puede usar una organización diferente de los datos o formatos distintos. Los formatos de las fuentes normalmente se encuentran en bases de datos relacionales o ficheros planos, pero pueden incluir bases de datos no relacionales u otras estructuras diferentes. La extracción convierte los datos a un formato preparado para iniciar el proceso de transformación.
+
+Una parte intrínseca del proceso de extracción es la de analizar los datos extraídos, de lo que resulta un chequeo que verifica si los datos cumplen la pauta o estructura que se esperaba. De no ser así los datos son rechazados.
+
+Un requerimiento importante que se debe exigir a la tarea de extracción es que ésta cause un impacto mínimo en el sistema origen. Si los datos a extraer son muchos, el sistema de origen se podría ralentizar e incluso colapsar, provocando que éste no pueda utilizarse con normalidad para su uso cotidiano. Por esta razón, en sistemas grandes las operaciones de extracción suelen programarse en horarios o días donde este impacto sea nulo o mínimo.
+
+Transformar
+
+La fase de transformación aplica una serie de reglas de negocio o funciones sobre los datos extraídos para convertirlos en datos que serán cargados. Algunas fuentes de datos requerirán alguna pequeña manipulación de los datos. No obstante en otros casos pueden ser necesarias aplicar algunas de las siguientes transformaciones:
+- Seleccionar sólo ciertas columnas para su carga (por ejemplo, que las columnas con valores nulos no se carguen).
+- Traducir códigos (por ejemplo, si la fuente almacena una "H" para Hombre y "M" para Mujer pero el destino tiene que guardar "1" para Hombre y "2" para Mujer).
+- Codificar valores libres (por ejemplo, convertir "Hombre" en "H" o "Sr" en "1").
+- Obtener nuevos valores calculados (por ejemplo, total_venta = cantidad * precio, o Beneficio = PVP - Coste).
+- Unir datos de múltiples fuentes (por ejemplo, búsquedas, combinaciones, etc.).
+- Calcular totales de múltiples filas de datos (por ejemplo, ventas totales de cada región).
+- Generación de campos clave en el destino.
+- Transponer o pivotar (girando múltiples columnas en filas o viceversa).
+- Dividir una columna en varias (por ejemplo, columna "Nombre: García López, Miguel Ángel"; pasar a dos columnas "Nombre: Miguel Ángel", "Apellido1: García" y "Apellido2: López").
+- La aplicación de cualquier forma, simple o compleja, de validación de datos, y la consiguiente aplicación de la acción que en cada caso se requiera:
+    - Datos OK: Entregar datos a la siguiente etapa (Carga).
+    - Datos erróneos: Ejecutar políticas de tratamiento de excepciones (por ejemplo, rechazar el registro completo, dar al campo erróneo un valor nulo o un valor centinela).
+
+Carga
+
+La fase de carga es el momento en el cual los datos de la fase anterior (transformación) son cargados en el sistema de destino. Dependiendo de los requerimientos de la organización, este proceso puede abarcar una amplia variedad de acciones diferentes. En algunas bases de datos se sobrescribe la información antigua con nuevos datos. Los data warehouse mantienen un historial de los registros de manera que se pueda hacer una auditoría de los mismos y disponer de un rastro de toda la historia de un valor a lo largo del tiempo.
+
+Existen dos formas básicas de desarrollar el proceso de carga:
+
+Acumulación simple
+    La acumulación simple es la más sencilla y común, y consiste en realizar un resumen de todas las transacciones comprendidas en el período de tiempo seleccionado y transportar el resultado como una única transacción hacia el data warehouse, almacenando un valor calculado que consistirá típicamente en un sumatorio o un promedio de la magnitud considerada.
+Rolling
+    El proceso de Rolling por su parte, se aplica en los casos en que se opta por mantener varios niveles de granularidad (jerarquías). Para ello se almacena información resumida a distintos niveles, correspondientes a distintas agrupaciones de la unidad de tiempo o diferentes niveles jerárquicos en alguna o varias de las dimensiones de la magnitud almacenada (por ejemplo, totales diarios, totales semanales, totales mensuales, etc.).
+
+La fase de carga interactúa directamente con la base de datos de destino. Al realizar esta operación se aplicarán todas las restricciones y triggers (disparadores) que se hayan definido en ésta (por ejemplo, valores únicos, integridad referencial, campos obligatorios, rangos de valores). Estas restricciones y triggers (si están bien definidos) contribuyen a que se garantice la calidad de los datos en el proceso ETL, y deben ser tomados en cuenta.
+
+Procesamiento paralelo
+
+Un desarrollo reciente en el software ETL es la aplicación de procesamiento paralelo. Esto ha permitido desarrollar una serie de métodos para mejorar el rendimiento general de los procesos ETL cuando se trata de grandes volúmenes de datos. Hay 3 tipos principales de paralelismos que se pueden implementar en las aplicaciones ETL:
+
+De datos
+    Consiste en dividir un único archivo secuencial en pequeños archivos de datos para proporcionar acceso paralelo.
+
+De segmentación (pipeline)
+    Permitir el funcionamiento simultáneo de varios componentes en el mismo flujo de datos. Un ejemplo de ello sería buscar un valor en el registro número 1 a la vez que se suman dos campos en el registro número 2.
+
+De componente
+    Consiste en el funcionamiento simultáneo de múltiples procesos en diferentes flujos de datos, pertenecientes todos ellos a un único flujo de trabajo. Esto es posible cuando existen porciones dentro de un flujo de trabajo que son totalmente independientes entre ellas a nivel de flujo de datos.
+
+Estos tres tipos de paralelismo no son excluyentes, sino que pueden ser combinados para realizar una misma operación ETL.
+
+Una dificultad adicional es asegurar que los datos que se cargan sean relativamente consistentes. Las múltiples bases de datos de origen tienen diferentes ciclos de actualización (algunas pueden ser actualizadas cada pocos minutos, mientras que otras pueden tardar días o semanas). En un sistema de ETL será necesario que se puedan detener ciertos datos hasta que todas las fuentes estén sincronizadas. Del mismo modo, cuando un almacén de datos tiene que ser actualizado con los contenidos en un sistema de origen, es necesario establecer puntos de sincronización y de actualización.
+
+Desafíos
+
+Los procesos ETL pueden ser muy complejos. Un sistema ETL mal diseñado puede provocar importantes problemas operativos.
+
+En un sistema operacional el rango de valores de los datos o la calidad de éstos pueden no coincidir con las expectativas de los diseñadores a la hora de especificarse las reglas de validación o transformación. Es recomendable realizar un examen completo de la validez de los datos (Data profiling) del sistema de origen durante el análisis para identificar las condiciones necesarias para que los datos puedan ser tratados adecuadamente por las reglas de transformación especificadas. Esto conducirá a una modificación de las reglas de validación implementadas en el proceso ETL.
+
+Normalmente los data warehouse son alimentados de manera asíncrona desde distintas fuentes, que sirven a propósitos muy diferentes. El proceso ETL es clave para lograr que los datos extraídos asíncronamente de orígenes heterogéneos se integren finalmente en un entorno homogéneo.
+
+La escalabilidad de un sistema de ETL durante su vida útil tiene que ser establecida durante el análisis. Esto incluye la comprensión de los volúmenes de datos que tendrán que ser procesados según los acuerdos de nivel de servicio (SLA: Service level agreement). El tiempo disponible para realizar la extracción de los sistemas de origen podría cambiar, lo que implicaría que la misma cantidad de datos tendría que ser procesada en menos tiempo. Algunos sistemas ETL son escalados para procesar varios terabytes de datos para actualizar un data warehouse que puede contener decenas de terabytes de datos. El aumento de los volúmenes de datos que pueden requerir estos sistemas pueden hacer que los lotes que se procesaban a diario pasen a procesarse en micro-lotes (varios al día) o incluso a la integración con colas de mensajes o a la captura de datos modificados (CDC: change data capture) en tiempo real para una transformación y actualización continua.
+
+Herramientas ETL
+- ADDACTIS Workflow http:www.addactis.es
+- XMLoader
+- CoSort+Fact por IRI http://www.iri.com/
+- SynchroDB https://synchrodb.com
+- Pentaho Data Integration
+- SAS Data Integration Studio & DataFlux http://www.sas.com/technologies/dw/index.html
+- Ab Initio
+- Barracuda Software (Integrator)
+- MakeWare Soluciones Tecnológicas http://www.makeware.net
+- Benetl
+- Biable http://www.visiontecnologica.com
+- BITool - ETL Software http://www.bitool.com/
+- BOPOS TLOG-4690 rhiscom (back-office POS)
+- CloverETL [1]
+- Cognos Decisionstream
+- Data Integrator (herramienta de Business Objects)
+- Data Migraton Toolset de Backoffice Associates (BoA) http://www.boaweb.com/migrationtoolset.htm
+- Genio, Hummingbird
+- IBM Websphere DataStage (Previously Ascential DataStage)
+- Informática PowerCenter
+- metaWORKS ( Document Tools)
+- Microsoft DTS (incluido en SQL-Server 2000)
+- Microsoft SQL Server Integration Services (SSIS) (a partir de MS SQL Server 2005)
+- MySQL Migration Toolkit
+- Scriptella ETL - Libre, Apache-licensed ETL
+- Oracle Warehouse Builder
+- WebFocus-iWay DataMigrator Server
+
+Con licencia libre
+- Kettle (Pentaho)
+- Scriptella Open Source ETL Tool
+- Talend Open Studio
+- CloverETL Community
+
+Con licencia propietaria
+- Benetl (freeware)
+- Datastage d'IBM (suite au rachat d'Ascential en 2005)
+- Integrator

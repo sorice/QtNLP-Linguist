@@ -1,0 +1,13 @@
+Código fuente
+
+El código fuente de un programa informático (o software) es un conjunto de líneas de texto que son las instrucciones que debe seguir la computadora para ejecutar dicho programa. Por tanto, en el código fuente de un programa está escrito por completo su funcionamiento.
+
+El código fuente de un programa que está escrito por un programador en algún lenguaje de programación, pero en este primer estado no es directamente ejecutable por la computadora, sino que debe ser traducido a otro lenguaje o código binario así será más fácil para la máquina interpretarlo (el lenguaje máquina o código objeto) que sí pueda ser ejecutado por el hardware de la computadora. Para esta traducción se usan los llamados compiladores, ensambladores, intérpretes y otros sistemas de traducción.
+
+El término código fuente también se usa para hacer referencia al código fuente de otros elementos del software, como por ejemplo el código fuente de una página web que está escrito en el lenguaje de marcado HTML o en Javascript u otros lenguajes de programación web y que es posteriormente ejecutado por el navegador web para visualizar dicha página cuando es visitada.
+
+El área de la informática que se dedica a la creación de programas y, por tanto a la creación de su código fuente, es la programación.
+
+Licenciamiento
+
+Un aspecto interesante a tener en cuenta cuando se habla del código fuente de un programa informático es si su licencia permite que dicho código fuente esté disponible para que cualquiera pueda estudiarlo, modificarlo o reutilizarlo. Cuando se cumple este aspecto se dice que el programa es de Código abierto y son, en general, software libre, en contraposición al software privativo sobre el cual no se tiene ninguno de estos permisos.

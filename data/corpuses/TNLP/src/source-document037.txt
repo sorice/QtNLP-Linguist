@@ -1,0 +1,74 @@
+Migración de datos
+
+La migración de datos consiste en la transferencia de materiales digitales de un origen de datos a otro, transformando la forma lógica del ente digital de modo que el objeto conceptual pueda ser restituido o presentado por un nuevo equipo o programa informático. Se trata de una consideración clave para cualquier implementación, actualización o consolidación de un sistema informático. Se distingue del refresco, que se limita a mantener el flujo de datos transfiriéndolos simplemente de un soporte a otro. Hay varias estrategias que pueden ser consideradas una forma de migración, que difieren en el momento en que se produce la transformación y en los tipos de objetos transformados. El método de migración más propuesto consiste en convertir de manera permanente un formato lógico en otro, de manera que todos los objetos ”migrados” puedan ser presentados con una tecnología diferente.1
+
+Existen diversos motivos para realizar una migración, tales como la preservación o difusión de los contenidos, mejoras en el funcionamiento, cumplir con nuevos requerimientos de usuario o de software, la interoperabilidad, la actualización de versiones, la estandarización de la tecnología, la reducción de costos al optar por un software libre, el aumento en el volumen de datos, nuevos procesos de negocio o mejoras en la seguridad o el control de la información, entre otros escenarios posibles.2
+
+Categorías
+
+Los datos pueden ser generados por múltiples aplicaciones de software, almacenados en diversos medios como archivos, servidores o bases de datos, y además intervenir en varios procesos de negocio, así que la necesidad de transferir y convertir los datos puede ser impulsada por múltiples requerimientos y el enfoque adoptado para la migración depende de esos requisitos. Sobre esta base se proponen cuatro tipos principales de migración:
+
+Migración de almacenamiento
+
+Se puede optar por reemplazar los medios de almacenamiento para aprovechar tecnologías más eficientes o responder a nuevos requerimientos, como la ubicuidad o la apertura a la web, lo que obliga a trasladar los bloques físicos de datos de un dispositivo a otro, a menudo utilizando técnicas de virtualización. Por lo general, el formato de datos y el contenido en sí mismo no se suelen cambiar en el proceso y normalmente se obtienen resultados bastante buenos, con mínimo o ningún impacto.
+
+Migración de base de datos
+
+Del mismo modo, puede ser necesario migrar de un proveedor de base de datos a otro o actualizar la versión del software de gestión que se utiliza. Si tenemos una aplicación sobre una base de datos como por ejemplo Access y posteriormente "crecemos" de manera que nos hace falta un sistema gestor de bases de datos más potente, lo más seguro es que nos decantemos por Oracle, DB2, Informix, SQLServer o similares. En este caso, los datos, que estarán en formato "access" deberán pasar a formato "sqlserver" o formato para "oracle", y la migración conlleva la creación de tablas o modificación de las existentes, cambios en algunos tipos de datos que existen en una base de datos pero no en otras, etc. Especialmente delicados son los campos fecha, los numéricos (enteros, reales, etc), los de tipo "memo" o campos de extensión superior a 256 caracteres, campos para imágenes, etc, ya que cada SGBD los trata o los "espera" de manera diferente.
+
+Actualmente la mayoría de SGBD incluyen herramientas de ayuda a la migración más o menos "fiables". No obstante, ni que decir tiene que el proceso de migración de datos es lo suficientemente delicado como para realizarlo en un entorno de pruebas, contemplando toda la casuística posible en cuanto a tipos de datos a manejar, tablas involucradas y sus relaciones, etc. Sólo en el momento en el que estemos seguros de que la migración se ha realizado con éxito, sin problemas de interpretación de datos ni pérdida de ellos, podemos pasar a un entorno de producción, teniendo en cuenta que una migración mal realizada podría dar por terminada una estructura de información completa.
+
+Es una de las principales actividades de administración de bases de datos por su alta sensibilidad, en ella se realizan actividades de análisis, diseño o rediseño, modelamiento, creación y configuración, almacenamiento, recuperación, contingencia, desarrollo (a través de scripts de SQL, procedimientos almacenados, triggers, etc.), prueba, implantación, puesta en producción, creación de consultas, entre las más importantes.
+
+Técnicas de Migración de Base de Datos
+- Planificación. Lo más importante al migrar una Base de Datos es llevar a cabo un proceso de planificación y análisis del trabajo, puesto que aunque pareciera tomarse algún tiempo adicional, éste será retribuido en el éxito de la operación y menos costos por errores de datos. Es importante que esto sea aplicado cuando la Base de Datos destino está en producción.
+- Contador de registros. Si la migración se realiza de forma manual, mediante alguna consulta de inserción es recomendable inicializar un contador para cada registro insertado con éxito y otro para los no insertados, así obviamente, la suma de ambos debe ser igual a los registros originales.
+- Mapeador de Tipos de datos. Algunas plataformas no soportan algunos tipos de datos, así que es necesario planificar el mapeo de los campos en la nueva base de datos.
+- Restricciones y Trigers. Antes de iniciar la migración de la BD, es recomendable deshabilitar los Trigers y/o restricciones que nos puedan generar error al momento que el DBMS ejecute el proceso de escritura de los datos.
+- Codificación de Caracteres. Cuando el copiado se realiza de forma automática, es necesario identificar la codificación de caracteres que la BD destino espera, pues así evitaremos el reemplazo automático de caracteres o en su caso, pérdida de los mismos.3
+
+Migración de aplicación
+
+Un cambio de proveedor de la aplicación —por ejemplo, un nuevo CRM o plataforma ERP— inevitablemente implica una transformación sustancial, ya que casi todas las aplicaciones operan en su propio modelo de datos específico, y además, los paquetes comerciales están generalmente configurados para cada cliente mediante metadatos. Las Interfaces de Programación de Aplicaciones (API) se suministran para proteger la integridad de los datos que se tienen que manejar. El uso de la API es normalmente una condición de la garantía del software, a pesar de que se puede renunciar a ello si se utilizan servicios propios o certificados de asociados profesionales y todas las herramientas del proveedor.
+
+Migración de proceso de negocio
+
+Los procesos de negocio funcionan a través de una combinación de acciones humanas y de sistemas informáticos. A menudo suceden cambios en las compañías como fusiones, adquisiciones, remodelaciones y optimizaciones a los que se deben adaptar los datos y flujos de datos de un servidor, base de datos o aplicación que contienen la información sobre los clientes, productos y operaciones, para reflejar los cambios en la organización.
+
+En función del momento en que se realice, también podemos distinguir los siguientes tipos de migración:
+- Migración sobre la demanda:Se trata de separar el código binario de su entorno y soporte original en el momento en el que se deposite el recurso. Junto con esta cadena de bits, se guardan los metadatos técnicos que especifican cómo debe migrarse a otros entornos.4
+- Migración a un formato estándar: se refiere a la migración del documento original a un formato neutral o estandarizado, con una mayor duración prevista. Por ejemplo, muchos centros pasan los documentos textuales de diferentes formatos a XML, PDF u otros formatos abiertos que se prevé tendrán una vida más larga que un formato propietario.
+- Migración sucesiva o conversión en serie: mediante esta técnica (conocida en inglés como serial conversion y también backward compatibility) se actualizan los documentos con cada cambio incremental del software, sea necesario o no la operación interna, ya que cuando se introducen nuevas versiones de software es justamente cuando existe mayor facilidad para la conversión y en caso contrario se corre el riesgo de perder la oportunidad cuando el formato esté a punto de desaparecer y la migración sea más complicada.5
+
+La migración como forma de preservación digital
+
+Con la explosión de las tecnologías de la información cada vez existen más documentos nacidos digitales y digitalizaciones de documentos que han de ser preservados manteniendo su integridad, autenticidad, fiabilidad, legibilidad y funcionalidades.6 Tradicionalmente, la conservación del documento físico equivalía a la conservación de la información que contenía, y por tanto, garantizaba su usabilidad, sin embargo en los documentos digitales preservar el soporte es condición necesaria, pero no suficiente, hay que considerar otras cuestiones de usabilidad: La obsolescencia, que debido a la rápida evolución tecnológica puede ocasionar que los recursos digitales queden "huérfanos", es decir, inutilizables por falta de todos o alguno de los elementos informáticos —hardware, software o soportes físicos— de su entorno original; y la volatilidad de los documentos electrónicos, cuyos datos pueden ser fácilmente alterados o destruidos debido a errores humanos, al mal funcionamiento de los sistemas o a acciones mal intencionadas.
+
+Para evitar estas amenazas que se ciernen sobre los documentos electrónicos se pueden utilizar una serie de estrategias, de entre las cuales la migración es la más utilizada por las ventajas que aporta:
+- Es una operación muy experimentada.
+- No se requieren conocimientos técnicos muy especializados.
+- Se puede automatizar una parte de los procesos.
+- La tendencia hacia la estandarización de software y formatos facilitará la migración.
+- Convierte el documento a un formato compatible con sistemas actuales.7
+
+Aunque también tiene algunos riesgos asociados:
+- Pérdida de funcionalidades primarias
+- Cambios en las funcionalidades que afectan a su uso por medio de una interfaz (imágenes estáticas o no,multiresolución, visibilidad desde la web...)
+- Seguridad: pérdida de marcas de agua (watermarking) o de señales criptográficas de seguridad (DRM...)
+- Pérdida de contexto e integridad
+- Uso desde el software y hardware
+- Enlaces a ficheros de metadatos u otros asociados
+- Cambios en las necesidades de almacenamiento8
+
+Referencias
+- Aguirre Bello, Roberto (2009). Preservación Digital. [Material docente]. Curso de preservación de archivos digitales del Comité Digital de la BN de Chile http://comitedigital.bn.cl/node/2 (fecha de consulta: 28/03/2014)
+- Corona Correa, Susana. Factores críticos de éxito en el proceso de migración de bases de datos relacionales. UAM: Dirección General de Cómputo y de Tecnologías de Información y Comunicación (DGTIC)http://www.paginaspersonales.unam.mx/files/35/Susana_Corona_Correa_Mexico_.pdf (fecha de consulta: 28/03/2014)
+- ITESCAM: Migración de la base de datos http://www.itescam.edu.mx/principal/sylabus/fpdb/recursos/r95726.DOCX (fecha de consulta 30/03/2014)
+- Cedars guide to digital preservation (2002)http://www.leeds.ac.uk/cedars/guideto/dpstrategies
+- Keefer, Alicia; Gallart, Nuria(2007). La preservación de recursos digitales: el reto para las bibliotecas del siglo XXI. Barcelona: UOC
+- Biblioteca de Cataluña: http://www.bnc.cat/esl/Profesionales/Preservacion-digital2 (fecha de consulta: l9/03/14)
+- Keefer, Alicia; Gallart, Nuria (2012). Preservación de recursos de información digital. [material docente] Barcelona: UOC
+- Térmens Graells, Miquel (2011). Curso de preservación digital. Universidad de Valencia: OpenCourseWare http://ocw.uv.es/ocw-formacio-permanent/2011-1-39_Presentacion.pdf
+
+Bibliografía
+- Milojičić, Dejan S.; Douglis, Fred; Paindaveine, Yves et all (2000). Process migration. ACM Computing Surveys Volume 32 Issue 3, Sept. 2000 Pages 241-299. NY, USA: ACM New York.

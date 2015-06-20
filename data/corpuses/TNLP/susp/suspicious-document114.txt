@@ -1,0 +1,8 @@
+Modelo basado en agente
+
+Un modelo basado en agentes (MBA) es un tipo de modelo computacional que permite la simulación de acciones e interacciones de individuos autónomos dentro de un entorno, y permite determinar qué efectos producen en el conjunto del sistema.1 Combina elementos de teoría de juegos, sistemas complejos, emergencia, sociología computacional, sistemas multi-agente, y programación evolutiva. Los modelos simulan las operaciones simultáneas de entidades múltiples (agentes) en un intento de recrear y predecir las acciones de fenómenos complejos. Es un proceso de emergencia desde el nivel más elemental (micro) al más elevado (macro).
+
+Generalmente los agentes individuales actúan según lo que perciben como sus intereses propios, tales como reproducción, beneficio económico o status social, y su conocimiento es limitado. Los agentes MBA pueden experimentar “aprendizaje”, adaptación y reproducción.
+
+Referencias
+- IZQUIERDO, LUIS R. et al (2008). «Modelado de sistemas complejos mediante simulación basada en agentes y mediante dinámica de sistemas». Empiria. Revista de Metodología de Ciencias Sociales 16:  pp. 85-112.

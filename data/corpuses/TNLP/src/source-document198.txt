@@ -1,0 +1,133 @@
+Mantenimiento de software
+
+En ingeniería del software, el mantenimiento de software es la modificación de un producto de software después de la entrega, para corregir errores, mejorar el rendimiento, u otros atributos.1 El mantenimiento del software es una de las actividades más comunes en la ingeniería de software.
+
+El mantenimiento de software es también una de las fases en el ciclo de vida de desarrollo de sistemas (SDLC, sigla en inglés de system development life cycle), que se aplica al desarrollo de software. La fase de mantenimiento es la fase que viene después del despliegue (implementación) del software en el campo.
+
+Una percepción común del mantenimiento es que se trata meramente de la corrección de defectos. Sin embargo, un estudio indicó que la mayoría, más del 80%, del esfuerzo de mantenimiento es usado para acciones no correctivas (Pigosky 1997). Esta percepción es perpetuada por usuarios enviando informes de problemas que en realidad son mejoras de funcionalidad al sistema[cita requerida].
+
+El mantenimiento del software y la evolución de los sistemas fue abordada por primera vez por Meir M. Lehman en 1969. Durante un período de veinte años, su investigación condujo a la formulación de las leyes de Lehman (Lehman 1997). Principales conclusiones de su investigación incluyen que el mantenimiento es realmente un desarrollo evolutivo y que las decisiones de mantenimiento son ayudadas por entender lo que sucede a los sistemas (y al software) con el tiempo. Lehman demostró que los sistemas continúan evolucionando con el tiempo. A medida que evolucionan, ellos crecen más complejos a menos que se toman algunas medidas como refactorización de código para reducir la complejidad.
+
+Los problemas claves de mantenimiento de software son administrativos y técnicos. Problemas clave de administración son: alineación con las prioridades del cliente, dotación de personal, cuál organización hace mantenimiento, estimación de costos. Son cuestiones técnicas claves: limitado entendimiento, análisis de impacto, pruebas (testing), medición de mantenibilidad.
+
+El mantenimiento de software es una actividad muy amplia que incluye la corrección de errores, mejoras de las capacidades, eliminación de funciones obsoletas y optimización. Debido a que el cambio es inevitable, se debe desarrollar mecanismos para la evaluación, controlar y hacer modificaciones.
+
+Así que cualquier trabajo realizado para cambiar el software después de que esté en operación es considerado trabajo de mantenimiento. El propósito es preservar el valor del software sobre el tiempo. El valor puede ser mejorado ampliando la base de clientes, cumpliendo requisitos adicionales, siendo cada vez más fácil de usar, más eficiente y empleando más nuevas tecnología. El mantenimiento puede abarcar 20 años, mientras que el desarrollo puede estar entre 1 y 2 años.
+
+Importancia del mantenimiento de software
+
+A finales de los años 1970, una famosa y ampliamente citada estudio de encuesta por Lientz y Swanson, expuso la muy alta fracción de los costos del ciclo de vida que estaban siendo gastados en mantenimiento. Clasificaron las actividades de mantenimiento en cuatro clases:
+- Adaptable – modificar el sistema para hacer frente a cambios en el ambiente del software (DBMS, OS)2
+- Perfectivo – implementar nuevos, o cambiar requerimientos de usuario referentes a mejoras funcionales para el software
+- Correctivo, diagnosticar y corregir errores, posiblemente los encontraron por los usuarios2
+- Preventiva – aumentar la capacidad de mantenimiento de software o fiabilidad para evitar problemas en el futuro2
+
+La encuesta mostró que alrededor del 75% del esfuerzo de mantenimiento fue en los dos primeros dos tipos, y la corrección de errores consumía aproximadamente el 21%. Muchos estudios posteriores sugieren una magnitud similar del problema. Los estudios muestran que la contribución del usuario final es crucial durante el análisis y recopilación de nuevos datos de requerimiento. Y ésta es la causa principal de cualquier problema durante el mantenimiento y evolución del software. Así que el mantenimiento de software es importante porque consume gran parte de los costos del ciclo de vida y también la imposibilidad de cambiar el software de forma rápida y fiable significa que las oportunidades de negocio se pierden. 3 4 5
+
+Impacto de los factores clave de ajuste en el mantenimiento (por orden de máximo impacto positivo)
+
+Factores de mantenimiento 	Rango más
+Especialistas de mantenimiento 	35%
+Experiencia alta del personal 	34%
+Variables y datos manejados por tablas 	33%
+Baja complejidad de la base de código 	32%
+Y2K y motores especiales de búsqueda 	30%
+Herramientas de reestructuración de código 	29%
+Herramientas de reingeniería 	27%
+Lenguajes de programación de alto nivel 	25%
+Herramientas de ingeniería inversa 	23%
+Herramientas de análisis de complejidad 	20%
+Herramientas de seguimiento de defectos 	20%
+Especialistas en "actualización masiva" Y2K 	20%
+Herramientas de control de cambio automático 	18%
+Horas extras no pagadas 	18%
+Mediciones de calidad 	16%
+Inspecciones formales de la base de código 	15%
+Bibliotecas de pruebas de regresión 	15%
+Tiempo de respuesta excelente 	12%
+Formación anual de > 10 días 	12%
+Experiencia de la alta gerencia 	12%
+Automatización del HELP desk 	12%
+No módulos propensos a errores 	10%
+Reporte de defectos en-línea 	10%
+Medidas de productividad 	8%
+Excellent ease of use 	7%
+Medidas de satisfacción de usuarios 	5%
+Alta moral del equipo 	5%
+Suma 	503%
+
+No sólo son problemáticos los módulos propensos a errores, también muchos otros factores pueden disminuir el rendimiento. Por ejemplo, muy complejo "código espagueti" es bastante difícil de mantener con seguridad. Una situación muy común que a menudo degrada el rendimiento es la falta de herramientas de mantenimiento adecuadas, como software de seguimiento de defectos, software de gestión de cambio y software de biblioteca de pruebas. A continuación se describen algunos de los factores y la gama de impacto en el mantenimiento de software.
+
+Impacto de los factores clave de ajuste en el mantenimiento (por orden de máximo impacto negativo)
+
+Factores de mantenimiento 	Rango menos
+Módulos propensos a errores 	-50%
+Datos y variables incrustados 	-45%
+Inexperiencia del personal 	-40%
+Alta complejidad del código 	-30%
+No Y2K de motores de búsqueda especiales 	-28%
+Métodos manuales de control de cambio 	-27%
+Lenguajes de programación de bajo nivel 	-25%
+Ninguna herramienta de seguimiento de defectos 	-24%
+No hay especialistas en "actualización masiva" Y2K 	-22%
+Pobre facilidad de uso 	-18%
+No hay mediciones de calidad 	-18%
+No hay especialistas de mantenimiento 	-18%
+Tiempo de respuesta pobre 	-16%
+No hay inspecciones de código 	-15%
+No hay bibliotecas de pruebas de regresión 	-15%
+No hay automatización del help desk 	-15%
+No hay reportes de defecto en línea 	-12%
+Falta de experiencia de gestión 	-15%
+No hay herramientas de reestructuración 	-10%
+No hay entrenamiento anual 	-10%
+Ningunas herramientas de reingeniería 	-10%
+No hay herramientas de ingeniería inversa 	-10%
+No hay herramientas de análisis de la complejidad 	-10%
+No hay medidas de productividad 	-7%
+Moral pobre del equipo 	-6%
+No hay medidas de satisfacción del usuario 	-4%
+Horas extras no pagadas 	0%
+Suma 	-500%
+
+Fase de mantenimiento
+
+La fase de mantenimiento de software involucra cambios al software para corregir defectos encontrados durante su uso o la adición de nueva funcionalidad mejorando la usabilidad y aplicabilidad del software.
+
+El mantenimiento del software involucra diferentes técnicas específicas. Una técnica es el rebanamiento estático, la cual es usada para identificar todo el código de programa que puede modificar alguna variable. Es generalmente útil en la refabricación del código del programa y fue específicamente útil en asegurar conformidad para el problema del año 2000.
+
+La fase de mantenimiento de software es una parte explícita del modelo en cascada del proceso de desarrollo de software el cual fue desarrollado durante el movimiento de programación estructurada en computadores. El otro gran modelo, el Desarrollo en espiral desarrollado durante el movimiento de ingeniería de software orientada a objeto no hace una mención explícita de la fase de mantenimiento. Sin embargo, esta actividad es notable, considerando el hecho de que dos tercios del coste del tiempo de vida de un sistema de software involucran mantenimiento (Page-Jones pg 31).
+
+En un ambiente formal de desarrollo de software, la organización o equipo de desarrollo tendrán algún mecanismo para documentar y rastrear defectos y deficiencias. El Software tan igual como la mayoría de otros productos, es típicamente lanzado con un conjunto conocido de defectos y deficiencias. El software es lanzado con esos defectos conocidos porque la organización de desarrollo en las utilidades y el valor del software en un determinado nivel de calidad compensa el impacto de los defectos y deficiencias conocidas.
+
+Las deficiencias conocidas son normalmente documentadas en una carta de consideraciones operacionales o notas de lanzamiento (release notes) es así que los usuarios del software serán capaces de trabajar evitando las deficiencias conocidas y conocerán cuándo el uso del software sería inadecuado para tareas específicas.
+
+Con el lanzamiento del software (software release), otros defectos y deficiencias no documentados serán descubiertas por los usuarios del software. Tan pronto como estos defectos sean reportados a la organización de desarrollo, serán ingresados en el sistema de rastreo de defectos.
+
+Las personas involucradas en la fase de mantenimiento de software esperan trabajar en estos defectos conocidos, ubicarlos y preparar un nuevo lanzamiento del software, conocido como un lanzamiento de mantenimiento, el cual resolverá los temas pendientes.
+
+Mantenimiento Preventivo de Software
+
+El mantenimiento preventivo consiste en una atención constante de limpieza, revisión y afinación de los distintos elementos integrantes de un equipo de cómputo. Es importante saber que la mayoría de los problemas que se presentan en el trabajo cotidiano, se debe a la falta de un programa específico de mantenimiento de los equipos, de tal manera que la mayoría de los problemas se resuelven con el mismo procedimiento del mantenimiento preventivo. El mantenimiento tiene técnicas para darle un periodo de vida útil más largo y libre de fallas. Debemos de tener en cuenta que es necesario darle mantenimiento al software ya que el continuo uso genera una serie de cambios en la configuración original del sistema, causando bajas en el rendimiento que al acumularse con el tiempo pueden generar problemas serios. Actualmente es indispensable mantener actualizada la protección contra virus informáticos.
+
+
+Por supuesto es muy recomendable usar su equipo responsablemente, ya que esto le podrá causar un gasto mayor a futuro.
+
+Las recomendaciones son: Cuidar las páginas a las que accesa, las de música, videos o juegos regularmente traen enlaces que pueden filtrarse directamente al equipo de cómputo, tener un antivirus actualizado, hacer cada cierto tiempo un escaneado y limpieza de su PC, evitar los mensajes SPAM que llegan en los correos electrónicos, estos mensajes llegan normalmente con remitente desconocido y se almacenan en la carpeta Correo no deseado, generalmente son solo virus que no hacen mucho daño, pero también puede costar hasta el formateo del equipo y con esto, la perdida de archivos importantes.
+
+Referencias
+- ISO/IEC 14764:2006 Software Engineering — Software Life Cycle Processes — Maintenance
+- Software Maintenance and Re-engineering, CSE2305 Object-Oriented Software Engineering
+- Lientz B., Swanson E., 1980: Software Maintenance Management. Addison Wesley, Reading, MA
+- Lehman M. M., 1980: Program, Life-Cycles and the Laws of Software Evolution. In Proceedings of IEEE, 68, 9,1060-1076
+- Penny Grubb, Armstrong A. Takang, 2003: Software Maintenance: Concepts and Practice. World Scientific Publishing Company
+- THE ECONOMICS OF SOFTWARE MAINTENANCE IN THE TWENTY FIRST CENTURY
+
+Lectura adicional
+- Pigoski, Thomas M. (1996). Practical Software Maintenance. New York: John Wiley & Sons. ISBN 978-0-471-17001-3.
+- Pigoski, Thomas M. Description for Software Evolution and Maintenance (version 0.5). SWEBOK Knowledge Area.
+- April, Alain; Abran, Alain (2008). Software Maintenance Management. New York: Wiley-IEEE. ISBN 978-0-470-14707-8.
+- Gopalaswamy Ramesh; Ramesh Bhattiprolu (2006). Software maintenance : effective practices for geographically distributed environments. New Delhi: Tata McGraw-Hill. ISBN 978-0-07-048345-3.
+- Grubb, Penny; Takang, Armstrong (2003). Software Maintenance. New Jersey: World Scientific Publishing. ISBN 978-981-238-425-6.
+- Lehman, M.M.; Belady, L.A. (1985). Program evolution : processes of software change. London: Academic Press Inc. ISBN 0-12-442441-4.
+- Page-Jones, Meilir (1980). The Practical Guide to Structured Systems Design. New York: Yourdon Press. ISBN 0-917072-17-0.

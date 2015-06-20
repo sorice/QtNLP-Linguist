@@ -1,0 +1,17 @@
+Algoritmo paralelo
+
+En las ciencias de la computación, un algoritmo paralelo, en oposición a los algoritmos clásicos o algoritmos secuenciales, es un algoritmo que puede ser ejecutado por partes en el mismo instante de tiempo por varias unidades de procesamiento, para finalmente unir todas las partes y obtener el resultado correcto.
+
+Algunos algoritmos son fácilmente divisibles en partes; como por ejemplo, un algoritmo que calcule todos los números primos entre 1 y 100, donde se podría dividir los números originales en subconjuntos y calcular los primos para cada uno de los subconjuntos de los números originales; al final, uniríamos todos los resultados y tendríamos la solución final del algoritmo. Otro ejemplo, puede ser el cálculo de Pi en paralelo.
+
+Por el contrario, a veces los problemas no son tan fácilmente paralelizables, de ahí que estos problemas se conozcan como problemas inherentemente secuenciales. Como ejemplo de estos métodos tendríamos los métodos numéricos iterativos como el método de Newton o el problema de los tres cuerpos. Por otro lado, algunos problemas son difícilmente paralelizables, aunque tengan una estructura recursiva. Como ejemplo de esto último tendríamos la búsqueda primero en profundidad en un grafo.
+
+Los algoritmos paralelos son importantes porque es más rápido tratar grandes tareas de computación mediante la paralelización que mediante técnicas secuenciales. Esta es la forma en que se trabaja en el desarrollo de los procesadores modernos, ya que es más difícil incrementar la capacidad de procesamiento con un único procesador que aumentar su capacidad de cómputo mediante la inclusión de unidades en paralelo, logrando así la ejecución de varios flujos de instrucciones dentro del procesador. Pero hay que ser cauto con la excesiva paralelización de los algoritmos ya que cada algoritmo paralelo tiene una parte secuencial y debido a esto, los algoritmos paralelos puedes llegar a un punto de saturación (ver Ley de Amdahl). Por todo esto, a partir de cierto nivel de paralelismo, añadir más unidades de procesamiento puede sólo incrementar el coste y la disipación de calor.
+
+El coste o complejidad de los algoritmos secuenciales se estima en términos del espacio (memoria) y tiempo (ciclos de procesador) que requiera. Los algoritmos paralelos también necesitan optimizar la comunicación entre diferentes unidades de procesamiento. Esto se consigue mediante la aplicación de dos paradigmas de programación y diseño de procesadores distintos: memoria compartida o paso de mensajes.
+
+La técnica memoria compartida necesita del uso de cerrojos en los datos para impedir que se modifique simultáneamente por dos procesadores, por lo que se produce un coste extra en ciclos de CPU desperdiciados y ciclos de bus. También obliga a serializar alguna parte del algoritmo.
+
+La técnica paso de mensajes usa canales y mensajes pero esta comunicación añade un coste al bus, memoria adicional para las colas y los mensajes y latencia en el mensaje. Los diseñadores de procesadores paralelos usan buses especiales para que el coste de la comunicación sea pequeño pero siendo el algoritmo paralelo el que decide el volumen del tráfico.
+
+Finalmente, una subclase de los algoritmos paralelos, los algoritmos distribuidos son algoritmos diseñados para trabajar en entornos tipo clusters y de computación distribuida, donde se usan otras técnicas, fuera del alcance de los algoritmos paralelos clásicos.

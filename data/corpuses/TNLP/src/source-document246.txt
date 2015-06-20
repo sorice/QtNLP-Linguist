@@ -1,0 +1,57 @@
+Árbol (informática)
+
+En ciencias de la informática, un árbol es una estructura de datos ampliamente usada que imita la forma de un árbol (un conjunto de nodos conectados). Un nodo es la unidad sobre la que se construye el árbol y puede tener cero o más nodos hijos conectados a él. Se dice que un nodo a es padre de un nodo b si existe un enlace desde a hasta b (en ese caso, también decimos que b es hijo de a). Sólo puede haber un único nodo sin padres, que llamaremos raíz. Un nodo que no tiene hijos se conoce como hoja. Los demás nodos (tienen padre y uno o varios hijos) se les conoce como rama.
+
+Definición
+
+Formalmente, podemos definir un árbol de la siguiente forma:
+- Caso base: un árbol con sólo un nodo (es a la vez raíz del árbol y hoja).
+- Un nuevo árbol a partir de un nodo n_r y k árboles A_1, A_2 \dots A_k de raíces n_1, n_2, \dots, n_k con N_1, N_2, \dots ,N_k elementos cada uno, puede construirse estableciendo una relación padre-hijo entre n_r y cada una de las raíces de los k árboles. El árbol resultante de N = 1 + N_1 + \dots + N_k nodos tiene como raíz el nodo n_r, los nodos n_1, n_2, \dots, n_k son los hijos de n_r y el conjunto de nodos hoja está formado por la unión de los k conjuntos hojas iniciales. A cada uno de los árboles A_i se les denota ahora subárboles de la raíz.
+
+Una sucesión de nodos del árbol, de forma que entre cada dos nodos consecutivos de la sucesión haya una relación de parentesco, decimos que es un árbol recorrido. Existen dos recorridos típicos para listar los nodos de un árbol: en profundidad y en anchura. En el primer caso, se listan los nodos expandiendo el hijo actual de cada nodo hasta llegar a una hoja, donde se vuelve al nodo anterior probando por el siguiente hijo y así sucesivamente. En el segundo, por su parte, antes de listar los nodos de nivel n+1 (a distancia n+1 aristas de la raíz), se deben haber listado todos los de nivel n. Otros recorridos típicos del árbol son preorden, postorden e inorden:
+- El recorrido en preorden, también llamado orden previo consiste en recorrer en primer lugar la raíz y luego cada uno de los hijos A_1, A_2 \dots A_k en orden previo.
+- El recorrido en inorden, también llamado orden simétrico (aunque este nombre sólo cobra significado en los árboles binarios) consiste en recorrer en primer lugar A_1, luego la raíz y luego cada uno de los hijos A_2 \dots A_k en orden simétrico.
+- El recorrido en postorden, también llamado orden posterior consiste en recorrer en primer lugar cada uno de los hijos A_1, A_2 \dots A_k en orden posterior y por último la raíz.
+
+Finalmente, puede decirse que esta estructura es una representación del concepto de árbol en teoría de grafos. Un árbol es un grafo conexo y acíclico.
+
+Terminologías utilizadas en árboles
+- Raíz - El nodo superior del árbol.
+- Padre - Nodo con hijos.
+- Hijo - Nodo descendiente de otro nodo.
+- Hermanos - Nodos que comparten el mismo padre.
+- Hojas - Nodos sin hijos.
+- Nivel - El nivel de un nodo está definido por 1+ el número de conexiones entre el nodo y la raíz.
+
+Tipos de árboles
+- Árboles Binarios
+    - Árbol de búsqueda binario auto-balanceable
+        - Árboles AVL
+        - Árboles Rojo-Negro
+        - Árbol AA
+    - Árbol de segmento
+- Árboles Multicamino
+    - Árboles B (Árboles de búsqueda multicamino autobalanceados)
+        - Árbol-B+
+        - Árbol-B*
+
+Operaciones de árboles. Representación
+
+Las operaciones comunes en árboles son:
+- Enumerar todos los elementos.
+- Buscar un elemento.
+- Dado un nodo, listar los hijos (si los hay).
+- Borrar un elemento.
+- Eliminar un subárbol (algunas veces llamada podar).
+- Añadir un subárbol (algunas veces llamada injertar).
+- Encontrar la raíz de cualquier nodo.
+
+Por su parte, la representación puede realizarse de diferentes formas. Las más utilizadas son:
+- Representar cada nodo como una variable en el heap, con punteros a sus hijos y a su padre.
+- Representar el árbol con un array donde cada elemento es un nodo y las relaciones padre-hijo vienen dadas por la posición del nodo en el array.
+
+Uso de los árboles
+
+Usos comunes de los árboles son:
+- Representación de datos jerárquicos.
+- Como ayuda para realizar búsquedas en conjuntos de datos (ver también: algoritmos de búsqueda en Árboles).

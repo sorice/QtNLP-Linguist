@@ -1,0 +1,58 @@
+Agente inteligente (inteligencia artificial)
+
+Un agente inteligente, es una entidad capaz de percibir su entorno, procesar tales percepciones y responder o actuar en su entorno de manera racional, es decir, de manera correcta y tendiendo a maximizar un resultado esperado. Es capaz de percibir su medioambiente con la ayuda de sensores y actuar en ese medio utilizando actuadores (elementos que reaccionan a un estímulo realizando una acción).
+
+En este contexto la racionalidad es la característica que posee una elección de ser correcta, más específicamente, de tender a maximizar un resultado esperado. Este concepto de racionalidad es más general y por ello más adecuado que inteligencia (la cual sugiere entendimiento) para describir el comportamiento de los agentes inteligentes. Por este motivo es mayor el consenso en llamarlos agentes racionales.
+
+Un agente inteligente puede ser una entidad física o virtual. Si bien el término agente racional se refiere a agentes artificiales en el campo de la Inteligencia Artificial, también puede considerarse agentes racionales a los animales incluido el hombre.
+
+Los agentes inteligentes se describen esquemáticamente como un sistema funcional abstracto. Por esta razón, los agentes inteligentes son a veces llamado Agentes Inteligentes Abstractos (AIA) para distinguirlos de sus implementaciones del mundo real como sistemas informáticos, los sistemas biológicos, o de organizaciones. Algunas definiciones de agentes inteligentes hacen énfasis en su autonomía por lo que prefieren el término agente inteligente autónomo. Y otros (en particular, Russell y Norvig (2003)) considera conducta dirigida a objetivos como la esencia de lo inteligente y prefieren un término tomado de la economía "Agente Racional".
+
+En Ciencias de la Computación el término agente inteligente puede ser usado para referirse a un agente de software que tiene algo de inteligencia, independientemente de si no es un agente racional por definición de Russell y Norvig. Por ejemplo, programas autónomos utilizados para asistencia de un operador o de minería de datos (a veces denominado robots) son también llamados "agentes inteligentes".
+
+Definiciones sobre Agentes Inteligentes
+
+Los agentes inteligentes se han definido de diferentes maneras. [2] Según Nikola Kasabov [3] los sistemas de IA deben exhibir las siguientes características:
+- Aprender nuevos problemas e incrementar normas de solución.
+- Capacidad de adaptación en línea y en tiempo real.
+- Ser capaz de analizar condiciones en términos de comportamiento, el error y el éxito.
+- Aprender y mejorar a través de la interacción con el medio ambiente (realización).
+- Aprender rápidamente de grandes cantidades de datos.
+- Deben estar basados en memoria de almacenamiento masivo y la recuperación de dicha capacidad.
+
+Ejemplos
+
+Como ejemplos de entidades físicas pueden nombrarse:
+- un robot de comportamiento variable autoregulado (ya sea que su comportamiento sea determinado por software o incorporado directamente en la electrónica),
+- una computadora que ejecuta un software de diagnóstico médico y muestra resultados en una pantalla para ayudar a decidir a un médico,
+- una computadora especializada que controla un helicóptero en maniobras peligrosas para un hombre.
+
+Ejemplos de entidad puramente virtual serían:
+- un software de descubrimiento de patrones en Internet que sólo interactúa con otros software.
+- un software softbot que simula a una persona en un juego de computadora, tal como un jugador de ajedrez, un jugador de fútbol contrincante o un conductor de carreras de automóviles, etc.
+
+Clasificación
+
+Es posible clasificar los agentes inteligentes en 6 categorías principales:
+1. agentes reactivos
+2. agentes reactivos basados en modelo
+3. agentes basados en objetivos
+4. agentes basados en utilidad
+5. agentes que aprenden
+6. agentes de consultas
+
+La racionalidad es necesaria
+
+En muchos textos se define agente inteligente como todo agente capaz de tener conciencia de su entorno y actuar sobre él. No obstante es necesario exigir que estas decisiones sean racionales en el sentido de que persigan algún fin.
+
+Vamos a mostrarlo con un contraejemplo: cuando un fotón con la suficiente energía incide sobre un átomo, puede arrancar de él un electrón. Podríamos considerar al átomo inteligente puesto que percibe su entorno (la incidencia del fotón) y actúa sobre su entorno (emite un electrón). La ausencia de relación entre la emisión del electrón y cualquier hipotético interés del átomo muestra que este no es un agente inteligente pese a verificar la definición de Bertrand Russell.
+
+Sin ese término no tendría sentido la palabra racionalidad.
+
+La conducta de un agente no suele ser la óptima
+
+Paradójicamente la conducta de un agente rara vez es la óptima. La razón es sencilla: calcular el óptimo de un criterio de un modo suficientemente bueno como para ser considerado razonable es muy difícil cuando en el problema planteado concurren múltiples restricciones. Un ejemplo sería el cálculo de la mejor ala para un avión, donde el agente tendría que ser capaz de tener en cuenta criterios tan dispares como la aerodinámica, la compatibilidad con el resto de componentes de la aeronave, o criterios económicos, y restricciones tales como limitaciones en peso de la propia ala, el peso total de la aeronave, las normativas aplicables, etc. En el otro extremo se encuentran problemas como el cálculo del máximo de un polinomio de segundo grado, en los que el criterio es muy sencillo -es un polinomio de segundo grado- y no concurre ninguna restricción.
+
+Cuando el criterio es una función real de muchas variables y las restricciones también, los cálculos son mucho más complicados. Algunas veces se puede lograr una buena aproximación, pero si el agente ha de tomar la decisión en muy poco tiempo, deberá conformarse con la mejor aproximación que pueda calcular en el escaso tiempo de que dispone.
+
+Por otra parte, no es tan fácil inducir el criterio que permite comparar las distintas estrategias: ¿cómo se puede expresar con una ecuación simple lo que más le conviene a un lagarto que está cazando bajo el sol?

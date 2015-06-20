@@ -1,0 +1,35 @@
+Forma normal de Boyce-Codd
+
+La Forma Normal de Boyce-Codd (o FNBC) es una forma normal utilizada en la normalización de bases de datos. Es una versión ligeramente más fuerte de la Tercera forma normal (3FN). La forma normal de Boyce-Codd requiere que no existan dependencias funcionales no triviales de los atributos que no sean un conjunto de la clave candidata. En una tabla en 3FN, todos los atributos dependen de una clave, de la clave completa y de ninguna otra cosa excepto de la clave (excluyendo dependencias triviales, como A \to A). Se dice que una tabla está en FNBC si y solo si está en 3FN y cada dependencia funcional no trivial tiene una clave candidata como determinante. En términos menos formales, una tabla está en FNBC si está en 3FN y los únicos determinantes son claves candidatas.
+
+Ejemplo
+
+Consideremos una empresa donde un trabajador puede trabajar en varios departamentos. En cada departamento hay varios responsables, pero cada trabajador sólo tiene asignado uno. Tendríamos una tabla con las columnas:
+IDTrabajador, IDDepartamento, IDResponsable
+
+La única clave candidata es IDTrabajador (que será por tanto la clave primaria).
+
+Si añadimos la limitación de que el responsable sólo puede serlo de un departamento, este detalle produce una dependencia funcional ya que: Responsable → Departamento
+
+Por lo tanto hemos encontrado un determinante (IDResponsable) que sin embargo no es clave candidata. Por ello, esta tabla no está en FNBC. En este caso la redundancia ocurre por mala selección de clave. La repetición del par [IDDepartamento + IDResponsable] es innecesaria y evitable.
+
+Solamente en casos raros una tabla en 3NF no satisface los requerimientos de la FNBC. Un ejemplo de tal tabla es (teniendo en cuenta que cada estudiante puede tener más de un tutor):
+
+Referencia cruzada de Tutor/Estudiante ID Tutor 	Número de seguro social del tutor 	ID Estudiante
+1078 	088-51-0074 	31850
+1078 	088-51-0074 	37921
+1293 	096-77-4146 	46224
+1480 	072-21-2223 	31850
+
+El propósito de la tabla es mostrar qué tutores están asignados a qué estudiantes. Las claves candidatas de la tabla son:
+- {ID Tutor, ID Estudiante}
+- {Número de seguro social del tutor, ID Estudiante}
+
+Otra formulación
+
+Una forma sencilla de comprobar si una relación se encuentra en FNBC consiste en comprobar, además de que esté en 3FN, lo siguiente:
+- (1) Si no existen claves candidatas compuestas (con varios atributos), está en FNBC.
+- (2) Si existen varias claves candidatas compuestas y éstas tienen un elemento común, puede no estar en FNBC. Sólo si, para cada dependencia funcional en la relación, el determinante es una clave candidata, estará en FNBC.
+
+Lectura adicional
+- Date, C. J. (1999), An Introduction to Database Systems (8th ed.). Addison-Wesley Longman. ISBN 0-321-19784-4.

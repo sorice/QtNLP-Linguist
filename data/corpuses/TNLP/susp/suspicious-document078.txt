@@ -1,0 +1,21 @@
+Algoritmo apriori
+
+El algoritmo apriori se usa en minería de datos para encontrar Reglas de asociación en un conjunto de datos. Este algoritmo se basa en el conocimiento previo o “a priori” de los conjuntos frecuentes, esto sirve para reducir el espacio de búsqueda y aumentar la eficiencia.
+
+Ejemplo
+
+Este ejemplo sugiere el proceso de selección o generación de una lista de posibles conjuntos de items. El objetivo de la técnica es construir un conjunto de k items a partir de un conjunto de tamaño k-1. Por ejemplo, con k = 4, se supone que hay dos conjuntos de tamaño k-1 tal que...
+
+    A \rightarrow B \rightarrow C,
+
+y
+
+    A \rightarrow B \rightarrow D,
+
+se generan dos conjuntos de datos candidatos, denominados
+
+    A \rightarrow B \rightarrow C \rightarrow D
+
+y
+
+    A \rightarrow B \rightarrow D \rightarrow C. 

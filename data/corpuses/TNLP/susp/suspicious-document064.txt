@@ -1,0 +1,119 @@
+Sistema de información
+
+Un sistema de información es un conjunto de elementos orientados al tratamiento y administración de datos e información, organizados y listos para su uso posterior, generados para cubrir una necesidad o un objetivo. Dichos elementos formarán parte de alguna de las siguientes categorías:
+- Personas;
+- Datos;
+- Actividades o técnicas de trabajo;
+- Recursos materiales en general (generalmente recursos informáticos y de comunicación, aunque no necesariamente).
+
+Todos estos elementos interactúan para procesar los datos (incluidos los procesos manuales y automáticos) y dan lugar a información más elaborada, que se distribuye de la manera más adecuada posible en una determinada organización, en función de sus objetivos. Si bien la existencia de la mayor parte de sistemas de información son de conocimiento público, recientemente se ha revelado que desde finales del siglo XX diversos gobiernos han instaurado sistemas de información para el espionaje de carácter secreto.
+
+Habitualmente el término se usa de manera errónea como sinónimo de sistema de información informático, en parte porque en la mayoría de los casos los recursos materiales de un sistema de información están constituidos casi en su totalidad por sistemas informáticos. Estrictamente hablando, un sistema de información no tiene por qué disponer de dichos recursos (aunque en la práctica esto no suela ocurrir). Se podría decir entonces que los sistemas de información informáticos son una subclase o un subconjunto de los sistemas de información en general.
+
+Generalidades
+Ejemplo de un sistema de información.
+
+El término sistemas de información hace referencia a un concepto genérico que tiene diferentes significados según el campo del conocimiento al que se aplique dicho concepto, a continuación se enumeran algunos de dichos campos y el sentido concreto que un Sistema de Información tiene en ese campo:
+- En informática, un sistema de información es cualquier sistema computacional que se utilice para obtener, almacenar, manipular, administrar, controlar, procesar, transmitir o recibir datos, para satisfacer una necesidad de información.
+- En teoría de sistemas, un sistema de información es un sistema, automatizado o manual, que abarca personas, máquinas, y/o métodos organizados de recolección de datos, procesamiento, transmisión y diseminación de datos que representa información para el usuario.
+- En seguridad computacional, un sistema de información está descrito por tres componentes:1
+    - Estructura:
+        - Repositorios, que almacenan los datos permanente o temporalmente, tales como "buffers",2 RAM (memoria de acceso aleatorio), discos duros, caché, etc.
+        - Interfaces, que permiten el intercambio de información con el mundo no digital, tales como teclados, altavoces, monitores, escáneres, impresoras, etc.
+    - Canales, que conectan los repositorios entre sí, tales como "buses", cables, enlaces inalámbricos, etc. Una red de trabajo es un conjunto de canales físicos y lógicos.
+    - Comportamiento:
+        - Servicios, los cuales proveen algún valor a los usuarios o a otros servicios mediante el intercambio de mensajes.
+        - Mensajes, que acarrean un contenido o significado hacia los usuarios internos o servicios.
+- En geografía y cartografía, un Sistema de Información Geográfica (SIG) se utiliza para integrar, almacenar, editar, analizar, compartir y desplegar información georeferenciada. Existen muchas aplicaciones de SIG, desde ecología y geología, hasta las ciencias sociales.
+- En representación del conocimiento, un sistema de información consiste de tres componentes: humano, tecnológico y organizacional. Bajo esta perspectiva, información se define en términos de tres niveles de semiótica. Datos que pueden ser procesados automáticamente por un sistema de aplicaciones corresponden al nivel de sintaxis. En el contexto de un individuo que interpreta los datos, estos son convertidos en información, lo que corresponde al nivel semántico. La información se convierte en conocimiento cuando un individuo conoce (entiende) y evalúa la información (por ejemplo para una tarea específica), esto corresponde al nivel pragmático.
+- En matemáticas dentro de la teoría de los dominios, un sistema de información Scott (por su inventor Dana Scott) es una estructura matemática que provee una representación alternativa de un dominio Scott, como un caso especial, algebraic lattices.
+- En matemáticas teoría de conjunto difuso, un sistema de información es un sistema de atributo-valor.
+- En sociología los sistemas de información son sistemas sociales cuyo comportamiento está fuertemente influenciado por los objetivos, valores y creencias de los individuos y grupos, así como por el desempeño de la tecnología.3
+
+Actividades de un Sistema de Información
+
+Hay tres actividades en un sistema de información que producen la información que esas organizaciones necesitan para tomar decisiones, controlar operaciones, analizar problemas y crear nuevos productos o servicios. Estas actividades son:
+- Entrada: captura o recolecta datos en bruto tanto del interior de la organización como de su entorno externo.
+- Procesamiento: convierte esa entrada de datos en una forma más significativa.
+- Salida: transfiere la información procesada a la gente que la usará o a las actividades para las que se utilizará.
+
+Los sistemas de información también requieren retroalimentación, que es la salida que se devuelve al personal adecuado de la organización para ayudarle a evaluar o corregir la etapa de entrada.
+
+Ciclo de vida de los Sistemas de Información
+
+Existen pautas básicas para el desarrollo de un SI para una organización:
+- Conocimiento de la Organización. Analizar y conocer todos los sistemas que forman parte de la organización, así como los futuros usuarios del SI. En las empresas (fin de lucro presente), se analiza el proceso de negocio y los procesos transaccionales a los que dará soporte el SI.
+- Identificación de problemas y oportunidades. El segundo paso es relevar las situaciones que tiene la organización y de las cuales se puede sacar una ventaja competitiva (Por ejemplo: una empresa con un personal capacitado en manejo informático reduce el costo de capacitación de los usuarios), así como las situaciones desventajosas o limitaciones que hay que sortear o que tomar en cuenta (Por ejemplo: el edificio de una empresa que cuenta con un espacio muy reducido y no permitirá instalar más de dos computadoras).
+- Determinar las necesidades. Este proceso también se denomina elicitación de requerimientos. En el mismo, se procede identificar a través de algún método de recolección de información (el que más se ajuste a cada caso) la información relevante para el SI que se propondrá.
+- Diagnóstico. En este paso se elabora un informe resaltando los aspectos positivos y negativos de la organización. Este informe formará parte de la propuesta del SI y, también, será tomado en cuenta a la hora del diseño.
+- Propuesta. Contando ya con toda la información necesaria acerca de la organización, es posible elaborar una propuesta formal dirigida hacia la organización donde se detalle: el presupuesto, la relación costo-beneficio y la presentación del proyecto de desarrollo del SI.
+- Diseño del sistema. Una vez aprobado el proyecto, se comienza con la elaboración del diseño lógico del SI; la misma incluye: el diseño del flujo de la información dentro del sistema, los procesos que se realizarán dentro del sistema, el diccionario de datos, los reportes de salida, etc. En este paso es importante seleccionar la plataforma donde se apoyará el SI y el lenguaje de programación a utilizar.
+- Codificación. Con el algoritmo ya diseñado, se procede a su reescritura en un lenguaje de programación establecido (programación) en la etapa anterior, es decir, en códigos que la máquina pueda interpretar y ejecutar.
+- Implementación. Este paso consta de todas las actividades requeridas para la instalación de los equipos informáticos, redes y la instalación de la aplicación(programa) generada en la etapa de Codificación.
+- Mantenimiento. Proceso de retroalimentación, a través del cual se puede solicitar la corrección, el mejoramiento o la adaptación del SI ya creado a otro entorno de trabajo o plataforma. Este paso incluye el soporte técnico acordado anteriormente.
+
+Tipos de sistemas de información
+
+Debido a que el principal uso que se da a los SI es el de optimizar el desarrollo de las actividades de una organización con el fin de ser más productivos y obtener ventajas competitivas, en primer término, se puede clasificar a los sistemas de información en:
+- Sistemas Competitivos
+- Sistemas Cooperativos
+- Sistemas que modifican el estilo de operación del negocio
+
+Esta clasificación es muy genérica, y en la práctica no obedece a una diferenciación real de sistemas de información reales, ya que en la práctica podríamos encontrar alguno que cumpla varias (dos o las tres) de las características anteriores. En los subapartados siguientes se hacen unas clasificaciones más concretas (y reales) de sistemas de información.
+
+Desde un punto de vista empresarial
+
+La primera clasificación se basa en la jerarquía de una organización y se llamó el modelo de la pirámide.4 Según la función a la que vayan destinados o el tipo de usuario final del mismo,5 los SI pueden clasificarse en:
+- Sistema de procesamiento de transacciones (TPS).- Gestiona la información referente a las transacciones producidas en una empresa u organización, también se le conoce como Sistema de Información operativa.
+- Sistemas de información gerencial (MIS).- Orientados a solucionar problemas empresariales en general.
+- Sistemas de soporte a decisiones (DSS).- Herramienta para realizar el análisis de las diferentes variables de negocio con la finalidad de apoyar el proceso de toma de decisiones.
+- Sistemas de información ejecutiva (EIS).- Herramienta orientada a usuarios de nivel gerencial, que permite monitorizar el estado de las variables de un área o unidad de la empresa a partir de información interna y externa a la misma. Es en este nivel cuando los sistemas de información manejan información estratégica para las empresas.
+
+Estos sistemas de información no surgieron simultáneamente en el mercado; los primeros en aparecer fueron los TPS, en la década de los 60, sin embargo, con el tiempo, otros sistemas de información comenzaron a evolucionar. Los primeros proporcionan información a los siguientes a medida que aumenta la escala organizacional
+- Sistemas de automatización de oficinas (OAS).- Aplicaciones destinadas a ayudar al trabajo diario del administrativo de una empresa u organización.
+- Sistema Planificación de Recursos (ERP).- j{viene de las primeras letras: Enterprise Resource Planning: cuyo objetivo es la planificación de los recursos de una organización. Típicamente esto se lo ha utilizado en empresas productivas que han seguido metodologías de planificación MRPII. El objetivo es tener claramente identificado como llegar a los productos finales desde la materia prima; es decir desde un inventario de materia prima e insumos poder determinar la cantidad que llegaremos a generar de productos finales para ponerlos a disposición del mercado}. Integran la información y los procesos de una organización en un solo sistema.
+- Sistema experto (SE).- Emulan el comportamiento de un experto en un dominio concreto.
+
+Los últimos fueron los SE, que alcanzaron su auge en los 90 (aunque estos últimos tuvieron una tímida aparición en los 70 que no cuajó, ya que la tecnología no estaba suficientemente desarrollada).
+
+Sistemas de información estratégicos
+
+Puede ser considerado como el uso de la tecnología de la información para respaldar o dar forma a la estrategia competitiva de la organización, a su plan para incrementar o mantener la ventaja competitiva o bien para reducir la ventaja de sus competidores.
+
+Su función primordial es crear una diferencia con respecto a los competidores de la organización (o salvar dicha diferencia) que hagan más atractiva a ésta para los potenciales clientes. Por ejemplo, en la banca, hace años que se implantaron los cajeros automáticos, pero en su día, las entidades que primero ofrecieron este servicio disponían de una ventaja con respecto a sus competidores, y hoy día cualquier entidad que pretenda ofrecer servicios bancarios necesita contar con cajeros automáticos si no quiere partir con una desventaja con respecto al resto de entidades de este sector. En este sentido, los cajeros automáticos se pueden considerar sistemas de información estratégicos.
+
+Su función es lograr ventajas que los competidores no posean, tales como ventajas en costos y servicios diferenciados con clientes y proveedores. Apoyan el proceso de innovación de productos dentro de la empresa. Suelen desarrollarse dentro de la organización, por lo tanto no pueden adaptarse fácilmente a paquetes disponibles en el mercado. Entre las características más destacables de estos sistemas se pueden señalar:
+- Cambian significativamente el desempeño de un negocio al medirse por uno o más indicadores clave, entre ellos, la magnitud del impacto.
+- Contribuyen al logro de una meta estratégica.
+- Generan cambios fundamentales en la forma de dirigir una compañía, la forma en que compite o en la que interactúa con clientes y proveedores.
+
+Otra clasificación, según el entorno de aplicación
+- Entorno transaccional: Una transacción es un suceso o evento que crea/modifica los datos. El procesamiento de transacciones consiste en captar, manipular y almacenar los datos, y también, en la preparación de documentos; en el entorno transaccional, por tanto, lo importante es qué datos se modifican y cómo, una vez que ha terminado la transacción. Los TPS son los SI típicos que se pueden encontrar en este entorno.
+- Entorno decisional: Este es el entorno en el que tiene lugar la toma de decisiones; en una empresa, las decisiones se toman a todos los niveles y en todas las áreas (otra cosa es si esas decisiones son estructuradas o no), por lo que todos los SI de la organización deben estar preparados para asistir en esta tarea, aunque típicamente, son los DSS los que se encargan de esta función. Si el único SI de una compañía preparado para ayudar a la toma de decisiones es el DSS, éste debe estar adaptado a todos los niveles jerárquicos de la empresa.
+
+Sistemas de información de espionaje
+Artículos principales: PRISM y Echelon.
+
+Si bien la mayor parte de sistemas de información operan con el conocimiento de los agentes sobre los que se recaba información (sistemas públicamente conocidos), el auge de las comunicaciones electrónicas ha hecho que proliferen sistemas secretos de espionaje como por ejemplo el programa PRISM por el cual la Agencia de Seguridad Nacional (NSA) intituida por el gobierno estadounidense ha operado desde 2007, espiando a líderes y presidentes de otros países (aliados y adversarios de Estados Unidos), y se ha afirmado que tiene capacidad para interceptar decenas de miles de comunicaciones telefónicas por minuto. Gran parte de lo que se conoce sobre dicho sistema de información se conoció a partir del escándalo por las filtraciones de Edward Snowden (2013).
+
+Previamente, el parlamento europeo había abierto comisiones de investigación sobre sistemas de intercepción de comunicaciones electrónicas, conocido actualmente como Echelon, operada conjuntamente por Estados Unidos, Canadá, Reino Unido, Australia y Nueva Zelanda.
+
+Aplicación de los sistemas de información
+
+Los sistemas de información tratan el desarrollo, uso y administración de la infraestructura de la tecnología de la información en una organización.
+
+En la era post-industrial, la era de la información, el enfoque de las compañías ha cambiado de la orientación hacia el producto a la orientación hacia el conocimiento, en este sentido el mercado compite hoy en día en términos del proceso y la innovación, en lugar del producto. El énfasis ha cambiado de la calidad y cantidad de producción hacia el proceso de producción en sí mismo, y los servicios que acompañan este proceso.
+
+El mayor de los activos de una compañía hoy en día es su información, representada en su personal, experiencia, conocimiento, innovaciones (patentes, derechos de autor, secreto comercial). Para poder competir, las organizaciones deben poseer una fuerte infraestructura de información, en cuyo corazón se sitúa la infraestructura de la tecnología de información. De tal manera que el sistema de información se centre en estudiar las formas para mejorar el uso de la tecnología que soporta el flujo de información dentro de la organización. Un sistema de información debe brindar la totalidad de los elementos que conforman los datos, en una estructura robusta, flexible ante los futuros cambios y homogénea.
+
+Estudio de los sistemas de información
+
+Ciborra (2002) define el estudio de los sistemas de información como el estudio que trata la inserción y el uso de la tecnología de la información en las organizaciones, instituciones, y la sociedad en general.6
+
+Referencias y notas
+- . 2004. ISBN 84-933336-7-0. Parámetro desconocido |Nombre= ignorado (se sugiere |nombre=) (ayuda); Parámetro desconocido |Apellidos= ignorado (se sugiere |apellidos=) (ayuda); Parámetro desconocido |Título= ignorado (se sugiere |título=) (ayuda); Falta el |título= (ayuda)
+- En informática, un es un área de memoria destinada para el almacenamiento temporal de datos, y se utilizan típicamente entre dispositivos con diferente velocidad de procesamiento
+- Angell, I.O. and Smithson S. (1991) Information Systems Management: Opportunities and Risks
+- The Pyramid Model
+- Laudon, Jane y Kenneth (2006). Sistemas de información gerencial- Administración de la empresa digital. Pearson Educación- Prentice Hall.
+- Ciborra, C. (2002) Labyrinths of Information, Oxford, Oxford University Press

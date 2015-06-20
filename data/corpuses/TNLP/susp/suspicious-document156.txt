@@ -1,0 +1,134 @@
+Arquitectura orientada a servicios
+
+La Arquitectura Orientada a Servicios (SOA, siglas del inglés Service Oriented Architecture) es un paradigma de arquitectura para diseñar y desarrollar sistemas distribuidos. Las soluciones  SOA  han sido creadas para satisfacer los objetivos de negocio las cuales incluyen facilidad y flexibilidad de integración con sistemas legados, alineación directa a los procesos de negocio reduciendo costos de implementación, innovación de servicios a clientes y una adaptación ágil ante cambios incluyendo reacción temprana ante la competitividad.1
+
+Permite la creación de sistemas de información altamente escalables que reflejan el negocio de la organización, a su vez brinda una forma bien definida de exposición e invocación de servicios (comúnmente pero no exclusivamente servicios web), lo cual facilita la interacción entre diferentes sistemas propios o de terceros.
+
+SOA proporciona una metodología y un marco de trabajo para documentar las capacidades de negocio y puede dar soporte a las actividades de integración y consolidación.
+
+Origen
+
+Los modelos de desarrollo han ido evolucionando con el paso de los años. En los años 80 aparecieron los modelos orientados a objetos, en los 90 aparecieron los modelos basados en componentes y en la actualidad han aparecido los modelos orientados a servicios.2
+
+Aunque la arquitectura orientada a servicios no es un concepto nuevo (si bien fue descrita por primera vez por Gartner hasta en 1996), sí se ha visto incrementada su presencia en la actualidad, en gran medida debido al aumento de uso de servicios web. Con la llegada de éstos, la arquitectura SOA ha hecho que el desarrollo de software orientado a servicios sea factible. Aunque los servicios web usan con frecuencia SOA, SOA es neutral e independiente de la tecnología utilizada y por tanto no depende de los servicios web, aunque estos no popularizan.3
+
+Terminología
+
+Término 	Definición / Comentario
+Servicio 	Una función sin estado, auto-contenida, que acepta una(s) llamada(s) y devuelve una(s) respuesta(s) mediante una interfaz bien definida. Los servicios pueden también ejecutar unidades discretas de trabajo como serían editar y procesar una transacción. Los servicios no dependen del estado de otras funciones o procesos. La tecnología concreta utilizada para prestar el servicio no es parte de esta definición. Existen servicios asíncronos en los que una solicitud a un servicio crea, por ejemplo, un archivo, y en una segunda solicitud se obtiene ese archivo.
+Orquestación 	Secuenciar los servicios y proveer la lógica adicional para procesar datos. No incluye la presentación de los datos. Coordinación.
+Sin estado 	No mantiene ni depende de condición pre-existente alguna. En una SOA los servicios no son dependientes de la condición de ningún otro servicio. Reciben en la llamada toda la información que necesitan para dar una respuesta. Debido a que los servicios son "sin estado", pueden ser secuenciados (orquestados) en numerosas secuencias (algunas veces llamadas tuberías o pipelines) para realizar la lógica del negocio.
+Proveedor 	La función que brinda un servicio en respuesta a una llamada o petición desde un consumidor.
+Consumidor 	La función que consume el resultado del servicio provisto por un proveedor
+
+Principios
+
+No hay estándares en relación a la composición exacta de una arquitectura orientada a servicios, aunque muchas fuentes de la industria han publicado sus propios principios.
+
+Algunos de los principios publicados son los siguientes:
+- Contrato de servicios estandarizados: los servicios adhieren a un acuerdo de comunicación, según se define en conjunto con uno o más documentos de descripción de servicios.
+- Acoplamiento débil de sistemas: los servicios mantienen una relación que minimiza las dependencias y sólo requiere que mantengan un conocimiento de uno al otro.
+- Abstracción de servicios: más allá de las descripciones del contrato de servicios, los servicios ocultan la lógica a los demás.
+- Reutilización de servicios: la lógica se divide en servicios con la intención de promover la reutilización.
+- Autonomía de servicios: los servicios tienen control sobre la lógica que encapsulan, desde una perspectiva de diseño y ejecución.
+- Servicios sin-estado: los servicios minimizan el consumo de recursos aplazando la gestión de la información de estado cuando sea necesario.
+- Descubrimiento de servicios: los servicios se complementan con los metadatos mediante los cuales se pueden descubrir e interpretar la eficacia.
+- Composición de servicios: servicios están compuestos por partes eficazmente, independientemente del tamaño y la complejidad de la composición.
+- Granularidad de servicios: una consideración de diseño para proporcionar un ámbito óptimo y un correcto nivel granular de la funcionalidad del negocio en una operación de servicio.
+- La normalización de servicios: los servicios se descomponen a un nivel de forma normal para minimizar la redundancia. En algunos casos, los servicios se desnormalizan para fines específicos, como la optimización del rendimiento, el acceso y agregación.
+- Optimización de servicios: los servicios de alta calidad son preferibles a los de baja calidad.
+- Relevancia de servicios: la funcionalidad se presenta en un nivel de granularidad reconocido por el usuario como un servicio significativo.
+- Encapsulación de servicios: muchos servicios están consolidados para el uso de SOA. A menudo, estos servicios no fueron planificados para estar en un SOA.
+- Transparencia de ubicación de servicios: se refiere a la capacidad de un consumidor de servicios para invocar a un servicio independientemente de su ubicación en la red. Esto también reconoce la propiedad de descubrimiento (uno de los principios fundamentales de SOA) y el derecho de un consumidor para acceder al servicio. A menudo, la idea de la virtualización de servicios también se refiere a la transparencia de ubicación. Aquí es donde el consumidor simplemente llama a un servicio lógico, mientras que un SOA habilita la ejecución del componente de la infraestructura, normalmente un bus de servicios, que mapea este servicio lógico y llama al servicio físico.
+
+SOA y los Servicios Web
+
+Hay que tener cuidado cuando se manejan estos términos y no confundirlos. Web Services engloba varias tecnologías, incluyendo XML, SOAP, WSDL, UDDI…los cuales permiten construir soluciones de programación para mensajes específicos y para problemas de integración de aplicaciones.4
+
+En cambio SOA es una arquitectura de aplicación en la cual todas las funciones están definidas como servicios independientes con interfaces invocables que pueden ser llamados en secuencias bien definidas para formar los procesos de negocio.
+
+En SOA la clave está en la interfaz puesto que define los parámetros requeridos y la naturaleza del resultado. Esto significa que define la naturaleza del servicio y no la tecnología utilizada. Esta función permite realizar dos de los puntos críticos: los servicios son realmente independientes y pueden ser manejados.
+
+WS es el estándar apoyado por la industria (Microsoft, IBM, BEA, Oracle, Sun y otros), por empresas de distintos rubros, no tecnológicas (Ford, United Airlines, KPMG, Daimler-hrysler), agrupadas en un comité conocido como Web Services Interoperability (WS-I). Este organismo tiene por principal objetivo asegurar que los grupos de trabajo que definen las especificaciones sobre WS utilizan estándares adecuados, a la vez que monitoriza el avance de sus trabajos; no define ni desarrolla estándares.5
+
+Capas de software
+
+SOA define las siguientes capas de software:
+- Aplicaciones básicas: sistemas desarrollados bajo cualquier arquitectura o tecnología, geográficamente dispersos y bajo cualquier figura de propiedad;
+- De exposición de funcionalidades: donde las funcionalidades de la capa aplicativa son expuestas en forma de servicios (generalmente como servicios web);
+- De integración de servicios: facilitan el intercambio de datos entre elementos de la capa aplicativa orientada a procesos empresariales internos o en colaboración;
+- De composición de procesos: que define el proceso en términos del negocio y sus necesidades, y que varía en función del negocio;
+- De entrega: donde los servicios son desplegados a los usuarios finales.
+
+Diseño y desarrollo de SOA
+
+La metodología de modelado y diseño para aplicaciones SOA se conoce como 'análisis y diseño orientado a servicios. La arquitectura orientada a servicios es tanto un marco de trabajo para el desarrollo de software como un marco de trabajo de implementación. Para que un proyecto SOA tenga éxito los desarrolladores de software deben orientarse ellos mismos a esta mentalidad de crear servicios comunes que son orquestados por clientes o middleware para implementar los procesos de negocio. El desarrollo de sistemas usando SOA requiere un compromiso con este modelo en términos de planificación, herramientas e infraestructura.
+
+Cuando la mayoría de la gente habla de una arquitectura orientada a servicios están hablando de un juego de servicios residentes en Internet o en una intranet, usando servicios web. Existen diversos estándares relacionados a los servicios web; incluyendo los siguientes:
+- XML
+- HTTP
+- SOAP
+- REST
+- WSDL
+- UDDI
+
+Hay que considerar, sin embargo, que un sistema SOA no necesariamente utiliza estos estándares para ser "Orientado a Servicios" pero es altamente recomendable su uso.
+
+En un ambiente SOA, los nodos de la red hacen disponibles sus recursos a otros participantes en la red como servicios independientes a los que tienen acceso de un modo estandarizado. La mayoría de las definiciones de SOA identifican la utilización de servicios web (empleando SOAP y WSDL) en su implementación, no obstante se puede implementar SOA utilizando cualquier tecnología basada en servicios.
+
+Lenguajes de alto nivel
+
+Los lenguajes de alto nivel como BPEL o WS-Coordination llevan el concepto de servicio un paso adelante al proporcionar métodos de definición y soporte para flujos de trabajo y procesos de negocio.
+
+Beneficios
+
+El gran beneficio de SOA es la agilidad que proporciona a las organizaciones que la usan. Las características propias de SOA permiten a las organizaciones la capacidad de controlar un problema de forma general, permitiendo una respuesta más rápida y eficaz y por tanto adaptarse de la mejor forma a los cambios.7
+
+Otra de sus ventajas es la independencia de las plataformas e infraestructuras tecnológicas, lo que le permite integrarse con sistemas y aplicaciones diferentes de forma sencilla. Gracias a esta independencia SOA es su arquitectura flexible que permite la reutilización de las tecnologías existentes. Así que, una empresa no necesita realizar un cambio integral para adoptar SOA.8
+
+Los beneficios que puede obtener una organización que adopte SOA son:
+- Mejora en los tiempos de realización de cambios en procesos
+- Facilidad para evolucionar a modelos de negocios basados en tercerización
+- Facilidad para abordar modelos de negocios basados en colaboración con otros entes (socios, proveedores): facilita la integración de sistemas y aplicaciones diferentes, lo cual mejora la comunicación y la capacidad de respuesta con sistemas externos
+- Poder para reemplazar elementos de la capa aplicativa SOA sin disrupción en el proceso de negocio
+- Facilidad para la integración de tecnologías disímiles
+- Mejora en la toma de decisiones: la organización dispone de mayor información y más actualizada, lo que le permite una respuesta rápida y eficaz cuando surgen problemas o cambios
+- Aplicaciones flexibles: la orientación a servicios permite desarrollar aplicaciones con independencia de las plataformas y lenguajes de programación que realizan los procesos
+- Aplicaciones reutilizables y adaptables: permite que las aplicaciones existentes para ser reutilizadas y adaptadas a nuevos entornos con facilidad. Así conseguimos optimizar los recursos empleados en su desarrollo
+- Reducción de costes: el coste de ampliar o crear nuevos servicios se reduce considerablemente tanto en aplicaciones nuevas como ya existentes
+- Riesgo de migración: al adaptar SOA a partir de una tecnología existente se siguen utilizando los componentes existentes, por lo que se reduce el riesgo de introducir fallos
+
+Diferencias con otras arquitecturas
+
+Al contrario de las arquitecturas orientado a objetos, las SOA están formadas por servicios de aplicación débilmente acoplados y altamente interoperables. Para comunicarse entre sí, estos servicios se basan en una definición formal independiente de la plataforma subyacente y del lenguaje de programación (p.ej., WSDL). La definición de la interfaz encapsula (oculta) las particularidades de una implementación, lo que la hace independiente del fabricante, del lenguaje de programación o de la tecnología de desarrollo (como Plataforma Java o Microsoft .NET). Con esta arquitectura, se pretende que los componentes de software desarrollados sean muy reutilizables, ya que la interfaz se define siguiendo un estándar; así, un servicio C# podría ser usado por una aplicación Java. En este sentido, ciertos autores definen SOA como una Súper-Abstracción.[cita requerida].
+
+Mitos y realidades
+
+Hay varios mitos asociados a SOA que son importantes entender antes de profundizar en el tema. La siguiente tabla describe algunos de los principales mitos que rodean a SOA y los hechos que ayudan a desacreditarlos.9
+
+Mito 	Realidad
+SOA es una tecnología 	SOA es una filosofía de diseño independiente de cualquier proveedor, producto, tecnología o industria. Las necesidades de SOA varían de una compañía a otra, por tanto la adquisición de una arquitectura SOA de otra compañía no será la solución apropiada para su propia compañía
+Las SOA requieren de servicios web 	SOA se puede realizar a través de servicios web pero los servicios web no son un requisito necesario para implementar SOA
+SOA es nuevo y revolucionario 	EDI, CORBA y DCOM son ejemplos conceptuales de orientación de servicios
+SOA garantiza la alineación de TI y el negocio 	SOA no es una metodología
+Una arquitectura de referencia SOA reduce riesgo de implementación 	No hay dos SOA iguales. Una arquitectura de referencia SOA puede no ofrecer la mejor solución para su organización
+SOA requiere una revisión completa de la tecnología y procesos de negocios 	SOA debe ser gradual y construirse sobre sus inversiones actuales
+Necesitamos construir una SOA 	SOA es un medio, no un fin
+
+Centrarse en la entrega de una solución, no en crear una arquitectura SOA. SOA es un medio para la entrega de su solución y no debe ser su objetivo final.
+
+Bibliografía
+- Norbert Bieberstein et al. Service-Oriented Architecture Compass, Pearson 2006, ISBN 0-13-187002-5
+- Eben Hewitt. Java SOA Cookbook, 1st Edition, O'reilly 2009
+- http://shop.oreilly.com/product/9780596520731.do - Evaluating a Service Oriented Architecture (SEI)
+
+Referencias
+- http://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8443
+- http://msdn.microsoft.com/en-us/library/bb833022.aspx
+- http://upcommons.upc.edu/pfc/bitstream/2099.1/12312/1/ESTUDIO_DE_ARQUITECTURAS_DE_REDES_ORIENTADAS_A_SERVICIO.pdf
+- Kishore Channabasavaiah and Kerrie Holley, IBM Global Services, and Edward M. Tuggle, Jr., IBM Software Group, “On demand operating environment solutions: Migrating to a service-oriented architecture”, white paper, April 2004.
+- ARQ-RFC “Pautas y recomendaciones para SOA v.091”, July 2006
+- Enterprise SOA. Prentice Hall, 2005
+- http://www.ilustrados.com/tema/12463/Arquitectura-software-Arquitectura-orientada-servicios.html
+- http://upcommons.upc.edu/pfc/bitstream/2099.1/12312/1/ESTUDIO_DE_ARQUITECTURAS_DE_REDES_ORIENTADAS_A_SERVICIO.pdf
+- http://msdn.microsoft.com/en-us/library/bb833022.aspx

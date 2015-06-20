@@ -1,0 +1,96 @@
+Sistema multi-agente
+
+Un sistema multiagente (SMA) es un sistema compuesto por múltiples agentes inteligentes que interactúan entre ellos. Los sistemas multiagente pueden ser utilizados para resolver problemas que son difíciles o imposibles de resolver para un agente individual o un sistema monolítico.
+
+Los ámbitos en los que la investigación de sistemas multiagente puede ofrecer un enfoque adecuado incluyen el comercio online,1 la respuesta a desastres2 y el modelado de estructuras sociales.3
+
+Información general
+
+El dominio del sistema multiagente o de inteligencia artificial distribuida es una ciencia y una técnica que trata con los sistemas de inteligencia artificial en red.
+
+El bloque fundamental de construcción de un sistema multiagente, como es de esperarse, son los agentes.
+
+Aunque no existe una definición formal y precisa de lo que es un agente, éstos son por lo general vistos como entidades inteligentes, equivalentes en términos computacionales a un proceso del sistema operativo, que existen dentro de cierto contexto o ambiente, y que se pueden comunicar a través de un mecanismo de comunicación interproceso, usualmente un sistema de red, utilizando protocolos de comunicación.
+
+En cierto modo, un sistema multiagente es un sistema distribuido en el cual los nodos o elementos son sistemas de inteligencia artificial, o bien un sistema distribuido donde la conducta combinada de dichos elementos produce un resultado en conjunto inteligente.
+
+Hay que notar que los agentes no son necesariamente inteligentes. Existen como en todo el resto del dominio de la inteligencia artificial, dos enfoques para construir sistemas multiagentes:
+- El enfoque formal o clásico, que consiste en dotar de los agentes de la mayor inteligencia posible utilizando descripciones formales del problema que resolver y de hacer reposar el funcionamiento del sistema en tales capacidades cognitivas. Usualmente la inteligencia es definida utilizando un sistema formal (por ejemplo, sistemas de inferencia lógica) para la descripción, raciocinio, inferencia de nuevo conocimiento y planificación de acciones a realizar en el medio ambiente.
+- El enfoque constructivista, que persigue la idea de brindarle inteligencia al conjunto de todos los agentes, para que a través de mecanismos ingeniosamente elaborados de interacción, el sistema mismo genere comportamiento inteligente que no necesariamente estaba planeado desde un principio o definido dentro de los agentes mismos (que pueden ser realmente simples). Este tipo de conducta es habitualmente llamado comportamiento emergente.
+
+Características
+
+Los agentes en un sistema multiagente tienen varias características importantes:4
+- Autonomía: los agentes son al menos parcialmente autónomos
+- Visión local: ningún agente tiene una visión global del sistema, o el sistema es demasiado complejo para un agente para hacer un uso práctico de esos conocimientos
+- Descentralización: no hay un agente de control designado (o el sistema se reduciría a un sistema monolítico)5
+
+Normalmente la investigación de sistemas multiagente se refiere a agentes de software. Sin embargo, los agentes en un sistema multiagente también podrían ser robots,6 seres humanos o equipos humanos.
+
+Auto-organización y auto dirección
+
+Los sistemas multiagente pueden manifestar autoorganización, así como auto-dirección y otros paradigmas de control y comportamientos complejos relacionados, incluso cuando las estrategias individuales de todos sus agentes son simples.
+
+Cuando los agentes pueden compartir su conocimiento usando cualquier lenguaje acordado, dentro de los límites del protocolo de comunicación del sistema, el enfoque puede conducir a una mejora común. Ejemplo de lenguajes son Knowledge Query and Manipulation Language (KQML) o Agent Communication Language (ACL) de la FIPA.
+
+El estudio de sistemas multiagente
+
+El estudio de los sistemas multiagente está "interesado en el desarrollo y análisis de resoluciones a problemas sofisticados de IA y arquitecturas de control tanto para sistemas con un único agente como sistemas multiagente”.7 Los temas de investigación en SMA’s son:
+- ingeniería de software orientado a agentes
+- creencias, deseos e intenciones (en inglés Beliefs, Desires and Intentions, BDI)
+- cooperación y coordinación
+- organización
+- comunicación
+- negociación
+- resolución de problemas distribuida
+- aprendizaje de multiagentes
+- comunidades científicas
+- fiabilidad y tolerancia a fallos
+
+Frameworks
+
+Si bien sistemas multiagente ad hoc son a menudo creados desde cero por investigadores y desarrolladores, algunos frameworks han surgido aplicando estándares comunes (tales como las plataformas de sistemas de agentes y lenguajes de comunicación de FIPA). Estos frameworks ahorran tiempo a los desarrolladores y también ayudan en la estandarización del desarrollo de SMA’s.
+
+Desarrollo orientado a agentes
+
+Como casi todo enfoque informático para la solución de problemas, los sistemas multiagentes proponen ayudas metodológicas de ingeniería de software, en este caso metodologías de ingeniería del software orientada a agentes (en inglés AOSE, Agent Oriented Software Engineering) y notaciones. Es decir, artefactos de desarrollo que son específicamente concebidos para crear sistemas basados en agentes.
+
+Ejemplos de metodologías y notaciones de ingeniería de software orientada a agentes, son:
+- Vocales (Voyelles) de Yves Demazeau es una de las primeras propuestas en el área, y considera la concepción de sistemas multiagentes desde varios puntos de vista, correspondientes a las vocales: Agente, Entorno, Interacciones, y Organización.
+- GAIA de Michael Wooldridge y Nick Jennings de la Univ. de Southampton, propone cómo realizar un análisis basado en roles del sistema multi-agente.
+- MASE de Scott A. Deloach propone agentes como extensiones de objetos y proporciona la herramienta AgentTool para análisis, diseño e implementación.
+- AgentUML de James Odell, propone una notación, extendiendo UML, para especificar protocolos de comunicación entre agentes.
+- MADKiT es una herramienta de desarrollo, propuesta por Jacques Ferber, basada en el paradigma Agente-Role-Organización de la metodología Aalaadin.
+- ADELFE del grupo IRIT de la Universidad de Toulouse, trata especialmente los temas de cooperación entre agentes.
+- INGENIAS del grupo GRASIA de la UCM, extiende la metodología MESSAGE y proporciona un conjunto de herramientas para modelar y generar código de sistemas multiagente.
+- Mas-CommonKADS de Carlos Iglesias en la UPM extiende la metodología CommonKADS, para sistemas expertos, a agentes, utilizando estructuración orientada a objetos y lenguajes de especificación de protocolos como SDL.
+- SemanticAgent del grupo LIRIS de la Universidad de Lyon. Basada en el SWRL.
+- NetLogo es una plataforma orientada a los sistemas de multiagente, para modelar complejidad, desarrollado por el CCL.
+
+Aplicaciones en el mundo real
+
+Los sistemas multiagente son aplicados en el mundo real a aplicaciones gráficas como juegos de ordenador. Los sistemas de agente se han utilizado en películas.8 También se utilizan para sistemas de defensa coordinados. Otras aplicaciones incluyen el transporte, la logística,9 los gráficos, sistemas de información geográfica, diagnóstico,10 así como en muchos otros campos. Es una tecnología ampliamente defendida para su uso en tecnologías de redes y móviles, para lograr el equilibrio de carga automático y dinámico, alta escalabilidad, y redes auto-sanadas.
+
+Referencias
+- Alex Rogers and E. David and J.Schiff and N.R. Jennings. The Effects of Proxy Bidding and Minimum Bid Increments within eBay Auctions, ACM Transactions on the Web, 2007
+- Nathan Schurr and Janusz Marecki and Milind Tambe and Paul Scerri et al. The Future of Disaster Response: Humans Working with Multiagent Teams using DEFACTO, 2005.
+- Ron Sun and Isaac Naveh. Simulating Organizational Decision-Making Using a Cognitively Realistic Agent Model, Journal of Artificial Societies and Social Simulation.
+- Michael Wooldridge, An Introduction to MultiAgent Systems, John Wiley & Sons Ltd, 2002, paperback, 366 pages, ISBN 0-471-49691-X.
+- Liviu Panait, Sean Luke: Cooperative Multi-Agent Learning: The State of the Art. Autonomous Agents and Multi-Agent Systems 11(3): 387-434 (2005)
+- Kaminka, G. A. Robots are Agents, Too! AgentLink News, pp. 16–17, December 2004.
+- The Multi-Agent Systems Lab. Accessed Okt 16, 2009.
+- MASSIVE — Film showcase
+- Tamas Mahr and Jordan Srour and Mathijs M. de Weerdt and Rob Zuidwijk (2010). Can agents measure up? A comparative study of an agent-based and on-line optimization approach for a drayage problem with uncertainty. Transportation Research: Part C 18(1):99-119.
+- Álvaro Carrera, Javier Gonzalez-Ordás, Javier García-Algarra, Pablo Arozarena, Mercedes Garijo. A Multi-agent system with Distributed Bayesian Reasoning for Network Fault Diagnosis, Springer, 2011.
+
+Lectura recomendada
+- Michael Wooldridge, An Introduction to MultiAgent Systems, John Wiley & Sons Ltd, 2002, paperback, 366 pages, ISBN 0-471-49691-X.
+- Yoav Shoham and Kevin Leyton-Brown, Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations, Cambridge University Press, 2008, hardback, 496 pages, ISBN 978-0-521-89943-7.
+- Mamadou Tadiou Koné, Shimazu A. and Nakajima T., "The State of the Art in Agent Communication Languages (ACL)", Knowledge and Information Systems Journal (KAIS), Springer-Verlag, London, Vol. 2, no. 2, pp. 1 – 26, August 2000.
+- Carl Hewitt and Jeff Inman. DAI Betwixt and Between: From "Intelligent Agents" to Open Systems Science IEEE Transactions on Systems, Man, and Cybernetics. Nov./Dec. 1991.
+- The Journal of Autonomous Agents and Multiagent Systems, Publisher: Springer Science+Business Media B.V., formerly Kluwer Academic Publishers B.V. [1]
+- Gerhard Weiss, ed. by, Multiagent Systems, A Modern Approach to Distributed Artificial Intelligence, MIT Press, 1999, ISBN 0-262-23203-0.
+- Jacques Ferber, Multi-Agent Systems: An Introduction to Artificial Intelligence, Addison-Wesley, 1999, ISBN 0-201-36048-9.
+- Sun, Ron, (2006). "Cognition and Multi-Agent Interaction". Cambridge University Press. http://www.cambridge.org/uk/catalogue/catalogue.asp?isbn=0521839645
+- David Keil, Dina Goldin. Indirect Interaction in Environments for Multiagent Systems (PDF). In Environments for Multiagent Systems II, eds. Danny Weyns, Van Parunak, Fabien Michel. LNCS 3830, Springer, 2006.
+- Whitestein Series in Software Agent Technologies and Autonomic Computing, published by Springer Science+Business Media Group

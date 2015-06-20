@@ -1,0 +1,92 @@
+Algoritmo de ordenamiento
+
+En computación y matemáticas un algoritmo de ordenamiento es un algoritmo que pone elementos de una lista o un vector en una secuencia dada por una relación de orden, es decir, el resultado de salida ha de ser una permutación —o reordenamiento— de la entrada que satisfaga la relación de orden dada. Las relaciones de orden más usadas son el orden numérico y el orden lexicográfico. Ordenamientos eficientes son importantes para optimizar el uso de otros algoritmos (como los de búsqueda y fusión) que requieren listas ordenadas para una ejecución rápida. También es útil para poner datos en forma canónica y para generar resultados legibles por humanos.
+
+Desde los comienzos de la computación, el problema del ordenamiento ha atraído gran cantidad de investigación, tal vez debido a la complejidad de resolverlo eficientemente a pesar de su planteamiento simple y familiar. Por ejemplo, BubbleSort fue analizado desde 1956.1 Aunque muchos puedan considerarlo un problema resuelto, nuevos y útiles algoritmos de ordenamiento se siguen inventado hasta el día de hoy (por ejemplo, el ordenamiento de biblioteca se publicó por primera vez en el 2004). Los algoritmos de ordenamiento son comunes en las clases introductorias a la computación, donde la abundancia de algoritmos para el problema proporciona una gentil introducción a la variedad de conceptos núcleo de los algoritmos, como notación de O mayúscula, algoritmos divide y vencerás, estructuras de datos, análisis de los casos peor, mejor, y promedio, y límites inferiores.
+
+Clasificación
+
+Los algoritmos de ordenamiento se pueden clasificar en las siguientes maneras:
+- La más común es clasificar según el lugar donde se realice la ordenación
+    - Algoritmos de ordenamiento interno: en la memoria del ordenador.
+    - Algoritmos de ordenamiento externo: en un lugar externo como un disco duro.
+- Por el tiempo que tardan en realizar la ordenación, dadas entradas ya ordenadas o inversamente ordenadas:
+    - Algoritmos de ordenación natural: Tarda lo mínimo posible cuando la entrada está ordenada.
+    - Algoritmos de ordenación no natural: Tarda lo mínimo posible cuando la entrada está inversamente ordenada.
+- Por estabilidad: un ordenamiento estable mantiene el orden relativo que tenían originalmente los elementos con claves iguales. Por ejemplo, si una lista ordenada por fecha se reordena en orden alfabético con un algoritmo estable, todos los elementos cuya clave alfabética sea la misma quedarán en orden de fecha. Otro caso sería cuando no interesan las mayúsculas y minúsculas, pero se quiere que si una clave aBC estaba antes que AbC, en el resultado ambas claves aparezcan juntas y en el orden original: aBC, AbC. Cuando los elementos son indistinguibles (porque cada elemento se ordena por la clave completa) la estabilidad no interesa. Los algoritmos de ordenamiento que no son estables se pueden implementar para que sí lo sean. Una manera de hacer esto es modificar artificialmente la clave de ordenamiento de modo que la posición original en la lista participe del ordenamiento en caso de coincidencia.
+
+Los algoritmos se distinguen por las siguientes características:
+- Complejidad computacional (peor caso, caso promedio y mejor caso) en términos de n, el tamaño de la lista o arreglo. Para esto se usa el concepto de orden de una función y se usa la notación O(n). El mejor comportamiento para ordenar (si no se aprovecha la estructura de las claves) es O(n log n). Los algoritmos más simples son cuadráticos, es decir O(n²). Los algoritmos que aprovechan la estructura de las claves de ordenamiento (p. ej. bucket sort) pueden ordenar en O(kn) donde k es el tamaño del espacio de claves. Como dicho tamaño es conocido a priori, se puede decir que estos algoritmos tienen un desempeño lineal, es decir O(n).
+- Uso de memoria y otros recursos computacionales. También se usa la notación O(n).
+
+Estabilidad
+
+Los algoritmos de ordenamiento estable mantienen un relativo preorden total. Esto significa que un algoritmo es estable solo cuando hay dos registros R y S con la misma clave y con R apareciendo antes que S en la lista original.
+
+Cuando elementos iguales (indistinguibles entre sí), como números enteros, o más generalmente, cualquier tipo de dato en donde el elemento entero es la clave, la estabilidad no es un problema. De todas formas, se asume que los siguientes pares de números están por ser ordenados por su primer componente:
+
+(4, 1)  (3, 7)  (3, 1)  (5, 6)
+
+En este caso, dos resultados diferentes son posibles, uno de los cuales mantiene un orden relativo de registros con claves iguales, y una en la que no:
+
+(3, 7)  (3, 1)  (4, 1)  (5, 6)   (orden mantenido)
+(3, 1)  (3, 7)  (4, 1)  (5, 6)   (orden cambiado)
+
+Los algoritmos de ordenamiento inestable pueden cambiar el orden relativo de registros con claves iguales, pero los algoritmos estables nunca lo hacen. Los algoritmos inestables pueden ser implementados especialmente para ser estables. Una forma de hacerlo es extender artificialmente el cotejamiento de claves, para que las comparaciones entre dos objetos con claves iguales sean decididas usando el orden de las entradas original. Recordar este orden entre dos objetos con claves iguales es una solución poco práctica, ya que generalmente acarrea tener almacenamiento adicional.
+
+Ordenar según una clave primaria, secundaria, terciara, etc., puede ser realizado utilizando cualquier método de ordenamiento, tomando todas las claves en consideración (en otras palabras, usando una sola clave compuesta). Si un método de ordenamiento es estable, es posible ordenar múltiples ítems, cada vez con una clave distinta. En este caso, las claves necesitan estar aplicadas en orden de aumentar la prioridad.
+
+Ejemplo: ordenar pares de números, usando ambos valores
+
+(4, 1)  (3, 7)  (3, 1)  (4, 6) (original)
+
+(4, 1)  (3, 1)  (4, 6)  (3, 7) (después de ser ordenado por el segundo valor)
+(3, 1)  (3, 7)  (4, 1)  (4, 6) (después de ser ordenado por el primer valor)
+
+Por otro lado:
+
+(3, 7)  (3, 1)  (4, 1)  (4, 6) (después de ser ordenado por el primer valor)
+(3, 1)  (4, 1)  (4, 6)  (3, 7) (después de ser ordenando por el segundo valor,
+                                 el orden por el primer valor es perturbado)
+
+Lista de algoritmos de ordenamiento
+
+Algunos algoritmos de ordenamiento agrupados según estabilidad tomando en cuenta la complejidad computacional.
+
+Estables
+Nombre traducido 	Nombre original 	Complejidad 	Memoria 	Método
+Ordenamiento de burbuja 	Bubblesort 	O(n²) 	O(1) 	Intercambio
+Ordenamiento de burbuja bidireccional 	Cocktail sort 	O(n²) 	O(1) 	Intercambio
+Ordenamiento por selección 	Selection Sort 	O(n²) 	O(1) 	Intercambio
+Ordenamiento por inserción 	Insertion sort 	O(n²) 	O(1) 	Inserción
+Ordenamiento por casilleros 	Bucket sort 	O(n) 	O(n) 	No comparativo
+Ordenamiento por cuentas 	Counting sort 	O(n+k) 	O(n+k) 	No comparativo
+Ordenamiento por mezcla 	Merge sort 	O(n log n) 	O(n) 	Mezcla
+Ordenamiento con árbol binario 	Binary tree sort 	O(n log n) 	O(n) 	Inserción
+	Pigeonhole sort 	O(n+k) 	O(k) 	
+Ordenamiento Radix 	Radix sort 	O(nk) 	O(n) 	No comparativo
+	Distribution sort 	O(n³) versión recursiva 	O(n²) 	
+	Gnome sort 	O(n²) 	O(1) 	
+	
+Inestables
+Nombre traducido 	Nombre original 	Complejidad 	Memoria 	Método
+Ordenamiento Shell 	Shell sort 	O(n1.25) 	O(1) 	Inserción
+	Comb sort 	O(n log n) 	O(1) 	Intercambio
+Ordenamiento por selección 	Selection sort 	O(n²) 	O(1) 	Selección
+Ordenamiento por montículos 	Heapsort 	O(n log n) 	O(1) 	Selección
+	Smoothsort 	O(n log n) 	O(1) 	Selección
+Ordenamiento rápido 	Quicksort 	Promedio: O(n log n),
+peor caso: O(n²) 	O(log n) 	Partición
+	Several Unique Sort 	Promedio: O(n u),
+peor caso: O(n²);
+u=n; u = número único de registros 	
+	
+Cuestionables, imprácticos
+Nombre traducido 	Nombre original 	Complejidad 	Memoria 	Método
+	Bogosort 	O(n × n!), peor: no termina 		
+	Pancake sorting 	O(n), excepto en
+máquinas de Von Neumann 		
+	Randomsort 	Promedio: O(n!) Peor: No termina 		
+	
+Referencias
+- Bubble Sort: An archaeological algorithm analysis. Owen Astrachan

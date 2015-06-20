@@ -1,0 +1,32 @@
+Data mart
+
+Un Data mart es una versión especial de almacén de datos (data warehouse). Son subconjuntos de datos con el propósito de ayudar a que un área específica dentro del negocio pueda tomar mejores decisiones. Los datos existentes en este contexto pueden ser agrupados, explorados y propagados de múltiples formas para que diversos grupos de usuarios realicen la explotación de los mismos de la forma más conveniente según sus necesidades.
+
+El Data mart es un sistema orientado a la consulta, en el que se producen procesos batch de carga de datos (altas) con una frecuencia baja y conocida. Es consultado mediante herramientas OLAP (On line Analytical Processing - Procesamiento Analítico en Línea) que ofrecen una visión multidimensional de la información. Sobre estas bases de datos se pueden construir EIS (Executive Information Systems, Sistemas de Información para Directivos) y DSS (Decision Support Systems, Sistemas de Ayuda a la toma de Decisiones).
+
+En síntesis, se puede decir que los data marts son pequeños data warehouse centrados en un tema o un área de negocio específico dentro de una organización.
+
+Dependencia de un data mart
+
+Según la tendencia marcada por Inmon sobre los data warehouse, un data mart dependiente es un subconjunto lógico (vista) o un subconjunto físico (extracto) de un almacén de datos más grande, que se ha aislado por alguna de las siguientes razones:
+- Se necesita para un esquema o modelo de datos espacial (por ejemplo, para reestructurar los datos para alguna herramienta OLAP).
+- Prestaciones: Para descargar el data mart a un ordenador independiente para mejorar la eficiencia o para obviar las necesidades de gestionar todo el volumen del data warehouse centralizado.
+- Seguridad: Para separar un subconjunto de datos de forma selectiva a los que queremos permitir o restringir el acceso.
+- Conveniencia: la de poder pasar por alto las autorizaciones y requerimientos necesarios para poder incorporar una nueva aplicación en el Data Warehouse principal de la Empresa.
+- Demostración sobre el terreno: para demostrar la viabilidad y el potencial de una aplicación antes de migrarla al Data Warehouse de la Empresa.
+- Política: Razones internas de la organización para hacer esta división o separación de los datos del almacén de datos, por ejemplo:
+    - Cuando se decide una estrategia para las TI (Tecnologías de la información) en situaciones en las que un grupo de usuarios tiene más influencia, para determinar si se financia dicha estrategia o descubrir si ésta no sería buena para el almacén de datos centralizado.
+    - Estrategia para los consumidores de los datos en situaciones en las que un equipo de almacén de datos no está en condiciones de crear un almacén de datos utilizable.
+
+Según la escuela Inmon de data warehouse, entre las pérdidas inherentes al uso de data marts están la escalabilidad limitada, la duplicación de datos, la inconsistencia de los datos con respecto a otros almacenes de información y la incapacidad para aprovechar las fuentes de datos de la empresa. Así y todo estas herramientas son de gran importancia.
+
+Conceptos erróneos de los Data Marts
+
+Al hablar de los data marts, es inevitable la comparación con los data warehouse y al final se acaba diciendo (o entendiendo) que son como estos, pero en pequeño, y en cierto modo esto es así, pero esta idea suele hacer caer en los siguientes errores sobre la implementación y funcionamiento de los data marts:
+- Son más simples de implementar que un Data Warehouse: FALSO, la implementación es muy similar, ya que debe proporcionar las mismas funcionalidades.
+- Son pequeños conjuntos de datos y, en consecuencia, tienen menor necesidad de recursos: FALSO, una aplicación corriendo sobre un data mart necesita los mismos recursos que si corriera sobre un data warehouse.
+- Las consultas son más rápidas, dado el menor volumen de datos: FALSO, el menor volumen de datos se debe a que no se tienen todos los datos de toda la empresa, pero sí se tienen todos los datos de un determinado sector de la empresa, por lo que una consulta sobre dicho sector tarda lo mismo si se hace sobre el data mart que si se hace sobre el data warehouse.
+- En algunos casos añade tiempo al proceso de actualización: FALSO, actualizar el data mart desde el data warehouse cuesta menos (ya que los formatos de los datos son o suelen ser idénticos) que actualizar el data warehouse desde sus fuentes de datos primarias, donde es necesario realizar operaciones de transformación (ver ETL).
+
+Referencias
+- Definición complementaria de datamart Tipos de datamart (OLTP, OLAP) y su vinculación con los Data Warehouse

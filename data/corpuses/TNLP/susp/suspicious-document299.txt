@@ -1,0 +1,114 @@
+Vector (informática)
+
+En programación, una matriz o vector (llamado en inglés array) es una zona de almacenamiento continuo, que contiene una serie de elementos del mismo tipo, los elementos de la matriz. Desde el punto de vista lógico una matriz se puede ver como un conjunto de elementos ordenados en fila (o filas y columnas si tuviera dos dimensiones).
+
+En principio, se puede considerar que todas las matrices son de una dimensión, la dimensión principal, pero los elementos de dicha fila pueden ser a su vez matrices (un proceso que puede ser recursivo), lo que nos permite hablar de la existencia de matrices multidimensionales, aunque las más fáciles de imaginar son los de una, dos y tres dimensiones.
+
+Estas estructuras de datos son adecuadas para situaciones en las que el acceso a los datos se realice de forma aleatoria e impredecible. Por el contrario, si los elementos pueden estar ordenados y se va a utilizar acceso secuencial sería más adecuado utilizar una lista, ya que esta estructura puede cambiar de tamaño fácilmente durante la ejecución de un programa.
+
+Índices
+
+Todo vector se compone de un determinado número de elementos. Cada elemento es referenciado por la posición que ocupa dentro del vector. Dichas posiciones son llamadas índice y siempre son correlativos. Existen tres formas de indexar los elementos de una matriz:
+- Indexación base-cero (0): en este modo el primer elemento del vector será la componente cero ('0') del mismo, es decir, tendrá el índice '0'. En consecuencia, si el vector tiene 'n' componentes la última tendrá como índice el valor 'n-1'. El lenguaje C es un ejemplo típico que utiliza este modo de indexación.
+- Indexación base-uno (1): en esta forma de indexación, el primer elemento de la matriz tiene el índice '1' y el último tiene el índice 'n' (para una matriz de 'n' componentes).
+- Indexación base-n (n): este es un modo versátil de indexación en la que el índice del primer elemento puede ser elegido libremente, en algunos lenguajes de programación se permite que los índices puedan ser negativos e incluso de cualquier tipo escalar (también cadenas de caracteres).
+
+Notación
+
+La representación de un elemento en un vector se suele hacer mediante el identificador del vector seguido del índice entre corchetes, paréntesis o llaves:
+
+Notación 	Ejemplos
+vector[índice_1,índice_2...,índice_N] 	(Java, Lexico, Perl, etc.)
+vector[índice_0][índice_1]...[índice_N] 	(C, C++, PHP, etc.)
+vector(índice_1,índice_2...,índice_N) 	(Basic)
+
+Aunque muchas veces en pseudocódigo y en libros de matemática se representan como letras acompañadas de un subíndice numérico que indica la posición a la que se quiere acceder. Por ejemplo, para un vector "A":
+A_0, A_1, A_2, ... (vector unidimensional)
+
+Forma de acceso
+
+La forma de acceder a los elementos de la matriz es directa; esto significa que el elemento deseado es obtenido a partir de su índice y no hay que ir buscándolo elemento por elemento (en contraposición, en el caso de una lista, para llegar, por ejemplo, al tercer elemento hay que acceder a los dos anteriores o almacenar un apuntador o puntero que permita acceder de manera rápida a ese elemento).
+
+Para trabajar con vectores muchas veces es preciso recorrerlos. Esto se realiza por medio de bucles. El siguiente pseudocódigo muestra un algoritmo típico para recorrer un vector y aplicar una función 'f(...)' a cada una de las componentes del vector:
+
+i = 0
+mientras (i < longitud)
+    #Se realiza alguna operación con el vector en la i-ésima posición
+    f(v[i])
+    i=i+1
+fin_mientras
+
+Vectores dinámicos y estáticos
+
+Lo habitual es que un vector tenga una cantidad fija de memoria asignada, aunque dependiendo del tipo de vector y del lenguaje de programación un vector podría tener una cantidad variable de datos. En este caso, se les denomina vectores dinámicos, en oposición, a los vectores con una cantidad fija de memoria asignada se los denomina vectores estáticos.
+
+El uso de vectores dinámicos requiere realizar una apropiada gestión de memoria dinámica. Un uso incorrecto de los vectores dinámicos, o mejor dicho, una mala gestión de la memoria dinámica, puede conducir a una fuga de memoria. Al utilizar vectores dinámicos siempre habrá que liberar la memoria utilizada cuando ésta ya no se vaya a seguir utilizando.
+
+Lenguajes más modernos y de más alto nivel, cuentan con un mecanismo denominado recolector de basura (como es el caso de Java) que permiten que el programa decida si debe liberar el espacio basándose en si se va a utilizar en el futuro o no un determinado objeto.
+
+Ejemplos en C
+
+- Declaración en C/C++ de un vector estático.
+
+int main(void)
+{
+  int i, v[5];  // v[5] es un vector de 5 componentes
+ 
+  for(i=0; i<5; i++)
+  {
+    v[i] = 0; // Asignamos un valor
+    printf("%d\n", v[i]);
+    printf("\n");  // Crea una nueva línea
+  }
+  return 0
+}
+
+- Declaración en C/C++ de un vector estático utilizando aritmética de punteros.
+
+Siendo el identificador del vector, un puntero constante que contiene la dirección del comienzo del vector (vector[0], primer elemento)
+
+int main(void)
+{
+  int i, v[5];  // v[5] es un vector de 5 componentes
+ 
+  for(i=0; i<5; i++)
+  {
+    *(v + i) = 0; // Asignamos un valor en la dirección (vector + ((índice * sizeof (int) cantidad de bytes de desplazamiento desde la base.)
+    printf("%d\n", *(vector + i));
+    printf("\n");  // Crea una nueva línea
+  }
+  return 0
+}
+
+- Declaración en C++ de un vector de STL:
+
+#include <vector>
+ 
+vector<int> v; // Si no se especifica el tamaño inicial es 0
+ 
+for(int i=0 ;i<5 ;i++)
+{
+  v.push_back(2*i); // inserta un elemento al final del vector
+}
+
+El ejemplo anterior está hecho para el lenguaje C++. En C, para crear vectores dinámicos se tendrían que utilizar las instrucciones malloc y realloc para reservar memoria de forma dinámica (ver biblioteca stdlib.h), y la función free para liberar la memoria utilizada.
+
+Resultado:
+0 	1 	2 	3 	4
+0 	2 	4 	6 	8
+
+El resultado de los dos ejemplos es el mismo vector.
+
+Vectores multidimensionales
+
+En Basic, Java y otros lenguajes es posible declarar matrices multidimensionales, entendiéndolas como un vector de x dimensión. En dichos casos en número de elementos del vector es el producto resultante de cada dimensión.
+
+Por ejemplo el vector v(4,1) tiene 10 elementos se calcula del siguiente modo: (0-4) * (0-1). Los elementos de la primera dimensión del vector contiene 5 elementos que van del '0' al '4' y la 2º dimensión tiene 2 elementos que van desde '0' a '1'. Los elementos serían accedidos del siguiente modo:
+
+    elemento 1: (0,0)
+    elemento 2: (0,1)
+    elemento 3: (1,0)
+    ...
+    elemento 8: (3,1)
+    elemento 9: (4,0)
+    elemento 10: (4,1) 

@@ -1,0 +1,10 @@
+Programación evolutiva
+
+La programación evolutiva (PE) es una rama de la computación evolutiva. La programación evolutiva es prácticamente una variación de los algoritmos genéticos, donde lo que cambia es la representación de los individuos. En el caso de la PE los individuos son ternas (tripletas) cuyos valores representan estados de un autómata finito. Cada terna está formada por:
+- El valor del estado actual;
+- un símbolo del alfabeto utilizado;
+- el valor del nuevo estado.
+
+Estos valores se utilizan, como en un autómata finito, de la siguiente manera: Teniendo el valor del estado actual en el que nos encontramos, tomamos el valor del símbolo actual y si es el símbolo de nuestra terna, nos debemos mover al nuevo estado.
+
+Básicamente así funciona y así se representan los individuos en la PE. Evidentemente las funciones de selección, Cruce (crossover) y mutación deben variar para adaptarse y funcionar con una población de individuos de este tipo.

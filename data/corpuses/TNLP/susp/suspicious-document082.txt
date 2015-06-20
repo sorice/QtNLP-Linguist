@@ -1,0 +1,47 @@
+Algoritmo de recocido simulado
+
+Simulated annealing (SA) (recocido simulado, cristalización simulada o enfriamiento simulado) es un algoritmo de búsqueda meta-heurística para problemas de optimización global; el objetivo general de este tipo de algoritmos es encontrar una buena aproximación al valor óptimo de una función en un espacio de búsqueda grande. A este valor óptimo se lo denomina "óptimo global"
+
+El nombre e inspiración viene del proceso de recocido del acero y cerámicas, una técnica que consiste en calentar y luego enfriar lentamente el material para variar sus propiedades físicas. El calor causa que los átomos aumenten su energía y que puedan así desplazarse de sus posiciones iniciales (un mínimo local de energía); el enfriamiento lento les da mayores probabilidades de recristalizar en configuraciones con menor energía que la inicial (mínimo global).1
+
+El método fue descrito independientemente por Scott Kirkpatrick, C. Daniel Gelatt y Mario P. Vecchi en 1983,2 y por Vlado Černý en 1985.3 El método es una adaptación del algoritmo Metropolis-Hastings, un método de Montecarlo utilizado para generar muestras de estados de un sistema termodinámico.4
+
+Iteración básica
+
+En cada iteración, el método de recocido simulado evalúa algunos vecinos del estado actual s y probabilísticamente decide entre efectuar una transición a un nuevo estado s' o quedarse en el estado s. En el ejemplo de recocido de metales descrito arriba, el estado s se podría definir en función de la posición de todos los átomos del material en el momento actual; el desplazamiento de un átomo se consideraría como un estado vecino del primero en este ejemplo. Típicamente la comparación entre estados vecinos se repite hasta que se encuentre un estado óptimo que minimice la energía del sistema o hasta que se cumpla cierto tiempo computacional u otras condiciones.
+
+Vecindario de un estado
+
+El vecindario de un estado s está compuesto por todos los estados a los que se pueda llegar a partir de s mediante un cambio en la conformación del sistema. Los estados vecinos son generados mediante métodos de Montecarlo.
+
+El método de evaluación de estados vecinos es fundamental para encontrar una solución óptima global al problema dado. Los algoritmos heurísticos, basados en buscar siempre un estado vecino mejor (con energía más baja) que el actual se detienen en el momento que encuentran un mínimo local de energía. El problema con este método es que no puede asegurar que la solución encontrada sea un óptimo global, pues el espacio de búsqueda explorado no abarca todas las posibles variaciones del sistema.
+
+Probabilidad de transición
+
+La probabilidad de hacer la transición al nuevo estado s es una función P(δ E, T) de la diferencia de energía δE=E(s')-E(s) entre los dos estados, y de la variable T, llamada temperatura por analogía con el concepto físico de temperatura.
+
+Si δE es negativo, es decir, la transición disminuye la energía, el movimiento es aceptado con probabilidad P=1. Es importante remarcar que la condición de que el sistema siempre pase a un sistema de menor energía cuando se encuentra una no es en absoluto necesaria para el éxito del método. Cuando δE es positivo la probabilidad de transición P es siempre distinta de cero, aún , es decir, el sistema puede pasar a un estado de mayor energía (peor solución) que el estado actual. Esta propiedad impide que el sistema se quede atrapado en un óptimo local.
+
+A medida que la temperatura tiende al mínimo, la probabilidad de transición a un estado de mayor energía tiende a cero asintóticamente. Cuando T llega a cero, el algoritmo solo aceptará cambios a estados estados con menor energía. Debido a esta propiedad, la temperatura juega un papel muy importante en el control de la evolución del sistema. A temperaturas altas, el sistema tenderá a saltos de energía grandes entre los estados, mientras que a temperaturas más bajas, los cambios en energía serán menores.
+
+Así, en cada iteración el algoritmo tiende a encontrar estados con menor energía total. Hay muchas maneras de disminuir la temperatura, siendo la más usual la exponencial, donde T disminuye por un factor α<1 en cada paso.
+
+Protocolo de recocido
+
+Como el nombre del algoritmo sugiere, la variación de la temperatura durante la computación es una característica distintiva de este método. El algoritmo comienza con un valor de T muy alto, que va decreciendo en cada iteración siguiendo un cierto protocolo de recocido, que puede ser diferente para cada problema, pero que siempre debe terminar con T=0. Así el sistema será libre inicialmente de explorar una gran porción del espacio de búsqueda, ignorando pequeñas variaciones de la energía entre los estados vecinos evaluados, para más tarde centrarse en regiones con estados de baja energía y, al final, cambiar solo a estados con energía menor que la inicial, hasta alcanzar un mínimo.
+
+La probabilidad de que el algoritmo acabe encontrando el mínimo global para un problema dado se aproxima a 1 a medida que el protocolo de recocido se extiende.5
+
+Aplicaciones
+
+Este algoritmo se ha aplicado con éxito en el campo de la optimización de estructuras de hormigón. 6 7
+
+Referencias
+
+- Gutiérrez Andrade, Miguel Ámgel; de los Cobos Silva, Sergio Gerardo; Pérez Salvador, Blanca Rosa (junio de 1998). «Optimización con recocido simulado para el problema de conjunto independiente». En Línea² (Universidad Autónoma Metropolitana) 3. Consultado el 29 de julio de 2011.
+-  Kirkpatrick, S.; Gelatt, C. D.; Vecchi, M. P. (1983). «Optimization by Simulated Annealing» (en inglés). Science 220 (4598):  pp. 671–680. doi:10.1126/science.220.4598.671. PMID 17813860.
+-  Černý, V. (1985). «Thermodynamical approach to the traveling salesman problem: An efficient simulation algorithm» (en inglés). publicación of Optimization Theory and Applications 45:  pp. 41–51. doi:10.1007/BF00940812.
+-  Metropolis, Nicholas; Rosenbluth, Arianna W.; Rosenbluth, Marshall N.; Teller, Augusta H.; Teller, Edward (1953). «Equation of State Calculations by Fast Computing Machines» (en inglés). The publicación of Chemical Physics 21 (6):  p. 1087. doi:10.1063/1.1699114.
+-  Granville, V.; Krivanek, M.; Rasson, J.-P. (1994). «Simulated annealing: A proof of convergence» (en inglés). IEEE Transactions on Pattern Analysis and Machine Intelligence 16 (6):  pp. 652-656. doi:10.1109/34.295910.
+-  Yepes, V.; Alcalá, J.; Perea, C.; González-Vidosa, F. (2008). «A parametric study of optimum earth-retaining walls by simulated annealing» (en inglés). Engineering Structures 30 (3):  pp. 821-830. doi:10.1016/j.engstruct.2007.05.023
+-  Paya-Zaforteza, I.; Yepes, V.; Hospitaler, A.; González-Vidosa, F. (2009). «CO2-optimization of reinforced concrete frames by simulated annealing» (en inglés). Engineering Structures 31 (7):  pp. 1501-1508. doi:10.1016/j.engstruct.2009.02.034

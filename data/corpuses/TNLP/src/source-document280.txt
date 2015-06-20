@@ -1,0 +1,49 @@
+Ordenamiento Radix
+
+En informática, el ordenamiento Radix (radix sort en inglés) es un algoritmo de ordenamiento que ordena enteros procesando sus dígitos de forma individual. Como los enteros pueden representar cadenas de caracteres (por ejemplo, nombres o fechas) y, especialmente, números en punto flotante especialmente formateados, radix sort no está limitado sólo a los enteros.
+
+Descripción
+
+La mayor parte de los ordenadores digitales representan internamente todos sus datos como representaciones electrónicas de números binarios, por lo que procesar los dígitos de las representaciones de enteros por representaciones de grupos de dígitos binarios es lo más conveniente. Existen dos clasificaciones de radix sort: el de dígito menos significativo (LSD) y el de dígito más significativo (MSD). Radix sort LSD procesa las representaciones de enteros empezando por el dígito menos significativo y moviéndose hacia el dígito más significativo. Radix sort MSD trabaja en sentido contrario.
+
+Las representaciones de enteros que son procesadas por los algoritmos de ordenamiento se les llama a menudo "claves", que pueden existir por sí mismas o asociadas a otros datos. Radix sort LSD usa típicamente el siguiente orden: claves cortas aparecen antes que las claves largas, y claves de la misma longitud son ordenadas de forma léxica. Esto coincide con el orden normal de las representaciones de enteros, como la secuencia "1, 2, 3, 4, 5, 6, 7, 8, 9, 10". Radix sorts MSD usa orden léxico, que es ideal para la ordenación de cadenas de caracteres, como las palabras o representaciones de enteros de longitud fija. Una secuencia como "b, c, d, e, f, g, h, i, j, ba" será ordenada léxicamente como "b, ba, c, d, e, f, g, h, i, j". Si se usa orden léxico para ordenar representaciones de enteros de longitud variable, entonces la ordenación de las representaciones de los números del 1 al 10 será "1, 10, 2, 3, 4, 5, 6, 7, 8, 9", como si las claves más cortas estuvieran justificadas a la izquierda y rellenadas a la derecha con espacios en blanco, para hacerlas tan largas como la clave más larga, para el propósito de este ordenamiento.
+
+Ejemplo
+
+Vector original:
+
+25 57 48 37 12 92 86 33
+
+Asignamos los elementos en colas basadas en el dígito menos significativo de cada uno de ellos.
+
+    0:
+    1:
+    2:12 92
+    3:33
+    4:
+    5:25
+    6:86
+    7:57 37
+    8:48
+    9:
+
+Después de la primera pasada, la ordenación queda:
+
+12 92 33 25 86 57 37 48
+
+Colas basadas en el dígito más significativo.
+
+    0:
+    1:12
+    2:25
+    3:33 37
+    4:48
+    5:57
+    6:
+    7:
+    8:86
+    9:92
+
+Lista ordenada:
+
+12 25 33 37 48 57 86 92

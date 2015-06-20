@@ -1,0 +1,9 @@
+Diagrama de clases
+
+Un diagrama de clases es un tipo de diagrama estático que describe la estructura de un sistema mostrando sus clases, orientados a objetos.
+
+Diagramas
+- Propiedad de objetos que tienen propiedades y/u operaciones que contienen un contexto y un dominio, los primeros dos ejemplos son clases de datos y el tercero clase de lógica de negocio, dependiendo de quién diseñe el sistema se pueden unir los datos con las operaciones.
+- El diagrama de clases incluye mucha más información como la relación entre un objeto y otro, la herencia de propiedades de otro objeto, conjuntos de operaciones/propiedades que son implementadas para una interfaz gráfica.
+- Presenta las clases del sistema con sus relaciones estructurales y de herencia.
+- El diagrama de clases es la base para elaborar una arquitectura MVC o MVP.

@@ -1,0 +1,447 @@
+Lenguaje ensamblador
+
+El lenguaje ensamblador, o assembler (assembly language en inglés), es un lenguaje de programación de bajo nivel para los computadores, microprocesadores, microcontroladores y otros circuitos integrados programables. Implementa una representación simbólica de los códigos de máquina binarios y otras constantes necesarias para programar una arquitectura dada de CPU y constituye la representación más directa del código máquina específico para cada arquitectura legible por un programador. Esta representación es usualmente definida por el fabricante de hardware, y está basada en los mnemónicos que simbolizan los pasos de procesamiento (las instrucciones), los registros del procesador, las posiciones de memoria y otras características del lenguaje. Un lenguaje ensamblador es por lo tanto específico de cierta arquitectura de computador física (o virtual). Esto está en contraste con la mayoría de los lenguajes de programación de alto nivel, que idealmente son portátiles.
+
+Un programa utilitario llamado ensamblador es usado para traducir sentencias del lenguaje ensamblador al código de máquina del computador objetivo. El ensamblador realiza una traducción más o menos isomorfa (un mapeo de uno a uno) desde las sentencias mnemónicas a las instrucciones y datos de máquina. Esto está en contraste con los lenguajes de alto nivel, en los cuales una sola declaración generalmente da lugar a muchas instrucciones de máquina.
+
+Muchos sofisticados ensambladores ofrecen mecanismos adicionales para facilitar el desarrollo del programa, controlar el proceso de ensamblaje, y la ayuda de depuración. Particularmente, la mayoría de los ensambladores modernos incluyen una facilidad de macro (descrita más abajo), y son llamados macro ensambladores.
+
+Fue usado principalmente en los inicios del desarrollo de software, cuando aún no se contaba con potentes lenguajes de alto nivel y los recursos eran limitados. Actualmente se utiliza con frecuencia en ambientes académicos y de investigación, especialmente cuando se requiere la manipulación directa de hardware, alto rendimiento, o un uso de recursos controlado y reducido. También es utilizado en el desarrollo de controladores de dispositivo (en inglés, device drivers) y en el desarrollo de sistemas operativos, debido a la necesidad del acceso directo a las instrucciones de la máquina. Muchos dispositivos programables (como los microcontroladores) aún cuentan con el ensamblador como la única manera de ser manipulados.
+
+Características
+- El código escrito en lenguaje ensamblador posee una cierta dificultad de ser entendido ya que su estructura se acerca al lenguaje máquina, es decir, es un lenguaje de bajo nivel.
+- El lenguaje ensamblador es difícilmente portable, es decir, un código escrito para un microprocesador, puede necesitar ser modificado, para poder ser usado en otra máquina distinta. Al cambiar a una máquina con arquitectura diferente, generalmente es necesario reescribirlo completamente.
+- Los programas hechos por un programador experto en lenguaje ensamblador son generalmente mucho más rápidos y consumen menos recursos del sistema (memoria RAM y ROM) que el programa equivalente compilado desde un lenguaje de alto nivel. Al programar cuidadosamente en lenguaje ensamblador se pueden crear programas que se ejecutan más rápidamente y ocupan menos espacio que con lenguajes de alto nivel.
+- Con el lenguaje ensamblador se tiene un control muy preciso de las tareas realizadas por un microprocesador por lo que se pueden crear segmentos de código difíciles y/o muy ineficientes de programar en un lenguaje de alto nivel, ya que, entre otras cosas, en el lenguaje ensamblador se dispone de instrucciones del CPU que generalmente no están disponibles en los lenguajes de alto nivel.
+- También se puede controlar el tiempo en que tarda una rutina en ejecutarse, e impedir que se interrumpa durante su ejecución.
+
+Programa ensamblador
+
+Típicamente, un programa ensamblador (assembler en inglés) moderno crea código objeto traduciendo instrucciones mnemónicas de lenguaje ensamblador en opcodes, y resolviendo los nombres simbólicos para las localizaciones de memoria y otras entidades.1 El uso de referencias simbólicas es una característica clave del lenguaje ensamblador, evitando tediosos cálculos y actualizaciones manuales de las direcciones después de cada modificación del programa. La mayoría de los ensambladores también incluyen facilidades de macros para realizar sustitución textual - ej. generar cortas secuencias de instrucciones como expansión en línea en vez de llamar a subrutinas.
+
+Los ensambladores son generalmente más simples de escribir que los compiladores para los lenguajes de alto nivel, y han estado disponibles desde los años 1950. Los ensambladores modernos, especialmente para las arquitecturas basadas en RISC, tales como MIPS, Sun SPARC, y HP PA-RISC, así como también para el x86 (-64), optimizan la planificación de instrucciones para explotar la segmentación del CPU eficientemente.
+
+En los compiladores para lenguajes de alto nivel, son el último paso antes de generar el código ejecutable.
+
+Número de pasos
+
+Hay dos tipos de ensambladores basados en cuántos pasos a través de la fuente son necesarios para producir el programa ejecutable.
+- Los ensambladores de un solo paso pasan a través del código fuente una vez y asumen que todos los símbolos serán definidos antes de cualquier instrucción que los refiera.
+- Los ensambladores de dos pasos crean una tabla con todos los símbolos y sus valores en el primer paso, después usan la tabla en un segundo paso para generar código. El ensamblador debe por lo menos poder determinar la longitud de cada instrucción en el primer paso para que puedan ser calculadas las direcciones de los símbolos.
+
+La ventaja de un ensamblador de un solo paso es la velocidad, que no es tan importante como lo fue en un momento dados los avances en velocidad y capacidades del computador. La ventaja del ensamblador de dos pasos es que los símbolos pueden ser definidos dondequiera en el código fuente del programa. Esto permite a los programas ser definidos de maneras más lógicas y más significativas, haciendo los programas de ensamblador de dos paso más fáciles leer y mantener.2
+
+Ensambladores de alto nivel
+
+Los más sofisticados ensambladores de alto nivel proporcionan abstracciones del lenguaje tales como:
+- Estructuras de control avanzadas
+- Declaraciones e invocaciones de procedimientos/funciones de alto nivel
+- Tipos de datos abstractos de alto nivel, incluyendo las estructuras/records, uniones, clases, y conjuntos
+- Procesamiento de macros sofisticado (aunque está disponible en los ensambladores ordinarios desde finales 1960 para el IBM/360, entre otras máquinas)
+- Características de programación orientada a objetos
+
+Uso del término
+
+Note que, en el uso profesional normal, el término ensamblador es frecuentemente usado tanto para referirse al lenguaje ensamblador como también al programa ensamblador (que convierte el código fuente escrito en el lenguaje ensamblador a código objeto que luego será enlazado para producir lenguaje de máquina). Las dos expresiones siguientes utilizan el término "ensamblador":
+- "El CP/CMS fue escrito en ensamblador del IBM S/360"
+- "El ASM-H fue un ensamblador del S/370 ampliamente usado"
+
+La primera se refiere al lenguaje y la segundo se refiere al programa.
+
+Lenguaje
+
+El lenguaje ensamblador refleja directamente la arquitectura y las instrucciones en lenguaje de máquina de la CPU, y pueden ser muy diferentes de una arquitectura de CPU a otra. Cada arquitectura de microprocesador tiene su propio lenguaje de máquina, y en consecuencia su propio lenguaje ensamblador ya que este se encuentra muy ligado a la estructura del hardware para el cual se programa. Los microprocesadores difieren en el tipo y número de operaciones que soportan; también pueden tener diferente cantidad de registros, y distinta representación de los tipos de datos en memoria. Aunque la mayoría de los microprocesadores son capaces de cumplir esencialmente las mismas funciones, la forma en que lo hacen difiere y los respectivos lenguajes ensamblador reflejan tal diferencia.
+
+Instrucciones de CPU
+
+La mayoría de las CPU tienen más o menos los mismos grupos de instrucciones, aunque no necesariamente tienen todas las instrucciones de cada grupo. Las operaciones que se pueden realizar varían de una CPU a otra. Una CPU particular puede tener instrucciones que no tenga otro y viceversa. Los primeros microprocesadores de 8 bits no tenían operaciones para multiplicar o dividir números, por ejemplo, y había que hacer subrutinas para realizar esas operaciones. Otras CPU puede que no tengan operaciones de punto flotante y habría que hacer o conseguir bibliotecas que realicen esas operaciones.
+
+Las instrucciones de la CPU pueden agruparse, de acuerdo a su funcionalidad, en:
+
+Operaciones con enteros: (de 8, 16, 32 y 64 bits dependiendo de la arquitectura de la CPU, en los sistemas muy viejos también de 12, 18, 24, 36 y 48 bits)
+
+Estas son operaciones realizadas por la Unidad aritmético lógica de la CPU
+- Operaciones aritméticas. Como suma, resta, multiplicación, división, módulo, cambio de signo
+- Operaciones booleanas. Operaciones lógicas bit a bit como AND, OR, XOR, NOT
+- Operaciones de bits. Como desplazamiento y rotaciones de bits (hacia la derecha o hacia la izquierda, a través del bit del acarreo o sin él)
+- Comparaciones
+
+Operaciones de mover datos:
+
+    Entre los registros y la memoria:
+
+    Aunque la instrucción se llama "mover", en la CPU, "mover datos" significa en realidad copiar datos, desde un origen a un destino, sin que el dato desaparezca del origen.
+
+    Se pueden mover valores:
+	- desde un registro a otro
+	- desde un registro a un lugar de la memoria
+	- desde un lugar de la memoria a un registro
+	- desde un lugar a otro de la memoria
+	- un valor inmediato a un registro
+	- un valor inmediato a un lugar de memoria
+
+    Operaciones de pila (stack, en inglés):
+	- PUSH (escribe datos hacia el tope de de la pila)
+	- POP (lee datos desde el tope de la pila)
+
+    Operaciones de entrada/salida:
+
+    Son operaciones que mueven datos de un registro, desde y hacia un puerto; o de la memoria, desde y hacia un puerto
+	- INPUT Lectura desde un puerto de entrada
+	- OUTPUT Escritura hacia un puerto de salida
+
+Operaciones para el control del flujo del programa:
+- Llamadas y retornos de subrutinas
+- Llamadas y retornos de interrupciones
+- Saltos condicionales de acuerdo al resultado de la comparaciones
+- Saltos incondicionales
+
+Operaciones con números reales:
+
+El estándar para las operaciones con números reales en las CPU está definido por el IEEE 754.
+
+Una CPU puede tener operaciones de punto flotante con números reales mediante el coprocesador numérico (si lo hay), como las siguientes:
+- Operaciones aritméticas. Suma, resta, multiplicación, división, cambio de signo, valor absoluto, parte entera
+- Operaciones trascendentales
+	- Operaciones trigonométricas. Seno, coseno, tangente, arcotangente
+	- Operaciones con logaritmos, potencias y raíces
+- Otras
+
+El lenguaje ensamblador tiene mnemónicos para cada una de las instrucciones de la CPU en adición a otros mnemónicos a ser procesados por el programa ensamblador (como por ejemplo macros y otras sentencias en tiempo de ensamblado).
+
+Ensamblado
+
+La transformación del lenguaje ensamblador en código máquina la realiza un programa ensamblador, y la traducción inversa la puede efectuar un desensamblador. A diferencia de los lenguajes de alto nivel, aquí hay usualmente una correspondencia 1 a 1 entre las instrucciones simples del ensamblador y el lenguaje de máquina. Sin embargo, en algunos casos, un ensamblador puede proveer "pseudo instrucciones" que se expanden en un código de máquina más extenso a fin de proveer la funcionalidad necesaria y simplificar la programación. Por ejemplo, para un código máquina condicional como "si X mayor o igual que", un ensamblador puede utilizar una pseudoinstrucción al grupo "haga si menor que", y "si = 0" sobre el resultado de la condición anterior. Los Ensambladores más completos también proveen un rico lenguaje de macros que se utiliza para generar código más complejo y secuencias de datos.
+
+Para el mismo procesador y el mismo conjunto de instrucciones de CPU, diferentes programas ensambladores pueden tener, cada uno de ellos, variaciones y diferencias en el conjunto de mnemónicos o en la sintaxis de su lenguaje ensamblador. Por ejemplo, en un lenguaje ensamblador para la arquitectura x86, se puede expresar la instrucción para mover 5 al registro AL de la siguiente manera: MOV AL, 5, mientras que para otro ensamblador para la misma arquitectura se expresaría al revés: MOV 5, AL. Ambos lenguajes ensambladores harían exactamente lo mismo, solo que está expresado de manera diferente. El primero usa la sintaxis de Intel, mientras que el segundo usa la sintaxis de AT&T
+
+El uso del ensamblador no resuelve definitivamente el problema de cómo programar un sistema basado en microprocesador de modo sencillo ya que para hacer un uso eficiente del mismo, hay que conocer a fondo el microprocesador, los registros de trabajo de que dispone, la estructura de la memoria, y muchas cosas más referentes a su estructura básica de funcionamiento.
+
+Ejemplos
+
+Un programa escrito en lenguaje ensamblador consiste en una serie de instrucciones que corresponden al flujo de órdenes ejecutables por un microprocesador.
+
+Por ejemplo, en el lenguaje ensamblador para un procesador x86:
+
+La sentencia
+
+- MOV AL, 61h
+
+Asigna el valor hexadecimal 61 (97 decimal) al registro "AL".
+
+El programa ensamblador lee la sentencia de arriba y produce su equivalente binario en lenguaje de máquina
+
+- Binario: 10110000 01100001 (hexadecimal: B61)
+
+El mnemónico MOV es un código de operación u "opcode". El opcode es seguido por una lista de argumentos o parámetros, completando una típica instrucción de ensamblador. En el ejemplo, AL es un registro de 8 bits del procesador, al cual se le asignará el valor hexadecimal 61 especificado.
+
+El código de máquina generado por el ensamblador consiste de 2 bytes. El primer byte contiene empaquetado la instrucción MOV y el código del registro hacia donde se va a mover el dato:
+
+1011  0000  01100001
+   |    |        |
+   |    |        +---- Número 61h en binario
+   |    |       
+   |    +--- Registro AL
+   +-------- Instrucción MOV
+
+En el segundo byte se especifica el número 61h, escrito en binario como 01100001, que se asignará al registro AL, quedando la sentencia ejecutable como:
+
+- 10110000 01100001
+
+La cual puede ser entendida y ejecutada directamente por el procesador.
+
+Diseño del lenguaje
+
+Elementos básicos
+
+Hay un grado grande de diversidad en la manera en que los autores de los ensambladores categorizan las sentencias y en la nomenclatura que usan. En particular, algunos describen cualquier cosa como pseudo-operación (pseudo-Op), con excepción del mnemónico de máquina o del mnemónico extendido.
+
+Un típico lenguaje ensamblador consiste en 3 tipos de sentencias de instrucción que son usadas para definir las operaciones del programa:
+- Mnemónicos de opcode
+- Secciones de datos
+- Directivas de ensamblador
+
+Mnemónicos de opcode y mnemónicos extendidos
+
+A diferencia de las instrucciones (sentencias) de los lenguajes de alto nivel, instrucciones en el lenguaje ensamblador son generalmente muy simples. Generalmente, una mnemónico es un nombre simbólico para una sola instrucción en lenguaje de máquina ejecutable (un opcode), y hay por lo menos un mnemónico de opcode definido para cada instrucción en lenguaje de máquina. Cada instrucción consiste típicamente en una operación u opcode más cero o más operandos. La mayoría de las instrucciones refieren a un solo valor, o a un par de valores. Los operandos pueden ser inmediatos (típicamente valores de un byte, codificados en la propia instrucción), registros especificados en la instrucción, implícitos o las direcciones de los datos localizados en otra parte de la memoria. Esto está determinado por la arquitectura subyacente del procesador, el ensamblador simplemente refleja cómo trabaja esta arquitectura. Los mnemónicos extendidos son frecuentemente usados para especificar una combinación de un opcode con un operando específico, ej, el ensamblador del System/360 usa a B como un mnemónico extendido para el BC con una máscara de 15 y NOP al BC con una máscara de 0.
+
+Los mnemónicos extendidos son frecuentemente usados para soportar usos especializados de instrucciones, a menudo para propósitos no obvios con respecto al nombre de la instrucción. Por ejemplo, muchos CPU no tienen una instrucción explícita de NOP (No Operación), pero tienen instrucciones que puedan ser usadas para tal propósito. En el CPU 8086, la instrucción XCHG AX,AX (intercambia el registro AX consigo mismo) es usada para el NOP, con NOP siendo un pseudo-opcode para codificar la instrucción XCHG AX,AX. Algunos desensambladores reconocen esto y decodificarán la instrucción XCHG AX,AX como NOP. Similarmente, los ensambladores de IBM para el System/360 usan los mnemónicos extendidos NOP y NOPR con las máscaras cero para BC y BCR.
+
+Algunos ensambladores también soportan simples macroinstrucciones incorporadas que generan dos o más instrucciones de máquina. Por ejemplo, con algunos ensambladores para el Z80, la instrucción
+
+    LD HL, BC
+
+genera las instrucciones
+
+    LD L, C
+    LD H, B.3
+
+LD HL, BC es un pseudo-opcode, que en este caso simula ser una instrucción de 16 bits, cuando se expande se producen dos instrucciones de 8 bits que equivalen a la simulada de 16 bits.
+
+Secciones de datos
+
+Hay instrucciones usadas para definir elementos de datos para manejar datos y variables. Definen el tipo de dato, la longitud y la alineación de los datos. Estas instrucciones también pueden definir si los datos están disponibles para programas exteriores (programas ensamblados separadamente) o solamente para el programa en el cual la sección de datos está definida. Algunos ensambladores clasifican estas instrucción
+
+Directivas del ensamblador
+
+Los directivas del ensamblador, también llamadas los pseudo opcodes, pseudo-operaciones o pseudo-ops, son instrucciones que son ejecutadas por un ensamblador en el tiempo de ensamblado, no por un CPU en el tiempo de ejecución. Pueden hacer al ensamblado del programa dependiente de parámetros entrados por un programador, de modo que un programa pueda ser ensamblado de diferentes maneras, quizás para diversos aplicaciones. También pueden ser usadas para manipular la presentación de un programa para hacerlo más fácil leer y mantener.
+
+Por ejemplo, las directivas pudieran ser usadas para reservar áreas de almacenamiento y opcionalmente su para asignar su contenido inicial. Los nombres de las directivas a menudo comienzan con un punto para distinguirlas de las instrucciones de máquina.
+
+Los ensambladores simbólicos le permiten a los programadores asociar nombres arbitrarios (etiquetas o símbolos) a posiciones de memoria. Usualmente, cada constante y variable tiene un nombre para que las instrucciones pueden referir a esas ubicaciones por nombre, así promoviendo el código autodocumentado. En el código ejecutable, el nombre de cada subprograma es asociado a su punto de entrada, así que cualquier llamada a un subprograma puede usar su nombre. Dentro de subprogramas, a los destinos GOTO se le dan etiquetas. Algunos ensambladores soportan símbolos locales que son léxicamente distintos de los símbolos normales (ej, el uso de "10$" como un destino GOTO).
+
+La mayoría de los ensambladores proporcionan un manejo flexible de símbolos, permitiendo a los programadores manejar diversos espacios de nombres, calcular automáticamente offsets dentro de estructuras de datos, y asignar etiquetas que refieren a valores literales o al resultado de cálculos simples realizados por el ensamblador. Las etiquetas también pueden ser usadas para inicializar constantes y variables con direcciones relocalizables.
+
+Los lenguajes ensambladores, como la mayoría de los otros lenguajes de computador, permiten que comentarios sean añadidos al código fuente, que son ignorados por el programa ensamblador. El buen uso de los comentarios es aún más importante con código ensamblador que con lenguajes de alto nivel, pues el significado y el propósito de una secuencia de instrucciones es más duro de descifrar a partir del código en sí mismo.
+
+El uso sabio de estas facilidades puede simplificar grandemente los problemas de codificar y mantener el código de bajo nivel. El código fuente de lenguaje ensamblador crudo generado por compiladores o desensambladores - código sin ningún comentario, ni símbolos con algún sentido, ni definiciones de datos - es muy difícil de leer cuando deben hacerse cambios.
+
+Macros
+
+Muchos ensambladores soportan macros predefinidos, y otras soportan macros definidos (y repetidamente redefinibles) por el programador que implican secuencias de líneas del texto en las cuales las variables y las constantes están empotradas. Esta secuencia de líneas de texto puede incluir opcodes o directivas. Una vez un macro ha sido definido, su nombre puede ser usado en lugar de un mnemónico. Cuando el ensamblador procesa tal sentencia, reemplaza la sentencia por las líneas del texto asociadas a ese macro, entonces las procesa como si hubieran existido en el archivo del código fuente original (incluyendo, en algunos ensambladores, la expansión de cualquier macro que exista en el texto de reemplazo).
+
+Puesto que las macros pueden tener nombres cortos pero se expanden a varias o de hecho muchas líneas de código, pueden ser usados para hacer que los programas en lenguaje ensamblador parezcan ser mucho más cortos, requiriendo menos líneas de código fuente, como sucede con los lenguajes de alto nivel. También pueden ser usados para añadir niveles de estructura más altos a los programas ensamblador, opcionalmente introducen código de depuración empotrado vía parámetros y otras características similares.
+
+Muchos ensambladores tienen macros incorporados (o predefinidos) para las llamadas de sistema y otras secuencias especiales de código, tales como la generación y el almacenamiento de los datos realizados a través de avanzadas operaciones bitwise y booleanas usadas en juegos, software de seguridad, gestión de datos, y criptografía.
+
+Los macro ensambladores a menudo permiten a los macros tomar parámetros. Algunos ensambladores incluyen lenguajes macro muy sofisticados, incorporando elementos de lenguajes de alto nivel tales como parámetros opcionales, variables simbólicas, condiciones, manipulaciones de strings operaciones aritméticas, todos usables durante la ejecución de un macro dado, y permitiendo a los macros guardar el contexto o intercambiar información. Así un macro puede generar un gran número de instrucciones o definiciones de datos en lenguaje ensamblador, basadas en los argumentos del macro. Esto pudiera ser usado para generar, por ejemplo, estructuras de datos de estilo de records o bucles "desenrrollados", o podría generar algoritmos enteros basados en parámetros complejos. Una organización, usando lenguaje ensamblador, que ha sido fuertemente extendido usando tal suite de macros, puede ser considerada que se está trabajando en un lenguaje de alto nivel, puesto que tales programadores no están trabajando con los elementos conceptuales de más bajo nivel del computador.
+
+Las macros fueron usados para adaptar sistemas de software de gran escala para clientes específicos en la era del mainframe, y también fueron usados por el personal del cliente para satisfacer las necesidades de sus patrones haciendo versiones específicas de los sistemas operativos del fabricante. Esto fue hecho, por ejemplo, por los programadores de sistema que trabajaban con el Conversational Monitor System / Virtual Machine (CMS/VM) de IBM y con los add-ons "real time transaction processing" de IBM, CICS, Customer Information Control System, y ACP/TPF, el airline/financial system que comenzó en los años 1970 y todavía corre con muchos sistemas de reservaciones computarizados (CRS) y sistemas de tarjeta de crédito de hoy.
+
+También es posible usar solamente las habilidades de procesamiento de macros de un ensamblador para generar código escrito en lenguajes completamente diferentes, por ejemplo, para generar una versión de un programa en COBOL usando un programa macro ensamblador puro conteniendo líneas de código COBOL dentro de operadores de tiempo ensamblaje dando instrucciones al ensamblador para generar código arbitrario.
+
+Esto era porque, como en los años 1970 fue observado, el concepto de "procesamiento de macro" es independiente del concepto de "ensamblaje", siendo el anterior, en términos modernos, más un procesamiento de textos, que una generación de código objeto. El concepto de procesamiento de macro apareció, y aparece, en el lenguaje de programación C, que soporta "instrucciones de preprocesador" de fijar variables, y hace pruebas condicionales en sus valores. Observe que a diferencia de ciertos macroprocesadores previos dentro de los ensambladores, el preprocesador de C no es Turing-completo porque carecía la capacidad de bucle o "go to", esto último permitiendo a los programas hacer bucles.
+
+A pesar del poder del procesamiento macro, éste dejó de usarse en muchos lenguajes de alto nivel (una importante excepción es C/C++) mientras que seguía siendo perenne para los ensambladores. Esto era porque muchos programadores estaban bastante confundidos por la sustitución de parámetros macro y no distinguían la diferencia entre procesamiento macro, el ensamblaje y la ejecución.
+
+La sustitución de parámetros macro es estrictamente por nombre: en el tiempo de procesamiento macro, el valor de un parámetro es sustituido textualmente por su nombre. La clase más famosa de bugs resultantes era el uso de un parámetro que en sí mismo era una expresión y no un nombre primario cuando el escritor macro esperaba un nombre. En el macro:
+
+    foo: macro a
+    load a*b
+
+la intención era que la rutina que llama proporcionaría el nombre de una variable, y la variable o constante "global" b sería usada para multiplicar a "a". Si foo es llamado con el parámetro a-c, ocurre la expansión macro load a-c*b. Para evitar cualquier posible ambigüedad, los usuarios de macro procesadores pueden encerrar en paréntesis los parámetros formales dentro de las definiciones de macros, o las rutinas que llaman pueden envolver en paréntesis los parámetos de entrada.4 Así, el macro correcto, con los paréntesis, sería:
+
+    foo: macro a
+    load (a)*b
+
+y su expansión, daría como resultado: load (a-c)*b
+
+El PL/I y el C/C++ ofrecen macros, pero la esta facilidad solo puede manipular texto. Por otra parte, los lenguajes homoicónicos, tales como Lisp, Prolog, y Forth, retienen el poder de los macros de lenguaje ensamblador porque pueden manipular su propio código como datos.
+
+Soporte para programación estructurada
+
+Algunos ensambladores han incorporado elementos de programación estructurada para codificar el flujo de la ejecución. El ejemplo más temprano de este acercamiento estaba en el Concept-14 macro set, originalmente propuesto por el Dr. H.D. Mills (marzo de 1970), e implementado por Marvin Kessler en la Federal Systems Division de IBM, que extendió el macro ensamblador del S/360 con bloques de control de flujo IF/ELSE/ENDIF y similares.5 Esto era una manera de reducir o eliminar el uso de operaciones GOTO en el código en lenguaje ensamblador, uno de los principales factores que causaban código espagueti en el lenguaje ensamblador. Este acercamiento fue ampliamente aceptado a principios de los años 1980 (los últimos días del uso de lenguaje ensamblador en gran escala).
+
+Un curioso diseño fue A-natural, un ensamblador "orientado a la corriente" (stream-oriented) para los procesadores 8080/Z80[cita requerida] de Whitesmiths Ltd. (desarrolladores del sistema operativo Idris, similar al Unix), y lo que fue reportado como el primer compilador C comercial). El lenguaje fue clasificado como un ensamblador, porque trabajaba con elementos de máquina crudos tales como opcodes, registros, y referencias de memoria; pero incorporaba una sintaxis de expresión para indicar el orden de ejecución. Los paréntesis y otros símbolos especiales, junto con construcciones de programación estructurada orientadas a bloques, controlaban la secuencia de las instrucciones generadas. A-natural fue construido como el lenguaje objeto de un compilador C, en vez de la codificación manual, pero su sintaxis lógica ganó algunos seguidores.
+
+Ha habido poca demanda aparente para ensambladores más sofisticados debido a la declinación del desarrollo de lenguaje ensamblador de larga escala.6 A pesar de eso, todavía se están desarrollando y aplicando en casos donde las limitaciones de recursos o las particularidades en la arquitectura de sistema objetivo previenen el efectivo uso de lenguajes de alto nivel.7
+
+Uso del lenguaje ensamblador
+
+Perspectiva histórica
+
+Los lenguajes ensambladores fueron primero desarrollados en los años 1950, cuando fueron referidos como lenguajes de programación de segunda generación. Por ejemplo, el SOAP (Symbolic Optimal Assembly Program) era un lenguaje ensamblador de 1957 para el computador IBM 650. Los lenguajes ensambladores eliminaron mucha de la propensión a errores y del consumo de tiempo de la programación de los lenguajes de primera generación que se necesitaba con los primeros computadores, liberando a los programadores del tedio tal como recordar códigos numéricos y cálculo de direcciones. Una vez fueron ampliamente usados para todo tipo de programación. Sin embargo, por los años 1980 (1990 en los microcomputadores), su uso había sido en gran parte suplantado por los lenguajes de alto nivel,[cita requerida] en la búsqueda de una mejorada productividad en programación. Hoy en día, aunque el lenguaje ensamblador es casi siempre manejado y generado por los compiladores, todavía se usa para la manipulación directa del hardware, acceso a instrucciones especializadas del procesador, o para resolver problemas de desempeño crítico. Los usos típicos son controladores/manejadores (drivers) de dispositivo, sistemas embebidos de bajo nivel, y sistemas de tiempo real.
+
+Históricamente, un gran número de programas han sido escritos enteramente en lenguaje ensamblador. Los sistemas operativos fueron casi exclusivamente escritos en lenguaje ensamblador hasta la aceptación amplia del lenguaje de programación C en los años 1970 y principios de los 1980. También, muchas aplicaciones comerciales fueron escritas en lenguaje ensamblador, incluyendo una gran cantidad del software escrito por grandes corporaciones para mainframes de IBM. Los lenguajes COBOL y FORTRAN eventualmente desplazaron mucho de este trabajo, aunque un número de organizaciones grandes conservaran las infraestructuras de aplicaciones en lenguaje ensamblador hasta bien entrados los años 1990.
+
+La mayoría de los primeros microcomputadores confiaron en el lenguaje ensamblador codificado a mano, incluyendo la mayoría de los sistemas operativos y de las aplicaciones grandes. Esto era porque estos sistemas tenían limitaciones severas de recursos, impusieron idiosincráticas arquitecturas de memoria y de pantalla, y proporcionaron servicios de sistema limitados y con errores. Quizás más importante era la falta de compiladores de primera clase de lenguajes de alto nivel adecuados para el uso en el microcomputador. Un factor psicológico también pudo haber jugado un papel: la primera generación de programadores de los microcomputadores conservó una actitud de aficionado de "alambres y alicates".
+
+En un contexto más comercial, las más grandes razones para usar el lenguaje ensamblador era hacer programas con mínimo tamaño, mínima sobrecarga, mayor velocidad y confiabilidad.
+
+Los típicos ejemplos de programas grandes en lenguaje ensamblador de ese tiempo son los sistemas operativos IBM PC DOS y aplicaciones tempranas tales como la hoja de cálculo Lotus 1-2-3, y casi todos los juegos populares para la familia Atari 800 de computadores personales. Incluso en los años 1990, la mayoría de los videojuegos de cónsola fueron escritos en ensamblador, incluyendo la mayoría de los juegos para la Mega Drive/Genesis y el Super Nintendo Entertainment System.[cita requerida] Según algunos insiders de la industria, el lenguaje ensamblador era el mejor lenguaje de programación a usar para obtener el mejor desempeño del Sega Saturn, una cónsola para la cual era notoriamente desafiante desarrollar y programar juegos.8 El popular juego de arcade NBA Jam (1993) es otro ejemplo. El ensamblador ha sido por largo trecho, el lenguaje de desarrollo primario en los computadores hogareños Commodore 64, Atari ST, así como el ZX Spectrum. Esto fue así en gran parte porque los dialectos del BASIC en estos sistemas ofrecieron insuficiente velocidad de ejecución, así como insuficientes características para aprovechar completamente el hardware disponible. Algunos sistemas, más notablemente el Amiga, incluso tienen IDEs con características de depuración y macros altamente avanzados, tales como el freeware ASM-One assembler, comparable a las del Microsoft Visual Studio (el ASM-Uno precede al Microsoft Visual Studio).
+
+El ensamblador para el VIC-20 fue escrito por Don French y publicado por French Silk. Con 1639 bytes de longitud, su autor cree que es el más pequeño ensamblador simbólico jamás escrito. El ensamblador soportaba el direccionamiento simbólico usual y la definición de cadenas de caracteres o cadenas hexadecimales. También permitía expresiones de direcciones que podían combinarse con las operaciones de adición, substracción, multiplicación, división, AND lógico, OR lógico, y exponenciación.9
+
+Uso actual
+
+Siempre ha habido debates sobre la utilidad y el desempeño del lenguaje ensamblador relativo a lenguajes de alto nivel. El lenguaje ensamblador tiene nichos específicos donde es importante (ver abajo). Pero, en general, los modernos compiladores de optimización[cita requerida] para traducir lenguajes de alto nivel en código que puede correr tan rápidamente como el lenguaje ensamblador escrito a mano, a pesar de los contraejemplos que pueden ser encontrados.10 11 12 La complejidad de los procesadores modernos y del subsistema de memoria hace la optimización efectiva cada vez más difícil para los compiladores, así como para los programadores en ensamblador.13 14 Adicionalmente, y para la consternación de los amantes de la eficiencia, el desempeño cada vez mayor del procesador ha significado que la mayoría de los CPU estén desocupados la mayor parte del tiempo, con retardos causados por embotellamientos predecibles tales como operaciones de entrada/salida y paginación de memoria. Esto ha hecho que la velocidad de ejecución cruda del código no sea un problema para muchos programadores.
+
+Hay algunas situaciones en las cuales los profesionales pudieran elegir utilizar el lenguaje ensamblador. Por ejemplo cuando:
+- Es requerido un ejecutable binario independiente (stand-alone), es decir uno que deba ejecutarse sin recursos a componentes de tiempo de ejecución o a bibliotecas asociadas con un lenguaje de alto nivel; ésta es quizás la situación más común. Son programas empotrados que solo almacenan una pequeña cantidad de memoria y el dispositivo está dirigido para hacer tareas para un simple propósito. Ejemplos consisten en teléfonos, sistemas de combustible e ignición para automóviles, sistemas de control del aire acondicionado, sistemas de seguridad, y sensores
+- Interactuando directamente con el hardware, por ejemplo en controladores (drivers) de dispositivo y manejadores de interrupción
+- usando instrucciones específicas del procesador no explotadas o disponibles por el compilador. Un ejemplo común es la instrucción de rotación bitwise en el núcleo de muchos algoritmos de cifrado
+- creando funciones vectorizadas para programas en lenguajes de alto nivel como C. En el lenguaje de alto nivel esto es a veces ayudado por funciones intrínsecas del compilador que mapean directamente a los mnemónicos del SIMD, pero sin embargo resulta en una conversión de ensamblador de uno a uno para un procesador de vector asociado
+- Es requerida la optimización extrema, ej, en un bucle interno en un algoritmo intensivo en el uso del procesador. Los programadores de juegos toman ventaja de las habilidades de las características del hardware en los sistemas, permitiendo a los juegos correr más rápidamente. También las grandes simulaciones científicas requieren algoritmos altamente optimizados, ej, álgebra lineal con BLAS10 15 o la transformada de coseno discreta (ej, la versión SIMD en ensamblador del x264,16 (una biblioteca para codificar streams de video)
+- Un sistema con severas limitaciones de recursos (ej, un sistema empotrado) debe ser codificado a mano para maximizar el uso de los limitados recursos; pero esto está llegando a ser menos común a medida que el precio del procesador decrece y el desempeño mejora
+- No existe ningún lenguaje de alto nivel, en un procesador nuevo o especializado, por ejemplo
+- Escribiendo programas de tiempo real que necesitan sincronización y respuestas precisas, tales como sistemas de navegación de vuelo, y equipo médico. Por ejemplo, en un sistema fly-by-wire (vuelo por mandos eléctricos), la telemetría debe ser interpretada y hay que actuar dentro de limitaciones estrictas de tiempo. Tales sistemas deben eliminar fuentes de retrasos impredecibles, que pueden ser creados por (algunos) lenguajes interpretados, recolección de basura automática, operaciones de paginación, o multitarea preventiva. Sin embargo, algunos lenguajes de alto nivel incorporan componentes de tiempo de ejecución e interfaces de sistema operativo que pueden introducir tales retrasos. Elegir el ensamblador o lenguajes de bajo nivel para tales sistemas da a los programadores mayor visibilidad y control sobre el proceso de los detalles
+- Es requerido control total sobre el ambiente, en situaciones de seguridad extremadamente alta donde nada puede darse por sentado.
+- Se escriben virus de computadora, bootloaders, ciertos controladores/manejadores de dispositivo, u otros elementos muy cerca del hardware o al sistema operativo de bajo nivel
+- Se escriben simuladores del conjunto de instrucciones para monitoreo, trazado y depuración de errores donde la sobrecarga adicional es mantenida al mínimo
+- Se hace ingeniería inversa en binarios existentes que pueden o no haber sido escritos originalmente en un lenguaje de alto nivel, por ejemplo al crackear la protección anticopia del software propietario.
+- Se hace ingeniería inversa y modificación de video juegos (también denominado ROM hacking), que es posible por medio de varios métodos. El más ampliamente implementado es alterando el código del programa a nivel de lenguaje ensamblador
+- Se escribe código automodificable, algo para lo que el lenguaje ensamblador se presta bien
+- Se escriben juegos y otros softwares para calculadoras gráficas17
+- Se escribe software compilador que genera código ensamblador, y por lo tanto los desarrolladores deben ser programadores de lenguaje ensamblador
+- Se escriben algoritmos criptográficos que siempre deben tomar estrictamente el mismo tiempo para ejecutar, previniendo ataques de tiempo
+
+Sin embargo, el lenguaje ensamblador es todavía enseñado en la mayoría de los programas de ciencias de la computación e ingeniería electrónica. Aunque hoy en día, pocos programadores trabajan regularmente con el lenguaje ensamblador como una herramienta, los conceptos fundamentales continúan siendo muy importantes. Tales tópicos fundamentales, como aritmética binaria, asignación de memoria, procesamiento del stack, codificación de conjunto de caracteres, procesamiento de interrupciones, y diseño de compiladores, serían duros de estudiar en detalle sin la comprensión de cómo el computador opera a nivel del hardware. Puesto que el comportamiento del computador es fundamentalmente definido por su conjunto de instrucciones, la manera lógica de aprender tales conceptos es estudiar un lenguaje ensamblador. La mayoría de los computadores modernos tienen un conjunto de instrucciones similares. Por lo tanto, estudiar un solo lenguaje ensamblador es suficiente para aprender: i) los conceptos básicos; ii) reconocer situaciones donde el uso de lenguaje ensamblador puede ser apropiado; y iii) ver cómo el código ejecutable eficiente puede ser creado por los lenguajes de alto nivel18
+
+Aplicaciones típicas
+
+El lenguaje ensamblador hard-coded es típicamente usado en el ROM de arranque del sistema (BIOS en los sistemas compatible IBM PC). Este código de bajo nivel es usado, entre otras cosas, para inicializar y probar el hardware del sistema antes de cargar el sistema operativo, y está almacenado en el ROM. Una vez que ha tomado lugar un cierto nivel de inicialización del hardware, la ejecución se transfiere a otro código, típicamente escrito en lenguajes de alto nivel; pero el código corriendo inmediatamente después de que es aplicada la energía usualmente está escrito en lenguaje ensamblador. Lo mismo es cierto para los boot loaders.
+
+Muchos compiladores traducen lenguajes de alto nivel a lenguaje ensamblador primero, antes de la compilación completa, permitiendo que el código en ensamblador sea visto para propósitos de depuración y optimización. Lenguajes de relativo bajo nivel, como C, con frecuencia proveen sintaxis especial para empotrar lenguaje ensamblador en cada plataforma de hardware. El código portable del sistema entonces puede usar estos componentes específicos a un procesador a través de una interface uniforme.
+
+El lenguaje ensamblador también es valioso en ingeniería inversa, puesto que muchos programas solamente son distribuidos en una forma de código de máquina. El código de máquina es usualmente fácil de trasladar hacia lenguaje ensamblador para luego ser cuidadosamente examinado en esta forma, pero es muy difícil de trasladar hacia un lenguaje de alto nivel. Herramientas como Interactive Disassembler, hacen uso extenso del desensamblador para tales propósitos.
+
+Un nicho que hace uso del lenguaje ensamblador es el demoscene. Ciertas competiciones requieren a los concursantes restringir sus creaciones a un muy pequeño tamaño (ej, 256 bytes, 1 KB, 4 KB ó 64 KB), y el lenguaje ensamblador es el lenguaje de preferencia para alcanzar este objetivo.19 Cuando los recursos son una preocupación, es una necesidad la codificación en ensamblador, especialmente en sistemas constreñidos por el procesamiento del CPU, como los primeros modelos del Amiga, y el Commodore 64. El código optimizado en ensamblador es escrito "a mano" por los programadores en un intento de minimizar el número de ciclos de CPU usados. Las limitaciones del CPU son tan grandes que cada ciclo cuenta. Usar tales métodos ha habilitado, a sistemas como el Commodore 64, para producir gráficos en 3D en tiempo real con efectos avanzados, una hazaña que puede ser considerada improbable o incluso imposible para un sistema con un procesador de 0.99 MHz.[cita requerida]
+
+Detalles adicionales
+
+Para un determinado computador personal, mainframe, sistema empotrado, y cónsola de juegos, tanto del pasado como del presente, ha sido escrito al menos uno, y posiblemente docenas de ensambladores. Para algunos ejemplos, vea la lista de ensambladores.
+
+En los sistemas Unix, el ensamblador es llamado tradicionalmente as, aunque no es un simple cuerpo de código, siendo típicamente escrito uno nuevo por cada port. Un número de variantes de Unix usan el GAS
+
+Dentro de los grupos de procesadores, cada ensamblador tiene su propio dialecto. A veces, algunos ensambladores pueden leer el dialecto de otro, por ejemplo, TASM puede leer el viejo código del MASM, pero no al revés. FASM y NASM tienen una sintaxis similar, pero cada uno soporta diferentes macros que pueden ser difícil de trasladar de uno al otro. Las cosas básicas son siempre las mismas, pero las características avanzadas serán diferentes20
+
+También, los lenguajes ensambladores a veces pueden ser portables a través de diferentes sistemas operativos en el mismo tipo de CPU. Las convenciones de llamadas entre los sistemas operativos con frecuencia difieren ligeramente o en nada. y con cuidado es posible ganar portabilidad en el lenguaje ensamblador, usualmente al enlazar con una biblioteca de lenguaje C que no cambia entre sistemas operativos. Un simulador de conjunto de instrucciones (que idealmente sería escrito en lenguaje ensamblador) puede, en teoría, procesar el código objeto/binario de cualquier ensamblador) para lograr la portabilidad incluso a través de plataformas (con una sobrecargue no mayor que la de un interpretador de bytecode típico). Esto es esencialmente lo que logra el microcódigo cuando una plataforma de hardware cambia internamente.
+
+Por ejemplo, muchas cosas en libc dependen del preprocesador para hacer, al programa antes de compilar, cosas que son específicas del sistema operativo o específicas del C. De hecho, algunas funciones y símbolos ni siquiera están garantizados que existan fuera del preprocesador. Peor aún, el tamaño y el orden de los campos de las estructuras, tanto como el tamaño de ciertas typedefs como off_t, no están disponibles en lenguaje ensamblador sin la ayuda de un script de configuración, y difieren incluso entre versiones de Linux, haciendo imposible portar llamadas de funciones en libc diferentes de los que toman simples enteros o punteros como parámetros. Para manejar estos problemas, el proyecto FASMLIB provee una biblioteca de lenguaje ensamblador portable para las plataformas Win32 y Linux, pero todavía está muy incompleta.21
+
+Algunos lenguajes de muy alto nivel, como C y Borland Pascal, soportan ensamblado en línea, donde relativamente secciones cortas de código en ensamblador puede ser empotradas dentro del código del lenguaje de alto nivel. El lenguaje Forth comúnmente contiene un ensamblador usado para codificar palabras.
+
+La mayoría de la gente usa un emulador para depurar sus programas en lenguaje ensamblador.
+
+Ejemplos de lenguaje ensamblador
+
+Ejemplo para la arquitectura x86
+
+El siguiente es un ejemplo del programa clásico Hola mundo escrito para la arquitectura de procesador x86 (bajo el sistema operativo DOS).
+
+; ---------------------------------------------
+; Programa que imprime un string en la pantalla
+; ---------------------------------------------
+	.model small               ; modelo de memoria
+ 
+	.stack                     ; segmento del stack
+ 
+	.data                      ; segmento de datos
+	Cadena1 DB 'Hola Mundo.$'  ; string a imprimir (finalizado en $)
+ 
+	.code                      ; segmento del código
+ 
+; ---------------------------------------------
+; Inicio del programa
+; ---------------------------------------------
+	programa:
+		; ----------------------------------------------------------------------------------------------------
+		; inicia el segmento de datos
+		; ----------------------------------------------------------------------------------------------------
+		MOV AX, @data           ; carga en AX la dirección del segmento de datos
+		MOV DS, AX              ; mueve la dirección al registro de segmento por medio de AX
+ 
+		; ----------------------------------------------------------------------------------------------------
+		; Imprime un string en pantalla
+		; ----------------------------------------------------------------------------------------------------
+		MOV DX, offset Cadena1  ; mueve a DX la dirección del string a imprimir
+		MOV AH, 9               ; AH = código para indicar al MS DOS que imprima en la pantalla, el string en DS:DX
+		INT 21h                 ; llamada al MS DOS para ejecutar la función (en este caso especificada en AH)
+ 
+		; ----------------------------------------------------------------------------------------------------
+		; Finaliza el programa
+		; ----------------------------------------------------------------------------------------------------
+		INT 20h                 ; llamada al MS DOS para finalizar el programa
+ 
+	end programa
+
+Ejemplo para el computador virtual (POCA)
+
+Una selección de instrucciones para una computadora virtual22 ) con las correspondientes direcciones de memoria en las que se ubicarán las instrucciones. Estas direcciones NO son estáticas. Cada instrucción se acompaña del código en lenguaje ensamblador generado (código objeto) que coincide con la arquitectura de computador virtual, o conjunto de instrucciones ISA.
+
+Dir. 	Etiqueta 	Instrucción 	Código máquina23
+		.begin 	
+		.org 2048 	
+	a_start 	.equ 3000 	
+2048 		ld length,%
+2064 		be done 	00000010 10000000 00000000 00000110
+2068 		addcc %r1,-4,%r1 	10000010 10000000 01111111 11111100
+2072 		addcc %r1,%r2,%r4 	10001000 10000000 01000000 00000010
+2076 		ld %r4,%r5 	11001010 00000001 00000000 00000000
+2080 		ba loop 	00010000 10111111 11111111 11111011
+2084 		addcc %r3,%r5,%r3 	10000110 10000000 11000000 00000101
+2088 	done: 	jmpl %r15+4,%r0 	10000001 11000011 11100000 00000100
+2092 	length: 	20 	00000000 00000000 00000000 00010100
+2096 	address: 	a_start 	00000000 00000000 00001011 10111000
+		.org a_start 	
+3000 		a:</tt 	
+
+Ejemplo para el µC Intel 8051
+
+Código en lenguaje ensamblador para µC Intel 80C51:
+
+ ORG	8030H
+ include
+ T05SEG:
+	SETB TR0
+	JNB uSEG,T05SEG       ;esta subrutina es utilizada
+	CLR TR0               ;para realizar una cuenta de
+	CPL uSEG              ;0,5 segundos mediante la
+	MOV R1,DPL            ;interrupción del timer 0.
+        INVOKE
+	MOV R2,DPH
+	CJNE R2,#07H,T05SEG
+	CJNE R1,#78H,T05SEG
+	MOV DPTR,#0
+ RET
+
+Ejemplo para el Microchip PIC16F84
+
+Código en lenguaje ensamblador para el microcontrolador 16F84 de Microchip:
+
+ ORG	0
+ Inicio
+ 	bsf	STATUS,RP0		
+ 	clrf	PORTB			
+ 	movlw	0xFF			
+ 	movwf	PORTA
+ 	bcf	STATUS,RP0		
+ Principal
+ 	movf	PORTA,W			 
+ 	movwf	Contador	 	
+ 	movf	Contador,F		
+ 	btfsc	STATUS,Z		
+ 	goto	PuntoDecimal		
+ 	sublw	d'9'			
+ 	btfss	STATUS,C
+ END
+
+Referencias
+1. David Salomon (1993). Assemblers and Loaders
+2. Beck, Leland L. (1996). «2». System Software: An Introduction to Systems Programming. Addison Wesley.
+3. http://www.z80.de/z80/z80code.htm
+4. «Macros (C/C++), MSDN Library for Visual Studio 2008». Microsoft Corp.. Consultado el 22-06-2010.
+5. «Concept 14 Macros». MVS Software. Consultado el 25 de mayo de 2009.
+6. Answers.com. «assembly language: Definition and Much More from Answers.com». Consultado el 19-06-2008.
+7. NESHLA: The High Level, Open Source, 6502 Assembler for the Nintendo Entertainment System
+8. Eidolon's Inn : SegaBase Saturn
+9. Jim Lawless (21-05-2004). «Speaking with Don French : The Man Behind the French Silk Assembler Tools». Consultado el 25-07-2008.
+10. «Writing the Fastest Code, by Hand, for Fun: A Human Computer Keeps Speeding Up Chips». New York Times, John Markoff (28-11-2005). Consultado el 04-03-2010.
+11. «Bit-field-badness». hardwarebug.org (30-01-2010). Consultado el 04-03-2010.
+12. «GCC makes a mess». hardwarebug.org (13-05-2009). Consultado el 04-03-2010.
+13. Randall Hyde. «The Great Debate». Consultado el 03-07-2008.
+14. «Code sourcery fails again». hardwarebug.org (30-01-2010). Consultado el 04-03-2010.
+15. «BLAS Benchmark-August2008». eigen.tuxfamily.org (01-08-2008). Consultado el 04-03-2010.
+16. «x264.git/common/x86/dct-32.asm». git.videolan.org (29-09-2010). Consultado el 29-09-2010.
+17. «68K Programming in Fargo II». Consultado el 03-07-2008.
+18. Hyde, Randall (30-09-1996). «Foreword ("Why would anyone learn this stuff?"), op. cit.». Consultado el 05-03-2010.
+19. «256bytes demos archives». Consultado el 03-07-2008.
+20. Randall Hyde. «Which Assembler is the Best?». Consultado el 19-10-2007.
+21. "vid". «FASMLIB: Features». Consultado el 19-10-2007.
+22. Principles of Computer Architecture (POCA) – ARCTools computadora virtual disponible para descarga y ejecución del código, acceso el 24 de agosto de 2005
+23. Murdocca, Miles J. y Heuring, Vincent P.:Principles of Computer Architecture (2000), Prentice Hall, ISBN 0-201-43664-7
+
+Lectura adicional
+- Dominic Sweetman: See MIPS Run. Morgan Kaufmann Publishers, 1999. ISBN 1-55860-410-3
+- Robert Britton: MIPS Assembly Language Programming. Prentice Hall, 2003. ISBN 0-13-142044-5
+- John Waldron: Introduction to RISC Assembly Language Programming. Addison Wesley, 1998. ISBN 0-201-39828-1
+- ASM Community Book "An online book full of helpful ASM info, tutorials and code examples" by the ASM Community
+- Jonathan Bartlett: Programming from the Ground Up. Bartlett Publishing, 2004. ISBN 0-9752838-4-7
+- Also available online as PDF
+- Paul Carter: PC Assembly Language. Free ebook, 2001.
+- Website
+- Jeff Duntemann: Assembly Language Step-by-Step. Wiley, 2000. ISBN 0-471-37523-3
+- Randall Hyde: The Art of Assembly Language. No Starch Press, 2003. ISBN 1-886411-97-2
+- Draft versions available online as PDF and HTML
+- Peter Norton, John Socha, Peter Norton's Assembly Language Book for the IBM PC, Brady Books, NY: 1986.
+- Michael Singer, PDP-11. Assembler Language Programming and Machine Organization, John Wiley & Sons, NY: 1980.

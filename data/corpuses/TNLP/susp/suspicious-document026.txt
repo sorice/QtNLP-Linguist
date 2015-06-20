@@ -1,0 +1,9 @@
+FSQL
+
+FSQL son las siglas de Fuzzy Structured Query Language, o Fuzzy SQL, es decir, lenguaje SQL difuso. Es una extensión del lenguaje SQL que permite el tratamiento de bases de datos relacionales difusas, usando la lógica difusa creada por Lofti A. Zadeh.
+
+Básicamente consiste en añadir al lenguaje SQL un conjunto de comparadores difusos tales como igual difuso o parecido, posiblemente mayor, posiblemente menor, necesariamente mayor... en los que usa la teoría de la posibilidad y necesidad.
+
+Además, FSQL también permite definir etiquetas lingüísticas (como frío, calor...) que puedan emplearse en las consultas o demás sentencias. Se puede establecer un umbral difuso para que los elementos considerados sean aquellos que superen ese grado difuso de cumplimiento. El uso de cuantificadores difusos también resulta útil en FSQL pues permite efectuar consultas usando expresiones como casi todos, la minoría, aproximadamente 6, etc.
+
+Inicialmente descrito por el Dr. J.M. Medina de la Universidad de Granada (España), ha sido más ampliamente definido e implementado por el Dr. J. Galindo de la Universidad de Málaga (España). En los enlaces que se muestran al final pueden verse algunas referencias bibliográficas y electrónicas relacionadas.

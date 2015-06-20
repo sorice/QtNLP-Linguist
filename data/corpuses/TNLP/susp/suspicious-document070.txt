@@ -1,0 +1,64 @@
+Tabla (base de datos)
+
+Tabla en las bases de datos, no se al tipo de modelado de datos, donde se guardan los datos recogidos por un programa. Su estructura general se asemeja a la vista general de un programa de hoja de cálculo.
+
+Una tabla es utilizada para organizar y presentar información. Las tablas se componen de filas y columnas de celdas que se pueden rellenar con textos y gráficos Las tablas se componen de dos estructuras:
+- Registro: es cada una de las filas en que se divide la tabla. Cada registro contiene datos de los mismos tipos que los demás registros. Ejemplo: en una tabla de nombres y direcciones, cada fila contendrá un nombre y una dirección.
+- Campo: es cada una de las columnas que forman la tabla. Contienen datos de tipo diferente a los de otros campos. En el ejemplo anterior, un campo contendrá un tipo de datos único, como una dirección, o un número de teléfono, un nombre, etc.
+
+A los campos se les puede asignar, además, propiedades especiales que afectan a los registros insertados. El campo puede ser definido como índice o autoincrementable, lo cual permite que los datos de ese campo cambien solos o sean el principal a la hora de ordenar los datos contenidos.
+
+Cada tabla creada debe tener un nombre único en la Base de Datos, haciéndola accesible mediante su nombre o su seudónimo (Alias) (dependiendo del tipo de base de datos elegida) La estructura de las tablas viene dado por la forma de un archivo plano, los cuales en un inicio se componían de un modo similar.
+
+Tablas:
+
+Son los objetos principales de bases de datos que se utilizan para guardar datos.
+
+Elemento disponible en el lenguaje HTML para la creación de recuadros rectangulares que pueden o no estar anidados y pueden o no contener celdas(recuadros más pequeños dentro de una tabla, pero que no se consideran tablas). Las tablas se utilizan para organizar, posicionar o dar mejor formato a los textos y gráficos en una página web.
+
+Pueden crearse gráficamente a través de un programa desarrollador de páginas web o manejando los tags correspondientes del lenguaje.
+
+Tipos de Tablas
+
+Además de la función estándar de las tablas básicas definidas por el usuario, SQL Server proporciona los siguientes tipos de tabla, que permiten llevar a cabo objetivos especiales en una base de datos:que se utiliza para acomodar los datos.
+
+Tablas con particiones
+
+Las tablas con particiones son tablas cuyos datos se han dividido horizontalmente entre unidades que pueden repartirse por más de un grupo de archivos de una base de datos. Las particiones facilitan la administración de las tablas y los índices grandes porque permiten obtener acceso y administrar subconjuntos de datos con rapidez y eficacia al mismo tiempo que mantienen la integridad del conjunto. Las operaciones como, por ejemplo, la carga de datos de un sistema OLTP a un sistema OLAP, pueden realizarse en cuestión de segundos en lugar de minutos u horas en otras versiones. Las operaciones de mantenimiento que se realizan en los subconjuntos de datos también se realizan de forma más eficaz porque sólo afectan a los datos necesarios en lugar de a toda la tabla.
+
+Tiene sentido crear una tabla con particiones si la tabla es muy grande o se espera que crezca mucho, y si alguna de las dos condiciones siguientes es verdadera:
+
+La tabla contiene, o se espera que contenga, muchos datos que se utilizan de manera diferente. Las consultas o las actualizaciones de la tabla no se realizan como se esperaba o los costos de mantenimiento son superiores a los períodos de mantenimiento predefinidos. Las tablas con particiones admiten todas las propiedades y características asociadas con el diseño y consulta de tablas estándar, incluidas las restricciones, los valores predeterminados, los valores de identidad y marca de tiempo, los desencadenadores y los índices. Por lo tanto, si desea implementar una vista con particiones que sea local respecto a un servidor, debe implementar una tabla con particiones. Para obtener información para comprender, diseñar e implementar tablas con particiones, vea Tablas e índices con particiones.
+
+Tablas temporales
+
+Hay dos tipos de tablas temporales: locales y globales. Las tablas temporales locales son visibles sólo para sus creadores durante la misma conexión a una instancia de SQL Server como cuando se crearon o cuando se hizo referencia a ellas por primera vez. Las tablas temporales locales se eliminan cuando el usuario se desconecta de la instancia de SQL Server. Las tablas temporales globales están visibles para cualquier usuario y conexión una vez creadas, y se eliminan cuando todos los usuarios que hacen referencia a la tabla se desconectan de la instancia de SQL Server.
+
+Para obtener más información acerca de las tablas temporales, vea Conceptos básicos para crear y modificar tablas.
+
+Tablas del sistema
+
+SQL Server almacena los datos que definen la configuración del servidor y de todas sus tablas en un conjunto de tablas especial, conocido como tablas del sistema. Los usuarios no pueden consultar ni actualizar directamente las tablas del sistema si no es a través de una conexión de administrador dedicada (DAC) que sólo debería utilizarse bajo la supervisión de los servicios de atención al cliente de Microsoft. Para obtener más información, vea Usar una conexión de administrador dedicada. Las tablas de sistema se cambian normalmente en cada versión nueva de SQL Server. Puede que las aplicaciones que hacen referencia directamente a las tablas del sistema tengan que escribirse de nuevo para poder actualizarlas a una versión nueva de SQL Server con una versión diferente de las tablas de sistema. La información de las tablas del sistema está disponible a través de las vistas de catálogo. Para obtener más información, vea Tablas del sistema (Transact-SQL).
+
+Con las tablas anchas, puede crear esquemas flexibles dentro de una aplicación. Puede agregar o quitar columnas siempre que lo desee. Tenga presente que el uso de tablas anchas tiene consideraciones de rendimiento únicas, como e13eunos mayores requisitos de memoria en tiempo de ejecución y en tiempo de compilación. Para obtener más información, vea Consideraciones de rendimiento para las tablas anchas.
+
+Tablas persistentes
+
+Son aquellas que permiten que los registros sean eliminados o borrados manualmente y tenemos de tres tipos:
+- Base.- Es en donde se encuentra toda la información de todos los registros sin que se haga ninguna validación adicional.
+- Vistas.- Es una vista o relación que se hace en referencia a una fila o columna específica.
+- Instantáneos.- Son aquellos registros que se los puede ver de manera inmediata con solo una referencia.
+
+Tablas de datos
+
+Tabla en las bases de datos, se refiere al tipo de modelado de datos, donde se guardan los datos recogidos por un programa. Su estructura general se asemeja a la vista general de un programa de Hoja de cálculo.
+
+Las tablas se componen de dos estructuras:
+
+Campo: Corresponde al nombre de la columna. Debe ser único y además de tener un tipo de dato asociado. Registro: Corresponde a cada fila que compone la tabla. Allí se componen los datos y los registros. Eventualmente pueden ser nulos en su almacenamiento. En la definición de cada campo, debe existir un nombre único, con su tipo de dato correspondiente. Esto es útil a la hora de manejar varios campos en la tabla, ya que cada nombre de campo debe ser distinto entre sí.
+
+A los campos se les puede asignar, además, propiedades especiales que afectan a los registros insertados. El campo puede ser definido como índice o autoincrementable, lo cual permite que los datos de ese campo cambien solos o sean el principal indicar a la hora de ordenar los datos contenidos.
+
+Cada tabla creada debe tener un nombre único en la cada base de datos, haciéndola accesible mediante su nombre o su seudónimo (Alias) (dependiendo del tipo de base de datos elegida).
+
+La estructura de las tablas viene dado por la forma de un archivo plano, los cuales en un inicio se componían de un modo similar.

@@ -1,17 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- <!DOCTYPE report SYSTEM "TNLP.dtd"> -->
-<corpus name="TNLP" version="0.2" lang="es" total_cases="1" total_true_cases="1" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="abel,uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns = "http://tnlp.github.com">
+<!-- <!DOCTYPE report SYSTEM"TNLP.dtd"> -->
+<corpus name="TNLP" version=".2" lang="es" total_cases="15" total_true_cases="15" total_annotations="2" total_true_annotations="1" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel,yanisbet" country="Cuba" creation_date="Tue May 26 09:27:00 2015" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
    <cases>
       <group NLP_problem_type="similarity" text_extension="paragraph">
-         <case id="6" description="" plag_type="paraphrastic" annotator_summary="magna aliquyam erat" automatic_summary="" original_corpus="PAN-PC-12" original_corpus_id="unknown" generated_by="human" generator_name="abel">
-            <susp_snippet doc="susp/susp-doc00539" offset="966" length="416" sentences_count="5"/>
-            <src_snippet doc="src/src-doc01529" offset="827" length="443" sentences_count="4"/>
-            <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/02/14">
-               <phenomenon type="lex_same_polarity" projection="local"/>
-               <susp_chunk offset="30" length="47"/>
-               <src_chunk offset="14" length="30"/>
+         <case id="1" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel"> 
+            <susp_snippet doc="susp/suspicious-document257" offset="777" length="78"/>
+            <src_snippet doc="src/source-document283" offset="3228" length="77"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="lex_opposite_polarity" projection="local"/>
+               <susp_chunk offset="28" length="21"/>
+               <src_chunk offset="0" length="20"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="lex_opposite_polarity" projection="local"/>
+               <susp_chunk offset="59" length="19"/>
+               <src_chunk offset="62" length="15"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="39" length="19"/><src_chunk offset="13" length="10"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14">
+               <phenomenon type="opposite-polarity" projection="local"/>
+               <susp_chunk offset="35" length="3"/>
+               <src_chunk offset="7" length="5"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14"><phenomenon type="identical" projection="local"/><susp_chunk offset="0" length="27"/><src_chunk offset="24" length="28"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14"><phenomenon type="opposite-polarity" projection="local"/><susp_chunk offset="64" length="5"/><src_chunk offset="65" length="3"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14"><phenomenon type="derivational changes" projection="local"/><susp_chunk offset="59" length="4"/><src_chunk offset="62" length="2"/>
+            </annotation>
+            <annotation id="8" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-14"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="59" length="4"/><src_chunk offset="53" length="8"/>
+            </annotation>
+         </case>
+         <case id="2" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document218" offset="1418" length="123"/>
+            <src_snippet doc="src/source-document225" offset="435" length="131"/>
+            <annotation id="1" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="73" length="7"/><src_chunk offset="88" length="9"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="109" length="13"/><src_chunk offset="101" length="20"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="0" length="11"/><src_chunk offset="0" length="18"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="19" length="17"/><src_chunk offset="29" length="8"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="12" length="6"/><src_chunk offset="19" length="9"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="40" length="30"/><src_chunk offset="47" length="18"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="85" length="23"/><src_chunk offset="66" length="19"/>
+            </annotation>
+         </case>
+         <case id="3" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document273" offset="8404" length="412"/>
+            <src_snippet doc="src/source-document283" offset="3465" length="174"/>
+            <annotation id="1" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="coordination changes" projection="local"/><susp_chunk offset="0" length="411"/><src_chunk offset="0" length="173"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="318" length="35"/><src_chunk offset="106" length="67"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="329" length="82"/><src_chunk offset="149" length="24"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="6" length="29"/><src_chunk offset="3" length="29"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="322" length="31"/><src_chunk offset="142" length="32"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="36" length="6"/><src_chunk offset="47" length="13"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="same-polarity" projection="local"/><susp_chunk offset="43" length="7"/><src_chunk offset="61" length="8"/>
+            </annotation>
+            <annotation id="8" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="51" length="33"/><src_chunk offset="70" length="9"/>
+            </annotation>
+            <annotation id="9" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="10" length="25"/><src_chunk offset="7" length="39"/>
+            </annotation>
+            <annotation id="10" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="304" length="13"/><src_chunk offset="94" length="11"/>
+            </annotation>
+         </case>
+         <case id="4" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document005" offset="163" length="164"/>
+            <src_snippet doc="src/source-document041" offset="1845" length="138"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="change-of-order" projection="local"/><susp_chunk offset="17" length="147"/><src_chunk offset="0" length="138"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="0" length="31"/><src_chunk offset="0" length="14"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="32" length="18"/><src_chunk offset="96" length="18"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="coordination changes" projection="local"/><susp_chunk offset="51" length="3"/><src_chunk offset="115" length="8"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="79" length="17"/><src_chunk offset="25" length="3"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="97" length="67"/><src_chunk offset="29" length="66"/>
+            </annotation>
+         </case>
+         <case id="5" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document215" offset="321" length="400"/>
+            <src_snippet doc="src/source-document225" offset="705" length="380"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="order" projection="local"/>
+               <susp_chunk offset="316" length="218"/>
+               <src_chunk offset="834" length="204"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="328" length="15"/>
+               <src_chunk offset="920" length="22"/>
+            </annotation>
+            <annotation id="3" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="order" projection="local"/>
+               <susp_chunk offset="457" length="24"/>
+               <src_chunk offset="968" length="17"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="non-paraphrase" projection="local"/><susp_chunk offset="0" length="118"/><src_chunk offset="0" length="109"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="215" length="104"/><src_chunk offset="110" length="94"/>
+            </annotation>
+         </case>
+         <case id="6" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document002" offset="3265" length="169"/>
+            <src_snippet doc="src/source-document035" offset="4687" length="176"/>
+            <annotation id="1" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="146" length="22"/><src_chunk offset="0" length="23"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="entailment" projection="local"/><susp_chunk offset="0" length="13"/><src_chunk offset="24" length="14"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="14" length="85"/><src_chunk offset="61" length="85"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="118" length="16"/><src_chunk offset="39" length="16"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="semantics" projection="local"/><susp_chunk offset="135" length="10"/><src_chunk offset="56" length="4"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="identical" projection="local"/><susp_chunk offset="100" length="17"/><src_chunk offset="159" length="17"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-16"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="100" length="17"/><src_chunk offset="147" length="28"/>
+            </annotation>
+         </case>
+         <case id="7" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document041" offset="2003" length="145"/>
+            <src_snippet doc="src/source-document068" offset="230" length="225"/>
+            <annotation id="1" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="0" length="21"/><src_chunk offset="40" length="11"/>
+            </annotation>
+            <annotation id="2" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="inflectional changes" projection="global"/><susp_chunk offset="22" length="7"/><src_chunk offset="80" length="8"/>
+            </annotation>
+            <annotation id="3" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="semantics" projection="local"/><susp_chunk offset="30" length="9"/><src_chunk offset="89" length="8"/>
+            </annotation>
+            <annotation id="4" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="semantics" projection="local"/><susp_chunk offset="30" length="44"/><src_chunk offset="89" length="18"/>
+            </annotation>
+            <annotation id="5" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="same-polarity substitutions" projection="local"/><susp_chunk offset="75" length="10"/><src_chunk offset="192" length="8"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="identical" projection="local"/><susp_chunk offset="86" length="21"/><src_chunk offset="54" length="21"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="0" length="2"/><src_chunk offset="0" length="43"/>
+            </annotation>
+            <annotation id="8" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="semantics" projection="local"/><susp_chunk offset="108" length="37"/><src_chunk offset="192" length="32"/>
+            </annotation>
+         </case>
+         <case id="8" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document002" offset="18" length="289"/>
+            <src_snippet doc="src/source-document003" offset="397" length="163"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="synthetic/analytic" projection="local"/><susp_chunk offset="0" length="33"/><src_chunk offset="0" length="12"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="34" length="47"/><src_chunk offset="13" length="19"/>
+            </annotation>
+            <annotation id="3" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="identical" projection="local"/><susp_chunk offset="82" length="25"/><src_chunk offset="33" length="25"/>
+            </annotation>
+            <annotation id="4" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="same-polarity substitutions" projection="local"/><susp_chunk offset="108" length="9"/><src_chunk offset="59" length="9"/>
+            </annotation>
+            <annotation id="5" author="yanisbet" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="118" length="54"/><src_chunk offset="69" length="24"/>
+            </annotation>
+            <annotation id="6" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="addition/deletion" projection="local"/><susp_chunk offset="118" length="101"/><src_chunk offset="69" length="24"/>
+            </annotation>
+            <annotation id="7" author="abelm" is_paraphrase="true" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-18"><phenomenon type="identical" projection="local"/><susp_chunk offset="220" length="68"/><src_chunk offset="94" length="68"/>
+            </annotation>
+         </case>
+         <case id="9" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document007" offset="272" length="132"/>
+            <src_snippet doc="src/source-document009" offset="826" length="162"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="addition/deletion" projection="global"/>
+               <susp_chunk offset="277" length="30"/>
+               <src_chunk offset="838" length="29"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="identical" projection="local"/>
+               <susp_chunk offset="277" length="132"/>
+               <src_chunk offset="868" length="132"/>
+            </annotation>
+         </case>
+         <case id="10" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document016" offset="352" length="325"/>
+            <src_snippet doc="src/source-document017" offset="16" length="319"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="order" projection="local"/>
+               <susp_chunk offset="355" length="171"/>
+               <src_chunk offset="18" length="165"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="355" length="9"/>
+               <src_chunk offset="63" length="8"/>
+            </annotation>
+         </case>
+         <case id="11" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document161" offset="6357" length="386"/>
+            <src_snippet doc="src/source-document172" offset="1462" length="441"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="order" projection="local"/>
+               <susp_chunk offset="6484" length="258"/>
+               <src_chunk offset="1473" length="272"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="6501" length="13"/>
+               <src_chunk offset="1631" length="11"/>
+            </annotation>
+            <annotation id="3" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="6515" length="21"/>
+               <src_chunk offset="1649" length="18"/>
+            </annotation>
+         </case>
+         <case id="12" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document220" offset="2221" length="248"/>
+            <src_snippet doc="src/source-document221" offset="1291" length="276"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="2266" length="18"/>
+               <src_chunk offset="1310" length="9"/>
+            </annotation>
+          <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="addition/deletion" projection="local"/>
+               <susp_chunk offset="2270" length="34"/>
+               <src_chunk offset="1382" length="29"/>
+            </annotation>
+          <annotation id="3" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="2367" length="9"/>
+               <src_chunk offset="1432" length="15"/>
+            </annotation>
+         </case>
+         <case id="13" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document240" offset="1438" length="295"/>
+            <src_snippet doc="src/source-document245" offset="24" length="321"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="1480" length="18"/>
+               <src_chunk offset="52" length="13"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="1480" length="18"/>
+               <src_chunk offset="52" length="13"/>
+            </annotation>
+            <annotation id="3" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="1551" length="15"/>
+               <src_chunk offset="130" length="10"/>
+            </annotation>
+            <annotation id="4" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="1697" length="11"/>
+               <src_chunk offset="278" length="28"/>
+            </annotation>
+         </case>
+         <case id="14" description="" plag_type="paraphrastic" annotator_summary="" automatic_summary="" original_corpus="TNLP" original_corpus_id="unknown" generated_by="human" generator_name="yanisbel">
+            <susp_snippet doc="susp/suspicious-document213" offset="881" length="277"/>
+            <src_snippet doc="src/source-document216" offset="677" length="302"/>
+            <annotation id="1" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="inflectional" projection="local"/>
+               <susp_chunk offset="896" length="21"/>
+               <src_chunk offset="705" length="41"/>
+            </annotation>
+            <annotation id="2" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="Lex_same_polarity" projection="local"/>
+               <susp_chunk offset="929" length="56"/>
+               <src_chunk offset="758" length="24"/>
+            </annotation>
+            <annotation id="3" author="yanisbet" is_paraphrase="True" validated_by_human_beings="False" recognized_by_algorithms="False" algorithms_names="abel-ngram1,leonel-svm5" annotation_date="2015/05/26">
+               <phenomenon type="addition/deletion" projection="local"/>
+               <susp_chunk offset="929" length="15"/>
+               <src_chunk offset="689" length="16"/>
             </annotation>
          </case>
       </group>
-   </cases>
+   </cases> 
 </corpus>

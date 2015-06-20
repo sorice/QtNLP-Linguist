@@ -1,0 +1,61 @@
+Base de datos multidimensional
+
+Las bases de datos multidimensionales se utilizan principalmente para crear aplicaciones OLAP y pueden verse como bases de datos de una sola tabla, su peculiaridad es que por cada dimensión tienen un campo (o columna), y otro campo por cada métrica o hecho, es decir estas tablas almacenan registros cuyos campos son de la forma:
+{(d_1, d_2, d_3, ..., f_1, f_2, f_3, ...)}
+
+Donde los campos '{d_i}' hacen referencia a las dimensiones de la tabla, y los campos '{f_i}' a las métricas o hechos que se quiere almacenar, estudiar o analizar.
+
+Bases de datos multidimensionales vs. Cubos OLAP
+
+Cada una de estas tablas puede asimilarse a un hipercubo o -más concretamente si de herramientas OLAP se trata- a un cubo OLAP, donde las dimensiones del mismo se corresponden los campos de dimensiones de la tabla (campos '{d_i...}'), y el valor almacenado en cada celda del cubo equivale a la métrica o métricas (campos '{f_i...}') almacenadas en la tabla.
+Implementación
+
+Lo más importante a tener en cuenta para implementar esta estructura de datos es que la tabla contiene todas las n-tuplas, con los valores de las dimensiones, o índice del cubo, y los valores de las métricas previamente calculados para el cruce de valores del índice en cuestión.
+Ejemplo
+
+Dada la siguiente especificación para una tabla (o hipercubo) en una base de datos multidimensional:
+
+ Dimensión (Tiempo, Productos)
+ Jerarquía (Año->Semestre->Mes->Semana),(Categoría->Línea->Marca) 
+ Elementos (2006, 2007, ..., S1-06, ..., Ene-06, ..., 200625....),
+           (Todos, Máquinas, Refacciones, Máquinas caras, Máquinas Baratas, Máquina 1,...)
+ Hechos    (Ventas, Inventario, Defectos, Devoluciones)
+ Métricas  (PD:=Devoluciones/Ventas, %Defectos)
+
+la tabla resultante podría tener la forma siguiente:
+
+ Tabla 
+ Tiempo  Productos  Ventas  Inventario  Defectos  Devoluciones      P/D  %Defectos
+ 2006    Todos        1000         200        50            10    1/100         5%
+ Ene06   Máquina 1      10         100        10            10    10/10       100%
+ ...
+
+Base de datos Multivaluada [1]
+
+Las bases de datos Multivaluadas (multivalue database) son un tipo especial de base de datos multidimensionales, también llamadas bases de datos PICK por el primer desarrollo que se realizó de este tipo, la aplicación "Pick operating system".
+Historia
+
+El modelo de datos multivaluado fue definido por Don Nelson a mediados de los 60, y en 1968 se realizó la primera implementación de un sistema de bases de datos multidimensional, este desarrollo se atribuye a Dick Pick (de ahí que también se utilice el término Base de datos Pick para este tipo de bases de datos).
+Concepto
+
+El modelo de datos más extendido es el modelo relacional, este modelo se basa en las leyes de la normalización de bases de datos; según estás normas, y concretamente, según la primera forma normal, un campo de una base de datos no puede contener valores múltiples. En una base de datos multivaluada no se aplica la regla de la primera forma normal, es decir, se permite que un campo pueda tener más de un valor almacenado.
+Ejemplo
+
+Supongamos una base de datos en la que queremos almacenar información de clientes; se supone que cada cliente puede tener más de un teléfono. En el modelo relacional habría que crear dos tablas o relaciones como estas:
+Tabla 'Cliente' ID Cliente 	Nombre 	Apellido
+123 	Rachel 	Ingram
+456 	James 	Wright
+789 	Maria 	Fernández
+
+Tabla 'Teléfono cliente' ID Cliente 	Teléfono
+123 	555-861-2025
+456 	555-403-1659
+456 	555-776-4100
+789 	555-808-9633
+
+En el modelo multivaluado la siguiente tabla (que no cumple la primera forma normal) es perfectamente válida:
+Tabla 'Cliente' ID Cliente 	Nombre 	Apellido 	Teléfono
+123 	Rachel 	Ingram 	555-861-2025
+456 	James 	Wright 	555-403-1659
+555-776-4100
+789 	Maria 	Fernández 	555-808-9633

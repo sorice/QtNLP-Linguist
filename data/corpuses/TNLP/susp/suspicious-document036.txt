@@ -1,0 +1,56 @@
+Microsoft SQL Server
+
+Microsoft SQL Server es un sistema para la gestión de bases de datos producido por Microsoft basado en el modelo relacional. Sus lenguajes para consultas son T-SQL y ANSI SQL. Microsoft SQL Server constituye la alternativa de Microsoft a otros potentes sistemas gestores de bases de datos como son Oracle, PostgreSQL o MySQL.
+
+Características de Microsoft SQL Server
+
+- Soporte de transacciones.
+- Soporta procedimientos almacenados.
+- Incluye también un entorno gráfico de administración, que permite el uso de comandos DDL y DML gráficamente.
+- Permite trabajar en modo cliente-servidor, donde la información y datos se alojan en el servidor y los terminales o clientes de la red sólo acceden a la información.
+- Además permite administrar información de otros servidores de datos.
+
+Historia de versiones 
+Versión 	Año 	Nombre de la versión 	Nombre clave
+1.0
+(OS/2) 	1989 	SQL Server 1-0 	SQL
+4.21
+(WinNT) 	1993 	SQL Server 4.21 	SEQUEL
+6.0 	1995 	SQL Server 6.0 	SQL95
+6.5 	1996 	SQL Server 6.5 	Hydra
+7.0 	1998 	SQL Server 7.0 	Sphinx
+- 	1999 	SQL Server 7.0
+OLAP Tools 	Plato
+8.0 	2000 	SQL Server 2000
+8.0 	2003 	SQL Server 2000
+64-bit Edition 	Liberty
+9.0 	2005 	SQL Server 2005 	Yukon
+10.0 	2008 	SQL Server 2008 	Katmai
+10.50 	2010 	SQL Server 2008 R2 	Kilimanjaro
+11.0 	2012 	SQL Server 2012 	Denali
+12.0 	2014 	SQL Server 2014 	SQL14 (antes Hekaton)
+
+Este sistema incluye una versión reducida, llamada MSDE con el mismo motor de base de datos pero orientado a proyectos más pequeños, que en sus versiones 2005 y 2008 pasa a ser el SQL Express Edition, que se distribuye en forma gratuita.
+
+Es común desarrollar completos proyectos complementando Microsoft SQL Server y Microsoft Access a través de los llamados ADP (Access Data Project). De esta forma se completa la base de datos (Microsoft SQL Server), con el entorno de desarrollo (VBA Access), a través de la implementación de aplicaciones de dos capas mediante el uso de formularios Windows.
+
+En el manejo de SQL mediante líneas de comando se utiliza el SQLCMD, osql, o PowerShell.
+
+Para el desarrollo de aplicaciones más complejas (tres o más capas), Microsoft SQL Server incluye interfaces de acceso para varias plataformas de desarrollo, entre ellas .NET, pero el servidor sólo está disponible para Sistemas Operativos.
+
+El tipo NUMERIC fue mejorado para ser usado como identificador de columna a partir de la versión 2008 R2.
+
+Programación
+
+T-SQL
+
+T-SQL (Transact-SQL) es el principal medio de interacción con el Servidor. Permite realizar las operaciones claves en SQL Server, incluyendo la creación y modificación de esquemas de la base de datos, la introducción y edición de los datos en la base de datos, así como la administración del servidor como tal. Esto se realiza mediante el envío de sentencias de T-SQL y declaraciones que son procesadas por el servidor y los resultados (o errores) regresan a la aplicación cliente.
+
+Cliente Nativo de SQL
+
+Cliente Nativo de SQL es la biblioteca de acceso a datos para los clientes de Microsoft SQL Server versión 2005 en adelante. Implementa nativamente soporte para las características de SQL Server, incluyendo la ejecución de la secuencia de datos tabular, soporte para bases de datos en espejo de SQL Server, soporte completo para todos los tipos de datos compatibles con SQL Server, conjuntos de operaciones asíncronas, las notificaciones de consulta, soporte para cifrado, así como recibir varios conjuntos de resultados en una sola sesión de base de datos. Cliente Nativo de SQL se utiliza como extensión de SQL Server plug-ins para otras tecnologías de acceso de datos, incluyendo ADO u OLE DB. Cliente Nativo de SQL puede también usarse directamente, pasando por alto las capas de acceso de datos.
+
+Desventajas
+- En versiones de 32 bits, SQL Server usa Address Windowing Extension (AWE) para hacer el direccionamiento por encima de 4 GB. Esto le impide usar la administración dinámica de memoria, y sólo le permite alojar un máximo de 64 GB de memoria compartida. Esta limitación es exclusiva de sistemas operativos 32 bits; en sistemas operativos 64 bits, la memoria máxima que se puede direccionar en Edición Estándar es 64 Gb y en Edición Enterprise 4Tb.
+- Microsoft SQL Server sólo maneja compresión de datos en la Edición Enterprise.
+- Microsoft SQL Server requiere de un sistema operativo Microsoft Windows, por lo que no puede instalarse, por ejemplo, en servidores Linux.

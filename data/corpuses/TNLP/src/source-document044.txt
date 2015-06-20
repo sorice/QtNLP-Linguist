@@ -1,0 +1,254 @@
+Normalización de bases de datos
+
+El proceso de normalización de bases de datos consiste en aplicar una serie de reglas a las relaciones obtenidas tras el paso del modelo entidad-relación al modelo relacional.
+
+Las bases de datos relacionales se normalizan para:
+- Evitar la redundancia de los datos.
+- Disminuir problemas de actualización de los datos en las tablas.
+- Proteger la integridad de los datos.
+
+En el modelo relacional es frecuente llamar tabla a una relación, aunque para que una tabla sea considerada como una relación tiene que cumplir con algunas restricciones:
+- Cada tabla debe tener su nombre único.
+- No puede haber dos filas iguales. No se permiten los duplicados.
+- Todos los datos en una columna deben ser del mismo tipo.
+
+Terminología relacional equivalente
+- Relación = tabla o archivo
+- Registro = registro, fila , renglón o tupla
+- Atributo = columna o campo
+- Clave = llave o código de identificación
+- Clave Candidata = superclave mínima
+- Clave Primaria = clave candidata elegida
+- Clave Ajena (o foránea) = clave externa o clave foránea
+- Clave Alternativa = clave secundaria
+- Dependencia Multivaluada = dependencia multivalor
+- RDBMS = Del inglés Relational Data Base Manager System que significa, Sistema Gestor de Bases de Datos Relacionales.
+- 1FN = Significa, Primera Forma Normal o 1NF del inglés First Normal Form.
+
+Los términos Relación, Tupla y Atributo derivan del álgebra y cálculo relacional, que constituyen la fuente teórica del modelo de base de datos relacional.
+
+Todo atributo en una tabla tiene un dominio, el cual representa el conjunto de valores que el mismo puede tomar. Una instancia de una tabla puede verse entonces como un subconjunto del producto cartesiano entre los dominios de los atributos. Sin embargo, suele haber algunas diferencias con la analogía matemática, ya que algunos RDBMS permiten filas duplicadas, entre otras cosas. Finalmente, una tupla puede razonarse matemáticamente como un elemento del producto cartesiano entre los dominios.
+
+Dependencia
+
+Dependencia funcional
+
+Una dependencia funcional es una conexión entre uno o más atributos. Por ejemplo si se conoce el valor de DNI tiene una conexión con Apellido o Nombre .
+
+Las dependencias funcionales del sistema se escriben utilizando una flecha, de la siguiente manera:
+
+FechaDeNacimiento \rightarrow Edad
+
+De la normalización (lógica) a la implementación (física o real) puede ser sugerible tener éstas dependencias funcionales para lograr la eficiencia en las tablas.
+
+Propiedades de la dependencia funcional
+
+Existen tres axiomas de Armstrong:
+
+Dependencia funcional reflexiva
+
+Si "y" está incluido en "x" entonces x \rightarrow y
+
+A partir de cualquier atributo o conjunto de atributos siempre puede deducirse él mismo. Si la dirección o el nombre de una persona están incluidos en el DNI, entonces con el DNI podemos determinar la dirección o su nombre.
+
+Dependencia funcional Aumentativa
+
+x \rightarrow y entonces xz \rightarrow yz
+
+DNI \rightarrow nombre
+
+DNI,dirección \rightarrow nombre,dirección
+
+Si con el DNI se determina el nombre de una persona, entonces con el DNI más la dirección también se determina el nombre y su dirección.
+
+Dependencia funcional transitiva.
+
+Sean X, Y, Z tres atributos (o grupos de atributos) de la misma entidad. Si Y depende funcionalmente de X y Z de Y, pero X no depende funcionalmente de Y, se dice entonces que Z depende transitivamente de X. Simbólicamente sería:
+
+X \rightarrow Y \rightarrow Z entonces X \rightarrow Z
+
+FechaDeNacimiento \rightarrow Edad
+
+Edad \rightarrow Conducir
+
+FechaDeNacimiento \rightarrow Edad \rightarrow Conducir
+
+Entonces tenemos que FechaDeNacimiento determina a Edad y la Edad determina a Conducir, indirectamente podemos saber a través de FechaDeNacimiento a Conducir (En muchos países, una persona necesita ser mayor de cierta edad para poder conducir un automóvil, por eso se utiliza este ejemplo).
+
+"C será un dato simple (dato no primario), B,será un otro dato simple (dato no primario), A, es la llave primaria (PK). Decimos que C dependera de B y B dependera funcionalmente de A."
+
+Propiedades deducidas
+
+Unión
+
+x \rightarrow y y x \rightarrow z entonces x \rightarrow yz
+
+Pseudo-transitiva
+
+x \rightarrow y y wy \rightarrow z entonces wx \rightarrow z
+
+Descomposición
+
+x \rightarrow y y z está incluido en y entonces x \rightarrow z
+
+Claves
+
+Una clave primaria es aquella columna (o conjunto de columnas) que identifica únicamente a una fila. La clave primaria es un identificador que va a ser siempre único para cada fila. Se acostumbra a poner la clave primaria como la primera columna de la tabla pero es más una conveniencia que una obligación. Muchas veces la clave primaria es numérica auto-incrementada, es decir, generada mediante una secuencia numérica incrementada automáticamente cada vez que se inserta una fila.
+
+En una tabla puede que tengamos más de una columna que puede ser clave primaria por sí misma. En ese caso se puede escoger una para ser la clave primaria y las demás claves serán claves candidatas.
+
+Una clave ajena (foreign key o clave foránea) es aquella columna que existiendo como dependiente en una tabla, es a su vez clave primaria en otra tabla.
+
+Una clave alternativa es aquella clave candidata que no ha sido seleccionada como clave primaria, pero que también puede identificar de forma única a una fila dentro de una tabla. Ejemplo: Si en una tabla clientes definimos el número de documento (id_cliente) como clave primaria, el número de seguro social de ese cliente podría ser una clave alternativa. En este caso no se usó como clave primaria porque es posible que no se conozca ese dato en todos los clientes.
+
+Una clave compuesta es una clave que está compuesta por más de una columna.
+
+La visualización de todas las posibles claves candidatas en una tabla ayudan a su optimización. Por ejemplo, en una tabla PERSONA podemos identificar como claves su DNI, o el conjunto de su nombre, apellidos, fecha de nacimiento y dirección. Podemos usar cualquiera de las dos opciones o incluso todas a la vez como clave primaria, pero es mejor en la mayoría de sistemas la elección del menor número de columnas como clave primaria.
+
+Formas normales
+
+Las formas normales son aplicadas a las tablas de una base de datos. Decir que una base de datos está en la forma normal N es decir que todas sus tablas están en la forma normal N.
+
+En general, las primeras tres formas normales son suficientes para cubrir las necesidades de la mayoría de las bases de datos. El creador de estas 3 primeras formas normales (o reglas) fue Edgar F. Codd.1
+
+Primera Forma Normal (1FN)
+
+Una tabla está en Primera Forma Normal si:
+- Todos los atributos son atómicos. Un atributo es atómico si los elementos del dominio son indivisibles, mínimos.
+- La tabla contiene una clave primaria única.
+- La clave primaria no contiene atributos nulos.
+- No debe existir variación en el número de columnas.
+- Los Campos no clave deben identificarse por la clave (Dependencia Funcional)
+- Debe Existir una independencia del orden tanto de las filas como de las columnas, es decir, si los datos cambian de orden no deben cambiar sus significados
+- Una tabla no puede tener múltiples valores en cada columna.
+- Los datos son atómicos (a cada valor de X le pertenece un valor de Y y viceversa).
+
+Esta forma normal elimina los valores repetidos dentro de una Base de Datos.
+
+Segunda Forma Normal (2FN)
+
+Dependencia Funcional. Una relación está en 2FN si está en 1FN y si los atributos que no forman parte de ninguna clave dependen de forma completa de la clave principal. Es decir que no existen dependencias parciales. (Todos los atributos que no son clave principal deben depender únicamente de la clave principal).
+
+En otras palabras podríamos decir que la segunda forma normal está basada en el concepto de dependencia completamente funcional. Una dependencia funcional x \rightarrow y es completamente funcional si al eliminar los atributos A de X significa que la dependencia no es mantenida, esto es que A \in X, X - \{A\} \nrightarrow Y. Una dependencia funcional x \rightarrow y es una dependencia parcial si hay algunos atributos A \in X que pueden ser eliminados de X y la dependencia todavía se mantiene, esto es A \in X, X - \{A\} \rightarrow Y.
+
+Por ejemplo {DNI, ID_PROYECTO} \rightarrow HORAS_TRABAJO (con el DNI de un empleado y el ID de un proyecto sabemos cuántas horas de trabajo por semana trabaja un empleado en dicho proyecto) es completamente funcional dado que ni DNI \rightarrow HORAS_TRABAJO ni ID_PROYECTO \rightarrow HORAS_TRABAJO mantienen la dependencia. Sin embargo {DNI, ID_PROYECTO} \rightarrow NOMBRE_EMPLEADO es parcialmente dependiente dado que DNI \rightarrow NOMBRE_EMPLEADO mantiene la dependencia.
+
+Tercera Forma Normal (3FN)
+
+La tabla se encuentra en 3FN si es 2FN y si no existe ninguna dependencia funcional transitiva entre los atributos que no son clave.
+
+Un ejemplo de este concepto sería que, una dependencia funcional X->Y en un esquema de relación R es una dependencia transitiva si hay un conjunto de atributos Z que no es un subconjunto de alguna clave de R, donde se mantiene X->Z y Z->Y.
+
+Por ejemplo, la dependencia SSN->DMGRSSN es una dependencia transitiva en EMP_DEPT de la siguiente figura. Decimos que la dependencia de DMGRSSN el atributo clave SSN es transitiva vía DNUMBER porque las dependencias SSN→DNUMBER y DNUMBER→DMGRSSN son mantenidas, y DNUMBER no es un subconjunto de la clave de EMP_DEPT. Intuitivamente, podemos ver que la dependencia de DMGRSSN sobre DNUMBER es indeseable en EMP_DEPT dado que DNUMBER no es una clave de EMP_DEPT.
+
+Formalmente, un esquema de relación R está en 3 Forma Normal Elmasri-Navathe,2 si para toda dependencia funcional X \rightarrow A, se cumple al menos una de las siguientes condiciones:
+1. X es superllave o clave.
+2. A es atributo primo de R; esto es, si es miembro de alguna clave en R.
+
+Además el esquema debe cumplir necesariamente, con las condiciones de segunda forma normal.
+
+Forma normal de Boyce-Codd (FNBC)
+
+La tabla se encuentra en FNBC si cada determinante, atributo que determina completamente a otro, es clave candidata. Deberá registrarse de forma anillada ante la presencia de un intervalo seguido de una formalización perpetua, es decir las variantes creadas, en una tabla no se llegaran a mostrar, si las ya planificadas, dejan de existir.
+
+Formalmente, un esquema de relación R está en FNBC, si y sólo si, para toda dependencia funcional X \rightarrow A válida en R, se cumple que
+
+    X es superllave o clave.
+
+De esta forma, todo esquema R que cumple FNBC, está además en 3FN; sin embargo, no todo esquema R que cumple con 3FN, está en FNBC.
+
+Cuarta Forma Normal (4FN)
+
+Una tabla se encuentra en 4FN si, y sólo si, para cada una de sus dependencias múltiples no funcionales X->->Y, siendo X una super-clave que, X es o una clave candidata o un conjunto de claves primarias.
+
+Quinta Forma Normal (5FN)
+
+Una tabla se encuentra en 5FN si:
+- La tabla está en 4FN
+- No existen relaciones de dependencias no triviales que no siguen los criterios de las claves. Una tabla que se encuentra en la 4FN se dice que está en la 5FN si, y sólo si, cada relación de dependencia se encuentra definida por claves candidatas.
+
+Reglas de Codd
+
+Codd se percató de que existían bases de datos en el mercado las cuales decían ser relacionales, pero lo único que hacían era guardar la información en las tablas, sin estar estas tablas literalmente normalizadas; entonces éste publicó 12 reglas que un verdadero sistema relacional debería tener, en la práctica algunas de ellas son difíciles de realizar. Un sistema podrá considerarse "más relacional" cuanto más siga estas reglas.
+
+Regla No. 1 - La Regla de la información
+
+Toda la información en un RDBMS está explícitamente representada de una sola manera por valores en una tabla.
+
+Cualquier cosa que no exista en una tabla no existe del todo. Toda la información, incluyendo nombres de tablas, nombres de vistas, nombres de columnas, y los datos de las columnas deben estar almacenados en tablas dentro de las bases de datos. Las tablas que contienen tal información constituyen el Diccionario de Datos. Esto significa que todo tiene que estar almacenado en las tablas.
+
+Toda la información en una base de datos relacional se representa explícitamente en el nivel lógico exactamente de una manera: con valores en tablas. Por tanto los metadatos (diccionario, catálogo) se representan exactamente igual que los datos de usuario. Y puede usarse el mismo lenguaje (ej. SQL) para acceder a los datos y a los metadatos (regla 4)
+
+Regla No. 2 - La regla del acceso garantizado
+
+Cada ítem de datos debe ser lógicamente accesible al ejecutar una búsqueda que combine el nombre de la tabla, su clave primaria, y el nombre de la columna.
+
+Esto significa que dado un nombre de tabla, dado el valor de la clave primaria, y dado el nombre de la columna requerida, deberá encontrarse uno y solamente un valor. Por esta razón la definición de claves primarias para todas las tablas es prácticamente obligatoria.
+
+Regla No. 3 - Tratamiento sistemático de los valores nulos
+
+La información inaplicable o faltante puede ser representada a través de valores nulos
+
+Un RDBMS (Sistema Gestor de Bases de Datos Relacionales) debe ser capaz de soportar el uso de valores nulos en el lugar de columnas cuyos valores sean desconocidos.
+
+Regla No. 4 - La regla de la descripción de la base de datos
+
+La descripción de la base de datos es almacenada de la misma manera que los datos ordinarios, esto es, en tablas y columnas, y debe ser accesible a los usuarios autorizados.
+
+La información de tablas, vistas, permisos de acceso de usuarios autorizados, etc, debe ser almacenada exactamente de la misma manera: En tablas. Estas tablas deben ser accesibles igual que todas las tablas, a través de sentencias de SQL (o similar).
+
+Regla No. 5 - La regla del sub-lenguaje Integral
+
+Debe haber al menos un lenguaje que sea integral para soportar la definición de datos, manipulación de datos, definición de vistas, restricciones de integridad, y control de autorizaciones y transacciones.
+
+Esto significa que debe haber por lo menos un lenguaje con una sintaxis bien definida que pueda ser usado para administrar completamente la base de datos.
+
+Regla No. 6 - La regla de la actualización de vistas
+
+Todas las vistas que son teóricamente actualizables, deben ser actualizables por el sistema mismo.
+
+La mayoría de las RDBMS permiten actualizar vistas simples, pero deshabilitan los intentos de actualizar vistas complejas.
+
+Regla No. 7 - La regla de insertar y actualizar
+
+La capacidad de manejar una base de datos con operandos simples aplica no sólo para la recuperación o consulta de datos, sino también para la inserción, actualización y borrado de datos'.
+
+Esto significa que las cláusulas para leer, escribir, eliminar y agregar registros (SELECT, UPDATE, DELETE e INSERT en SQL) deben estar disponibles y operables, independientemente del tipo de relaciones y restricciones que haya entre las tablas o no.
+
+Regla No. 8 - La regla de independencia física
+
+El acceso de usuarios a la base de datos a través de terminales o programas de aplicación, debe permanecer consistente lógicamente cuando quiera que haya cambios en los datos almacenados, o sean cambiados los métodos de acceso a los datos.
+
+El comportamiento de los programas de aplicación y de la actividad de usuarios vía terminales debería ser predecible basados en la definición lógica de la base de datos, y éste comportamiento debería permanecer inalterado, independientemente de los cambios en la definición física de ésta.
+
+Regla No. 9 - La regla de independencia lógica
+
+Los programas de aplicación y las actividades de acceso por terminal deben permanecer lógicamente inalteradas cuando quiera que se hagan cambios (según los permisos asignados) en las tablas de la base de datos.
+
+La independencia lógica de los datos especifica que los programas de aplicación y las actividades de terminal deben ser independientes de la estructura lógica, por lo tanto los cambios en la estructura lógica no deben alterar o modificar estos programas de aplicación.
+
+Regla No. 10 - La regla de la independencia de la integridad
+
+Todas las restricciones de integridad deben ser definibles en los datos, y almacenables en el catálogo, no en el programa de aplicación.
+
+Las reglas de integridad
+- Ningún componente de una clave primaria puede tener valores en blanco o nulos (ésta es la norma básica de integridad).
+- Para cada valor de clave foránea deberá existir un valor de clave primaria concordante. La combinación de estas reglas aseguran que haya integridad referencial.
+
+Regla No. 11 - La regla de la distribución
+
+El sistema debe poseer un lenguaje de datos que pueda soportar que la base de datos esté distribuida físicamente en distintos lugares sin que esto afecte o altere a los programas de aplicación.
+
+El soporte para bases de datos distribuidas significa que una colección arbitraria de relaciones, bases de datos corriendo en una mezcla de distintas máquinas y distintos sistemas operativos y que esté conectada por una variedad de redes, pueda funcionar como si estuviera disponible como en una única base de datos en una sola máquina.
+
+Regla No. 12 - Regla de la no-subversión
+
+Si el sistema tiene lenguajes de bajo nivel, estos lenguajes de ninguna manera pueden ser usados para violar la integridad de las reglas y restricciones expresadas en un lenguaje de alto nivel (como SQL).
+
+Algunos productos solamente construyen una interfaz relacional para sus bases de datos No relacionales, lo que hace posible la subversión (violación) de las restricciones de integridad. Esto no debe ser permitido.
+
+Referencias
+- A Relational Model of Data for Large Shared Data Banks Communications of the ACM, Vol. 13, No. 6, June 1970, pp. 377-387 [1]
+- Fundamentals of DATABASE SYSTEMS Addison-Wesley;, ISBN-10: 0321122267, ISBN-13: 978-0321122261,
+- E.F.Codd (junio de 1970). "A Relational Model of Data for Large Shared Databanks". Communications of the ACM.
+- C.J.Date (1994). "An Introduction to Database Systems". Addison-Wesley.

@@ -1,0 +1,83 @@
+Segunda forma normal
+
+La segunda forma normal (2NF) es una forma normal usada en normalización de bases de datos. La 2NF fue definida originalmente por E.F. Codd1 en 1971. Una tabla que está en la primera forma normal (1NF) debe satisfacer criterios adicionales para calificar para la segunda forma normal. Específicamente: una tabla 1NF está en 2NF si y solo si, dada una clave primaria y cualquier atributo que no sea un constituyente de la clave primaria, el atributo no clave depende de toda la clave primaria en vez de solo de una parte de ella.
+
+En términos levemente más formales: una tabla 1NF está en 2NF si y solo si ninguno de sus atributos no-principales son funcionalmente dependientes en una parte (subconjunto propio) de una clave primaria (Un atributo no-principal es uno que no pertenece a ninguna clave primaria).
+
+Observe que cuando una tabla 1NF no tiene ninguna clave candidata compuesta (claves candidatas consistiendo en más de un atributo), la tabla está automáticamente en 2NF.
+
+Ejemplo
+
+Considere una tabla describiendo las habilidades de los empleados:
+
+Habilidades de los empleados Empleado 	Habilidad 	Lugar actual de trabajo
+Jones 	Mecanografía 	114 Main Street
+Jones 	Taquigrafía 	114 Main Street
+Jones 	Tallado 	114 Main Street
+Bravo 	Limpieza ligera 	73 Industrial Way
+Ellis 	Alquimia 	73 Industrial Way
+Ellis 	Malabarismo 	73 Industrial Way
+Harrison 	Limpieza ligera 	73 Industrial Way
+
+La única clave candidata de la tabla es {Empleado, Habilidad}.
+
+El atributo restante, Lugar actual de trabajo, es dependiente solo en parte de la clave candidata, llamada Empleado. Por lo tanto la tabla no está en 2NF. Observe la redundancia de la manera en que son representadas los Lugares actuales de trabajo: nos dicen tres veces que Jones trabaja en la 114 Main Street, y dos veces que Ellis trabaja en 73 Industrial Way. Esta redundancia hace a la tabla vulnerable a anomalías de actualización: por ejemplo, es posible actualizar el lugar del trabajo de Jones en sus registros "Mecanografía" y "Taquigrafía" y no actualizar su registro "Tallado". Los datos resultantes implicarían respuestas contradictorias a la pregunta "¿Cuál es el lugar actual de trabajo de Jones?".
+
+Un alternativa 2NF a este diseño representaría la misma información en dos tablas:
+
+Empleados Empleado 	Lugar actual de trabajo
+Jones 	114 Main Street
+Bravo 	73 Industrial Way
+Ellis 	73 Industrial Way
+Harrison 	73 Industrial Way
+
+            Habilidades de los empleados Empleado 	Habilidad
+            Jones 	Mecanografía
+            Jones 	Taquigrafía
+            Jones 	Tallado
+            Bravo 	Limpieza ligera
+            Ellis 	Alquimia
+            Ellis 	Malabarismo
+            Harrison 	Limpieza ligera
+
+Las anomalías de actualización no pueden ocurrir en estas tablas, las cuales están en 2NF.
+
+Sin embargo, no todas las tablas 2NF están libres de anomalías de actualización. Un ejemplo de una tabla 2NF que sufre de anomalías de actualización es:
+
+Ganadores del torneo Torneo 	Año 	Ganador 	Fecha de nacimiento del ganador
+Des Moines Masters 	1998 	Chip Masterson 	14 de marzo de 1977
+Indiana Invitational 	1998 	Al Fredrickson 	21 de julio de 1975
+Cleveland Open 	1999 	Bob Albertson 	28 de septiembre de 1968
+Des Moines Masters 	1999 	Al Fredrickson 	21 de julio de 1975
+Indiana Invitational 	1999 	Chip Masterson 	14 de marzo de 1977
+
+Aunque el Ganador y la Fecha de nacimiento del ganador están determinadas por una clave completa {Torneo, Año} y no son partes de ella, particularmente las combinaciones Ganador / Fecha de nacimiento del ganador son mostradas redundantemente en múltiples registros. Este problema es tratado por la tercera forma normal (3NF).
+
+2NF y las claves candidatas
+
+Una tabla para la cual no hay dependencias funcionales parciales en la clave primaria está típicamente, pero no siempre, en 2NF. Además de la clave principal, la tabla puede contener otras claves candidatas; es necesario establecer que ningún atributo no-principal tienen dependencias de clave parciales en cualesquiera de estas claves candidatas.
+
+Las múltiples claves candidatas ocurren en la siguiente tabla:
+
+Modelos eléctricos de cepillo de dientes Fabricante 	Modelo 	Nombre completo del modelo 	País del fabricante
+Forte 	X-Prime 	Forte X-Prime 	Italia
+Forte 	Ultraclean 	Forte Ultraclean 	Italia
+Dent-o-Fresh 	EZBrush 	Dent-o-Fresh EZBrush 	USA
+Kobayashi 	ST-60 	Kobayashi ST-60 	Japón
+Hoch 	Toothmaster 	Hoch Toothmaster 	Alemania
+Hoch 	Contender 	Hoch Contender 	Alemania
+
+Aun si el diseñador ha especificado la clave principal como {Nombre completo del modelo}, la tabla no está en 2NF. {Fabricante, Modelo} es también una clave candidata, y País del fabricante es dependiente en un subconjunto apropiado de él: Fabricante.
+
+Referencias
+
+- Codd, E.F. "Further Normalization of the Data Base Relational Model." (Presented at Courant Computer Science Symposia Series 6, "Data Base Systems," New York City, May 24th-25th, 1971.) IBM Research Report RJ909 (August 31st, 1971). Republished in Randall J. Rustin (ed.), Data Base Systems: Courant Computer Science Symposia Series 6. Prentice-Hall, 1972.
+
+Lectura adicional
+
+- Litt's Tips: Normalization
+- Rules Of Data Normalization
+- Date, C. J., & Lorentzos, N., & Darwen, H. (2002). Temporal Data & the Relational Model (1st ed.). Morgan Kaufmann. ISBN 1-55860-855-9.
+- Date, C. J. (1999), An Introduction to Database Systems (8th ed.). Addison-Wesley Longman. ISBN 0-321-19784-4.
+- Kent, W. (1983) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM, vol. 26, pp. 120-125
+- Date, C.J., & Darwen, H., & Pascal, F. Database Debunkings

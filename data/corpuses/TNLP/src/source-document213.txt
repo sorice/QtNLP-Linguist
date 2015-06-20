@@ -1,0 +1,37 @@
+Pruebas de regresión
+
+Se denominan pruebas de regresión a cualquier tipo de pruebas de software que intentan descubrir errores (bugs), carencias de funcionalidad, o divergencias funcionales con respecto al comportamiento esperado del software, causados por la realización de un cambio en el programa.
+
+Este tipo de cambio puede ser debido a prácticas no adecuadas de control de versiones, falta de consideración acerca del ámbito o contexto de producción final y extensibilidad del error que fue corregido (fragilidad de la corrección), o simplemente una consecuencia del rediseño de la aplicación.
+
+Por lo tanto, en la mayoría de las situaciones del desarrollo de software se considera una buena práctica que cuando se localiza y corrige un bug, se grabe una prueba que exponga el bug y se vuelvan a probar regularmente después de los cambios subsiguientes que experimente el programa.
+
+Existen herramientas de software que permiten detectar este tipo de errores de manera parcial o totalmente automatizada, la práctica habitual en programación extrema es que este tipo de pruebas se ejecuten en cada uno de los pasos del ciclo de vida del desarrollo del software.
+
+Tipos de regresión
+
+Clasificación de ámbito
+- Local - los cambios introducen nuevos errores.
+- Desenmascarada - los cambios revelan errores previos.
+- Remota - Los cambios vinculan algunas partes del programa (módulo) e introducen errores en ella.
+
+Clasificación temporal
+- Nueva característica - los cambios realizados con respecto a nuevas funcionalidades en la versión introducen errores en otras novedades en la misma versión del software.
+- Característica preexistente - los cambios realizados con respecto a nuevas funcionalidades introducen errores en funcionalidad existente de previas versiones.
+
+Como mitigar los riesgos
+- Repetición completa y habitual de la batería de pruebas, manual o mediante automatización.
+- Repetición parcial basada en trazabilidad y análisis de riesgos.
+- Pruebas de cliente o usuario:
+    - Beta - distribución a clientes potenciales y actuales de versiones beta.
+    - Pilot - distribución a un subconjunto bien definido y localizado.
+    - Paralela - simultaneando uso de ambos sistemas.* Usar releases mayores. Probar nuevas funciones a menudo cubre las funciones existentes. Cuantas más nuevas características haya en un release, habrá mayor nivel de pruebas de regresión "accidental".
+- Parches de emergencia - estos parches se publican inmediatamente, y serán incluidos en releases de mantenimiento futuras.
+
+Usos
+
+Las Pruebas de Regresión pueden usarse no solo para probar la corrección de un programa, sino a menudo usarse para rastrear la calidad de su salida. Por ejemplo en el diseño de un compilador, las pruebas de regresión deben rastrear el tamaño del código, tiempo de simulación, y el tiempo de compilación de las suites de prueba. Cuando quiera que aparece un nuevo build, el proceso de regresión aparece.
+
+Citas
+
+"También como consecuencia de la introducción de nuevos bugs, el mantenimiento del programa necesita más pruebas del sistema por sentencia escrita que cualquier otra programación. En teoría, después de cada corrección uno debe ejecutar el batch completo de casos de prueba antes de ejecutar contra el sistema, para asegurarse de que no ha sido dañado de forma oscura. En la práctica, tales pruebas de regresión deben aproximarse a esta idea teórica, y es muy costoso." -- Fred Brooks, The Mythical Man Month (p 122)

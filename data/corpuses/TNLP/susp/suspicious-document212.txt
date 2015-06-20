@@ -1,0 +1,7 @@
+Pruebas de integración
+
+Pruebas integrales o pruebas de integración son aquellas que se realizan en el ámbito del desarrollo de software una vez que se han aprobado las pruebas unitarias. Únicamente se refieren a la prueba o pruebas de todos los elementos unitarios que componen un proceso, hecha en conjunto, de una sola vez.
+
+Consiste en realizar pruebas para verificar que un gran conjunto de partes de software funcionan juntos.
+
+Las pruebas de integración (algunas veces llamadas integración y testeo I&t) es la fase de la prueba de software en la cual módulos individuales de software son combinados y probados como un grupo. Son las pruebas posteriores a las pruebas unitarias y preceden a las pruebas del sistema.

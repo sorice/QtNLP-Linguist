@@ -1,0 +1,56 @@
+Búsqueda en anchura
+
+En Ciencias de la Computación, Búsqueda en anchura (en inglés BFS - Breadth First Search) es un algoritmo para recorrer o buscar elementos en un grafo (usado frecuentemente sobre árboles). Intuitivamente, se comienza en la raíz (eligiendo algún nodo como elemento raíz en el caso de un grafo) y se exploran todos los vecinos de este nodo. A continuación para cada uno de los vecinos se exploran sus respectivos vecinos adyacentes, y así hasta que se recorra todo el árbol.
+
+Formalmente, BFS es un algoritmo de búsqueda sin información, que expande y examina todos los nodos de un árbol sistemáticamente para buscar una solución. El algoritmo no usa ninguna estrategia heurística.
+
+Si las aristas tienen pesos negativos aplicaremos el algoritmo de Bellman-Ford en alguna de sus dos versiones.
+
+Procedimiento
+- Dado un vértice fuente s, Breadth-first search sistemáticamente explora los vértices de G para “descubrir” todos los vértices alcanzables desde s.
+- Calcula la distancia (menor número de vértices) desde s a todos los vértices alcanzables.
+- Después produce un árbol BF con raíz en s y que contiene a todos los vértices alcanzables.
+- El camino desde s a cada vértice en este recorrido contiene el mínimo número de vértices. Es el camino más corto medido en número de vértices.
+- Su nombre se debe a que expande uniformemente la frontera entre lo descubierto y lo no descubierto. Llega a los nodos de distancia k, sólo tras haber llegado a todos los nodos a distancia k-1.
+
+Pseudocódigo
+
+- La nomenclatura adicional utilizada es: Q = Estructura de datos cola
+
+  BFS(grafo G, nodo_fuente s) 
+  { 
+     // recorremos todos los vértices del grafo inicializándolos a NO_VISITADO,
+     // distancia INFINITA y padre de cada nodo NULL
+     for u ∈ V[G] do
+     {
+        estado[u] = NO_VISITADO;
+        distancia[u] = INFINITO; /* distancia infinita si el nodo no es alcanzable */
+        padre[u] = NULL;
+     }
+     estado[s] = VISITADO;
+     distancia[s] = 0;
+     Encolar(Q, s);
+     while !vacia(Q) do
+     {
+        // extraemos el nodo u de la cola Q y exploramos todos sus nodos adyacentes
+        u = extraer(Q);
+        for  v ∈ adyacencia[u]  do
+        {
+           if estado[v] == NO_VISITADO then
+           {
+                estado[v] = VISITADO;
+                distancia[v] = distancia[u] + 1;
+                padre[v] = u;
+                Encolar(Q, v);
+           }
+        }
+     }
+  }
+
+  *Falta recorrer vértices no adyacentes directa o indirectamente al vértice origen "s",
+pues la cola queda vacía sin los adyacentes restantes.
+
+- El tiempo de ejecución es O(|V|+|E|). Nótese que cada nodo es puesto a la cola una vez y su lista de adyacencia es recorrida una vez también.
+
+Referencias
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 22.3: Depth-first search, pp.531 - 539.

@@ -1,0 +1,273 @@
+Prolog
+
+El Prolog (o PROLOG), proveniente del francés PROgrammation en LOGique,1 es un lenguaje para programar artefactos electrónicos mediante el paradigma lógico con técnicas de producción final interpretada. Es bastante conocido en el área de la Ingeniería Informática para investigación en Inteligencia Artificial.
+
+Historia
+
+Se trata de un lenguaje de programación ideado a principios de los años 70 en la Universidad de Aix-Marseille I (Marsella, Francia) por los estudiantes Alain Colmerauer y Philippe Roussel. Nació de un proyecto que no tenía como objetivo la traducción de un lenguaje de programación, sino la clasificación algorítmica de lenguajes naturales. Alain Colmerauer y Robert Pasero trabajaban en la parte del procesado del lenguaje natural y Jean Trudel y Philippe Roussel en la parte de deducción e inferencia del sistema. Interesado por el método de resolución SL, Trudel persuadió a Robert Kowalski para que se uniera al proyecto, dando lugar a una versión preliminar del lenguaje Prolog a finales de 19712 y apareciendo la versión definitiva en 1972.3 Esta primera versión de Prolog fue programada en ALGOL W.
+
+Inicialmente se trataba de un lenguaje totalmente interpretado hasta que, en 1983, David H.D. Warren desarrolló un compilador capaz de traducir Prolog en un conjunto de instrucciones de una máquina abstracta denominada Warren Abstract Machine, o abreviadamente, WAM. Desde entonces Prolog es un lenguaje semi-interpretado.
+
+Si bien en un principio se trataba de un lenguaje de uso reducido, la aparición de intérpretes del mismo para microordenadores de 8 bits (ej: micro-PROLOG) y para ordenadores domésticos de 16 bits (ej: Turbo Prolog de Borland, entre otros muchos) a lo largo de la década de 1980 contribuyó notablemente a su popularización.4 Otro importante factor en su difusión fue la adopción del mismo para el desarrollo del proyecto de la quinta generación de computadoras a principios de la década de los 80,5 en cuyo contexto se desarrolló la implementación paralelizada del lenguaje llamada KL1 y del que deriva parte del desarrollo moderno de Prolog.
+
+Las primeras versiones del lenguaje diferían, en sus diferentes implementaciones, en muchos aspectos de sus sintaxis, empleándose mayormente como forma normalizada el dialecto propuesto por la Universidad de Edimburgo,6 hasta que en 1995 se estableció un estándar ISO (ISO/IEC 13211-1), llamado ISO-Prolog.
+
+Prolog se enmarca en el paradigma de los lenguajes lógicos y declarativos, lo que lo diferencia enormemente de otros lenguajes más populares tales como Fortran, Pascal, C o Java.
+
+Vuelta atrás (backtracking)
+
+En los lenguajes de programación antes mencionados, las instrucciones se ejecutan normalmente en orden secuencial, es decir, una a continuación de otra, en el mismo orden en que están escritas, que sólo varía cuando se alcanza una instrucción de control (un bucle, una instrucción condicional o una transferencia).
+
+Los programas en Prolog se componen de cláusulas de Horn que constituyen reglas del tipo "modus ponendo ponens", es decir, "Si es verdad el antecedente, entonces es verdad el consecuente". No obstante, la forma de escribir las cláusulas de Horn es al contrario de lo habitual. Primero se escribe el consecuente y luego el antecedente. El antecedente puede ser una conjunción de condiciones que se denomina secuencia de objetivos. Cada objetivo se separa con una coma y puede considerarse similar a una instrucción o llamada a procedimiento de los lenguajes imperativos. En Prolog no existen instrucciones de control. Su ejecución se basa en dos conceptos: la unificación y el backtracking.
+
+Gracias a la unificación, cada objetivo determina un subconjunto de cláusulas susceptibles de ser ejecutadas. Cada una de ellas se denomina punto de elección. Prolog selecciona el primer punto de elección y sigue ejecutando el programa hasta determinar si el objetivo es verdadero o falso.
+
+En caso de ser falso entra en juego el backtracking, que consiste en deshacer todo lo ejecutado situando el programa en el mismo estado en el que estaba justo antes de llegar al punto de elección. Entonces se toma el siguiente punto de elección que estaba pendiente y se repite de nuevo el proceso. Todos los objetivos terminan su ejecución bien en éxito ("verdadero"), bien en fracaso ("falso").
+
+Programación en Prolog
+
+Existen dos tipos de cláusulas: Hechos y Reglas. Una regla es del tipo:
+
+Cabeza :- Cuerpo.
+
+y se lee como "La cabeza es verdad si el cuerpo es verdad". El cuerpo de una regla consiste en llamadas a predicados, que son llamados los objetivos de las reglas. El predicado ,/2 (es decir, un operador de paridad 2 (que recibe 2 argumentos) y de nombre , ) denota conjunción de objetivos, y el operador ;/2 denota disyunción. Conjunciones y disyunciones pueden sólo aparecer en el cuerpo, no en la cabeza de la regla. En realidad la disyunción no es un operador básico o predefinido, sino que está meta-programado así:
+
+';' (A,_) :- A.
+ 
+';' (_,B) :- B.
+
+Las cláusulas sin cuerpo (es decir, antecedente) son llamados hechos porque siempre son ciertos. Un ejemplo de un hecho es:
+
+gato(tom).
+
+que es equivalente a la regla:
+
+gato(tom) :- true.
+
+El predicado predefinido true/0 siempre es verdad.
+
+Dado el hecho anterior, se puede preguntar:
+
+¿ es tom un gato?
+
+?- gato(tom).  
+Yes
+
+¿ que cosas son gatos?
+
+?- gato(X).  
+X = tom
+
+Debido a la naturaleza relacional de muchos predicados, pueden ser usados revertidos sus argumentos. Por ejemplo, length/2 puede ser usado para determinar el tamaño (longitud) de una lista: length([a,b,c], L), así como para generar un esqueleto de lista para un largo dado (length(X, 5)). Similarmente, append/3 puede ser usado también para unir o anexar dos listas: append([a,b], [c,d], X), así como para dividir una lista en dos partes: append(X, Y, [a,b,c,d]). Todo depende de qué argumentos sean variables libres y cuáles sean instanciados. En analogía con la programación imperativa, las variables libres son argumentos de salida y el resto son argumentos de entrada. Pero en Prolog, a diferencia de los lenguajes imperativos, dicho rol es intercambiable en la mayoría de los predicados. Esta característica se denomina reversibilidad, y las combinaciones válidas de argumentos de salida o entrada se denomina modos de uso. Por ejemplo, el predicado length/2 es reversible y tiene tres modos de uso: los dos argumentos instanciados, el primer argumento instanciado pero el otro no, y viceversa. El modo de uso con los dos argumentos sin instanciar no tiene mucho sentido, pero podría ser admitido según algunas implementaciones, en tal caso, generaría todas los esqueletos de lista de todas las longitudes posibles...
+
+Por esta razón, una biblioteca relativamente pequeña de predicados basta para muchos programas en Prolog. Todos los predicados pueden también ser usados para realizar pruebas unitarias: las consultas pueden ser incrustados en programas y permitir pruebas automáticas de regresión en tiempo de compilación.
+
+Como un lenguaje de propósito general, Prolog también posee varios predicados predefinidos para interacción con el sistema operativo, como entrada/salida, gráficos y comunicaciones de datos. Estos predicados no tienen un significado relacional y son sólo útiles por los efectos laterales que exhiben en el sistema. Por ejemplo, el predicado write/1 muestra un término en la pantalla, pero no tiene relevancia su valor de verdad o falsedad.
+
+Expresiones
+
+Prolog cuenta con operadores para la unificación y comparación, sea con evaluación o sea simbólica, como los siguientes:
+
+    X is Y %unificación con evaluación.
+    X = Y  %unificación simbólica
+    X=:=Y  %comparación con evaluación
+    X == Y %comparación simbólica.
+
+?- X is 3+5.
+   X = 8
+ 
+?- X = 3+5.
+   X = 3+5
+ 
+?- 3+5 =:= 2+6.
+   yes
+ 
+?- 3+5 == 2+6.
+   no
+ 
+?- 3+5 == 3+5.
+   yes
+
+Listas
+
+La representación de hechos simples no es lo común en la clasificación de elementos, sino que se agrupan los elementos de un mismo tipo en una lista.
+
+Las listas son colecciones de elementos en Prolog. Una lista se divide en dos partes: Cabeza. Es el primer elemento de la lista. Cola. Es una lista con el resto de los elementos de la lista. La cabeza y la cola de una lista se separan con el símbolo "|".
+
+Ejemplos de código Prolog
+
+Ejemplo simple
+
+%%
+%% declaraciones
+%%
+padrede('juan', 'maria'). % juan es padre de maria
+padrede('pablo', 'juan'). % pablo es padre de juan
+padrede('pablo', 'marcela'). % pablo es padre de marcela
+padrede('carlos', 'debora'). % carlos es padre de debora
+ 
+% A es hijo de B si B es padre de A
+hijode(A,B) :- padrede(B,A).
+% A es abuelo de B si A es padre de C y C es padre B
+abuelode(A,B) :- 
+   padrede(A,C), 
+   padrede(C,B).
+% A y B son hermanos si el padre de A es también el padre de B y si A y B no son lo mismo
+hermanode(A,B) :- 
+   padrede(C,A) , 
+   padrede(C,B), 
+   A \== B.        
+ 
+% A y B son familiares si A es padre de B o A es hijo de B o A es hermano de B
+familiarde(A,B) :- 
+   padrede(A,B).
+familiarde(A,B) :-
+   hijode(A,B). 
+familiarde(A,B) :- 
+   hermanode(A,B).
+%%
+%% consultas
+%%
+% juan es hermano de marcela?
+?- hermanode('juan', 'marcela').
+yes
+ 
+% carlos es hermano de juan?
+?- hermanode('carlos', 'juan').
+no
+ 
+% pablo es abuelo de maria?
+?- abuelode('pablo', 'maria').
+yes
+ 
+% maria es abuela de pablo?
+?- abuelode('maria', 'pablo').
+no
+
+Factorial de un número
+
+% La sintaxis es factorial(N, F) -> Factorial de N es F (el resultado se guarda en F)
+factorial(0, 1).
+factorial(1, 1).
+factorial(N, F) :- N>0, N1 is N - 1, factorial(N1, F1), F is N * F1.
+ 
+%el factorial se llama recursivamente dejando el resultado en F
+
+Usos de Listas en Prolog
+
+Creación y consulta de listas
+
+plantas([manzana, naranja, limon, espinaca, gardenia, alfalfa, pino]). 
+ 
+lista([1,2,3]).
+ 
+?-lista([H|T]).
+   H=1 
+   T=[2,3]
+ 
+?-lista([H,J|T]).
+   H=1
+   J=2
+   T=[3]
+
+Longitud de una lista
+
+% Si queremos hallar la longitud de una lista.
+% La longitud de una lista vacia es 0.
+% La longitud de cualquier lista es la longitud de la cola + 1.
+ 
+longitud([],0).
+longitud([_|T],N):-longitud(T,N0), N is N0 + 1.
+ 
+?- longitud([a,b,c],L).
+   L = 3
+?- longitud([a,b,c],4).
+   No
+
+Búsqueda de un elemento
+
+% Si queremos determinar si un elemento pertenece a una lista.
+% El elemento pertenece a la lista si coincide con la cabeza de la lista.
+% El elemento pertenece a la lista si se encuentra en la cola de la lista.
+ 
+pertenece(X,[X|_]) .
+pertenece(X,[_|R]):- pertenece(X,R). 
+ 
+?- pertenece(b,[a,b,c]).
+   Yes
+?- pertenece(b,[a,[b,c]]).
+   No
+?- pertenece([b,c],[a,[b,c]]).
+   Yes
+?- pertenece(X,[a,b]).
+   X = a ;
+   X = b
+
+Eliminar elemento de una lista
+
+% Si queremos eliminar un elemento de la lista.
+% Si X es la cabeza de la lista, la cola T es la lista sin X
+% Si X no es la cabeza de la lista, conservamos la cabeza de la lista 
+%     como parte de la respuesta y continuamos eliminando X de la cola T.
+elimina(X,[X|T],T).
+elimina(X,[H|T],[H|T1]):- elimina(X,T,T1).
+ 
+?- elimina(1,[1,2,3,4],R).
+   R = [2,3,4]
+?- elimina(1,R,[2,3]).
+   R = [1, 2, 3] ;
+   R = [2, 1, 3] ;
+   R = [2, 3, 1]  
+?- elimina(X,[1,2,3],Y).
+   X = 1, Y = [2,3] ;
+   X = 2, Y = [1,3] ;
+   X = 3, Y = [1,2]
+
+Concatenar listas
+
+% Si queremos concatenar dos listas lista. 
+% Concatenar una lista vacia con L es L.
+% Concatenar X|L1 con L2 es poner el primer 
+% elemento de la primera lista (X) más la 
+% concatenación del resto de la lista (L1) con L2
+ 
+concatenar([],L,L).
+concatenar([X|L1],L2,[X|L3]):-concatenar(L1,L2,L3).
+ 
+?- concatenar([1,2],[3,4],R).
+  R = [1, 2, 3, 4].
+?- concatenar(X,Y,[1,2]).
+  X = [], Y = [1,2] ;
+  X = [1], Y = [2] ;
+  X = [1,2], Y = []
+
+Comprobar si una lista es la inversa de otra
+
+% Si queremos calcular la inversa de una lista. 
+% La inversa de una lista vacia es una lista vacia.
+% La inversa de H|T es la inversa de T concatenada con H.
+ 
+inversa([],[]).
+inversa([H|T],L):-  inversa(T,R),  concatenar(R,[H],L).
+ 
+?- inversa([a,b,c,d],[d,c,b,a]).
+   Yes/Si
+
+% Utilizando un parametro acumulador.
+ 
+inver(L1,L2):-inver(L1,L2,[]).
+inver(L2,L3):-inver(L2,L3,[]).
+ 
+inver([],L,L).
+inver([H|T],L,S):-inver(T,L,[H|S]).
+ 
+?- inver([a,b,c,d],[d,c,b,a]).
+   Yes
+
+Referencias
+1. Colmerauer, Alain y Roussel, Philippe. La naissance de Prolog, julio 1992
+2. BERGIN, Thomas J. y GIBSON, Richard G., History of Programming Languages II, New York, ACM Press, Addison-Wesley, 1996, ISBN 0-201-89502-1
+3. Kowalski, R. A.. The early years of logic programming.
+4. El lenguaje PROLOG, artículo en el periódico ABC del 12 de octubre de 1986
+5. Aplicaciones de la Inteligencia Artificial en la Actividad Empresarial, la Ciencia y la Industria, de Wendy B. Rauch-Hindin, página 644 y siguientes, ISBN 84-87189-07-5, en Google Books.
+6. A falta de una especificación formal del Prolog de Edimburgo se ha utilizado sobre todo como referencia el DEC-10 PROLOG Manual de Bowen (1982) o el Programming in Prolog de Clocksin y Mellish.

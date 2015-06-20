@@ -1,0 +1,76 @@
+Visión artificial
+
+La visión artificial, también conocida como visión por computador (del inglés computer vision) o visión técnica, es un subcampo de la inteligencia artificial. El propósito de la visión artificial es programar un computador para que "entienda" una escena o las características de una imagen.
+
+Los objetivos típicos de la visión artificial incluyen:
+- La detección, segmentación, localización y reconocimiento de ciertos objetos en imágenes (por ejemplo, caras humanas).
+- La evaluación de los resultados (por ejemplo, segmentación, registro).
+- Registro de diferentes imágenes de una misma escena u objeto, es decir, hacer concordar un mismo objeto en diversas imágenes.
+- Seguimiento de un objeto en una secuencia de imágenes.
+- Mapeo de una escena para generar un modelo tridimensional de la escena; este modelo podría ser usado por un robot para navegar por la escena.
+- Estimación de las posturas tridimensionales de humanos.
+- Búsqueda de imágenes digitales por su contenido.
+
+Estos objetivos se consiguen por medio de reconocimiento de patrones, aprendizaje estadístico, geometría de proyección, procesamiento de imágenes, teoría de grafos y otros campos. La visión artificial cognitiva está muy relacionada con la psicología cognitiva y la computación biológica.
+
+Visión artificial aplicada al sistema visual humano
+
+Cuando la retina está dañada o no funciona bien, los fotorreceptores dejan de funcionar, pero eso no quiere decir que toda la estructura del sistema visual humano no pueda seguir funcionando. Por ello, algunos científicos están desarrollando microchips de silicio que puedan dotar de visión artificial a aquellas personas a quienes no les funcionan los fotorreceptores.
+
+Como ya sabemos, la información captada por los fotorreceptores se transmite a las células ganglionales, donde se interpreta y se manda al cerebro a través del nervio óptico. Existen enfermedades que afectan a estas células como la retinosis pigmentaria o la DMAE, que dejan inoperativos los fotorreceptores pero no dañan las células ganglionales o el nervio óptico, con lo cual el problema no es que la información no puede llegar al cerebro, sino que no se puede captar. En estos casos se pueden desarrollar unos conos y bastones artificiales.
+
+Los requisitos de los microchips para que cumplan la función de los fotorreceptores son:
+- Que sean lo suficientemente pequeños como para implantarlos en el ojo.
+- Que tengan una fuente de abastecimiento de energía continua.
+- Que no causen rechazo, es decir, que sean biocompatibles con los tejidos del ojo.
+
+Uno de los micros que se ha desarrollado con éxito por el momento es un dispositivo de 2 mm de diámetro y tan delgado como un cabello humano. Contiene 3,500 células solares microscópicas que imitan a los bastones y los conos y convierten la luz en impulsos eléctricos. Se abastece de energía solar, con lo que se evitan cables y baterías.
+
+Microscopía digital
+
+Producción de la imagen digital en microscopía óptica
+
+La digitalización de una imagen electrónica o de video capturada por un microscopio óptico permite obtener un incremento espectacular en las posibilidades de ampliar características, extraer información o modificar la imagen. En comparación con el mecanismo tradicional de captura de imágenes, la fotomicrografía en película, la digitalización de la imagen y el proceso de postadquisición/recuperación permiten una modificación reversible de la imagen como matriz ordenada de enteros fundamentalmente libre de ruido, más que una mera serie de variaciones análogas en color e intensidad. Esta sección trata sobre diversos temas de actualidad acerca de la adquisición y procesamiento de imágenes para microscopía óptica.
+
+Propiedades básicas de las imágenes digitales
+
+Las imágenes de señal continua se reproducen mediante dispositivos electrónicos analógicos que registran los datos de la imagen con precisión utilizando varios métodos, como una secuencia de fluctuaciones de la señal eléctrica o cambios en la naturaleza química de la emulsión de una película, que varían continuamente en los diferentes aspectos de la imagen. Para procesar o visualizar en el ordenador una señal continua o una imagen analógica, se debe convertir primero a un formato comprensible para el ordenador o formato digital. Este proceso se aplica a todas las imágenes, independientemente de su origen, de su complejidad y de si son en blanco y negro (escala de grises) o a todo color. Una imagen digital se compone de una matriz rectangular (o cuadrada) de píxeles que representan una serie de valores de intensidad ordenados en un sistema de coordenadas (x,y).
+
+Detectores de imagen electrónicos
+
+La gama de métodos de detección de luz y la amplia variedad de dispositivos de imagen que están disponibles actualmente para el microscopista hacen que su selección sea difícil y a menudo confusa. Con este documento se pretende ofrecer ayuda para la comprensión de conceptos básicos sobre la detección de luz y proporcionar una guía para la selección del detector electrónico adecuado (CCD o sistema de videocámara) con aplicaciones específicas de microscopía óptica.
+
+Fundamentos de la producción de imágenes en vídeo
+
+Las imágenes ópticas producidas en el microscopio pueden ser capturadas utilizando ya sea técnicas de película tradicionales, digitalmente con detectores electrónicos como un chargecoupled device (CCD) o bien con una cámara de tipo tubo. Las cámaras son a menudo el recurso más apropiado cuando se deben grabar sucesos dinámicos en tiempo real.
+
+Introducción a los sensores de imagen CMOS
+
+Los sensores de imagen CMOS se han diseñado con la capacidad para integrar un número de funciones de procesamiento y control directamente en el circuito integrado del sensor, lo que se extiende más allá de la tarea fundamental de recopilación de fotones. Estos nuevos aspectos incluyen generalmente lógica temporal, control de exposición, conversión de analógico a digital, obturación, balance de blancos, ajuste del aumento y algoritmos de procesamiento inicial de la imagen. Se están introduciendo sensores de imagen CMOS económicos en el campo de la microscopía óptica en instrumentos para fines educativos que combinan una calidad óptica aceptable con paquetes de software de control e imagen fáciles de usar.
+
+Conceptos básicos sobre procesamiento digital de la imagen
+
+El procesamiento digital de la imagen permite una modificación reversible prácticamente libre de ruido en forma de una matriz de enteros, en vez de las clásicas manipulaciones en el cuarto oscuro o filtración de voltajes dependientes del tiempo necesarios para las imágenes analógicas y señales de video. Incluso aunque muchos algoritmos de procesamiento de imágenes son extremadamente potentes, el usuario medio a menudo aplica operaciones a imágenes digitales sin tener en cuenta los principios subyacentes tras dichas manipulaciones. Las imágenes que resultan de una manipulación descuidada están a menudo distorsionadas en comparación con las que podrían producirse si la potencia y versatilidad del software de procesamiento digital se utilizaran correctamente.
+
+Estrategias recomendadas para el procesamiento de imágenes digitales
+
+Dependiendo de las condiciones de iluminación, la integridad de la muestra y los métodos de preparación, las imágenes capturadas con el microscopio óptico pueden requerir una cantidad considerable de rehabilitación/reinserción/renovación para conseguir un equilibrio entre precisión científica y composición estética. Las imágenes digitales que se obtienen mediante un CCD (charge-coupled device) o un CMOS (complementary metal oxide semiconductor) a menudo presentan señales a ruido pobres, iluminación irregular, impurezas de enfoque, deslumbramiento, cambios en los colores y otros problemas que distorsionan la calidad global de la imagen.
+
+Deconvolución en microscopía óptica
+
+La deconvolución es una técnica de procesamiento de imagen computacionalmente intensiva/reforzadora que se está utilizando cada vez más para mejorar el contraste y la resolución de las imágenes digitales capturadas con el microscopio. Se basa en un juego de métodos diseñados para eliminar las imprecisiones presentes en las imágenes producidas por la abertura limitada del objetivo. Prácticamente cualquier imagen obtenida con un microscopio digital fluorescente se puede deconvolver y se están desarrollando varias aplicaciones nuevas que utilizan técnicas de deconvolución para imágenes transmitidas de luz compuestas mediante varias estrategias de procesamiento de contraste. Uno de los campos qué más puede beneficiarse de la deconvolución es el de montajes en tres dimensiones a partir de secciones ópticas.
+
+Software dedicado
+
+OpenCV: Es una biblioteca libre de visión artificial originalmente desarrollada por Intel.
+- Disponible en Linux, Mac, Windows, IOs y Android.
+- Tiene estructuras básicas de datos para operaciones con matrices y procesamiento de imágenes.
+- Permite visualizar datos muy sencillamente y extraer información de imágenes y vídeos.
+- Tiene funciones de captura y presentación de imágenes.
+
+Prótesis visuales
+
+Las prótesis visual son dispositivos visuales que intentan restaurar la visión funcional en los que sufren de ceguera o ceguera parcial. Entre estos destaca la Prótesis de retina Argus.1
+
+Referencias
+- https://www.asrs.org/retina-times/details/131/fda-approves-world-first-artificial-retina

@@ -1,0 +1,24 @@
+Paradigma de programación
+
+Un paradigma de programación es una propuesta tecnológica que es adoptada por una comunidad de programadores cuyo núcleo central es incuestionable en cuanto a que únicamente trata de resolver uno o varios problemas claramente delimitados. Es un estilo de programación empleado. La resolución de estos problemas debe suponer consecuentemente un avance significativo en al menos un parámetro que afecte a la ingeniería de software. Tiene una estrecha relación con la formalización de determinados lenguajes en su momento de definición. Un paradigma de programación está delimitado en el tiempo en cuanto a aceptación y uso ya que nuevos paradigmas aportan nuevas o mejores soluciones que la sustituyen parcial o totalmente.
+
+El paradigma de programación que actualmente es el más usado es la orientación a objetos. El núcleo central de este paradigma es la unión de datos y procesamiento en una entidad llamada "objeto", relacionable a su vez con otras entidades "objeto".
+
+Tradicionalmente datos y procesamiento se han separado en áreas diferente del diseño y la implementación de software. Esto provocó que grandes desarrollos tuvieran problemas de fiabilidad, mantenimiento, adaptación a los cambios y escalabilidad. Con la orientación a objetos y características como el encapsulado, polimorfismo o la herencia se permitió un avance significativo en el desarrollo de software a cualquier escala de producción.
+
+Un paradigma de programación representa un enfoque particular o filosofía para diseñar soluciones. Los paradigmas difieren unos de otros, en los conceptos y la forma de abstraer los elementos involucrados en un problema, así como en los pasos que integran su solución del problema, en otras palabras, el cómputo.
+
+La orientación a objeto parece estar ligada en sus orígenes con lenguajes como Lisp y Simula aunque el primero que acuñó el título de programación orientada a objetos fue Smalltalk.
+
+Tipos de paradigmas de programación más comunes
+- Imperativo o por procedimientos: es considerado el más común y está representado es decir elogiado, por ejemplo, por C, BASIC o Pascal.
+- Funcional: está representado por Scheme o Haskell. Este es un caso del paradigma declarativo.
+- Lógico: está representado por Prolog. Este es otro caso del paradigma declarativo.
+- Declarativo: por ejemplo la programación funcional, la programación lógica, o la combinación lógico-funcional.
+- Orientado a objetos: está representado por Smalltalk, un lenguaje completamente orientado a objetos.
+- Programación dinámica: está definida como el proceso de romper problemas en partes pequeñas para analizarlos.
+- Programación multiparadigma: es el uso de dos o más paradigmas dentro de un programa.
+
+Si bien puede seleccionarse la forma pura de estos paradigmas al momento de programar, en la práctica es habitual que se mezclen, dando lugar a la programación multiparadigma.
+
+Actualmente el paradigma de programación más usado es el de la programación orientada a objetos.

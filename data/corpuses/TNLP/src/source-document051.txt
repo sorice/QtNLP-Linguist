@@ -1,0 +1,144 @@
+Primera forma normal
+
+La primera forma normal (1FN o forma mínima) es una forma normal usada en normalización de bases de datos. Una tabla de base de datos relacional que se adhiere a la 1FN es una que satisface cierto conjunto mínimo de criterios. Estos criterios se refieren básicamente a asegurarse que la tabla es una representación fiel de una relación1 y está libre de "grupos repetitivos".2
+
+Sin embargo, el concepto de "grupo repetitivo", es entendido de diversas maneras por diferentes teóricos. Como consecuencia, no hay un acuerdo universal en cuanto a qué características descalificarían a una tabla de estar en 1FN. Muy notablemente, la 1FN, tal y como es definida por algunos autores excluye "atributos relación-valor" (tablas dentro de tablas) siguiendo el precedente establecido por (E.F. Codd) (algunos de esos autores son: Ramez Elmasri y Shamkant B. Navathe3 ). Por otro lado, según lo definido por otros autores, la 1FN sí los permite (por ejemplo como la define Chris Date).
+
+Las tablas 1FN como representaciones de relaciones
+
+Según la definición de Date de la 1FN, una tabla está en 1FN si y solo si es "isomorfa a alguna relación", lo que significa, específicamente, que satisface las siguientes cinco condiciones:
+
+        1. No hay orden de arriba-a-abajo en las filas.
+        2. No hay orden de izquierda-a-derecha en las columnas.
+        3. No hay filas duplicadas.
+        4. Cada intersección de fila-y-columna contiene exactamente un valor del dominio aplicable (y nada más).
+        5. Todas las columnas son regulares [es decir, las filas no tienen componentes como IDs de fila, IDs de objeto, o timestamps ocultos].
+
+        —Chris Date, "What First Normal Form Really Means", pp. 127-84
+
+La violación de cualesquiera de estas condiciones significaría que la tabla no es estrictamente relacional, y por lo tanto no está en 1FN. Algunos ejemplos de tablas (o de vistas) que no satisfacen esta definición de 1FN son:
+- Una tabla que carece de una clave primaria. Esta tabla podría acomodar filas duplicadas, en violación de la condición 3.
+- Una vista cuya definición exige que los resultados sean retornados en un orden particular, de modo que el orden de la fila sea un aspecto intrínseco y significativo de la vista.5 Esto viola la condición 1. Las tuplas en relaciones verdaderas no están ordenadas una con respecto de la otra.
+- Una tabla con por lo menos un atributo que pueda ser nulo. Un atributo que pueda ser nulo estaría en violación de la condición 4, que requiere a cada campo contener exactamente un valor de su dominio de columna. Sin embargo, debe observarse que este aspecto de la condición 4 es controvertido. Muchos autores consideran que una tabla está en 1FN si ninguna clave candidata puede contener valores nulos, pero se aceptan éstos para atributos (campos) que no sean clave, según el modelo original de Codd sobre el modelo relacional, el cual hizo disposición explícita para los nulos.6
+
+Grupos repetidos
+
+La cuarta condición de Date, que expresa "lo que la mayoría de la gente piensa como la característica que define la 1FN",7 concierne a grupos repetidos. El siguiente ejemplo ilustra cómo un diseño de base de datos puede incorporar la repetición de grupos, en violación de la 1FN.
+
+Ejemplo 1: Dominios y valores
+
+Suponga que un diseñador principiante desea guardar los nombres y los números telefónicos de los clientes. Procede a definir una tabla de cliente como la que sigue:
+
+Cliente 
+ID Cliente 	Nombre 	Apellido 	Teléfono
+123 	Rachel 	Ingram 	555-861-2025
+456 	James 	Wright 	555-403-1659
+789 	Cesar 	Dure 	555-808-9633
+
+En este punto, el diseñador se da cuenta de un requisito para guardar múltiples números teléfonicos para algunos clientes. Razona que la manera más simple de hacer esto es permitir que el campo "Teléfono" contenga más de un valor en cualquier registro dado:
+
+Cliente 
+ID Cliente 	Nombre 	Apellido 	Teléfono
+123 	Rachel 	Ingram 	555-861-2025
+456 	James 	Wright 	555-403-1659
+555-776-4100
+789 	Cesar 	Dure 	555-808-9633
+
+Asumiendo, sin embargo, que la columna "Teléfono" está definida en algún tipo de dominio de número telefónico (por ejemplo, el dominio de cadenas de 12 caracteres de longitud), la representación de arriba no está en 1FN. La 1FN (y, para esa materia, el RDBMS) prohíbe a un campo contener más de un valor de su dominio de columna.
+
+Ejemplo 2: Grupos repetidos a través de columnas
+
+El diseñador puede evitar esta restricción definiendo múltiples columnas del número telefónico:
+
+Cliente 
+ID Cliente 	Nombre 	Apellido 	Teléfono 1 	Teléfono 2 	Teléfono 3
+123 	Rachel 	Ingram 	555-861-2025 		
+456 	James 	Wright 	555-403-1659 	555-776-4100 	
+789 	Cesar 	Dure 	555-808-9633 		
+
+Sin embargo, esta representación hace uso de columnas que permiten valores nulos, y por lo tanto no se conforman con la definición de la 1NF de Date. Incluso si se contempla la posibilidad de columnas con valores nulos, el diseño no está en armonía con el espíritu de 1NF. Teléfono 1, Teléfono 2, y Teléfono 3, comparten exactamente el mismo dominio y exactamente el mismo significado; dividir los números de teléfono en tres encabezados es artificial y causa problemas lógicos. Estos problemas incluyen:
+- Dificultad en hacer consultas a la tabla. Es difícil contestar preguntas tales como "¿Qué clientes tienen el teléfono X?" y "¿Qué pares de clientes comparten un número de teléfono?".
+- La imposibilidad de hacer cumplir la unicidad los enlaces Cliente-a-Teléfono por medio del RDBMS. Al cliente 789 se le puede dar equivocadamente un valor para el Teléfono 2 que es exactamente igual que el valor de su Teléfono 1.
+- La restricción de los números de teléfono por cliente a tres. Si viene un cliente con cuatro números de teléfono, estamos obligados a guardar solamente tres y dejar el cuarto sin guardar. Esto significa que el diseño de la base de datos está imponiendo restricciones al proceso del negocio, en vez de (como idealmente debe ser el caso) al revés.
+
+Ejemplo 3: Repetición de grupos dentro de columnas
+
+El diseñador puede, alternativamente, conservar una sola columna de número de teléfono, pero alterando su dominio, haciendo una cadena de suficiente longitud para acomodar múltiples números telefónicos:
+
+Cliente 
+ID Cliente 	Nombre 	Apellido 	Teléfono
+123 	Rachel 	Ingram 	555-861-2025
+456 	James 	Wright 	555-403-1659, 555-776-4100
+789 	Cesar 	Dure 	555-808-9633
+
+Éste es defendiblemente el peor diseño de todos, y otra vez no mantiene el espíritu de la 1NF. El encabezado "Teléfono" llega a ser semánticamente difuso, ya que ahora puede representar, o un número de teléfono, o una lista de números de teléfono, o de hecho cualquier cosa. Una consulta como "¿Qué pares de clientes comparten un número telefónico?" es virtualmente imposible de formular, dada la necesidad de proveerse de listas de números telefónicos así como números telefónicos individuales. Con este diseño en la RDBMS, son también imposibles de definir significativas restricciones en números telefónicos.
+
+Un diseño conforme con 1FN
+
+Un diseño que está inequívocamente en 1FN hace uso de dos tablas: una tabla de cliente y una tabla de teléfono del cliente.
+
+Cliente 
+ID Cliente 	Nombre 	Apellido
+123 	Rachel 	Ingram
+456 	James 	Wright
+789 	Cesar 	Dure
+
+            Teléfono del cliente 
+			ID Cliente 	Teléfono
+            123 	555-861-2025
+            456 	555-403-1659
+            456 	555-776-4100
+            789 	555-808-9633
+
+En este diseño no ocurren grupos repetidos de números telefónicos. En lugar de eso, cada enlace Cliente-a-Teléfono aparece en su propio registro. Es valioso notar que este diseño cumple los requerimientos adicionales para la segunda (2NF) y la tercera forma normal (3FN).
+
+Atomicidad
+
+Algunas definiciones de 1NF, más notablemente la de E.F. Codd, hacen referencia al concepto de atomicidad. Codd indica que "se requiere que los valores sean atómicos con respecto al DBMS en los dominios en los que cada relación es definida".8 Codd define un valor atómico como uno que "no puede ser descompuesto en pedazos más pequeños por el DBMS (excepto ciertas funciones especiales)".9
+
+[Hugh Darwen] y [Chris Date] han sugerido que el concepto de Codd de un "valor atómico" es ambiguo, y que esta ambigüedad ha conducido a una extensa confusión sobre cómo debe ser entendida la 1NF.10 11 En particular, la noción de un "valor que no puede ser descompuesto" es problemática, pues parecería implicar que pocos, si algún, tipos de datos son atómicos:
+- Una cadena de caracteres parecería no ser atómica, ya que el RDBMS típicamente proporciona operadores para descomponerla en subcadenas.
+- Una fecha parecería no ser atómica, ya que el RDBMS proporciona típicamente operadores para descomponerla los componentes de día, mes, y año.
+- Un número de punto fijo parecería no ser atómico, ya que el RDBMS proporciona típicamente operadores para descomponerlo en componentes de números enteros y fraccionarios.
+
+Date sugiere que "la noción de atomicidad no tiene ningún significado absoluto":12 un valor puede ser considerado atómico para algunos propósitos, pero puede ser considerado un ensamblaje de elementos más básicos para otros propósitos. Si esta posición es aceptada, la 1NF no puede ser definida con referencia a la atomicidad. Las columnas de cualquier tipo de datos concebible (desde tipos de cadenas y tipos numéricos hasta tipos de arreglos y tipos de tabla) son entonces aceptables en un tabla 1NF - aunque quizás no siempre deseable. Date discute que los atributos relación-valor, por medio de los cuales un campo dentro de una tabla puede contener una tabla, son útiles en casos raros.13
+
+Normalización más allá de la 1NF
+
+Cualquier tabla que esté en la segunda forma normal (2NF) o más arriba, también está, por definición, en 1NF (cada forma normal tiene criterios más rigurosos que su precursor). Por una parte, una tabla que está en 1NF puede o no puede estar en 2NF; si está en 2NF, puede o no puede estar en 3NF, y así sucesivamente.
+
+Las formas normales más arriba que la 1NF son pensadas para ocuparse de las situaciones en las que una tabla sufre de problemas de diseño que pueden comprometer la integridad de los datos dentro de ella. Por ejemplo, la tabla siguiente está en 1NF, pero no está en 2NF y por lo tanto es vulnerable a inconsistencias lógicas:
+
+Dirección de correo del subscriptor 
+ID del subscriptor 	Dirección de correo 	Primer nombre del subscriptor 	Apellido del subscriptor
+108 	steve@aardvarkmail.net 	Steve 	Wallace
+252 	carol@mongoosemail.org 	Carol 	Robertson
+252 	crobertson@aardvarkmail.net 	Carol 	Robertson
+360 	hclark@antelopemail.com 	Harriet 	Clark
+
+La clave de la tabla es {ID del subscriptor, Dirección de correo}.
+
+Si Carol Robertson cambia su apellido por el de matrimonio, el cambio debe ser aplicado a dos filas. Si el cambio es aplicado solamente a una fila, resulta en una contradicción: la pregunta "cuál es nombre del cliente 252?" tiene dos respuestas que están en conflicto. La 2NF aborda este problema.
+
+Notas y referencias
+- "[T]he overriding requirement, to the effect that the table must directly and faithfully represent a relation, follows from the fact that 1NF was originally defined as a property of relations, not tables." Date, C.J. "What First Normal Form Really Means" in Date on Database: Writings 2000-2006 (Springer-Verlag, 2006), p. 128.
+- "First normal form excludes variable repeating fields and groups." Kent, William. "A Simple Guide to Five Normal Forms in Relational Database Theory", Communications of the ACM 26 (2), Feb. 1983, pp. 120-125.
+- Elmasri, Ramez and Navathe, Carlos C, Shamkant B. Fundamentals of Database Systems, Fourth Edition (Addison-Wesley, 2003), p. 315.
+- Date, C.J. "What First Normal Form Really Means" pp. 127-128.
+- Such views cannot be created using SQL that conforms to the SQL:2003 standard.
+- The third of Codd's 12 rules states that "Null values... [must be] supported in a fully relational DBMS for representing missing information and inapplicable information in a systematic way, independent of data type." Codd, E.F. "Is Your DBMS Really Relational?" Computerworld, October 14, 1985.
+- Date, C.J. "What First Normal Form Really Means" p. 128.
+- Codd, E.F. The Relational Model for Database Management Version 2 (Addison-Wesley, 1990).
+- Codd, E.F. The Relational Model for Database Management Version 2 (Addison-Wesley, 1990), p. 6.
+- Darwen, Hugh. "Relation-Valued Attributes; or, Will the Real First Normal Form Please Stand Up?", in C. J. Date and Hugh Darwen, Relational Database Writings 1989-1991 (Addison-Wesley, 1992).
+- "[F]or many years," writes Date, "I was as confused as anyone else. What's worse, I did my best (worst?) to spread that confusion through my writings, seminars, and other presentations." Date, C.J. "What First Normal Form Really Means" in Date on Database: Writings 2000-2006 (Springer-Verlag, 2006), p. 108
+- Date, C.J. "What First Normal Form Really Means" p. 112.
+- Date, C.J. "What First Normal Form Really Means" pp. 121-126.
+
+Lectura adicional
+- Litt's Tips: Normalization
+- Rules Of Data Normalization
+- Date, C. J., & Lorentzos, N., & Darwen, H. (2002). Temporal Data & the Relational Model (1st ed.). Morgan Kaufmann. ISBN 1-55860-855-9.
+- Date, C. J. (1999), An Introduction to Database Systems (8th ed.). Addison-Wesley Longman. ISBN 0-321-19784-4.
+- Kent, W. (1983) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM, vol. 26, pp. 120-125
+- Date, C.J., & Darwen, H., & Pascal, F. Database Debunkings

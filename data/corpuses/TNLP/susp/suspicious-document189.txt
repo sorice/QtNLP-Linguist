@@ -1,0 +1,116 @@
+Historia de la ingeniería del software
+
+Es el equipamiento lógico o soporte lógico de una computadora digital; comprende el conjunto de los componentes necesarios que hacen posible la realización de tareas específicas, en contraposición a los componentes físicos (hardware). Desde los comienzos del software hasta hoy en día se puede decir que se divide en cuatro eras: 1950 – 1965Se trabajaba con la idea de “Codificar y Corregir”. No existía un planteamiento previo. No existía documentación de ningún tipo. Existencia de pocos métodos formales y pocos creyentes en ellos. Desarrollo a base de prueba y error. 1965 – 1972 Se busca simplificar código. Aparición de Multiprogramación y Sistemas Multiusuarios. Sistemas de Tiempo Real apoyan la toma de decisiones. Aparición de Software como producto. (Casas de Software). INICIO DE LA CRISIS DEL SOFTWARE.Se buscan procedimientos para el desarrollo del Software. 1972 – 1985 Nuevo Concepto: Sistemas Distribuidos. Complejidad en los Sistemas de Información. Aparecen: Redes de área local y global, y Comunicadores Digitales. Amplio Uso de Microprocesadores. 1985 - 1995 aprox. Impacto Colectivo de Software. Aparecen: Redes de Información, Tecnologías Orientadas a Objetos. Aparecen: Redes Neuronales, Sistemas Expertos y SW de Inteligencia Artificial. La información como valor preponderante dentro de las Organizaciones. 2000 hasta hoy en día Utiliza algunos requisitos de las eras anteriores solo que aumenta la omnipresencia de la web, la reutilización de información y componentes de software
+
+Codificar: Transformar mediante las reglas de un código la formulación de un mensaje. Hardware: Componente físico de la computadora. Por ejemplo: el monitor, la impresora o el disco rígido. El hardware por sí mismo no hace que una máquina funcione. Es necesario, además, instalar un Software adecuado. Microprocesador: Es la parte más importante del ordenador, se encarga de realizar todos los cálculos y controla su funcionamiento. La velocidad de este "cerebro" determina la del ordenador
+Multiprogramación: Se denomina multiprogramación a la técnica que permite que dos o más procesos ocupen la misma unidad de memoria principal y que sean ejecutados al "mismo tiempo“. Multiusuario: Capacidad de algunos sistemas para ofrecer sus recursos a diversos usuarios conectados a través de terminales. Preponderante:Que prepondera, prevalece o tiene cualquier tipo de superioridad respecto a aquello con lo que es comparado
+
+primera generación Primera generación 1950 - 1960 Distribución limitada Software “a medida” Sistemas constituidos por tubos de vacío, desprendían bastante calor y tenían una vida relativamente corta. Alto consumo de energía. El voltaje de los tubos era de 300v y la posibilidad de fundirse era grande. Máquinas grandes y pesadas. Se construye el ordenador ENIAC de grandes dimensiones (30 toneladas). ENIAC
+
+segunda generación Transistor como potente principal. El componente principal es un pequeño trozo de semiconductor, y se expone en los llamados circuitos transistores. Disminución del tamaño Disminución del consumo y de la producción de calor Su fiabilidad alcanza metas inimaginables con los efímeros tubos al vacío Mayor rapidez, la velocidad de las operaciones ya no se mide en segundos sino en menos BURROUGH Memorias internas de núcleos de ferrita Instrumentos de almacenamiento: cintas y discos Mejoran los dispositivos de entrada y salida, para la mejor lectura de tarjetas perforadas, se disponía de células fotoeléctricas. Introducción de elementos modulares. Las impresoras aumentan su capacidad de trabajo. Lenguaje de programación más potente. Aplicaciones comerciales en aumento. Tercera generación 1980 Sistemas distribuidos
+
+tercera generación Sistemas distribuidos Incorporación de “Inteligencia” Hardware bajo coste Circuitos integrados desarrollado en 1958 por Jack Kilbry. Circuitos integrados, miniaturización y reunión de centenares de elementos en una placa de silicio o (chip) Menor consumo de energía Apreciable reducción de espacio Aumento de fiabilidad y flexibilidad PC XT
+
+Visión general
+
+Hay un número de áreas donde es notable la evolución de la ingeniería de software:
+- Surgimiento como una profesión: A principios de los 1980,1 de software.[cita requerida] Hoy en día, menos mujeres trabajan en ingeniería de software que en otras profesiones, una situación cuya causa no se identifica claramente. A menudo es atribuido a la discriminación sexual, cibercultura o sesgo en la educación.[¿quién?] Muchas organizaciones académicas y profesionales consideran esta situación desequilibrada y están tratando de resolverlo.
+- Procesos: Los procesos se han convertido en una gran parte de la ingeniería de software y son aclamados por su potencial para mejorar el software y duramente criticados por su potencial para constreñir a los programadores.
+- Costo de hardware: el costo relativo del software versus el hardware ha cambiado sustancialmente en los últimos 50 años. Cuando los mainframes eran costosos y requerían una gran cantidad de personal se soporte, las pocas organizaciones que los compraban también tuvieron los recursos para financiar proyectos de ingeniería de software a la medida, grandes y costosos. Los computadores son ahora mucho más numerosos y mucho más potentes, lo cual tiene varios efectos en el software. El mercado más grande puede soportar grandes proyectos para crear software comercialmente, como los hechos por empresas como Microsoft. Las máquinas baratas permiten a cada programador tener un terminal capaz de una compilación bastante rápida. Los programas en cuestión pueden usar técnicas como la recolección de basura, que los hacen más fáciles y rápidos de escribir. Por otro lado, menos organizaciones están interesadas en emplear programadores para grandes proyectos de software a la medida, y en su lugar utilizan software comercial tanto como sea posible.
+
+La era pionera
+
+El desarrollo más importante fue que nuevos computadores salían casi cada uno o dos años, haciendo obsoletos los ya existentes. La gente del software tenía que volver a escribir todos sus programas para correr en estas nuevas máquinas. Los programadores no tenían equipos en sus escritorios y tenían que ir a la "sala de máquinas". Las tareas (jobs) eran corridas al inscribirse para tiempo de máquina o por el personal operativo. Las tareas eran corridas poniendo tarjetas perforadas como entrada en el lector de tarjetas de la máquina y se esperaban por resultados devueltos en la impresora.
+
+El campo era tan nuevo que la idea de gestión por horario era inexistente. Era casi imposible hacer predicciones de la fecha de finalización del proyecto. El hardware del computador era específico para la aplicación. Las tareas científicas y de negocios necesitaban diferentes máquinas. Debido a la necesidad de traducir frecuentemente el software viejo para atender las necesidades de nuevas máquinas, se desarrollaron lenguajes de orden superior como FORTRAN, COBOL y ALGOL. Vendedores de hardware regalaban sistemas de software gratis puesto que no se podía vender hardware sin software. Algunas compañías vendían el servicio de construcción de software personalizado, pero no habían empresas de software vendiendo paquetes de software.
+
+La noción de reutilización floreció. A medida que el software fue libre, las organizaciones de usuarios comúnmente lo liberaban. Grupos como SHARE, el grupo de usuario científico de IBM, ofrecían catálogos de componentes reutilizables. La academia todavía no ensañaba los principios de la ciencias de la computación. La programación modular y la abstracción de datos ya se utilizaban en programación.
+
+De 1955 a 1965: Los orígenes
+
+El término Ingeniería del software apareció por primera vez en la década de 1950 y principios de los años 1960. Los programadores siempre habían sabido sobre ingenieros civiles, eléctricos y de computadores y debatían qué podría significar la ingeniería para el software.
+
+El Comité de ciencia de la OTAN patrocinó dos conferencias2 sobre ingeniería del software en 1968 (Garmisch, Alemania — ver informe|de la Conferencia) y en 1969, que dio al campo su impulso inicial. Muchos creen que estas conferencias marcaron el inicio oficial de la profesión de la Ingeniería de software.
+
+De 1965 a 1985: La Crisis del Software
+
+La ingeniería de software fue estimulada por la llamada crisis del software de la década de 1960, 1970 y 1980, que identifica muchos de los problemas de desarrollo de software. Muchos proyectos de software sobrepasaron el presupuesto y el tiempo estimados. Algunos proyectos causaron daños a la propiedad. Algunos proyectos causaron pérdidas de vidas.3 La crisis del software originalmente fue definida en términos de productividad, pero evolucionó para enfatizar la calidad. Algunos utilizan el término de crisis del software para referirse a su incapacidad de contratar programadores suficientemente calificados.
+- Costo y desbordamiento de presupuesto: el sistema operativo OS/360 fue un ejemplo clásico. Este proyecto que duró una década[cita requerida] desde los años 1960 finalmente produjo uno de los más complejos sistemas de software de ese tiempo. El OS/360 fue uno de los primeros de grandes proyectos de software (1000 programadores).[cita requerida] En el libro The Mythical Man-Month, Fred Brooks afirma que cometió un error multimillonario por no desarrollar una coherente arquitectura de software antes de iniciar el desarrollo.
+- Daños a la propiedad: Defectos de software pueden causar daños a la propiedad. Escasa seguridad de software permite a hackers robar identidades, costando tiempo, dinero y reputaciones.
+- Vida y muerte: Defectos de software pueden matar. Algunos sistemas embebidos en máquinas de radioterapia fallaron de una manera tan catastrófica que administraron dosis letales de radiación a pacientes. La más famosa de estas fallas es el incidente de Therac 25.
+
+Peter G. Neumann ha mantenido una lista contemporánea de problemas de software y desastres.4 La crisis del software ha estado desvaneciéndose de vista, porque es psicológicamente extremadamente difícil permanecer en modo de crisis durante un período prolongado (más de 20 años). No obstante, el software - especialmente el software embebido en tiempo real - sigue siendo arriesgado y omnipresente, y es crucial no ceder en complacencias. En los últimos 10-15 años, Michael A. Jackson ha escrito extensamente sobre la naturaleza de la ingeniería del software, ha identificado la fuente principal de sus dificultades como la falta de especialización y ha sugerido que sus marcos de problema proporcionan la base para una "práctica normal" de la ingeniería del software, un requisito previo si la ingeniería de software quiere convertirse en una ciencia de ingeniería. {Michael Jackson, "Ingeniería e ingeniería de Software" en S Nanz ed, el futuro de la Ingeniería de Software, Springer Verlag 2010; Michael Jackson, marcos de problema: Análisis y estructuración de los problemas de desarrollo de Software; Addison-Wesley, 2001}.
+
+De 1985 a 1989: No hay balas de plata
+
+Durante décadas, solucionar la crisis del software fue de suprema importancia para investigadores y empresas productoras de herramientas de software. El costo de propiedad y mantenimiento del software en la década de 1980 fue dos veces más caro que el propio desarrollo del software. Durante la década de 1990, el costo de propiedad y mantenimiento aumentó en un 30% con respecto a la década anterior. En 1995, las estadísticas mostraron que la mitad de los proyectos de desarrollo encuestados estaban operacionales, pero no eran considerado exitoso. El proyecto de software medio sobrepasa su estimación en tiempo en el 50%. Las tres cuartas partes de todos los grandes productos de software son entregados al cliente con tales fallas que no son usados en absoluto, o no cumplen con los requerimientos del cliente.
+
+Proyectos de software
+
+Aparentemente, cada nueva tecnología y práctica de la década de 1970 a la de 1990 fue pregonada como una bala de plata para resolver la crisis del software. Herramientas, disciplina, métodos formales, proceso, y profesionalismo fueron promocionados como balas de plata:
+- Herramientas: Especialmente enfatizaba que las herramientas: programación estructurada, programación orientada a objetos, herramientas CASE, el lenguaje de programación Ada, documentación y estándares eran promocionados como balas de plata.
+- Disciplina: Algunos expertos argumentaron que la crisis del software era debido a la falta de disciplina de los programadores.
+- Métodos formales: Algunos creían que si las metodologías de ingeniería formal fueran aplicadas al desarrollo de software, entonces la producción de software sería una industria tan predecible como otras ramas de la ingeniería. Abogaron que había que demostrar que todos los programas eran correctos.
+- Proceso: Muchos abogaron el uso de procesos definidos y metodologías como el Modelo de Capacidad y Madurez.
+- Profesionalismo: Esto llevó a trabajar en un código de ética, licencias y profesionalismo.
+
+En 1986, Fred Brooks publicó su artículo No hay balas de plata, argumentando que ninguna tecnología individual o práctica jamás haría una mejora de 10 veces en la productividad dentro de 10 años.
+
+El debate sobre las balas de plata rugía en la década siguiente. Defensores de Ada, los componentes y procesos continuaron años argumentando que su tecnología favorita sería una bala de plata. Los escépticos no estuvieron de acuerdo. Finalmente, casi todo el mundo aceptó que nunca se encontrará ninguna bala de plata. Sin embargo, afirmaciones sobre balas de plata saltarán de vez en cuando, aún hoy en día.
+
+Algunos interpretan que no hay balas de plata significa que la ingeniería de software ha fracasado. Sin embargo, con otras lecturas, Brooks va a decir, "seguramente haremos progresos sustanciales en los próximos 40 años; un orden de magnitud en más de 40 años es casi mágico... ".
+
+La búsqueda de una única clave para el éxito nunca funcionó. Todas las prácticas y tecnologías conocidas sólo han hecho mejoras incrementales en productividad y calidad. A pesar de todo, tampoco hay balas de plata para cualquier otra profesión. Otros interpretan no hay balas de plata como prueba de que la ingeniería de software finalmente ha madurado y reconoce que los proyectos de éxito son debido al duro trabajo.
+
+Sin embargo, podría decirse también que, de hecho, en la actualidad hay una gama de balas de plata, incluyendo metodologías livianas (ver gerencia de proyectos), calculadoras de hoja de cálculo, navegadores personalizados, motores de búsqueda en sitio, generadores de reportes de base de datos, editores de código y pruebas de diseño integrados, con memoria/diferencias/deshacer y tiendas especializadas que generan software de nicho, como sitios Web de información, a una fracción del costo de desarrollo de un sitio Web totalmente personalizado. Sin embargo, el campo de la ingeniería del software aparece demasiado complejo y diverso para una única "bala de plata" que sirva para mejorar la mayoría de los problemas, y cada problema representa sólo una pequeña porción de todos los problemas de software.
+
+De 1990 a 1999: Prominencia de Internet
+
+El auge de la Internet condujo a un rápido crecimiento en la demanda de sistemas internacionales de despliegue de información y e-mail en la World Wide Web. Los programadores debían manejar ilustraciones, mapas, fotografías y otras imágenes, más animación sencilla, a un ritmo nunca antes visto, con pocos métodos conocidos para optimizar la visualización/almacenamiento de imágenes (como el uso de imágenes en miniatura).
+
+El crecimiento del uso del navegador, corriendo en el lenguaje HTM, cambió la manera en que estaba organizada la visualización y la recuperación de la información. Las amplias conexiones de red condujeron al crecimiento y la prevención de virus informáticos internacionales en computadores con MS Windows, y la gran proliferación de correo basura se convirtió en una cuestión de diseño importante en sistemas de correo electrónico, inundando canales de comunicación y requiriendo de precalificación semiautomatizada. Sistemas de búsqueda de palabra clave evolucionaron en buscadores web, y muchos sistemas de software tuvieron que ser rediseñados, para la búsqueda internacional, dependiendo de las técnicas de posicionamiento en buscadores (SEO). Fueron necesarios sistemas de traducción de lenguaje natural humano para intentar traducir el flujo de información en múltiples idiomas extranjeros, con muchos sistemas de software siendo diseñados para uso multilinguaje, basado en conceptos de diseño de traductores humanos. Típicas bases de usuarios de computadora con frecuencia pasaron de cientos o miles de usuarios a muchos millones de usuarios internacionales.
+
+De 2000 al presente: Metodologías ligeras
+
+Con la creciente demanda de software en muchas organizaciones pequeñas, la necesidad de soluciones de software de bajo costo llevó al crecimiento de metodologías más simples y rápidas que desarrollaran software funcional, de los requisitos de implementación, más rápidos y más fáciles. El uso de prototipos rápidos evolucionó a metodologías ligeras completas como la programación extrema (XP), que intentó simplificar muchas las áreas de la ingeniería de software, incluyendo la recopilación de requerimientos y las pruebas de confiabilidad para el creciente y gran número de pequeños sistemas de software. Sistemas de software muy grandes todavía utilizan metodologías muy documentadas, con muchos volúmenes en el conjunto de documentación; Sin embargo, sistemas más pequeños tenían un enfoque alternativo más simple y rápido para administrar el desarrollo y mantenimiento de cálculos y algoritmos de software, almacenamiento y recuperación de información y visualización.
+
+Tendencias actuales en la ingeniería de software
+
+La ingeniería de software es una disciplina joven y aún está en desarrollo. Las direcciones en que la ingeniería de software se está desarrollando incluyen:
+
+Aspectos: Los aspectos ayudan a los ingenieros de software a lidiar con los atributos de calidad al proporcionar herramientas para añadir o quitar código repetitivo de muchas áreas en el código fuente. Los aspectos describen cómo todos los objetos o funciones deben comportarse en circunstancias particulares. Por ejemplo, los aspectos puede agregar control de depuración, registro o bloqueo en todos los objetos de un tipo particular. Los investigadores actualmente están trabajando para comprender cómo utilizar aspectos para diseñar el código de propósito general. Conceptos relacionados incluyen programación generativa y plantillas.
+
+Ágil: El desarrollo ágil de software guía a los proyectos de desarrollo de software que evolucionan rápidamente con cambiantes expectativas y mercados competitivos. Los proponentes de este método creen que procesos pesados, dirigidos por documentos (como TickIT, CMM e ISO 9000) están desapareciendo en importancia.[cita requerida] Algunas personas creen que las empresas y agencias exportan muchos de los puestos de trabajo que pueden ser guiados por procesos pesados.[cita requerida] Conceptos relacionados incluyen la programación extrema, scrum y lean software development.
+
+Experimental: La ingeniería de software experimental es una rama de la ingeniería de software interesada en la elaboración de experimentos sobre el software, en la recolección de datos de los experimentos y en la elaboración de leyes y teorías desde estos datos. Los proponentes de este método defienden que la naturaleza del software es tal que podemos hacer avanzar el conocimiento en software a través de sólo experimentos.[cita requerida]
+
+Model-driven: El diseño manejado por modelos desarrolla modelos textuales y gráficos como artefactos primarios de diseño. Hay disponibles herramientas de desarrollo que usan transformación de modelo y generación de código para generar fragmentos de código bien organizado que sirven como base para producir aplicaciones completas.
+
+Líneas de productos de software: Las líneas de producción de software es una forma sistemática para producir familias de sistemas de software, en lugar de crear una sucesión de productos completamente individuales. Este método destaca una extensiva, sistemática, reutilización de código formal, para intentar industrializar el proceso de desarrollo de software.
+
+El futuro de la Conferencia de ingeniería de Software (FOSE),5 celebrada en ICSE 2000, documenta el estado del arte de SE en 2000 y lista muchos problemas a resolver en la próxima década. El FOSE sigue la pista de las conferencias ICSE 20006 y el ICSE 20077 y también ayudar a identificar el estado del arte en ingeniería de software.
+
+La ingeniería de software hoy
+
+La profesión está tratando de definir sus límites y contenido. El Software Engineering Body of Knowledge SWEBOK ha sido presentado como un estándar ISO durante 2006 (ISO/IEC TR 19759).
+
+En 2006, la revista Money y Salary.com calificaron la ingeniería de software como el mejor trabajo en Estados Unidos en términos de crecimiento, paga, niveles de estrés, flexibilidad en horas y medio ambiente de trabajo, creatividad y lo fácil que es entrar y avanzar en el campo.8
+
+Figuras prominentes en la historia de la ingeniería de software
+- Charles Bachman (nacido en 1924) es particularmente conocido por su trabajo en el área de bases de datos.
+- Laszlo Belady (nacido en 1928) el editor en jefe de la IEEE Transactions on Software Engineering en la década de 1980
+- Fred Brooks (nacido en 1931) conocido por el desarrollo del OS/360.
+- Peter Chen conocido por el desarrollo del modelo entidad-relación.
+- Edsger Dijkstra (1930–2002) desarrolló el marco para la programación adecuada.
+- David Parnas (nacido en 1941) desarrolló el concepto de ocultamiento de información en la programación modular.
+- Michael A. Jackson (nacido en 1936) experto en Ingeniería de software responsable del método de diseño de programa JSP; el método de desarrollo de sistema JSD (con John Cameron); y marcos de problema para el análisis y estructuración de los problemas de desarrollo de software.
+
+Referencias
+- "Software engineering ... has recently emerged as a discipline in its own right." Sommerville, Ian (1985) [1982]. Software Engineering. Addison-Wesley. ISBN 0-201-14229-5.
+- The NATO Software Engineering Conferences
+- Therac-25
+- Computer Risks
+- Future of Software Engineering
+- ICSE 2000
+- ICSE 2007
+- Kalwarski, Tara; Daphne Mosher, Janet Paskin and Donna Rosato (2006). «Best Jobs in America». MONEY Magazine. CNN. Consultado el 20-04-2006. , "MONEY Magazine and Salary.com researched hundreds of jobs, considering their growth, pay, stress-levels and other factors. These careers ranked highest. 1. Software Engineer..."

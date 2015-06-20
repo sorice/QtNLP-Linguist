@@ -1,0 +1,128 @@
+Ramificación y poda
+
+El método de diseño de algoritmos Ramificación y poda (también llamado Ramificación y Acotación) es una variante del Backtracking mejorado sustancialmente. El término (del inglés, Branch and Bound) se aplica mayoritariamente para resolver cuestiones o problemas de optimización.
+
+La técnica de Ramificación y poda se suele interpretar como un árbol de soluciones, donde cada rama nos lleva a una posible solución posterior a la actual. La característica de esta técnica con respecto a otras anteriores (y a la que debe su nombre) es que el algoritmo se encarga de detectar en qué ramificación las soluciones dadas ya no están siendo óptimas, para «podar» esa rama del árbol y no continuar malgastando recursos y procesos en casos que se alejan de la solución óptima.
+
+Descripción General
+
+Nuestra meta será encontrar el valor mínimo de una función f(x) (un ejemplo puede ser el coste de manufacturación de un determinado producto) donde fijamos x rangos sobre un determinado conjunto S de posibles soluciones. Un procedimiento de ramificación y poda requiere dos herramientas.
+
+La primera es la de un procedimiento de expansión, que dado un conjunto fijo S de candidatos, devuelve dos o más conjuntos más pequeños S_1 , S_2 , … , S_n cuya unión cubre S. Nótese que el mínimo de f(x) sobre S es min{ v_1, v_2, … } donde cada v_i es el mínimo de f(x) en S_i. Este paso es llamado ramificación; como su aplicación es recursiva, esta definirá una estructura de árbol cuyos nodos serán subconjuntos de S.
+
+La idea clave del algoritmo de ramificación y poda es: si la menor rama para algún árbol nodo(conjunto de candidatos) A es mayor que la rama padre para otro nodo B, entonces A debe ser descartada con seguridad de la búsqueda. Este paso es llamado poda, y usualmente es implementado manteniendo una variable global m que graba el mínimo nodo padre visto entre todas las subregiones examinadas hasta entonces. Cualquier nodo cuyo nodo hijo es mayor que m puede ser descartado. La recursión para cuando el conjunto candidato S es reducido a un solo elemento, o también cuando el nodo padre para el conjunto S coincide con el nodo hijo. De cualquier forma, cualquier elemento de S va a ser el mínimo de una función dentro de S.
+
+Pseudocódigo
+
+El pseudocódigo del algoritmo de Ramificación y poda es el siguiente:
+
+Funcion RyP {
+ P = Hijos(x,k)
+ mientras ( no vacio(P) )
+    x(k) = extraer(P)
+    if esFactible(x,k) y G(x,k) < optimo
+        si esSolucion(x)
+             Almacenar(x)
+        else
+             RyP(x,k+1)
+ 
+
+Donde:
+- G(x) es la función de estimación del algoritmo.
+- P es la pila de posibles soluciones.
+- esFactible es la función que considera si la propuesta es válida.
+- esSolución es la función que comprueba si se satisface el objetivo.
+- óptimo es el valor de la función a optimizar evaluado sobre la mejor solución encontrada hasta el momento.
+- NOTA: Usamos un menor que (<) para los problemas de minimización y un mayor que (>) para problemas de maximización.
+
+Subdivisión Efectiva
+
+La eficiencia de este método depende fundamentalmente del procedimiento de expansión de nodos, o de la estimación de los nodos padres e hijos. Es mejor elegir un método de expansión que provea que no se solapen los subconjuntos para ahorrarnos problemas de duplicación de ramas.
+
+Idealmente, el procedimiento es para cuando todos los nodos del árbol de búsqueda están podados o resueltos. En ese punto, todas las subregiones no podadas, tendrán un nodo padre e hijo iguales a una función global mínima. En la práctica el procedimiento a menudo termina, cuando finaliza un tiempo dado, hasta el punto que el mínimo de nodos hijos y el máximo de nodos padres sobe todas las secciones no podadas, definen un rango de valores que contienen el mínimo global. Alternativamente, sin superar un tiempo restringido, el algoritmo debe terminar cuando un criterio de error, tal que (max-min)/(max+min), cae bajo un valor específico.
+
+La eficiencia del método depende especialmente de la efectividad de los algoritmos de ramificación y poda usados. Una mala elección puede llevarnos a una repetida ramificación, sin poda, hasta que las subregiones se conviertan en muy pequeñas. En ese caso el método seria reducido a una exhaustiva enumeración del dominio, que es a menudo impracticablemente larga. No hay un algoritmo de poda universal que trabaje para todos los problemas, pero existe una pequeña esperanza de que alguna vez se encuentre alguno. Hasta entonces necesitaremos implementar cada uno por separado para cada aplicación informática, con el algoritmo de ramificación y poda especialmente diseñados para él.
+
+Los métodos de ramificación y poda deben ser clasificados acorde a los métodos de poda, y a las maneras de creación/clasificación de los árboles de búsqueda.
+
+La estrategia de diseño de ramificación y poda, es muy similar al de vuelta atrás (backtracking), donde el estado del árbol es usado para resolver un problema. Las diferencias son que el método de ramificación y poda no nos limitan a ninguna forma particular de obtener un árbol transverso, y es usado solamente para problemas de optimización. Este método naturalmente lleva a una forma de implementación paralela y distribuida, como podemos ver por ejemplo en el Problema del Viajante de Comercio.
+
+Estrategias de Poda
+
+Nuestro objetivo principal será eliminar aquellos nodos que no lleven a soluciones buenas. Podemos utilizar dos estrategias básicas. Supongamos un problema de maximización donde se han recorrido varios nodos i=1,…,n. estimando para cada uno la cota superior CS(xi) e inferior CI(x_i).
+
+Estrategia 1
+
+Si a partir de un nodo x_i se puede obtener una solución válida, entonces se podrá podar dicho nodo si la cota superior CS(x_i) es menor o igual que la cota inferior CI(x_j) para algún nodo j generado en el árbol.
+
+Por ejemplo: Supongamos el problema de la mochila, el cual se va a desarrollar en la sección de ejemplos, donde utilizamos un árbol binario. Entonces:
+
+Si a partir de x_i se puede encontrar un beneficio máximo de CS(x_i) = 4 y a partir de x_j, se tiene asegurado un beneficio mínimo de CI(x_j) = 5, esto nos llevará a la conclusión de que se puede podar el nodo x_i sin que perdamos ninguna posible solución óptima.
+
+Estrategia 2
+
+Si se obtiene una posible solución válida para el problema con un beneficio B_j, entonces se podrán podar aquellos nodos x_i cuya cota superior CS(x_i) sea menor o igual que el beneficio que se puede obtener B_j (este proceso sería similar para la cota inferior).
+
+Estrategias de Ramificación
+
+Como se comenta en la introducción de éste apartado, la expansión del árbol con las distintas estrategias está condicionada por la búsqueda de la solución óptima. Debido a esto todos los nodos de un nivel deben ser expandidos antes de alcanzar un nuevo nivel, cosa que es lógica ya que para poder elegir la rama del árbol que va a ser explorada, se deben conocer todas las ramas posibles.
+
+Todos estos nodos que se van generando y que no han sido explorados se almacenan en lo que se denomina Lista de Nodos Vivos (a partir de ahora LNV), nodos pendientes de expandir por el algoritmo.
+
+La LNV contiene todos los nodos que han sido generados pero que no han sido explorados todavía. Según como estén almacenados los nodos en la lista, el recorrido del árbol será de uno u otro tipo, dando lugar a las tres estrategias que se detallan a continuación.
+
+Estrategia FIFO
+
+En la estrategia FIFO (First In First Out), la LNV será una cola, dando lugar a un recorrido en anchura del árbol.
+
+En la figura 1 se puede observar que se comienza introduciendo en la LNV el nodo A. Sacamos el nodo de la cola y se expande generando los nodos B y C que son introducidos en la LNV. Seguidamente se saca el primer nodo que es el B y se vuelve a expandir generando los nodos D y E que se introducen en la LNV. Este proceso se repite mientras que quede algún elemento en la cola.
+
+Estrategia LIFO
+
+En la estrategia LIFO (Last In First Out), la LNV será una pila, produciendo un recorrido en profundidad del árbol.
+
+En la figura 2 se muestra el orden de generación de los nodos con una estrategia LIFO. El proceso que se sigue en la LNV es similar al de la estrategia FIFO, pero en lugar de utilizar una cola, se utiliza una pila.
+
+Estrategia de Menor Coste o LC
+
+Al utilizar las estrategias FIFO y LIFO se realiza lo que se denomina una búsqueda “a ciegas”, ya que expanden sin tener en cuenta los beneficios que se pueden alcanzar desde cada nodo. Si la expansión se realizase en función de los beneficios que cada nodo reporta (con una “visión de futuro”), se podría conseguir en la mayoría de los casos una mejora sustancial.
+
+Es así como nace la estrategia de Menor Coste o LC (Least cost), selecciona para expandir entre todos los nodos de la LNV aquel que tenga mayor beneficio (o menor coste). Por tanto, ya no estamos hablando de un avance “a ciegas”.
+
+Esto nos puede llevar a la situación de que varios nodos puedan ser expandidos al mismo tiempo. De darse el caso, es necesario disponer de un mecanismo que solucione este conflicto:
+
+-Estrategia LC-FIFO: Elige de la LNV el nodo que tenga mayor beneficio y en caso de empate se escoge el primero que se introdujo.
+
+-Estrategia LC-LIFO: Elige de la LNV el nodo que tenga mayor beneficio y en caso de empate se escoge el último que se introdujo.
+
+Ramificación y Poda "Relajado"
+
+Un variante del método de ramificación y poda más eficiente se puede obtener “relajando” el problema, es decir, eliminando algunas de las restricciones para hacerlo más permisivo.
+
+Cualquier solución válida del problema original será solución válida para el problema “relajado”, pero no tiene por qué ocurrir al contrario. Si conseguimos resolver esta versión del problema de forma óptima, entonces si la solución obtenida es válida para el problema original, esto querrá decir que es óptima también para dicho problema.
+
+La verdadera utilidad de este proceso reside en la utilización de un método eficiente que nos resuelva el problema relajado. Uno de los métodos más conocidos es el de Ramificación y Corte (Branch and Cut (versión inglesa)).
+
+Ramificación y Corte
+
+Ramificación y corte es un método de optimización combinacional para resolver problemas de enteros lineales, que son problemas de programación lineal donde algunas o todas las incógnitas están restringidas a valores enteros. Se trata de un híbrido de ramificación y poda con métodos de planos de corte.
+
+Este método resuelve programas lineales sin restricciones enteras usando algoritmos regulares simplificados. Cuando se obtiene una solución óptima que tiene un valor no entero para una variable que ha de ser entera, el algoritmo de planos de corte se usa para encontrar una restricción lineal más adelante que sea satisfecha por todos los puntos factibles enteros, pero violados por la solución fraccional actual. Si se encuentra esa desigualdad, se añade al programa lineal, de tal forma que resolverla nos llevará a una solución diferente que esperamos que sea “menos fraccional”. Este proceso se repite hasta que ó bien, se encuentra una solución entera (que podemos demostrar que es óptima), ó bien no se encuentran más planos de corte.
+
+En este punto comienza la parte del algoritmo de ramificación y poda. Este problema se divide en dos versiones: una con restricción adicional en que la variable es más grande o igual que el siguiente entero mayor que el resultado intermedio, y uno donde la variable es menor o igual que el siguiente entero menor. De esta forma se introducen nuevas variables en las bases de acuerdo al número de variables básicas que no son enteros en la solución intermedia pero son enteros de acuerdo a las restricciones originales. Los nuevos programas lineales se resuelven usando un método simplificado y después el proceso repetido hasta que una solución satisfaga todas las restricciones enteras.
+
+Durante el proceso de ramificación y poda, los planos de corte se pueden separar más adelante y pueden ser o cortes globales válidos para todas las soluciones enteras factibles, o cortes locales que son satisfechos por todas las soluciones llenando todas las ramas de la restricción del subárbol de ramificación y poda actual.
+
+Aplicaciones en el ámbito general
+
+Esta técnica es usada por un gran número de problemas NP-hard, tales como:
+- Problema de la mochila.
+- Programación lineal.
+- Programación no lineal.
+- Problema del viajante.
+- Problema de la asignación cuadrática.
+- Problema de máxima satisfacibilidad (Versión Inglesa).
+- Búsqueda del vecino más cercano (Versión Inglesa).
+- Análisis del ruido falso.
+
+También puede ser una base de varios razonamientos heurísticos. Por ejemplo, uno puede desear parar la ramificación cuando el hueco entre el nodo hijo y padre llegue a ser más pequeño que un cierto umbral. Esto es usado cuando la solución es suficientemente buena para el problema propuesto, y puede reducir gratamente la complejidad computacional. Este tipo de solución particular es aplicable cuando la función coste usada esta clara o es el resultado de estimaciones estadísticas y aunque no se conoce, se sabe que hay una probabilidad específica de que pertenezca a un rango de valores.

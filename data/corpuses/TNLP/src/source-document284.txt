@@ -1,0 +1,35 @@
+Programación declarativa
+
+La Programación Declarativa, en contraposición a la programación imperativa es un paradigma de programación que está basado en el desarrollo de programas especificando o "declarando" un conjunto de condiciones, proposiciones, afirmaciones, restricciones, ecuaciones o transformaciones que describen el problema y detallan su solución. La solución es obtenida mediante mecanismos internos de control, sin especificar exactamente cómo encontrarla (tan sólo se le indica a la computadora qué es lo que se desea obtener o qué es lo que se está buscando). No existen asignaciones destructivas, y las variables son utilizadas con Transparencia referencial
+
+Diferencia entre imperativo y declarativo
+
+En la programación imperativa se describe paso a paso un conjunto de instrucciones que deben ejecutarse para variar el estado del programa y hallar la solución, es decir, un algoritmo en el que se describen los pasos necesarios para solucionar el problema.
+
+En la programación declarativa las sentencias que se utilizan lo que hacen es describir el problema que se quiere solucionar, pero no las instrucciones necesarias para solucionarlo. Esto último se realizará mediante mecanismos internos de inferencia de información a partir de la descripción realizada.
+
+Tipos
+
+Existen varios tipos de lenguajes declarativos:
+- Los lenguajes lógicos, como Prolog.
+- Los lenguajes algebraicos, como Maude y SQL
+- Los lenguajes funcionales, como Haskell
+
+Ventajas
+
+Se ha dicho que los lenguajes declarativos tienen la ventaja de ser razonados matemáticamente, lo que permite el uso de mecanismos matemáticos para optimizar el rendimiento de los programas.1
+
+Son fiables, elegantes y expresivos.
+
+Algunos lenguajes declarativos
+- Haskell (Programación funcional)
+- ML (Programación funcional)
+- Lisp (Programación funcional)
+- Prolog (Programación Lógica)
+- F-Prolog (Programación Lógica Difusa)
+- Curry (Programación Lógico-Funcional)
+- SQL
+- QML
+
+Referencias
+1. http://ademirar.wordpress.com/2010/08/28/programacion-funcional-para-el-resto-de-nosotros/

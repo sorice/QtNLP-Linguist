@@ -1,0 +1,36 @@
+Grafo dirigido
+
+Un grafo dirigido o digrafo es un tipo de grafo en el cual las aristas tienen una dirección definida,1 a diferencia del grafo generalizado, en el cual la dirección puede estar especificada o no.
+
+Al igual que en el grafo generalizado, el grafo dirigido está definido por un par de conjuntos G=(V,E), donde:
+- V\neq\emptyset, un conjunto no vacío de objetos simples llamados vértices o nodos.
+- E \subseteq \{(a,b) \in V \times V: a \neq b \}\, es un conjunto de pares ordenados de elementos de V\, denominados aristas o arcos, donde por definición un arco va del primer nodo (a) al segundo nodo (b) dentro del par.
+
+A veces un digrafo es denominado digrafo simple para distinguirlo del caso general del multigrafo dirigido, donde los arcos constituyen un multiconjunto, en lugar de un conjunto. En este caso, puede haber más de un arco que una dos vértices en la misma dirección, distinguiéndose entre sí por su identidad, por su tipo (por ejemplo un tipo de arco representa relaciones de amistad mientras que el otro tipo representa mensajes enviados recientemente entre los nodos), o por un atributo como por ejemplo su importancia o peso.
+
+A menudo también se considera que un digrafo simple es aquél en el que no están permitidos los bucles. Un bucle es un arco que une un vértice consigo mismo.
+
+Terminología básica
+
+Un arco e = (x,y) se considera dirigido desde x hacia y; y se denomina cabeza y x se denomina cola del arco.
+
+y se denomina también un sucesor directo de x; correspondientemente, se denomina a x un predecesor directo de y.
+
+Si existe un camino compuesto de uno o más arcos que una x con y, entonces a y se le denomina sucesor de x, al igual que a x se le denomina predecesor de y.
+
+Al arco (y,x) se le denomina arco invertido de (x,y) .
+
+Un grafo dirigido G es llamado simétrico si, para cualquier arco que pertenece a G, el arco invertido correspondiente también pertenece a G. Un grafo dirigido simétrico y sin bucles es equivalente a un grafo no dirigido; basta con reemplazar cada par de arcos dirigidos por un solo arco no dirigido.
+
+Una orientación de un grafo simple no dirigido se obtiene al asignar una orientación a cada uno de los arcos existentes. Un grafo dirigido construido de esta manera se denomina un grafo orientado. Una manera de distinguir entre un grafo simple dirigido y un grafo orientado es que si x e y son vértices, un grafo simple dirigido permite tanto (x, y) como (y, x) entre sus arcos, mientras que solo una de las dos posibilidades es admitida en un grafo orientado.2 3
+
+Un digrafo ponderado es un digrafo en el que existen pesos asociados a cada uno de los arcos, de manera análoga al grafo ponderado. Un digrafo ponderado en el contexto de la teoría de grafos es denominado una red.
+
+La matriz de adyacencia de un digrafo (con bucles y arcos múltiples permitidos) es una matriz compuesta por valores enteros, donde los índices de columnas y filas se corresponden con las identidades de los vertices V . Un elemento de esta matriz, a_{ij} representa el número de arcos existentes entre los nodos i y j. Un elemento en la diagonal de esta matriz, a_{ii} representa el número de bucles que existen en el nodo i. La matriz de adyacencia de un digrafo es una representación única del digrafo, exceptuadas posibles permutacions de las filas y columnas.
+
+Otra representación común de un digrafo es la matriz de incidencia.
+
+Referencias
+1. Bang-Jensen,Gutin,2000. Diestel,2005, Section 1.10. Bondy,Murty,1976, Section 10.
+2. Diestel,2005, Section 1.10.
+3. Weisstein, Eric W. «Oriented Graph» (en inglés). MathWorld. Wolfram Research.

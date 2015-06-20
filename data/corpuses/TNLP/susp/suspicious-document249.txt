@@ -1,0 +1,220 @@
+Autómata finito
+
+Un autómata finito (AF) o máquina de estado finito es un modelo computacional que realiza cómputos en forma automática sobre una entrada para producir una salida.
+
+Este modelo está conformado por un alfabeto, un conjunto de estados finitos, una función de transición, un estado inicial y un conjunto de estados finales. Su funcionamiento se basa en una función de transición, que recibe a partir de un estado inicial una cadena de caracteres pertenecientes al alfabeto (la entrada), y que va leyendo dicha cadena a medida que el autómata se desplaza de un estado a otro, para finalmente detenerse en un estado final o de aceptación, que representa la salida.
+
+La finalidad de los autómatas finitos es la de reconocer lenguajes regulares, que corresponden a los lenguajes formales más simples según la Jerarquía de Chomsky.
+
+Historia
+
+El origen de los autómatas finitos probablemente se remonta a su uso implícito en máquinas electromecánicas, desde principios del siglo XX.1 Ya en 1907, el matemático ruso Andréi Márkov formalizó un proceso llamado cadena de Markov, donde la ocurrencia de cada evento depende con una cierta probabilidad del evento anterior.2 Esta capacidad de "recordar" es utilizada posteriormente por los autómatas finitos, que poseen una memoria primitiva similar, en que la activación de un estado también depende del estado anterior, así como del símbolo o palabra presente en la función de transición.
+
+Posteriormente, en 1943, surge una primera aproximación formal de los autómatas finitos con el modelo neuronal de McCulloch-Pitts. Durante la década de 1950 prolifera su estudio, frecuentemente llamándoseles máquinas de secuencia; se establecen muchas de sus propiedades básicas, incluyendo su interpretación como lenguajes regulares y su equivalencia con las expresiones regulares.1 Al final de esta década, en 1959, surge el concepto de autómata finito no determinista en manos de los informáticos teóricos Michael O. Rabin y Dana Scott.3
+
+En la década de 1960 se establece su conexión con las series de potencias y los sistemas de sobreescritura.4 Finalmente, con el desarrollo del sistema operativo Unix en la década de 1970, los autómatas finitos encuentran su nicho en el uso masivo de expresiones regulares para fines prácticos, específicamente en el diseño de analizadores léxicos (comando lex) y la búsqueda y reemplazo de texto (comandos ed y grep).5 A partir de ese tiempo, los autómatas finitos también se comienzan a utilizar en sistemas dinámicos.1
+
+Definición formal
+
+Formalmente, un autómata finito es una 5-tupla (Q, Σ, q0, δ, F) donde:6
+
+- Q\, es un conjunto finito de estados;
+- \Sigma\, es un alfabeto finito;
+- q_0\in Q es el estado inicial;
+- \delta\colon Q\times\Sigma\to Q es una función de transición;
+- F \subseteq Q es un conjunto de estados finales o de aceptación.
+
+Representación como diagramas de estados
+
+Los autómatas finitos se pueden representar mediante grafos particulares, también llamados diagramas de estados finitos, de la siguiente manera:
+- Los estados Q se representan como vértices, etiquetados con su nombre en el interior.
+- Una transición δ desde un estado a otro, dependiente de un símbolo del alfabeto, se representa mediante una arista dirigida que une a estos vértices, y que está etiquetada con dicho símbolo.
+- El estado inicial q0 se caracteriza por tener una arista que llega a él, proveniente de ningún otro vértice.
+- El o los estados finales F se representan mediante vértices que están encerrados a su vez por otra circunferencia.
+
+Representación como tabla de transiciones
+
+Otra manera de describir el funcionamiento de un autómata finito es mediante el uso de tablas de transiciones o matrices de estados. Dos posibles tablas para el ejemplo de la imagen anterior podrían ser las siguientes:
+
+salida
+q ∈ Q 	símbolo
+σ ∈ Σ 	llegada
+δ(q,σ) ∈ Q
+s1 	0 	s2
+s1 	1 	s1
+s2 	0 	s1
+s2 	1 	s2
+	
+	0 	1
+→*s1 	s2 	s1
+s2 	s1 	s2
+
+La primera representa explícitamente los parámetros y el valor que toma cada ocurrencia de la función de transición.7 La segunda es más compacta, y marca con una flecha el estado inicial, y con un asterisco los estados finales.
+
+Funcionamiento
+
+En el comienzo del proceso de reconocimiento de una cadena de entrada, el autómata finito se encuentra en el estado inicial y a medida que procesa cada símbolo de la cadena va cambiando de estado de acuerdo a lo determinado por la función de transición. Cuando se ha procesado el último de los símbolos de la cadena de entrada, el autómata se detiene en el estado final del proceso. Si el estado final en el que se detuvo es un estado de aceptación, entonces la cadena pertenece al lenguaje reconocido por el autómata; en caso contrario, la cadena no pertenece a dicho lenguaje.
+
+Note que el estado inicial q_0 de un autómata finito siempre es único, en tanto que los estados finales pueden ser más de uno, es decir, el conjunto F puede contener más de un elemento. También puede darse el caso de que un estado final corresponda al mismo estado inicial.
+
+Generalización de la función de transición
+
+Si Σ es un alfabeto, entonces se denota Σ* al conjunto de todas las cadenas de caracteres o palabras que se pueden conformar con dicho alfabeto.
+
+Una función de transición δ se puede generalizar a una función δ*, que opera sobre estados y secuencias de símbolos, en lugar de símbolos individuales del alfabeto. Así, esta nueva función de transición se define \delta^*\colon Q\times\Sigma^*\to Q, permitiendo caracterizar los autómatas de manera más abreviada y sin perder expresividad.6
+
+La función δ* puede expresarse también de manera recursiva, definiendo para toda cadena x ∈ Σ*, todo símbolo a ∈ Σ, y un estado q ∈ Q:6
+- \delta^*(q,\epsilon)=q\,, que es la base inductiva, siendo ε la cadena vacía, y
+- \delta^*(q,xa)=\delta(\delta^*(q,x),a)\,, que es la inducción propiamente tal.
+
+Se llama configuración de un autómata finito a un "instante" en el cómputo de la máquina; es decir, al estado actual en que se encuentra dicho cómputo, junto con la palabra que ha sido procesada hasta ese momento. Formalmente, se define como un par ordenado (q, x) ∈ Q × Σ*. De este modo, se puede definir además la configuración inicial del autómata, como el par (q0,x), donde x es la entrada; y la configuración final, como el par (q,ε), con q ∈ F.
+
+De este modo, el lenguaje regular aceptado por un autómata finito A puede denotarse como L(A) = {w; δ*(q0,w)∈ F}, es decir, como el conjunto de todas las configuraciones iniciales que conllevan a estados finales.
+
+Autómata finito determinista
+
+Un autómata finito determinista (abreviado AFD) es un autómata finito que además es un sistema determinista; es decir, para cada estado q ∈ Q en que se encuentre el autómata, y con cualquier símbolo a ∈ Σ del alfabeto leído, existe siempre a lo más una transición posible δ(q,a).
+
+En un AFD no pueden darse ninguno de estos dos casos:
+- Que existan dos transiciones del tipo δ(q,a)=q1 y δ(q,a)=q2, siendo q1 ≠ q2;
+- Que existan transiciones del tipo δ(q, ε), salvo que q sea un estado final, sin transiciones hacia otros estados.
+
+Un ejemplo interesante de autómatas finitos deterministas son los tries.
+
+Autómata finito no determinista
+
+Un autómata finito no determinista (abreviado AFND) es aquel que, a diferencia de los autómatas finitos deterministas, posee al menos un estado q ∈ Q, tal que para un símbolo a ∈ Σ del alfabeto, existe más de una transición δ(q,a) posible.
+
+Haciendo la analogía con los AFDs, en un AFND puede darse cualquiera de estos dos casos:
+- Que existan transiciones del tipo δ(q,a)=q1 y δ(q,a)=q2, siendo q1 ≠ q2;
+- Que existan transiciones del tipo δ(q, ε), siendo q un estado no-final, o bien un estado final pero con transiciones hacia otros estados.
+
+Cuando se cumple el segundo caso, se dice que el autómata es un autómata finito no determinista con transiciones vacías o transiciones ε (abreviado AFND-ε). Estas transiciones permiten al autómata cambiar de estado sin procesar ningún símbolo de entrada.
+
+Formalmente, se distingue de la 5-tupla que define a un autómata finito determinista en su función de transición. Mientras en un AFD esta función se define de la siguiente manera:
+
+    \delta:Q\times\Sigma\to Q
+
+en un AFND se define como:
+
+    \delta:Q\times\Sigma\to\mathcal{P}(Q)
+
+Para el caso de los AFND-ε, se suele expresar la función de transición de la forma:
+
+    \delta:Q\times\{\Sigma\cup\epsilon\}\to\mathcal{P}(Q)
+
+donde P(Q) es el conjunto potencia de Q.
+
+Esto significa que los autómatas finitos deterministas son un caso particular de los no deterministas, puesto que Q pertenece al conjunto P(Q).
+
+La interpretación que se suele hacer en el cómputo de un AFND es que el automáta puede estar en varios estados a la vez, generándose una ramificación de las configuraciones existentes en un momento dado. Otra interpretación puede ser imaginar que la máquina "adivina" a qué estado debe ir, eligiendo una transición entre varias posibles.
+
+Note finalmente que en un autómata finito no determinista podemos aceptar la existencia de más de un nodo inicial, relajando aún más la definición original.
+
+Equivalencias entre autómatas finitos
+
+Se dice que dos autómatas finitos son equivalentes, si ambos reconocen el mismo lenguaje regular.
+
+Toda expresión regular (que define a su vez un lenguaje regular) puede ser expresada como un autómata finito determinista,8 y viceversa.9 Dada una expresión regular, es posible construir un AFND-ε que reconozca dicho lenguaje, por ejemplo mediante el algoritmo de Thompson. Luego, todo AFND-ε puede transformarse en un AFND equivalente, así como todo AFND puede transformarse en un AFD equivalente, mediante el método llamado construcción de conjunto potencia. Así, por transitividad, para cualquier autómata finito no determinista siempre existe un autómata finito determinista equivalente, y viceversa.3
+
+Normalmente en el diseño de autómatas finitos, lo primero que se hace es construir un AFND-ε, que es el más sencillo de construir, por poseer menos restricciones en su función de transiciones. Luego dicho autómata se reduce a un AFND, y finalmente a un AFD, el cual por sus características deterministas ya puede ser implementado sin problemas utilizando un lenguaje de programación.
+
+Conversión de un AFND-ε a un AFND
+
+La conversión de un AFND-ε en un AFND se basa en el concepto de clausura-ε, que corresponde a una clausura transitiva contextualizada en la teoría de autómatas.
+
+Dado un estado q, se llama clausura-ε(q) al conjunto de todos los estados a los que se puede acceder a partir de q, procesándose a lo más un único símbolo de la entrada. Puede definirse recursivamente de la siguiente manera:10
+- (Base inductiva) Para todo estado q, q ∈ clausura-ε(q).
+- (Inducción) Dados dos estados p y r, si p ∈ clausura-ε(q) y r ∈ δ(p,ε), entonces r ∈ clausura-ε(q).
+
+El algoritmo para eliminar las transiciones vacías es el siguiente:
+1. Se calcula la clausura-ε del estado inicial, formándose un conjunto A que corresponderá al estado inicial del nuevo autómata.
+2. Para cada símbolo del alfabeto, se verifican los estados alcanzables a partir de algún estado contenido en A, y se calcula la clausura-ε de dichos estados alcanzables. Si dichas clausuras producen nuevos conjuntos distintos de A, estos serán nuevos estados a los que se accederá a partir de A y del símbolo correspondiente.
+3. Se repite lo anterior para cada nuevo conjunto, hasta que no existan transiciones posibles para ningún símbolo del alfabeto.
+
+Ejemplo
+
+En el ejemplo de la figura, se tendrá inicialmente:
+
+    clausura-ε(1) = {1,2,3,4,6} = A
+
+        Para A:
+
+            Para el símbolo a: 4 va a 5, y clausura-ε(5) = {5,7} = B.
+            Para el símbolo b: no existen transiciones posibles.
+
+        Para B:
+
+            Para el símbolo a: no existen transiciones posibles.
+            Para el símbolo b: 5 va a 6, y clausura-ε(6) = {6} = C.
+
+        Para C:
+
+            Para el símbolo a: no existen transiciones posibles.
+            Para el símbolo b: no existen transiciones posibles.
+
+Con esto concluye el algoritmo y se obtiene el autómata de la figura.
+
+En algunos casos puede ocurrir que al quitar las transiciones épsilon obtengamos directamente un AFD, pues la única razón de no-determinismo era justamente la presencia de dichas transiciones.
+
+Conversión de un AFND a un AFD
+
+Todo AFND (QN, Σ, q0, δN, FN) puede convertirse en un AFD (QD, Σ, q0, δD, FD) equivalente, que mantiene el alfabeto Σ y el estado inicial q0 originales. La conversión implica pasar por un AFD intermedio con estados y transiciones redundantes, que al no ser accesibles a partir del estado inicial, son eliminados para obtener el AFD definitivo.
+
+Para definir el AFD intermedio, se deben seguir los siguientes pasos:
+1. Primero se redefine el conjunto de estados QN = {q0, q1, ..., qm} original, como uno conformado por todos los subconjuntos de QN. Los nuevos estados finales serán todos aquellos estados que contengan a alguno de los estados finales originales.
+2. Posteriormente, se redefine el conjunto de transiciones original, por transiciones del tipo δD(S,a), donde a∈Σ, y S es la unión de todos los estados q de QN para los cuales existía la transición δN(q,a).
+3. Por último, se eliminan los estados inaccesibles o inalcanzables (junto con sus transiciones de salida), es decir, aquellos a los que no se puede acceder a partir del estado inicial. Luego de esta depuración, se obtiene el AFD final.
+
+Ejemplo
+
+En las figuras de ejemplo, como el AFND inicial posee tres estados (q0, q1, q2), entonces el AFD intermedio poseerá siete ({q0}, {q1}, {q2}, {q0, q1}, {q0, q2}, {q1, q2}, {q0, q1, q2}), y como el estado final original era q2, entonces los estados finales del AFD intermedio son {q2}, {q0, q2}, {q1, q2} y {q0, q1, q2}. Con respecto a las nuevas transiciones, note por ejemplo que se mantuvo la transición δN(q0,1)=q0, siendo ahora llamada δD({q0},1)={q0}; sin embargo, dado que originalmente se daba que δN(q0,0)=q0 y δN(q0,0)=q1, ahora estas dos transiciones fueron reemplazadas por δD({q0},0)={q0, q1}. Para terminar, note que los estados {q1}, {q2} y {q1, q2} no están conectados con el resto del autómata que posee el estado inicial; por tanto, son eliminados. Asimismo es eliminado también {q0, q1, q2}, pues a pesar de estar conectado con el resto del autómata, no es accesible a partir de {q0}. Así finalmente, eliminando estos cuatro estados, así como sus respectivas transiciones, se obtiene el AFD buscado.
+
+Minimización de un AFD
+
+Dos estados de un autómata finito determinista son estados equivalentes si al unirse en un sólo estado, pueden reconocer el mismo lenguaje regular que si estuviesen separados. Esta unión de estados implica la unión tanto de sus transiciones de entrada como de salida. Si dos estados no son equivalentes, se dice que son estados distinguibles. Un estado final con un estado no-final nunca serán equivalentes.
+
+Un AFD está minimizado, si todos sus estados son distinguibles y alcanzables. Un algoritmo de minimización de AFD es el siguiente:
+1. Eliminar los estados inaccesibles del autómata.
+2. Construir una tabla con todos los pares (p, q) de estados restantes.
+3. Marcar en la tabla aquellas entradas donde un estado es final y el otro es no-final, es decir, aquellos pares de estados que son claramente distinguibles.
+4. Para cada par (p, q) y cada símbolo a del alfabeto, tal que r = δ(p,a) y s = δ(q,a):
+	1. Si (r, s) ya ha sido marcado, entonces p y q también son distinguibles, por lo tanto marcar la entrada (p, q).
+	2. De lo contrario, colocar (p, q) en una lista asociada a la entrada (r, s).
+5. Agrupar los pares de estados no marcados.
+
+Luego del tercer paso, si la tabla creada queda completamente marcada, entonces el AFD inicial ya era mínimo.
+
+La complejidad computacional del problema de minimizar un AFD es polinomial. De hecho, existen algoritmos más eficientes aún que el mostrado en este artículo (aunque menos intuitivos).11 Sin embargo, el problema de minimizar un autómata finito no determinista es NP-completo y PSPACE-completo.12 13
+
+Ejemplo
+
+En la primera figura del ejemplo, se muestra un autómata con el estado inaccesible d, el cual puede eliminarse inmediatamente. Luego se construye la tabla de pares de estados, y a continuación se marcan, de acuerdo a la tercera línea del algoritmo, las filas y columnas correspondientes a los estados finales c y g, salvo la celda que representa el par (c,g), puesto que al ser ambos estados finales, pueden ser estados equivalentes. Posteriormente, se marcan las celdas restantes de acuerdo a la cuarta línea del algoritmo, notando que el par (b, f) queda asociado con el par (c, g), y así finalmente se obtiene el autómata final, agrupando los estados b y f, así como c y g, tal y como se muestra en la segunda figura del ejemplo.
+
+Generalizaciones de autómatas finitos
+
+Existen diversas generalizaciones posibles de hacer sobre los autómatas finitos, para aumentar su uso y expresividad. Así, por ejemplo, se definen los transductores de estados finitos como autómatas finitos que están dotados además de un alfabeto de salida, distinto al de entrada, y que pueden poseer más de un estado inicial.14 Las máquinas de Moore y máquinas de Mealy son conocidos ejemplos de transductores, que se utilizan sobre todo para modelar sistemas secuenciales.15 16
+
+Es incluso posible aumentar el poder de cómputo de un autómata finito, permitiendo un alfabeto adicional sobre éste, que actúe sobre una memoria de tipo pila para ser considerada en cada transición. Esta es la idea utilizada por los llamados autómatas con pila, los cuales son capaces de reconocer lenguajes libres de contexto, que están un nivel por sobre los lenguajes regulares en la Jerarquía de Chomsky.17
+
+Referencias
+1. Wolfram, Stephen (2002). «Starting From Randomness». A New Kind of Science (en inglés). Wolfram Media. p. 958. Consultado el 31 de marzo de 2010.
+2. Basharin, Gely P.; Langville, Amy N.; Naumov, Valeriy A. (2004). «The Life and Work of A. A. Markov» (en inglés). Linear Algebra and its Applications 386:  pp. 3-26. Consultado el 31 de marzo de 2010.
+3. Rabin, Michael O.; Scott, Dana (1959). «Finite automata and their decision problems» (en inglés). IBM Journal of Research and Development (IBM Corp. Riverton, NJ, USA) 3 (2):  pp. 114-125. ISSN 0018-8646. Consultado el 05 de abril de 2010.
+4. Wolfram, Stephen (2002). A New Kind of Science (en inglés). Wolfram Media. p. 893. Consultado el 31 de marzo de 2010.
+5. Thompson, Ken (1968). «Programming Techniques: Regular expression search algorithm» (en inglés). Communications of the ACM 11 (6):  pp. 419-422. Consultado el 01 de abril de 2010.
+6 .Chakraborty, Samarjit (17 de marzo de 2003). «Formal Languages and Automata Theory. Regular Expressions and Finite Automata» (en inglés). Computer Engineering and Networks Laboratory. Swiss Federal Institute of Technology (ETH) Zürich:  pp. 17. Consultado el 30 de marzo de 2010.
+7. Brena, Ramón (2003). «Autómatas y Lenguajes. Un enfoque de diseño» (en español). Tecnológico de Monterrey, México:  pp. 205. Consultado el 31 de marzo de 2010.
+8. Berry, G.; Sethi, R. (1987). «From regular expressions to deterministic automata» (en inglés). TCS: Theoretical Computer Science 48:  pp. 117-126. Consultado el 01 de abril de 2010.
+9. Neumann, Christoph (2005) (en inglés). Converting Deterministic Finite Automata to Regular Expressions. Consultado el 01 de abril de 2010.
+10. van Noord, Gertjan (2000). «Treatment of epsilon moves in subset construction» (en inglés). Computational Linguistics (MIT Press. Cambridge, MA, USA) 26 (1):  pp. 61-76. ISSN 0891-2017. Consultado el 05 de abril de 2010.
+11. Hopcroft, John E. (1971). «An n log n algorithm for minimizing states in a finite automaton» (en inglés). Theory of Machines and Computations (Academic Press, Nueva York):  pp. 189-196. Consultado el 09 de abril de 2010.
+12. Jiang, Tai; Ravikumar, B. (1993). «Minimal NFA problems are hard» (en inglés). SIAM Journal on Computing (Society for Industrial and Applied Mathematics Philadelphia, PA, Estados Unidos) 22 (6):  pp. 1117-1141. ISSN 0097-5397. Consultado el 09 de abril de 2010.
+13. Malcher, Andreas (2004). «Minimizing finite automata is computationally hard» (en inglés). Theoretical Computer Science (Elsevier Science Publishers Ltda. Essex, Reino Unido) 327 (3):  pp. 375-390. ISSN 0304-3975. Consultado el 05 de abril de 2010.
+14. Koskenniemi, Kimmo (1984), A general computational model for word-form recognition and production, Morristown, NJ, Estados Unidos: Association for Computational Linguistics, pp. 178-181, consultado el 10 de abril de 2010
+15. Moore, Edward F. (1956). «Gedanken-experiments on Sequential Machines» (en inglés). Automata Studies, Annals of Mathematical Studies (Princeton, N.J.: Princeton University Press) (34):  pp. 129–153. Consultado el 10 de abril de 2010.
+16. Mealy, George H. (1955). «A Method for Synthesizing Sequential Circuits» (en inglés). Bell Systems Technical Journal 34:  pp. 1045-1079.
+17. Hopcroft, John E.; Ullman, Jeffrey D. (1969), Formal languages and their relation to automata, Boston, MA, Estados Unidos: Addison-Wesley Longman Publishing Co., Inc., pp. 262, consultado el 10 de abril de 2010
+
+Bibliografía
+- Hopcroft, John; Motwani, Rajeev; Ullman, Jeffrey D. (2001). Introduction to Automata Theory, Languages, and Computation (en inglés). Massachusetts, Estados Unidos: Addison-Wesley.

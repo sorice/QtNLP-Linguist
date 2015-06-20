@@ -1,0 +1,161 @@
+Algoritmo de enjambre
+
+Inteligencia de Enjambre es el comportamiento colectivo de los sistemas descentralizados, auto-organizados, naturales o artificiales. El concepto se emplea en los trabajos sobre inteligencia artificial. La expresión fue presentado por Gerardo Beni y Wang Jing en 1989, en el contexto de los sistemas robóticos móviles.1
+
+Los sistemas de Inteligencia de Enjambres están típicamente formados por una población de agentes simples que interactúan localmente entre ellos y con su medio ambiente. La inspiración proviene a menudo de la naturaleza, especialmente de los sistemas biológicos. Los agentes siguen reglas muy simples, y aunque no existe una estructura de control centralizado que dicta cómo deben comportarse los agentes individuales, locales, y en un grado determinado al azar, las interacciones entre tales agentes conducen a la aparición de "inteligente" comportamiento global. Como ejemplos naturales se incluyen las colonias de hormigas, aves, el pastoreo de animales y el crecimiento bacteriano.
+
+La aplicación de los principios enjambre de robots se llama enjambre robótica, mientras que "inteligencia de enjambre" se refiere al conjunto más general de los algoritmos. 'Predicción de Enjambres' se ha utilizado en el contexto de los problemas de previsión.
+
+
+Ejemplos de algoritmos
+
+Optimización de colonia de hormigas
+
+La optimización basada en colonias de hormigas (OCH) es una clase de algoritmos de optimización inspirada en las acciones de una colonia de hormigas. Los métodos OCH son útiles en problemas que necesitan encontrar caminos hacia metas. El objetivo la 'simulación de hormigas artificiales' a través de agentes es de localizar soluciones óptimas moviéndose a través de un espacio de parámetros que representa todas las posibles soluciones. Las hormigas naturales establecen las feromonas que dirigen el uno al otro a los recursos y explorar su entorno. La simulación de 'hormigas' igualmente permite grabar sus posiciones y la calidad de sus soluciones, para que en posteriores iteraciones de simulación más hormigas puedan encontrar mejores soluciones.2
+
+Optimización enjambre de partículas
+
+La optimización de enjambre de partículas (PSO) es un algoritmo de optimización global para hacer frente a los problemas en los que puede ser una mejor solución representa como un punto o una superficie en un espacio n-dimensional. Hipótesis se representan en este espacio y se sembró con una velocidad inicial, así como un canal de comunicación entre las partículas.3 4 Las partículas se mueven a través del espacio de soluciones, y se evalúan de acuerdo con algún criterio de aptitud después de cada paso de tiempo. Con el tiempo, las partículas son aceleradas hacia esas partículas dentro de su grupo de comunicación que tienen mejores valores de aptitud. La principal ventaja de este enfoque sobre otras estrategias de minimización globales tales como el recocido simulado es que el gran número de los miembros que componen el enjambre de partículas hacer la técnica impresionantemente resistente al problema de los mínimos locales.
+
+Optimización de múltiples enjambres
+
+La optimización multi-enjambre es una variante de la optimización de enjambres de partículas (PSO), basado en el uso de múltiples sub-enjambres en lugar de un enjambre (estándar).5 El enfoque general en la optimización de multi-enjambre es que cada sub-enjambre se centra en una región dada, mientras que un método específico de diversificación decide dónde y cuándo lanzar los enjambres secundarios. El marco enjambre multi-está especialmente equipado para la optimización de problemas multi-modales, donde existen múltiples óptimos (locales).6
+
+Algoritmo de colonia de abejas
+
+El algoritmo de colonia de abejas (ABC) es un algoritmo de metaheurística introducida por Karaboga en 2005,7 y simula el comportamiento de alimentación de las abejas melíferas. El algoritmo ACA tiene tres fases: la abeja empleada, la abeja espectador y la exploradora. En la abeja empleada y las fases de abejas espectador,las abejas explotan las fuentes de búsquedas locales en la vecindad de las soluciones seleccionadas sobre la base de la selección determinista en la fase de abeja ocupada y la selección probabilística en la fase de abeja espectador. En la fase de abeja exploradora que es una analogía de abandono de las fuentes de alimentos agotados en el proceso de búsqueda de alimento, las soluciones que no son beneficiosos para el progreso de la búsqueda ya están abandonados, y nuevas soluciones se insertan en lugar de ellos para explorar nuevas regiones del espacio de búsqueda. El algoritmo tiene una capacidad equilibrada de exploración-explotación.
+
+Algoritmo de altruismo
+
+Los investigadores en Suiza han desarrollado un algoritmo basado en la regla de Hamilton de selección de parentesco. El algoritmo muestra cómo el altruismo en un enjambre de animales puede, con el tiempo, evolucionar y dar lugar a un comportamiento más eficaz del enjambre.8 9
+
+Sistemas inmunológicos artificiales
+
+Sistemas inmunológicos artificiales (SIA) se refiere a la utilización de estructuras abstractas, la función del sistema inmune a los sistemas de cómputo, y la investigación de la aplicación de estos sistemas a la solución de problemas de cálculo a partir de la tecnología de la ingeniería, y la información. SIA es un subcampo de la computación inspirada biológicamente y computacionalmente natural, con intereses en Aprendizaje Automático y que pertenecen a la esfera más amplia de la Inteligencia Artificial.
+
+Algoritmo murciélago
+
+Algoritmo murciélago (AM) está inspirado en el comportamiento de la ecolocalización de murciélagos. AM utiliza un balance de la frecuencia y sintonización automática de exploración y explotación mediante el control de las tasas de sonoridad y el pulso de emisión.10
+
+Búsqueda de sistema cargado
+
+Búsqueda de sistema cargado (BSC) es un nuevo algoritmo de optimización basado en algunos principios de la física y la mecánica.11 BSC utiliza las leyes de gobierno de Coulomb y de Gauss de la electrostática y las leyes de la mecánica newtoniana. BSC es un enfoque multiagente en el que cada agente es una partícula cargada (PC). PCs pueden afectar a los demás en base a sus valores de fitness y sus distancias de separación. La cantidad de la fuerza resultante se determina mediante el uso de las leyes de la electrostática y la calidad del movimiento se determina usando las leyes de la mecánica newtoniana. BSC es aplicable a todos los campos de optimización, en especial es adecuado para dominios no lisos o no convexos. Este algoritmo proporciona un buen equilibrio entre la exploración y explotación de los paradigmas del algoritmo que se puede mejorar considerablemente la eficiencia del algoritmo y por lo tanto el BSC también puede ser considerado como un buen optimizador global y local al mismo tiempo.
+
+Búsqueda Cuckoo
+
+Búsqueda Cuckoo (CS) imita el comportamiento inquietante de algunas especies de aves que utilizan de acogida para poner sus huevos y criar a sus polluelos. Este algoritmo12 de búsqueda se ha mejorado con los vuelos de Lévy con pasos de salto extraídas de distribución de Lévy.13 Los estudios recientes sugieren que el BC puede superar a otros algoritmos como la optimización de enjambre de partículas. Por ejemplo, una comparación de la búsqueda de Cuckoo con PSO, DE y ABC sugieren que el CS y los algoritmos DE proporcionar resultados más sólidos que PSO y ABC.14
+
+Algoritmo de búsqueda diferencial
+
+Algoritmo de búsqueda diferencial (DSA) inspirado por la migración de superorganismos. El éxito de la solución de problemas de las dietas se compara con el éxito de los algoritmos ABC, JDE, JADE, SADE, EPSDE, GSA, PSO2011 y CMA-ES para la solución de problemas de optimización numéricos en 2012. El enlace del código de Matlab se ha proporcionado en Çivicioglu, P., (2012).15
+
+Algoritmo Firefly
+
+Algoritmo Firefly (FA) inspirado en el comportamiento intermitente de las luciérnagas. La intensidad de luz está asociada con el atractivo de una luciérnaga, la capacidad para subdividir en pequeños grupos y cada subgrupo enjambre alrededor de los modos locales. Por lo tanto, el algoritmo de luciérnaga está especialmente indicado para problemas de optimización multimodal.16 De hecho, FA se ha aplicado en la optimización continua, problema del viajante, clustering, procesamiento de imágenes y selección de características.
+
+Optimización Enjambre de Luciérnagas
+
+Optimización Enjambre de Luciérnagas (GSO), introducido por Krishnanand Ghose y en 2005 para el cálculo simultáneo de múltiples óptimos de funciones multimodales.17 18 19 20 El algoritmo comparte algunas características con algunos algoritmos más conocidos, tales como optimización de colonia de hormigas y optimización de enjambre de partículas, pero con varias diferencias significativas. Los agentes en GSO son considerados como luciérnagas que llevan una cantidad de luminiscencia llamado luciferina junto con ellos. Las luciérnagas codifica el estado físico de sus ubicaciones actuales, evaluados utilizando la función objetivo, en un valor de luciferina que transmitir a sus vecinos. La luciérnaga identifica sus vecinos y calcula sus movimientos mediante la explotación de una zona adaptativa, que está acotado superiormente por su rango del sensor. Cada luciérnaga selecciona, utilizando un mecanismo probabilístico, un vecino que tiene un valor más alto de luciferina que su propio y se mueve hacia él. Estos movimientos basados ​​únicamente en la información local para habilitar el enjambre de luciérnagas y dividir en subgrupos disjuntos que convergen en varios óptimos de un tratamiento multimodal functional dado y selección de características. Este tipo de algoritmo se ha aplicado en la optimización de puentes prefabricados de hormigón pretensado 21
+
+Algoritmo de búsqueda gravitacional
+
+Algoritmo de búsqueda gravitacional (GSA) en base a la ley de la gravedad y la noción de las interacciones de comunicación. El algoritmo GSA utiliza la teoría de la física newtoniana y sus agentes buscadores son la colección de masas. En GSA, no es un sistema aislado de masas. Usa la fuerza gravitatoria, cada masa en el sistema puede ver la situación de las otras masas. La fuerza gravitatoria es por lo tanto una manera de transferir información entre diferentes masas (Rashedi, Nezamabadi vertido y Saryazdi 2009).22 En GSA, los agentes se consideran como objetos y su desempeño se mide por sus masas. Todos estos objetos se atraen entre sí por una fuerza de la gravedad, y esta fuerza causa un movimiento de todos los objetos globalmente hacia los objetos con masas más pesadas. Las masas pesadas corresponden a buenas soluciones del problema. La posición del agente corresponde a una solución del problema, y ​​su masa se determina utilizando una función de aptitud. Al paso del tiempo, las masas se sienten atraídos por la mayor masa. Esperamos que esta masa presentaría una solución óptima en el espacio de búsqueda. La GSA podría puede ser considerado como un sistema aislado de masas. Es como un pequeño mundo artificial de masas que obedecen las leyes de Newton de la gravitación y movimiento (Rashedi, Nezamabadi vertido y Saryazdi 2009). Una variante multiobjetivo de GSA, llamado no dominadas Algoritmo búsqueda Clasificación gravitacional (NSGSA), fue propuesto por Nobahari y Nikusokhan en 2011.23
+
+Caída inteligente de gotas de agua
+
+Caída inteligente de gotas de agua (IWD) inspirado en los ríos naturales y cómo encontrar caminos casi óptimas a su destino. Estas rutas óptimas o cerca del óptimo seguiendo las acciones y reacciones que se producen entre las gotas de agua y las gotas de agua con sus cauces. En el algoritmo de IWD, varias gotas de agua artificiales cooperan para cambiar su entorno de tal manera que la ruta óptima se revela como el que tiene el más bajo del suelo en sus enlaces. Por lo tanto, el algoritmo de IWD es generalmente constructivo basado en la población algoritmo de optimización.24
+
+Algoritmo de optimización mágnetica
+
+Algoritmo de Optimización magnética (MOA), propuesto por Tayarani en 2008,25 es un algoritmo de optimización inspirado por la interacción entre algunas partículas magnéticas con diferentes masas. En este algoritmo, las soluciones posibles son algunas partículas con masas diferentes y diferentes campos magnéticos. Sobre la base de la idoneidad de las partículas, la masa y el campo magnético de cada partícula determina, por lo tanto las partículas son mejores objetos más masivos con fuertes campos magnéticos. Las partículas en la población aplican fuerzas de atracción entre sí y por lo tanto se mueven en el espacio de búsqueda. Puesto que las soluciones mejores tienen una mayor masa y mayor campo magnético, las partículas inferiores tienden a moverse hacia las soluciones más adecuadas y por lo tanto la migración a la zona alrededor de la mejor óptimos locales, donde vagan en busca de mejores soluciones.
+
+Búsqueda de difusión estocástica
+
+Búsqueda difusión estocástica (SDS)26 27 es un agente basado en la técnica probabilística mundial de búsqueda y optimización más adecuadas a los problemas que se pueden descomponer la función objetivo en múltiples independientes parciales-funciones. Cada agente mantiene una hipótesis que iterativamente probando mediante la evaluación de una función objetivo seleccionada al azar parcial parametrizada por hipótesis. En la versión estándar de SDS tales evaluaciones de funciones parciales son binarios, lo que resulta en cada agente de convertirse en activo o inactivo. Información sobre hipótesis se difunde a través de la población a través de la comunicación entre los agentes. A diferencia de la comunicación stigmergic utilizada en ACO, en SDS la hipótesis de comunicarse es a través de una estrategia de comunicación uno-a-uno análoga a la marcha en tándem procedimiento observado en [Leptothorax [acervorum]]28 A positive feedback mechanism ensures that, over time, a population of agents stabilise around the global-best solution. SDS is both an efficient and robust global search and optimisation algorithm, which has been extensively mathematically described.29 30 31 Recent work has involved merging the global search properties of SDS with other swarm intelligence algorithms32
+
+Aplicaciones
+
+La inteligencia de emjambres basados ​​en técnicas pueden ser usadas en un número de aplicaciones. El ejército de EE.UU. está investigando técnicas de enjambre para el control de vehículos no tripulados. La Agencia Espacial Europea está pensando en un enjambre orbital para el autoensamblaje y la interferometría. La NASA está investigando el uso de la tecnología de nube para la cartografía planetaria. Un documento de 1992 por M. Anthony Lewis y George A. Bekey analiza la posibilidad de utilizar la inteligencia de enjambre para controlar nanorobots dentro del cuerpo con el fin de matar a los tumores de cáncer.33 Por el contrario al-Rifaie y Aber han usado Búsqueda difusión estocástico para ayudar a localizar tumores. La inteligencia de enjambre se ha aplicado también para la minería de datos.34
+
+Enrutamiento basado en hormigas
+
+El uso de la inteligencia de enjambres en las Redes de Telecomunicaciones también ha sido investigado. Este fue iniciado por separado por Dorigo y Hewlett Packard en la década de 1990, con un número de variaciones desde entonces. Básicamente utiliza una tabla de enrutamiento probabilístico premiando a reforzar con éxito la ruta recorrida por cada "hormiga" (un paquete de control pequeño) que inundan la red. Refuerzo de la ruta en los delanteros, dirección inversa y ambas a la vez han sido investigados: refuerzo hacia atrás requiere una red simétrica y acopla los dos sentidos juntos, hacia adelante refuerzo recompensa una ruta antes de que el resultado se conoce (pero que paga por el cine antes de saber lo bueno que la película es). A medida que el sistema se comporta de forma estocástica y por lo tanto carece de repetibilidad, hay grandes obstáculos para el despliegue comercial. Medios de comunicación móviles y las nuevas tecnologías tienen el potencial de cambiar el umbral para la acción colectiva debido a la nube de inteligencia (Rheingold: 2002, P175).
+
+La ubicación de la infraestructura de transmisión para redes inalámbricas de comunicación es un problema de ingeniería importante que tiene objetivos contrapuestos. Una selección mínima de ubicaciones (o sitios) son necesarias sujeto a proporcionar cobertura de área adecuada para los usuarios. Un algoritmo de inteligencia de enjambres basado en hormigas, búsqueda difusión estocástica (SDS), ha sido utilizado con éxito para proporcionar un modelo general para este problema, relacionado con embalaje círculo y conjunto de presentación. Se ha demostrado que SDS se puede aplicar para identificar soluciones adecuadas incluso para instancias de problemas de gran tamaño.35
+
+Las líneas aéreas han utilizado también hormiga enrutamiento basado en la asignación de las llegadas de aeronaves a las puertas del aeropuerto. En Southwest Airlines un programa de software utiliza la teoría de enjambre, o enjambre de inteligencia-la idea de que una colonia de hormigas funciona mejor que una sola. Cada piloto actúa como una hormiga en busca de la puerta mejor aeropuerto. "El piloto aprende de su experiencia ¿qué es lo mejor para él, y resulta que esa es la mejor solución para la aerolínea," Douglas A. Lawson explica. Como resultado, la "colonia" de los pilotos siempre van a las puertas de llegada y salida de forma rápida. El programa puede incluso alertar a un piloto de avión de copias de seguridad antes de que sucedan. "Podemos anticipar que va a suceder, por lo que tendremos una puerta disponible", dice Lawson.36
+
+En la cultura popular
+
+Inteligencia de enjambres relacionados con los conceptos y las referencias se pueden encontrar en la cultura popular, a menudo como una forma de la inteligencia colectiva o mente grupal con agentes mucho más que los utilizados en las aplicaciones actuales.
+- El escritor de ciencia ficción Olaf Stapledon puede haber sido el primero en hablar de enjambre igual o superior a la humanidad inteligencias. En El último y primer hombre (1931), una inteligencia de enjambre de Marte consiste en pequeñas células individuales que se comunican entre sí por las ondas de radio en Star Maker (1937) fundando enjambres inteligentes en múltiples civilizaciones, compuesto por bandadas de aves o, en su universo se enfría y energéticamente eficientes enjambres de balas de madriguera, en última instancia, toda la inteligencia en los enjambres universo en una sola entidad apenas capaz de percibir el momento supremo.
+- El popular escritor soviético Sever Gansovsky, en su relato describe como "El Maestro de la Bahía" (1962), un monstruo marino que consiste en partículas microscópicas que pueden auto-organizarse en una sola entidad. [cita requerida]
+- El Invencible (1964), una novela de ciencia ficción de Stanislaw Lem, donde una nave espacial humano encuentra un comportamiento inteligente en una multitud de pequeñas partículas que son capaces de defenderse contra lo que encontraron como una amenaza.
+- En la novela dramática y posterior miniserie The Andromeda Strain (1969) de Michael Crichton, un virus extraterrestre se comunica entre las células individuales y muestra la capacidad de pensar y reaccionar de forma individual y en su conjunto, y como tales exhibiciones una apariencia de "inteligencia de enjambre".
+- Ygramul, un ser inteligente que consiste en un enjambre de avispas como muchos insectos, un personaje de la novela La Historia Sin Fin (1979) escrito por Michael Ende. Ygramul también se menciona en un artículo científico Manadas, rebaños, y Escuelas] escrito por Knut Hartmann (Gráficos y Sistemas Interactivos, Otto-von-Guericke de Magdeburg-Universidad).
+- En el libro de 1979 Gödel, Escher, Bach: El oro eterno Braid por Douglas Hofstadter, uno de los protagonistas tiene largas conversaciones con la mente grupal de un hormiguero.
+
+Investigadores notables
+- Gerardo Beni
+- Marco Dorigo
+- Russell C. Eberhart
+- Luca Maria Gambardella
+- James Kennedy
+- Craig Reynolds
+
+Referencias
+- Beni, G., Wang, J. Swarm Intelligence in Cellular Robotic Systems, Proceed. NATO Advanced Workshop on Robots and Biological Systems, Tuscany, Italy, June 26–30 (1989)
+- Ant Colony Optimization by Marco Dorigo and Thomas Stützle, MIT Press, 2004. ISBN 0-262-04219-3
+- Parsopoulos, K. E.; Vrahatis, M. N. (2002). «Recent Approaches to Global Optimization Problems Through Particle Swarm Optimization». Natural Computing 1 (2-3):  pp. 235–306. doi:10.1023/A:1016568309421.
+- Particle Swarm Optimization by Maurice Clerc, ISTE, ISBN 1-905209-04-5, 2006.
+- Antonio Bolufé Röhler and Stephen Chen, “An Analysis of Sub-swarms in Multi-swarm Systems”, in Lecture Notes in Artificial Intelligence, Vol. 7106: Proceedings of Joint Australasian Conference in Artificial Intelligence, D. Wang and M. Reynolds Eds. Springer-Verlag 2011, pp. 271–280.[1]
+- Antonio Bolufé Röhler and S. Chen, “Multi-swarm hybrid for multi-modal optimization”, in Proceedings of the IEEE Congress on Evolutionary Computation, 2012, pp. 1–8. [2]
+- Karaboga, Dervis (2010). «Artificial bee colony algorithm». Scholarpedia 5 (3):  p. 6915.
+- Altruism helps swarming robots fly better genevalunch.com, 4 May 2011.
+- Waibel, M; Floreano, D; Keller, L (2011). «A quantitative test of Hamilton's rule for the evolution of altruism». PLoS Biology 9 (5):  p. e1000615. doi:10.1371/journal.pbio.1000615.
+- X. S. Yang, A New Metaheuristic Bat-Inspired Algorithm, in: Nature Inspired Cooperative Strategies for Optimization (NISCO 2010) (Eds. J. R. Gonzalez et al.), Studies in Computational Intelligence, Springer Berlin, 284, Springer, 65-74 (2010).
+- Kaveh, A.; Talatahari, S. (2010). «A Novel Heuristic Optimization Method: Charged System Search». Acta Mechanica 213 (3-4):  pp. 267–289. doi:10.1007/s00707-009-0270-4.
+- Yang X.-S. and Deb S. (December 2009). "Cuckoo search via Lévy flights". World Congress on Nature & Biologically Inspired Computing (NaBIC 2009). IEEE Publications. pp. 210–214. arXiv:1003.1594v1.
+- http://www.sciencedaily.com/releases/2010/05/100527213816.htm
+- Civicioglu, P., and Besdok, E., (2011), A conception comparison of the cuckoo search, particle swarm optimization, differential evolution and artificial bee colony algorithms, Artificial Intelligence Review, DOI 10.1007/s10462-011-92760, 6 July (2011).
+- Civicioglu, P. (2012). «Transforming geocentric cartesian coordinates to geodetic coordinates by using differential search algorithm». Computers & Geosciences 46:  pp. 229–247. doi:10.1016/j.cageo.2011.12.011.
+- Yang X. S., (2008). Nature-Inspired Metaheuristic Algorithms. Frome: Luniver Press. ISBN 1-905986-10-6.
+- Krishnanand K.N. and D. Ghose (2005) "Detection of multiple source locations using a glowworm metaphor with applications to collective robotics". IEEE Swarm Intelligence Symposium, Pasadena, California, USA, pp. 84–91.
+- Krishnanand, K.N.; Ghose, D. (2009). «Glowworm swarm optimization for simultaneous capture of multiple local optima of multimodal functions». Swarm Intelligence 3 (2):  pp. 87–124.
+- Krishnanand, K.N.; Ghose, D. (2008). «Theoretical foundations for rendezvous of glowworm-inspired agent swarms at multiple locations». Robotics and Autonomous Systems 56 (7):  pp. 549–569.
+- Krishnanand, K.N.; Ghose, D. (2006). «Glowworm swarm based optimization algorithm for multimodal functions with collective robotics applications». Multi-agent and Grid Systems 2 (3):  pp. 209–222.
+- Yepes V., Martí J.V. and García-Segura T. (2015) "Cost and CO2 emission optimization of precast-prestressed concrete U-beam road bridges by a hybrid glowworm swarm algorithm". Automation in Construction, 49:123-134.
+- Rashedi, E.; Nezamabadi-pour, H.; Saryazdi, S. (2009). «GSA: a gravitational search algorithm». Information Science 179 (13):  pp. 2232–2248.
+- «Non-dominated Sorting Gravitational Search Algorithm». International Conference on Swarm Intelligence.
+- Shah-Hosseini, Hamed (2009). «The intelligent water drops algorithm: a nature-inspired swarm-based optimization algorithm». International Journal of Bio-Inspired Computation 1 (1/2):  pp. 71–79.
+- «Magnetic Optimization Algorithms a new synthesis». IEEE World Congress on Evolutionary Computation, 2008.(IEEE World Congress on Computational Intelligence).
+- Bishop, J.M., Stochastic Searching Networks, Proc. 1st IEE Int. Conf. on Artificial Neural Networks, pp. 329-331, London, UK, (1989).
+- Nasuto, S.J. & Bishop, J.M., (2008), Stabilizing swarm intelligence search via positive feedback resource allocation, In: Krasnogor, N., Nicosia, G, Pavone, M., & Pelta, D. (eds), Nature Inspired Cooperative Strategies for Optimization, Studies in Computational Intelligence, vol 129, Springer, Berlin, Heidelberg, New York, pp. 115-123.
+- Moglich, M.; Maschwitz, U.; Holldobler, B., Tandem Calling: A New Kind of Signal in Ant Communication, Science, Volume 186, Issue 4168, pp. 1046-1047
+- Nasuto, S.J., Bishop, J.M. & Lauria, S., Time complexity analysis of the Stochastic Diffusion Search, Proc. Neural Computation '98, pp. 260-266, Vienna, Austria, (1998).
+- Nasuto, S.J., & Bishop, J.M., (1999), Convergence of the Stochastic Diffusion Search, Parallel Algorithms, 14:2, pp: 89-107.
+- Myatt, D.M., Bishop, J.M., Nasuto, S.J., (2004), Minimum stable convergence criteria for Stochastic Diffusion Search, Electronics Letters, 22:40, pp. 112-113.
+- al-Rifaie, M.M., Bishop, J.M. & Blackwell, T., An investigation into the merger of stochastic diffusion search and particle swarm optimisation, Proc. 13th Conf. Genetic and Evolutionary Computation, (GECCO), pp.37-44, (2012).
+- «The Behavioral Self-Organization of Nanorobots Using Local Rules». Proceedings of the 1992 IEEE/RSJ International Conference on Intelligent Robots and Systems.
+- Martens, D.; Baesens, B.; Fawcett, T. (2011). «Editorial Survey: Swarm Intelligence for Data Mining». Machine Learning 82 (1):  pp. 1–42. doi:10.1007/s10994-010-5216-5.
+- Whitaker, R.M., Hurley, S.. An agent based approach to site selection for wireless networks. Proc ACM Symposium on Applied Computing, pp. 574–577, (2002).
+- «Planes, Trains and Ant Hills: Computer scientists simulate activity of ants to reduce airline delays». Science Daily. 1 de abril de 2008. Consultado el 1 de diciembre de 2010.
+
+Bibliografía
+- Swarm Intelligence: From Natural to Artificial Systems by Eric Bonabeau, Marco Dorigo and Guy Theraulaz. (1999) ISBN 0-19-513159-2, complete bibliography
+- "Swarming: la comunicación en múltiples direcciones y múltiples etapas", Razón y Palabra, 83, by Marcelo Baro. ISSN 1605-4806.
+- Turtles, Termites, and Traffic Jams: Explorations in Massively Parallel Microworlds by Mitchel Resnick. ISBN 0-262-18162-2
+- Swarm Intelligence by James Kennedy and Russell C. Eberhart. ISBN 1-55860-595-9
+- Fundamentals of Computational Swarm Intelligence by Andries Engelbrecht. Wiley & Sons. ISBN 0-470-09191-6
+- Nanocomputers and Swarm Intelligence by Jean-Baptiste Waldner, ISTE, ISBN 978-1-84704-002-2, 2007.
+- Miller, Peter (July 2007), «Swarm Theory», National Geographic Magazine
+- Ridge, E.; Kudenko, D.; Kazakov, D.; Curry, E. (2005). «Moving Nature-Inspired Algorithms to Parallel, Asynchronous and Decentralised Environments». Self-Organization and Autonomic Informatics (I) 135:  pp. 35–49.
+- Xin-She Yang (2011). «Metaheuristic Optimization». Scholarpedia 6 (8):  p. 11472. doi:10.4249/scholarpedia.11472.
+- Swarms and Swarm Intelligence by Michael G. Hinchey, Roy Sterritt, and Chris Rouff, Article at IEEE Computer Society
+- "From Ants to People: an Instinct to Swarm" - NY Times, 11-13-07
+- Swarm Intelligence (Journal) Chief Editor: Marco Dorigo. Springer New York. ISSN 1935-3812 (Print) 1935-3820 (Online) [3]
+- Eva Horn, Lucas Marco Gisi (Ed.): Schwärme – Kollektive ohne Zentrum. Eine Wissensgeschichte zwischen Leben und Information, Bielefeld: transcript 2009. ISBN 978-3-8376-1133-5
+- L. Fisher, The Perfect Swarm: The Science of Complexity in Everyday Life, Basic Books, 2009.
+- Ridge, E.; Curry, E. (2007). «A roadmap of nature-inspired systems research and development». Multiagent and Grid Systems 3 (1):  pp. 3–8.
+- "Swarm Intelligence for Analyzing Opinions in Online Communities" by Carolin Kaiser, Johannes Kröckel, Freimut Bodendorf (2010) Proceedings of the 43rd Hawaii International Conference on System Sciences, pp. 1–9
+- Bernstein, Jeremy. «Project Swarm». Report on technology inspired by swarms in nature.

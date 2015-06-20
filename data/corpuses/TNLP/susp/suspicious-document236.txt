@@ -1,0 +1,30 @@
+Algoritmo de Ford-Fulkerson
+
+El algoritmo de Ford-Fulkerson propone buscar caminos en los que se pueda aumentar el flujo, hasta que se alcance el flujo máximo. Es aplicable a los Flujos maximales. La idea es encontrar una ruta de penetración con un flujo positivo neto que una los nodos origen y destino. Su nombre viene dado por sus creadores, L. R. Ford, Jr. y D. R. Fulkerson.
+
+Introducción
+
+Sea (V,A,w) con V vértices, A aristas y w peso de las aristas, una red con una única fuente s y un único sumidero (Sink) t; w(α) es la capacidad de α perteneciente a la arista A. Un flujo f es viable si f(α) <= w(α) para todo α perteneciente a la arista A. Se trata de hallar un flujo viable con el valor máximo posible.
+
+    En un red con fuente s y sumidero t único el valor máximo que puede tomar un flujo variable es igual a la capacidad mínima que puede tomar un corte.
+    Teorema
+
+Pseudocódigo
+
+ Ford-Fulkerson(G,s,t)
+ { 
+  for (cada arco (u,v) de E) 
+  { 
+   f[u,v]= 0; 
+   f[v,u]= 0; 
+  } 
+  while (exista un camino p desde s a t en la red residual Gf) 
+  { 
+    cf(p) = min{cf(u,v): (u,v) está sobre p};
+    for (cada arco (u,v) en p) 
+    { 
+      f[u,v]= f[u,v] + cf(p); 
+      f[v,u]= - f[u,v]; 
+    }  
+  } 
+ }

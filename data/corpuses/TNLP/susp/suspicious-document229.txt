@@ -1,0 +1,77 @@
+Algoritmo de Bellman-Ford
+
+El algoritmo de Bellman-Ford (algoritmo de Bell-End-Ford), genera el camino más corto en un Grafo dirigido ponderado (en el que el peso de alguna de las aristas puede ser negativo). El algoritmo de Dijkstra resuelve este mismo problema en un tiempo menor, pero requiere que los pesos de las aristas no sean negativos, salvo que el grafo sea dirigido y sin ciclos. Por lo que el Algoritmo Bellman-Ford normalmente se utiliza cuando hay aristas con peso negativo. Este algoritmo fue desarrollado por Richard Bellman, Samuel End y Lester Ford.
+
+Según Robert Sedgewick, “Los pesos negativos no son simplemente una curiosidad matemática; […] surgen de una forma natural en la reducción a problemas de caminos más cortos”, y son un ejemplo de una reducción del problema del camino hamiltoniano que es NP-completo hasta el problema de caminos más cortos con pesos generales. Si un grafo contiene un ciclo de coste total negativo entonces este grafo no tiene solución. El algoritmo es capaz de detectar este caso.
+
+Si el grafo contiene un ciclo de coste negativo, el algoritmo lo detectará, pero no encontrará el camino más corto que no repite ningún vértice. La complejidad de este problema es al menos la del problema del camino más largo de complejidad NP-Completo.
+
+Algoritmo
+
+El Algoritmo de Bellman-Ford es, en su estructura básica, muy parecido al algoritmo de Dijkstra, pero en vez de seleccionar vorazmente el nodo de peso mínimo aun sin procesar para relajarlo, simplemente relaja todas las aristas, y lo hace |V|-1 veces, siendo |V| el número de vértices en el grafo. Las repeticiones permiten a las distancias mínimas recorrer el árbol, ya que en la ausencia de ciclos negativos, el camino más corto solo visita cada vértice una vez. A diferencia de la solución voraz, la cual depende de la suposición de que los pesos sean positivos, esta solución se aproxima más al caso general.
+
+Existen dos versiones:
+- Versión no optimizada para grafos con ciclos negativos, cuyo coste de tiempo es O(VE).
+- Versión optimizada para grafos con aristas de peso negativo, pero en el grafo no existen ciclos de coste negativo, cuyo coste de tiempo, es también O(VE).
+
+   BellmanFord(Grafo G, nodo_origen s)
+      // inicializamos el grafo. Ponemos distancias a INFINITO menos el nodo origen que 
+      // tiene distancia 0
+       for v ∈ V[G] do
+           distancia[v]=INFINITO
+           predecesor[v]=NIL
+       distancia[s]=0
+       // relajamos cada arista del grafo tantas veces como número de nodos -1 haya en el grafo
+       for i=1 to |V[G]|-1 do
+           for (u, v) ∈ E[G] do
+               if distancia[v]>distancia[u] + peso(u, v) then
+                   distancia[v] = distancia[u] + peso (u, v)
+                   predecesor[v] = u
+       // comprobamos si hay ciclos negativo
+       for (u, v) ∈ E[G] do
+           if distancia[v] > distancia[u] + peso(u, v) then
+               print ("Hay ciclo negativo")
+               return FALSE
+       return TRUE
+
+  BellmanFord_Optimizado(Grafo G, nodo_origen s)
+       // inicializamos el grafo. Ponemos distancias a INFINITO menos el nodo origen que
+       // tiene distancia 0. Para ello lo hacemos recorriéndonos todos los vértices del grafo
+       for v ∈ V[G] do
+           distancia[v]=INFINITO
+           padre[v]=NIL
+       distancia[s]=0
+       encolar(s, Q)
+       en_cola[s]=TRUE
+       while Q!=0 then
+           u = extraer(Q)
+           en_cola[u]=FALSE
+           // relajamos las aristas
+           for v ∈ ady[u] do
+               if distancia[v]>distancia[u] + peso(u, v) then
+                   distancia[v] = distancia[u] + peso (u, v)
+                   padre[v] = u
+                   if en_cola[v]==FALSE then
+                       encolar(v, Q)
+                       en_cola[v]=TRUE
+
+Aplicaciones de encaminamiento
+
+Una variante distribuida del Algoritmo del Bellman-Ford se usa en protocolos de encaminamiento basados en vector de distancias, por ejemplo el Protocolo de encaminamiento de información (RIP). El algoritmo es distribuido porque envuelve una serie de nodos (routers) dentro de un Sistema autónomo(AS), un conjunto de redes y dispositivos router IP administrados típicamente por un Proveedor de Servicio de Internet (ISP). Se compone de los siguientes pasos:
+1. Cada nodo calcula la distancia entre él mismo y todos los demás dentro de un AS y almacena esta información en una tabla.
+2. Cada nodo envía su tabla a todos los nodos vecinos.
+3. Cuando un nodo recibe las tablas de distancias de sus vecinos, éste calcula la ruta más corta a los demás nodos y actualiza su tabla para reflejar los cambios.
+
+Las desventajas principales del algoritmo de Bellman-Ford en este ajuste son:
+- No escala bien
+- Los cambios en la topología de red no se reflejan rápidamente ya que las actualizaciones se distribuyen nodo por nodo.
+- Contando hasta el infinito(si un fallo de enlace o nodo hace que un nodo sea inalcanzable desde un conjunto de otros nodos, éstos pueden estar siempre aumentando gradualmente sus cálculos de distancia a él, y mientras tanto puede haber bucles de enrutamiento)
+
+Mejoras
+
+En 1970 Yen describió una mejora del algoritmo Bellman-Ford para un grafo sin ciclos con peso negativo. Esta mejora primero asigna un orden arbitrario lineal a todos los vértices y luego divide el conjunto de todas las aristas en uno o dos subconjuntos. El primer subconjunto, Ef, contiene todas las aristas (vi,vj) tales que i < j; mientras que el segundo, Eb, contiene aristas (vi,vj) tales que i > j. Cada vértice se visita en orden v1,v2,…,v|v|, relajando cada arista saliente de ese vértice en Ef. Cada vértice es, después, visitado en orden v|v|,v|v-1|,…,v1, relajando cada arista saliente de ese vértice en Eb. La mejora de Yen reduce a la mitad, de manera efectiva, el número de “pases” requeridos para la solución del camino más corto desde una única fuente.
+
+Referencias
+- Richard Bellman: On a Routing Problem, in Quarterly of Applied Mathematics, 16(1), pp.87-90, 1958.
+- Lestor R. Ford jr., D. R. Fulkerson: Flows in Networks, Princeton University Press, 1962.
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. Introduction to Algorithms, Second Edition. MIT Press and McGraw-Hill, 2001. ISBN 0-262-03293-7. Section 24.1: The Bellman-Ford algorithm, pp.588–592.

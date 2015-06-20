@@ -1,0 +1,104 @@
+Desarrollo en espiral
+
+El desarrollo en espiral es un modelo de ciclo de vida del software definido por primera vez por Barry Boehm en 1986,1 utilizado generalmente en la Ingeniería de software. Las actividades de este modelo se conforman en una espiral, en la que cada bucle o iteración representa un conjunto de actividades. Las actividades no están fijadas a ninguna prioridad, sino que las siguientes se eligen en función del análisis de riesgo, comenzando por el bucle interior.
+
+Introducción
+
+La Ingeniería de software, se vale y establece a partir de una serie de modelos que establecen y muestran las distintas etapas y estados por los que pasa un producto software, desde su concepción inicial, pasando por su desarrollo, puesta en marcha y posterior mantenimiento, hasta la retirada del producto. A estos modelos se les denomina «modelos de ciclo de vida del software». El primer modelo concebido fue el de Royce, más comúnmente conocido como desarrollo en cascada o desarrollo lineal secuencial. Este modelo establece que las diversas actividades que se van realizando al desarrollar un producto software se suceden de forma lineal.
+
+Boehm, autor de diversos artículos de ingeniería del software; modelos de estimación de esfuerzo y tiempo que se consume en hacer productos software; y Modelos de Ciclo de Vida; ideó y promulgó un modelo desde un enfoque distinto al tradicional en Cascada: El Modelo Evolutivo Espiral. Su Modelo de Ciclo de Vida en Espiral tiene en cuenta fuertemente el riesgo que aparece a la hora de desarrollar software. Para ello, se comienza mirando las posibles alternativas de desarrollo, se opta por la de riesgo más asumible y se hace un ciclo de la espiral. Si el cliente quiere seguir haciendo mejoras en el software, se vuelve a evaluar las distintas nuevas alternativas y riesgos y se realiza otra vuelta de la espiral, así hasta que llegue un momento en el que el producto software desarrollado sea aceptado y no necesite seguir mejorándose con otro nuevo ciclo.
+
+Este modelo fue propuesto por Boehm en 1986 en su artículo "A Spiral Model of Software Development and Enhancement".1 En 1988, Boehm publicó un artículo similar2 destinado a una audiencia más amplía. Básicamente consiste en una serie de ciclos que se repiten en forma de espiral, comenzando desde el centro. Se suele interpretar como que dentro de cada ciclo de la espiral se sigue un Modelo Cascada, pero no necesariamente debe ser así. El Espiral puede verse como un modelo evolutivo que conjuga la naturaleza iterativa del modelo MCP con los aspectos controlados y sistemáticos del Modelo Cascada, con el agregado de gestión de riesgo.
+
+Ciclos o Iteraciones
+
+En cada vuelta o iteración hay que tener en cuenta:
+
+- Los Objetivos: qué necesidad debe cubrir el producto.
+- Alternativas: las diferentes formas de conseguir los objetivos de forma exitosa, desde diferentes puntos de vista como pueden ser:
+	- Características: experiencia del personal, requisitos a cumplir, etc.
+    - Formas de gestión del sistema.
+    - Riesgo asumido con cada alternativa.
+- Desarrollar y Verificar: Programar y probar el software.
+
+Si el resultado no es el adecuado o se necesita implementar mejoras o funcionalidades:
+- Se planificaran los siguientes pasos y se comienza un nuevo ciclo de la espiral. La espiral tiene una forma de caracola y se dice que mantiene dos dimensiones, la radial y la angular:
+    1. Angular: Indica el avance del proyecto del software dentro de un ciclo.
+    2. Radial: Indica el aumento del coste del proyecto, ya que con cada nueva iteración se pasa más tiempo desarrollando.
+
+Este sistema es muy utilizado en proyectos grandes y complejos como puede ser, por ejemplo, la creación de un Sistema Operativo.
+
+Al ser un modelo de Ciclo de Vida orientado a la gestión de riesgo se dice que uno de los aspectos fundamentales de su éxito radica en que el equipo que lo aplique tenga la necesaria experiencia y habilidad para detectar y catalogar correctamente los riesgos.
+
+Tareas
+
+Para cada ciclo habrá cuatro actividades:
+1. Determinar Objetivos.
+2. Análisis del riesgo.
+3. Desarrollar y probar.
+4. 'Planificación.'
+
+Determinar o fijar objetivos
+- Fijar también los productos definidos a obtener: requisitos, especificación, manual de usuario.
+- Fijar las restricciones.
+- Identificación de riesgos del proyecto y estrategias alternativas para evitarlos.
+- Hay una cosa que solo se hace una vez: planificación inicial.
+
+Desarrollar, verificar y validar(probar)
+- Tareas de la actividad propia y de prueba.
+- Análisis de alternativas e identificación resolución de riesgos.
+- Dependiendo del resultado de la evaluación de los riesgos, se elige un modelo para el desarrollo, el que puede ser cualquiera de los otros existentes, como formal, evolutivo, cascada, etc. Así si por ejemplo si los riesgos en la interfaz de usuario son dominantes, un modelo de desarrollo apropiado podría ser la construcción de prototipos evolutivos. Si lo riesgos de protección son la principal consideración, un desarrollo basado en transformaciones formales podría ser el más apropiado.
+
+Análisis del riesgo
+- Se lleva a cabo el estudio de las causas de las posibles amenazas y probables eventos no deseados y los daños y consecuencias que éstas puedan producir. Se evalúan alternativas. Se debe tener un prototipo antes de comenzar a desarrollar y probar.
+
+En resumen, es para tener en cuenta de los riesgos de cada uno de los ambitos
+
+Mecanismos de control
+- La dimensión radial mide el coste.
+- La dimensión angular mide el grado de avance del proyecto.
+
+Variaciones del Modelo En Espiral
+
+Modelo en Espiral Típico de seis regiones
+
+El modelo en espiral puede adaptarse y aplicarse a lo largo de la vida del software de computadora, a diferencia del modelo de proceso clásico que termina cuando se entrega el software.
+
+Las 6 regiones que componen este modelo son las siguientes:
+- Comunicación con el cliente - Tareas necesarias para plantear la comunicación entre el desarrollador y el cliente.
+- Planificación - Tareas inherentes a la definición de recursos, el tiempo y otras informaciones relacionadas con el proyecto. Son todos los requerimientos.
+- Análisis de riesgos – Tareas para evaluar riesgos técnicos y otras informaciones relacionadas con el proyecto.
+- Ingeniería - Tareas para construir una o más representaciones de la aplicación.
+- Construcción y adaptación - Tareas requeridas para construir, probar, instalar y proporcionar soporte a los usuarios.
+- Evaluación del cliente - Tareas requeridas para obtener la reacción del cliente según la evaluación de las representaciones del software creadas durante la etapa de ingeniería e implementación durante la etapa de instalación.3
+
+Modelo en espiral WIN WIN
+
+El modelo Win-Win es una adaptación del modelo espiral que se enfatiza en la participación del cliente en el proceso de desarrollo de un producto de software. En un caso ideal, el desarrollador simplemente pregunta al cliente lo que se requiere y el cliente proporciona suficiente información y detalles para proceder. Sin embargo esto no suele ocurrir en la mayoría de los casos y es necesario que se establezcan negociaciones significativas entre ambas partes para equilibrar la funcionalidad y rendimiento con los costos y tiempo de salida al mercado del producto. El modelo Win-Win deriva su nombre del objetivo de estas negociaciones, es decir, "ganar-ganar". El cliente recibe el producto que satisface la mayoría de sus necesidades, y el desarrollador trabaja para alcanzar presupuestos y fechas de entrega. Para lograr este objetivo, se realizan varias actividades de negociación al principio de cada paso alrededor de la espiral.4
+
+Ventajas
+
+El análisis del riesgo se hace de forma explícita y clara. Une los mejores elementos de los restantes modelos.
+- Reduce riesgos del proyecto
+- Incorpora objetivos de calidad
+- Integra el desarrollo con el mantenimiento, etc.
+
+Además es posible tener en cuenta mejoras y nuevos requerimientos sin romper con la metodología, ya que este ciclo de vida no es rígido ni estático.
+
+Desventajas
+- Genera mucho tiempo en el desarrollo del sistema
+- Modelo costoso
+- Requiere experiencia en la identificación de riesgos
+
+Inconvenientes
+
+Planificar un proyecto con esta metodología es a menudo imposible, debido a la incertidumbre en el número de iteraciones que serán necesarias. En este contexto la evaluación de riesgos es de la mayor importancia y, para grandes proyectos, dicha evaluación requiere la intervención de profesionales de gran experiencia.
+
+El IEEE clasifica al desarrollo en espiral como modelo no operativo en sus clasificaciones de MCV.5
+
+Referencias
+- Boehm B, A Spiral Model of Software Development and Enhancement, ACM SIGSOFT Software Engineering Notes, ACM, 11(4):14-24, Agosto 1986.
+- Boehm B, "A Spiral Model of Software Development and Enhancement", IEEE Computer, IEEE, 21(5):61-72, May 1988
+- http://modeloespiral.blogspot.com/2009/08/modelo-tipico-de-seis-regiones.html
+- http://www.hanantek.com/win-win
+- Developing a Software Project Life Cycle Process (IEEE 1074), 30 de marzo de 2006.

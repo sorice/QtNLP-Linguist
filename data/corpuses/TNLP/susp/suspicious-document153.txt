@@ -1,0 +1,115 @@
+Arquitectura dirigida por eventos
+
+La Arquitectura dirigida por eventos, Event-driven architecture o EDA, es un patrón de arquitectura software que promueve la producción, detección, consumo de, y reacción a eventos.
+
+Un evento puede ser definido como "un cambio significativo en un estado". Por ejemplo, cuando un consumidor compra un coche, el estado del coche pasa de "se vende" a "vendido". La arquitectura del sistema del vendedor de coches debe tratar este cambio de estado como un evento, cuyo suceso puede ser conocido en otras aplicaciones en la arquitectura. Desde una perspectiva formal, lo que es producido, publicado, propagado, detectado o consumido es un mensaje (típicamente asíncrono) llamado notificación del evento, y no el evento en si mismo, el cuál es el cambio de estado que disparó la emisión del evento. Los eventos no viajan, solamente ocurren. Por otro lado, el término evento es frecuentemente usado para denotar el mensaje de notificación en sí mismo, lo cual puede llevar a algún tipo de confusión.
+
+Este patrón arquitectónico puede ser aplicado por el diseño e implementación de aplicaciones y sistemas que transmitan eventos entre componentes software que estén emparejados libremente y servicios. Un sistema dirigido por eventos está compuesto típicamente de emisores de eventos (o agentes) y consumidores de eventos (o "sink" en inglés). Los consumidores tienen la responsabilidad de llevar a cabo una reacción tan pronto como el evento esté presente. La reacción puede o no puede ser completamente proporcionada por el consumidor en sí mismo. Por ejemplo, el consumidor debe tener solamente la responsabilidad de filtrar, transformar y reenviar el evento a otro componente o debe proporcionar una reacción propia a algún evento.
+
+Construir aplicaciones y sistemas alrededor de una arquitectura dirigida por eventos permite a estas aplicaciones y sistemas ser construidos de una manera que facilita un mayor grado de reacción, debido a que los sistemas dirigidos por eventos están, por el diseño, más normalizados para entornos no predecibles y asíncronos.
+
+La arquitectura dirigida por eventos puede complementar la arquitectura orientada a servicios (SOA) porque los servicios pueden ser activados por disparadores que se encuentran en eventos entrantes. Este paradigma es particularmente útil cuando el consumidor no proporciona algún contenedor ejecutivo propio.
+
+SOA 2.0 engloba las implicaciones de las arquitecturas SOA y EDA proporcionando a un más rico y más robusto nivel, creando un nuevo patrón de eventos. Este nuevo concepto de disparadores de patrones de inteligencia promueve a humanos autónomos o procesamiento automático que añade valor exponencial al negocio. Esto se debe a que se inyecta información de valor añadido en patrón reconocido que no podía haber sido obtenido previamente.
+
+La maquinaría computacional y los sensores (como sensores de cualquier tipo, actuadores, controladores,...) pueden detectar cambios de estado de objetos o condiciones y crear eventos que pueden ser procesados por un servicio o un sistema. Los disparadores de eventos son condiciones que tienen como resultado la creación de un evento.
+
+Estructura del Evento
+
+Un evento puede estar hecho de dos partes, el encabezado evento y el cuerpo evento. El encabezado de evento puede incluir información como el nombre del evento, fecha y hora para el evento, y el tipo de evento. El texto del evento es la parte que describe lo que ha ocurrido en realidad. El cuerpo del evento no debe ser confundido con el patrón o la lógica que se puede aplicar en reacción al evento en sí.
+
+Capas del flujo del evento
+
+Una arquitectura de evento disparado se basa en cuatro capas lógicas. Se inicia con la detección de un hecho, su representación técnica en la forma de un evento y termina con un conjunto no vacío de reacciones a ese evento.
+
+Generador de evento
+
+La primera capa lógica es el generador de eventos, que detecta un hecho y representa el hecho de en un evento. Dado que un hecho puede ser casi cualquier cosa que se puede detectar, por lo que puede un generador de eventos también serlo. Por ejemplo, un generador de eventos podría ser un cliente de correo electrónico, un sistema de comercio electrónico o algún tipo de sensor. La conversión de los diferentes datos recogidos por los sensores de una forma estandarizada que se pueda evaluar es un problema importante en el diseño e implementación de esta capa. [4] Sin embargo, teniendo en cuenta que un evento es un marco muy declarativo, las operaciones de transformación pueden ser aplicadas fácilmente, eliminando así la necesidad de un alto nivel de estandarización.
+
+Canal de evento
+
+Un canal de evento es un mecanismo mediante el cual la información a partir de un generador de eventos se transfiere al motor de eventos [4] o en el fregadero. Esto podría ser una conexión TCP / IP o cualquier tipo de archivo de entrada (text plano, formato XML, correo electrónico, etc.) Varios canales de eventos se pueden abrir al mismo tiempo. Por lo general, debido a que el motor de procesamiento de eventos tiene que procesar en tiempo casi real, los canales de eventos se pueden leer de forma asíncrona. Los eventos son almacenados en una cola, en espera de ser procesados ​​posteriormente por el motor de procesamiento de eventos.
+
+Motor de procesamiento del evento
+
+El motor de procesamiento de eventos es donde se identifica el evento, y la reacción adecuada se selecciona y se ejecuta. Esto también puede dar lugar a una serie de afirmaciones que se producen. Es decir, si el evento que entra en el motor de procesamiento de eventos es un "identificador de producto bajo en la acción", esto puede desencadenar reacciones tales como, "ID de pedido del producto" y "Notificar al personal". [4]
+
+Actividad de descarga dirigida por evento
+
+Aquí es donde se muestran las consecuencias del suceso. Esto se puede hacer de muchas maneras y formas diferentes, Por ejemplo, un correo electrónico se envía a alguien y una aplicación puede mostrar algún tipo de advertencia en la pantalla [4] Dependiendo del nivel de automatización proporcionada por el receptor (el motor de procesamiento de eventos) la actividad aguas abajo puede no ser necesaria.
+
+Estilos de procesamiento de evento
+
+Hay tres estilos generales de procesamiento de eventos: simple, flujo, y complejos. Los tres estilos se utilizan a menudo juntos en una arquitectura orientada a eventos madura. [4]
+
+Procesamiento simple de evento
+
+El procesamiento de eventos simples se refiere a los acontecimientos que están directamente relacionados con los cambios, específicos y medibles de la condición. En el procesamiento de evento simple, un evento notable sucede que inicia una acción de aguas abajo (s).Se utiliza comúnmente para conducir el flujo en tiempo real de trabajo, reduciendo así el tiempo de retardo y el costo. [4]
+
+Por ejemplo, los eventos simples pueden ser creados por un sensor que detecta los cambios en la presión de los neumáticos o la temperatura ambiente.
+
+Procesamiento por flujo de evento
+
+En el procesamiento de flujos de eventos (PFE), ambos acontecimientos ordinarios y notables ocurren. Los acontecimientos ordinarios (pedidos, las transmisiones de RFID) son examinados para detectar la notabilidad y transmiten a los suscriptores información. La secuencia de procesamiento de eventos se utiliza comúnmente para conducir el flujo de la información en tiempo real dentro y alrededor de la empresa, lo que permite la toma de decisiones a tiempo. [4]
+
+Procesamiento complejo de evento
+
+El procesamiento de eventos complejos (PEC) permite a los patrones de eventos simples y ordinarios que se deben considerar para inferir que se ha producido un evento complejo. El procesamiento de eventos complejos evalúa una confluencia de eventos y luego entra en acción. Los eventos (notable o ordinario) pueden cruzar los tipos de eventos y se producen durante un largo período de tiempo. La correlación de eventos puede ser causal, temporal o espacial. PEC requiere el empleo de sofisticadas intérpretes de eventos, la definición del modelo de eventos y correspondencia, y las técnicas de correlación. PEC se utiliza comúnmente para detectar y responder a las anomalías de negocio, amenazas y oportunidades. [4]
+
+Acoplamiento débil extremo y bien distribuidas
+
+Una arquitectura orientada a eventos está débilmente acoplados y bien distribuida. Existe una gran distribución de esta arquitectura, ya que un evento puede ser casi cualquier cosa y existen en casi cualquier lugar. La arquitectura se acopla muy vagamente porque el evento en sí mismo no sabe nada de las consecuencias de su causa. Por ejemplo, si tenemos un sistema de alarma que registra la información cuando se abre la puerta, la puerta en sí no sabe que el sistema de alarma se sumará la información cuando se abre la puerta, sólo que la puerta se ha abierto. [4]
+
+Arquitecturas basadas en eventos se suelta del acoplamiento en el espacio, el tiempo y la sincronización, proporcionando una infraestructura escalable para el intercambio de información y flujos de trabajo distribuidos. Sin embargo, el eventos-arquitecturas están estrechamente unidas, a través de suscripciones de eventos y patrones, a la semántica del esquema de eventos y valores subyacentes. El alto grado de heterogeneidad semántica de los eventos en implementaciones grandes y abiertas, como las ciudades inteligentes y la red de sensores hace que sea difícil de desarrollar y mantener sistemas basados ​​en eventos. A fin de abordar la semántica acoplamiento dentro de los sistemas basados ​​en eventos el uso de coincidencia semántica aproximada de eventos es un área activa de investigación. [5]
+
+Ventajas y Desventajas
+
+Ventajas
+1. Simplicidad
+2. Evolución: se pueden reemplazar componentes suscriptores
+3. Modularidad: una sola modalidad para eventos diversos
+4. Puede mejorar la eficiencia, eliminando la necesidad de polling por ocurrencia de evento
+
+Desventajas
+1. Posibilidad de desborde
+2. Potencial imprevisión de escalabilidad
+3. Pobre comprensibilidad: Puede ser difícil prever qué pasará en respuesta a una acción
+4. No hay garantía del lado del publicador, que el suscriptor responderá al evento
+5. No hay mucho soporte de recuperación en caso de falla parcial
+
+Implementaciones y ejemplos
+
+Java Swing
+
+El Java Swing API se basa en una arquitectura orientada a eventos. Esto funciona particularmente bien con la motivación tras swing para proporcionar componentes relacionados con la interfaz de usuario y la funcionalidad. La API utiliza una convención de nomenclatura (por ejemplo, "ActionListener" y "ActionEvent") relacionar y organizar eventos que tengan que ver. Una clase que tiene que ser consciente de un evento en particular, simplemente implementa el oyente apropiado, anula los métodos heredados, y se añade a continuación al objeto que dispara el evento. Un ejemplo muy sencillo podría ser:
+
+public class FooPanel extends JPanel implements ActionListener {
+    public FooPanel() {
+        super();
+ 
+        JButton btn = new JButton("Click Me!");
+        btn.addActionListener(this);
+ 
+        this.add(btn);
+    }
+ 
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        System.out.println("Button has been clicked!");
+    }
+}
+
+Por otra parte, otra opción implementación es añadir el detector al objeto como una clase anónima. A continuación se muestra un ejemplo.
+
+public class FooPanel extends JPanel {
+    public FooPanel() {
+        super();
+ 
+        JButton btn = new JButton("Click Me!");
+        btn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                System.out.println("Button has been clicked!");
+            }
+        });
+    }
+}

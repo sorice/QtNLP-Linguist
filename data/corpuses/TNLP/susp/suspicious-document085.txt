@@ -1,0 +1,63 @@
+Algoritmo genético
+
+Un algoritmo es una serie de pasos organizados que describe el proceso que se debe seguir, para dar solución a un problema específico. En los años 1970, de la mano de John Henry Holland, surgió una de las líneas más prometedoras de la inteligencia artificial, la de los algoritmos genéticos.1 Son llamados así porque se inspiran en la evolución biológica y su base genético-molecular. Estos algoritmos hacen evolucionar una población de individuos sometiéndola a acciones aleatorias semejantes a las que actúan en la evolución biológica (mutaciones y recombinaciones genéticas), así como también a una selección de acuerdo con algún criterio, en función del cual se decide cuáles son los individuos más adaptados, que sobreviven, y cuáles los menos aptos, que son descartados. Los algoritmos genéticos se enmarcan dentro de los algoritmos evolutivos, que incluyen también las estrategias evolutivas, la programación evolutiva y la programación genética.
+
+Funcionamiento
+
+Los algoritmos genéticos funcionan entre el conjunto de soluciones de un problema llamado fenotipo, y el conjunto de individuos de una población natural, codificando la información de cada solución en una cadena, generalmente binaria, llamada cromosoma. Los símbolos que forman la cadena son llamados los genes. Cuando la representación de los cromosomas se hace con cadenas de dígitos binarios se le conoce como genotipo. Los cromosomas evolucionan a través de iteraciones, llamadas generaciones. En cada generación, los cromosomas son evaluados usando alguna medida de aptitud. Las siguientes generaciones (nuevos cromosomas), son generadas aplicando los operadores genéticos repetidamente, siendo estos los operadores de selección, cruzamiento, mutación y reemplazo.
+
+Cuándo usar estos algoritmos
+
+Los algoritmos genéticos son de probada eficacia en caso de querer calcular funciones no derivables (o de derivación muy compleja) aunque su uso es posible con cualquier función.
+Deben tenerse en cuenta también las siguientes consideraciones:
+- Si la función a optimizar tiene muchos máximos/mínimos locales se requerirán más iteraciones del algoritmo para "asegurar" el máximo/mínimo global.
+- Si la función a optimizar contiene varios puntos muy cercanos en valor al óptimo, solamente podemos "asegurar" que encontraremos uno de ellos (no necesariamente el óptimo).
+
+Funcionamiento de un algoritmo genético básico
+
+Un algoritmo genético puede presentar diversas variaciones, dependiendo de cómo se aplican los operadores genéticos (cruzamiento, mutación), de cómo se realiza la selección y de cómo se decide el reemplazo de los individuos para formar la nueva población. En general, el pseudocódigo consiste de los siguientes pasos:
+- Inicialización: Se genera aleatoriamente la población inicial, que está constituida por un conjunto de cromosomas los cuales representan las posibles soluciones del problema. En caso de no hacerlo aleatoriamente, es importante garantizar que dentro de la población inicial, se tenga la diversidad estructural de estas soluciones para tener una representación de la mayor parte de la población posible o al menos evitar la convergencia prematura.
+- Evaluación: A cada uno de los cromosomas de esta población se aplicará la función de aptitud para saber cómo de "buena" es la solución que se está codificando.
+- Condición de término El AG se deberá detener cuando se alcance la solución óptima, pero ésta generalmente se desconoce, por lo que se deben utilizar otros criterios de detención. Normalmente se usan dos criterios: correr el AG un número máximo de iteraciones (generaciones) o detenerlo cuando no haya cambios en la población. Mientras no se cumpla la condición de término se hace lo siguiente:
+    - Selección Después de saber la aptitud de cada cromosoma se procede a elegir los cromosomas que serán cruzados en la siguiente generación. Los cromosomas con mejor aptitud tienen mayor probabilidad de ser seleccionados.
+    - Recombinación o Cruzamiento La recombinación es el principal operador genético, representa la reproducción sexual, opera sobre dos cromosomas a la vez para generar dos descendientes donde se combinan las características de ambos cromosomas padres.
+    - Mutación modifica al azar parte del cromosoma de los individuos, y permite alcanzar zonas del espacio de búsqueda que no estaban cubiertas por los individuos de la población actual.
+    - Reemplazo una vez aplicados los operadores genéticos, se seleccionan los mejores individuos para conformar la población de la generación siguiente
+
+Aplicaciones
+- Diseño automatizado, incluyendo investigación en diseño de materiales y diseño multiobjetivo de componentes automovilísticos: mejor comportamiento ante choques, ahorros de peso, mejora de aerodinámica, etc.
+- Diseño automatizado de equipamiento industrial.
+- Diseño automatizado de sistemas de comercio en el sector financiero.
+- Construcción de árboles filogenéticos.
+- Optimización de carga de contenedores.
+- Diseño de sistemas de distribución de aguas.
+- Diseño de topologías de circuitos impresos.
+- Diseño de topologías de redes computacionales.
+- En Teoría de juegos, resolución de equilibrios.
+- Análisis de expresión de genes.
+- Aprendizaje de comportamiento de robots.
+- Aprendizaje de reglas de Lógica difusa.
+- Análisis lingüístico, incluyendo inducción gramática, y otros aspectos de Procesamiento de lenguajes naturales, tales como eliminación de ambigüedad de sentido.
+- Infraestructura de redes de comunicaciones móviles.
+- Optimización de estructuras moleculares.
+- Planificación de producción multicriteria.
+- Predicción.
+- Aplicación de Algoritmos Genéticos al Dilema del prisionero Iterado
+- Optimización de sistemas de compresión de datos, por ejemplo, usando wavelets.
+- Predicción de Plegamiento de proteínas.
+- Optimización de Layout.
+- Predicción de estructura de ARN.
+- En bioinformática, Alineamiento múltiple de secuencias.
+- Aplicaciones en planificación de procesos industriales, incluyendo planificación job-shop.
+- Selección óptima de modelos matemáticos para la descripción de sistemas biológicos.
+- Manejo de residuos sólidos.
+- Ingeniería de software.
+- Construcción de horarios en grandes universidades, evitando conflictos de clases.
+- Problema del viajante.
+- Hallazgo de errores en programas.
+- Optimización de producción y distribución de energía eléctrica.
+- Diseño de redes geodésicas (Problemas de diseño).
+- Calibración y detección de daños en estructuras civiles.
+
+Referencias
+- M. Domínguez-Dorado,. Todo Programación. Nº 12. Págs. 16-20. Editorial Iberprensa (Madrid). DL M-13679-2004. Septiembre, 2005.. Programación de algoritmos genéticos.

@@ -1,0 +1,29 @@
+Desarrollo por etapas
+
+El modelo de desarrollo de software por etapas es similar al Modelo de prototipos ya que se muestra al cliente el software en diferentes estados sucesivos de desarrollo, se diferencia en que las especificaciones no son conocidas en detalle al inicio del proyecto y por tanto se van desarrollando simultáneamente con las diferentes versiones del código.
+
+Pueden distinguirse las siguientes fases:
+- Especificación conceptual
+- Análisis de requisitos
+- Diseño inicial
+- Diseño detallado, codificación, depuración y liberación
+
+Estas diferentes fases se van repitiendo en cada etapa del diseño.
+
+Este modelo estipula que el software será desarrollado en sucesivas etapas:
+
+1. Plan operativo Etapa donde se define el problema a resolver, las metas del proyecto, las metas de calidad y se identifica cualquier restricción aplicable al proyecto.
+
+2. Especificación de requisitos Permite entregar una visión de alto nivel sobre el proyecto, poniendo énfasis en la descripción del problema desde el punto de vista de los clientes y desarrolladores. También se considera la posibilidad de una planificación de los recursos sobre una escala de tiempos.
+
+3. Especificación funcional Especifica la información sobre la cual el software a desarrollar trabajará.
+
+4. Diseño Permite describir como el sistema va a satisfacer los requisitos. Esta etapa a menudo tiene diferentes niveles de detalle. Los niveles más altos de detalle generalmente describen los componentes o módulos que formarán el software a ser producido. Los niveles más bajos, describen, con mucho detalle, cada módulo que contendrá el sistema.
+
+5. Implementación Aquí es donde el software a ser desarrollado se codifica. Dependiendo del tamaño del proyecto, la programación puede ser distribuida entre distintos programadores o grupos de programadores. Cada uno se concentrará en la construcción y prueba de una parte del software, a menudo un subsistema. Las pruebas, en general, tiene por objetivo asegurar que todas las funciones están correctamente implementadas dentro del sistema.
+
+6. Integración Es la fase donde todos los subsistemas codificados independientemente se juntan. Cada sección es enlazada con otra y, entonces, probada. Este proceso se repite hasta que se han agregado todos los módulos y el sistema se prueba como un todo.
+
+7. Validación y verificación Una vez que el sistema ha sido integrado, comienza esta etapa. Es donde es probado para verificar que el sistema es consistente con la definición de requisitos y la especificación funcional. Por otro lado, la verificación consiste en una serie de actividades que aseguran que el software implementa correctamente una función específica. Al finalizar esta etapa, el sistema ya puede ser instalado en ambiente de explotación.
+
+8. Mantenimiento El mantenimiento ocurre cuando existe algún problema dentro de un sistema existente, e involucraría la corrección de errores que no fueron descubiertos en las fases de prueba, mejoras en la implementación de las unidades del sistema y cambios para que responda a los nuevos requisitos. Las mantenciones se puede clasificar en: correctiva, adaptativa, perfectiva y preventiva.

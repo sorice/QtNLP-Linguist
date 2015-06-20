@@ -1,0 +1,78 @@
+Cuarta forma normal
+
+La cuarta forma normal (4NF) es una forma normal usada en la normalización de bases de datos. La 4NF se asegura de que las dependencias multivaluadas independientes estén correctas y eficientemente representadas en un diseño de base de datos. La 4NF es el siguiente nivel de normalización después de la forma normal de Boyce-Codd (BCNF).
+
+Características
+
+Una tabla está en 4NF si y solo si esta en Tercera forma normal o en BCNF (Cualquiera de ambas) y no posee dependencias multivaluadas no triviales. La definición de la 4NF confía en la noción de una dependencia multivaluada. Una tabla con una dependencia multivaluada es una donde la existencia de dos o más relaciones independientes muchos a muchos causa redundancia; y es esta redundancia la que es suprimida por la cuarta forma normal.
+
+Dependencia multivaluada
+
+Sea R un esquema de relación. La dependencia multivaluada X ->> Y vale en R si los pares de tuplas t1 y t2 en R, tal que t1[X] = t2[X] existen las tuplas t3 y t4 en R tales que:
+
+t1[X] = t2[X] = t3[X] = t4[X]
+
+t3[Y] = t1[Y]
+
+t3[R-X-Y] = t2[R-X-Y]
+
+t4[Y] = t2[Y]
+
+t4[R-X-Y] = t1[R-X-Y]
+
+En otras palabras se puede decir que: X ->> Y si dado un valor de X, hay un conjunto de valores de Y asociados y este conjunto de valores de Y NO está relacionado (ni funcional ni multifuncionalmente) con los valores de R - X -Y (donde R es el esquema), es decir Y es independiente de los atributos de R-X-Y. (Cátedra de Base de Datos 1, 2009) Una dependencia multivaluada de la forma X->> Y, es trivial cuando el conjunto de atributos {X,Y} conforma el total de los atributos del esquema.
+
+Ejemplo
+
+Considere el siguiente ejemplo:
+
+Permutaciones de envíos de pizzas Restaurante 	Variedad de Pizza 	Área de envío
+Vincenzo's Pizza 	Corteza gruesa 	Springfield
+Vincenzo's Pizza 	Corteza gruesa 	Shelbyville
+Vincenzo's Pizza 	Corteza fina 	Springfield
+Vincenzo's Pizza 	Corteza fina 	Shelbyville
+Elite Pizza 	Corteza fina 	Capital City
+Elite Pizza 	Corteza rellena 	Capital City
+A1 Pizza 	Corteza gruesa 	Springfield
+A1 Pizza 	Corteza gruesa 	Shelbyville
+A1 Pizza 	Corteza gruesa 	Capital City
+A1 Pizza 	Corteza rellena 	Springfield
+A1 Pizza 	Corteza rellena 	Shelbyville
+A1 Pizza 	Corteza rellena 	Capital City
+
+Cada fila indica que un restaurante dado puede entregar una variedad dada de pizza a un área dada.
+
+Note que debido a que la tabla tiene una clave única y ningún atributo no-clave, no viola ninguna forma normal hasta el BCNF. Pero debido a que las variedades de pizza que un restaurante ofrece son independientes de las áreas a las cuales el restaurante envía, hay redundancia en la tabla: por ejemplo, nos dicen tres veces que A1 Pizza ofrece la Corteza rellena, y si A1 Pizza comienza a producir pizzas de Corteza de queso entonces necesitaremos agregar múltiples registros, uno para cada una de las Áreas de envío de A1 Pizza. En términos formales, esto se describe como que Variedad de pizza está teniendo una dependencia multivalor en Restaurante.
+
+Para satisfacer la 4NF, debemos poner los hechos sobre las variedades de pizza ofrecidas en una tabla diferente de los hechos sobre áreas de envío:
+
+Variedades por restaurante Restaurante 	Variedad de pizza
+Vincenzo's Pizza 	Corteza gruesa
+Vincenzo's Pizza 	Corteza fina
+Elite Pizza 	Corteza fina
+Elite Pizza 	Corteza rellena
+A1 Pizza 	Corteza gruesa
+A1 Pizza 	Corteza rellena
+	
+Áreas de envío por restaurante Restaurante 	Área de envío
+Vincenzo's Pizza 	Springfield
+Vincenzo's Pizza 	Shelbyville
+Elite Pizza 	Capital City
+A1 Pizza 	Springfield
+A1 Pizza 	Shelbyville
+A1 Pizza 	Capital City
+
+En contraste, si las variedades de pizza ofrecidas por un restaurante a veces variaran de un área de envío a otra, la tabla original de la tres columnas satisfaría la 4NF.
+
+Ronald Fagin demostró que es siempre posible alcanzar la 4NF (pero no siempre deseable). El teorema de Rissanen es también aplicable en dependencias multivalor.
+
+4NF en la práctica
+
+Un artículo de 1992 de Margaret S. Wu observa que la enseñanza de la normalización de la base de datos se detiene típicamente justo antes de la 4NF, quizás debido a una creencia que las tablas que violan la 4NF (pero que hacen frente a todas las formas normales más bajas) son raramente encontradas en aplicaciones empresariales. Sin embargo, esta creencia puede no ser exacta. Wu reporta que en un estudio de cuarenta bases de datos de organizaciones, más del 20% contenía una o más tablas que violaban la 4NF mientras que satisfacen todas las formas normales más bajas.1
+
+Referencias
+- Rules Of Data Normalization
+- Date, C. J. (1999), An Introduction to Database Systems (8th ed.). Addison-Wesley Longman. ISBN 0-321-19784-4.
+- Kent, W. (1983) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM, vol. 26, pp. 120-125
+- Date, C.J., & Darwen, H., & Pascal, F. Database Debunkings
+- Wu, Margaret S. (March 1992). «The Practical Need for Fourth Normal Form». ACM SIGCSE Bulletin 24 (1):  pp. 19–23. doi:10.1145/135250.134515.

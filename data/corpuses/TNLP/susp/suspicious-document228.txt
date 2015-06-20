@@ -1,0 +1,40 @@
+Algoritmo determinista
+
+En ciencias de la computación, un algoritmo determinista es un algoritmo que, en términos informales, es completamente predictivo si se conocen sus entradas. Dicho de otra forma, si se conocen las entradas del algoritmo siempre producirá la misma salida, y la máquina interna pasará por la misma secuencia de estados. Este tipo de algoritmos ha sido el más estudiado durante la historia y por lo tanto resulta ser el tipo más familiar de los algoritmos, así como el más práctico ya que puede ejecutarse en las máquinas eficientemente.
+
+Un modelo simple de algoritmo determinista es la función matemática, pues esta extrae siempre la misma salida para una entrada dada. No obstante un algoritmo describe explícitamente cómo la salida se obtiene de la entrada, mientras que las funciones definen implícitamente su salida.
+
+Definición formal
+
+Formalmente los algoritmos deterministas se pueden definir en términos de una máquina de estado; un «estado» describe qué está haciendo la máquina en un instante particular de tiempo. Justo cuando se produce la entrada, la máquina comienza en su «estado inicial» y, posteriormente, si la máquina es determinista, comenzará la ejecución de la secuencia de estados predeterminados. Una máquina puede ser determinista y no tener límite temporal para la ejecución o quedarse en un bucle de estados cíclicos eternamente.
+
+Ejemplos de máquinas abstractas deterministas son las máquinas de Turing deterministas y los autómatas finitos deterministas.
+
+Cuándo un algoritmo puede volverse no determinista
+
+Por diversos motivos un algoritmo determinista puede comportarse de una forma no determinista:
+- Si emplea en la ejecución de la secuencia de estados otro estado «externo» como entrada del proceso; por ejemplo: una entrada de un usuario, una variable objetivo, un valor de un temporizador de hardware, un valor aleatorio, etc.
+- Si al operar se encuentra con concurrencia de estados; por ejemplo, si tiene múltiples procesadores escribiendo al mismo tiempo en un fichero. En este caso el orden preciso en el que cada procesador escribe el dato puede afectar a la salida.
+- Si un error (cuyo origen puede deberse al hardware o al software) causa un inesperado cambio en la secuencia de ejecución de estados.
+
+Aunque los programas reales rara vez son puramente deterministas, es conveniente considerar que sí lo son ya que es más fácil razonar sobre estos. Por este motivo, la mayoría de los lenguajes de programación y especialmente aquellos que entran dentro de la categoría de la programación funcional son lenguajes que hacen un esfuerzo en prevenir eventos que se ejecuten sin control. Este tipo de restricciones fuerzan el carácter determinista y por ello a los algoritmos deterministas se les suele denominar puramente funcionales.
+
+La prevalencia de los procesadores de varios núcleos ha levantado el interés por el determinismo en la programación en paralelo y se han documentado bien los problemas del no determinismo.1 2 Numerosas herramientas útiles en estos problemas se han propuesto para tratar con los bloqueos mutuos y las condiciones de carrera.3 4 5 6 7
+
+Problemas con los algoritmos deterministas
+
+Para algunos problemas es muy difícil implementar un algoritmo determinista. Por ejemplo, existen eficientes y simples algoritmos probabilistas que pueden determinar si un número entero es primo o no, pero tienen una pequeña posibilidad de equivocarse. Algunos de ellos son muy conocidos desde los 1970 (véase, por ejemplo, el test de primalidad de Fermat); sin embargo tuvieron que pasar 30 años para que se desarrollara un algoritmo determinista similar que fuera asintóticamente igual de rápido (véase AKS).8
+
+Otro ejemplo puede encontrarse en los problemas NP-completos. Dentro de esta categoría puede encontrarse la mayoría de los problemas prácticos; este tipo de problemas puede resolverse rápidamente empleando de forma masiva y paralela una máquina de Turing no determinista, pero no se ha encontrado aún un algoritmo eficiente para esta tarea, tan solo soluciones aproximadas para casos especiales.
+
+Otro problema sobre el planteamiento de algoritmos deterministas es que a veces no es «deseable» que los resultados sean completamente predecibles. Por ejemplo, en un juego on-line de blackjack que utiliza un generador pseudoaleatorio de números para barajar las cartas, un jugador astuto podría determinar con exactitud los números que el generador fuera a elegir y por consiguiente averiguar el contenido del mazo antes de tiempo. Problemas similares pueden encontrarse en criptografía, donde las claves privadas a menudo se crean mediante uno de estos generadores. Este tipo de problemas se evita mediante el empleo de un generador de números pseudo-aleatorios criptográficamente seguro.
+
+Notas al pie
+1. Edward A. Lee. «The Problem with Threads». Consultado el 29-5-2009.
+2. James Reinders. «Parallel terminology definitions». Consultado el 29-5-2009.
+3. «Intel Parallel Inspector Thread Checker». Consultado el 29-5-2009.
+4. Yuan Lin. «Data Race and Deadlock Detection with Sun Studio Thread Analyzer». Consultado el 29-5-2009.
+5. Intel. «Intel Parallel Inspector». Consultado el 29-5-2009.
+6. David Worthington. «Intel addresses development life cycle with Parallel Studio». Consultado el 26-5-2009.
+7. Véase el Intel Parallel Studio.
+8. Manindra Agrawal, Neeraj Kayal, Nitin Saxena (2004). «PRIMES is in P». Annals of Mathematics 160 (2). ISSN 0003-486X , 781-793.

@@ -1,0 +1,17 @@
+Lenguaje de Control de Datos
+
+Un Lenguaje de Control de Datos (DCL por sus siglas en inglés: Data Control Language) es un lenguaje proporcionado por el Sistema de Gestión de Base de Datos que incluye una serie de comandos SQL que permiten al administrador controlar el acceso a los datos contenidos en la Base de Datos.
+
+Algunos ejemplos de comandos incluidos en el DCL son los siguientes:
+- GRANT: Permite dar permisos a uno o varios usuarios o roles para realizar tareas determinadas.
+- REVOKE: Permite eliminar permisos que previamente se han concedido con GRANT.
+
+Las tareas sobre las que se pueden conceder o denegar permisos son las siguientes:
+- CONNECT
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- USAGE
+
+En Oracle, la ejecución de un comando DCL implica un COMMIT de forma implícita. Sin embargo, en PostgreSQL, la ejecución de un comando DCL forma parte de una transacción, por lo que puede ser deshecha mediante el comando ROLLBACK.

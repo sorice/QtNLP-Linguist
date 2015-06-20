@@ -1,0 +1,270 @@
+Algoritmo de Floyd-Warshall
+
+En informática, el algoritmo de Floyd-Warshall, descrito en 1959 por Bernard Roy, es un algoritmo de análisis sobre grafos para encontrar el camino mínimo en grafos dirigidos ponderados. El algoritmo encuentra el camino entre todos los pares de vértices en una única ejecución. El algoritmo de Floyd-Warshall es un ejemplo de programación dinámica.
+
+Algoritmo
+
+El algoritmo de Floyd-Warshall compara todos los posibles caminos a través del grafo entre cada par de vértices. El algoritmo es capaz de hacer esto con sólo V^3 comparaciones (esto es notable considerando que puede haber hasta V^2 aristas en el grafo, y que cada combinación de aristas se prueba). Lo hace mejorando paulatinamente una estimación del camino más corto entre dos vértices, hasta que se sabe que la estimación es óptima.
+
+Sea un grafo G con conjunto de vértices V, numerados de 1 a N. Sea además una función \textrm{caminoMinimo}(i,j,k) que devuelve el camino mínimo de i a j usando únicamente los vértices de 1 a k como puntos intermedios en el camino. Ahora, dada esta función, nuestro objetivo es encontrar el camino mínimo desde cada i a cada j usando únicamente los vértices de 1 hasta k+1.
+
+Hay dos candidatos para este camino: un camino mínimo, que utiliza únicamente los vértices del conjunto (1...k); o bien existe un camino que va desde i hasta k+1, y de k+1 hasta j, que es mejor. Sabemos que el camino óptimo de i a j que únicamente utiliza los vértices de 1 hasta k está definido por \textrm{caminoMinimo}(i,j,k), y está claro que si hubiera un camino mejor de i a k+1 a j, la longitud de este camino sería la concatenación del camino mínimo de i a k+1 (utilizando vértices de (1...k) ) y el camino mínimo de k+1 a j (que también utiliza los vértices en (1...k) ).
+
+
+Por lo tanto, podemos definir caminoMinimo(i,j,k) de forma recursiva:
+
+\textrm{caminoMinimo}(i,j,k) = \min(\textrm{caminoMinimo}(i,j,k-1),\textrm{caminoMinimo}(i,k,k-1)\,+\,\textrm{caminoMinimo}(k,j,k-1));\,\!
+
+\textrm{caminoMinimo}(i,j,0) = \textrm{pesoArista}(i,j);\,\!
+
+Esta fórmula es la base del algoritmo Floyd-Warshall. Funciona ejecutando primero caminoMinimo(i,j,1) para todos los pares (i,j), usándolos para después hallar caminoMinimo(i,j,2) para todos los pares (i,j)... Este proceso continúa hasta que k=n, y habremos encontrado el camino más corto para todos los pares de vértices (i,j) usando algún vértice intermedio.
+
+Pseudocodigo
+
+Convenientemente, cuando calculamos el k-esimo caso, se puede sobreescribir la información salvada en la computación k -1. Esto significa que el algoritmo usa memoria cuadrática. Hay que cuidar la inicialización de las condiciones:
+
+1 /* Suponemos que la función pesoArista devuelve el coste del camino que va de i a j
+2    (infinito si no existe).
+3    También suponemos que n es el número de vértices y pesoArista(i,i) = 0
+4 */
+5
+6 int camino[][];
+7 /* Una matriz bidimensional. En cada paso del algoritmo, camino[i][j] es el camino mínimo 
+8    de i hasta j usando valores intermedios de (1..k-1). Cada camino[i][j] es inicializado a 
+9    
+10 */
+11
+12 procedimiento FloydWarshall ()
+13    para k: = 0 hasta n − 1
+14      
+15          camino[i][j] = mín ( camino[i][j], camino[i][k]+camino[k][j])
+16      
+17    fin para
+
+Código en C++
+
+// Declaraciones en el archivo .h
+int cn; //cantidad de nodos
+vector< vector<int> > ady;
+ 
+// Devuelve una matriz con las distancias minimas de cada nodo al resto de los vertices.
+vector< vector<int> > Grafo :: floydWarshall(){
+    vector< vector<int> > path = this->ady;
+ 
+    for(int i = 0; i < cn; i++)
+        path[i][i] = 0;
+ 
+    for(int k = 0; k < cn; k++)
+        for(int i = 0; i < cn; i++)
+            for(int j = 0; j < cn; j++){
+                int dt = path[i][k] + path[k][j];
+                if(path[i][j] > dt)
+                    path[i][j] = dt;
+            }
+ 
+    return path;
+}
+
+Comportamiento con ciclos negativos
+
+Para que haya coherencia numérica, Floyd-Warshall supone que no hay ciclos negativos (de hecho, entre cualquier pareja de vértices que forme parte de un ciclo negativo, el camino mínimo no está bien definido porque el camino puede ser infinitamente pequeño). No obstante, si hay ciclos negativos, Floyd-Warshall puede ser usado para detectarlos. Si ejecutamos el algoritmo una vez más, algunos caminos pueden decrementarse pero no garantiza que, entre todos los vértices, caminos entre los cuales puedan ser infinitamente pequeños, el camino se reduzca. Si los números de la diagonal de la matriz de caminos son negativos, es condición necesaria y suficiente para que este vértice pertenezca a un ciclo negativo.
+
+Ejemplo
+
+Hallar el camino mínimo desde el vértice 3 hasta 4 en el grafo con la siguiente matriz de distancias:
+
+    D = \begin{bmatrix} 0 & 3 & 5 & 1 & \infty & \infty\\ 3 & 0 & \infty & \infty & 9 & \infty\\ 5 & \infty & 0 & 7 & 7 & 1\\ 1 & \infty & 7 & 0 & \infty & 4\\ \infty & 9 & 7 & \infty & 0 & \infty\\ \infty & \infty & 1 & 4 & \infty & 0\end{bmatrix}
+
+
+Aplicamos el algoritmo de Floyd-Warshall, y para ello en cada iteración fijamos un vértice intermedio.
+
+
+1ª Iteración: nodo intermedio = 1
+
+La matriz es simétrica, por lo que solamente hará falta calcular el triángulo superior de las distancias.
+
+d23 = min(d23, d21 + d13) = 8
+
+d24 = min(d24, d21 + d14) = 4
+
+d25 = min(d25, d21 + d15) = 9
+
+d26 = min(d26, d21 + d16) = \infty
+
+d32 = min(d32, d31 + d12) = 8
+
+d34 = min(d34, d31 + d14) = 6
+
+d35 = min(d35, d31 + d15) = 7
+
+d36 = min(d36, d31 + d16) = 1
+
+d45 = min(d45, d41 + d15) = \infty
+
+d46 = min(d46, d41 + d16) = 4
+
+d56 = min(d56, d51 + d16) = \infty
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_1 = \begin{bmatrix} 0 & 3 & 5 & 1 & \infty & \infty\\ 3 & 0 & 8 & 4 & 9 & \infty\\ 5 & 8 & 0 & 6 & 7 & 1\\ 1 & 4 & 6 & 0 & \infty & 4\\ \infty & 9 & 7 & \infty & 0 & \infty\\ \infty & \infty & 1 & 4 & \infty & 0\end{bmatrix}
+
+2ª Iteración: nodo intermedio = 2
+
+d13 = min(d13, d12 + d23) = 5
+
+d14 = min(d14, d12 + d24) = 1
+
+d15 = min(d15, d12 + d25) = 12
+
+d16 = min(d16, d12 + d26) = \infty
+
+d34 = min(d34, d32 + d24) = 6
+
+d35 = min(d35, d32 + d25) = 7
+
+d36 = min(d36, d32 + d26) = 1
+
+d45 = min(d45, d42 + d25) = 13
+
+d46 = min(d46, d42 + d26) = 4
+
+d56 = min(d56, d52 + d26) = \infty
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_2 = \begin{bmatrix} 0 & 3 & 5 & 1 & 12 & \infty\\ 3 & 0 & 8 & 4 & 9 & \infty\\ 5 & 8 & 0 & 6 & 7 & 1\\ 1 & 4 & 6 & 0 & 13 & 4\\ 12 & 9 & 7 & 13 & 0 & \infty\\ \infty & \infty & 1 & 4 & \infty & 0\end{bmatrix}
+
+3ª Iteración: nodo intermedio = 3
+
+d12 = min(d12, d13 + d32) = 3
+
+d14 = min(d14, d13 + d34) = 1
+
+d15 = min(d15, d13 + d35) = 12
+
+d16 = min(d16, d13 + d36) = 6
+
+d24 = min(d24, d23 + d34) = 4
+
+d25 = min(d25, d23 + d35) = 9
+
+d26 = min(d26, d23 + d36) = 9
+
+d45 = min(d45, d43 + d35) = 13
+
+d46 = min(d46, d43 + d36) = 4
+
+d56 = min(d56, d53 + d36) = 8
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_3 = \begin{bmatrix} 0 & 3 & 5 & 1 & 12 & 6\\ 3 & 0 & 8 & 4 & 9 & 9\\ 5 & 8 & 0 & 6 & 7 & 1\\ 1 & 4 & 6 & 0 & 13 & 4\\ 12 & 9 & 7 & 13 & 0 & 8\\ 6 & 9 & 1 & 4 & 8 & 0\end{bmatrix}
+
+4ª Iteración: nodo intermedio = 4
+
+d12 = min(d12, d14 + d42) = 3
+
+d13 = min(d13, d14 + d43) = 5
+
+d15 = min(d15, d14 + d45) = 12
+
+d16 = min(d16, d14 + d46) = 5
+
+d23 = min(d23, d24 + d43) = 8
+
+d25 = min(d25, d24 + d45) = 9
+
+d26 = min(d26, d24 + d46) = 8
+
+d35 = min(d35, d34 + d45) = 7
+
+d36 = min(d36, d34 + d46) = 1
+
+d56 = min(d56, d54 + d46) = 8
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_4 = \begin{bmatrix} 0 & 3 & 5 & 1 & 12 & 5\\ 3 & 0 & 8 & 4 & 9 & 8\\ 5 & 8 & 0 & 6 & 7 & 1\\ 1 & 4 & 6 & 0 & 13 & 4\\ 12 & 9 & 7 & 13 & 0 & 8\\ 5 & 8 & 1 & 4 & 8 & 0\end{bmatrix}
+
+5ª Iteración: nodo intermedio = 5
+
+d12 = min(d12, d15 + d52) = 3
+
+d13 = min(d13, d15 + d53) = 5
+
+d14 = min(d14, d15 + d54) = 1
+
+d16 = min(d16, d15 + d56) = 5
+
+d23 = min(d23, d25 + d53) = 8
+
+d24 = min(d24, d25 + d54) = 4
+
+d26 = min(d26, d25 + d56) = 8
+
+d34 = min(d34, d35 + d54) = 6
+
+d36 = min(d36, d35 + d56) = 1
+
+d46 = min(d46, d45 + d56) = 4
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_5 = \mathcal{W}_4 = \begin{bmatrix} 0 & 3 & 5 & 1 & 12 & 5\\ 3 & 0 & 8 & 4 & 9 & 8\\ 5 & 8 & 0 & 6 & 7 & 1\\ 1 & 4 & 6 & 0 & 13 & 4\\ 12 & 9 & 7 & 13 & 0 & 8\\ 5 & 8 & 1 & 4 & 8 & 0\end{bmatrix}
+
+6ª Iteración: nodo intermedio = 6
+
+d12 = min(d12, d16 + d62) = 3
+
+d13 = min(d13, d16 + d63) = 5
+
+d14 = min(d14, d16 + d64) = 1
+
+d15 = min(d15, d16 + d65) = 12
+
+d23 = min(d23, d26 + d63) = 8
+
+d24 = min(d24, d26 + d64) = 4
+
+d25 = min(d25, d26 + d65) = 9
+
+d34 = min(d34, d36 + d64) = 5
+
+d35 = min(d35, d36 + d65) = 7
+
+d45 = min(d45, d46 + d65) = 12
+
+La matriz de distancia después de esta iteración es:
+
+    \mathcal{W}_6 = \begin{bmatrix} 0 & 3 & 5 & 1 & 12 & 5\\ 3 & 0 & 8 & 4 & 9 & 8\\ 5 & 8 & 0 & 5 & 7 & 1\\ 1 & 4 & 5 & 0 & 12 & 4\\ 12 & 9 & 7 & 12 & 0 & 8\\ 5 & 8 & 1 & 4 & 8 & 0\end{bmatrix}
+
+Ya se han hecho todas las iteraciones posibles. Por tanto, el camino mínimo entre 2 vértices cualesquiera del grafo será el obtenido en la matriz final. En este caso, el camino mínimo entre 3 y 4 vale 5.
+
+Análisis
+
+Si utilizamos matrices booleanas, para encontrar todos los \mathit{n}^2 de \mathcal{W}_k desde \mathcal{W}_{\mathit{k}-1} se necesita hacer 2\mathit{n}^2 operaciones binarias. Debido a que empezamos con \mathcal{W}_0 = \mathcal{W}_\mathcal{R} y computamos la secuencia de \mathit{n} matrices booleanas \mathcal{W}_1, \mathcal{W}_2, ..., \mathcal{W}_\mathit{n} = \mathcal{M}_{\mathcal{R}^*}, el número total de operaciones binarias es de \mathit{n} \times 2\mathit{n}^2 = 2\mathit{n}^3. Por lo tanto, la complejidad del algoritmo es \Theta({n}^3) y puede ser resuelto por una máquina determinista de Turing en tiempo polinómico.
+
+Aplicaciones y generalizaciones
+
+El algoritmo de Floyd-Warshall puede ser utilizado para resolver los siguientes problemas, entre otros:
+- Camino mínimo en grafos dirigidos (algoritmo de Floyd).
+- Cierre transitivo en grafos dirigidos (algoritmo de Warshall). Es la formulación original del algoritmo de Warshall. El grafo es un grafo no ponderado y representado por una matriz booleana de adyacencia. Entonces la operación de adición es reemplazada por la conjunción lógica(AND) y la operación menor por la disyunción lógica (OR).
+- Encontrar una expresión regular dada por un lenguaje regular aceptado por un autómata finito (algoritmo de Kleene).
+- Inversión de matrices de números reales (algoritmo de Gauss-Jordan).
+- Ruta optima. En esta aplicación es interesante encontrar el camino del flujo máximo entre 2 vértices. Esto significa que en lugar de tomar los mínimos con el pseudocodigo anterior, se coge el máximo. Los pesos de las aristas representan las limitaciones del flujo. Los pesos de los caminos representan cuellos de botella; por ello, la operación de adición anterior es reemplazada por la operación mínimo.
+- Comprobar si un grafo no dirigido es bipartito.
+
+Implementación del algoritmo de Floyd-Warshall
+- Implementación en C - joshuarobinson.net (en inglés).
+- Implementación en PHP - julmis.julmajanne.com (gracias a Janne Mikkonen).
+- Implementación en Java (explicación paso a paso) - explicación y applet disponible en pms.ifi.lmu.de (en inglés)
+
+Referencias
+- Cormen, Thomas H.; Leiserson, Charles E.; Rivest, Ronald L. (1990). Introduction to Algorithms (1º Edición edición). MIT Press y McGraw-Hill. ISBN 0-262-03141-8.
+    - Sección 26.2, "The Floyd–Warshall algorithm", pág. 558–565;
+    - Sección 26.4, "A general framework for solving path problems in directed graphs", pág. 570–576.
+- Floyd, Robert W. (Junio 1962). «Algorithm 97: Shortest Path». Communications of the ACM 5 (6):  pp. 345. doi 10.1145/367766.368168.
+- Kleene, S. C. (1956). «Representation of events in nerve nets and finite automata». En C. E. Shannon and John McCarthy. Automata Studies. Princeton University Press. pp. 3–42.
+- Warshall, Stephen (January 1962). «A theorem on Boolean matrices». Journal of the ACM 9 (1):  pp. 11–12. doi 10.1145/321105.321107.
+- Kenneth H. Rosen (2003). Discrete Mathematics and Its Applications, 5ª Edición. Addison Wesley. ISBN 0-07-119881-4.

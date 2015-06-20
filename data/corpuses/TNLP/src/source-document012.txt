@@ -1,0 +1,40 @@
+Base de datos orientada a grafos
+
+Las bases de datos orientadas a grafos (BDOG) representan la información como nodos de un grafo y sus relaciones con las aristas del mismo, de manera que se pueda usar teoría de grafos para recorrer la base de datos ya que esta puede describir atributos de los nodos(entidades) y las aristas(relaciones).
+
+Una base de datos orientada a grafos debe estar absolutamente normalizada, esto quiere decir que cada tabla tendría una sola columna y cada relación tan solo dos, con esto se consigue que cualquier cambio en la estructura de la información tenga un efecto tan solo local.
+
+Ventajas
+
+Las BDOG también ofrecen servicios nuevos o mejorados como:
+- Consultas más amplias y no demarcadas por tablas, ejemplo “Muestre todas las tablas que posean un nombre Carlos”.
+- No hay que definir un número determinado de atributos, esto quiere decir que una persona puede tener relacionados 4 nombres mientras que otra tan solo 2, esto sin desperdiciar espacio.
+- Los registros también son de longitud variable, evitando tener que definir un tamaño y también posibles fallas en la base de datos.
+- Se puede recorrer directamente la base de datos de forma jerárquica, obtener el nodo abuelo del nodo y viceversa.
+
+Reseña Historia
+
+Aunque pareciera ser una novedad en el área de las bases de datos, el modelo orientado a grafos ya lleva un buen tiempo de haber sido inventado, sin embargo debido a la aparición de otros modelos como el de orientación a objetos y el más conocido de todos, el relacional, las BDOG pasaron a un segundo plano, debido principalmente por la simplicidad y fácil manejo del último mencionado, el modelo relacional.
+
+El uso de las BD orientadas a grafos es escaso y actualmente hay muy pocas herramientas para su desarrollo, una de las más conocida es la “Plataforma G”, la cual es un gestor de bases de datos orientadas a grafos desarrollado por el ingeniero Alfonso Ríos Alonso CEO de MaatGknwoledge.
+
+Listado de bases de datos orientadas a grafo
+- AllegroGraph - Escalable y de alto rendimiento.
+- Bigdata - RDF/base de datos orientada a grafo.
+- CloudGraph - .NET usa tanto los grafos como clave/valor para almacenar los datos.
+- Cytoscape - Bioinformática
+- DEX/Sparksee - De alto rendimiento, permite escalar billones de objetos. Comercializada por Sparsity Technologies.
+- Filament
+- GraphBase
+- Graphd, backend de Freebase
+- Horton
+- HyperGraphDB - Base de datos opensource basada en la idea de hipergrafo.
+- InfiniteGraph
+- InfoGrid - Open Source
+- Neo4j - Open Source.
+- OrientDB - Base de datos orientada a grafos y documental.
+- OQGRAPH
+- sones GraphDB
+- VertexDB
+- Virtuoso Universal Server
+- R2DF

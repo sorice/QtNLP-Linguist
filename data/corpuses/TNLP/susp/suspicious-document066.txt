@@ -1,0 +1,63 @@
+Sistema de información gerencial
+
+Estos sistemas son el resultado de interacción colaborativa entre personas, tecnologías y procedimientos -colectivamente llamados sistemas de información- orientados a solucionar problemas empresariales. Los SIG o MIS (también denominados así por sus siglas en inglés) se diferencian de los sistemas de información comunes en que para analizar la información utilizan otros sistemas que se usan en las actividades operacionales de la organización. Académicamente, el término es comúnmente utilizado para referirse al conjunto de los métodos de gestión de la información vinculada a la automatización o apoyo humano de la toma de decisiones (por ejemplo: Sistemas de apoyo a la decisión, Sistemas expertos y Sistemas de información para ejecutivos).
+
+Nombres alternativos
+
+Estos sistemas son conocidos en inglés como Management Information System. Esto ha dado lugar a varios nombres que derivan de diferentes traducciones. Entre las que se encuentran: sistema de información administrativa (SIA), sistema de información para la administración (SIA), sistema de información gerencial (SIG) y sistema de información para la gestión (SIG).
+
+Sistema de Información Gerencial
+
+En sus orígenes, las empresas utilizaban los ordenadores para la práctica empresarial de informatizar las nóminas y hacer el seguimiento de las cuentas por pagar y por cobrar. Como las aplicaciones que históricamente se habían desarrollado siempre eran para gestionar la información sobre ventas, inventarios, y otros datos que ayuden en la gestión de la empresa, el término "SIG" (o "MIS") surgió para describir este tipo de aplicaciones. Hoy, el término se utiliza ampliamente en una serie de contextos e incluye (sin limitarse a ello): sistemas de apoyo de decisiones, los recursos y aplicaciones de gestión de personal, gestión de proyectos, y aplicaciones de recuperación de bases de datos y la formación empresarial
+
+Definición y estructura de un SIG
+
+Un sistema integrado usuario–máquina, el cual implica que algunas tareas son mejor realizadas por el hombre, mientras que otras son muy bien hechas por la máquina, para prever información que apoye las operaciones, la administración y las funciones de toma de decisiones en una empresa. El sistema utiliza equipos de computación y software especializado, procedimientos, manuales, modelos para el análisis, la planificación, el control y la toma de decisiones, además de bases de datos.
+
+Planificación y Control
+
+Todas las funciones gerenciales; Planificación, Organización, Dirección y Control son necesarias para un buen desempeño organizacional. Los Sistemas de Información Gerencial son necesarios para apoyar estas funciones, en especial la Planificación y el Control. El valor de la información proporcionada por el sistema, debe cumplir con los siguientes cuatro supuestos básicos:
+- Calidad: Para los gerentes es imprescindible que los hechos comunicados sean un fiel reflejo de la realidad planteada.
+- Oportunidad: Para lograr un control eficaz, las medidas correctivas en caso de ser necesarias, deben aplicarse a tiempo, antes de que se presente una gran desviación respecto de los objetivos planificados con anterioridad.
+- Cantidad: Es probable que los gerentes casi nunca tomen decisiones acertadas y oportunas si no disponen de información suficiente, pero tampoco deben verse desbordados por información irrelevante e inútil, pues esta puede llevar a una inacción o decisiones desacertadas.
+- Relevancia: La información que le es proporcionada a un gerente debe estar relacionada con sus tareas y responsabilidades.
+
+Un dato importante sobre SIG
+
+Los sistemas de información gerencial son una necesidad hoy en día, ya que las empresas manejan grandes cantidades de datos los cuales deben ser analizados, de tal manera que se pueda encontrar información relevante para tomar diferentes cursos de acción. El trabajo con la información se realiza a través de un lenguaje relacional, se cuenta con dos lenguajes formales el álgebra relacional y el cálculo relacional.Los SIG actualmente son conocidos como Business intelligent (Inteligencia de negocios), esto es debido a que influyen a la toma de decisiones.
+
+Los SIG forman parte de las estrategias corporativas, ya que la comunicación e información son de gran valor en las organizaciones o empresas, porque representan poder .
+
+Necesidad de un SIG
+
+¿Por qué es necesario un sistema de información gerencial para una organización? Las razones pueden ser muchas, pero pueden resumirse en estas:
+- Oportunidad: Para lograr un control eficaz de una organización, se deben tomar a tiempo medidas correctivas en caso de ser necesarias, antes de que se presente una gran desviación respecto de los objetivos planificados con anterioridad.
+- Cantidad: Es probable que los gerentes casi nunca tomen decisiones acertadas y oportunas si no disponen de información suficiente, pero tampoco deben verse desbordados por información irrelevante e inútil (redundancia), pues ésta puede llevar a una inacción o decisiones desacertadas.
+- Relevancia: Reducción de costos.
+
+Factores que determinan su desempeño
+
+Si se habla de una institución que no tiene los recursos humanos con experiencia en sistemas de información gerencial que desea organizar o mejorar su SIG, es, la manera cómo funciona y qué se requiere para mejorarlo.
+
+Sistemas de Información Gerencial en las PyMEs
+
+En gran parte de las pequeñas y medianas empresas existe una necesidad urgente de la incorporación a proyectos de Sistemas de Información Gerencial (SIG), como síntomas o pruebas de ello tenemos por ejemplo la falta de estrategias de crecimiento (culpando en gran parte a la tendencia cultural de las organizaciones), una inadecuada utilización de las tecnologías y conocimientos, propiciando pérdidas de recursos, debilidad financiera y deficiencias en toda la organización. Gran número de empresas carece de ventajas para tener una mayor accesibilidad a las tecnologías, y desarrollar un SIG, debido a varias razones como: costos elevados, carencia de recursos, falta de acceso a la información, etc.; además las PyMEs tienen que responder al mercado en forma rápida y creativa siendo difícil aplicar y mantener un sistema que ayude y brinde apoyo a la toma de decisiones para poder competir y crecer en su ramo. En un ambiente de evolución tecnológica, el reto es lograr que la mayoría de los usuarios aprovechen las opciones disponibles para producir eficiencia e innovación en su trabajo cotidiano. Por ello las Tecnologías de Información forman un factor determinante para dar lugar al crecimiento tanto de las PyMEs como de cualquier empresa.
+
+Pasos para analizar un SIG
+
+1. Identificar a todos aquellos agentes que están utilizando o deberían utilizar los distintos tipos de información (profesionales, trabajadores de campo, supervisores, administradores, etc.)
+2. Establecer los objetivos a largo y corto plazo de la organización, departamento o punto de prestación de servicios.
+3. Identificar la información que se requiere para ayudar a las diferentes personas a desempeñarse efectiva y eficientemente, y eliminar la información que se recolecta pero que no se utiliza.
+4. Determinar cuáles de los formularios y procedimientos actuales para recolectar, registrar, tabular, analizar y brindar la información, son sencillos, no requieren demasiado tiempo y cubren las necesidades de los diferentes trabajadores, y qué formularios y procedimientos necesitan mejorarse.
+5. Revisar todos los formularios y procedimientos existentes para recolectar y registrar información que necesiten mejorarse o preparar nuevos instrumentos si es necesario.
+6. Establecer o mejorar los sistemas manuales o computarizados para tabular, analizar, y ofrecer la información para que sean más útiles a los diferentes trabajadores
+7. Desarrollar procedimientos para confirmar la exactitud de los datos.
+8. Capacitar y supervisar al personal en el uso de nuevos formularios, registros, hojas de resumen y otros instrumentos para recolectar, tabular, analizar, presentar y utilizar la información.
+9. Optimizar un sistema de información gerencial: qué preguntar, qué observar, qué verificar.
+
+Una estructura piramidal
+
+1. La parte inferior de la pirámide está comprendida por la información relacionada con el procesamiento de las transacciones.
+2. El siguiente nivel comprende los recursos de información para apoyar las operaciones diarias de control.
+3. El tercer nivel agrupa los recursos del sistema de información para ayudar a la planificación táctica y la toma de decisiones relacionadas con el control Administrativo.
+4. El nivel más alto comprende los recursos de información necesarios para apoyar la planificación estratégica y la definición de políticas de los niveles más altos de la administración.

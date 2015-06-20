@@ -1,0 +1,378 @@
+Cola (informática)
+
+Usos concretos de la cola
+
+La particularidad de una estructura de datos de cola es el hecho de que sólo podemos acceder al primer y al último elemento de la estructura. Así mismo, los elementos sólo se pueden eliminar por el principio y sólo se pueden añadir por el final de la cola.
+
+Ejemplos de colas en la vida real serían: personas comprando en un supermercado, esperando para entrar a ver un partido de béisbol, esperando en el cine para ver una película, una pequeña peluquería, etc. La idea esencial es que son todos líneas de espera.
+
+Información adicional
+
+En caso de estar vacía, borrar un elemento sería imposible hasta que no se añade un nuevo elemento. A la hora de añadir un elemento podríamos darle una mayor importancia a unos elementos que a otros (un cargo VIP) y para ello se crea un tipo de cola especial que es la cola de prioridad. (Ver cola de prioridad).
+
+Operaciones Básicas
+- Crear: se crea la cola vacía.
+- Encolar: (añadir, entrar, insertar): se añade un elemento a la cola. Se añade al final de esta.
+- Desencolar: (sacar, salir, eliminar): se elimina el elemento frontal de la cola, es decir, el primer elemento que entró.
+- Frente: (consultar, front): se devuelve el elemento frontal de la cola, es decir, el primer elemento que entró.
+
+Implementaciones
+
+Colas en Pauscal
+
+  Clase PscColas, Matriz[]:Cadena, Posición, Valor:Entero
+  Privado:
+        Proc Comenzar
+                ReDim Matriz,1
+                Posición = 0
+                Valor = 0
+        FinProc
+        Proc Terminar
+                Borrar Matriz
+        FinProc
+        Proc Longitud:Entero
+                Devolver Límite(Matriz)
+        FinProc
+        Proc ReDimencionarLaCola
+                ReDim Preservar Matriz, LongMat(Matriz) + 1
+        FinProc
+  Público:
+        Proc Encolar(Contenido:Cadena)
+                Si Posición = LongMat(Matriz) Entonces ReDimencionarLaCola
+                Matriz[Posición] = Contenido
+                Posición = Posición + 1
+        FinProc
+        Proc DesEncolar
+                Si Neg(Valor >= Límite(Matriz)) Entonces Valor = Valor + 1
+        FinProc
+        Proc FrenteCola:Cadena
+                Devolver Matriz[Valor]
+        FinProc
+        Proc FondoCola:Cadena
+                Devolver Matriz[Límite(Matriz)]
+        FinProc
+        Prop ColaLongitud:Entero
+                Lec:Longitud
+        FinProp
+  Privado:
+        Constructor: Comenzar
+        Destructor: Terminar
+  FinClase
+
+Colas en Maude
+
+La ColaNV es la cola no vacía, que diferenciamos de la cola normal a la hora de tomar en cuenta errores. A su vez, el elemento X representa el tipo de valor que puede contener la cola: entero, carácter, registro....
+
+ fmod COLA {X :: TRIV} is
+    sorts ColaNV{X} Cola{X} .
+    subsort ColaNV{X} < Cola{X} .
+    *** generadores
+    op crear   : -> Cola{X} [ctor] .
+    op encolar : X$Elt Cola{X} -> ColaNV {X} [ctor] .
+
+    *** constructores
+    op desencolar : Cola{X} -> Cola{X} .
+
+    *** selectores
+    op frente : ColaNV{X} -> X$Elt .
+
+    *** variables
+    var C : ColaNV{X} .
+    vars E E2 : X$Elt .
+
+    *** ecuaciones
+    eq desencolar(crear) = crear .
+    eq desencolar(encolar(E, crear)) = crear .
+    eq desencolar(encolar(E, C)) = encolar(E, desencolar(C)) .
+
+    eq frente(encolar(E, crear)) = E .
+    eq frente(encolar(E, C)) = frente(C) .
+  endfm
+
+
+Especificación de una cola de colas de enteros en Maude:
+
+  view VInt from TRIV to INT is 
+        sort Elt to Int .
+  endv
+  
+  view VColaInt from TRIV to COLA{VInt} is 
+        sort Elt to Cola{VInt} .
+  endv
+  
+  fmod COLA-COLAS-INT is
+        protecting INT .
+        protecting COLA{VColaInt} .
+                
+        *** operaciones propias de la cola de colas de enteros
+        op encolarInt    : Int ColaNV{VColaInt} -> ColaNV{VColaInt} .
+        op desencolarInt : Cola{VColaInt}       -> Cola{VColaInt} .
+        op frenteInt     : ColaNV{VColaInt}     -> [Int] .
+        
+        *** variables
+        var CCNV : ColaNV{VColaInt} .
+        var CC   : Cola{VColaInt} .
+        var CE   : Cola{VInt} .
+        var E    : Int .
+        
+        *** ecuaciones  
+        eq encolarInt(E, encolar(CE, CC)) = encolar(encolar(E, CE), CC) .
+
+        eq desencolarInt (encolar(CE, crear)) = encolar(desencolar(CE), crear) . 
+        eq desencolarInt (encolar(CE, CCNV)) = encolar(CE, desencolarInt(CCNV)) . 
+
+        eq frenteInt(CCNV) = frente(frente(CCNV)) .
+  endfm
+
+Colas en C++
+
+  #ifndef COLA
+  #define COLA // Define la cola
+  using namespace std;
+  template <class T>
+  class Cola{
+      private:
+        struct Nodo{
+            T elemento;
+            struct Nodo* siguiente;  // coloca el nodo en la segunda posición
+        }* primero;
+        struct Nodo* ultimo;
+        unsigned int elementos;
+      public:
+        Cola(){
+            elementos = 0;
+        }
+           cout<<" Hola Mundo! " <<endl;
+           cout<<" Hello, World! " <<endl;
+        ~Cola(){
+            while (elementos != 0) pop();
+        }
+        void push(const T& elem){
+            Nodo* aux = new Nodo;
+            aux->elemento = elem;
+            if (elementos == 0) primero = aux;
+            else ultimo->siguiente = aux;
+            ultimo = aux;
+            ++elementos;
+        }
+        void pop(){
+            Nodo* aux = primero;
+            primero = primero->siguiente;
+            delete aux;
+            --elementos;
+        }
+        T consultar() const{
+            return primero->elemento;
+        }
+        bool vacia() const{
+            return elementos == 0;
+        }
+        unsigned int size() const{
+            return elementos;
+        }
+    };
+    #endif
+
+Colas en JAVA
+
+    public void inserta(Elemento x) {
+        Nodo Nuevo;
+        Nuevo = new Nodo(x, null);
+        if (NodoCabeza == null) {
+            NodoCabeza = Nuevo;
+        } else {
+            NodoFinal.Siguiente = Nuevo;
+        }
+        NodoFinal = Nuevo;
+    }
+ 
+    public Elemento cabeza() throws IllegalArgumentException {
+        if (NodoCabeza == null) {
+            throw new IllegalArgumentException();
+        } else {
+            return NodoCabeza.Info;
+        }
+    }
+ 
+    public Cola() {
+    // Devuelve una Cola vacía
+        NodoCabeza = null;
+        NodoFinal = null;
+    }
+
+Colas en C#
+
+public partial class frmPrincipal
+    {
+        // Variables globales
+        public static string[] Cola;
+        public static int Frente;
+        public static int Final;
+        public static int N;
+ 
+        [STAThread]
+        public static void Main(string[] args)
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmPrincipal());
+        }
+ 
+        public frmPrincipal()    // Constructor
+        {
+ 
+            InitializeComponent();
+ 
+            Cola = new string[5];   // Arreglo lineal de 5
+            N = 4;
+            Frente = -1;
+            Final = -1;
+        }
+ 
+        void CmdInsercionClick(object sender, System.EventArgs e)
+        {
+            frmInsercion Insercion = new frmInsercion();
+            Insercion.Show();
+        }
+ 
+        void CmdRecorridoClick(object sender, System.EventArgs e)
+        {
+            frmRecorrido Recorrido = new frmRecorrido();
+            Recorrido.Show();
+        }
+ 
+        void CmdBusquedaClick(object sender, EventArgs e)
+        {
+            frmBusqueda Busqueda = new frmBusqueda();
+            Busqueda.Show();
+        }
+ 
+        void CmdEliminacionClick(object sender, EventArgs e)
+        {
+            frmEliminacion Eliminar = new frmEliminacion();
+            Eliminar.Show();
+        }
+    }
+
+Algoritmo Insertar(Cola, N, Frente, Final, Elemento)
+
+void CmdInsertarClick(object sender, System.EventArgs e)
+        {
+            elemento = txtInsercion.Text;
+            // Se verifica que haya espacio en la Cola
+            if (frmPrincipal.Frente == 0 && frmPrincipal.Final == frmPrincipal.N)
+            {
+                MessageBox.Show("La Cola esta llena");
+                return;
+            }
+            if (frmPrincipal.Frente == frmPrincipal.Final + 1)
+            {
+                MessageBox.Show("La Cola esta llena"); 
+                return;
+            }
+ 
+            // Si la cola esta vacia se inicializan punteros
+            if (frmPrincipal.Frente == -1)
+            {
+                frmPrincipal.Frente = 0;
+                frmPrincipal.Final = 0;
+            }
+            else if (frmPrincipal.Final == frmPrincipal.N)
+            {
+                frmPrincipal.Final = 0;
+            }
+            else
+            {
+                frmPrincipal.Final = frmPrincipal.Final + 1;
+            }
+            // Se agrega elemento a la Cola
+            frmPrincipal.Cola[frmPrincipal.Final] = elemento;
+            txtInsercion.Text = "";
+ 
+        }
+
+Algoritmo Eliminación (Cola, Frente, Final, N)
+
+void CmdEliminarClick(object sender, EventArgs e)
+        {
+            if (frmPrincipal.Frente == -1)
+            {
+                MessageBox.Show("Cola Vacia");
+                return;
+            }
+            string elemento = frmPrincipal.Cola[frmPrincipal.Frente];
+ 
+            // si la cola tiene un solo elemento
+            if (frmPrincipal.Frente == frmPrincipal.Final)
+            {
+                frmPrincipal.Frente = -1;
+                frmPrincipal.Final = -1;
+            }
+ 
+            else if (frmPrincipal.Frente == frmPrincipal.N)
+            {
+                frmPrincipal.Frente = 0;
+            }
+ 
+            else
+            {
+                frmPrincipal.Frente = frmPrincipal.Frente + 1;   
+            }
+ 
+            lsEliminado.Items.Add(elemento);
+        }
+
+Otra forma de programar una cola en Java Por Jorge Herrera C
+
+import java.util.*;
+public class Cola <Tipo>{ 
+    private List<Tipo> cola;
+    public Cola(){
+        cola=new ArrayList<Tipo>();        
+    }
+    public boolean colaVacia(){
+        return cola.isEmpty();
+    }
+    public void agregar(Tipo elemento){
+       cola.add(elemento);       
+    }
+    public Tipo sacar(){
+        if(colaVacia())return null;
+        Tipo elemento=cola.get(0);
+        cola.remove(0);         
+        return elemento;
+    }    
+}// Fin de la clase Cola
+
+A continuación un ejemplo de una clase manejadora de la clase Cola
+
+public class Manejador {
+    public static void main(String[] args) {
+        Cola cola=new <Integer>Cola(); 
+        System.out.println(cola.sacar()); 
+        cola.agregar(23);
+        cola.agregar(24);
+        cola.agregar(25);
+        while(!cola.colaVacia()){
+           System.out.println(cola.sacar()); 
+        }
+        Cola nombres=new <String>Cola();
+        nombres.agregar("Jorge");
+        nombres.agregar("Raquel");
+        nombres.agregar("Mayra Alejandra");
+        while(!nombres.colaVacia()){
+            System.out.println(nombres.sacar());
+        }
+    }
+}// Fin de la clase Manejadora
+
+Tipos de colas
+
+- Colas circulares (anillos): en las que el último elemento y el primero están unidos.
+- Colas de prioridad: En ellas, los elementos se atienden en el orden indicado por una prioridad asociada a cada uno. Si varios elementos tienen la misma prioridad, se atenderán de modo convencional según la posición que ocupen. Hay 2 formas de implementación:
+
+	1. Añadir un campo a cada nodo con su prioridad. Resulta conveniente mantener la cola ordenada por orden de prioridad.
+	2. Crear tantas colas como prioridades haya, y almacenar cada elemento en su cola.
+- Bicolas: son colas en donde los nodos se pueden añadir y quitar por ambos extremos; se les llama DEQUE (Double Ended QUEue). Para representar las bicolas lo podemos hacer con un array circular con Inicio y Fin que apunten a cada uno de los extremos. Hay variantes:
+- Bicolas de entrada restringida: Son aquellas donde la inserción sólo se hace por el final, aunque podemos eliminar al inicio ó al final.
+- Bicolas de salida restringida: Son aquellas donde sólo se elimina por el final, aunque se puede insertar al inicio y al final.

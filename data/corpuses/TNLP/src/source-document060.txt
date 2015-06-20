@@ -1,0 +1,9 @@
+Sistemas de información ejecutiva
+
+Un Sistema de Información Ejecutiva (Executive information system, EIS por sus siglas en inglés) es una herramienta de Inteligencia empresarial (Business Intelligence, BI), orientada a usuarios de nivel gerencial, que permite monitorear el estado de las variables de un área o unidad de la empresa a partir de información interna y externa a la misma.
+
+Se puede considerar que un EIS es un tipo de Sistema de Soporte a la Decisión (DSS) cuya finalidad principal es que el responsable de un departamento o compañía tenga acceso, de manera instantánea, al estado de los indicadores de negocio que le afectan, con la posibilidad de estudiar con detalle aquellos aspectos que no estén cumpliendo con los objetivos establecidos en su plan estratégico u operativo, y así determinar las medidas de contingencia más adecuadas.
+
+Una de las características más importantes de un EIS es que permite a usuarios con perfil no técnico construir nuevos informes y navegar por los datos de la compañía, con el objetivo de descubrir información que les resulte relevante. Esto se debe, entre otras cosas, a que la interfaz gráfica de estas aplicaciones suele ser muy atractiva e intuitiva. El EIS suele incluir también alertas de negocio, informes históricos comparativos y análisis de tendencias. Por otro lado, es común que se puedan realizar subscripciones a los informes o listados más significativos.
+
+Un EIS suele necesitar de la implantación de un data warehouse o data mart que actúe como fuente central de información, unificando, depurando e integrando las distintas bases de datos operacionales de la compañía. Por otro lado, es posible adaptar la estructura del EIS a la teoría de Balanced Scorecard o Cuadro de Mando Integral impulsada por Kaplan y Norton, o bien a cualquier otro modelo de seguimiento de indicadores que maneje la organización.

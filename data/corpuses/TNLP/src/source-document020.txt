@@ -1,0 +1,227 @@
+Cuadro de mando integral
+
+El concepto de Cuadro de Mando Integral – CMI (Balanced Scorecard – BSC) fue presentado en el número de enero/febrero de 1992 de la revista Harvard Business Review, con base en un trabajo realizado para una empresa de semiconductores. Sus autores, Robert Kaplan y David Norton, plantean el CMI como un sistema de administración o sistema administrativo (management system), que va más allá de la perspectiva financiera con la que los gerentes acostumbran evaluar la marcha de una empresa. Según estos dos consultores, gestionar una empresa teniendo en cuenta solamente los indicadores financieros tradicionales (existencias, inmovilizado, ingresos, gastos,...) olvida la creciente importancia de los activos intangibles de una empresa (relaciones con los clientes, habilidades y motivaciones de los empleados,...) como fuente principal de ventaja competitiva.1
+
+De ahí surge la necesidad de crear una nueva metodología para medir las actividades de una compañía en términos de su visión y estrategia, proporcionando a los gerentes una mirada global del desempeño del negocio. El CMI es una herramienta de administración de empresas que muestra continuamente cuándo una compañía y sus empleados alcanzan los resultados definidos por el plan estratégico. Adicionalmente, un sistema como el CMI permite detectar las desviaciones del plan estratégico y expresar los objetivos e iniciativas necesarios para reconducir la situación.
+
+Según el libro The Balanced ScoreCard: Translating Strategy into Action, Harvard Business School Press, Boston, 1996:
+
+    "El BSC es una herramienta revolucionaria para movilizar a la gente hacia el pleno cumplimiento de la misión a través de canalizar las energías, habilidades y conocimientos específicos de la gente en la organización hacia el logro de metas estratégicas de largo plazo. Permite tanto guiar el desempeño actual como apuntar al desempeño futuro. Usa medidas en cuatro categorías -desempeño financiero, conocimiento del cliente, procesos internos de negocios y, aprendizaje y crecimiento- para alinear iniciativas individuales, organizacionales y trans-departamentales e identifica procesos enteramente nuevos para cumplir con objetivos del cliente y accionistas. El BSC es un robusto sistema de aprendizaje para probar, obtener retrolimentación y actualizar la estrategia de la organización. Provee el sistema gerencial para que las compañías inviertan en el largo plazo -en clientes, empleados, desarrollo de nuevos productos y sistemas- más que en gerenciar la última línea para bombear utilidades de corto plazo. Cambia la manera en que se mide y maneja un negocio".
+
+El CMI sugiere que veamos a la organización desde cuatro perspectivas, cada una de las cuales debe responder a una pregunta determinada:
+- Desarrollo y Aprendizaje (Learning and Growth): ¿Podemos continuar mejorando y creando valor?
+- Interna del Negocio (Internal Business): ¿En qué debemos sobresalir?
+- Del cliente (Customer): ¿Cómo nos ven los clientes?
+- Financiera (Financial): ¿Cómo nos vemos a los ojos de los accionistas?
+
+El CMI es por lo tanto un sistema de gestión estratégica de la empresa, que consiste en:
+- Formular una estrategia consistente y transparente.
+- Comunicar la estrategia a través de la organización.
+- Coordinar los objetivos de las diversas unidades organizacionales.
+- Conectar los objetivos con la planificación financiera y presupuestaria.
+- Identificar y coordinar las iniciativas estratégicas.
+- Medir de un modo sistemático la realización, proponiendo acciones correctivas oportunas.
+
+Perspectivas
+
+Perspectiva financiera
+
+En general, los indicadores financieros están basados en la contabilidad de la compañía, y muestran el pasado de la misma. El motivo se debe a que la contabilidad no es inmediata (al emitir un proveedor una factura, la misma no se contabiliza automáticamente), sino que deben efectuarse cierres que aseguren la compilación y consistencia de la información. Debido a estas demoras, algunos autores sostienen que dirigir una compañía prestando atención solamente a indicadores financieros es como conducir a 100 km/h mirando por el espejo retrovisor.
+
+"Este comentario es exagerado pues existe una herramienta llamada presupuesto que se realiza anualmente y se ajusta cada tres meses, presentando estados financieros proyectados con margen de error de 5 a 10%.
+
+Lo que es posible, es utilizar el CMI como una herramienta adicional para ver de mejor forma las estrategias utilizadas en el presupuesto proyectado."
+
+Esta perspectiva abarca el área de las necesidades de los accionistas. Esta parte del BSC se enfoca a los requerimientos de crear valor para el accionista como: las ganancias, rendimiento económico, desarrollo de la compañía y rentabilidad de la misma.
+
+Valor Económico Agregado (EVA), Retorno sobre Capital Empleado (ROCE), Margen de Operación, Ingresos, Rotación de Activos son algunos indicadores de esta perspectiva.
+
+Algunos indicadores frecuentemente utilizados son:
+- Índice de liquidez.
+- Índice de endeudamiento.
+- Metodología DuPont.
+- Índice de rendimiento del capital invertido (en la mayoría de los casos).
+
+Perspectiva del cliente
+
+Para lograr el desempeño financiero que una empresa desea, es fundamental que posea clientes leales y satisfechos. Con ese objetivo en esta perspectiva se miden las relaciones con los clientes y las expectativas que los mismos tienen sobre los negocios. Además, en esta perspectiva se toman en cuenta los principales elementos que generan valor para los clientes integrándolos en una propuesta de valor, para poder así centrarse en los procesos que para ellos son más importantes y que más los satisfacen.
+
+La Perspectiva de clientes, como su nombre indica, está enfocada a la parte más importante de una empresa: sus clientes, puesto que sin consumidores no existe ningún tipo de mercado. Por consiguiente, se deberán cubrir las necesidades de los compradores entre las que se encuentran los precios, la calidad del producto o servicio, tiempo, función, imagen y relación. Cabe mencionar que todas las perspectivas están unidas entre sí. Esto significa que para cubrir las expectativas de los accionistas también se deben cubrir las de los consumidores para que compren y se genere una ganancia. Algunos indicadores de esta perspectiva son: satisfacción de clientes, desviaciones en acuerdos de servicio, reclamos resueltos sobre el total de reclamos, e incorporación y retención de clientes.
+
+El conocimiento de los clientes y de los procesos que más valor generan es muy importante para lograr que el panorama financiero sea próspero. Sin el estudio de las peculiaridades del mercado al que está enfocada la empresa no podrá existir un desarrollo sostenible en la perspectiva financiera, ya que en gran medida el éxito financiero proviene del aumento de las ventas, situación que es el efecto de clientes que repiten sus compras porque prefieren los productos que la empresa desarrolla teniendo en cuenta sus preferencias.
+
+Una buena manera de medir o saber la perspectiva del cliente es diseñando protocolos básicos de atención y utilizar la metodología de cliente incógnito para la relación del personal en contacto con el cliente (PEC).
+
+Usualmente se consideran cuatro categorías, a saber:
+- Tiempo
+- Calidad
+- Rendimiento y servicio
+- Costo (precio es sólo parte del costo), otras partes son: Transporte, tiempo perdido entre fallas, etc.)
+
+Los instrumentos que usualmente se utilizan para obtener el valor de tales indicadores son entrevistas y encuestas:
+- Hechas por la misma empresa.
+- Hechas por un tercero independiente.
+
+Perspectiva de procesos
+
+Analiza la adecuación de los procesos internos de la empresa de cara a la obtención de la satisfacción del cliente y logro de altos niveles de rendimiento financiero. Para alcanzar este objetivo se propone un análisis de los procesos internos desde una perspectiva de negocio y una predeterminación de los procesos clave a través de la cadena de valor.
+
+Se distinguen cuatro tipos de procesos:
+- Procesos de operaciones: Desarrollados a través de los análisis de calidad y reingeniería. Los indicadores son los relativos a costos, calidad, tiempos o flexibilidad de los procesos.
+- Procesos de gestión de clientes. Indicadores: selección de clientes, captación de clientes, retención y crecimiento de clientes.
+- Procesos de innovación (difícil de medir). Ejemplo de indicadores: porcentaje de productos nuevos, porcentaje productos patentados, introducción de nuevos productos en relación a la competencia,...
+- Procesos relacionados con el medio ambiente y la comunidad. Indicadores típicos de gestión ambiental, seguridad e higiene en el trabajo y Responsabilidad Social Corporativa.
+
+Indicadores: bases de datos estratégicos, software propio, las patentes y copyrights (marcas registradas), entre otras.
+
+Características del cuadro de mando Integral
+
+En la actualidad -debido a las turbulencias del entorno empresarial, influenciado en la mayoría de los casos por una gran presión competitiva, así como por un auge de la tecnología- es cuando comienza a tener una amplia trascendencia.
+
+El concepto de cuadro de mando deriva del concepto denominado "tableau de bord" en Francia, que traducido de manera literal, vendría a significar algo como tablero de mandos o cuadro de instrumentos.
+
+A partir de los años 80, es cuando el Cuadro de Mando pasa a ser, además de un concepto práctico, una idea académica, ya que hasta entonces el entorno empresarial no sufría grandes variaciones, la tendencia del mismo era estable, las decisiones que se tomaban carecían de un alto nivel de riesgo.
+
+Para entonces, los principios básicos sobre los que se sostenía el Cuadro de Mando ya estaban estructurados, es decir, se fijaban unos fines en la entidad, cada uno de éstos eran llevados a cabo mediante la definición de unas variables clave, y el control era realizado a través de indicadores.
+
+Básicamente, y de manera resumida, podemos destacar tres características fundamentales de los cuadros de mando:
+1. La naturaleza de las informaciones recogidas en él, dando cierto privilegio a las secciones operativas (ventas, etc.) para poder informar a las secciones de carácter financiero, siendo éstas últimas el producto resultante de las demás.
+2. La rapidez de ascenso de la información entre los distintos niveles de responsabilidad.
+3. La selección de los indicadores necesarios para la toma de decisiones, sobre todo en el menor número posible.
+
+En definitiva, lo importante es establecer un sistema de señales en forma de Cuadro de Mando que nos indique la variación de las magnitudes verdaderamente importantes que debemos vigilar para someter a control la gestión.
+
+Tipos de cuadro de mando
+
+A la hora de elaborar los cuadros de mando, muchos son los criterios que se pueden entremezclar, siendo los que a continuación se describen, algunos de los más importantes, para clasificar tales herramientas de apoyo a la toma de decisiones:
+- El horizonte de tiempo.
+- Los niveles de responsabilidad y/o delegación.
+- Las áreas o departamentos específicos.
+
+Otras clasificaciones:
+- La situación económica.
+- Los sectores económicos.
+- Otros sistemas de información.
+
+En la actualidad, no todos los cuadros de mando integral están basados en los principios de Kaplan y Norton, aunque sí influenciados en alguna medida por ellos. Por este motivo, se suele emplear con cierta frecuencia el término dashboard, que relaja algunas características teóricas del cuadro de mando. De forma genérica, un dashboard engloba a varias herramientas que muestran información relevante para la empresa a través de una serie de indicadores de rendimiento, también denominados KPIs (key performance indicators). Cabe señalar que un "dashboard" puede no ser balanceado, término que evoca al "Balanced" Scorecard, es decir un balance entre indicadores que visualicen en forma transversal la organización o empresa y que quizás para un "dashboard" solo puede buscar y dirigir su mirada a un conjunto focalizado y parcial de indicadores.
+
+Cuadro de mando operativo
+
+Los Cuadros de Mando (CM) son herramientas de control empresarial orientadas a la monitorización de los objetivos de la empresa o de las diferentes áreas de negocio a través de indicadores. En función de la naturaleza de los indicadores estaríamos hablando de Cuadro de Mandos Estratégico (CME) si se trata de indicadores estratégicos u Cuadro de mandos Operativo (CMO) si los indicadores son operativos, es decir, indicadores rutinarios ligados a áreas o departamentos específicos de la empresa (las áreas suelen ser procesos).2
+
+La periodicidad de los CMO puede ser diaria, semanal o mensual y además está focalizado en indicadores que generalmente representan procesos, por lo que su puesta en funcionamiento es más barata y sencilla y suele ser un buen punto de partida para aquellas compañías que intentan evaluar la implantación de un cuadro de mando integral.3
+
+El CMO en línea es fundamental en momentos críticos.
+
+Puesta en práctica del Cuadro de Mando
+
+Seis serán las etapas propuestas:
+1. Análisis de la situación y obtención de información.
+2. Análisis de la empresa y determinación de las funciones generales.
+3. Estudio de las necesidades según prioridades y nivel informativo.
+4. Señalización de las variables críticas en cada área funcional.
+5. Establecimiento de una correspondencia eficaz y eficiente entre las variables críticas y las medidas precisas para su control.
+6. Configuración del cuadro de mando según las necesidades y la información obtenida.
+
+En una primera etapa, la empresa debe conocer en qué situación se encuentra, valorar dicha situación y reconocer la información con la que va a poder contar en cada momento o escenario, tanto la del entorno como la que maneja habitualmente.
+
+Esta etapa se encuentra muy ligada con la segunda, en la cual la empresa habrá de definir claramente las funciones que la componen de manera que puedan ser estudiadas las necesidades según los niveles de responsabilidad en cada caso y poder concluir cuáles son las prioridades informativas que se han de cubrir, cometido que se llevará a cabo en la tercera de las etapas.
+
+Por otro lado, en una cuarta etapa se han de señalizar las variables críticas necesarias para controlar cada área funcional. Estas variables son ciertamente distintas en cada caso, ya sea por los valores culturales y humanos que impregnan la filosofía de la empresa en cuestión, o ya sea por el tipo de área que se esté analizando. Lo importante en todo caso, es determinar cuáles son las más importantes en cada caso para que se pueda llevar a cabo un correcto control y un adecuado proceso de toma de decisiones.
+
+Posteriormente, y en la penúltima de nuestras etapas, se ha de encontrar una correspondencia lógica entre el tipo de variable crítica determinada en cada caso, y el ratio, valor, medida, etc., que nos informe de su estado cuando así se estime necesario. De este modo podremos atribuir un correcto control en caos. Con base en las relaciones de causa-efecto, se elabora un Mapa estratégico (Si bien la traducción literal de Strategy Map es Mapa de la estrategia) que permite ver ágilmente la evolución de los indicadores y tomar acciones tendientes a modificarlos.
+
+En último lugar, se debe configurar el cuadro de mando en cada área funcional, y en cada nivel de responsabilidad de manera que albergue siempre la información mínima, necesaria y suficiente para poder extraer conclusiones y tomar decisiones acertadas.
+
+Elaboración y contenido del Cuadro de Mando
+
+Los responsables de cada uno de los cuadros de mando de los diferentes departamentos han de tener en cuenta una serie de aspectos comunes en cuanto a su elaboración. Entre dichos aspectos cabría destacar los siguientes:
+- Los cuadros de mando han de presentar sólo aquella información que resulte ser imprescindible, de una forma sencilla y por supuesto, sinóptica y resumida.
+- El carácter de estructura piramidal entre los cuadros de mando, ha de tenerse presente en todo momento, ya que esto permite la conciliación de dos puntos básicos: uno, que cada vez más se agreguen los indicadores hasta llegar a los más resumidos y dos, que a cada responsable se le asignen sólo aquellos indicadores relativos a su gestión y a sus objetivos.
+- Se debe destacar lo verdaderamente relevante, ofreciendo un mayor énfasis en cuanto a las informaciones más significativas.
+- No se puede olvidar la importancia que tienen tanto los gráficos, tablas y/o cuadros de datos, etc., ya que son verdaderos nexos de apoyo de toda la información que se resume en los Cuadros de Mando.
+- La uniformidad en cuanto a la forma de elaborar estas herramientas es importante, ya que esto permitirá una verdadera regularización de los informes con los que la empresa trabaja, así como facilitar las tareas de comparación de resultados entre los distintos departamentos o áreas.
+
+De alguna manera, lo que se incorpore en esta herramienta, será aquello con lo que se podrá medir la gestión realizada y, por este motivo, es muy importante establecer en cada caso qué es lo que hay que controlar y cómo hacerlo. En general, el Cuadro de Mando debe tener cuatro partes bien diferenciadas:
+- Primero:se deben constatar de forma clara, cuáles son las variables o aspectos claves más importantes a tener en cuenta para la correcta medición de la gestión en un área determinada o en un nivel de responsabilidad concreto.
+- Segundo: en la que estas variables puedan ser cuantificadas de alguna manera a través de los indicadores precisos, y en los períodos de tiempo que se consideren oportunos.
+- Tercero: en alusión al control de dichos indicadores, será necesaria la comparación entre lo previsto y lo realizado, extrayendo de algún modo las diferencias positivas o negativas que se han generado, es decir, las desviaciones producidas.
+- Cuarto: es fundamental que con imaginación y creatividad se consiga que el modelo de Cuadro de Mando que se proponga en una organización ofrezca soluciones cuando así sea necesario.
+
+Elaboración del Cuadro de Mando
+
+No deben perderse de vista los objetivos elementales que se pretenden alcanzar mediante el Cuadro de Mando, ya que sin fines a alcanzar, difícilmente se puede entender la creación de ciertos informes. Entre dichos objetivos podemos considerar que:
+- Ha de ser un medio informativo destacable. Sobre todo ha de conseguir eliminar en la medida de lo posible la burocracia informativa en cuanto a los diferentes informes con los que la empresa puede contar.
+- Debe ser una herramienta de diagnóstico. Se trata de especificar lo que no funciona correctamente en la empresa, en definitiva ha de comportarse como un sistema de alerta. En este sentido, tenemos que considerar dos aspectos:
+    - Se han de poner en evidencia aquellos parámetros que no marchan como estaba previsto. Esta es la base de la gestión por excepción, es decir, el Cuadro de Mando ha de mostrar en primer lugar aquello que no se ajusta a los límites absolutos fijados por la empresa y, en segundo lugar, advertir de aquellos otros elementos que se mueven en niveles de tolerancia de cierto riesgo.
+    - Esta herramienta debe de seleccionar tanto la cantidad como la calidad de la información que suministra en función de la repercusión sobre los resultados que vaya a obtener.
+- En relación a la confrontación entre realizaciones y previsiones ha de ponerse de manifiesto su eficacia. El análisis de las desviaciones es básico a la hora de estudiar la trayectoria de la gestión así como en el proceso de toma de decisiones a corto plazo.
+- Debe promover el diálogo entre todos. Mediante la exposición conjunta de los problemas por parte de los distintos responsables, se puede avanzar mucho en cuanto a la agilización del proceso de toma de decisiones. Es preciso que se analicen las causas de las desviaciones más importantes, proporcionar soluciones y tomar la vía de acción más adecuada.
+- Ha de ser útil a la hora de asignar responsabilidades. Además la disponibilidad de información adecuada, facilita una comunicación fluida entre los distintos niveles directivos y el trabajo en grupo que permite mejorar resultados.
+- Ha de ser motivo de cambio y de formación continuada en cuanto a los comportamientos de los distintos ejecutivos y/o responsables. Ha de conseguir la motivación entre los distintos responsables. Esto ha de ser así, sobre todo por cuanto esta herramienta será el reflejo de su propia gestión.
+- Por último y como objetivo más importante esta herramienta de gestión debe facilitar la toma de decisiones. Para ello, el modelo debería en todo momento:
+    - Facilitar el análisis de las causas de las desviaciones. Para ello se precisaría de una serie de informaciones de carácter complementario en continuo apoyo al Cuadro de Mando además de la que pudiera aportarle el "Controller", ya que en muchas ocasiones disfruta de cierta información de carácter privilegiado que ni siquiera la Dirección conoce.
+    - Proporcionar los medios para solucionar dichos problemas y disponer de los medios de acción adecuados.
+    - Saber decidir cómo comportarse. En cierto modo, estaríamos haciendo referencia a un sistema inteligente, a un sistema que se nutre de la propia trayectoria de la empresa, y que, cada vez mejor, suministra información y un modo de actuar óptimo.
+
+Los principales elementos que pueden hacer que el Cuadro de Mando muestre notables diferencias con respecto a otras herramientas contables y de gestión son:
+- El carácter de la información utilizada.
+- La relación entre el Cuadro de Mando y el perfil característico de la persona destinataria.
+- La solución de problemas mediante acciones rápidas.
+- Informaciones sencillas y poco voluminosas.
+
+En relación con el tipo de información utilizada, el Cuadro de Mando, aparte de reunir información de similares características que la empleada en las distintas disciplinas de naturaleza contable, es decir, financiera, debe contener información de carácter no financiero. Ya desde su presentación como una herramienta útil de gestión, el Cuadro de Mando se destacaba por su total flexibilidad para recoger tal información.
+
+Otro aspecto a destacar, es la relación mutua que ha de existir entre el Cuadro de Mando y el perfil de la persona a quien va destinado. Precisamente, las necesidades de cada directivo, han de marcar la pauta que caracterice y haga idónea a esta herramienta en cada caso y situación, sobre todo con respecto al nivel de mayor responsabilidad de la jerarquía actual de la empresa, debido a que se precisa un esfuerzo mucho mayor de generalidad y síntesis.
+
+Un rasgo más del Cuadro de Mando es la solución de problemas mediante acciones rápidas. Cuando se incorporan indicadores de carácter cualitativo al Cuadro de Mando, en cierto modo, éstos están más cerca de la acción que los propios indicadores o resultados financieros. Asimismo, estos indicadores nominales nos dan un avance en cuanto a qué resultados están por alcanzarse.
+
+El último de los rasgos que diferenciarían al Cuadro de Mando es el hecho de utilizar informaciones sencillas y poco voluminosas. Las disciplinas y herramientas contables habituales precisan una mayor dedicación de tiempo de análisis y de realización y, al momento de la toma de decisiones siempre necesita de otros aspectos que en un principio no formaban parte de su marco de acción.
+
+El Cuadro de Mando se orienta hacia la reducción y síntesis de conceptos, es una herramienta que junto con el apoyo de las nuevas tecnologías de la información y comunicación, puede y debe ofrecer una información sencilla, resumida y eficaz para la toma de decisiones.
+
+Contenido del Cuadro de Mando
+
+En relación a las principales variables a tener en cuenta en la Dirección General, Direcciones Funcionales y Subdirecciones Funcionales, se concluye que no existe una única fórmula para todas las empresas, sino que para cada tipo de organización habrá que tomar unas variables determinadas con las que llevar a cabo la medición de la gestión.
+
+Es importante tener en cuenta que el contenido de cualquier Cuadro de Mando, no se reduce tan sólo a cifras o números, ha de ser un contenido muy concreto para cada departamento o para cada responsable. De igual manera, se ha de tener presente que la información que se maneja en un Cuadro de Mando determinado puede ser válida para otro.
+
+Con respecto a los indicadores, éstos son elementos objetivos que describen situaciones específicas, y que tratan de medir de alguna manera las variables propuestas en cada caso. Al analizar los indicadores necesarios, se establece una distinción básica entre los financieros y no financieros.
+
+El Cuadro de Mando se nutre de todo este tipo de indicadores, tiene en cuenta los aspectos prospectivo y retrospectivo, configurando un punto de vista global mucho más completo y eficaz. Su función es conjugar una serie de elementos para suministrar una visión de conjunto y ofrecer soluciones en cada caso.
+
+La mayoría de las técnicas tienen como elemento común, el mostrar las relaciones que existen entre las categorías de las variables más que entre las propias variables. El Cuadro de Mando, no debe profundizar tanto en estas técnicas, sino en la obtención de la información mínima necesaria, para que junto a las variables de carácter monetario, pueda llevar a cabo la ya mencionada gestión globalizada.
+
+A tener en consideración
+- Aprendizaje: ¿Cómo debe nuestra organización aprender e innovar para alcanzar sus objetivos?
+- Procesos Internos: ¿En qué procesos debemos ser excelentes?
+- Clientes: ¿Qué necesidades de los clientes debemos atender para tener éxito?
+- Financiera: ¿Qué objetivos financieros debemos lograr para ser exitosos?
+
+De modo previo, al abordar la presentación del Cuadro de Mando, se debe resaltar una cuestión que es de gran importancia en relación a su contenido. Se trata del aspecto cualitativo de esta herramienta, ya que hasta el momento no se le ha prestado la importancia que se merece y, sobre todo, porque existen numerosos aspectos como el factor humano, cuyo rendimiento queda determinado por el entorno que le rodea en la propia organización, y éstas cuestiones rara vez se toman en cuenta.
+
+La empresa -desde una perspectiva meramente global- constituye un conjunto de vínculos más o menos establecidos y de recursos compartidos con un fin común. Asimismo, se puede señalar que la empresa en sí representa un conjunto de subsistemas de información, claramente definidos y normalizados.
+
+Otros temas relacionados
+
+Información y Fluidez. La información que puede obtener y utilizar la empresa, según cuál sea su naturaleza, puede ser válida para unos u otros Cuadros de Mando. La información que contienen los CMI pueden dividirse en dos grandes áreas: externa e interna.
+
+Cabe señalar que con más frecuencia la preocupación de las empresas por contar con sistemas organizados, ágiles y fluidos de comunicación entre todos los niveles de responsabilidad va en aumento debido a las crecientes exigencias del mercado en materia de actualización y tecnología que les permitan posicionarse y perpetuar una posición en dicho mercado. Dicha comunicación se da a través de los canales que se establezcan y hagan posible que el personal, por medio del conocimiento claro de los temas que les afectan, pueda sentirse más involucrados en sus tareas diarias.
+
+Relación causa-efecto. Entre los diversos objetivos de una Compañía, pueden establecerse relaciones de causa-efecto. Esto es, hallar una relación entre la variación de las métricas de un objetivo y las de otro a lo largo del tiempo. Esto permite predecir como se comportarán algunas métricas en el futuro a partir del análisis de otras en el momento actual; y tomar alguna decisión que permita cambiar el rumbo de los acontecimientos.
+
+Referencias
+- Leader Summaries (ed.): «Resumen del libro Cómo utilizar el Cuadro de Mando Integral, de Robert S. Kaplan y David P. Norton». Consultado el 15 noviembre 2014.
+- http://www.cic.es/Solucion.aspx?Dep=1&Pag=CuadrosMando
+- http://blog.apesoft.es/blog/2006/5/22/tipos-de-cuadro-de-mando-conozca-las-diferencias.html
+
+Información adicional
+- Sistemas de Información Gerencial para la Administración del Desempeño Empresarial
+- Sistemas de Información Gerencial para la Administración del Desempeño Empresarial (PRESENTACIÓN)
+- El Tablero de Comando o Balanced Scorecard
+- Rodrigo Andrés Sepulveda Morán - Facultad de Economía y Negocios Universidad de Chile. Diplomado Control de Gestión Gerencial.
+- Kaplan, Robert S. and David P. Norton, The Balanced Scorecard: Translating Strategy Into Action, Boston, MA: Harvard Business School Press, 1996. [1]
+- Olve, Nils-Göran, Jan Roy and Magnus Wetter, Performance Drivers: A Practical Guide to Using the Balanced Scorecard, Chichester, UK: John Wiley & Sons, 1999.
+- Kaplan, Robert S. and David P. Norton, The Strategy-focused organization, Boston, MA: Harvard Business School Press, 2000.
+- Paul R. Niven, El Cuadro de Mando Integral, Barcelona 2003, Gestión 2000.
+- El cuadro de mando Integral - Roberto Espinosa

@@ -1,0 +1,19 @@
+Ontología (informática)
+
+El término ontología en informática hace referencia a la formulación de un exhaustivo y riguroso esquema conceptual dentro de uno o varios dominios dados; con la finalidad de facilitar la comunicación y el intercambio de información entre diferentes sistemas y entidades. Aunque toma su nombre por analogía, ésta es la diferencia con el punto de vista filosófico de la palabra ontología.
+
+Un uso común tecnológico actual del concepto de ontología, en este sentido semántico, lo encontramos en la inteligencia artificial y la representación del conocimiento. En algunas aplicaciones, se combinan varios esquemas en una estructura de facto completa de datos, que contiene todas las entidades relevantes y sus relaciones dentro del dominio.
+
+Los programas informáticos pueden utilizar así este punto de vista de la ontología para una variedad de propósitos, incluyendo el razonamiento inductivo, la clasificación, y una variedad de técnicas de resolución de problemas.
+
+Típicamente, las ontologías en los ordenadores se relacionan estrechamente con vocabularios fijos –una ontología fundacional– con cuyos términos debe ser descrito todo lo demás. Debido a que esto puede ocasionar representaciones pobres para ciertos dominios de problemas, se deben crear esquemas más especializados para convertir en útiles los datos a la hora de tomar decisiones en el mundo real.
+
+Dichas ontologías son valorables comercialmente, creándose competencia para definirlas. Peter Murray-Rust se ha quejado de que esto conduce a "una guerra semántica y ontológica debido a la competencia entre estándares"[cita requerida]. Por consiguiente, cualquier estándar de ontología fundacional es posible que sea contestado por los agentes políticos o comerciales, cada uno con su propia idea de 'lo que existe' (en el sentido filosófico de ontología).
+
+Una variación ha sido propuesta recientemente, véase el sitio de MathWorld, cuyo autor propugna que el universo se modela mejor en los términos de los programas informáticos (computacionales) que con los términos matemáticos convencionales.
+
+Lenguajes de Ontologías
+- RDF
+- DAML
+- OIL
+- OWL, en sus versiones

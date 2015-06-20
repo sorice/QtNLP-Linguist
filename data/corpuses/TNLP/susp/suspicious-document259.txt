@@ -1,0 +1,12 @@
+Computación concurrente
+
+La computación concurrente es la simultaneidad en la ejecución de múltiples tareas interactivas. Estas tareas pueden ser un conjunto de procesos o hilos de ejecución creados por un único programa. Las tareas se pueden ejecutar en una sola unidad central de proceso (multiprogramación), en varios procesadores o en una red de computadores distribuidos. La programación concurrente está relacionada con la programación paralela, pero enfatiza más la interacción entre tareas. Así, la correcta secuencia de interacciones o comunicaciones entre los procesos y el acceso coordinado de recursos que se comparten por todos los procesos o tareas son las claves de esta disciplina.
+
+Los pioneros en este campo fueron Edsger Dijkstra, Per Brinch Hansen, y C. A. R. Hoare.
+
+Edición concurrente
+
+La edición concurrente consiste en que dos o más usuarios distintos editan un mismo campo de datos o un mismo documento. Algunos programas abiertos han creado módulos para evitar este problema, como sucede con Drupal.1
+
+Referencias
+1. Modulo Content Locking para evitar ediciones concurrentes

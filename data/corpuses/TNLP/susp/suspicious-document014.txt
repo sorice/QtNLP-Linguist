@@ -1,0 +1,10 @@
+Base de datos probabilística
+
+Una base de datos probabilística es una base de datos en la que los campos tienen asociados valores de probabilidad. Los gestores de bases de datos probabilísticas son un área de investigación muy activa en la actualidad. Si bien aún no hay productos comerciales, existen diversos prototipos.
+
+En las bases de datos probabilísticas se distingue entre el modelo de datos y su representación física, de un modo similar al de una base de datos relacional. En las probabilísticas esta distinción es crucial porque tienen que representar números muy grandes de posibles valores, a veces exponencial.1 2
+
+Referencias
+
+- Nilesh N. Dalvi, Dan Suciu: Efficient query evaluation on probabilistic databases. VLDB J. 16(4): 523-544 (2007)
+- Lyublena Antova, Christoph Koch, Dan Olteanu: 10^(10^6) Worlds and Beyond: Efficient Representation and Processing of Incomplete Information. ICDE 2007: 606-615

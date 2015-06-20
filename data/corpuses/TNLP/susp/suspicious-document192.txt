@@ -1,0 +1,21 @@
+Integración continua
+
+La integración continua (continuous integration en inglés) es un modelo informático propuesto inicialmente por Martin Fowler que consiste en hacer integraciones automáticas de un proyecto lo más a menudo posible para así poder detectar fallos cuanto antes. Entendemos por integración la compilación y ejecución de pruebas de todo un proyecto.
+
+El proceso suele ser: cada cierto tiempo (horas), descargarse las fuentes desde el control de versiones (por ejemplo CVS, Git, Subversion, Mercurial o Microsoft Visual SourceSafe) compilarlo, ejecutar pruebas y generar informes.
+
+Para esto se utilizan aplicaciones como Bamboo, Continuum, Hudson, Jenkins, CruiseControl o Anthill (para proyectos Java) o CruiseControl.Net, Team Foundation Build para .Net, que se encargan de controlar las ejecuciones, apoyadas en otras herramientas como Ant o Maven (también para proyectos Java), o Nant o MSBUILD (para .Net) que se encargan de realizar las compilaciones, ejecutar las pruebas y realizar los informes.
+
+A menudo la integración continua está asociada con las metodologías de programación extrema y desarrollo ágil.
+
+Ventajas
+- Los desarrolladores pueden detectar y solucionar problemas de integración de forma continua, evitando el caos de última hora cuando se acercan las fechas de entrega.
+- Disponibilidad constante de una versión para pruebas, demos o lanzamientos anticipados.
+- Ejecución inmediata de las pruebas unitarias.
+- Monitorización continua de las métricas de calidad del proyecto.
+
+Referencias
+- Artículo de Martin Fowler
+- Pragmatic Automation: Libro o Web
+- Continuous Integration Tools Directory
+- Enlace al artículo Aprende a implantar integración continua desde 0

@@ -1,0 +1,169 @@
+Recorrido de árboles
+
+En ciencias de la computación, el recorrido de árboles refiere al proceso de visitar de una manera sistemática, exactamente una vez, cada nodo en una estructura de datos de árbol (examinando y/o actualizando los datos en los nodos). Tales recorridos están clasificados por el orden en el cual son visitados los nodos. Los siguientes algoritmos son descritos para un árbol binario, pero también pueden ser generalizados a otros árboles.
+
+Recorridos
+
+Comparado a las estructuras de datos lineales como las listas enlazadas y arreglos unidimensionales, que tienen un método canónico de recorrido, las estructuras arborescentes pueden ser recorridas de muchas maneras diferentes. Comenzando en la raíz de un árbol binario, hay tres pasos principales que pueden ser realizados y el orden en la cual son realizados define el tipo de recorrido. Estos pasos (en ningún orden particular) son: ejecución de una acción en el nodo actual (referido como “visitando” el nodo), recorriendo al nodo hijo de la izquierda, y recorriendo al nodo hijo de la derecha. Así el proceso más fácilmente descrito a través de la recursión.
+
+Los nombres dados para un estilo particular de recorrido vienen de la posición del elemento de raíz con respecto a los nodos izquierdo y derecho. Imagine que los nodos izquierdo y derecho son constantes en espacio, entonces el nodo raíz pudiera colocarse a la izquierda del nodo izquierdo (pre-orden), entre el nodo izquierdo y derecho (in-orden), o a la derecha del nodo derecho (post-orden).
+
+Con el fin de ilustrar, se asume que los nodos izquierdos tienen siempre prioridad sobre los nodos derechos. Este ordenamiento puede ser invertido mientras el mismo orden sea asumido para todos los métodos de recorrido.
+
+Recorrido en profundidad-primero
+
+Árbol binario
+- Preorden: (raíz, izquierdo, derecho). Para recorrer un árbol binario no vacío en preorden, hay que realizar las siguientes operaciones recursivamente en cada nodo, comenzando con el nodo de raíz:
+	1. Visite la raíz
+	2. Atraviese el sub-árbol izquierdo
+	3. Atraviese el sub-árbol derecho
+- Inorden: (izquierdo, raíz, derecho). Para recorrer un árbol binario no vacío en inorden (simétrico), hay que realizar las siguientes operaciones recursivamente en cada nodo:
+	1. Atraviese el sub-árbol izquierdo
+	2. Visite la raíz
+	3. Atraviese el sub-árbol derecho
+- Postorden: (izquierdo, derecho, raíz). Para recorrer un árbol binario no vacío en postorden, hay que realizar las siguientes operaciones recursivamente en cada nodo:
+	1. Atraviese el sub-árbol izquierdo
+	2. Atraviese el sub-árbol derecho
+	3. Visite la raíz
+
+En general, la diferencia entre preorden, inorden y postorden es cuándo se recorre la raíz. En los tres, se recorre primero el sub-árbol izquierdo y luego el derecho.
+- En preorden, la raíz se recorre antes que los recorridos de los subárboles izquierdo y derecho
+- En inorden, la raíz se recorre entre los recorridos de los árboles izquierdo y derecho, y
+- En postorden, la raíz se recorre después de los recorridos por el subárbol izquierdo y el derecho
+
+Preorden (antes), inorden (en medio), postorden (después).
+
+Árbol genérico
+
+Para recorrer un árbol no vacío en orden de profundidad-primero, hay que realizar las siguientes operaciones recursivamente en cada nodo:
+1. Realice la operación pre-orden
+2. Para i=1 a n-1 haga
+	1. Visite al hijo[i], si existe
+	2. Realice la operación in-orden
+3. Visite al hijo[n], si existe
+4. Realice la operación post-orden
+
+donde n es el número de nodos hijos. Dependiendo del problema actual, las operaciones de pre-orden, in-orden o post-orden pueden ser vacías (void), o usted puede querer visitar solamente un nodo de hijo específico, así que estas operaciones pueden ser consideradas opcionales. También, en la práctica, más de una de las operaciones de pre-orden, in-orden y post-orden pueden ser requeridas. Por ejemplo, al insertar en un árbol ternario, una operación de pre-orden es realizada comparando elementos. Una operación de post-orden puede luego ser necesitada para rebalancear el árbol.
+
+Recorrido en anchura-primero
+
+Los árboles también pueden ser recorridos en orden por nivel (de nivel en nivel), donde visitamos cada nodo en un nivel antes de ir a un nivel inferior. Esto también es llamado recorrido en anchura-primero o recorrido en anchura.
+
+Implementaciones de ejemplo
+
+preorden(nodo)
+  si nodo == nulo entonces retorna
+  imprime nodo.valor
+  preorden(nodo.izquierda)
+  preorden(nodo.derecha)
+
+inorden(nodo)
+  si nodo == nulo entonces retorna
+  inorden(nodo.izquierda)
+  imprime nodo.valor
+  inorden(nodo.derecha)
+
+postorden(nodo)
+  si nodo == nulo entonces retorna
+  postorden(nodo.izquierda)
+  postorden(nodo.derecha)
+  imprime nodo.valor
+
+Todas las implementaciones de ejemplo requerirán el espacio de la pila de llamadas proporcional a la altura del árbol. En un árbol mal balanceado, esto puede ser muy considerable.
+
+Podemos remover el requisito de la pila manteniendo punteros al padre en cada nodo, o hilvanando el árbol. En el caso de usar los hilos, esto permitirá un recorrido inorden grandemente mejorado, aunque recuperar el nodo padre requerido para el recorrido preorden postorden será más lento que un simple algoritmo basado en una pila.
+
+Para recorrer un árbol hilvanado inorden, de puede hacer algo similar a lo siguiente:
+
+inorden(nodo)
+  mientras tieneHijoIzquierdo(nodo) hacer
+       nodo = nodo.izquierda
+  hacer
+       visita(nodo)
+       si (tieneHijoDerecho(nodo)) entonces
+            nodo = nodo.derecha
+            mientras tieneHijoIzquierdo(nodo) hacer
+                 nodo = nodo.izquierda
+       de-lo-contrario
+            mientras nodo.padre ≠ null y nodo == nodo.padre.derecha hacer
+                 nodo = nodo.padre
+            nodo = nodo.padre
+  mientras nodo ≠ null
+
+Observe que un árbol binario hilvanado proporcionará medios de determinar si un puntero es un hijo, o un hilo. Ver árbol binario hilvanado para más información.
+
+Para recorrer un árbol inorden sin recursión
+
+void InOrderTraversal(struct nodo *n)
+{
+	struct nodo *Cur, *Pre;
+ 
+	if(n==NULL)
+		return;
+ 
+	Cur = n;
+	while(Cur != NULL)
+	{
+		if(Cur->lptr == NULL)
+		{
+			printf("\t%d",Cur->val);
+			Cur= Cur->rptr;
+		}
+		else
+		{
+			Pre = Cur->lptr;
+			while(Pre->rptr !=NULL && Pre->rptr != Cur)
+				Pre = Pre->rptr;
+ 
+			if (Pre->rptr == NULL)
+			{
+				Pre->rptr = Cur;
+				Cur = Cur->lptr;
+			}
+			else
+			{
+				Pre->rptr = NULL;
+				printf("\t%d",Cur->val);
+				Cur = Cur->rptr;
+			}
+		}
+	}
+}
+
+Recorrido en orden por nivel basado en cola
+
+También, listado abajo está el pseudocódigo para un simple recorrido en orden por nivel basado en cola, y requerirá un espacio proporcional al número máximo de nodos en una profundidad dada. Éste puede ser tanto como el número total de los nodos/2. Un acercamiento más eficiente en espacio para este tipo de recorrido puede ser implementado usando una búsqueda de profundidad-primero de profundización iterativa.
+
+orden_por_nivel(raiz)
+     cola = nueva cola
+     cola.encola(raíz)
+     mientras not cola.vacía hacer
+          nodo := cola.desencola()
+          visita(nodo)
+          si nodo.izquierdo ≠ null entonces
+               cola.encola(nodo.izquierdo)
+          si nodo.derecho ≠ null entonces
+               cola.encola(nodo.derecha)
+
+Usos
+
+recorrido inorden
+
+Es particularmente común usar un recorrido inorden en un árbol binario de búsqueda porque éste retornará valores en el orden del conjunto subyacente, de acuerdo al comparador que configura el árbol de busqueda binaria (de aquí el nombre).
+
+Para ver porqué éste es el caso, note que si n es un nodo en un árbol binario de búsqueda, entonces todo n en el subárbol izquierdo es menor que n, y todo n en el subárbol derecho es mayor o igual a n. Por lo tanto, si visitamos el subárbol izquierdo en orden, usando una llamada recursiva, y entonces visitamos a n, y después visitamos el subárbol derecho en orden, nosotros hemos visitado completamente el subárbol con raíz en n en orden. Podemos asumir que las llamadas recurrentes visitan correctamente los subárboles en orden usando el principio matemático de inducción estructural. Similarmente, el recorrer en inorden reverso da los valores por orden decreciente.
+
+Recorrido preorden
+
+Recorriendo un árbol en preorden mientras se está insertando los valores en un nuevo árbol es una manera común de hacer una copia completa de un árbol binario de busqueda.
+
+También se pueden usar los recorridos preorden para conseguir una expresión prefijo (notación polaca) de árboles de expresión: recorra el árbol de expresión en preorden. Para calcular el valor de tal expresión: explore de derecha a izquierda, poniendo los elementos en un stack. Cada vez que se encuentre un operador, se sustituyen los dos símbolos superiores del stack por el resultado de aplicar al operador a esos elementos. Por ejemplo, la expresión * + 2 3 4, que en la notación de infijo es (2 + 3) ∗ 4, sería evaluada de esta manera:
+
+Usando recorrido prefijo para evaluar un árbol de expresión 
+Expresión (restante) 	Stack
+* + 2 3 4 	<vacío>
+* + 2 3 	4
+* + 2 	3 4
+* + 	2 3 4
+* 	5 4
+Respuesta 	20

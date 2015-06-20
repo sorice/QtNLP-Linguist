@@ -1,0 +1,15 @@
+HOLAP
+
+HOLAP (Hybrid Online Analytical Process, procesamiento analítico en línea híbrido) es una combinación de ROLAP y MOLAP, que son otras posibles implementaciones de OLAP. HOLAP permite almacenar una parte de los datos como en un sistema MOLAP y el resto como en uno ROLAP. El grado de control que el operador de la aplicación tiene sobre este particionamiento varía de unos productos a otros.
+
+Particionamiento vertical
+
+En este modo, HOLAP almacena agregaciones como un MOLAP para mejorar la velocidad de las consultas, y los datos se detallan en ROLAP para optimizar el tiempo en que se procesa el cubo.
+
+Particionamiento horizontal
+
+En este modo HOLAP almacena una sección de los datos, normalmente los más recientes (por ejemplo particionando por la dimensión tiempo) en modo MOLAP para mejorar la velocidad de las consultas, y los datos más antiguos en ROLAP. Además, se pueden almacenar algunos cubos en MOLAP y otros en ROLAP.
+
+Productos
+
+Ejemplos de productos comerciales que soportan el modo HOLAP de almacenamiento son Microsoft Analysis Services, MicroStrategy y SAP AG BI Accelerator.

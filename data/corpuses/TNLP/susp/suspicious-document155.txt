@@ -1,0 +1,28 @@
+Arquitectura en pizarra (informática)
+
+La arquitectura software en pizarra es un modelo arquitectónico de software habitualmente utilizado en sistemas expertos, sistemas multiagente y, en general, sistemas basados en el conocimiento.
+
+Descripción
+
+La arquitectura en pizarra consta de múltiples elementos funcionales, denominados agentes, y un instrumento de control denominado pizarra.
+
+Los agentes suelen estar especializados en una tarea concreta o elemental. Todos ellos cooperan para alcanzar una meta común, si bien, sus objetivos individuales no están aparentemente coordinados.
+
+El comportamiento básico de cualquier agente consiste en examinar la pizarra, realizar su tarea y escribir sus conclusiones en la misma pizarra. De esta manera, otro agente puede trabajar sobre los resultados generados por otro.
+
+La computación termina cuando se alcanza alguna condición deseada entre los resultados escritos en la pizarra.
+
+La pizarra tiene un doble papel. Por una parte, coordina a los distintos agentes y, por otra, facilita su intercomunicación. El estado inicial de la pizarra es una descripción del problema que resolver y el estado final será la solución del problema.
+
+Los resultados generados por los agentes deben responder a un lenguaje y semántica común. En general, se suelen utilizar formalismos lógicos o matemáticos, tales como expresiones lógicas de primer orden.
+
+Ventajas e inconvenientes
+
+Esta arquitectura es tremendamente útil cuando el problema a resolver (o algoritmo a implementar) es extremadamente complejo en términos cognitivos. Es decir, cuando el flujo de control del algoritmo es enrevesado, o simplemente, no se tiene un conocimiento completo del problema a resolver.
+
+Las desventajas de la arquitectura son bastante obvias a priori. Es importante no generalizar en este aspecto, puesto que cada implementación en particular puede solventar estas desventajas en algún ámbito limitado:
+- No existe garantía de que se alcanzará una solución.
+- Es una arquitectura ineficiente, puesto que no existe una cota respecto al tiempo de cómputo necesario para resolver el problema.
+- Es difícil obtener una traza de los pasos que llevaron a la solución, es decir, no ofrece explicaciones.
+
+Desde un punto de vista más filosófico, la arquitectura en pizarra ofrece un interesante experimento de tipo social. Cada agente tiene sus propios objetivos, desconoce los objetivos de los demás, y tampoco conoce el objetivo global (la solución del problema). Sin embargo, se produce una cooperación inconsciente entre ellos que lleva a una meta más importante.

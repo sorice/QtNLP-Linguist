@@ -1,0 +1,10 @@
+Testing aleatorio
+
+En el desarrollo de software, el testing es una de las tareas más importantes, pero también es compleja y no siempre adotada correctamente. Las Prueba unitaria, de carga, integración y funcionales son distintos tipos de testing, cada uno con objetivos diferentes y aplicados en diferentes etapas del desarrollo del software. En el testing de unidad se desarrollan pruebas individuales sobre componentes de un sistema. En la codificación de dichas pruebas, se busca simular el entorno de dicho componente y descubrir la presencia de errores o “bugs”. Más allá del esfuerzo, las pruebas de unidad pueden probar la presencia de ciertos errores, pero no pueden asegurar la ausencia de ellos.
+
+Buscando ampliar el ámbito de las pruebas de unidad, se han aplicado diversas técnicas que van desde la automatización de pasos o caminos de ejecución, con valores fijos o componentes predefinidos (hard-coded) o estáticos, y condiciones específicas, hasta los enfoques basados en la generación de objetos de manera aleatoria,1 aplicados a la Programación Orientada a Objetos. El fundamento básico de este enfoque propuesto es el testing aleatorio.
+
+Tanto la generación de valores aleatorios para testing, como el testing aleatorio (RT o random testing) en sí no son técnicas nuevas. Por ej., en el paradigma funcional existe una herramienta para probar especificaciones sobre funciones llamada QuickCheck. Ésta herramienta (escrita en Haskell) y sus ideas subyacentes son usadas como fundamento para algunas herramientas desarrolladas para RT en POO.
+
+Referencias
+- Barrientos, Pablo Andrés (25 de abril de 2014). Enfoque para pruebas de unidad basado en la generación aleatoria de objetos. p. 101. Consultado el 28 de abril de 2014.

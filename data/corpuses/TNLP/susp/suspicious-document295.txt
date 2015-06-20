@@ -1,0 +1,51 @@
+Teoría de autómatas
+
+La teoría de autómatas es una rama de las ciencias de la computación que estudia las máquinas abstractas y los problemas que éstas son capaces de resolver. La teoría de autómatas está estrechamente relacionada con la teoría del lenguaje formal ya que los autómatas son clasificados a menudo por la clase de lenguajes formales que son capaces de reconocer.
+
+Un autómata es un modelo matemático para una máquina de estado finito (FSM sus siglas en inglés). Una FSM es una máquina que, dada una entrada de símbolos, "salta" a través de una serie de estados de acuerdo a una función de transición (que puede ser expresada como una tabla). En la variedad común "Mealy" de FSMs, esta función de transición dice al autómata a qué estado cambiar dados unos determinados estado y símbolo.
+
+La entrada es leída símbolo por símbolo, hasta que es "consumida" completamente (piense en ésta como una cinta con una palabra escrita en ella, que es leída por una cabeza lectora del autómata; la cabeza se mueve a lo largo de la cinta, leyendo un símbolo a la vez) una vez la entrada se ha agotado, el autómata se detiene.
+
+Dependiendo del estado en el que el autómata finaliza se dice que este ha aceptado o rechazado la entrada. Si éste termina en el estado "acepta", el autómata acepta la palabra. Si lo hace en el estado "rechaza", el autómata rechazó la palabra, el conjunto de todas las palabras aceptadas por el autómata constituyen el lenguaje aceptado por el mismo.
+
+Vocabulario
+
+Los conceptos básicos de símbolos, palabras, alfabetos y strings son comunes en la mayoría de las descripciones de los autómatas. Estos son:
+
+Símbolo 
+    Un dato arbitrario que tiene algún significado a o efecto en la máquina. A estos símbolos también se les llama "letras" o "átomos".1
+Palabra
+    Una cadena finita formada por la concatenación de un número de símbolos.
+Alfabeto 
+    Conjunto finito de símbolos. Un alfabeto se indica normalmente con \Sigma, que es el conjunto de letras en un alfabeto.
+Lenguaje 
+    Un conjunto de palabras, formado por símbolos en un alfabeto dado. Puede ser infinito.
+Clausura de Kleene 
+    Un lenguaje se puede considerar como un subconjunto de todas las posibles palabras. El conjunto de todas las palabras puede, a su vez, ser considerado como el conjunto de todas las posibles concatenaciones de cadenas. Formalmente, este conjunto de todas las cadenas se llama en inglés free monoid. Se indica como \Sigma^*, y el superíndice * se llama la estrella de Kleene.
+
+Autómatas finitos
+
+Formalmente, un autómata finito (AF) puede ser descrito como una 5-tupla \langle Q, \Sigma, \delta, S_0, F\rangle.
+
+Existen tres tipos de autómatas finitos
+
+Autómata finito determinista (AFD)
+    Cada estado de un autómata de este tipo puede o no tener una transición por cada símbolo del alfabeto.
+
+Autómata finito no determinista (AFND)
+    Los estados de un autómata de este tipo pueden, o no, tener una o más transiciones por cada símbolo del alfabeto. El autómata acepta una palabra si existe al menos un camino desde el estado q0 a un estado final F etiquetado con la palabra de entrada. Si una transición no está definida, de manera que el autómata no puede saber como continuar leyendo la entrada, la palabra es rechazada.
+Autómata finito no determinista con transiciones ε (AFND-ε)
+    Además de ser capaz de alcanzar más estados leyendo un símbolo, permite alcanzarlos sin leer ningún símbolo. Si un estado tiene transiciones etiquetadas con \epsilon, entonces el AFND puede encontrarse en cualquier de los estados alcanzables por las transiciones \epsilon, directamente o a través de otros estados con transiciones \epsilon. El conjunto de estados que pueden ser alcanzados mediante este método desde un estado q, se denomina la clausura \epsilon de q.
+
+Sin embargo, puede observarse que todos estos tipos de autómatas pueden aceptar los mismos lenguajes. Siempre se puede construir un AFD que acepte el mismo lenguaje que el dado por un AFND.
+
+Extensiones a los autómatas finitos
+
+Los lenguajes aceptados por los autómatas descritos más arriba se denominan lenguajes regulares. Autómatas más potentes pueden aceptar lenguajes más complejos. Algunos de estos autómatas son:
+
+Autómata con pila 
+    Son máquinas idénticas a los AFD (o AFI), exceptuando el hecho de que disponen de una memoria adicional, haciendo uso de una pila. La función de transición \delta ahora dependerá también de los símbolos que se encuentren al principio de la pila. Esta función determinará como cambia la pila en cada transición. Este tipo de autómatas aceptan los lenguajes independientes del contexto.
+Autómata linealmente acotado
+    Se trata de una máquina de Turing limitada.
+Máquina de Turing 
+    Son las máquinas computacionales más potentes. Poseen una memoria infinita en forma de cinta, así como un cabezal que puede leer y cambiar esta cinta, y moverse en cualquier dirección a lo largo de la cinta. 

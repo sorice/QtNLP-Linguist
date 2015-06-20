@@ -1,0 +1,21 @@
+Robot autónomo
+
+Un robot autónomo es un robot que pueden operar con un alto grado de autonomía, lo que es particularmente deseable en campos como la exploración espacial, la limpieza de suelos, cortar el césped y el tratamiento de aguas residuales.
+
+Algunos modernos robots industriales son "autónomos" dentro de los límites estrictos de su entorno directo. Puede que no existan todos los grados de libertad en su entorno, pero el lugar de trabajo del robot industrial es difícil y, a menudo puede contener variables caóticas, impredecibles. Deberá determinarse la orientación exacta y la posición del siguiente objeto de trabajo y (en las fábricas más avanzadas) incluso el tipo de objeto y la tarea requerida. Esto puede variar impredecible (por lo menos desde el punto de vista del robot).
+
+Un área importante de la investigación robótica es permitir que el robot haga frente a su entorno ya sea en tierra, bajo el agua, en el aire, bajo tierra o en el espacio.
+
+Un robot completamente autónomo tiene la capacidad de:
+- Obtener información sobre el medio ambiente (la regla # 1)
+- El trabajo durante un período prolongado sin intervención humana (Regla # 2)
+- Moverse todo o parte de sí mismo a través de su entorno operativo, sin ayuda humana (Regla # 3)
+- Evitar situaciones que son perjudiciales para las personas, los bienes o sí mismos, a menos que sean parte de las especificaciones de diseño (Regla # 4)
+- Poder aprender o adquirir nuevos conocimientos, como el ajuste de nuevos métodos para el cumplimiento de su tarea(s) o la adaptación a los cambios de entorno.
+
+Los robots autónomos todavía requieren un mantenimiento regular, al igual que otras máquinas. Algunos de ellos pueden auto-recargarse, como sucede con Roomba.
+
+Referencias
+- Principal Investigator: W. Kennedy, National Institutes of Health, NIH SBIR 2 R44 HD041781-02
+- Speci-Minder; see elevator and door access
+- FOXNews.com - Weapons Makers Unveil New Era of Counter-Terror Equipment - Local News | News Articles | National News | US News

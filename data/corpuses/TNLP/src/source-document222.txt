@@ -1,0 +1,19 @@
+Requisito no funcional
+
+Un requisito no funcional o atributo de calidad es, en la ingeniería de sistemas y la ingeniería de software, un requisito que especifica criterios que pueden usarse para juzgar la operación de un sistema en lugar de sus comportamientos específicos, ya que éstos corresponden a los requisitos funcionales. Por tanto, se refieren a todos los requisitos que no describen información a guardar, ni funciones a realizar.
+
+Algunos ejemplos de requisitos no funcionales típicos son los siguientes:
+- rendimiento
+- disponibilidad
+- seguridad
+- accesibilidad
+- usabilidad
+- estabilidad
+- portabilidad
+- costo
+- operatividad
+- interoperabilidad
+- escalabilidad
+- concurrencia
+- mantenibilidad
+- interfaz

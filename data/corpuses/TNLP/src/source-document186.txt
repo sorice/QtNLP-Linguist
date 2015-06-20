@@ -1,0 +1,42 @@
+Fases del desarrollo de software
+
+En la ingeniería del software el término fases de desarrollo expresa cómo ha progresado el desarrollo de un software y cuánto desarrollo puede requerir. Cada versión importante de un producto pasa generalmente a través de una etapa en la que se agregan las nuevas características (etapa alfa), después una etapa donde se eliminan errores activamente (etapa beta), y finalmente una etapa en donde se han quitado todos los bugs importantes (etapa estable). Las etapas intermedias pueden también ser reconocidas. Las etapas se pueden anunciar y regular formalmente por los desarrolladores del producto, pero los términos se utilizan a veces de manera informal para describir el estado de un producto. Normalmente muchas compañías usan nombres en clave para las versiones antes del lanzamiento de un producto, aunque el producto y las características reales raramente son secretas.
+
+Alpha / Alfa
+
+Es la primera versión del programa, la cual es enviada a los verificadores para probarla.
+
+Algunos equipos de desarrollo utilizan el término alfa informalmente para referirse a una fase donde un producto todavía es inestable, aguarda todavía a que se eliminen los errores o a la puesta en práctica completa de toda su funcionalidad, pero satisface la mayoría de los requisitos.
+
+El nombre se deriva de alfa, la primera letra en el alfabeto griego.
+
+Beta
+
+Una versión beta o lanzamiento beta representa generalmente la primera versión completa del programa informático o de otro producto, que es posible que sea inestable pero útil para que las de inspección previa (preview) o como una inspección previa técnica (technical preview [TP]). Esta etapa comienza a menudo cuando los desarrolladores anuncian una congelación de las características del producto, indicando que no serán agregadas más características a esta versión y que solamente se harán pequeñas ediciones o se corregirán errores. Las versiones beta están en un paso intermedio en el ciclo de desarrollo completo. Los desarrolladores las lanzan a un grupo de probadores beta o betatesters (a veces el público en general) para una prueba de usuario. Los probadores divulgan cualquier error que encuentran y características, a veces de menor importancia, que quisieran ver en la versión final.
+
+Cuando una versión beta llega a estar disponible para el público en general, a menudo es extensamente probada por los tecnológicamente expertos o familiarizados con versiones anteriores, como si el producto estuviera acabado. Generalmente los desarrolladores de las versiones betas del software gratuito o de código abierto los lanzan al público en general, mientras que las versiones beta propietarias van a un grupo relativamente pequeño de probadores. En febrero de 2005, ZDNet publicó un artículo acerca del fenómeno reciente de las versiones beta que permanecían a menudo por años y que eran utilizada como si estuvieran en nivel de producción.1 Observa que Gmail, igual que las noticias de Google, por ejemplo, estuvieron en beta por un período de tiempo muy largo (5 años). Esta técnica puede también permitir a un desarrollador retrasar el ofrecimiento de apoyo total o la responsabilidad de ediciones restantes. Los receptores de betas altamente propietarias pueden tener que firmar un acuerdo de no revelación.
+
+Como esta es la segunda etapa en el ciclo de desarrollo que sigue la etapa de alfa, esta se nombra como la siguiente letra griega beta.
+
+Versión candidata a definitiva (RC)
+
+Una versión candidata a definitiva, candidata a versión final o candidata para el lanzamiento, aunque más conocida por su nombre en inglés release candidate, comprende un producto final, preparado para publicarse como versión definitiva a menos que aparezcan errores que lo impidan. En esta fase el producto implementa todas las funciones del diseño y se encuentra libre de cualquier error que suponga un punto muerto en el desarrollo. Muchas empresas de desarrollo utilizan frecuentemente este término. Otros términos relacionados incluyen gamma, delta (y tal vez más letras griegas) para versiones que están prácticamente completas pero todavía en pruebas; y omega para versiones que se creen libres de errores y se hallan en el proceso final de pruebas. Gamma, delta y omega son, respectivamente, la tercera, cuarta y última letras del alfabeto griego.
+
+Considerada muy estable y relativamente libre de errores con una calidad adecuada para una distribución amplia y usada por usuarios finales. En versiones comerciales, puede estar también firmada (usado para que los usuarios finales verifiquen que el código no ha sido cambiado desde su salida). La expresión de que un producto "sea dorado" significa que el código ha sido completado y que "está siendo producido masivamente y estará en venta próximamente".
+
+Versión de disponibilidad general (RTM)
+
+La versión de disponibilidad general (también llamada "dorada") de un producto es su versión final. Normalmente es casi idéntica a la versión candidata final, con sólo correcciones de última hora. Esta versión es considerada muy estable y relativamente libre de errores con una calidad adecuada para una distribución amplia y usada por usuarios finales. En versiones comerciales, puede estar también firmada (usado para que los usuarios finales verifiquen que el código no ha sido cambiado desde su salida). La expresión de que un producto "sea dorado" significa que el código ha sido completado y que "está siendo producido masivamente y estará en venta próximamente".
+
+El término "dorado" se refiere anecdóticamente al uso del "disco maestro de oro" que fue frecuentemente usado para enviar la versión final a los fabricantes que lo usan para producir las copias de venta al detalle. Esto puede ser una herencia de la producción musical. En algunos casos, sin embargo, el disco maestro está realmente hecho de oro, tanto por apariencia estética como por resistencia a la corrosión.
+
+Microsoft y otros usan el término release to manufacturing (RTM) para referirse a esta versión (para productos comerciales como Windows 7, como "Build 7600 is the Windows 7 RTM release"), y release to Web (RTW) para productos libremente descargables.
+
+Estable/inestable
+
+En la programación de código abierto los números de las versiones, o los términos estable e inestable, normalmente distinguen las fases del desarrollo. En el pasado, el núcleo Linux usaba el número de versión para denotar si una versión era estable o inestable. En efecto, las versiones estaban formada por cuatro números, separados por un punto. Una cifra impar en el segundo número de la versión indicaba una versión inestable. Hoy en día ya no se usa esta convención, y todas las versiones son estables independientemente del número de versión. En la práctica el uso de números pares e impares para indicar la estabilidad de un producto ha sido usado por otros muchos proyectos de software libre.
+
+Este concepto también se aplica al software empaquetado en algunas distribuciones Linux como Debian, de modo que existe una rama o conjunto de paquetes considerados estables y otra rama considerada inestable. Esta última rama aporta versiones de programas más recientes que la estable pero que no están tan probados.
+
+Referencias
+- news.zdnet.com

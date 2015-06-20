@@ -1,0 +1,54 @@
+Arquitectura de software
+
+En los inicios de la informática, la programación se consideraba un arte y se desarrollaba como tal, debido a la dificultad que entrañaba para la mayoría de las personas, pero con el tiempo se han ido descubriendo y desarrollando formas y guías generales, con base a las cuales se puedan resolver los problemas. A estas, se les ha denominado Arquitectura de Software, porque, a semejanza de los planos de un edificio o construcción, estas indican la estructura, funcionamiento e interacción entre las partes del software. En el libro "An introduction to Software Architecture", David Garlan y Mary Shaw definen que la Arquitectura es un nivel de diseño que hace foco en aspectos "más allá de los algoritmos y estructuras de datos de la computación; el diseño y especificación de la estructura global del sistema es un nuevo tipo de problema".
+
+Arquitectura
+- La Arquitectura del Software es el diseño de más alto nivel de la estructura de un sistema.
+- Una Arquitectura de Software, también denominada Arquitectura lógica, consiste en un conjunto de patrones y abstracciones coherentes que proporcionan el marco
+- Una arquitectura de software se selecciona y diseña con base en objetivos (requerimientos) y restricciones. Los objetivos son aquellos prefijados para el sistema de información, pero no solamente los de tipo funcional, también otros objetivos como la mantenibilidad, auditabilidad, flexibilidad e interacción con otros sistemas de información. Las restricciones son aquellas limitaciones derivadas de las tecnologías disponibles para implementar sistemas de información. Unas arquitecturas son más recomendables de implementar con ciertas tecnologías mientras que otras tecnologías no son aptas para determinadas arquitecturas. Por ejemplo, no es viable emplear una arquitectura de software de tres capas para implementar sistemas en tiempo real.
+- La arquitectura de software define, de manera abstracta, los componentes que llevan a cabo alguna tarea de computación, sus interfaces y la comunicación entre ellos. Toda arquitectura debe ser implementable en una arquitectura física, que consiste simplemente en determinar qué computadora tendrá asignada cada tarea.
+
+La arquitectura de software, tiene que ver con el diseño y la implementación de estructuras de software de alto nivel. Es el resultado de ensamblar un cierto número de elementos arquitectónicos de forma adecuada para satisfacer la mayor funcionalidad y requerimientos de desempeño de un sistema, así como requerimientos no funcionales, como la confiabilidad.
+
+Breve reseña histórica
+
+En los años 1960 ya se acercaba el concepto de arquitectura de software en los círculos de investigación (por ejemplo, por Edsger Dijkstra). No obstante, toma popularidad en los años 1990 tras reconocerse la denominada crisis del software y como tema de interés de la incipiente disciplina de la ingeniería del software.
+
+Modelos o vistas
+
+Toda arquitectura de software debe describir diversos aspectos del software. Generalmente, cada uno de estos aspectos se describe de una manera más comprensible si se utilizan distintos modelos o vistas. Es importante destacar que cada uno de ellos constituye una descripción parcial de una misma arquitectura y es deseable que exista cierto solapamiento entre ellos. Esto es así porque todas las vistas deben ser coherentes entre sí, evidente dado que describen la misma cosa.
+
+Cada paradigma de desarrollo exige diferente número y tipo de vistas o modelos para describir una arquitectura. No obstante, existen al menos tres vistas absolutamente fundamentales en cualquier arquitectura:
+- La visión estática: describe qué componentes tiene la arquitectura.
+- La visión funcional: describe qué hace cada componente.
+- La visión dinámica: describe cómo se comportan los componentes a lo largo del tiempo y como interactúan entre sí.
+
+Las vistas o modelos de una arquitectura de software pueden expresarse mediante uno o varios lenguajes. El más obvio es el lenguaje natural, pero existen otros lenguajes tales como los diagramas de estado, los diagramas de flujo de datos, etc. Estos lenguajes son apropiados únicamente para un modelo o vista. Afortunadamente existe cierto consenso en adoptar UML (Unified Modeling Language, lenguaje unificado de modelado) como lenguaje único para todos los modelos o vistas. Sin embargo, un lenguaje generalista corre el peligro de no ser capaz de describir determinadas restricciones de un sistema de información (o expresarlas de manera incomprensible).
+
+Arquitecturas más comunes
+
+Generalmente, no es necesario inventar una nueva arquitectura de software para cada sistema de información. Lo habitual es adoptar una arquitectura conocida en función de sus ventajas e inconvenientes para cada caso en concreto. Así, las arquitecturas más universales son:
+- Descomposicion Modular. Donde el software se estructura en grupos funcionales muy acoplados.
+- Cliente-servidor. Donde el software reparte su carga de cómputo en dos partes independientes pero sin reparto claro de funciones.
+- Arquitectura de tres niveles. Especialización de la arquitectura cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones: una capa para la presentación (interfaz de usuario), otra para el cálculo (donde se encuentra modelado el negocio) y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente.
+
+Otras arquitecturas afines menos conocidas son:
+- Modelo Vista Controlador.
+- En pipeline.
+- Entre pares.
+- En pizarra.
+- Orientada a servicios.
+- Dirigida por eventos.
+- Máquinas virtuales
+
+Bibliografía
+- Booch, Grady. Object-Oriented Analysis and Design. Second Edition. Benjamin/Cummings, Redwood: 1994.
+- Jacobson, Ivar, Grady Booch, and James Rumbaugh. El Proceso Unificado de Desarrollo de Software. México: Addison-Wesley, 1999.
+- Kruchten, Philippe. "Architectural Blueprints--The 4+1 View Model of Software Architecture". IEEE Software, Institute of Electrical and Electronics Engineers. November 1995, pp. 42-50.
+- Larman, Craig. UML y Patrones, Introducción al análisis y diseño orientado a objetos. México: Prentice Hall, 1999.
+- Martin, Robert C. "Design Principles and Design Patterns". Objectmentor
+- Muller, Pierre-Alain. Modèlisation Object avec UML. Paris: Eyrolles, 1997.
+- Wilson, Scott F. Analyzing Requirements and Defining Solution Architectures. Redmond: Microsoft Press, 1999.
+- Fernández Aramayo, David Ricardo. Arquitectura de Software. Universidad Tecmilenio, ITESM
+- Zapata Sanchez, Andres felipe. Arquitectura de Software www.fi.uba.ar
+- Meylin Siguas Villavicencio www.unpmsn.org

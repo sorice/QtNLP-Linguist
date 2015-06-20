@@ -1,0 +1,36 @@
+JUnit
+
+JUnit es un conjunto de bibliotecas creadas por Erich Gamma y Kent Beck que son utilizadas en programación para hacer pruebas unitarias de aplicaciones Java.
+
+JUnit es un conjunto de clases (framework) que permite realizar la ejecución de clases Java de manera controlada, para poder evaluar si el funcionamiento de cada uno de los métodos de la clase se comporta como se espera. Es decir, en función de algún valor de entrada se evalúa el valor de retorno esperado; si la clase cumple con la especificación, entonces JUnit devolverá que el método de la clase pasó exitosamente la prueba; en caso de que el valor esperado sea diferente al que regresó el método durante la ejecución, JUnit devolverá un fallo en el método correspondiente.
+
+JUnit es también un medio de controlar las pruebas de regresión, necesarias cuando una parte del código ha sido modificado y se desea ver que el nuevo código cumple con los requerimientos anteriores y que no se ha alterado su funcionalidad después de la nueva modificación.
+
+El propio framework incluye formas de ver los resultados (runners) que pueden ser en modo texto, gráfico (AWT o Swing) o como tarea en Ant.
+
+En la actualidad las herramientas de desarrollo como NetBeans y Eclipse cuentan con plug-ins que permiten que la generación de las plantillas necesarias para la creación de las pruebas de una clase Java se realice de manera automática, facilitando al programador enfocarse en la prueba y el resultado esperado, y dejando a la herramienta la creación de las clases que permiten coordinar las pruebas.
+
+JUnit 4
+
+Este framework se encuentra actualmente en la versión 4.6, con grandes mejoras. He aquí una pequeña relación:
+
+4.6
+- Incluye un nuevo Core experimental: MaxCore. Recuerda los resultados de ejecuciones previas. Existe un plug-in para Eclipse.
+- Incluye un método para indicar la máquina que ejecuta los tests.
+- Se pueden comparar Arrays: assertArrayEquals(new double[] {1.0, 2.0}, new double[] {1.0, 2.0}, 0.01);
+- Desde 4.0 se ha podido ejecutar un único método utilizando la API: Request.method. Ahora el filtro que implementa esta funcionalidad está expuesto en: Filter.matchDescription.
+
+Para más información: [2]
+
+4.5
+- Incluye anotaciones (Java 5 annotations) en lugar de utilizar herencia:
+    - @Test sustituye a la herencia de TestCase.
+    - @Before y @After como sustitutos de setUp y tearDown.
+    - Se añade @Ignore para deshabilitar tests.
+- Permite timeouts en los tests.
+- Configurar excepciones esperadas.
+- Ordenación, priorización, categorización y filtrado de tests.
+- Forward y backward compatibilidad.
+- Logging.
+- Más tipos de aserciones (ej: assertEquals(Object[], Object[]))
+- Se elimina la distinción entre errores (errors) y fallos (failures).

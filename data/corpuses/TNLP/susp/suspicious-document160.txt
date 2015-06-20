@@ -1,0 +1,44 @@
+Caso de prueba
+
+Un caso de prueba o test case es, en ingeniería del software, un conjunto de condiciones o variables bajo las cuáles un analista determinará si una aplicación, un sistema software (software system), o una característica de éstos es parcial o completamente satisfactoria.
+
+Se pueden realizar muchos casos de prueba para determinar que un requisito es completamente satisfactorio. Con el propósito de comprobar que todos los requisitos de una aplicación son revisados, debe haber al menos un caso de prueba para cada requisito a menos que un requisito tenga requisitos secundarios. En ese caso, cada requisito secundario deberá tener por lo menos un caso de prueba. Algunas metodologías como RUP recomiendan el crear por lo menos dos casos de prueba para cada requisito. Uno de ellos debe realizar la prueba positiva de los requisitos y el otro debe realizar la prueba negativa.
+
+Si la aplicación es creada sin requisitos formales, entonces los casos de prueba se escriben basados en la operación normal de programas de una clase similar.
+
+Lo que caracteriza un escrito formal de caso de prueba es que hay una entrada conocida y una salida esperada, los cuales son formulados antes de que se ejecute la prueba. La entrada conocida debe probar una precondición y la salida esperada debe probar una postcondición.
+
+Bajo circunstancias especiales, podría haber la necesidad de ejecutar la prueba, producir resultados, y luego un equipo de expertos evaluaría si los resultados se pueden considerar como "correctos". Esto sucede a menudo en la determinación del número del rendimiento de productos nuevos. La primera prueba se toma como línea base para los subsecuentes ciclos de pruebas/lanzamiento del producto.
+
+Los casos de prueba escritos, incluyen una descripción de la funcionalidad que se probará, la cuál es tomada ya sea de los requisitos o de los casos de uso, y la preparación requerida para asegurarse de que la prueba pueda ser dirigida.
+
+Los casos de prueba escritos se recogen generalmente en una suite de pruebas.
+
+Las variaciones de los casos de prueba son comúnmente utilizados en pruebas de aceptación. La prueba de aceptación es realizada por un grupo de usuarios finales o los clientes del sistema, para asegurarse que el sistema desarrollado cumple sus requisitos. La prueba de aceptación de usuario se distingue generalmente por la incorporación de un trayecto feliz o casos de prueba positivos.
+
+Estructura de los casos de prueba
+
+Formalmente, los casos de prueba escritos consisten principalmente en tres partes con subdivisiones:
+
+- Introducción/visión general: Contiene información general acerca de los Casos de Prueba.
+    - Identificador: Es un identificador único para futuras referencias, por ejemplo, mientras se describe un defecto encontrado.
+    - Caso de prueba dueño/creador: Es el nombre del analista o diseñador de pruebas, quien ha desarrollado pruebas o es responsable de su desarrollo.
+    - Versión: La actual definición del caso de prueba.
+    - Nombre: El caso de prueba debe ser un título entendible por personas, para la fácil comprensión del propósito del caso de prueba y su campo de aplicación.
+    - Identificador de requerimientos el cuál está incluido por el caso de prueba. También aquí puede ser un identificador de casos de uso o de especificación funcional.
+    - Propósito: Contiene una breve descripción del propósito de la prueba, y la funcionalidad que chequea.
+    - Dependencias: Indica qué otros subsistemas están involucrados y en qué grado.
+- Actividades de los casos de prueba
+    - Ambiente de prueba/configuración: Contiene información acerca de la configuración del hardware o software en el cuál se ejecutará el caso de prueba.
+    - Inicialización: Describe acciones, que deben ser ejecutadas antes de que los casos de prueba se hayan inicializado. Por ejemplo, debemos abrir algún archivo.
+    - Finalización: Describe acciones, que deben ser ejecutadas después de realizado el caso de prueba. Por ejemplo si el caso de prueba estropea la base de datos, el analista debe restaurarla antes de que otro caso de prueba sea ejecutado.
+    - Acciones: Pasos a realizar para completar la prueba.
+    - Descripción de los datos de entrada
+- Resultados
+    - Salida esperada: Contiene una descripción de lo que el analista debería ver tras haber completado todos los pasos de la prueba.
+    - Salida obtenida: Contiene una breve descripción de lo que el analista encuentra después de que los pasos de prueba se hayan completado.
+    - Resultado: Indica el resultado cualitativo de la ejecución del caso de prueba, a menudo con un Correcto/Fallido.
+    - Severidad: Indica el impacto del defecto en el sistema: Grave, Mayor, Normal, Menor.
+    - Evidencia: En los casos que aplica, contiene un link al print de pantalla (screenshot) donde se evidencia la salida obtenida.
+    - Seguimiento: Si un caso de prueba falla, frecuentemente la referencia al defecto implicado se debe enumerar en esta columna. Contiene el código correlativo del defecto, a menudo corresponde al código del sistema de tracking de bugs que se esté usando.
+    - Estado: Indica si el caso de prueba está: No iniciado, En curso, o terminado.

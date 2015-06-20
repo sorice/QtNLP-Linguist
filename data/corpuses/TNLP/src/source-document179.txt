@@ -1,0 +1,109 @@
+Diagrama de flujo
+
+El diagrama de flujo o diagrama de actividades es la representación gráfica del algoritmo o proceso. Se utiliza en disciplinas como programación, economía, procesos industriales y psicología cognitiva.
+
+En Lenguaje Unificado de Modelado (UML), un diagrama de actividades representa los flujos de trabajo paso a paso de negocio y operacionales de los componentes en un sistema. Un diagrama de actividades muestra el flujo de control general.
+
+En SysML el diagrama de actividades ha sido extendido para indicar flujos entre pasos que mueven elementos físicos (p.ej., gasolina) o energía (p.ej., presión). Los cambios adicionales permiten al diagrama soportar mejor flujos de comportamiento y datos continuos.
+
+Estos diagramas utilizan símbolos con significados definidos que representan los pasos del algoritmo, y representan el flujo de ejecución mediante flechas que conectan los puntos de inicio y de fin de proceso.
+
+Normas de trabajo
+
+Un diagrama de flujo presenta generalmente un único punto de inicio y un único punto de cierre, aunque puede tener más, siempre que cumpla con la lógica requerida.
+
+Las siguientes son acciones previas a la realización del diagrama de flujo:
+- Identificar las ideas principales al ser incluidas en el diagrama de flujo. Deben estar presentes el autor o responsable del proceso, los autores o responsables del proceso anterior y posterior y de otros procesos interrelacionados, así como las terceras partes interesadas.
+- Definir qué se espera obtener del diagrama de flujo.
+- Identificar quién lo empleará y cómo.
+- Establecer el nivel de detalle requerido.
+- Determinar los límites del proceso a describir.
+
+Los pasos a seguir para construir el diagrama de flujo son:
+- Establecer el alcance del proceso a describir. De esta manera quedará fijado el comienzo y el final del diagrama. Frecuentemente el comienzo es la salida del proceso previo y el final la entrada al proceso siguiente.
+- Identificar y listar las principales actividades/subprocesos que están incluidos en el proceso a describir y su orden cronológico.
+- Si el nivel de detalle definido incluye actividades menores, listarlas también.
+- Identificar y listar los puntos de decisión.
+- Construir el diagrama respetando la secuencia cronológica y asignando los correspondientes símbolos.
+- Asignar un título al diagrama y verificar que esté completo y describa con exactitud el proceso elegido.
+
+Descripción
+
+En UML 1.x, un diagrama de actividades es una variación del diagrama de estado UML donde los "estados" representan operaciones, y las transiciones representan las actividades que ocurren cuando la operación es completa.
+
+El diagrama de mensajes de UML 2.0, mientras que es similar en aspecto al diagrama de actividades UML 1.x, ahora tiene semánticas basadas en redes de Petri. En UML 2.0, el diagrama general de interacción está basado en el diagrama de actividades. El diagrama de actividad es una forma especial de diagrama de estado usado para modelar una secuencia de acciones y condiciones tomadas dentro de un proceso.
+
+La especificación del Lenguaje de Modelado Unificado (UML) define un diagrama de actividad como:
+
+“… una variación de una máquina estados, lo cual los estados representan el rendimiento de las acciones o subactividades y las transiciones se provocan por la realización de las acciones o subactividades.”1
+
+El propósito del diagrama de actividad es modelar un proceso de flujo de trabajo (workflow) y/o modelar operaciones.
+
+Una Operación es un servicio proporcionado por un objeto, que está disponible a través de una interfaz.
+
+Una Interfaz es un grupo de operaciones relacionadas con la semántica.
+
+Tipos de diagramas de flujo
+- Formato vertical: En él, el flujo y la secuencia de las operaciones, va de arriba hacia abajo. Es una lista ordenada de las operaciones de un proceso con toda la información que se considere necesaria, según su propósito.
+- Formato horizontal: En él, el flujo o la secuencia de las operaciones, va de izquierda a derecha.
+- Formato panorámico: El proceso entero está representado en una sola carta y puede apreciarse de una sola mirada mucho más rápido que leyendo el texto, lo que facilita su comprensión, aun para personas no familiarizadas. Registra no solo en línea vertical, sino también horizontal, distintas acciones simultáneas y la participación de más de un puesto o departamento que el formato vertical no registra.
+- Formato Arquitectónico: Describe el itinerario de ruta de una forma o persona sobre el plano arquitectónico del área de trabajo. El primero de los flujogramas es eminentemente descriptivo, mientras que los utilizados son fundamentalmente representativos.
+
+Simbología y significado
+- Óvalo o Elipse: Inicio y término (Abre y cierra el diagrama).
+- Rectángulo: Actividad (Representa la ejecución de una o más actividades o procedimientos).
+- Rombo: Decisión (Formula una pregunta o cuestión).
+- Círculo: Conector (Representa el enlace de actividades con otra dentro de un procedimiento).
+- Triángulo boca abajo: Archivo definitivo (Guarda un documento en forma permanente).
+- Triángulo boca arriba: Archivo temporal (Proporciona un tiempo para el almacenamiento del documento).
+
+Cursograma
+
+Se trata de la más común y práctica entre todas las clases de diagramas de flujo. Describe el flujo de información en un ente u organización, sus procesos, sistemas administrativos y de control. Permite la impresión visual de los procedimientos y una clara y lógica interpretación.
+
+Simbología y normas del cursograma
+- Círculo: Procedimiento estandarizado.
+- Cuadrado: Proceso de control.
+- Línea continua: Flujo de información vía formulario o documentación en soporte de papel escrito.
+- Línea interrumpida: Flujo de información vía formulario digital.
+- Rectángulo: Formulario o documentación. Se grafíca con un doble de ancho que su altura.
+- Rectángulo Pequeño: Valor o medio de pago (cheque, pagaré, etc.). Se grafíca con un cuádruple de ancho que su altura, siendo su ancho igual al de los formularios.
+- Triángulo (base inferior): Archivo definitivo.
+- Triángulo Invertido (base superior): Archivo Transitorio.
+- Semióvalo: Demora.
+- Rombo: División entre opciones.
+- Trapezoide: Carga de datos al sistema.
+- Elipsoide: Acceso por pantalla.
+- Hexágono: Proceso no representado.
+- Pentágono: Conector.
+- Cruz de Diagonales: Destrucción de Formularios.
+
+Según la normativa, el flujo presupuesto es de izquierda a derecha y de arriba hacia abajo, siendo optativo el uso de flechas. Cuando el sentido es invertido (de derecha a izquierda o de abajo hacia arriba), es obligatorio el uso de la flecha.
+
+Historia
+
+La paternidad del diagrama de flujo es en principio algo difusa. El método estructurado para documentar gráficamente un proceso como un flujo de pasos sucesivo y alternativos, el "proceso de diagrama de flujo", fue expuesto por Frank Gilbreth, en la Sociedad Americana de Ingenieros Mecánicos (ASME), en 1921, bajo el enunciado de "Proceso de Gráficas-Primeros pasos para encontrar el mejor modo". Estas herramientas de Gilbreth rápidamente encontraron sitio en los programas de ingeniería industrial.
+
+Al principio de los 30, un ingeniero industrial, Allan H. Mogensen comenzó la formación de personas de negocios en Lake Placid, Nueva York, incluyendo el uso del diagrama de flujo. Art Spinanger, asistente a las clases de Mogesen, utilizó las herramientas en su trabajo en Procter & Gamble, donde desarrolló su “Programa Metódico de Cambios por Etapas”. Otro asistente al grupo de graduados en 1944, Ben S. Graham, director de ingeniería de Formcraft Standard Register Corporation, adaptó la gráfica de flujo de procesos al tratamiento de la información en su empresa. Y desarrolló la gráfica del proceso de múltiples flujos en múltiples pantallas, documentos, y sus relaciones. En 1947, ASME adoptó un conjunto de símbolos derivados de la obra original de Gilbreth como Norma ASME para los gráficos de procesos (preparada Mishad, Ramsan y Raiaan).
+
+Sin embargo, según explica Douglas Hartree fueron originalmente Herman Goldstine y John von Neumann quienes desarrollaron el diagrama de flujo (inicialmente llamado "diagrama") para planificar los programas de ordenador. Las tablas de programación original de flujo de Goldstine y von Neumann, aparecen en un informe no publicado, "Planificación y codificación de los problemas de un instrumento de computación electrónica, la Parte II, Volumen 1 "(1947), reproducido en las obras completas de von Neumann.
+
+Inicialmente los diagramas de flujo resultaron un medio popular para describir algoritmos de computadora, y aún se utilizan con este fin. Herramientas como los diagramas de actividad UML, pueden ser considerados como evoluciones del diagrama de flujo.
+
+En la década de 1970 la popularidad de los diagramas de flujo como método propio de la informática disminuyó, con el nuevo hardware y los nuevos lenguajes de programación de tercera generación. Y por otra parte se convirtieron en instrumentos comunes en el mundo empresarial. Son una expresión concisa, legible y práctica de algoritmos. Actualmente se aplican en muchos campos del conocimiento, especialmente como simplificación y expresión lógica de procesos, etc.
+
+Ventajas de los diagramas de flujo
+- Favorecen la comprensión del proceso al mostrarlo como un dibujo. El cerebro humano reconoce muy fácilmente los dibujos. Un buen diagrama de flujo reemplaza varias páginas de texto.
+- Permiten identificar los problemas y las oportunidades de mejora del proceso. Se identifican los pasos, los flujos de los reprocesos, los conflictos de autoridad, las responsabilidades, los cuellos de botella, y los puntos de decisión.
+- Muestran las interfaces cliente-proveedor y las transacciones que en ellas se realizan, facilitando a los empleados el análisis de las mismas.
+- Son una excelente herramienta para capacitar a los nuevos empleados y también a los que desarrollan la tarea, cuando se realizan mejoras en el proceso.
+- Al igual que el pseudocódigo, el diagrama de flujo con fines de análisis de algoritmos de programación puede ser ejecutado en un ordenador, con un IDE como Free DFD.
+
+Software para diseño de diagramas de flujo
+
+Actualmente existe una gran cantidad de software para la elaboración de diagramas de flujo. A continuación se listan los programas más comunes para elaborar diagramas de flujo.
+- Microsoft Office ofrece 3 herramientas útiles para la elaboración de diagramas. Uno de ellos es Microsoft Office Word, que nos permite crear diagramas de flujo básicos a través de la opción "Formas" que tiene un apartado especial para diagramas de flujo. De igual manera Microsoft Office Power Point ofrece las mismas opciones para crear los diseños de diagramas de flujo. Otra herramienta un poco más sofisticada es Microsoft Office Visio, que además de la simbología básica de los diagramas de flujo cuenta con una variedad de herramientas para elaborar otros tipos de diagramas como es el caso diagramas UML entre otros tipos de diagramas de flujo.
+- Otro programa eficiente y muy fácil de usar es el programa "Dia" que brinda una solución rápida para la creación de diagramas de flujo además de otro tipo de diagramas usados en el ambiente informático. Es considerado la versión no comercial de Microsoft Visio.
+
+Referencias
+- Bellows, Jeannie, Castek (2000). Activity Diagrams and Operation Architecture. Technologies Group Inc.

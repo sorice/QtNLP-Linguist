@@ -1,0 +1,40 @@
+Algoritmo de Boruvka
+
+Historia
+
+El Algoritmo de Borůvka es un algoritmo para encontrar el mínimo árbol de expansión en un grafo ponderado en el que todos sus arcos tienen distinto peso.
+
+Fue publicado por primera vez en 1926 por Otakar Borůvka como un método eficiente para construir la red eléctrica de Moravia.1 2 El algoritmo fue redescubierto por Choquet en 1938;3 de nuevo por Florek, Łukasiewicz, Perkal, Steinhaus y Zubrzycki en 1951; y de nuevo por Sollin a principio de la década de 1960. Debido a que Sollin fue el único de ellos que era científico en computación, este algoritmo es frecuentemente llamado Algoritmo de Sollin, especialmente en la literatura sobre computación paralela.
+
+Algoritmo
+
+El algoritmo comienza examinando cada vértice y añadiendo el arco de menor peso desde ese vértice a otro en el grafo, sin tener en cuenta los arcos ya agregados, y continua uniendo estos grupos de la misma manera hasta que se completa un árbol que cubra todos los vértices. Si denominamos a cada vértice o conjunto de vértices conectados como «componente», el pseudocódigo del Algoritmo de Boruvka es:
+
+- Comenzar con un grafo conexo G en el que todos sus arcos tengan distinto peso, y un conjunto vacío de arcos T.
+- Mientras los vértices de G conectados por T sean disjuntos:
+    - Crear un conjunto vacío de arcos S
+    - Para cada componente:
+        - Crear un conjunto vacío de arcos S
+        - Para cada vértice v en el componente:
+            - Agregar el arco de menor peso desde el vértice v a otro vértice en un componente disjunto a S
+        - Añadir el arco de menor peso en S a E
+    - Añadir el conjunto resultante E a T.
+- El conjunto de aristas resultante T es el árbol de expansión mínimo de G.
+
+Complejidad
+
+Con el Algoritmo de Boruvka se puede obtener una complejidad de O(\log (V)) iteraciones en el bucle externo antes de terminar, y por lo tanto su complejidad temporal es O(E \log(V)), donde E es el número de arcos, y V es el número de vértices de G. En grafos planos puede implementarse para ejecutarse en tiempo lineal, eliminando los arcos de menor peso entre cada par de nodos después de cada etapa del algoritmo.4
+
+Otros algoritmos
+
+Entre otros algoritmos para este problema se incluyen el Algoritmo de Prim (realmente descubierto por Vojtech Jarnik) y el Algoritmo de Kruskal. Algoritmos más rápidos pueden ser obtenidos combinando el Algoritmo de Prim con el Algoritmo de Boruvka.
+
+El algoritmo más rápido para hallar el árbol de recubrimiento mínimo aleatorio está basado en parte en el algoritmo de Boruvka gracias a Karger, Klein y Tarjan y se obtiene una complejidad O(E).
+
+El mejor algoritmo (determinista) conocido para encontrar el árbol mínimo de recubrimiento de Bernard Chazelle está también basado en parte en el Algoritmo de Boruvka y tiene complejidad temporal O(E \alpha(V)), donde \alpha es la inversa de la Función de Ackermann. Estos algoritmos aleatorios y deterministas combinan pasos del Algoritmo de Boruvka reduciendo el número de nodos que quedan por conectar, con pasos de diferente tipo que reduzcan el número de arcos entre cada par de nodos.
+
+Referencias
+- Borůvka, Otakar (1926). «O jistém problému minimálním (About a certain minimal problem)» (en Czech, German summary). Práce mor. přírodověd. spol. v Brně III 3:  pp. 37–58.
+- Borůvka, Otakar (1926). «Příspěvek k řešení otázky ekonomické stavby elektrovodních sítí (Contribution to the solution of a problem of economical construction of electrical networks)» (en Czech). Elektronický Obzor 15:  pp. 153–154.
+- Choquet, Gustave (1938). «Étude de certains réseaux de routes» (en francés). Comptes-rendus de l’Académie des Sciences 206:  pp. 310–313.
+- Eppstein, David (1999), «Spanning trees and spanners», en Sack, J.-R.; Urrutia, J., Handbook of Computational Geometry, Elsevier, pp. 425–461; Mareš, Martin (2004), «Two linear time algorithms for MST on minor closed graph classes», Archivum mathematicum 40 (3): 315–320.

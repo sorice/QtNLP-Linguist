@@ -1,0 +1,361 @@
+Sistema de información geográfica
+
+Un Sistema de Información Geográfica (también conocido con los acrónimos SIG en español o GIS en inglés) es un conjunto de herramientas que integra y relaciona diversos componentes (usuarios, hardware, software, procesos) que permiten la organización, almacenamiento, manipulación, análisis y modelización de grandes cantidades de datos procedentes del mundo real que están vinculados a una referencia espacial, facilitando la incorporación de aspectos sociales-culturales, económicos y ambientales que conducen a la toma de decisiones de una manera más eficaz.
+
+En el sentido más estricto, es cualquier sistema de información capaz de integrar, almacenar, editar, analizar, compartir y mostrar la información geográficamente referenciada. En un sentido más genérico, los SIG son herramientas que permiten a los usuarios crear consultas interactivas, analizar la información espacial, editar datos, mapas y presentar los resultados de todas estas operaciones.
+
+La tecnología de los Sistemas de Información Geográfica puede ser utilizada para investigaciones científicas, la gestión de los recursos, la gestión de activos, la arqueología, la evaluación del impacto ambiental, la planificación urbana, la cartografía, la sociología, la geografía histórica, el marketing, la logística por nombrar unos pocos. Por ejemplo, un SIG podría permitir a los grupos de emergencia calcular fácilmente los tiempos de respuesta en caso de un desastre natural, o encontrar los humedales que necesitan protección contra la contaminación, o pueden ser utilizados por una empresa para ubicar un nuevo negocio y aprovechar las ventajas de una zona de mercado con escasa competencia.
+
+Funcionamiento de un SIG
+
+El SIG funciona como una base de datos con información geográfica (datos alfanuméricos) que se encuentra asociada por un identificador común a los objetos gráficos de los mapas digitales. De esta forma, señalando un objeto se conocen sus atributos e, inversamente, preguntando por un registro de la base de datos se puede saber su localización en la cartografía.
+
+La razón fundamental para utilizar un SIG es la gestión de información espacial. El sistema permite separar la información en diferentes capas temáticas y las almacena independientemente, permitiendo trabajar con ellas de manera rápida y sencilla, facilitando al profesional la posibilidad de relacionar la información existente a través de la topología geoespacial de los objetos, con el fin de generar otra nueva que no podríamos obtener de otra forma.
+
+Las principales cuestiones que puede resolver un sistema de información geográfica, ordenadas de menor a mayor complejidad, son:
+1. Localización: preguntar por las características de un lugar concreto.
+2. Condición: el cumplimiento o no de unas condiciones impuestas al sistema.
+3. Tendencia: comparación entre situaciones temporales o espaciales distintas de alguna característica.
+4. Rutas: cálculo de rutas óptimas entre dos o más puntos.
+5. Pautas: detección de pautas espaciales.
+6. Modelos: generación de modelos a partir de fenómenos o actuaciones simuladas.
+
+Por ser tan versátiles, el campo de aplicación de los sistemas de información geográfica es muy amplio, pudiendo utilizarse en la mayoría de las actividades con un componente espacial. La profunda revolución que han provocado las nuevas tecnologías ha incidido de manera decisiva en su evolución.
+
+Historia de su desarrollo
+
+Hace unos 15.000 años1 en las paredes de las cuevas de Lascaux (Francia) los hombres de Cro-Magnon pintaban en las paredes los animales que cazaban, asociando estos dibujos con trazas lineales que, se cree, cuadraban con las rutas de migración de esas especies.2 Si bien este ejemplo es simplista en comparación con las tecnologías modernas, estos antecedentes tempranos imitan a dos elementos de los sistemas de información geográfica modernos: una imagen asociada con un atributo de información.3
+
+En 1854 el pionero de la epidemiología, el Dr. John Snow, proporcionaría otro clásico ejemplo de este concepto cuando cartografió, en un ya famoso mapa, la incidencia de los casos de cólera en el distrito de Soho en Londres.4 Este protoSIG, uno de los ejemplos más tempranos del método geográfico,5 permitió a Snow localizar con precisión un pozo de agua contaminado como la fuente causante del brote.
+
+Si bien la cartografía topográfica y temática ya existía previamente, el mapa de John Snow fue el único hasta el momento, que, utilizando métodos cartográficos, no solo representaba la realidad, sino que por primera vez analizaba conjuntos de fenómenos geográficos dependientes.
+
+El comienzo del siglo XX vio el desarrollo de la "foto litografía" donde los mapas eran separados en capas. El avance del hardware impulsado por la investigación en armamento nuclear daría lugar, a comienzos de los años 60, al desarrollo de aplicaciones cartográficas para computadores de propósito general.6
+
+El año 1962 vio la primera utilización real de los SIG en el mundo, concretamente en Ottawa (Ontario, Canadá) y a cargo del Departamento Federal de Silvicultura y Desarrollo Rural. Desarrollado por Roger Tomlinson, el llamado Sistema de información geográfica de Canadá (Canadian Geographic Information System, CGIS) fue utilizado para almacenar, analizar y manipular datos recogidos para el Inventario de Tierras Canadá (Canada Land Inventory, CLI) - una iniciativa orientada a la gestión de los vastos recursos naturales del país con información cartográfica relativa a tipos y usos del suelo, agricultura, espacios de recreo, vida silvestre, aves acuáticas y silvicultura, todo ello a una escala de 1:50.000. Se añadió, así mismo, un factor de clasificación para permitir el análisis de la información.
+
+El Sistema de información geográfica de Canadá fue el primer SIG en el mundo similar a tal y como los conocemos hoy en día, y un considerable avance con respecto a las aplicaciones cartográficas existentes hasta entonces, puesto que permitía superponer capas de información, realizar mediciones y llevar a cabo digitalizaciones y escaneos de datos. Asimismo, soportaba un sistema nacional de coordenadas que abarcaba todo el continente, una codificación de líneas en "arcos" que poseían una verdadera topológica integrada y que almacenaba los atributos de cada elemento y la información sobre su localización en archivos separados. Como consecuencia de esto, Tomlinson está considerado como "el padre de los SIG", en particular por el empleo de información geográfica convergente estructurada en capas, lo que facilita su análisis espacial.7 El CGIS estuvo operativo hasta la década de los 90 llegando a ser la base de datos sobre recursos del territorio más grande de Canadá. Fue desarrollado como un sistema basado en una computadora central y su fortaleza radicaba en que permitía realizar análisis complejos de conjuntos de datos que abarcaban todo el continente. El software, decano de los sistemas de información geográfica, nunca estuvo disponible de manera comercial.
+
+En 1964, Howard T. Fisher formó en la Universidad de Harvard el Laboratorio de Computación Gráfica y Análisis Espacial en la Harvard Graduate School of Design (LCGSA 1965-1991), donde se desarrollaron una serie de importantes conceptos teóricos en el manejo de datos espaciales, y en la década de 1970 había difundido código de software y sistemas germinales, tales como SYMAP, GRID y ODYSSEY - los cuales sirvieron como fuentes de inspiración conceptual para su posterior desarrollos comerciales - a universidades, centros de investigación y empresas de todo el mundo.8
+
+En la década de los 80, M&S Computing (más tarde Intergraph), Environmental Systems Research Institute (ESRI) y CARIS (Computer Aided Resource Information System) emergerían como proveedores comerciales de software SIG. Incorporaron con éxito muchas de las características de CGIS, combinando el enfoque de primera generación de sistemas de información geográfica relativo a la separación de la información espacial y los atributos de los elementos geográficos representados con un enfoque de segunda generación que organiza y estructura estos atributos en bases de datos.
+
+En la década de los años 70 y principios de los 80 se inició en paralelo el desarrollo de dos sistemas de dominio público. El proyecto Map Overlay and Statistical System (MOSS) se inició en 1977 en Fort Collins (Colorado, EE. UU.) bajo los auspicios de la Western Energy and Land Use Team (WELUT) y el Servicio de Pesca y Vida Silvestre de Estados Unidos (US Fish and Wildlife Service). En 1982 el Cuerpo de Ingenieros del Laboratorio de Investigación de Ingeniería de la Construcción del Ejército de los Estados Unidos (USA-CERL) desarrolla GRASS como herramienta para la supervisión y gestión medioambiental de los territorios bajo administración del Departamento de Defensa.
+
+Esta etapa de desarrollo está caracterizada, en general, por la disminución de la importancia de las iniciativas individuales y un aumento de los intereses a nivel corporativo, especialmente por parte de las instancias gubernamentales y de la administración.
+
+Los 80 y 90 fueron años de fuerte aumento de las empresas que comercializaban estos sistemas, debido el crecimiento de los SIG en estaciones de trabajo UNIX y ordenadores personales. Es el periodo en el que se ha venido a conocer en los SIG como la fase comercial. El interés de las distintas grandes industrias relacionadas directa o indirectamente con los SIG crece en sobremanera debido a la gran avalancha de productos en el mercado informático internacional que hicieron generalizarse a esta tecnología.
+
+En la década de los noventa se inicia una etapa comercial para profesionales, donde los sistemas de información geográfica empezaron a difundirse al nivel del usuario doméstico debido a la generalización de los ordenadores personales o microordenadores.
+
+A finales del siglo XX principio del XXI el rápido crecimiento en los diferentes sistemas se ha consolidado, restringiéndose a un número relativamente reducido de plataformas. Los usuarios están comenzando a exportar el concepto de visualización de datos SIG a Internet, lo que requiere una estandarización de formato de los datos y de normas de transferencia. Más recientemente, ha habido una expansión en el número de desarrollos de software SIG de código libre, los cuales, a diferencia del software comercial, suelen abarcar una gama más amplia de sistemas operativos, permitiendo ser modificados para llevar a cabo tareas específicas.
+
+Técnicas utilizadas en los sistemas de información geográfica
+
+La creación de datos
+
+Las modernas tecnologías SIG trabajan con información digital, para la cual existen varios métodos utilizados en la creación de datos digitales. El método más utilizado es la digitalización, donde a partir de un mapa impreso o con información tomada en campo se transfiere a un medio digital por el empleo de un programa de Diseño Asistido por Ordenador (DAO o CAD) con capacidades de georreferenciación.
+
+Dada la amplia disponibilidad de imágenes orto-rectificadas (tanto de satélite y como aéreas), la digitalización por esta vía se está convirtiendo en la principal fuente de extracción de datos geográficos. Esta forma de digitalización implica la búsqueda de datos geográficos directamente en las imágenes aéreas en lugar del método tradicional de la localización de formas geográficas sobre un tablero de digitalización.
+
+La representación de los datos
+
+Los datos SIG representan los objetos del mundo real (carreteras, el uso del suelo, altitudes). Los objetos del mundo real se pueden dividir en dos abstracciones: objetos discretos (una casa) y continuos (cantidad de lluvia caída, una elevación). Existen dos formas de almacenar los datos en un SIG: raster y vectorial.
+
+Los SIG que se centran en el manejo de datos en formato vectorial son más populares en el mercado. No obstante, los SIG raster son muy utilizados en estudios que requieran la generación de capas continuas, necesarias en fenómenos no discretos; también en estudios medioambientales donde no se requiere una excesiva precisión espacial (contaminación atmosférica, distribución de temperaturas, localización de especies marinas, análisis geológicos, etc.).
+
+Raster
+
+Un tipo de datos raster es, en esencia, cualquier tipo de imagen digital representada en mallas. El modelo de SIG raster o de retícula se centra en las propiedades del espacio más que en la precisión de la localización. Divide el espacio en celdas regulares donde cada una de ellas representa un único valor. Se trata de un modelo de datos muy adecuado para la representación de variables continuas en el espacio.
+
+Cualquiera que esté familiarizado con la fotografía digital reconoce el píxel como la unidad menor de información de una imagen. Una combinación de estos píxeles creará una imagen, a distinción del uso común de gráficos vectoriales escalables que son la base del modelo vectorial. Si bien una imagen digital se refiere a la salida como una representación de la realidad, en una fotografía o el arte transferidos a la computadora, el tipo de datos raster reflejará una abstracción de la realidad. Las fotografías aéreas son una forma de datos raster utilizada comúnmente con un sólo propósito: mostrar una imagen detallada de un mapa base sobre la que se realizarán labores de digitalización. Otros conjuntos de datos raster podrán contener información referente a las elevaciones del terreno (un Modelo Digital del Terreno), o de la reflexión de la luz de una particular longitud de onda (por ejemplo las obtenidas por el satélite LandSat), entre otros.
+
+Los datos raster se compone de filas y columnas de celdas, cada celda almacena un valor único. Los datos raster pueden ser imágenes (imágenes raster), con un valor de color en cada celda (o píxel). Otros valores registrados para cada celda puede ser un valor discreto, como el uso del suelo, valores continuos, como temperaturas, o un valor nulo si no se dispone de datos. Si bien una trama de celdas almacena un valor único, estas pueden ampliarse mediante el uso de las bandas del raster para representar los colores RGB (rojo, verde, azul), o una tabla extendida de atributos con una fila para cada valor único de células. La resolución del conjunto de datos raster es el ancho de la celda en unidades sobre el terreno.
+
+Los datos raster se almacenan en diferentes formatos, desde un archivo estándar basado en la estructura de TIFF, JPEG, etc. a grandes objetos binarios (BLOB), los datos almacenados directamente en Sistema de gestión de base de datos. El almacenamiento en bases de datos, cuando se indexan, por lo general permiten una rápida recuperación de los datos raster, pero a costa de requerir el almacenamiento de millones registros con un importante tamaño de memoria. En un modelo raster cuanto mayores sean las dimensiones de las celdas menor es la precisión o detalle (resolución) de la representación del espacio geográfico.
+
+Vectorial
+
+En un SIG, las características geográficas se expresan con frecuencia como vectores, manteniendo las características geométricas de las figuras.
+
+En los datos vectoriales, el interés de las representaciones se centra en la precisión de la localización de los elementos geográficos sobre el espacio y donde los fenómenos a representar son discretos, es decir, de límites definidos. Cada una de estas geometrías está vinculada a una fila en una base de datos que describe sus atributos. Por ejemplo, una base de datos que describe los lagos puede contener datos sobre la batimetría de estos, la calidad del agua o el nivel de contaminación. Esta información puede ser utilizada para crear un mapa que describa un atributo particular contenido en la base de datos. Los lagos pueden tener un rango de colores en función del nivel de contaminación. Además, las diferentes geometrías de los elementos también pueden ser comparadas. Así, por ejemplo, el SIG puede ser usado para identificar aquellos pozos (geometría de puntos) que están en torno a 2 kilómetros de un lago (geometría de polígonos) y que tienen un alto nivel de contaminación.
+
+Los elementos vectoriales pueden crearse respetando una integridad territorial a través de la aplicación de unas normas topológicas tales como que "los polígonos no deben superponerse". Los datos vectoriales se pueden utilizar para representar variaciones continuas de fenómenos. Las líneas de contorno y las redes irregulares de triángulos (TIN) se utilizan para representar la altitud u otros valores en continua evolución. Los TIN son registros de valores en un punto localizado, que están conectados por líneas para formar una malla irregular de triángulos. La cara de los triángulos representan, por ejemplo, la superficie del terreno.
+
+Para modelar digitalmente las entidades del mundo real se utilizan tres elementos geométricos: el punto, la línea y el polígono.9
+- Puntos
+    Los puntos se utilizan para las entidades geográficas que mejor pueden ser expresadas por un único punto de referencia. En otras palabras: la simple ubicación. Por ejemplo, las localizaciones de los pozos, picos de elevaciones o puntos de interés. Los puntos transmiten la menor cantidad de información de estos tipos de archivo y no son posibles las mediciones. También se pueden utilizar para representar zonas a una escala pequeña. Por ejemplo, las ciudades en un mapa del mundo estarán representadas por puntos en lugar de polígonos.
+- Líneas o polilíneas
+    Las líneas unidimensionales o polilíneas10 son usadas para rasgos lineales como ríos, caminos, ferrocarriles, rastros, líneas topográficas o curvas de nivel. De igual forma que en las entidades puntuales, en pequeñas escalas pueden ser utilizados para representar polígonos. En los elementos lineales puede medirse la distancia.
+- Polígonos
+    Los polígonos bidimensionales se utilizan para representar elementos geográficos que cubren un área particular de la superficie de la tierra. Estas entidades pueden representar lagos, límites de parques naturales, edificios, provincias, o los usos del suelo, por ejemplo. Los polígonos transmiten la mayor cantidad de información en archivos con datos vectoriales y en ellos se pueden medir el perímetro y el área.
+
+Ventajas y desventajas de los modelos raster y vectorial
+
+Existen ventajas y desventajas a la hora de utilizar un modelo de datos raster o vector para representar la realidad
+
+Ventajas
+
+Vectorial 	Raster
+La estructura de los datos es compacta. Almacena los datos sólo de los elementos digitalizados por lo que requiere menos memoria para su almacenamiento y tratamiento. 	La estructura de los datos es muy simple.
+Codificación eficiente de la topología y las operaciones espaciales. 	Las operaciones de superposición son muy sencillas.
+Buena salida gráfica. Los elementos son representados como gráficos vectoriales que no pierden definición si se amplía la escala de visualización. 	Formato óptimo para variaciones altas de datos.
+Tienen una mayor compatibilidad con entornos de bases de datos relacionales. 	Buen almacenamiento de imágenes digitales
+Las operaciones de re-escalado, reproyección son más fáciles de ejecutar.
+Los datos son más fáciles de mantener y actualizar.
+En algunos aspectos permite una mayor capacidad de análisis, sobre todo en redes.
+
+Desventajas
+
+Vectorial 	Raster
+La estructura de los datos es más compleja. 	Mayor requerimiento de memoria de almacenamiento. Todas las celdas contienen datos.
+Las operaciones de superposición son más difíciles de implementar y representar. 	Las reglas topológicas son más difíciles de generar.
+Eficacia reducida cuando la variación de datos es alta. 	Las salidas gráficas son menos vistosas y estéticas. Dependiendo de la resolución del archivo raster, los elementos pueden tener sus límites originales más o menos definidos.
+Es un formato más laborioso de mantener actualizado.
+
+Datos no espaciales
+
+Los datos no espaciales también pueden ser almacenados junto con los datos espaciales, aquellos representados por las coordenadas de la geometría de un vector o por la posición de una celda raster. En los datos vectoriales, los datos adicionales contiene atributos de la entidad geográfica. Por ejemplo, un polígono de un inventario forestal también puede tener un valor que funcione como identificador e información sobre especies de árboles. En los datos raster el valor de la celda puede almacenar la información de atributo, pero también puede ser utilizado como un identificador referido a los registros de una tabla.
+
+La captura de los datos
+
+La captura de datos, y la introducción de información en el sistema consume la mayor parte del tiempo de los profesionales de los SIG. Hay una amplia variedad de métodos utilizados para introducir datos en un SIG almacenados en un formato digital.
+
+Los datos impresos en papel o mapas en película PET pueden ser digitalizados o escaneados para producir datos digitales.
+
+Con la digitalización de cartografía en soporte analógico se producen datos vectoriales a través de trazas de puntos, líneas, y límites de polígonos. Este trabajo puede ser desarrollado por una persona de forma manual o a través de programas de vectorización que automatizan la labor sobre un mapa escaneado. No obstante, en este último caso siempre será necesario su revisión y edición manual, dependiendo del nivel de calidad que se desea obtener.
+
+Los datos obtenidos de mediciones topográficas pueden ser introducidos directamente en un SIG a través de instrumentos de captura de datos digitales mediante una técnica llamada geometría analítica. Además, las coordenadas de posición tomadas a través un Sistema de Posicionamiento Global (GPS) también pueden ser introducidas directamente en un SIG.
+
+Los sensores remotos también juegan un papel importante en la recolección de datos. Son sensores, como cámaras, escáneres o LIDAR acoplados a plataformas móviles como aviones o satélites.
+
+Actualmente, la mayoría de datos digitales provienen de la interpretación de fotografías aéreas. Para ello se utilizan estaciones de trabajo que digitalizan directamente elementos geográficos a través de pares estereoscópicos de fotografías digitales. Estos sistemas permiten capturar datos en dos y tres dimensiones, con elevaciones medidas directamente de un par estereoscópico de acuerdo a los principios de la fotogrametría.
+
+La teleobservación por satélite proporciona otra fuente importante de datos espaciales. En este caso los satélites utilizan diferentes sensores para medir la reflectancia de las partes del espectro electromagnético, o las ondas de radio que se envían a partir de un sensor activo como el radar. La teledetección recopila datos raster que pueden ser procesados usando diferentes bandas para determinar las clases y objetos de interés, tales como las diferentes cubiertas de la tierra.
+
+Cuando se capturan los datos, el usuario debe considerar si estos deben ser tomados con una exactitud relativa o con una absoluta precisión. Esta decisión es importante ya que no solo influye en la interpretación de la información, sino también en el costo de su captura.
+
+Además de la captura y la entrada en datos espaciales, los datos de atributos también son introducidos en un SIG. Durante los procesos de digitalización de la cartografía es frecuente que se den fallos topológicos involuntarios (dangles, undershoots, overshoots, switchbacks, knots, loops, etc.) en los datos vectoriales y que deberán ser corregidos. Tras introducir los datos en un SIG, estos normalmente requerirán de una edición o procesado posterior para eliminar los errores citados. Se deberá de hacer una "corrección topológica" antes de que puedan ser utilizados en algunos análisis avanzados y, así por ejemplo, en una red de carreteras las líneas deberán estar conectadas con nodos en las intersecciones.
+
+En el caso de mapas escaneados, quizás sea necesario eliminar la trama resultante generada por el proceso de digitalización del mapa original. Así, por ejemplo, una mancha de suciedad podría unir dos líneas que no deberían estar conectadas.
+
+Conversión de datos raster-vectorial
+
+Los SIG pueden llevar a cabo una reestructuración de los datos para transformarlos en diferentes formatos. Por ejemplo, es posible convertir una imagen de satélite a un mapa de elementos vectoriales mediante la generación de líneas en torno a celdas con una misma clasificación determinando la relación espacial de estas, tales como proximidad o inclusión.
+
+La vectorización no asistida de imágenes raster mediante algoritmos avanzados es una técnica que se viene desarrollado desde finales de los años 60 del siglo XX. Para ello se recurre a la mejora del contraste, imágenes en falso color así como el diseño de filtros mediante la implementación de transformadas de Fourier en dos dimensiones.
+
+Al proceso inverso de conversión de datos vectorial a una estructura de datos basada en un matriz raster se le denomina rasterización.
+
+Dado que los datos digitales se recogen y se almacenan en ambas formas, vectorial y raster, un SIG debe ser capaz de convertir los datos geográficos de una estructura de almacenamiento a otra.
+
+Proyecciones, sistemas de coordenadas y reproyección
+
+Antes de analizar los datos en el SIG la cartografía debe estar toda ella en una misma proyección y sistemas de coordenadas. Para ello muchas veces es necesario reproyectar las capas de información antes de integrarlas en el sistema de información geográfica.
+
+La Tierra puede estar representada cartográficamente por varios modelos matemáticos, cada uno de los cuales pueden proporcionar un conjunto diferente de coordenadas (por ejemplo, latitud, longitud, altitud) para cualquier punto dado de su superficie. El modelo más simple es asumir que la Tierra es una esfera perfecta. A medida que se han ido acumulando más mediciones del planeta los modelos del geoide se han vuelto más sofisticados y más precisos. De hecho, algunos de estos se aplican a diferentes regiones de la Tierra para proporcionar una mayor precisión (por ejemplo, el European Terrestrial Reference System 1989 - ETRS89 – funciona bien en Europa pero no en América del Norte).
+
+La proyección es un componente fundamental a la hora de crear un mapa. Una proyección matemática es la manera de transferir información desde un modelo de la Tierra, el cual representa una superficie curva en tres dimensiones, a otro de dos dimensiones como es el papel o la pantalla de un ordenador. Para ello se utilizan diferentes proyecciones cartográficas según el tipo de mapa que se desea crear, ya que existen determinadas proyecciones que se adaptan mejor a unos usos concretos que a otros. Por ejemplo, una proyección que representa con exactitud la forma de los continentes distorsiona, por el contrario, sus tamaños relativos.
+
+Dado que gran parte de la información en un SIG proviene de cartografía ya existente, un sistema de información geográfica utiliza la potencia de procesamiento de la computadora para transformar la información digital, obtenida de fuentes con diferentes proyecciones y/o diferentes sistemas de coordenadas, a una proyección y sistema de coordenadas común. En el caso de las imágenes (ortofotos, imágenes de satélite, etc.) este proceso se denomina rectificación.
+
+Análisis espacial mediante SIG
+
+Dada la amplia gama de técnicas de análisis espacial que se han desarrollado durante el último medio siglo, cualquier resumen o revisión sólo puede cubrir el tema a una profundidad limitada. Este es un campo que cambia rápidamente y los paquetes de software SIG incluyen cada vez más herramientas de análisis, ya sea en las versiones estándar o como extensiones opcionales de este. En muchos casos tales herramientas son proporcionadas por los proveedores del software original, mientras que en otros casos las implementaciones de estas nuevas funcionalidades se han desarrollado y son proporcionados por terceros. Además, muchos productos ofrecen kits de desarrollo de software (SDK), lenguajes de programación, lenguajes de scripting, etc. para el desarrollo de herramientas propias de análisis u otras funciones.
+
+Modelo topológico
+Artículo principal: Topología geoespacial
+
+Un SIG puede reconocer y analizar las relaciones espaciales que existen en la información geográfica almacenada. Estas relaciones topológicas permiten realizar modelizaciones y análisis espaciales complejos. Así, por ejemplo, el SIG puede discernir la parcela o parcelas catastrales que son atravesadas por una línea de alta tensión, o bien saber qué agrupación de líneas forman una determinada carretera.
+
+En suma podemos decir que en el ámbito de los sistemas de información geográfica se entiende como topología a las relaciones espaciales entre los diferentes elementos gráficos (topología de nodo/punto, topología de red/arco/línea, topología de polígono) y su posición en el mapa (proximidad, inclusión, conectividad y vecindad). Estas relaciones, que para el ser humano pueden ser obvias a simple vista, el software las debe establecer mediante un lenguaje y unas reglas de geometría matemática.
+
+Para llevar a cabo análisis en los que es necesario que exista consistencia topológica de los elementos de la base de datos suele ser necesario realizar previamente una validación y corrección topológica de la información gráfica. Para ello existen herramientas en los SIG que facilitan la rectificación de errores comunes de manera automática o semiautomática.
+
+Redes
+
+Un SIG destinado al cálculo de rutas óptimas para servicios de emergencias es capaz de determinar el camino más corto entre dos puntos teniendo en cuenta tanto direcciones y sentidos de circulación como direcciones prohibidas, etc. evitando áreas impracticables. Un SIG para la gerencia de una red de abastecimiento de aguas sería capaz de determinar, por ejemplo, a cuantos abonados afectaría el corte del servicio en un determinado punto de la red.
+
+Un sistema de información geográfica puede simular flujos a lo largo de una red lineal. Valores como la pendiente, el límite de velocidad, niveles de servicio, etc. pueden ser incorporados al modelo con el fin de obtener una mayor precisión. El uso de SIG para el modelado de redes suele ser comúnmente empleado en la planificación del transporte, hidrológica o la gestión de infraestructura lineales.
+
+Superposición de mapas
+
+La combinación de varios conjuntos de datos espaciales (puntos, líneas o polígonos) puede crear otro nuevo conjunto de datos vectoriales. Visualmente sería similar al apilamiento de varios mapas de una misma región. Estas superposiciones son similares a las superposiciones matemáticas del diagrama de Venn. Una unión de capas superpuestas combina las características geográficas y las tablas de atributos de todas ellas en una nueva capa. En el caso de realizar una intersección de capas esta definiría la zona en las que ambas se superponen, y el resultado mantiene el conjunto de atributos para cada una de las regiones. En el caso de una superposición de diferencia simétrica se define un área resultante que incluye la superficie total de ambas capas a excepción de la zona de intersección.
+
+En el análisis de datos raster, la superposición de conjunto de datos se lleva a cabo mediante un proceso conocido como álgebra de mapas, a través de la aplicación de métodos matemáticos simples que permiten combinar los valores de cada matriz raster. En el álgebra de mapas es posible ponderar determinadas coberturas que asignen el grado de importancia de diversos factores en un fenómeno geográfico.
+
+Cartografía automatizada
+
+Tanto la cartografía digital como los sistemas de información geográfica codifican relaciones espaciales en representaciones formales estructuradas. Los SIG son usados en la creación de cartografía digital como herramientas que permiten realizar un proceso automatizado o semiautomatizado de elaboración de mapas denominado cartografía automatizada.
+
+En la práctica esto sería un subconjunto de los SIG que equivaldría a la fase de composición final del mapa, dado que en la mayoría de los casos no todos los software de sistemas de información geográfica poseen esta funcionalidad.
+
+El producto cartográfico final resultante puede estar tanto en formato digital como impreso. El uso conjunto que en determinados SIG se da de potentes técnicas de análisis espacial junto con una representación cartográfica profesional de los datos, hace que se puedan crear mapas de alta calidad en un corto período. La principal dificultad en cartografía automatizada es el utilizar un único conjunto de datos para producir varios productos según diferentes tipos de escalas, una técnica conocida como generalización.
+
+Geoestadística
+
+La geoestadística analiza patrones espaciales con el fin de conseguir predicciones a partir de datos espaciales concretos. Es una forma de ver las propiedades estadísticas de los datos espaciales. A diferencia de las aplicaciones estadísticas comunes, en la geoestadística se emplea el uso de la teoría de grafos y de matrices algebraicas para reducir el número de parámetros en los datos. Tras ello, el análisis de los datos asociados a entidad geográfica se llevaría a cabo en segundo lugar.
+
+Cuando se miden los fenómenos, los métodos de observación dictan la exactitud de cualquier análisis posterior. Debido a la naturaleza de los datos (por ejemplo, los patrones de tráfico en un entorno urbano, las pautas meteorológicas en el océano, etc.), grado de precisión constante o dinámico se pierde siempre en la medición. Esta pérdida de precisión se determina a partir de la escala y la distribución de los datos recogidos. Los SIG disponen de herramientas que ayudan a realizar estos análisis, destacando la generación de modelos de interpolación espacial.
+
+Geocodificación
+Artículo principal: Geocodificación
+
+Geocodificación es el proceso de asignar coordenadas geográficas (latitud-longitud) a puntos del mapa (direcciones, puntos de interés, etc.). Uno de los usos más comunes es la georreferenciación de direcciones postales. Para ello se requiere una cartografía base sobre la que referenciar los códigos geográficos. Esta capa base puede ser, por ejemplo, un tramero de ejes de calles con nombres de calles y números de policía. Las direcciones concretas que se desean georreferenciar en el mapa, que suelen proceder de tablas tabuladas, se posicionan mediante interpolación o estimación. El SIG a continuación localiza en la capa de ejes de calles el punto en el lugar más aproximado a la realidad según los algoritmos de geocodificación que utiliza.
+
+La geocodificación puede realizarse también con datos reales más precisos (por ejemplo, cartografía catastral). En este caso el resultado de la codificación geográfica se ajustará en mayor medida a la realizada, prevaleciendo sobre el método de interpolación.
+
+En el caso de la geocodificación inversa el proceso sería al revés. Se asignaría una dirección de calle estimada con su número de portal a unas coordenadas x,y determinadas. Por ejemplo, un usuario podría hacer clic sobre una capa que representa los ejes de vía de una ciudad y obtendría la información sobre la dirección postal con el número de policía de un edificio. Este número de portal es calculado de forma estimada por el SIG mediante interpolación a partir de unos números ya presupuestos. Si el usuario hace clic en el punto medio de un segmento que comienza en el portal 1 y termina con el 100, el valor devuelto para el lugar seleccionado será próximo al 50. Hay que tener en cuenta que la geocodificación inversa no devuelve las direcciones reales, sino sólo estimaciones de lo que debería existir basándose en datos ya conocidos.
+
+Software SIG
+
+La información geográfica puede ser consultada, transferida, transformada, superpuesta, procesada y mostradas utilizando numerosas aplicaciones de software. Dentro de la industria empresas comerciales como ESRI, Intergraph, MapInfo, Bentley Systems, Autodesk o Smallworld ofrecen un completo conjunto de aplicaciones. Los gobiernos suelen optar por modificaciones ad-hoc de programas SIG, productos de código abierto o software especializado que responda a una necesidad bien definida.
+
+El manejo de este tipo de sistemas son llevados a cabo generalmente por profesionales de diversos campos del conocimiento con experiencia en sistemas de información geográfica (cartografía, geografía, topografía, etc.), ya que el uso de estas herramientas requiere una aprendizaje previo que necesita de conocer las bases metodológicas sobre las que se fundamentan. Aunque existen herramientas gratuitas para ver información geográfica, el acceso del público en general a los geodatos está dominado por los recursos en línea, como Google Earth y otros basados en tecnología web mapping.
+
+Originalmente hasta finales de los 90, cuando los datos del SIG se localizaban principalmente en grandes ordenadores y se utilizan para mantener registros internos, el software era un producto independiente. Sin embargo con el cada vez mayor acceso a Internet/Intranet y a la demanda de datos geográficos distribuidos, el software SIG ha cambiado gradualmente su perspectiva hacia la distribución de datos a través de redes. Los SIG que en la actualidad se comercializan son combinaciones de varias aplicaciones interoperables y APIs.
+
+Hoy por hoy dentro del software SIG se distingue a menudo seis grandes tipos de programas informáticos:
+- SIG de escritorio. Son aquellos que se utilizan para crear, editar, administrar, analizar y visualizar los datos geográficos. A veces se clasifican en tres subcategorías según su funcionalidad:
+    - Visor SIG. Suelen ser software sencillos que permiten desplegar información geográfica a través de una ventana que funciona como visor y donde se pueden agregar varias capas de información.
+    - Editor SIG. Es aquel software SIG orientado principalmente al tratamiento previo de la información geográfica para su posterior análisis. Antes de introducir datos a un SIG es necesario prepararlos para su uso en este tipo de sistemas. Se requiere transformar datos en bruto o heredados de otros sistemas en un formato utilizable por el software SIG. Por ejemplo, puede que una fotografía aérea necesite ser ortorrectificada mediante fotogrametría de modo tal que todos sus píxeles sean corregidos digitalmente para que la imagen represente una proyección ortogonal sin efectos de perspectiva y en una misma escala. Este tipo de transformaciones se pueden distinguir de las que puede llevar a cabo un SIG por el hecho de que, en este último caso, la labor suele ser más compleja y con un mayor consumo de tiempo. Por lo tanto es común que para estos casos se suela utilizar un tipo de software especializado en estas tareas.
+    - SIG de análisis. Disponen de funcionalidades de análisis espacial y modelización cartográfica de procesos.
+- Sistemas de gestión de bases de datos espaciales o geográficas (SGBD espacial). Se emplean para almacenar la información geográfica, pero a menudo también proporcionan la funcionalidad de análisis y manipulación de los datos. Una base de datos geográfica o espacial es una base de datos con extensiones que dan soporte de objetos geográficos permitiendo el almacenamiento, indexación, consulta y manipulación de información geográfica y datos espaciales. Si bien algunas de estas bases de datos geográficas están implementadas para permitir también el uso de funciones de geoprocesamiento, el principal beneficio de estas se centra en la capacidades que ofrecen en el almacenamiento de datos especialmente georrefenciados. Algunas de estas capacidades incluyen un fácil acceso a este tipo de información mediante el uso de estándares de acceso a bases de datos como los controladores ODBC, la capacidad de unir o vincular fácilmente tablas de datos o la posibilidad de generar una indexación y agrupación de datos espaciales, por ejemplo.
+- Servidores cartográficos. Se utilizan para distribuir mapas a través de Internet (véase también los estándares de normas Open Geospatial Consortium WFS y WMS).
+- Servidores SIG. Proporcionan básicamente la misma funcionalidad que los SIG de escritorio pero permiten acceder a estas utilidades de geoprocesamiento a través de una red informática.
+- Clientes web SIG. Permiten la visualización de datos y acceder a funcionalidades de análisis y consulta de servidores SIG a través de Internet o intranet. Generalmente se distingue entre cliente ligero y pesado. Los clientes ligeros (por ejemplo, un navegador web para visualizar mapas de Google) sólo proporcionan una funcionalidad de visualización y consulta, mientras que los clientes pesados (por ejemplo, Google Earth o un SIG de escritorio) a menudo proporcionan herramientas adicionales para la edición de datos, análisis y visualización.
+- Bibliotecas y extensiones espaciales. Proporcionan características adicionales que no forman parte fundamental del programa ya que pueden no ser requeridas por un usuario medio de este tipo de software. Estas nuevas funcionalidades pueden ser herramientas para el análisis espacial (por ejemplo, SEXTANTE), herramientas para la lectura de formatos de datos específicos (por ejemplo, GDAL/OGR), herramientas para la correcta visualización cartográfica de los datos geográficos (por ejemplo, PROJ4), herramientas para funciones geométricas fundamentales (JTS), o para la implementación de las especificaciones del Open Geospatial Consortium (por ejemplo, GeoTools).
+- SIG móviles. Se usan para la recogida de datos en campo a través de dispositivos móviles (PDA, teléfonos inteligentes, tabletas, etc.). Con la adopción generalizada por parte de estos de dispositivos de localización GPS integrados, el software SIG permite utilizarlos para la captura y manejo de datos en campo. En el pasado la recogida de datos en campo destinados a sistemas de información geográfica se realizaba mediante la señalización de la información geográfica en un mapa de papel y, a continuación, se volcaba esa información a formato digital una vez de vuelta frente al ordenador. Hoy en día a través de la utilización de dispositivos móviles los datos geográficos pueden ser capturados directamente mediante levantamientos de información en trabajo de campo.
+
+Comparativa de software SIG
+
+Listado incompleto de los principales programas SIG existentes en el sector y los sistemas operativos en los que pueden funcionar sin emulación,11 así como su tipo de licencia.
+Software SIG 	Windows 	Mac OS X 	GNU/Linux 	BSD 	Unix 	Entorno Web 	Licencia de software
+ABACO DbMAP 	Sí 	Sí 	Sí 	Sí 	Sí 	Java 	Software no libre
+ArcGIS 	Sí 	No 	Sí 	No 	Sí 	Sí 	Software no libre
+Autodesk Map 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+Bentley Map 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+Capaware 	Sí (C++) 	No 	Sí 	No 	No 	No 	Libre: GNU GPL
+Caris 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+CartaLinx 	Sí 	No 	No 	No 	No 	No 	Software no libre
+El Suri 	Java 	Java 	Java 	Java 	Java 	No 	Libre: GNU
+Geomedia 	Sí 	No 	No 	No 	Sí 	Sí 	Software no libre
+GeoPista 	Java 	Java 	Java 	Java 	Java 	Sí 	Libre: GNU
+GestorProject - PDAProject 	Sí 	No 	No 	No 	No 	Java 	Software no libre
+GeoServer 	Sí 	Sí 	Sí 	Sí 	Sí 	Java 	Libre: GNU
+GRASS 	Sí 	Sí 	Sí 	Sí 	Sí 	Mediante pyWPS 	Libre: GNU
+gvSIG 	Java 	Java 	Java 	Java 	Java 	No 	Libre: GNU
+IDRISI 	Sí 	No 	No 	No 	No 	No 	Software no libre
+ILWIS 	Sí 	No 	No 	No 	No 	No 	Libre: GNU
+Generic Mapping Tools 	Sí 	Sí 	Sí 	Sí 	Sí 	Sí 	Libre: GNU
+JUMP 	Java 	Java 	Java 	Java 	Java 	No 	Libre: GNU
+Kosmo 	Java 	Java 	Java 	Java 	Java 	En desarrollo 	Libre: GNU
+LocalGIS 	Java 	Java 	Java 	Java 	Java 	Sí 	Libre: GNU
+LatinoGis 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+Manifold 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+MapGuide Open Source 	Sí 	Sí 	Sí 	Sí 	Sí 	LAMP/WAMP 	Libre: LGNU
+MapInfo 	Sí 	No 	Sí 	No 	Sí 	Sí 	Software no libre
+MapServer 	Sí 	Sí 	Sí 	Sí 	Sí 	LAMP/WAMP 	Libre: BSD
+Maptitude 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+MapWindow GIS 	Sí (ActiveX) 	No 	No 	No 	No 	No 	Libre: MPL
+MiraMon 	Sí (C) 	No 	No 	No 	No 	Sí 	Software no libre
+ortoSky 	Sí (C++) 	No 	No 	No 	No 	No 	Software no libre
+Quantum GIS 	Sí 	Sí 	Sí 	Sí 	Sí 	Sí 	Libre: GNU
+SAGA GIS 	Sí 	Sí 	Sí 	Sí 	Sí 	No 	Libre: GNU
+GE Smallworld 	Sí 	? 	Sí 	? 	Sí 	Sí 	Software no libre
+SavGIS 	Sí 	No 	No 	No 	No 	Integración con Google Maps 	Software no libre: Freeware
+SEXTANTE 	Java 	Java 	Java 	Java 	Java 	No 	Libre: GNU
+SITAL 	Sí 	No 	No 	No 	No 	Integración con Google Maps 	Software no libre
+SPRING 	Sí 	No 	Sí 	No 	Solaris 	No 	Software no libre: Freeware
+SuperGIS 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+TatukGIS 	Sí 	No 	No 	No 	No 	? 	Software no libre
+TNTMips 	Sí 	No 	No 	No 	Sí 	Sí 	Software no libre
+TransCAD 	Sí 	No 	No 	No 	No 	Sí 	Software no libre
+uDIG 	Sí 	Sí 	Sí 	No 	No 	No 	Libre: LGNU
+GeoStratum 	Sí (Flex/Java) 	Sí (Flex/Java) 	Sí (Flex/Java) 	Sí (Flex/Java) 	Sí (Flex/Java) 	Sí (Flex/Java) 	Software no libre
+ASINELSA SIDAC 	Java 	Java 	Java 	Java 	Java 	Sí 	Software no libre
+
+El futuro de los SIG
+
+Muchas disciplinas se han beneficiado de la tecnología subyacente en los SIG. El activo mercado de los sistemas de información geográfica se ha traducido en una reducción de costes y mejoras continuas en los componentes de hardware y software de los sistemas. Esto ha provocado que el uso de esta tecnología haya sido asimilada por universidades, gobiernos, empresas e instituciones que lo han aplicado a sectores como los bienes raíces, la salud pública, la criminología, la defensa nacional, el desarrollo sostenible, los recursos naturales, la arqueología, la ordenación del territorio, el urbanismo, el transporte, la sociología o la logística entre otros.
+
+En la actualidad los SIG están teniendo una fuerte implantación en los llamados Servicios Basados en la Localización (LBS) debido al abaratamiento y masificación de la tecnología GPS integrada en dispositivos móviles de consumo (teléfonos móviles, PDAs, ordenadores portátiles). Los LBS permiten a los dispositivos móviles con GPS mostrar su ubicación respecto a puntos de interés fijos (restaurantes, gasolineras, cajeros, hidrantes, etc. más cercanos), móviles (amigos, hijos, autobuses, coches de policía) o para transmitir su posición a un servidor central para su visualización u otro tipo de tratamiento.
+
+Cartografía en entornos web
+
+Por otro lado el mundo de los SIG ha asistido en los últimos años a una explosión de aplicaciones destinadas a mostrar y editar cartografía en entornos web como Google Maps, Bing Maps u OpenStreetMap entre otros. Estos sitios web dan al público acceso a enormes cantidades de datos geográficos. Algunos de ellos utilizan software que, a través de una API, permiten a los usuarios crear aplicaciones personalizadas. Estos servicios ofrecen por lo general callejeros, imágenes aéreas o de satélite, geocodificación, búsquedas en nomenclátores o funcionalidades de enrutamiento.
+
+El desarrollo de Internet y las redes de comunicación, así como el surgimiento de estándares OGC que facilitan la interoperabilidad de los datos espaciales, ha impulsado la tecnología web mapping, con el surgimiento de numerosas aplicaciones que permiten la publicación de información geográfica en la web. De hecho este tipo de servicios web mapping basado en servidores de mapas que se acceden a través del propio navegador han comenzado a adoptar las características más comunes en los SIG tradicionales, lo que ha propiciado que la línea que separa ambos tipos de software se difumine cada vez más.
+
+La tercera dimensión
+
+Los sistemas existentes en la actualidad en el mercado están básicamente sustentados en la gestión y análisis en dos dimensiones de los datos, con las limitaciones que esto supone. Existen sistemas híbridos a medio camino entre el 2D y el 3D que poseen capacidades, fundamentalmente de visualización, denominadas de dos dimensiones y media (2.5D) o falso 3D.
+
+No obstante hoy en día cada vez más se requieren aplicaciones avanzadas con funcionalidades capaces de gestionar conjuntos de datos complejos tal y como se perciben en el mundo real por el usuario, es decir, en tres dimensiones. Este entorno proporciona un conocimiento mucho mejor de los fenómenos y patrones geoespaciales, ya sea a pequeña o gran escala, por ejemplo en la planificación urbana, la geología, la minería, la gestión de redes de abastecimiento, etc.12
+
+Las dificultades con que se enfrenta un SIG completamente 3D son grandes y van desde las gestión de geometrías 3D y su topología hasta su visualización de una manera sencilla, pasando por el análisis y geoprocesado de la información.
+
+Actualmente el Open Geospatial Consortium trabaja en cómo abordar la combinación de los diferentes tipos de modelados resultantes de las distintas tecnologías SIG, CIM, CAD y BIM de la forma más íntegra posible. La interoperabilidad de estos formatos y modelos de datos constituye el primer paso hacia la creación de modelos 3D inteligentes a diferentes escalas.13
+
+Semántica y SIG
+
+Las herramientas y tecnologías emergentes desde la W3C Semantic Web Activity están resultando útiles para los problemas de integración de datos en los sistemas de información. De igual forma, esas tecnologías se han propuesto como un medio para facilitar la interoperabilidad y la reutilización de datos entre aplicaciones SIG14 15 y también para permitir nuevos mecanismos de análisis.16 En suma la incorporación de cierta inteligencia artificial que dote a estos sistemas de nuevas funcionalidades tales como la recuperación selectiva de información, el análisis estadístico, la generalización automática de mapas o la interpretación automática de imágenes geoespaciales.17
+
+Las ontologías son un componente clave de este enfoque semántico, ya que facilitan una legibilidad por parte de las máquinas de conceptos y relaciones en un dominio dado. Esto a su vez permite al SIG centrarse en el significado de los datos en lugar de su sintaxis o estructura. Por ejemplo, podemos razonar que un tipo de cobertura del suelo clasificada como bosques de frondosas caducifolias son un conjunto de datos detallados de una capa sobre cubiertas vegetales de tipo forestal con una clasificación menos minuciosa, lo que podría ayudar a un SIG a fusionar automáticamente ambos conjuntos de datos en una capa más general de clasificación de la cubierta vegetal terrestre.
+
+Pero el desarrollo futuro de los SIG con la inclusión de la semántica en la gestión no solo permitiría la generalización o coflación de datos geoespaciales con cierta similitud, sino que, por ejemplo, facilitaría la generación automatizada o semiasistida de una tarea tradicionalmente considerada como tediosa y poco gratificante como es la creación de metadatos para las diferentes capas de información geográfica.18
+
+Ontologías muy profundas y exhaustivas han sido desarrolladas en áreas relacionadas con el uso de los SIG, como por ejemplo la Ontología de Hidrología desarrollada por el Ordnance Survey en el Reino Unido, la ontología geopolítica de la FAO,19 las ontologías OWL hydrOntology y Ontología GML y las ontologías SWEET llevadas a cabo por el Laboratorio de Propulsión a Chorro de la NASA.
+
+Los SIG temporales
+
+Una de las principales fronteras a las que se enfrenta los sistemas de información geográfica es la de agregar el elemento tiempo a los datos geoespaciales. Los SIG temporales incorporan las tres dimensiones espaciales (X, Y y Z) añadiendo además el tiempo en una representación 4D que se asemeja más a la realidad. La temporalidad en los SIG recoge los procesos dinámicos de los elementos representados. Por ejemplo, imaginémonos las posibilidades que ofrecería un sistema de información geográfica que permita ralentizar y acelerar el tiempo de los procesos geomorfológicos que en él se modelizan y analizar las diferentes secuencias morfogenéticas de un determinado relieve terrestre; o modelizar el desarrollo urbano de una área determinada a lo largo de un período dado.13
+
+Notas y referencias
+- «Lascaux Cave». Ministerio de Cultura francés. Consultado el 13 de febrero de 2008.
+- Curtis, Gregory. The Cave Painters: Probing the Mysteries of the World's First Artists. NY, USA: Knopf. ISBN 1-4000-4348-4.
+- Dr David Whitehouse. «Ice Age star map discovered». BBC. Consultado el 9 de junio de 2007.
+- Cerda Lorca, Jaime; Gonzalo Valdivia C. (13 de julio de 2007). «John Snow, la epidemia de cólera y el nacimiento de la epidemiología moderna» (pdf). Consultado el 20 de septiembre de 2013.
+- «John Snow's Cholera Map». York University. Consultado el 9 de junio de 2007.
+- Joseph H. Fitzgerald. «Map Printing Methods». Consultado el 9 de junio de 2007.
+- «GIS Hall of Fame - Roger Tomlinson». URISA. Consultado el 9 de junio de 2007.
+- Lucia Lovison-Golob. «Howard T. Fisher». Harvard University. Consultado el 9 de junio de 2007.
+- Es común en el ámbito de los sistemas de información geográfica referirse a estos elementos gráficos que representan elementos del mapa con su denominación inglesa feature. Su traducción oficial y normalizada en España es la de «objeto geográfico».[1]
+- Líneas de múltiples nodos, también denominadas multilíneas.
+- Nótese que aquellos productos en los que existen versiones para Unix y/o Linux, la disponibilidad para MacOS X y BSD es también muy factible dado que el sobrecoste de su compilación es escaso para el desarrollador, especialmente cuando el código fuente es público. Las aplicaciones Java funciona en todas las plataformas en cuyas versiones existen una Máquina Virtual de Java o un compilador de Java (en estos momentos Windows, MacOS X, Linux y Solaris).
+- 3D and Beyond. «Alias Abdul Rahman» (en inglés). Consultado el 19 de abril de 2011.
+- a b Matt Ball (2009). «What are some of the technological frontiers for GIS advancement?» (en inglés). Consultado el 2 de febrero de 2009.
+- Federico Fonseca y Amit Sheth (2002). «The Geospatial Semantic Web» (en inglés). Consultado el 18 de octubre de 2008.
+- Federico Fonseca y Max Egenhofer (1999). «Ontology-Driven Geographic Information Systems» (en inglés). Consultado el 18 de octubre de 2008.
+- Perry, Matthew; Hakimpour, Farshad; Sheth, Amit (2006), «Analyzing Theme, Space and Time: an Ontology-based Approach» (PDF), Proc. ACM International Symposium on Geographic Information Systems, pp. 147-154
+- Mónica Medina (2011). «Cambio de paradigma: Sistemas de Información Geográfica gobernados por ontologías» (en español). Consultado el 20 de noviembre de 2011.
+- Rafael Oliva-Santos, Leonid Mendoza-Robaina, Cynthia Costales-Llerandi3, Eduardo Garea- Llano y Francisco Maciá Pérez (2009). «Modelo de anotación semántica para Sistemas de Información Geogŕafica» (en español). Consultado el 6 de octubre de 2012. A. Beltran Fonollosa, C. Granell Canut y J. Huerta Guijarro (2011). «Descripción de recursos multimedia georreferenciados» (en español). Consultado el 6 de octubre de 2012.
+- http://www.fao.org/countryprofiles/geoinfo.asp?lang=es
+
+Bibliografía
+
+- Berry, J.K. (1993) Beyond Mapping: Concepts, Algorithms and Issues in GIS. Fort Collins, CO: GIS World Books.
+- Bolstad, P. (2005) GIS Fundamentals: A first text on Geographic Information Systems, Second Edition. White Bear Lake, MN: Eider Press, 543 pp.
+- Bosque Sendra, J. (1992) Sistemas de Información Geográfica. Rialp. Madrid.
+- Burrough, P.A. and McDonnell, R.A. (1998) Principles of geographical information systems. Oxford University Press, Oxford, 327 pp.
+- Busai, G.D.; Baxendale, C.A. (2011) Análisis Socioespacial con Sistemas de Información Geográfica. Tomo 1: Perspectiva Científica / temáticas de base raster. Buenos Aires, Lugar Editorial, 302 pp.
+- Buzai, G.D.; Baxendale, C.A. (2012) Análisis Socioespacial con Sistemas de Información Geográfica. Tomo 2: Ordenamiento territorial / temáticas de base vectorial. Buenos Aires, Lugar Editorial, 315 pp.
+- Calvo, M. (1992) Sistemas de Información Geográfica Digitales: Sistemas geomáticos. IVAP-EUSKOIKER, Oñati, 616 pp.
+- Calvo, M. (2012) "Geo-conceptualización y modelado del espacio geográfico". EAE. Saarbrücken, 492 pp.
+- Chang, K. (2007) Introduction to Geographic Information System, 4th Edition. McGraw Hill.
+- Coulman, Ross (2001 - present) Numerous GIS White Papers
+- de Smith M J, Goodchild M F, Longley P A (2007) Geospatial analysis: A comprehensive guide to principles, techniques and software tools", 2nd edition, Troubador, UK available free online at: [2]
+- Elangovan, K (2006)"GIS: Fundamentals, Applications and Implementations", New India Publishing Agency, New Delhi"208 pp.
+- Harvey, Francis(2008) A Primer of GIS, Fundamental geographic and cartographic concepts. The Guilford Press, 31 pp.
+- Heywood, I., Cornelius, S., and Carver, S. (2006) An Introduction to Geographical Information Systems. Prentice Hall. 3rd edition.
+- Longley, P.A., Goodchild, M.F., Maguire, D.J. and Rhind, D.W. (2005) Geographic Information Systems and Science. Chichester: Wiley. 2nd edition.
+- Maguire, D.J., Goodchild M.F., Rhind D.W. (1997) "Geographic Information Systems: principles, and applications" Longman Scientific and Technical, Harlow.
+- Moreno Jiménez, A. (coord.); Gómez García, N., Vidal Domínguez, M. J., Rodríguez Esteban, J. A., Martínez Suárez, P., Prieto Flores, M. E., Cervera Cruañes, B. y Fernández García, F. (2008): Sistemas y análisis de la información geográfica: manual de auto-aprendizaje con ArcGIS, Madrid, Ra-Ma, 2.ª ed., 940 pp.
+- Ott, T. and Swiaczny, F. (2001) Time-integrative GIS. Management and analysis of spatio-temporal data, Berlin / Heidelberg / New York: Springer.
+- Olaya, V., (2012) Sistemas de Información Geográfica. Víctor Olaya. 877 pp. (Creative Common Atribución).
+- Thurston, J., Poiker, T.K. and J. Patrick Moore. (2003) Integrated Geospatial Technologies: A Guide to GPS, GIS, and Data Logging. Hoboken, New Jersey: Wiley.
+- Tomlin, C.Dana (1991) Geographic Information Systems and Cartographic Modelling. Prentice Hall. New Jersey.
+- Tomlinson, R.F., (2005) Thinking About GIS: Geographic Information System Planning for Managers. ESRI Press. 328 pp.
+- Wise, S. (2002) GIS Basics. London: Taylor & Francis.
+- Worboys, Michael, and Matt Duckham. (2004) GIS: a computing perspective. Boca Ratón: CRC Press.
+- Wheatley, David and Gillings, Mark (2002) Spatial Technology and Archaeology. The Archaeological Application of GIS. London, New York, Taylor & Francis.

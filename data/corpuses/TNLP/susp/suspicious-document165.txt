@@ -1,0 +1,10 @@
+Desarrollo de diseño-dirigido
+
+El Desarrollo de Diseño Dirigido (D3) es un proceso ágil para crear requerimientos innovadores para construir mejores soluciones. Trabaja de cerca con SCRUM y Extreme Programming (XP) para manejar e implementar estos requerimientos. También puede trabajar con procesos no-ágiles como RUP.
+
+Está basado en la siguiente filosofía:
+- Diseñar es el arte de crear bellas, elegantes e innovadoras soluciones, que trabajen en el contexto del usuario y del cliente.
+- Ningún proceso puede garantizar un diseño mejor; creando el entorno correcto y los grupos de personas es la única manera de traer innovación.
+- El diseño es un accidente que patalea en la concepción, y D3 maximiza las oportunidades de que un accidente ocurra.
+
+D3 fue originalmente creado por Henry Jacob.

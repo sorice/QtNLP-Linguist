@@ -1,0 +1,7 @@
+AQL
+
+AQL (Associative Query Logic) es una tecnología de desarrollo de bases de datos.
+
+Patentada por QlikTech, trabaja de un modo distinto al construir y mantener internamente una base de datos no relacional sino asociativa que reside en RAM y de alta eficiencia. La ventaja de la arquitectura AQL es que los datos fuente son retenidos y puestos a disposición inmediatamente y fuera de línea para el análisis, completamente hasta la transacción individual. El resultado es una potente capacidad analítica, entregada a través de una interfaz de usuario altamente intuitiva que promueve la exploración y la creatividad.
+
+La conclusión que llevó a la creación de la Lógica Asociativa de Consultas(AQL) fueron que los cubos hiperdimensionales basados en OLAP y los Data Warehouse eran costosos y requerían mucho tiempo de instalación. Además, la interfaz de usuario es más sencilla para personas no relacionadas con el sector TI.

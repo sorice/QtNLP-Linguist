@@ -1,0 +1,229 @@
+Cola de prioridades (estructura de datos)
+
+Una cola de prioridades es una estructura de datos en la que los elementos se atienden en el orden indicado por una prioridad asociada a cada uno. Si varios elementos tienen la misma prioridad, se atenderán de modo convencional según la posición que ocupen.
+
+Características generales
+
+Este tipo especial de colas tienen las mismas operaciones que las colas , pero con la condición de que los elementos se atienden en orden de prioridad.
+
+Ejemplos de la vida diaria serían la sala de urgencias de un hospital, ya que los enfermos se van atendiendo en función de la gravedad de su enfermedad.
+
+Entendiendo la prioridad como un valor numérico y asignando a altas prioridades valores pequeños, las colas de prioridad nos permiten añadir elementos en cualquier orden y recuperarlos de menor a mayor.
+
+Implementación
+
+Hay 2 formas de implementación:
+1. Añadir un campo a cada nodo con su prioridad. Resulta conveniente mantener la cola ordenada por orden de prioridad.
+2. Crear tantas colas como prioridades haya, y almacenar cada elemento en su cola.
+
+Tipos
+- Colas de prioridades con ordenamiento ascendente: en ellas los elementos se insertan de forma arbitraria, pero a la hora de extraerlos, se extrae el elemento de menor prioridad.
+- Colas de prioridades con ordenamiento descendente: son iguales que la colas de prioridad con ordenamiento ascendente, pero al extraer el elemento se extrae el de mayor prioridad.
+
+Operaciones
+
+Las operaciones de las colas de prioridad son las mismas que las de las colas genéricas:
+- Crear: se crea la cola vacía.
+- Añadir: se añade un elemento a la cola, con su correspondiente prioridad.
+- Eliminar: se elimina el elemento frontal de la cola.
+- Frente: se devuelve el elemento frontal de la cola.
+- Destruye: elimina la cola de memoria.
+
+Implementación en Maude
+
+Para la implementación de las colas de prioridad el elemento a insertar tiene que ser de un tipo que soporte un orden total y eso lo conseguimos creando una teoría, que será la siguiente:
+
+***( Vamos a manejar explicitamente las prioridades dentro de la cola, por lo que precisamos
+que el tipo base proporcione operaciones para acceder a la prioridad, y para compararlas.
+
+Se asume que p1 > p2, donde p1 y p2 son prioridades, significa que p1 es preferente
+frente a p2, esto es, un elemento con prioridad p1 es más prioritario que otro con prioridad p2.
+)
+
+fth ELEMENTO-PRIORIDAD is
+  protecting BOOL .
+  sorts Elt Prioridad .  
+*** operaciones
+ op prioridad : Elt -> Prioridad .
+ op _>_ : Prioridad Prioridad -> Bool.
+endfth
+
+Una vez que tenemos la teoría procedemos a la implementación de la cola de prioridad:
+
+fmod COLA-PRIORIDAD {X :: ELEMENTO-PRIORIDAD} is
+ sorts Cola PrioNV{X} ColaPrio{X} .
+ subsort Cola PrioNV{X} < ColaPrio{X} .
+*** operaciones
+ op crear : -> Cola PrioNV{X} .
+ op encolar : X$Elt Cola Prio{X} -> Cola PrioNV{X} [ctor] .
+*** constructores
+ op desencolar : Cola Prio{X} -> Cola {X} .
+*** selectores
+ op frente : Cola PrioNV{X} -> X$Elt .
+*** variables
+ var C : Cola PrioNV{X} .
+ var E : X$Elt .
+*** ecuaciones
+ eq desencolar(crear) = crear .
+ eq desencolar(encolar(E,crear)) = crear .
+ eq desencolar(encolar(E,C)) = 
+       if prioridad(E) > prioridad(frente(C)) then
+          C
+       else
+          encolar(E,desencolar(C))
+       fi .
+ eq frente(encolar(E,crear)) = E .
+ eq frente(encolar(E,C)) =
+       if prioridad(E) > prioridad(frente(C)) then
+          E
+       else
+          frente(C)
+       fi .
+ endfm
+
+Posible instanciación
+
+***( Usamos pares de naturales, en la que el primer valor
+es un dato, y el segundo su prioridad. Suponemos que un valor natural más pequeño
+indica mayor prioridad.
+)
+
+fmod PAR-NAT is
+        protecting NAT .
+        sort ParNat .
+        
+        op <_:_> : Nat Nat -> ParNat .
+        op info : ParNat -> Nat .
+        op clave : ParNat -> Nat .
+        
+        vars E C : Nat .
+        vars P1 P2 : ParNat .
+        
+        eq info(< E : C >) = E .
+        eq clave(< E : C >) = C .
+endfm
+
+
+*** Realizamos la vista correspondiente
+
+view VParNat from ELEMENTO-PRIORIDAD to PAR-NAT is
+        sort Elt to ParNat .
+        sort Prioridad to Nat .
+        op prioridad to clave .
+        op _>_ to _<_ .
+endv
+
+
+*** Procedemos a la instanciación
+
+fmod COLA-PAR-NAT is
+        protecting COLA-PRIORIDAD{VParNat} .
+endfm
+
+Ejemplo Cola Prioridad en Maude
+
+ COLA-MEDIEVAL es un ejemplo de colas de prioridad en la que los elemento de la cola son
+plebeyos y nobles, en la cual la prioridad la tienen los nobles.
+
+ fth MEDIEVAL is
+        sort Elt .
+        op esNoble?: Elt --> Bool .
+ endfth
+
+ fmod COLA-MEDIEVAL {x::MEDIEVAL} is
+        protecting NAT, BOOL .
+        sort colaM{x} .
+        subsort colaMNV{x} < colaM{x} .
+        
+        op crear: --> colaM{x} [ctor] .
+        op insertar: x$Elt colaM{x} --> colaMNV{x} [ctor] .
+
+        op extraer: colaM{x} --> colaM{x} .
+        op frente: colaMNV{x} --> x$Elt .
+        op NNobles: colaM{x} --> Nat .
+        op NPlebleyos: colaM{x} --> Nat .
+
+        var C: colaMNV{x} .
+        var E: x$Elt .
+
+        eq extraer(crear) = crear .
+        eq extraer(insertar(E,crear)) = crear .
+        eq extraer(insertar(E,C)) = if NOT(esNoble?(frente(c))) AND esNoble?(E) then
+                                        c
+                                    else
+                                        insertar(E,extraer(c))
+                                    fi .
+        
+        eq frente(insertar(E,crear)) = E .
+        eq frente(insertar(E,C)) = if (esNoble?(E)) AND (esNoble?(frente(C))) then
+                                        E
+                                   else
+                                        frente(C)
+                                   fi .
+
+        eq NNobles(crear) = 0 .
+        eq NNobles(insertar(E,C)) = if esNobles?(E) then
+                                        1 + NNobles(C)
+                                    else
+                                        NNobles(C)
+                                    fi .
+
+        
+        eq NPlebleyos(crear) = 0 .
+        eq NPlebleyos(insertar(E,C)) = if NOT(esNobles?(E)) then
+                                        1 + NPlebeyos(C)
+                                    else
+                                        NPlebeyos(C)
+                                    fi .
+ endfm
+
+Implementación en Java
+
+Partimos a partir de la implementación en Java utilizando clases.
+
+package colaPrioridadSimpleEnlazada;
+import colaException.*;
+ 
+public class ColaPrioridad<T> implements colaPrioridadInterface.ColaPrioridad {
+    class Celda<T> {
+        T elemento;
+        int prioridad;
+        Celda sig;
+    }
+    private Celda cola;
+    public ColaPrioridad() {
+        cola = new Celda();
+        cola.sig = null;
+    }
+    public boolean vacia() {
+        return (cola.sig==null);
+    } 
+    public <T> primero() throws ColaVaciaException {
+        if (vacia()) throw new ColaVaciaException();
+        return cola.sig.elemento;
+    }
+    public int primero_prioridad() throws ColaVaciaException {
+        if (vacia()) throw new ColaVaciaException();
+        return cola.sig.prioridad;
+    }      
+    public void inserta(T elemento, int prioridad) {
+        Celda<T> p,q;
+        boolean encontrado = false;
+        p = cola;
+        while((p.sig!=null)&&(!encontrado)) {
+            if (p.sig.prioridad<prioridad) 
+                encontrado = true;
+            else p = p.sig;
+        }
+        q = p.sig;
+        p.sig = new Celda();
+        p = p.sig;
+        p.elemento = elemento;
+        p.prioridad = prioridad;
+        p.sig = q;
+    }     
+        public void suprime() throws ColaVaciaException {
+        if (vacia()) throw new ColaVaciaException();
+        cola = cola.sig;
+    }
+} // fin clase ColaPrioridad

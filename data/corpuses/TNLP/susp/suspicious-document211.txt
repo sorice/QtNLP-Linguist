@@ -1,0 +1,19 @@
+Pruebas de caja blanca
+
+Las pruebas de caja blanca (también conocidas como pruebas de caja de cristal o pruebas estructurales) se centran en los detalles procedimentales del software, por lo que su diseño está fuertemente ligado al código fuente. El testeador escoge distintos valores de entrada para examinar cada uno de los posibles flujos de ejecución del programa y cerciorarse de que se devuelven los valores de salida adecuados.
+
+Al estar basadas en una implementación concreta, si ésta se modifica, por regla general las pruebas también deberán rediseñarse.
+
+Aunque las pruebas de caja blanca son aplicables a varios niveles —unidad, integración y sistema—, habitualmente se aplican a las unidades de software. Su cometido es comprobar los flujos de ejecución dentro de cada unidad (función, clase, módulo, etc.) pero también pueden testear los flujos entre unidades durante la integración, e incluso entre subsistemas, durante las pruebas de sistema.
+
+A pesar de que este enfoque permite diseñar pruebas que cubran una amplia variedad de casos de prueba, podría pasar por alto partes incompletas de la especificación o requisitos faltantes, pese a garantizar la prueba exhaustiva de todos los flujos de ejecución del código analizado.
+
+Las principales técnicas de diseño de pruebas de caja blanca son:
+- Pruebas de flujo de control
+- Pruebas de flujo de datos
+- Pruebas de bifurcación (branch testing)
+- Pruebas de caminos básicos
+
+Hacking
+
+En los tests de penetración, las pruebas de caja blanca hacen referencia a una metodología donde el hacker posee un conocimiento total y absoluto del sistema que pretende atacar. El objetivo de estos tests de penetración, que perciben el sistema de forma transparente, es simular el comportamiento de un intruso malicioso que contase con permisos de acceso e información precisa acerca del sistema.

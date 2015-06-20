@@ -1,0 +1,15 @@
+Algoritmo no determinista
+
+En ciencias de la computación, un algoritmo no determinista es un algoritmo que con la misma entrada ofrece muchos posibles resultados. No se puede saber de antemano cuál será el resultado de la ejecución de un algoritmo no determinista.
+
+Uso
+
+En la teoría estándar de la computación la definición de algoritmo deja en claro que de por sí un algoritmo es determinista.
+
+Sin embargo, los algoritmos no deterministas emplean modelos de computación tales como la Máquina de Turing probabilística, que no son deterministas. Se considera entonces que los algoritmos no deterministas son un caso especial.
+
+Conversión de algoritmos no deterministas en deterministas
+
+Una forma de simular algoritmos no deterministas N mediante el empleo de otros deterministas D puede realizarse tratando los estados de N como estados de D. Esto significa que D puede trazar todas las posibilidades y trayectorias de ejecución del algoritmo N.
+
+Otra posibilidad es emplear algoritmos de generación de números aleatorios que consisten en perturbar los estados mediante el establecimiento de todas las posibilidades mediante un generador de números aleatorios. El resultado es un algoritmo determinista probabilístico.

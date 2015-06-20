@@ -1,0 +1,9 @@
+Simulación social
+
+La simulación social es el modelado y simulación, normalmente realizada en una computadora, de los fenómenos sociales (por ejemplo, cooperación, competición, mercados, dinámicas de redes sociales, etc). El principal subconjunto de la simulación social es la Simulación Social Basada en Agentes, donde convergen la simulación computacional, el modelado basado en agentes (una técnica de inteligencia artificial) y las ciencias sociales.
+
+En Europa ver: “Sociedad de simulación social europea”
+
+En Iberoamerica, por ejemplo, ver: “Sociedad de Simulación Social en Iberoamerica”
+
+Revista: “Revista de sociedades artificiales y simulación social”

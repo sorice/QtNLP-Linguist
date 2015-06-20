@@ -1,0 +1,11 @@
+Depuración de programas
+
+Depuración de programas es el proceso de identificar y corregir errores de programación. En inglés se le conoce como debugging, es que se asemeja a la eliminación de bichos (bugs), manera en que se conoce informalmente a los errores de programación. Se dice que el término bug proviene de la época de los ordenadores de válvula termoiónica, en los cuales los problemas se generaban por los insectos que eran atraídos por las luces y estropeaban el equipo. Si bien existen técnicas para la revisión sistemática del código fuente y se cuenta con medios computacionales para la detección de errores (depuradores) y facilidades integradas en los sistemas lower CASE y en los ambientes de desarrollo integrado, sigue siendo en buena medida una actividad manual, que desafía la paciencia, la imaginación y la intuición del programador. Muchas veces se requiere incluir en el código fuente instrucciones auxiliares que permitan el seguimiento de la ejecución del programa, presentando los valores de variables y direcciones de memoria y ralentizando la salida de datos (modo de depuración). Dentro de un proceso formal de aseguramiento de la calidad, puede ser asimilado al concepto de prueba unitaria.
+
+Origen
+
+Existe una controversia acerca del origen del término depuración o "debugging" en inglés. Los términos "bug" y "debugging" son atribuidos popularmente a la almirante Grace Murray Hopper por los años 1940. Mientras trabajaba con un Mark II en la Universidad de Harvard, ella encontró una polilla atrapada en un relé impidiendo las operaciones de dicha computadora, por lo cual ella comentó que cuando se sacó aquella polilla le habían hecho "debugging" al sistema. Sin embargo el término "bug" cómo significado de error técnico data cerca de 1878, y el término "debugging" o depuración ha sido usado en aeronáutica antes de entrar al mundo de las computadoras.
+
+Aplicación
+
+Como el software y los sistemas electrónicos se vuelven generalmente más complejos, se han desarrollado varias técnicas comunes de depuración para detectar anomalías, corregir funcionalidades y optimizar código fuente. Existen algunos aficionados que consideran la depuración como una forma de arte.

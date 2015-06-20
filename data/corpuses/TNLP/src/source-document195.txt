@@ -1,0 +1,70 @@
+Lenguaje unificado de modelado
+
+Lenguaje Unificado de Modelado (UML, por sus siglas en inglés, Unified Modeling Language) es el lenguaje de modelado de sistemas de software más conocido y utilizado en la actualidad; está respaldado por el OMG (Object Management Group).
+
+Es un lenguaje gráfico para visualizar, especificar, construir y documentar un sistema. UML ofrece un estándar para describir un "plano" del sistema (modelo), incluyendo aspectos conceptuales tales como procesos de negocio, funciones del sistema, y aspectos concretos como expresiones de lenguajes de programación, esquemas de bases de datos y compuestos reciclados.
+
+Es importante remarcar que UML es un "lenguaje de modelado" para especificar o para describir métodos o procesos. Se utiliza para definir un sistema, para detallar los artefactos en el sistema y para documentar y construir. En otras palabras, es el lenguaje en el que está descrito el modelo.
+
+Se puede aplicar en el desarrollo de software gran variedad de formas para dar soporte a una metodología de desarrollo de software (tal como el Proceso Unificado Racional o RUP), pero no específica en sí mismo qué metodología o proceso usar.
+
+UML no puede compararse con la programación estructurada, pues UML significa Lenguaje Unificado de Modelado, no es programación, solo se diagrama la realidad de una utilización en un requerimiento. Mientras que, programación estructurada, es una forma de programar como lo es la orientación a objetos, la programación orientada a objetos viene siendo un complemento perfecto de UML, pero no por eso se toma UML sólo para lenguajes orientados a objetos.
+
+UML cuenta con varios tipos de diagramas, los cuales muestran diferentes aspectos de las entidades representadas.
+
+Estandarización de UML
+
+Desde el año 2005, UML es un estándar aprobado por la ISO como ISO/IEC 19501:2005 Information technology — Open Distributed Processing — Unified Modeling Language (UML) Versión 1.4.2.
+
+Tipos de Diagramas de UML
+
+Estructura
+- Diagrama de clases
+- Diagrama de objetos
+- Diagrama de componentes
+- Diagrama de estructura compuesta
+- Diagrama de paquetes
+- Diagrama de despliegue
+
+Comportamiento
+- Diagrama de casos de uso
+- Diagrama de actividades
+- Diagrama de estado
+
+Interacción
+- Diagrama de secuencia
+- Diagrama de colaboración UML 1.X / Diagrama de comunicación UML 2.0
+- Diagrama de tiempo
+- Diagrama de interacción
+
+Historia
+
+Antes de UML 1.x
+
+Después de que la Rational Software Corporation contratara a James Rumbaugh de General Electric en 1994, la compañía se convirtió en la fuente de los dos esquemas de modelado orientado a objetos más populares de la época: el OMT (Object-modeling technique) de Rumbaugh, que era mejor para análisis orientado a objetos, y el Método Booch de Grady Booch, que era mejor para el diseño orientado a objetos. Poco después se les unió Ivar Jacobson, el creador del método de ingenieríá de software orientado a objetos. Jacobson se unió a Rational en 1995 después de que su compañía, Objectory AB, fuera comprada por Rational. Los tres metodologistas eran conocidos como los Tres Amigos, porque se sabía de sus constantes discusiones sobre las prácticas metodológicas.
+
+En 1996 Rational concluyó que la abundancia de lenguajes de modelado estaba alentando la adopción de la tecnología de objetos, y para orientarse hacia un método unificado, encargaron a los Tres Amigos que desarrollaran un Lenguaje Unificado de Modelado abierto. Se consultó con representantes de compañías competidoras en el área de la tecnología de objetos durante la OOPSLA '96; eligieron cajas para representar clases en lugar de la notación de Booch que utilizaba símbolos de nubes.
+
+Bajo la dirección técnica de los Tres Amigos fue organizado un consorcio internacional llamado UML Partners en 1996 para completar las especificaciones del Lenguaje Unificado de Modelado (UML), y para proponerlo como una respuesta al OMG RFP. El borrador de la especificación UML 1.0 de UML Partners fue propuesto a la OMG en enero de 1997. Durante el mismo mes la UML Partners formó una Fuerza de Tarea Semántica, encabezada por Cris Kobryn y administrada por Ed Eykholt, para finalizar las semánticas de la especificación y para integrarla con otros esfuerzos de estandarización. El resultado de este trabajo, el UML 1.1, fue presentado ante la OMG en agosto de 1997 y adoptado por la OMG en noviembre de 1997.
+
+UML 1.x
+
+Como notación de modelado, la influencia de la OMT domina UML (por ejemplo el uso de rectángulos para clases y objetos). Aunque se quitó la notación de "nubes" de Booch, si se adoptó la capacidad de Booch para especificar detalles de diseño en los niveles inferiores. La notación de Casos de Uso del Objectory y la notación de componentes de Booch fueron integrados al resto de la notación, pero la integración semántica era relativamente débil en UML 1.1, y no se arregló realmente hasta la revisión mayor de UML 2.0.
+
+Conceptos de muchos otros métodos OO fueron integrados superficialmente en UML con el propósito de hacerlo compatible con todos los métodos OO. Además el grupo tomó en cuenta muchos otros métodos de la época, con el objetivo de asegurar amplia cobertura en el dominio de los sistemas en tiempo real. Como resultado, UML es útil en una gran variedad de problemas de ingeniería, desde procesos sencillos y aplicaciones de un sólo usuario a sistemas concurrentes y distribuidos.
+
+El Lenguaje de Modelado Unificado es un estándar internacional:
+
+ISO / IEC 19501:2005 Tecnología de la información - Procesamiento distribuido abierto - Lenguaje de Modelado Unificado (UML) Version 1.4.2
+
+UML 2.x
+
+UML ha madurado considerablemente desde UML 1.1. Varias revisiones menores (UML 1.3, 1.4 y 1.5) han corregido defectos y errores de la primera versión de UML. A estas le ha seguido la revisión mayor UML 2.0 que fue adoptada por el OMG en 2005.
+
+Aunque UML 2.1 nunca fue lanzado como una especificación formal, las versiones 2.1.1 y 2.1.2, aparecieron en 2007, seguidas por UML 2.2 en febrero de 2009. UML 2.3 fue lanzado oficialmente en mayo de 2010. UML 2.4.1 fue lanzado oficialmente en agosto de 2011. UML 2.5 fue lanzado en octubre de 2012 como una versión "En proceso" y todavía tiene que ser formalmente liberada.
+
+Referencias
+- Martin Fowler, Kendall Sccott, "UML Gota a Gota", 1999.
+- Utilización de UML en Ingeniería del Software con Objetos y Componentes. Perdita Stevens, Rob Pooley. Addison Wesley. 2002.
+- UML 2 Perdita Stevens Pearson Education ISBN-10: 8478290869
+- UML Fermando Asteasuain ISBN-10: 9871347952

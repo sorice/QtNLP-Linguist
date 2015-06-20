@@ -1,0 +1,19 @@
+Exploratory Testing
+
+El testing exploratorio o pruebas exploratorias es un estilo o enfoque para la realización de pruebas de software. Su principal característica es que el aprendizaje, el diseño y la ejecución de las pruebas se realizan de forma simultánea. Cem Kaner, quien acuñó el término en 1983, define el testing exploratorio como "un estilo de testing que enfatiza la libertad personal y la responsabilidad del tester para optimizar continuamente la calidad de su trabajo tratando el aprendizaje a través de las pruebas, el diseño de las pruebas, la ejecución de las pruebas y la interpretación del resultado de las pruebas como actividades que se apoyan mutuamente y que se ejecutan en paralelo a lo largo del proyecto."
+
+Mientras se está probando el software, el tester va aprendiendo a manejar el sistema y junto con su experiencia y creatividad, genera nuevas pruebas a ejecutar. A menudo se piensa que el testing exploratorio como una técnica de prueba de caja negra. Sin embargo, aquellos que lo han estudiado, lo consideran un enfoque que se puede aplicar a cualquier técnica de pruebas, en cualquier etapa del proceso de desarrollo. La clave no es la técnica ni el elemento que estamos probando o revisando; la clave es el compromiso cognitivo del tester y la responsabilidad del tester para gestionar su tiempo.
+
+Descripción
+
+El testing exploratorio persigue saber cómo funciona realmente el software y responder a preguntas sobre cómo éste maneja los casos fáciles y difíciles. La calidad del testing exploratorio depende de las habilidades del tester de realizar los casos de prueba oportunos y encontrar los defectos presentes. Mientras más conocimientos tiene el tester sobre el producto y los diferentes métodos de prueba, mejor será el testing realizado.
+
+Se puede comparar el testing exploratorio libre con su antítesis, el scripted testing o testing basado en procedimientos de prueba. En este enfoque, los casos de prueba son diseñados con antelación, incluyendo tanto los pasos a realizar como el resultado esperado. Estas pruebas son más tarde ejecutadas por un tester que compara el resultado actual con el resultado esperado. Cuando realizamos testing exploratorio, los resultados esperados están abiertos. Algunos resultados pueden ser precedidos y esperados, otros puede que no. El tester configura, opera, observa y evalúa el producto y su comportamiento, investigando de forma crítica el resultado y reportando la información de lo que parecen ser defectos (que amenazan el valor del producto) o problemas (que amenazan la continuidad y calidad de las pruebas).
+
+En realidad, el testing casi siempre es una combinación de testing exploratorio y guiado, pero con una tendencia hacia uno de ellos, dependiendo del contexto.
+
+Según Cem Kaner y James Marcus Bach, el testing exploratorio es más una mentalidad o "...una forma de pensar sobre el testing" que una metodología. Ellos también dicen que hay todo un abanico de opciones desde lo ligeramente exploratorio (testing ligeramente ambiguo o vagamente guiado) hasta lo altamente exploratorio (testing exploratorio totalmente libre).
+
+La documentación del testing exploratorio se mueve en un rango que va desde documentar todos las pruebas realizadas a documentar únicamente los defectos. En las pruebas por parejas, dos personas crean los casos de pruebas juntas; una los ejecuta y la otra documenta. El testing basado en sesiones es un método específicamente diseñado para el testing exploratorio auditable y medible a gran escala.
+
+Para el testing exploratorio se usan a menudo herramientas, incluyendo herramientas de captura de pantalla o video que se usan a modo de registro de la sesión. O herramientas para ayudar a la generación rápida de situaciones de interés, por ejemplo, la herramienta de James Bach: Perlclip.

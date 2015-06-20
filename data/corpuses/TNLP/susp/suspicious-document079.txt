@@ -1,0 +1,29 @@
+Algoritmo de agrupamiento
+
+Un algoritmo de agrupamiento (en inglés, clustering) es un procedimiento de agrupación de una serie de vectores de acuerdo con un criterio. Esos criterios son por lo general distancia o similitud. La cercanía se define en términos de una determinada función de distancia, como la euclídea, aunque existen otras más robustas o que permiten extenderla a variables discretas. La medida más utilizada para medir la similitud entre los casos es las matriz de correlación entre los nxn casos. Sin embargo, también existen muchos algoritmos que se basan en la máximización de una propiedad estadística llamada verosimilitud.
+
+Generalmente, los vectores de un mismo grupo (o clústers) comparten propiedades comunes. El conocimiento de los grupos puede permitir una descripción sintética de un conjunto de datos multidimensional complejo. De ahí su uso en minería de datos. Esta descripción sintética se consigue sustituyendo la descripción de todos los elementos de un grupo por la de un representante característico del mismo.
+
+En algunos contextos, como el de la minería de datos, se lo considera una técnica de aprendizaje no supervisado puesto que busca encontrar relaciones entre variables descriptivas pero no la que guardan con respecto a una variable objetivo.
+
+Aplicaciones
+
+Las técnicas de agrupamiento encuentran aplicación en diversos ámbitos.
+- En biología para clasificar animales y plantas.
+- En medicina para identificar enfermedades.
+- En marketing para identificar personas con hábitos de compras similares.
+- En teoría de la señal pueden servir para eliminar ruidos.
+- En biometría para identificación del locutor o de caras.
+
+Algoritmos
+
+Existen dos grandes técnicas para el agrupamiento de casos:
+- Agrupamiento jerárquico, que puede ser aglomerativo o divisivo.
+- Agrupamiento no jerárquico, en los que el número de grupos se determina de antemano y las observaciones se van asignando a los grupos en función de su cercanía. Existen los métodos de k-mean y k-medioid.
+
+Existen diversas implementaciones de algoritmos concretos. Por ejemplo, el de las k-medias, de particionamiento. Es uno de los más antiguos pero uso extendido a pesar de sus carencias y falta de robustez.
+
+El paquete clúster de R-lenguaje 1 implementa una serie de algoritmos de particionamiento como agnes, mona y diana, jerárquicos, y pam, clara y fanny, de particionamiento.
+
+Referencias
+- Rousseeuw, P.J.; Kaufman, L. (1990). Finding Groups in Data: An Introduction to Clúster Analysis. Wiley.

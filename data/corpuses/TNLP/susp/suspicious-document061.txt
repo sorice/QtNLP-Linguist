@@ -1,0 +1,136 @@
+Sistemas de soporte a decisiones
+
+El concepto de sistema de soporte a las decisiones (DSS por sus siglas en inglés Decision Support System) es muy amplio, debido a que hay muchos enfoques para la toma de decisiones y debido a la extensa gama de ámbitos en los cuales se toman. Estos sistemas de apoyo son del tipo OLAP o de minería de datos, que proporcionan información y soporte para tomar una decisión.
+
+Un DSS puede adoptar muchas formas diferentes. En general, podemos decir que un DSS es un sistema informático utilizado para servir de apoyo, más que automatizar, el proceso de toma de decisiones. La decisión es una elección entre alternativas basadas en estimaciones de los valores de esas alternativas. El apoyo a una decisión significa ayudar a las personas que trabajan solas o en grupo a reunir inteligencia, generar alternativas y tomar decisiones. Apoyar el proceso de toma de decisión implica el apoyo a la estimación, la evaluación y/o la comparación de alternativas. En la práctica, las referencias a DSS suelen ser referencias a aplicaciones informáticas que realizan una función de apoyo.1
+
+Definiciones
+
+El término sistema de soporte a la decisión se ha utilizado de formas muy diversas y se ha definido de diferentes maneras dependiendo del punto de vista del autor.2 Algunas de esas definiciones son:
+- Un DSS, en términos muy generales, es "un sistema basado en computador que ayuda en el proceso de toma de decisiones" (Finlay3 y otros).
+- En términos bastante más específicos, un DSS es "un sistema de información basado en un computador interactivo, flexible y adaptable, especialmente desarrollado para apoyar la solución de un problema de gestión no estructurado para mejorar la toma de decisiones. Utiliza datos, proporciona una interfaz amigable y permite la toma de decisiones en el propio análisis de la situación" (Turban4 ).
+
+Otras definiciones intermedias entre las dos anteriores serían:
+- Un DSS es un "conjunto de procedimientos basados en modelos para procesar datos y juicios para asistir a un gerente en su toma de decisiones" (Little5 ).
+- Un DSS "combina recursos intelectuales individuales con las capacidades de un ordenador para mejorar la calidad de las decisiones (son un apoyo informático para los encargados de tomar decisiones sobre problemas semiestructurados)" (Keen6 ).
+- "Sistema extensible capaz de apoyar ad-hoc el análisis de datos y el modelado de decisiones, orientado a la planificación futura y utilizado a intervalos irregulares, no planificados" (Moore y Chang7 ).
+- Los DSS son "Sistemas informáticos interactivos que ayudan a los encargados de tomar decisiones utilizando datos y modelos para resolver problemas no estructurados" (Sprague y Carlson8 ).
+- Keen afirma que es imposible dar una definición precisa incluyendo todas las facetas de la DSS ya que "no puede haber una definición de los sistemas de apoyo a la decisión, sino sólo del apoyo a la decisión" (Keen9 ).
+- Para Power el término DSS puede referirse a muchos tipos de sistemas de información que dan soporte a la toma de decisiones. Humorísticamente añade que siempre que un sistema informático no sea un 'sistema para procesamiento de transacciones en linea' (OLTP), alguien tendrá la tentación de llamarlo DSS (Power10 ).
+
+Como se puede ver no hay una definición universalmente aceptada de lo que es un DSS.11
+
+Breve historia
+
+Según Keen,6 el concepto de apoyo a las decisiones ha evolucionado desde dos áreas principales de investigación: los estudios teóricos de organización de la toma de decisiones, hechos en el Carnegie Institute of Technology a finales de 1950 y comienzos de 1960, y el trabajo técnico sobre sistemas informáticos interactivos, principalmente llevadas a cabo en el Instituto Tecnológico de Massachusetts en la década de 1960. Se considera que el concepto de DSS se convirtió en un espacio de investigación como tal a mediados de la década de 1970, antes de ganar en intensidad durante el decenio de 1980. A mediados y finales de 1980, los sistemas de información ejecutiva (EIS), los sistemas de apoyo a la decisión en grupo (GDSS) y los sistemas organizacionales de apoyo a la decisión (ODSS) evolucionaron desde el usuario individual y el DSS orientados a modelos. A partir de 1990 aproximadamente, los almacenes de datos y el procesamiento analítico en línea (OLAP) comenzó a ampliar el ámbito de los DSS. Con el cambio de milenio, se introdujeron nuevas aplicaciones analíticas basadas en la web.
+
+Es evidente que los DSS pertenecen a un entorno con fundamentos multidisciplinarios, incluyendo (pero no exclusivamente) la investigación en base de datos, inteligencia artificial, Interacción hombre-máquina, métodos de simulación, ingeniería de software y telecomunicaciones. Los DSS también tienen una débil conexión con el paradigma de la interfaz de usuario de hipertexto. Tanto el sistema PROMIS (para la toma de decisiones médicas) de la Universidad de Vermont, como el sistema ZOG/KMS (para la toma de decisiones militares y de negocios) de la Universidad Carnegie Mellon fueron dos sistemas de apoyo a las decisiones que constituyeron grandes avances en la investigación de interfaz de usuario. Por otra parte, aunque las investigaciones en hipertexto, por lo general, se haya centrado en la sobrecargo de información, algunos investigadores, en particular, Douglas Engelbart, se han centrado en la toma de decisiones en particular.
+
+Función y características
+
+Los DSS son herramientas de mucha utilidad en Inteligencia empresarial (Business Intelligence), permiten realizar el análisis de las diferentes variables de negocio para apoyar el proceso de toma de decisiones de los directivos:
+- Permite extraer y manipular información de una manera flexible.
+- Ayuda en decisiones no estructuradas.
+- Permite al usuario definir interactivamente qué información necesita y cómo combinarla.
+- Suele incluir herramientas de simulación, modelización, etc.
+- Puede combinar información de los sistemas transaccionales internos de la empresa con los de otra empresa externa.
+
+Su principal característica es la capacidad de análisis multidimensional (OLAP) que permite profundizar en la información hasta llegar a un alto nivel de detalle, analizar datos desde diferentes perspectivas, realizar proyecciones de información para pronosticar lo que puede ocurrir en el futuro, análisis de tendencias, análisis prospectivo, etc.
+
+Un DSS da soporte a las personas que tienen que tomar decisiones en cualquier nivel de gestión, ya sean individuos o grupos, tanto en situaciones semiestructuradas como en no estructuradas, a través de la combinación del juicio humano e información objetiva:
+- Soporta varias decisiones interdependientes o secuenciales.
+- Ofrece ayuda en todas las fases del proceso de toma de decisiones -inteligencia, diseño, selección, e implementación- así como también en una variedad de procesos y estilos de toma de decisiones.
+- Es adaptable por el usuario en el tiempo para lidiar con condiciones cambiantes.
+- Genera aprendizaje, dando como resultado nuevas demandas y refinamiento de la aplicación, que a su vez da como resultado un aprendizaje adicional.
+- Generalmente utiliza modelos cuantitativos (estándar o hechos a la medida).
+- Los DSS avanzados están equipados con un componente de administración del conocimiento que permite una solución eficaz y eficiente de problemas muy complejos.
+- Puede ser implantado para su uso en Web, en entornos de escritorio o en dispositivos móviles (PDA).
+- Permite la ejecución fácil de los análisis de sensibilidad.
+
+Taxonomías
+
+Al igual que ocurre con la definición, no existe una taxonomía universalmente aceptada para los DSS. Diferentes autores proponen diferentes clasificaciones. Utilizando la relación con el usuario como criterio, Haettenschwiler12 distingue entre:
+- DSS pasivo.- Es un sistema de ayudas para el proceso de toma de decisiones, pero que no puede llevar a cabo una decisión explícita, sugerencias o soluciones.
+- DSS activo.- Puede llevar a cabo dicha decisión, sugerencias o soluciones.
+- DSS cooperativo.- Permite al encargado de la toma de decisiones (o a sus asesores) modificar, completar o perfeccionar las sugerencias de decisión proporcionadas por el sistema, antes de enviar de vuelta al sistema para su validación. El nuevo sistema mejora, completa y precisa las sugerencias del tomador de la decisión y las envía de vuelta a su estado para su validación. Entonces, todo el proceso comienza de nuevo, hasta que se genera una solución consolidada.
+
+Utilizando el modo de asistencia como criterio, Power13 distingue entre:
+- DSS dirigidos por modelos.- Se hace hincapié en el acceso y manipulación de un modelo estadístico, financiero, de optimización o de simulación. Utiliza datos y parámetros proporcionados por los usuarios para ayudar a los encargados de adoptar decisiones en el análisis de una situación, que no son necesariamente los datos intensivos. Dicodess es un ejemplo de un DSS de código abierto basado en modelos.14
+- DSS dirigidos por comunicación.- Disponen de soporte para varias personas que trabajan en una misma tarea compartida. Ejemplos incluyen herramientas integradas como Microsoft NetMeeting o Microsoft Groove.15
+- DSS dirigidos por datos.- También llamados orientados por datos, enfatizan el acceso y la manipulación de series temporales de datos internos de la empresa y, a veces, también de datos externos.
+- DSS dirigidos por documentos.- Gestionan, recuperan y manipulan información no estructurada en una variedad de formatos electrónicos.
+- DSS dirigidos por conocimiento.- Proporcionan experiencia acumulada en forma de hechos, normas, procedimientos, o en estructuras similares especializados para la resolución de problemas.13
+
+Utilizando el ámbito como criterio, Power10 sugiere esta otra clasificación:
+- DSS para la gran empresa.- Este DSS estará enlazado con un almacén de datos de gran tamaño y dará servicio a muchos gerentes, directores y/o ejecutivos de la compañía.
+- DSS de escritorio.- Es un sistema pequeño que puede correr en el ordenador personal de un gerente al que da servicio (un solo usuario).
+
+Arquitecturas
+
+Una vez más, diferentes autores identifican diferentes componentes para un DSS. Sprague y Carlson8 identifican tres componentes básicos que son explicados con más detalles por Haag y otros:16
+- El sistema de gestión de base de datos.- Almacena información de diversos orígenes, puede proceder de los repositorios de datos de una organización tradicional, de fuentes externas (como Internet), o del personal (de ideas y experiencias de los usuarios individuales).
+- El sistema gestor de modelos.- Se ocupa de las representaciones de los acontecimientos, hechos o situaciones utilizando varios tipos de modelos (dos ejemplos serían modelos de optimización y modelos de búsqueda-objetivo).
+- El sistema gestor y generador de diálogos.- Se trata de la interfaz de usuario; es, por supuesto, el componente que permite a un usuario interactuar con el sistema.
+
+Según Power13 un DSS tiene cuatro componentes fundamentales:
+- La interfaz de usuario.
+- La base de datos.
+- Las herramientas analíticas y de modelado.
+- La red y arquitectura del DSS.
+
+Hättenschwiler17 identifica cinco componentes en un DSS:
+- Usuarios.- Con diferentes roles o funciones en el proceso de toma de decisiones (tomador de decisiones, asesores, expertos del dominio, expertos del sistema, recolectores de datos).
+- Contexto de decisión.- Debe ser específico y definible.
+- Sistema de destino.- Éste describe la mayoría de las preferencias.
+- Bases de conocimiento.- Compuestas de fuentes de datos externas, bases de datos de conocimiento, bases de datos de trabajo, almacenes de datos y meta-bases de datos, modelos matemáticos y métodos, procedimientos, inferencia y los motores de búsqueda, programas administrativos, y los sistemas de informes.
+- Entorno de trabajo.- Para la preparación, análisis y documentación de decisión alternativas.
+
+Arakas18 propone una arquitectura generalizada compuesta de de cinco partes distintas:
+- El sistema gestor de datos.
+- El sistema gestor de modelos.
+- El motor de conocimiento.
+- La interfaz de usuario.
+- Los usuarios.
+
+Entornos de desarrollo
+
+Los sistemas DSS no son totalmente diferente de otros sistemas y requieren un enfoque estructurado. Sprague y Watson (1993) proporcionaron un entorno de tres niveles principales:
+1. Los niveles de tecnología.- Se propone una división en 3 niveles de hardware y software para los DSS:
+    1. DSS específico.- Aplicación real que será utilizada por el usuario. Ésta es la parte de la aplicación que permite la toma decisiones en un problema particular. El usuario podrá actuar sobre este problema en particular.
+    2. Generador de DSS.- Este nivel contiene hardware y software de entorno que permite a las personas desarrollar fácilmente aplicaciones específicas de DSS. Este nivel hace uso de herramientas case. También incluye lenguajes de programación especiales, bibliotecas de funciones y módulos enlazados.
+    3. Herramientas de DSS.- Contiene hardware y software de bajo nivel.
+2. Las personas que participan.- Para el ciclo de desarrollo de un DSS, se sugieren 5 tipos de usuarios o participantes:
+    1. Usuario final
+    2. Intermediario
+    3. Desarrollador
+    4. Soporte técnico
+    5. Experto de sistemas
+3. El enfoque de desarrollo.- El enfoque basado en el desarrollo de un DSS deberá ser muy iterativo. Esto permitirá que la aplicación sea cambiada y rediseñada en diversos intervalos. El problema inicial se utiliza para diseñar el sistema y a continuación, éste es probado y revisado para garantizar que se alcanza el resultado deseado.
+
+Referencias
+
+- Alter, S. L. (1980). Decision support systems: current practice and continuing challenges. Reading, Mass., Addison-Wesley Pub.
+- Druzdzel, M. J. and R. R. Flynn (1999). Decision Support Systems. Encyclopedia of Library and Information Science. A. Kent, Marcel Dekker, Inc.
+- Finlay, P. N. (1994). Introducing decision support systems. Oxford, UK Cambridge, Mass., NCC Blackwell; Blackwell Publishers.
+- Turban, E. (1995). Decision support and expert systems: management support systems. Englewood Cliffs, N.J., Prentice Hall. ISBN 0-02-421702-6
+- Little, J.D.C.(1970, April). "Models and Managers:The Concept of a Decision Calculus." Management Science, Vol.16,NO.8
+- a b Keen, P. G. W. (1978). Decision support systems: an organizational perspective. Reading, Mass., Addison-Wesley Pub. Co. ISBN 0-201-03667-3
+- Moore, J.H.,and M.G.Chang.(1980,Fall)."Design of Decision Support Systems." Data Base,Vol.12, Nos.1 and 2.
+- a b Sprague, R. H. and E. D. Carlson (1982). Building effective decision support systems. Englewood Cliffs, N.J., Prentice-Hall. ISBN 0-13-086215-0
+- Keen, P. G. W. (1980). Decision support systems: a research perspective. Decision support systems : issues and challenges. G. Fick and R. H. Sprague. Oxford ; New York, Pergamon Press.
+- a b Power, D. J. (1997). What is a DSS? The On-Line Executive Journal for Data-Intensive Decision Support 1(3).
+- Power, D.J. A Brief History of Decision Support Systems DSSResources.COM, World Wide Web, version 2.8, May 31, 2003.
+- Haettenschwiler, P. (1999). Neues anwenderfreundliches Konzept der Entscheidungsunterstützung. Gutes Entscheiden in Wirtschaft, Politik und Gesellschaft. Zurich, vdf Hochschulverlag AG: 189-208.
+- a b c Power, D. J. (2002). Decision support systems: concepts and resources for managers. Westport, Conn., Quorum Books.
+- Gachet, A. (2004). Building Model-Driven Decision Support Systems with Dicodess. Zurich, VDF.
+- Stanhope, P. (2002). Get in the Groove: building tools and peer-to-peer solutions with the Groove platform. New York, Hungry Minds
+- Haag, Cummings, McCubbrey, Pinsonneault, Donovan (2000). Management Information Systems: For The Information Age. McGraw-Hill Ryerson Limited: 136-140. ISBN 0-07-281947-2
+- Haettenschwiler, P. (1999). Neues anwenderfreundliches Konzept der Entscheidungsunterstützung. Gutes Entscheiden in Wirtschaft, Politik und Gesellschaft. Zurich, vdf Hochschulverlag AG: 189-208.
+- Marakas, G. M. (1999). Decision support systems in the twenty-first century. Upper Saddle River, N.J., Prentice Hall.
+
+Bibliografía adicional
+
+- Alter, S. Transforming DSS jargon into principles for DSS success (1994), en:
+- P. Gray (Ed.), Decision Support and Executive Information System, Prentice-Hall, Englewood Cliffs, NJ, pp. 2-26.
+- Turban & Aronson. Decision Support Systems and Intelligent Systems (2001). Upper Saddle River, NJ: Prentice-Hall.
+- Turban, McLean & Wetherbe. Information Technology for Management (2002). Massachusetts: Wiley.

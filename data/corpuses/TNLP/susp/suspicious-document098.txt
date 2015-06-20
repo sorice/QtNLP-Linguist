@@ -1,0 +1,54 @@
+C4.5
+
+C4.5 es un algoritmo usado para generar un árbol de decision desarrollado por Ross Quinlan.1 C4.5 es una extensión del algoritmo ID3 desarrollado anteriormente por Quinlan. Los árboles de decisión generador por C4.5 pueden ser usados para clasificación, y por esta razón, C4.5 esta casi siempre referido como un clasificador estadístico.
+
+Algoritmo
+
+C4.5 construye árboles de decisión desde un grupo de datos de entrenamiento de la misma forma en que lo hace ID3, usando el concepto de entropía de información. Los datos de entrenamiento son un grupo S = {s_1, s_2, ...} de ejemplos ya clasificados. Cada ejemplo s_i = {x_1, x_2, ...} es un vector donde x_1, x_2, ... representan los atributos o características del ejemplo. Los datos de entrenamiento son aumentados con un vector C = {c_1, c_2, ...} donde c_1, c_2, ... representan la clase a la que pertenece cada muestra.
+
+En cada nodo del árbol, C4.5 elige un atributo de los datos que más eficazmente dividen el conjunto de muestras en subconjuntos enriquecidos en una clase u otra. Su criterio es el normalizado para ganancia de información (diferencia de entropía) que resulta en la elección de un atributo para dividir los datos. El atributo con la mayor ganancia de información normalizada se elige como parámetro de decisión. El algoritmo C4.5 divide recursivamente en sublistas más pequeñas.
+
+Este algoritmo tiene unos pocos casos base.
+- Todas las muestras en la lista pertenecen a la misma clase. Cuando esto sucede, simplemente crea un nodo de hoja para el árbol de decisión diciendo que elija esa clase.
+- Ninguna de las características proporciona ninguna ganancia de información. En este caso, C4.5 crea un nodo de decisión más arriba del árbol utilizando el valor esperado de la clase.
+- Instancia de la clase previamente no vista encontrada. Una vez más, C4.5 crea un nodo de decisión más arriba en el árbol con el valor esperado.
+
+Pseudocódigo
+
+En pseudocódigo, el algoritmo general para construir árboles de decisión es:2
+1. Comprobar los casos base
+2. Para cada atributo a
+2.1 Encontrar la ganancia de información normalizada de la división de a
+3. Dejar que a_best sea el atributo con la ganancia de información normalizada más alta
+4. Crear un nodo de decisión que divida a_best
+5. Repetir en las sublistas obtenidas por división de a_best, y agregar estos nodos como hijos de nodo
+
+Implementaciones
+
+J48 es una implementación open source en lenguaje de programación Java del algoritmo C4.5 en la herramienta weka de minería de datos.
+
+Mejoras desde el algoritmo ID3
+
+En C4.5 se hicieron un número de mejoras a ID3. Algunas de ellas son:
+- Manejo de ambos atributos continuos y discretos - A fin de manejar atributos continuos, C4.5 crea un umbral y luego se divide la lista en aquellos cuyo valor de atributo es superior al umbral y los que son menores o iguales a él.3
+- Manejo de los datos de formación con valores de atributos faltantes - C4.5 permite valores de los atributos para ser marcado como? para faltantes. Los valores faltantes de los atributos simplemente no se usa en los cálculos de la ganancia y la entropía.
+- Manejo de atributos con costos diferentes.
+- Podando árboles después de la creación - C4.5 se remonta a través del árbol una vez que ha sido creado e intenta eliminar las ramas que no ayudan, reemplazándolos con los nodos de hoja.
+
+Mejoras en Algoritmo C5.0/See5
+
+Quinlan continuó con la creación del C5.0 y el See5 (C5.0 para Unix / Linux, See5 para Windows) con fines comerciales. C5.0 ofrece una serie de mejoras en el C4.5. Algunas de estas son:4
+- Velocidad - C5.0 es significativamente más rápido que el C4.5 (varios órdenes de magnitud)
+- El uso de memoria - C5.0 es más eficiente que el C4.5
+- Árboles de decisión más pequeños - C5.0 obtiene resultados similares a C4.5 con árboles de decisión mucho más pequeños.
+- Soporte para boosting - Boosting mejora los árboles y les da una mayor precisión.
+- Ponderación - C5.0 le permite ponderar los distintos casos y tipos de errores de clasificación.
+- Winnowing - una opción automática de C5.0 winnows los atributos para eliminar aquellos que pueden ser de poca ayuda.
+
+Los Fuentes de una versión para Linux de un único subproceso de C5.0 están disponibles bajo licencia GPL.
+
+Referencias
+- Quinlan, J. R. C4.5: Programs for Machine Learning. Morgan Kaufmann Publishers, 1993.
+- S.B. Kotsiantis, Supervised Machine Learning: A Review of Classification Techniques, Informática 31(2007) 249-268, 2007
+- J. R. Quinlan. Improved use of continuous attributes in c4.5. Journal of Artificial Intelligence Research, 4:77-90, 1996.
+- Is See5/C5.0 Better Than C4.5?

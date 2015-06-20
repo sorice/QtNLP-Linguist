@@ -1,0 +1,62 @@
+Soporte técnico
+
+El soporte técnico es un rango de servicios que proporcionan asistencia con el hardware o software de una computadora, o algún otro dispositivo electrónico o mecánico. En general los servicios de soporte técnico tratan de ayudar al usuario a resolver determinados problemas con algún producto en vez de entrenar o personalizar. En general, el servicio de soporte técnico sirve para ayudar a resolver los problemas que puedan presentárseles a los usuarios, mientras hacen uso de servicios, programas o dispositivos.
+
+La mayoría de las compañías que venden hardware o software, ofrecen servicio técnico por teléfono u otras formas en línea como correo electrónico o sitios web.
+
+Las compañías e instituciones también tienen generalmente soporte técnico interno para empleados, estudiantes y otros asociados.
+
+También existen gran cantidad de foros de soporte técnico en internet, que son totalmente gratuitos, y se basan en la simple voluntad y experiencia de los expertos que quieren ayudar a los principiantes. La mayoría de las compañías que venden hardware o software ofrecen soporte técnico de manera telefónica o en línea. Las instituciones y compañías por lo general tienen sus propios empleados de soporte técnico. Existen a su vez múltiples lugares libres en la web respecto a soporte técnico, en los cuales los usuarios más experimentados ayudan a los novatos.
+
+Tipos de soporte
+
+El soporte técnico se puede dar por distintos tipos de medio, incluyendo el correo electrónico, chat, software de aplicación, faxes, y técnicos, aunque el más común es el teléfono. En los últimos años hay una tendencia a la prestación de soporte técnico remoto, donde un técnico se conecta al ordenador mediante una aplicación de conexión remota.
+
+Niveles de soporte
+
+Cuando el soporte está debidamente organizado, se pueden dar varios niveles de soporte, donde el soporte nivel 1 es el que está en contacto directo con el usuario y que soluciona las incidencias triviales, soporte nivel 2, daría soporte al nivel que está por debajo y a este nivel llega la información algo filtrada y así sucesivamente.
+
+El soporte o asistencia técnica está a menudo subdividido en capas, o niveles (tiers), para que así pueda atender de una forma más eficaz y eficiente a una base de negocio o clientes. El número de niveles en los que una empresa organiza su grupo de soporte depende fundamentalmente de las necesidades del negocio, de los objetivos o de la voluntad ya que conllevará la habilidad para servir de forma suficiente a sus clientes o usuarios.
+
+El motivo que justifica prestar un servicio de asistencia a través de un sistema multinivel en lugar de un grupo general de soporte es proporcionar el mejor servicio posible de la forma más eficiente. El éxito de la estructura organizativa depende enormemente de la capacidad del equipo técnico de comprender su nivel responsabilidad y compromiso, sus compromisos de tiempo de respuesta al cliente y del momento y forma en la que resulta apropiado escalar una incidencia y hacia qué nivel.1
+
+La estructura más generalizada de servicio de asistencia multinivel se conforma sobre tres niveles de soporte.
+
+Soporte de Nivel/Tier 1(T1/L1)
+
+Este es el nivel de soporte inicial, responsable de las incidencias básicas del cliente. Es sinónimo de soporte de primera línea, soporte de nivel uno, soporte de front-end, línea 1 de soporte y otras múltiples denominaciones referentes a las funciones de soporte de nivel técnico básico. El principal trabajo de un especialista de Tier 1 es reunir toda la información del cliente y determinar la incidencia mediante el análisis de los síntomas y la determinación del problema subyacente.1 Cuando se analizan los síntomas, es importante para el técnico de soporte identificar qué es lo que el cliente está intentando llevar a cabo de forma que no se pierda tiempo “intentando resolver un síntoma en lugar de un problema.”1 Una vez que se ha logrado identificar el problema subyacente, el especialista puede comenzar a prestar la verdadera asistencia iterando de forma ordenada sobre el catálogo de posibles soluciones disponibles. Los especialistas de soporte técnico en este grupo habitualmente manejan problemas simples de resolución sencilla, “posiblemente haciendo uso de algún tipo de herramienta de gestión del conocimiento.”2 Esto incluye métodos de resolución de problemas como la verificación de incidencias en las líneas físicas, resolución de problemas de usuario y contraseña, instalación/reinstalación básica de de aplicaciones software, verificación de configuración apropiada de hardware y software, y asistencia mediante la navegación de menús de aplicación. El personal a este nivel tiene un conocimiento entre básico y general del producto o servicio y no siempre ha de tener la competencia necesaria para resolver problemas complejos.3 No en vano, el objetivo de este grupo es manejar entre el 70-80 % del de los problemas del usuario antes de concluir en la necesidad de escalar la incidencia a un nivel superior.3
+
+En otros sectores (como la banca, tarjetas de crédito, telefonía móvil, etc.) el soporte de 1.er nivel es gestionado por call centers que operan en horarios extensos (o 24x7) y actúan como punto de entrada inicial de todas las peticiones de los usuarios y, en el caso de que sea necesario, se encargan de la creación de la incidencia para notificar a otras unidades/equipos de negocio que se encarguen de atender las peticiones del usuario (proporcionar un nuevo PIN, bloquear tarjetas de crédito robadas, móviles, etc.).
+
+En algunos sectores, el soporte de 1.er nivel en realidad requiere muy buen conocimiento de los productos y de los términos y condiciones ofrecidas por el negocio más allá de los conocimientos técnicos propiamente dichos.
+
+Este es el nivel básico de soporte técnico. Los conocimientos con los que cuenta son: Formateo de computadoras, instalación de paquetería y cambios de piezas de computadoras.
+
+Soporte de Nivel/Tier 2(T2/L2)
+
+Está basado especialmente en el grupo help desk, donde sus integrantes hacen soporte técnico teniendo en cuenta áreas del conocimiento más especializadas en el área computacional. De esta manera, se deduce que el soporte de segundo nivel lo realizan personas especializadas en redes de comunicación, sistemas de información, sistemas operativos, bases de datos, entre otras. Este nivel tiene por lo menos 1 año en el área de soporte y cuenta con los conocimientos de nivel 1 y con conocimientos de recuperación de información nivel software, manejo de paquetería de oficina a nivel básico y configuración de redes inalámbricas y cableados en grupos de trabajo. Actualmente se usan manuales o guías donde se muestran los pasos que el usuario debe seguir para resolver, dicho problema, en caso de no llegar a la solución.
+
+Soporte de Nivel/Tier 3(T3/L3)
+
+Soporte de back_end denota los métodos de solución a nivel de experto y análisis avanzado. Los técnicos asignados a este nivel son expertos y son responsables, no solo para ayudar al personal de los otros niveles 1 y 2 sino también para investigación y desarrollo de soluciones a los problemas nuevos o desconocidos. Tenga en cuenta que los técnicos de nivel 3 tienen la misma responsabilidad que los de nivel 2 en la revisión del trabajo y evaluar el tiempo establecido con el cliente para asignar prioridades.
+
+En este nivel se debe determinar:
+- si se puede o no resolver el problema.
+- si para resolver el problema requiere información adicional.
+- disponer de tiempo suficiente.
+- encontrar la mejor solución.
+
+En este grupo se diseña y desarrolla usos de acción y tiene por lo menos dos años laborando en el área de soporte; conoce la reparación del equipo, cuenta con conocimientos de electrónica y proporciona solución rápida a nivel de redes.
+
+Cobertura del soporte
+
+El soporte técnico puede variar dependiendo del rango de posibilidades. Algunas cosas que no son soportadas en los niveles bajos de soporte pueden ser soportadas en los altos niveles; por ejemplo, las preguntas directas pueden ser llevadas a cabo a través de mensajes SMS o fax; los problemas de software básico pueden ser resueltos por teléfono, mientras que los problemas de hardware son por lo general tratados en persona.
+
+Costo del soporte técnico
+
+El costo del soporte puede variar. Algunas compañías ofrecen soporte gratuito limitado cuando se compra su hardware o software; otros cobran por el servicio de soporte telefónico. Algunos son gratuitos mediante foros, salas de charla, correo electrónico y algunos ofrecen contratos de soporte.
+
+Referencias
+- Walker, Gary (2001). IT Problem Management (Harris Kern’s Enterprise Computing Institute Series). Upper Saddle River: Prentice Hall. pp. 85–113. ISBN 013030770X. Google Book Search.
+- Windley, Phillip J. (2002). «“Delivering High Availability Services Using a Multi-Tiered Support Model”» (PDF). Windley’s Technometria. Consultado el 03-05-2008.
+- Kajko-Mattsson, Mira (July–October de 2004). «Problems within front-end support». Journal of Software Maintenance and Evolution: Research and Practice 16 (4/5): 309–329. doi:10.1002/smr.298.

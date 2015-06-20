@@ -1,0 +1,21 @@
+Sistema basado en reglas
+
+Los sistemas basados en reglas trabajan mediante la aplicación de reglas, comparación de resultados y aplicación de las nuevas reglas basadas en situación modificada. También pueden trabajar por inferencia lógica dirigida, bien empezando con una evidencia inicial en una determinada situación y dirigiéndose hacia la obtención de una solución, o bien con hipótesis sobre las posibles soluciones y volviendo hacia atrás para encontrar una evidencia existente (o una deducción de una evidencia existente) que apoye una hipótesis en particular.
+
+Algunos ejemplos de sistemas expertos son:
+
+Dendral.- Fue ideado a finales de los años 1970 para generar una representación estructural de las moléculas orgánicas a partir de los datos de un espectrógrafo de masas. Tal solución tiene los siguientes pasos:
+- Obtener las limitaciones de los datos.
+- Generar estructuras candidatas.
+- Predecir espectros de masa con los candidatos.
+- Comparar los resultados con los datos.
+
+Este sistema ilustra la solución común de resolver problemas en Inteligencia Artificial (IA) de generación y prueba.
+
+MYCIN.- fue diseñado a mediados de los setenta. Es un sistema interactivo que diagnostica infecciones bacterianas y suministra la terapia de antibióticos. MYCIN representa el razonamiento experto como una serie de reglas condición - conclusión, que relacionan los datos del paciente con hipótesis de infección y al tiempo estiman la certeza de cada regla. Trabaja hacia atrás con diagnosis hipotética, empleando reglas para estimar los factores de certeza de las conclusiones basadas en los factores de certeza de su historial para comprobar si la evidencia apoya la diagnosis. Si no hay información suficiente para comprobar la hipótesis, pedirá al médico datos adicionales y evaluarán en forma exhaustiva todas las hipótesis. Cuando ha finalizado, MYCIN da los tratamientos para todas aquellas diagnosis que han alcanzado un alto valor de certeza.
+
+G2 de Gensym[1].- G2 de Gesnym es un programa computacional del tipo “Rule Engine” para soluciones de procesos críticos que automatizan las decisiones en tiempo real. Con G2 las organizaciones más grandes del mundo dedicadas a la manufactura, al servicio público, comunicaciones, transporte urbano, aeroespaciales, finanzas y gestión gubernamental, maximizan la agilidad de su negocio y logran mayores niveles de rendimiento.
+
+Entre los usuarios de G2 están:
+
+ABB, Alcan, Codelco, Dow Chemical, DuPont, Ericsson, ExxonMobil, Foxboro, Petrobrás, Shell, Unilever, Ford, Hitachi, HP, JEA, Lafarge, Motorola, Nokia, Canal de Panamá, Siemens, Tokio electric and Power, Toyota, General Electric, NASA, el gobierno de Estados Unidos y muchos otros.

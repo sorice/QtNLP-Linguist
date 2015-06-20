@@ -1,0 +1,64 @@
+Ordenamiento por mezcla
+
+El algoritmo de ordenamiento por mezcla (merge sort en inglés) es un algoritmo de ordenamiento externo estable basado en la técnica divide y vencerás. Es de complejidad O(n log n).
+
+Descripción
+
+Fue desarrollado en 1945 por John Von Neumann .[cita requerida]
+
+Conceptualmente, el ordenamiento por mezcla funciona de la siguiente manera:
+1. Si la longitud de la lista es 0 ó 1, entonces ya está ordenada. En otro caso:
+2. Dividir la lista desordenada en dos sublistas de aproximadamente la mitad del tamaño.
+3. Ordenar cada sublista recursivamente aplicando el ordenamiento por mezcla.
+4. Mezclar las dos sublistas en una sola lista ordenada.
+
+El ordenamiento por mezcla incorpora dos ideas principales para mejorar su tiempo de ejecución:
+1. Una lista pequeña necesitará menos pasos para ordenarse que una lista grande.
+2. Se necesitan menos pasos para construir una lista ordenada a partir de dos listas también ordenadas, que a partir de dos listas desordenadas. Por ejemplo, sólo será necesario entrelazar cada lista una vez que están ordenadas.
+
+A continuación se describe el algoritmo en pseudocódigo (se advierte de que no se incluyen casos especiales para vectores vacíos, etc.; una implementación en un lenguaje de programación real debería tener en cuenta estos detalles):
+
+function mergesort(m)
+  var list left, right, result
+  if length(m) ≤ 1
+      return m
+  else
+      var middle = length(m) / 2
+      for each x in m up to middle - 1
+          add x to left
+      for each x in m at and after middle
+          add x to right
+      left = mergesort(left)
+      right = mergesort(right)
+      if last(left) ≤ first(right) 
+         append right to left
+         return left
+      result = merge(left, right)
+      return result
+
+function merge(left,right)
+  var list result
+  while length(left) > 0 and length(right) > 0
+      if first(left) ≤ first(right)
+          append first(left) to result
+          left = rest(left)
+      else
+          append first(right) to result
+          right = rest(right)
+  if length(left) > 0 
+      append rest(left) to result
+  if length(right) > 0 
+      append rest(right) to result
+  return result
+
+Optimizando merge sort
+
+En los ordenadores modernos, el principio de localidad puede ser primordial en la optimización de software, porque se usan jerarquías de memoria multi-nivel. Se han propuesto versiones de cache-consciente del algoritmo de ordenación por mezcla, cuyas operaciones han sido específicamente escogidas para minimizar el movimiento de entrada y salida de páginas de la memoria caché de la máquina. Por ejemplo, el algorimo "tiled merge sort" deja de particionar subarrays cuando se han alcanzado subarrays de tamaño S, donde S es el número de elementos que caben en una única página en memoria. Cada uno de esos subarrays se ordenan con un algorimo de ordenación in-situ, para evitar intercambios en memoria, y entonces se termina con el algoritmo de ordenamiento por mezcla en su versión recursiva estándar. Este algoritmo ha demostrado un mejor rendimiento en máquinas que se benefician de la optimización caché.
+
+M.A. Kronrod sugirió en 1969 una versión alternativa del algoritmo de ordenamiento por mezcla que usaba espacio adicional constante. Este algoritmo fue refinado por Katajainen, Pasanen y Teuhola.
+
+Comparación con otros algoritmos de ordenamiento
+
+Aunque heapsort tiene los mismos límites de tiempo que merge sort, requiere sólo Θ(1) espacio auxiliar en lugar del Θ(n) de merge sort, y es a menudo más rápido en implementaciones prácticas. Quicksort, sin embargo, es considerado por mucho como el más rápido algoritmo de ordenamiento de propósito general. En el lado bueno, merge sort es un ordenamiento estable, paraleliza mejor, y es más eficiente manejando medios secuenciales de acceso lento. Merge sort es a menudo la mejor opción para ordenar una lista enlazada: en esta situación es relativamente fácil implementar merge sort de manera que sólo requiera Θ(1) espacio extra, y el mal rendimiento de las listas enlazadas ante el acceso aleatorio hace que otros algoritmos (como quicksort) den un bajo rendimiento, y para otros (como heapsort) sea algo imposible.
+
+Para Perl 5.8, merge sort es el algoritmo de ordenamiento por defecto (lo era quicksort en versiones anteriores de Perl). En Java los métodos de ordenación de Arrays usan merge sort o una modificación de quicksort dependiendo de los tipos de datos y por cuestiones de eficiencia cambian a ordenamiento por inserción cuando se están ordenando menos de siete elementos en el array.

@@ -1,0 +1,47 @@
+Adaline
+
+El adaline (de ADAptative LINear Element) es un tipo de red neuronal artificial desarrollada por el profesor Bernie Widrow y su alumno Ted Hoff en la Universidad de Stanford en 1960.1
+
+Definición
+
+Generalmente se compone de una sola capa de n neuronas ( por tanto n valores de salida ) con m entradas con las siguientes características:
+- Las m entradas representan un vector x de entrada que pertenece al espacio R^m .
+- Por cada neurona, existe un vector w de pesos sinápticos que indican la fuerza de conexión entre los valores de entrada y la neurona. En la práctica representan la ponderación de cada entrada sobre la neurona.
+- Una constante \theta.
+- La salida y de la neurona se representa por la función de activación, que se define como y=\sum_{i=1}^{n} x_iw_i + \theta
+
+Aprendizaje
+
+A diferencia del perceptrón, a la hora de modificar los pesos durante el entrenamiento, el Adaline tiene en cuenta el grado de corrección de la salida estimada respecto a la deseada.2 Esto se consigue mediante la aplicación de la regla Delta, y que se define, para un patrón de entrada x^p con una salida estimada y^p y una salida deseada d^p, como |d^p - y^p|.
+
+Dado que el objetivo del Adaline es poder estimar de la manera más exacta la salida (conseguir una salida exacta es prácticamente imposible en la mayoría de los casos), se busca minimizar la desviación de la red para todos los patrones de entrada, eligiendo una medida del error global. Normalmente se utiliza el error cuadrático medio.
+
+E = \frac{1}{2} \sum_{p=1}^{m} (d^p - y^p)^2
+
+La manera de reducir este error global es ir modificando los valores de los pasos al procesar cada entrada, de forma iterativa, mediante la regla del descenso del gradiente. Suponiendo que tenemos una constante de aprendizaje \alpha:
+
+\Delta_p w_j = -\alpha \frac{\partial E^p}{\partial w_j}
+
+Si operamos con la derivada, queda:
+
+\Delta_p w_j = \alpha (d^p - y^p) \cdot x_j
+
+Que será la expresión que utilizaremos por cada entrada para modificar los pesos.
+
+Ventajas
+
+Con respecto al perceptrón el Adaline posee la ventaja de que su gráfica de error es un hiperparaboloide que posee o bien un único mínimo global, o bien una recta de infinitos mínimos, todos ellos globales. Esto evita la gran cantidad de problemas que da el perceptrón a la hora del entrenamiento debido a que su función de error (también llamada de coste) posee numerosos mínimos locales.
+
+Aplicaciones
+
+- Asociación de patrones: se puede aplicar a este tipo de problemas siempre que los patrones sean linealmente separables.
+
+En el campo del procesamiento de señales:
+- Filtros de ruido: Limpiar ruido de señales transmisoras de información.
+- Filtros adaptativos: Un adaline es capaz de predecir el valor de una señal en el instante t+1 si se conoce el valor de la misma en los p instantes anteriores (p es >0 y su valor depende del problema). El error de la predicción será mayor o menor según qué señal queramos predecir. Si la señal se corresponde a una serie temporal el Adaline, pasado un tiempo, será capaz de dar predicciones exactas.
+
+Se pueden combinar múltiples Adalines formando lo que se denomina el Madaline.
+
+Referencias
+- Perceptrón simple y Adaline, Redes de Neuronas Artificiales, UC3M, RAI 2012.
+- Adaline (Adaptive Linear)

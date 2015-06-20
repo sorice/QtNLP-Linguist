@@ -1,0 +1,134 @@
+RNA de base radial
+
+Las redes de base radial son un tipo de redes de neuronas artificiales que calculan la salida de la función en función de la distancia a un punto denominado centro. Al igual que con los perceptrones multicapa, sirven como aproximadores universales.1
+
+Introducción
+
+La función de base radial es una función que calcula la distancia euclidea de un vector de entrada x respecto de un centro c, de tal manera que resulta la siguiente función:
+
+    f(\mathbf{x}) = (||\mathbf{x}-\mathbf{c}_i||)
+
+A cada neurona de la capa de entrada le corresponde una función de base radial \Phi(\mathbf{x}) y un peso de salida wi. El patrón de salida ingresa a una neurona de salida que suma las entradas y da como resultado una salida. La función de una red RBF final resulta:
+
+    F(\mathbf{x}) = \sum_{i=1}^N w_i \Phi(||\mathbf{x}-\mathbf{c}_i||)
+
+Las redes RBF tienen una construcción rígida de tres capas: Capa de entrada, capa oculta y capa de salida (a diferencia de otras redes backpropagation).
+
+Características principales
+- Las redes de base radial tienen sus orígenes a finales de los años 80.
+- Son redes de tipo multicapa que tienen conexiones hacia delante y que solo tienen una capa oculta. Mientras que las neuronas ocultas poseen carácter local, las neuronas de salida realizan una combinación lineal de las activaciones de las neuronas ocultas.
+- Este tipo de redes construyen aproximaciones que son combinaciones lineales de múltiples funciones locales no lineales.
+- Entre sus aplicaciones se encuentran análisis de series temporales, procesamiento de imágenes, reconocimiento automático del habla, diagnósticos médicos, etc.
+
+Arquitectura
+
+Cada red de base radial tienen 3 capas diferentes en total:
+- Capa de entrada: Transmiten las señales de entrada a las neuronas ocultas sin realizar procesamiento, es decir, las conexiones de la capa de entrada a la capa oculta no llevan pesos asociados.
+- Capa oculta: Realizan una transformación local y no lineal de dichas señales.
+- Capa de salida: Realiza una combinación lineal de las activaciones de las neuronas ocultas.
+
+Tipos de funciones de base radial
+
+La función Φ(r) siendo r la distancia euclidea, puede ser de varios tipos dependiendo de los patrones a clasificar. Las elecciones más comunes son las siguientes:
+- Función gaussiana:
+
+        \phi(r) = e^{-(\varepsilon r)^2}\, 
+
+- Función multicuadratica:
+
+        \phi(r) = \sqrt{1 + (\varepsilon r)^2} 
+
+- Función multi-cuadrática inversa:
+
+        \phi(r) = \frac{1}{\sqrt{1 + (\varepsilon r)^2}} 
+
+- Función Spline poliarmónico:
+
+        \phi(r) = r^k,\; k=1,3,5,\dots
+        \phi(r) = r^k \ln(r),\; k=2,4,6,\dots 
+
+- Función Spline de placa delgada :
+
+        \phi(r) = r^2 \ln(r)\;
+
+Aprendizaje
+
+El aprendizaje consiste en la determinación de los centros, desviaciones y pesos de la capa oculta a la capa de salida. Como las capas de la red realizan diferentes tareas, se separarán los parámetros de la capa oculta de la capa de salida para optimizar el proceso. De esta forma, los centros y las desviaciones siguen un proceso guiado por una optimización en el espacio de entrada, mientras que los pesos siguen una optimización en base a las salidas que se desean obtener.
+
+Los dos métodos de aprendizaje más utilizados son el método híbrido y el método totalmente supervisado.
+
+Método híbrido
+
+En la fase no supervisada, los centros y las desviaciones de las funciones de base radial deben ser determinados con el objetivo de agrupar el espacio de entrada en diferentes clases. El representante de cada clase será el centro de la función de base radial y la desviación vendrá dada por la amplitud de cada clase. En la fase supervisada, se determinan de forma supervisada los pesos y umbrales de la capa de salida.
+
+A la hora de determinar los centros, se utilizará un algoritmo de clasificación no supervisado que permita dividir el espacio de entrada en clases o clusters. El número de clusters será el número de neuronas ocultas en la red de base radial. El algoritmo más utilizado es el algoritmo de K-medias.2 Mientras, a la hora de determinar las desviaciones, se deben calcular las amplitudes de manera que cada neurona oculta se active en la región del espacio de entrada y de manera que el solapamiento de las zonas de activación de una neurona a otra sea lo más ligera posible, para suavizar así la interpolación. Una opción bastante efectiva es determinar la amplitud de la función de base radial como la media geométrica de la distancia del centro a sus dos vecinos más cercanos.
+
+En la fase supervisada, se calculan los pesos y umbrales de las neuronas de salida de la red. El objetivo es minimizar las diferencias entre las salidas de la red y las salidas deseadas. El proceso de aprendizaje está guiado por la minimización de una función error computada en la salida de la red. Como la salida de la red depende linealmente de los pesos, puede utilizarse un método directo, como es el método de la pseudoinversa, o bien el método de mínimos cuadrados.
+
+Los centros se determinan usando la siguiente fórmula:
+
+    J = \sum_{i=1}^K\sum_{n=1}^N \mu_{A} (||\mathbf{X(\mathbf{n})}-\mathbf{C}_i||)
+
+Donde:
+
+    N es el Número de patrones
+    \mathbf{X(\mathbf{n})} representa el patrón de entrada n
+    \mu_{A} es la Función de pertenencia
+
+Además \mu_{A} se puede determinar de la siguiente manera:
+
+    \mu_{A} = \begin{cases} 1, & \mbox{si } ||\mathbf{X(\mathbf{n})}-\mathbf{C}_i|| < ||\mathbf{X(\mathbf{n})}-\mathbf{C}_s|| \forall s \neq i, s = 1,2,...K\\ 0, & \mbox{en otro caso } \end{cases} 
+
+Algoritmo de K-medias
+
+Dado el número de clases K
+
+1-Se inicializan aleatoriamente los centros de los K clusters (Unidad de capa oculta)
+
+2-Se asignan Ni patrones de entrada a cada clúster i del siguiente modo:
+
+El patrón X(n) pertenece al clúster i si :
+
+    ||\mathbf{X(\mathbf{n})}-\mathbf{C}_i|| < ||\mathbf{X(\mathbf{n})}-\mathbf{C}_s|| \forall s \neq i, s = 1,2,...K 
+
+Con lo cual cada unidad tendrá asociado un determinado número de patrones de entrada, aquellos más cercanos a su centro.
+
+3-Se calcula la nueva posición de los centros como la media de todos los patrones que pertenecen al clúster:
+
+    c_{ij} = \frac{1}{N} \sum_{n=1}^N \mu_{A}(x(j)) \forall j =1,2,...,p, \forall i = 1,2,...,K 
+
+4-Se repiten 2 y 3 hasta que las nuevas posiciones de los centros no se modifiquen respecto de la anterior:
+
+    ||C_i(t)-C_i(t-1)|| < \varepsilon, \forall i = 1,2,...,K 
+
+Determinación de las desviaciones
+
+Las desviaciones se calculan de manera que cada unidad oculta se activa para una determinada región del espacio entrada y además que esta región de esta unidad no se solape con la región de otra unidad oculta.
+
+Existen diversas formas de calular esta desviación, siendo la más común, la media geométrica entre un centro y los centros adyacentes:
+
+    d_i = \sqrt{||C_i-C_m|| ||C_i-C_s||} 
+
+Donde C_m y C_s son los centros más cercanos a C_i para la desviación del clúster i
+
+Fase supervisada
+
+Durante esta fase se determinan pesos y umbrales. Se usan los siguientes métodos: Método de la pseudo-inversa y Método de los mínimos cuadrados.
+
+Método de la pseudo-inversa
+
+La solución viene dada por la siguiente expresión:
+
+    W = G^+ S 
+
+Siendo W la matriz de orden (n + 1) \times r que posee los n pesos y los umbrales en la última fila. La matriz G posee todas las funciones de activación para cada uno de los patrones de entrada, es de orden N \times (n + 1) , siendo g_{in} = \phi_{i}(n) siendo \phi_{i} la función de activación de la neurona oculta i para el patrón de entrada X(n) . S es la matriz de salidas deseadas de la red, de orden N \times r
+
+Método de los mínimos cuadrados
+
+Método totalmente supervisado
+
+Todos los parámetros de las redes de neuronas de base radial, es decir, los centros, las desviaciones, los pesos y los umbrales, se determinan de forma supervisada con el objetivo de minimizar el error cuadrático medio. El proceso no se guía para que las amplitudes sean tales que el solapamiento de las gausianas sea lo más suave posible, sino para minimizar el error cuadrático; por tanto, pueden perderse las características locales. Mientras que las salidas de la red dependen linealmente de los pesos, los centros y desviaciones no. Para realizar el cálculo de los parámetros, se aplicará el método de descenso del gradiente.
+
+Referencias
+- Redes de Neuronas de Base Radial, Redes de Neuronas Artificiales, UC3M, RAI 2012.
+- Algoritmo K-medias, Tutorial sobre su funcionamiento a través de una aplicación.

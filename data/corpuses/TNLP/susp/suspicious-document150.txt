@@ -1,0 +1,64 @@
+Weka (aprendizaje automático)
+
+Weka (Waikato Environment for Knowledge Analysis, en español «entorno para análisis del conocimiento de la Universidad de Waikato») es una plataforma de software para el aprendizaje automático y la minería de datos escrito en Java y desarrollado en la Universidad de Waikato. Weka es software libre distribuido bajo la licencia GNU-GPL.
+
+Breve historia
+- En 1993, la Universidad de Waikato de Nueva Zelanda inició el desarrollo de la versión original de Weka (en TCL/TK y C).
+- En 1997, se decidió reescribir el código en Java incluyendo implementaciones de algoritmos de modelado.1
+- En 2005, Weka recibe de SIGKDD2 3 (Special Interest Group on Knowledge Discovery and Data Mining) el galardón "Data Mining and Knowledge Discovery Service".
+- En 2006, Pentaho Corporation adquirió una licencia exclusiva para usar Weka para Inteligencia de negocio (Business Intelligence), dando lugar al componente de minería de datos y análisis predictivo del paquete de software Pentaho Business Intelligence.
+
+Descripción
+
+El paquete Weka4 contiene una colección de herramientas de visualización y algoritmos para análisis de datos y modelado predictivo, unidos a una interfaz gráfica de usuario para acceder fácilmente a sus funcionalidades. La versión original de Weka fue un front-end en TCL/TK para modelar algoritmos implementados en otros lenguajes de programación, más unas utilidades para preprocesamiento de datos desarrolladas en C para hacer experimentos de aprendizaje automático. Esta versión original se diseñó inicialmente como herramienta para analizar datos procedentes del dominio de la agricultura,5 6 pero la versión más reciente basada en Java (WEKA 3), que empezó a desarrollarse en 1997, se utiliza en muchas y muy diferentes áreas, en particular con finalidades docentes y de investigación.
+
+Razones a favor de Weka
+
+Los puntos fuertes de Weka son:
+- Está disponible libremente bajo la licencia pública general de GNU.
+- Es muy portable porque está completamente implementado en Java y puede correr en casi cualquier plataforma.
+- Contiene una extensa colección de técnicas para preprocesamiento de datos y modelado.
+- Es fácil de utilizar por un principiante gracias a su interfaz gráfica de usuario.
+
+Weka soporta varias tareas estándar de minería de datos, especialmente, preprocesamiento de datos, clustering, clasificación, regresión, visualización, y selección. Todas las técnicas de Weka se fundamentan en la asunción de que los datos están disponibles en un fichero plano (flat file) o una relación, en la que cada registro de datos está descrito por un número fijo de atributos (normalmente numéricos o nominales, aunque también se soportan otros tipos). Weka también proporciona acceso a bases de datos vía SQL gracias a la conexión JDBC (Java Database Connectivity) y puede procesar el resultado devuelto por una consulta hecha a la base de datos. No puede realizar minería de datos multi-relacional, pero existen aplicaciones que pueden convertir una colección de tablas relacionadas de una base de datos en una única tabla que ya puede ser procesada con Weka.7
+
+Carencias de Weka
+
+Un área importante que actualmente no cubren los algoritmos incluidos en Weka es el modelado de secuencias.
+
+La interfaz de usuario
+
+Al ejecutar la aplicación nos aparece el selector de interfaz de Weka (Weka GUI Chooser) que da la opción de seleccionar entre cuatro posibles interfaces de usuario para acceder a las funcionalidades del programa, éstas son "Simple CLI", "Explorer", "Experimenter" y "Knowledge Flow".
+
+Simple CLI
+
+Simple CLI es la abreviatura de Simple Command-Line Interface («interfaz simple de línea de comandos»). Se trata de una consola que permite acceder a todas las opciones de Weka desde línea de comandos.
+
+Explorer
+
+La interfaz Explorer (Explorador) dispone de varios paneles que dan acceso a los componentes principales del banco de trabajo:
+- El panel "Preprocess" dispone de opciones para importar datos de una base de datos, de un fichero CSV, etc., y para preprocesar estos datos utilizando los denominados algoritmos de filtrado. Estos filtros se pueden utilizar para transformar los datos (por ejemplo convirtiendo datos numéricos en valores discretos) y para eliminar registros o atributos según ciertos criterios previamente especificados.
+- El panel "Classify" permite al usuario aplicar algoritmos de clasificación estadística y análisis de regresión (denominados todos clasificadores en Weka) a los conjuntos de datos resultantes, para estimar la exactitud del modelo predictivo resultante, y para visualizar predicciones erróneas, curvas ROC, etc., o el propio modelo (si este es susceptible de ser visualizado, como por ejemplo un árbol de decisión).
+- El panel "Associate" proporciona acceso a las reglas de asociación aprendidas que intentan identificar todas las interrelaciones importantes entre los atributos de los datos
+
+Artículo principal: Weka-Associate
+- El panel "Cluster" da acceso a las técnicas de clustering o agrupamiento de Weka como por ejemplo el algoritmo K-means. Este es sólo una implementación del algoritmo expectación-maximización para aprender una mezcla de distribuciones normales.
+- El panel "Selected attributes" proporciona algoritmos para identificar los atributos más predictivos en un conjunto de datos.
+- El panel "Visualize" muestra una matriz de puntos dispersos (scatterplot) donde cada punto individual puede seleccionarse y agrandarse para ser analizados en detalle usando varios operadores de selección.
+
+Experimenter
+
+La interfaz Experimenter («experimentador») permite la comparación sistemática de una ejecución de los algoritmos predictivos de Weka sobre una colección de conjuntos de datos.
+
+Knowledge Flow
+
+Knowledge Flow («flujo de conocimiento») es una interfaz que en esencia implementa las mismas funciones que Explorer, y además permite "arrastrar y soltar". También puede ofrecer aprendizaje incremental.
+
+Referencias
+- Ian H. Witten; Eibe Frank, Len Trigg, Mark Hall, Geoffrey Holmes, and Sally Jo Cunningham (1999). «Weka: Practical Machine Learning Tools and Techniques with Java Implementations». Proceedings of the ICONIP/ANZIIS/ANNES'99 Workshop on Emerging Knowledge Engineering and Connectionist-Based Information Systems págs. 192-196. Consultado el 26-06-2007.
+- Gregory Piatetsky-Shapiro (28-06-2005). «KDnuggets news on SIGKDD Service Award 2005». Consultado el 25-06-2007.
+- «Overview of SIGKDD Service Award winners» (2005). Consultado el 25-06-2007.
+- Ian H. Witten; Eibe Frank (2005). «Data Mining: Practical machine learning tools and techniques, 2nd Edition». Morgan Kaufmann, San Francisco. Consultado el 25-06-2007.
+- G. Holmes; A. Donkin and I.H. Witten (1994). «Weka: A machine learning workbench». Proc Second Australia and New Zealand Conference on Intelligent Information Systems, Brisbane, Australia. Consultado el 25-06-2007.
+- S.R. Garner; S.J. Cunningham, G. Holmes, C.G. Nevill-Manning, and I.H. Witten (1995). «Applying a machine learning workbench: Experience with agricultural databases». Proc Machine Learning in Practice Workshop, Machine Learning Conference, Tahoe City, CA, USA págs. 14-21. Consultado el 25-06-2007.
+- P. Reutemann; B. Pfahringer and E. Frank (2004). «Proper: A Toolbox for Learning from Relational Data with Propositional and Multi-Instance Learners». 17th Australian Joint Conference on Artificial Intelligence (AI2004). Springer-Verlag. Consultado el 25-06-2007.

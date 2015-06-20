@@ -1,0 +1,31 @@
+Modelo de datos
+
+Un modelo de datos es un lenguaje orientado a hablar de una Base de Datos. Típicamente un modelo de datos permite describir:
+- Las estructuras de datos de la base: El tipo de los datos que hay en la base y la forma en que se relacionan.
+- Las restricciones de integridad: Un conjunto de condiciones que deben cumplir los datos para reflejar correctamente la realidad deseada.
+- Operaciones de manipulación de los datos: típicamente, operaciones de agregado, borrado, modificación y recuperación de los datos de la base.
+
+Otro enfoque es pensar que un modelo de datos permite describir los elementos de la realidad que intervienen en un problema dado y la forma en que se relacionan esos elementos entre sí.
+
+No hay que perder de vista que una Base de Datos siempre está orientada a resolver un problema determinado, por lo que los dos enfoques propuestos son necesarios en cualquier desarrollo de software.
+
+Sublenguajes de un modelo de datos
+
+Un modelo de datos es un lenguaje que, típicamente, tiene dos sublenguajes:
+- Un Lenguaje de Definición de Datos o DDL (Data Definition Language), orientado a describir de una forma abstracta las estructuras de datos y las restricciones de integridad.
+- Un Lenguaje de Manipulación de Datos o DML (Data Manipulation Language), orientado a describir las operaciones de manipulación de los datos.
+
+A la parte del DML orientada a la recuperación de datos, usualmente se le llama Lenguaje de Consulta o QL (Query Language).
+
+Una clasificación de los modelos de datos
+
+Una opción bastante usada a la hora de clasificar los modelos de datos es hacerlo de acuerdo al nivel de abstracción que presentan:
+
+Modelos de Datos Conceptuales
+    Son los orientados a la descripción de estructuras de datos y restricciones de integridad. Se usan fundamentalmente durante la etapa de Análisis de un problema dado y están orientados a representar los elementos que intervienen en ese problema y sus relaciones. El ejemplo más típico es el Modelo Entidad-Relación.
+	
+Modelos de Datos Lógicos
+    Son orientados a las operaciones más que a la descripción de una realidad. Usualmente están implementados en algún Manejador de Base de Datos. El ejemplo más típico es el Modelo Relacional, que cuenta con la particularidad de contar también con buenas características conceptuales (Normalización de bases de datos).
+	
+Modelos de Datos Físicos
+    Son estructuras de datos a bajo nivel implementadas dentro del propio manejador. Ejemplos típicos de estas estructuras son los Árboles B+, las estructuras de Hash, etc. 

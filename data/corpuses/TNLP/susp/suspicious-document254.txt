@@ -1,0 +1,5 @@
+Código objeto
+
+En programación, se llama código objeto al código que resulta de la compilación del código fuente.
+
+Consiste en lenguaje máquina o bytecode y se distribuye en varios archivos que corresponden a cada código fuente compilado. Para obtener un programa ejecutable se han de enlazar todos los archivos de código objeto con un programa llamado enlazador (linker).

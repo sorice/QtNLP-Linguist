@@ -1,0 +1,729 @@
+C++
+
+C++ es un lenguaje de programación diseñado a mediados de los años 1980 por Bjarne Stroustrup. La intención de su creación fue el extender al exitoso lenguaje de programación C con mecanismos que permitan la manipulación de objetos. En ese sentido, desde el punto de vista de los lenguajes orientados a objetos, el C++ es un lenguaje híbrido.
+
+Posteriormente se añadieron facilidades de programación genérica, que se sumó a los otros dos paradigmas que ya estaban admitidos (programación estructurada y la programación orientada a objetos). Por esto se suele decir que el C++ es un lenguaje de programación multiparadigma.
+
+Actualmente existe un estándar, denominado ISO C++, al que se han adherido la mayoría de los fabricantes de compiladores más modernos. Existen también algunos intérpretes, tales como ROOT.
+
+Una particularidad del C++ es la posibilidad de redefinir los operadores, y de poder crear nuevos tipos que se comporten como tipos fundamentales.
+
+El nombre C++ fue propuesto por Rick Mascitti en el año 1983, cuando el lenguaje fue utilizado por primera vez fuera de un laboratorio científico. Antes se había usado el nombre "C con clases". En C++, la expresión "C++" significa "incremento de C" y se refiere a que C++ es una extensión de C.
+
+Un ejemplo de programa
+
+A continuación se cita un programa de ejemplo Hola mundo escrito en C++:
+
+/* Esta cabecera permite usar los objetos que encapsulan los descriptores stdout 
+y stdin: cout(<<) y cin(>>)*/
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+   cout << "Hola mundo" << endl;
+   cin.get();
+}
+
+Al usar la directiva #include estamos diciéndole al compilador que busque e interprete todos los elementos definidos en el archivo que acompaña la directiva (en este caso, iostream). Para evitar sobrescribir los elementos ya definidos al ponerles igual nombre, se crearon los espacios de nombres o namespace del singular en inglés. En este caso hay un espacio de nombres llamado std, que es donde se incluyen las definiciones de todas las funciones y clases que conforman la biblioteca estándar de C++. Al incluir la sentencia using namespace std le estamos diciendo al compilador que usaremos el espacio de nombres std por lo que no tendremos que incluirlo cuando usemos elementos de este espacio de nombres, como pueden ser los objetos cout y cin, que representan el flujo de salida estándar (típicamente la pantalla o una ventana de texto) y el flujo de entrada estándar (típicamente el teclado).
+
+La definición de funciones es igual que en C, salvo por la característica de que si main no va a recoger argumentos, no tenemos por qué ponérselos, a diferencia de C, donde había que ponerlos explícitamente, aunque no se fueran a usar. Queda solo comentar que el símbolo << se conoce como operador de inserción, y grosso modo está enviando a cout lo que queremos mostrar por pantalla para que lo pinte, en este caso la cadena "Hola mundo". El mismo operador << se puede usar varias veces en la misma sentencia, de forma que gracias a esta característica podremos concatenar el objeto endl al final, cuyo resultado será imprimir un retorno de línea.
+
+Por último tomaremos una secuencia de caracteres del teclado hasta el retorno de línea (presionando ENTER), llamando al método get del objeto cin.
+
+Tipos de datos
+
+C++ tiene los siguientes tipos fundamentales:
+- Caracteres: char (también es un entero), wchar_t
+- Enteros: short, int, long, long long
+- Números en coma flotante: float, double, long double
+- Booleanos: bool
+- Vacío: void
+
+El modificador unsigned se puede aplicar a enteros para obtener números sin signo (por omisión los enteros contienen signo), con lo que se consigue un rango mayor de números naturales.
+
+Tamaños asociados
+
+Tamaños de tipos primitivos bajo i386 (GCC) 
+Tipo 	Número de Bits
+char 	8
+short 	16
+int 	32
+float 	32
+double 	64
+
+Según la máquina y el compilador que se utilice los tipos primitivos pueden ocupar un determinado tamaño en memoria. La siguiente lista ilustra el número de bits que ocupan los distintos tipos primitivos en la arquitectura x86.
+
+Otras arquitecturas pueden requerir distintos tamaños de tipos de datos primitivos. C++ no dice nada acerca de cuál es el número de bits en un byte, ni del tamaño de estos tipos; más bien, ofrece solamente las siguientes "garantías de tipos":
+- De acuerdo al estándar C99, un tipo char debe ocupar exactamente un byte compuesto de un mínimo de 8 bits independientemente de la arquitectura de la máquina.
+- El tamaño reconocido de char es de 1. Es decir, sizeof(char) siempre devuelve 1.
+- Un tipo short tiene al menos el mismo tamaño que un tipo char.
+- Un tipo long tiene al menos el doble tamaño en bytes que un tipo short.
+- Un tipo int tiene un tamaño entre el de short y el de long, ambos inclusive, preferentemente el tamaño de un apuntador de memoria de la máquina.
+- Un tipo unsigned tiene el mismo tamaño que su versión signed.
+
+Wchar_t
+
+Para la versión del estándar que se publicó en 1998, se decidió añadir el tipo de dato wchar_t, que permite el uso de caracteres UNICODE, a diferencia del tradicional char, que contempla simplemente al código de caracteres ASCII extendido. A su vez, se ha definido para la mayoría de las funciones y clases, tanto de C como de C++, una versión para trabajar con wchar_t, donde usualmente se prefija el carácter w al nombre de la función (en ocasiones el carácter es un infijo). Por ejemplo:
+- strcpy - wstrcpy
+- std::string - std::wstring
+- std::cout - std::wcout
+
+Cabe resaltar que en C se define wchar_t como:
+
+typedef unsigned short wchar_t;
+
+Mientras que en C++ es en sí mismo un tipo de dato.
+
+La palabra reservada "void"
+
+La palabra reservada void define en C++ el concepto de no existencia o no atribución de un tipo en una variable o declaración. Es decir, una función declarada como void no devolverá ningún valor. Esta palabra reservada también puede usarse para indicar que una función no recibe parámetros, como en la siguiente declaración:
+
+int funcion (void);
+
+Aunque la tendencia actual es la de no colocar la palabra "void".
+
+Además se utiliza para determinar que una función no retorna un valor, como en:
+
+void funcion (int parametro);
+
+Cabe destacar que void no es un tipo. Una función como la declarada anteriormente no puede retornar un valor por medio de return: la palabra clave va sola. No es posible una declaración del tipo:
+
+void t; //Está mal
+
+En este sentido, void se comporta de forma ligeramente diferente a como lo hace en C, especialmente en cuanto a su significado en declaraciones y prototipos de funciones.
+
+Sin embargo, la forma especial void * indica que el tipo de datos es un puntero. Por ejemplo:
+
+void *memoria;
+
+Indica que memoria es un puntero a alguna parte, donde se guarda información de algún tipo. El programador es responsable de definir estos "algún", eliminando toda ambigüedad. Una ventaja de la declaración "void *" es que puede representar a la vez varios tipos de datos, dependiendo de la operación de cast escogida. La memoria que hemos apuntado en alguna parte, en el ejemplo anterior, bien podría almacenar un entero, un flotante, una cadena de texto o un programa, o combinaciones de éstos. Es responsabilidad del programador recordar qué tipo de datos hay y garantizar el acceso adecuado.
+
+La palabra "NULL"
+
+Además de los valores que pueden tomar los tipos anteriormente mencionados, existe un valor llamado NULL, sea el caso numérico para los enteros, caracter para el tipo char, cadena de texto para el tipo string, etc. El valor NULL, expresa, por lo regular, la representación de una Macro, asignada al valor "0".
+
+Tenemos entonces que:
+
+void* puntero = NULL;
+int entero = NULL;
+bool boleana = NULL;
+char caracter = NULL;
+
+El valor de las variables anteriores nos daría 0. A diferencia de la variable "caracter", que nos daría el equivalente a NULL, '\0', para caracteres.
+
+Principios
+
+Todo programa en C++ debe tener la función principal main() (a no ser que se especifique en tiempo de compilación otro punto de entrada, que en realidad es la función que tiene el main())
+
+int main()
+{}
+
+La función principal del código fuente main debe tener uno de los siguientes prototipos:
+int main()
+int main(int argc, char** argv)
+
+Aunque no es estándar algunas implementaciones permiten
+int main(int argc, char** argv, char** env)
+
+La primera es la forma por omisión de un programa que no recibe parámetros ni argumentos. La segunda forma tiene dos parámetros: argc, un número que describe el número de argumentos del programa (incluyendo el nombre del programa mismo), y argv, un puntero a un array de punteros, de argc elementos, donde el elemento argv[i] representa el i-ésimo argumento entregado al programa. En el tercer caso se añade la posibilidad de poder acceder a las variables de entorno de ejecución de la misma forma que se accede a los argumentos del programa, pero reflejados sobre la variable env.
+
+El tipo de retorno de main es un valor entero int. Al finalizar la función main, debe incluirse el valor de retorno (por ejemplo, return 0;, aunque el estándar prevé solamente dos posibles valores de retorno: EXIT_SUCCESS y EXIT_FAILURE, definidas en el archivo cstdlib), o salir por medio de la función exit. Alternativamente puede dejarse en blanco, en cuyo caso el compilador es responsable de agregar la salida adecuada.
+
+El concepto de clase
+
+Los objetos en C++ son abstraídos mediante una clase. Según el paradigma de la programación orientada a objetos un objeto consta de:
+1. Identidad, que lo diferencia de otros objetos (Nombre que llevara la clase a la que pertenece dicho objeto).
+2. Métodos o funciones miembro
+3. Atributos o variables miembro
+
+Un ejemplo de clase que podemos tomar es la clase perro. Cada perro comparte unas características (atributos). Su número de patas, el color de su pelaje o su tamaño son algunos de sus atributos. Las funciones que lo hagan ladrar, cambiar su comportamiento... esas son las funciones de la clase.
+
+Este es otro ejemplo de una clase:
+
+class Punto
+{
+//por defecto los miembros son 'private' para que sólo se puedan modificar desde la propia clase.
+private: 
+        // Variable miembro privada
+        int id;
+protected:
+        // Variables miembro protegidas
+        int x;
+        int y;
+public:
+        // Constructor
+        Punto();
+        // Destructor
+        ~Punto();
+        // Funciones miembro o métodos
+        int ObtenerX();
+        int ObtenerY();
+};
+
+Constructores
+
+Son unos métodos especiales que se ejecutan automáticamente al crear un objeto de la clase. En su declaración no se especifica el tipo de dato que devuelven, y poseen el mismo nombre que la clase a la que pertenecen. Al igual que otros métodos, puede haber varios constructores sobrecargados, aunque no pueden existir constructores virtuales.
+
+Como característica especial a la hora de implementar un constructor, justo después de la declaración de los parámetros, se encuentra lo que se llama "lista de inicializadores". Su objetivo es llamar a los constructores de los atributos que conforman el objeto a construir.
+
+Cabe destacar que no es necesario declarar un constructor al igual que un destructor, pues el compilador lo puede hacer, aunque no es la mejor forma de programar.
+
+Tomando el ejemplo de la Clase Punto, si deseamos que cada vez que se cree un objeto de esta clase las coordenadas del punto sean igual a cero podemos agregar un constructor como se muestra a continuación:
+
+class Punto
+{
+  public:
+ 
+  float x;  // Coordenadas del punto
+  float y;  
+ 
+                // Constructor
+  Punto() : x(0), y(0){ // Inicializamos las variables "x" e "y"
+  }
+};
+ 
+// Main para demostrar el funcionamiento de la clase
+ 
+# include <iostream> // Esto nos permite utilizar "cout"
+ 
+using namespace std;
+ 
+int main () {
+  Punto MiPunto;         // creamos un elemento de la clase Punto llamado MiPunto
+ 
+  cout << "Coordenada X: " << MiPunto.x << endl;    // mostramos el valor acumulado en la variable x
+  cout << "Coordenada Y: " << MiPunto.y << endl;    // mostramos el valor acumulado en la variable y 
+  getchar(); // le indicamos al programa que espere al buffer de entrada (detenerse)
+  return 0;
+}
+
+Si compilamos y ejecutamos el anterior programa, obtenemos una salida que debe ser similar a la siguiente:
+
+Coordenada X: 0 Coordenada Y: 0
+
+Existen varios tipos de constructores en C++:
+1. Constructor predeterminado. Es el constructor que no recibe ningún parámetro en la función. Si no se definiera ningún constructor, el sistema proporcionaría uno predeterminado. Es necesario para la construcción de estructuras y contenedores de la STL.
+2. Constructor de copia. Es un constructor que recibe un objeto de la misma clase, y realiza una copia de los atributos del mismo. Al igual que el predeterminado, si no se define, el sistema proporciona uno.
+3. Constructor de conversión. Este constructor, recibe como único parámetro, un objeto o variable de otro tipo distinto al suyo propio. Es decir, convierte un objeto de un tipo determinado a otro objeto del tipo que estamos generando.
+
+Constructores + Memoria heap Un objeto creado de la forma que se vio hasta ahora, es un objeto que vive dentro del scope(las llaves { }) en el que fue creado. Para que un objeto pueda seguir viviendo cuando se saque de el scope en el que se creó, se lo debe crear en memoria heap. Para esto, se utiliza el operador new, el cual asigna memoria para almacenar al objeto creado, y además llama a su constructor(por lo que se le pueden enviar parámetros). El operador new se utiliza de la siguiente manera:
+
+int main() {
+  Punto *unPunto = new Punto(); //esto llama al constructor que se describe más arriba
+  delete unPunto;               //no hay que olvidarse de liberar la memoria ocupada por el objeto(ver la sección destructores, más abajo)
+  return 0;
+}
+
+Además, con el operador new[] se pueden crear arrays (colecciones o listas ordenadas) de tamaño dinámico:
+
+Punto *asignar(int cuantos) {
+  return new Punto[cuantos]; //asigna un array de 'cuantos' puntos(se llama el constructor que se muestra más arriba), y se retorna.
+}
+
+Destructores
+
+Los destructores son funciones miembro especiales llamadas automáticamente en la ejecución del programa, y por tanto no tienen por qué ser llamadas explícitamente por el programador. Sus principales cometidos son:
+- Liberar los recursos computacionales que el objeto de dicha clase haya adquirido en tiempo de ejecución al expirar éste.
+- Quitar los vínculos que pudiesen tener otros recursos u objetos con éste.
+
+Los destructores son invocados automáticamente al alcanzar el flujo del programa el fin del ámbito en el que está declarado el objeto. El único caso en el que se debe invocar explícitamente al destructor de un objeto, es cuando éste fue creado mediante el operador new, es decir, que éste vive en memoria heap, y no en la pila de ejecución del programa. La invocación del destructor de un objeto que vive en heap se realiza a través del operador delete o delete[] para arrays. Ejemplo:
+
+int main() {
+  int *unEntero = new int(12);         //asignamos un entero en memoria heap con el valor 12
+  int *arrayDeEnteros = new int[25]; //asignamos memoria para 25 enteros(no estan inicializados)
+  delete unEntero;                     //liberamos la memoria que ocupaba unEntero
+  delete[] arrayDeEnteros;           //liberamos la memoria ocupada por arrayDeEnteros
+  return 0;
+}
+
+Si no se utilizara el operador delete y delete[] en ese caso, la memoria ocupada por unEntero y arrayDeEnteros respectivamente, quedaría ocupada sin sentido. Cuando una porción de memoria queda ocupada por una variable que ya no se utiliza, y no hay forma de acceder a ella, se denomina un 'memory leak'. En aplicaciones grandes, si ocurren muchos memory leaks, el programa puede terminar ocupando bastante más memoria RAM de la que debería, lo que no es para nada conveniente. Es por esto, que el manejo de memoria heap debe usarse conscientemente.
+
+Existen dos tipos de destructores pueden ser públicos o privados, según si se declaran:
+- Si es público se llama desde cualquier parte del programa para destruir el objeto.
+- Si es privado no se permite la destrucción del objeto por el usuario.
+
+El uso de destructores es clave en el concepto de Adquirir Recursos es Inicializar.
+
+Funciones miembro
+
+Función miembro es aquella que está declarada en ámbito de clase. Son similares a las funciones habituales, con la salvedad de que el compilador realizara el proceso de Decoración de nombre (Name Mangling en inglés): Cambiará el nombre de la función añadiendo un identificador de la clase en la que está declarada, pudiendo incluir caracteres especiales o identificadores numéricos. Este proceso es invisible al programador. Además, las funciones miembro reciben implícitamente un parámetro adicional: El puntero this, que referencia al objeto que ejecuta la función.
+
+Las funciones miembro se invocan accediendo primero al objeto al cual refieren, con la sintaxis: myobject.mymemberfunction(), esto es un claro ejemplo de una función miembro.
+
+Caso especial es el de las funciones miembro estáticas. A pesar de que son declaradas dentro de la clase, con el uso de la palabra clave static no recibirán el puntero this. Gracias a esto no es necesario crear ninguna instancia de la clase para llamar a esta función, sin embargo, sólo se podrá acceder a los miembros estáticos de la clase dado que estos no están asociados al objeto sino al tipo. La sintaxis para llamar a esta función estática es mytype::mystaticmember().
+
+Plantillas
+
+Las plantillas son el mecanismo de C++ para implantar el paradigma de la programación genérica. Permiten que una clase o función trabaje con tipos de datos abstractos, especificándose más adelante cuales son los que se quieren usar. Por ejemplo, es posible construir un vector genérico que pueda contener cualquier tipo de estructura de datos. De esta forma se pueden declarar objetos de la clase de este vector que contengan enteros, flotantes, polígonos, figuras, fichas de personal, etc.
+
+La declaración de una plantilla se realiza anteponiendo la declaración template <typename A,....> a la declaración de la estructura (clase, estructura o función) deseado.
+
+Por ejemplo:
+
+template <typename T>
+T max(const T &x, const T &y) { 
+  return (x > y) ? x : y; //si x > y, retorna x, sino retorna y
+}
+
+La función max() es un ejemplo de programación genérica, y dados dos parámetros de un tipo T (que puede ser int, long, float, double, etc.) devolverá el mayor de ellos (usando el operador >). Al ejecutar la función con parámetros de un cierto tipo, el compilador intentará "calzar" la plantilla a ese tipo de datos, o bien generará un mensaje de error si fracasa en ese proceso.
+
+Especialización
+
+Clases abstractas
+
+En C++ es posible definir clases abstractas. Una clase abstracta, o clase base abstracta (ABC), es una que está diseñada sólo como clase padre de las cuales se deben derivar clases hijas. Una clase abstracta se usa para representar aquellas entidades o métodos que después se implementarán en las clases derivadas, pero la clase abstracta en sí no contiene ninguna implementación -- solamente representa los métodos que se deben implementar. Por ello, no es posible instanciar una clase abstracta, pero sí una clase concreta que implemente los métodos definidos en ella.
+
+Las clases abstractas son útiles para definir interfaces, es decir, un conjunto de métodos que definen el comportamiento de un módulo determinado. Estas definiciones pueden utilizarse sin tener en cuenta la implementación que se hará de ellos.
+
+En C++ los métodos de las clases abstractas se definen como funciones virtuales puras.
+
+class Abstracta
+{
+ public:
+    virtual int metodo() = 0;
+}
+ 
+class ConcretaA : public Abstracta
+{
+ public:
+     int metodo()
+     {
+      //haz algo
+      return foo () + 2;
+     }
+};
+ 
+class ConcretaB : public Abstracta
+{
+  public:
+     int metodo()
+     {
+         //otra implementación
+         return baz () - 5;
+    }
+};
+
+En el ejemplo, la clase ConcretaA es una implementación de la clase Abstracta, y la clase ConcretaB es otra implementación. Debe notarse que el = 0 es la notación que emplea C++ para definir funciones virtuales puras.
+
+Espacios de nombres
+
+Una adición a las características de C son los espacios de nombre (namespace en inglés), los cuales pueden describirse como áreas virtuales bajo las cuales ciertos nombres de variable o tipos tienen validez. Esto permite evitar las ocurrencias de conflictos entre nombres de funciones, variables o clases.
+
+El ejemplo más conocido en C++ es el espacio de nombres std::, el cual almacena todas las definiciones nuevas en C++ que difieren de C (algunas estructuras y funciones), así como las funcionalidades propias de C++ (streams) y los componentes de la biblioteca STL.
+
+Por ejemplo:
+
+# include <iostream>
+// Las funciones en esta cabecera existen dentro del espacio de nombres std::
+ 
+namespace mi_paquete{
+   int mi_valor;
+};
+ 
+int main()
+{
+   int mi_valor = 3;
+   mi_paquete::mi_valor = 4;
+ 
+   std::cout << mi_valor << '\n'; // imprime '3'
+   std::cout << mi_paquete::mi_valor << '\n'; // imprime '4'
+ 
+   return 0;
+}
+
+Como puede verse, las invocaciones directas a mi_valor darán acceso solamente a la variable descrita localmente; para acceder a la variable del espacio de nombres mi_paquete es necesario acceder específicamente el espacio de nombres. Un atajo recomendado para programas sencillos es la directiva using namespace, que permite acceder a los nombres de variables del paquete deseado en forma directa, siempre y cuando no se produzca alguna ambigüedad o conflicto de nombres.
+
+Herencia
+
+Existen varios tipos de herencia entre clases en el lenguaje de programación C++. Estos son:
+
+Herencia simple
+
+La herencia en C++ es un mecanismo de abstracción creado para poder facilitar y mejorar el diseño de las clases de un programa. Con ella se pueden crear nuevas clases a partir de clases ya hechas, siempre y cuando tengan un tipo de relación especial.
+
+En la herencia, las clases derivadas "heredan" los datos y las funciones miembro de las clases base, pudiendo las clases derivadas redefinir estos comportamientos (polimorfismo) y añadir comportamientos nuevos propios de las clases derivadas. Para no romper el principio de encapsulamiento (ocultar datos cuyo conocimiento no es necesario para el uso de las clases), se proporciona un nuevo modo de visibilidad de los datos/funciones: "protected". Cualquier cosa que tenga visibilidad protected se comportará como pública en la clase Base y en las que componen la jerarquía de herencia, y como privada en las clases que NO sean de la jerarquía de la herencia.
+
+Antes de utilizar la herencia, nos tenemos que hacer una pregunta, y si tiene sentido, podemos intentar usar esta jerarquía: Si la frase <claseB> ES-UN <claseA> tiene sentido, entonces estamos ante un posible caso de herencia donde clase A será la clase base y clase B la derivada.
+
+Ejemplo: clases Barco, Acorazado, Carguero, etc. Un Acorazado ES-UN Barco, un Carguero ES-UN Barco, un Trasatlántico ES-UN Barco, etc.
+
+En este ejemplo tendríamos las cosas generales de un Barco (en C++)
+
+class Barco {
+   protected:
+     char* nombre;
+     float peso;     
+   public:
+     //Constructores y demás funciones básicas de barco
+};
+
+y ahora las características de las clases derivadas, podrían (a la vez que heredan las de barco) añadir cosas propias del subtipo de barco que vamos a crear, por ejemplo:
+
+class Carguero: public Barco { // Esta es la manera de especificar que hereda de Barco
+    private:
+       float carga;
+    //El resto de cosas
+};
+ 
+class Acorazado: public Barco {
+    private:
+       int numeroArmas;
+       int Soldados;
+       // El resto de cosas
+};
+
+Por último, hay que mencionar que existen 3 clases de herencia que se diferencian en el modo de manejar la visibilidad de los componentes de la clase resultante:
+- Herencia publica (class Derivada: public Base ): Con este tipo de herencia se respetan los comportamientos originales de las visibilidades de la clase Base en la clase Derivada.
+- Herencia privada (clase Derivada: private Base): Con este tipo de herencia todo componente de la clase Base, será privado en la clase Derivada (las propiedades heredadas serán privadas aunque estas sean públicas en la clase Base)
+- Herencia protegida (clase Derivada: protected Base): Con este tipo de herencia, todo componente público y protegido de la clase Base, será protegido en la clase Derivada, y los componentes privados, siguen siendo privados.
+
+Herencia múltiple
+
+La herencia múltiple es el mecanismo que permite al programador hacer clases derivadas a partir, no de una sola clase base, sino de varias. Para entender esto mejor, pongamos un ejemplo: Cuando ves a quien te atiende en una tienda, como persona que es, podrás suponer que puede hablar, comer, andar, pero, por otro lado, como empleado que es, también podrás suponer que tiene un jefe, que puede cobrarte dinero por la compra, que puede devolverte el cambio, etc. Si esto lo trasladamos a la programación sería herencia múltiple (clase empleado_tienda):
+
+class Persona {
+ ...
+  Hablar();
+  Caminar();
+ ...
+};
+ 
+class Empleado {
+  Persona jefe;
+  int sueldo;
+  Cobrar();
+ ...
+};
+ 
+class EmpleadoTienda: public Persona, Empleado {
+ ...
+  AlmacenarStock();
+  ComprobarExistencias();
+ ...
+};
+
+Por tanto, es posible utilizar más de una clase para que otra herede sus características.
+
+Sobrecarga de operadores
+
+La sobrecarga de operadores es una forma de hacer polimorfismo. Es posible definir el comportamiento de un operador del lenguaje para que trabaje con tipos de datos definidos por el usuario. No todos los operadores de C++ son factibles de sobrecargar, y, entre aquellos que pueden ser sobrecargados, se deben cumplir condiciones especiales. En particular, los operadores sizeof y :: no son sobrecargables.
+
+No es posible en C++ crear un operador nuevo.
+
+Los comportamientos de los operadores sobrecargados se implementan de la misma manera que una función, salvo que esta tendrá un nombre especial: Tipo de dato de devolución operator<token del operador>(parámetros)
+
+Los siguientes operadores pueden ser sobrecargados:
+- Operadores Unarios
+        Operador * (de indirección)
+        Operador -> (de indirección)
+        Operador & (de dirección)
+        Operador +
+        Operador -
+        Operador ++
+        Operador --
+- Operadores Binarios
+        Operador ==
+        Operador +
+        Operador -
+        Operador *
+        Operador /
+        Operador %
+        Operador <<
+        Operador >>
+        Operador &
+        Operador ^
+        Operador |
+        Operador []
+        Operador ()
+- Operadores de Asignación
+        Operador =
+        Operador +=
+        Operador -=
+        Operador *=
+        Operador /=
+        Operador %=
+        Operador <<=
+        Operador >>=
+        Operador &=
+        Operador ^=
+        Operador |=
+
+Dado que estos operadores son definidos para un tipo de datos definido por el usuario, éste es libre de asignarles cualquiera semántica que desee. Sin embargo, se considera de primera importancia que las semánticas sean tan parecidas al comportamiento natural de los operadores como para que el uso de los operadores sobrecargados sea intuitivo. Por ejemplo, el uso del operador unario - debiera cambiar el "signo" de un "valor".
+
+Los operadores sobrecargados no dejan de ser funciones, por lo que pueden devolver un valor, si este valor es del tipo de datos con el que trabaja el operador, permite el encadenamiento de sentencias. Por ejemplo, si tenemos 3 variables A, B y C de un tipo T y sobrecargamos el operador = para que trabaje con el tipo de datos T, hay dos opciones: si el operador no devuelve nada una sentencia como "A=B=C;" (sin las comillas) daría error, pero si se devuelve un tipo de datos T al implementar el operador, permitiría concatenar cuantos elementos se quisieran, permitiendo algo como "A=B=C=D=...;"
+
+Standard Template Library (STL)
+
+Los lenguajes de programación suelen tener una serie de bibliotecas de funciones integradas para la manipulación de datos a nivel más básico. En C++, además de poder usar las bibliotecas de C, se puede usar la nativa STL (Standard Template Library), propia del lenguaje. Proporciona una serie plantillas (templates) que permiten efectuar operaciones sobre el almacenado de datos, procesado de entrada/salida.
+
+Biblioteca de entrada y salida
+
+Las clases basic_ostream y basic_stream, y los objetos cout y cin, proporcionan la entrada y salida estándar de datos (teclado/pantalla). También está disponible cerr, similar a cout, usado para la salida estándar de errores. Estas clases tienen sobrecargados los operadores << y >>, respectivamente, con el objeto de ser útiles en la inserción/extracción de datos a dichos flujos. Son operadores inteligentes, ya que son capaces de adaptarse al tipo de datos que reciben, aunque tendremos que definir el comportamiento de dicha entrada/salida para clases/tipos de datos definidos por el usuario. Por ejemplo:
+
+ostream& operator<<(ostream& fs, const Punto& punto)
+{
+  return fs << punto.x << "," << punto.y;
+}
+
+De esta forma, para mostrar un punto, solo habría que realizar la siguiente expresión:
+
+//...
+Punto p(4,5);
+//...
+cout << "Las coordenadas son: " << p << endl;
+//...
+
+Es posible formatear la entrada/salida, indicando el número de dígitos decimales a mostrar, si los textos se pasarán a minúsculas o mayúsculas, si los números recibidos están en formato octal o hexadecimal, etc.
+
+Fstreams
+
+Tipo de flujo para el manejo de ficheros. La definición previa de ostreams/istreams es aplicable a este apartado. Existen tres clases (ficheros de lectura, de escritura o de lectura/escritura): ifstream,ofstream y fstream.
+
+Como abrir un fichero: (nombre_variable_fichero).open("nombre_fichero.dat/txt",ios::in); para abrirlo en modo lectura. (nombrevariablefichero).open("nombre_fichero.dat/txt",ios::out); para abrirlo en modo escritura.
+
+Ejemplo: f.open("datos.txt",ios::in);
+
+Como cerrar el fichero: nombre_variable_fichero.close();
+
+Ejemplo: f.close();
+
+Leer un fichero:
+
+1-Si es fichero de texto plano:
+
+   #include <fstream>
+   #include <string>
+   #include <iostream>
+ 
+   using namespace std;
+ 
+   int main() {
+     ifstream entrada;
+     entrada.open("textoPlano.txt");
+     string unString;
+     while(entrada >> unString)
+        cout << "Lei: " << unString << endl;
+     return 0;
+   }
+
+2-Si es un fichero binario(.dat);
+  nombre_variable_fichero.read((char*)&nombre_variable, sizeof(tipo_variable));
+
+Ejemplo:
+
+f.read((char*)&e, sizeof(int));
+
+Escribir un fichero:
+
+1-Si es fichero de texto(.txt):
+  nombrevariable<<"texto"; donde "texto" puede ser también una variable de cualquier tipo primitivo, o un string.
+  
+  Ejemplo: f<<HOLA;
+
+2-Si es un fichero binario(.dat);
+  nombre_variable_fichero.write((char*)&nombre_variable, sizeof(tipo_variable));
+
+Ejemplo:
+
+f.write((char*)&e, sizeof(int));
+
+Pueden abrirse pasando al constructor los parámetros relativos a la ubicación del fichero y el modo de apertura:
+
+Sstreams
+
+Se destacan dos clases, ostringstream e istringstream. Todo lo anteriormente dicho es aplicable a estas clases. Tratan a una cadena como si de un flujo de datos se tratase. ostringstream permite elaborar una cadena de texto insertando datos cual flujo, e istringstream puede extraer la información contenida en una cadena (pasada como parámetro en su constructor) con el operador >>. Ejemplos:
+
+ostringstream s;
+s << nombre << "," << edad << "," << estatura << "," << punto(5,6) << endl;
+cout << s.str();
+istringstream s(cadena);
+s >> nombre >> edad >> estatura >> p;
+
+Contenedores
+
+Son clases plantillas especiales utilizadas para almacenar tipos de datos genéricos, sean cuales sean. Todos los contenedores son homogéneos, es decir, una vez que se declaran para contener un tipo de dato determinado, en ese contenedor, solo se podrán meter elementos de ese tipo. Según la naturaleza del almacenado, disponemos de varios tipos:
+
+- Vectores: Se definen por
+
+    vector<tipo_de_dato> nombre_del_vector;
+
+    Son arrays (o listas ordenadas) que se redimensionan automáticamente al agregar nuevos elementos, por lo que se le pueden agregar "teóricamente", infinitos elementos. Los vectores nos permiten acceder a cualquier elemento que contenga, mediante el operador[]. Debe tenerse en cuenta que si se intenta acceder a una posición que excede los límites del vector, este no hará ningún chequeo, por lo que se debe ser cuidadoso al utilizar este operador. Para asegurar un acceso seguro al vector, se puede utilizar el método at(int), que lanza una excepción de tipo std::out_of_range en caso de que esto ocurra.
+
+Para añadir elementos al final del vector, se utiliza el método push_back(const T&). Por otro lado, para eliminar un elemento del final del vector, se debe usar el método pop_back().
+
+#include <vector> //libreria que contiene a la clase vector
+#include <iostream>
+using namespace std;
+ 
+int main() {
+  vector<int> intVector;   //crea un vector de enteros(sin elementos)
+  intVector.push_back(25); //agrega el entero 25 al vector
+  cout << "El primer elemento es: " << intVector.front() << 
+    " y mi vector tiene " << intVector.size() << " elementos." << endl; //imprime el primer elemento(retornado por el método front()
+ 
+  intVector.push_back(32); //agrego el entero 32 al vector
+  cout << "El primer elemento es: " << intVector[0] << endl; //imprime 25
+  intVector.pop_back();    //elimina el ultimo elemento del vector(osea 32)
+  cout << "Ahora tengo: " << intVector.size() << " elementos." << endl; //imprimirá 1
+ 
+  return 0;
+}
+
+- Colas dobles: son parecidas a los vectores, pero tienen mejor eficiencia para agregar o eliminar elementos en las "puntas".
+
+    deque<tipo_de_dato> nombre_de_la_cola;
+
+Además de los métodos push_back(const T&) y pop_back(), se agregan los métodos push_front(const T&) y pop_front(), que realizan lo mismo que los ya explicados, pero en el comienzo de la cola.
+
+#include <deque> //libreria de deques
+ 
+using namespace std;
+ 
+int main() {
+  deque<int> intDeque;
+  intDeque.push_front(25);
+  intDeque.push_back(12);
+  while(intDeque.size())
+    intDeque.pop_back(); //borra todos los elementos
+  return 0;
+}
+
+- Listas: Son eficientes a la hora de agregar elementos. La diferencia con las colas dobles, es que son más eficientes para eliminar elementos que no estén en alguna de las "puntas"
+
+    list<tipo_de_dato> nombre_de_la_lista;
+
+- Adaptadores de secuencia.
+- Contenedores asociativos: map y multimap, que permiten asociar una "clave" con un "valor". map no permite valores repetidos, mientras que multimap si.
+
+map<tipo_de_llave, tipo_de_dato> nombre_del_map;
+multimap<tipo_de_llave, tipo_de_dato> nombre_del_multimap;
+
+#include <map> //libreria que contiene a map y multimap
+#include <string> //libreria de strings
+#include <iostream> //libreria de entrada/salida
+ 
+using namespace std;
+ 
+int main() {
+  map<int, string> intAString;
+  intAString[1] = "uno";
+  intAString[10] = "diez";
+  cout << "En intAString[1]: " << intAString[1] << endl;
+  cout << "En intAString[10]: " << intAString[10] << endl;
+  return 0;
+}
+
+- Contenedores asociativos: set y multiset, que ofrecen solamente la condición de "pertenencia", sin la necesidad de garantizar un ordenamiento particular de los elementos que contienen.
+
+Iteradores
+
+Pueden considerarse como una generalización de la clase de "puntero". Un iterador es un tipo de dato que permite el recorrido y la búsqueda de elementos en los contenedores. Como las estructuras de datos (contenedores) son clases genéricas, y los operadores (algoritmos) que deben operar sobre ellas son también genéricos (funciones genéricas), Stepanov y sus colaboradores tuvieron que desarrollar el concepto de iterador como elemento o nexo de conexión entre ambos. El nuevo concepto resulta ser una especie de punteros que señalan a los diversos miembros del contenedor (punteros genéricos que como tales no existen en el lenguaje).
+
+Algoritmos
+
+Combinando la utilización de templates y un estilo específico para denotar tipos y variables, la STL ofrece una serie de funciones que representan operaciones comunes, y cuyo objetivo es "parametrizar" las operaciones en que estas funciones se ven involucradas de modo que su lectura, comprensión y mantenimiento, sean más fáciles de realizar.
+
+Un ejemplo es la función copy, la cual simplemente copia variables desde un lugar a otro. Más estrictamente, copia los contenidos cuyas ubicaciones están delimitadas por dos iteradores, al espacio indicado por un tercer iterador. La sintaxis es:
+
+copy (inicio_origen, fin_origen, inicio_destino);
+
+De este modo, todos los datos que están entre inicio_origen y fin_origen, excluyendo el dato ubicado en este último, son copiados a un lugar descrito o apuntado por inicio_destino.
+
+Un algoritmo muy importante que viene implementado en la biblioteca STL, es el sort. El algoritmo sort, ordena cualquier tipo de contenedor, siempre y cuando se le pasen como argumentos, desde donde y hasta donde se quiere ordenarlo.
+
+#include <vector>
+#include <deque>
+#include <algorithm>
+ 
+int main() {
+  vector<int> intVector;
+  intVector.push_back(60);
+  intVector.push_back(12);
+  intVector.push_back(54); //para este momento, el vector tiene 60,12,54
+  sort(intVector.begin(), intVector.end()); //listo, array ordenado, ahora tiene 12,54,60
+  /*Notar que si en vez de un vector, fuese una deque, se ordenaria de la misma manera. */
+}
+
+Entre las funciones más conocidas están swap (variable1, variable2), que simplemente intercambia los valores de variable1 y variable2; max (variable1, variable2) y su símil min (variable1, variable2), que retornan el máximo o mínimo entre dos valores; find (inicio, fin, valor) que busca valor en el espacio de variables entre inicio y fin; etcétera.
+
+Los algoritmos son muy variados, algunos incluso tienen versiones específicas para operar con ciertos iteradores o contenedores, y proveen un nivel de abstracción extra que permite obtener un código más "limpio", que "describe" lo que se está haciendo, en vez de hacerlo paso a paso explícitamente.
+
+C++11
+
+El 12 de agosto de 2011, Herb Sutter, presidente del comité de estándares de C++, informó la aprobación unánime del nuevo estándar.2 La publicación del mismo se espera para algún momento de 2011.
+
+Entre las características del nuevo estándar se pueden destacar:
+- Funciones lambda;
+- Referencias rvalue;
+- La palabra reservada auto;
+- Inicialización uniforme;
+- Plantillas con número variable de argumentos.
+
+Además se ha actualizado la biblioteca estándar del lenguaje.
+
+Diferencias de tipos respecto a C
+
+En C++, cualquier tipo de datos que sea declarado completo (fully qualified, en inglés) se convierte en un tipo de datos único. Las condiciones para que un tipo de datos T sea declarado completo son a grandes rasgos las siguientes:
+- Es posible al momento de compilación conocer el espacio asociado al tipo de datos (es decir, el compilador debe conocer el resultado de sizeof(T)).
+- T Tiene al menos un constructor, y un destructor, bien declarados.
+- Si T es un tipo compuesto, o es una clase derivada, o es la especificación de una plantilla, o cualquier combinación de las anteriores, entonces las dos condiciones establecidas previamente deben aplicar para cada tipo de dato constituyente.
+
+En general, esto significa que cualquier tipo de datos definido haciendo uso de las cabeceras completas, es un tipo de datos completo.
+
+En particular, y, a diferencia de lo que ocurría en C, los tipos definidos por medio de struct o enum son tipos completos. Como tales, ahora son sujetos a sobrecarga, conversiones implícitas, etcétera.
+
+Los tipos enumerados, entonces, ya no son simplemente alias para tipos enteros, sino que son tipos de datos únicos en C++. El tipo de datos bool, igualmente, pasa a ser un tipo de datos único, mientras que en C funcionaba en algunos casos como un alias para alguna clase de dato de tipo entero.
+
+Compiladores
+
+Uno de los compiladores libres de C++ es el de GNU, el compilador G++ (parte del proyecto GCC, que engloba varios compiladores para distintos lenguajes). Otros compiladores comunes son Intel C++ Compiler, el compilador de Xcode, el compilador de Borland C++, el compilador de CodeWarrior C++, el compilador g++ de Cygwin, el compilador g++ de MinGW, el compilador de Visual C++, Carbide.c++, entre otros.
+
+Ejemplo: Cmd con colores
+
+Para cambiar el color de la interfaz del programa se necesita la libreria "stdlib.h". su aplicacion sirve para cambiar el color de fondo del cmd y el color de las letras.
+
+Uso
+
+#include <stdlib.h>
+using namespace std;
+ 
+system("color 45");
+
+
+En este caso se ha definido el fondo de pantalla de color rojo y las letras rosadas.
+
+Entornos de desarrollo
+
+Bajo Microsoft Windows
+- Code::Blocks
+- Dev-C++
+- Visual C++
+- wxDev-C++
+- Zinjai
+
+Bajo MacOS
+- Xcode
+- Zinjai
+
+Bajo DOS
+- Turbo C, reemplazado por C++Builder
+
+Bajo GNU/Linux
+- Code::Blocks
+- NetBeans
+- Eclipse
+- Geany
+- Zinjai
+- Kdevelop
+
+Referencias
+1. Stroustrup, Bjarne (1997). «1». The C++ Programming Language (Third edición). ISBN 0201889544. OCLC 59193992.
+2. http://herbsutter.com/2011/08/12/we-have-an-international-standard-c0x-is-unanimously-approved/
+
+Bibliografía
+- Bjarne Stroustrup, El lenguaje de programación C++, Addison Wesley, Madrid, 1998, ISBN 84-7829-019-2
+- Bjarne Stroustrup, The C++ Programming Language, Addison-Wesley Pub Co; Tercera edición (15 de febrero de 2000); ISBN 0-201-70073-5
+- Bjarne Stroustrup, The Design and Evolution of C++, Addison-Wesley Pub Cp; Primera edición (29 de marzo de 1994); ISBN 0-201-54330-3
+- Margaret A. Ellis y Bjarne Stroustrup, The Annotated C++ Reference Manual, Addison-Wesley Pub Co; (1 de enero de 1990); ISBN 0-201-51459-1

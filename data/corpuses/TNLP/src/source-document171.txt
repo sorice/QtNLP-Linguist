@@ -1,0 +1,13 @@
+Desarrollo rápido de aplicaciones
+
+El desarrollo rápido de aplicaciones o RAD (acrónimo en inglés de rapid application development) es un proceso de desarrollo de software, desarrollado inicialmente por James Martin en 1980. El método comprende el desarrollo interativo, retroalimentación continua del usuario, la construcción de prototipos y el uso de utilidades CASE (ingeniería asistida por computadora). Tradicionalmente, el desarrollo rápido de aplicaciones tiende a englobar también la usabilidad, utilidad y la rapidez de ejecución.1 2
+
+Hoy en día se suele utilizar para referirnos al desarrollo rápido de interfaces gráficas de usuario tales como Glade, o entornos de desarrollo integrado completos. Algunas de las plataformas más conocidas son Visual Studio, Lazarus, Gambas, Delphi, Foxpro, Anjuta, Game Maker, Velneo, GeneXus o Clarion. En el área de la autoría multimedia, software como Neosoft Neoboo y MediaChance Multimedia Builder proveen plataformas de desarrollo rápido de aplicaciones, dentro de ciertos límites.
+
+Antecedentes
+
+Comenzando con las ideas de Barry Boehm y Scott Shultz, Martin desarrolló el Rapid Application Development durante los años 1980 en IBM y finalmente lo formalizó publicando un libro en 1990.
+
+Referencias
+- Martin, James (1990). MacMillan Publishing Co., ed. Rapid Application Development.[1]
+- Maurer and S. Martel. (2002). "Extreme Programming: Rapid Development for Web-Based Applications". IEEE Internet Computing, 6(1) pp 86-91 Enero/Febrero 2002.

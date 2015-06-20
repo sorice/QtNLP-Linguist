@@ -1,0 +1,398 @@
+Tabla hash
+
+Una tabla hash, matriz asociativa, mapa hash, tabla de dispersión o tabla fragmentada es una estructura de datos que asocia llaves o claves con valores. La operación principal que soporta de manera eficiente es la búsqueda: permite el acceso a los elementos (teléfono y dirección, por ejemplo) almacenados a partir de una clave generada (usando el nombre o número de cuenta, por ejemplo). Funciona transformando la clave con una función hash en un hash, un número que identifica la posición (casilla o cubeta) donde la tabla hash localiza el valor deseado.
+
+Un ejemplo práctico para ilustrar que es una tabla hash es el siguiente: Se necesita organizar los periódicos que llegan diariamente de tal forma que se puedan ubicar de forma rápida, entonces se hace de la siguiente forma - se hace una gran caja para guardar todos los periódicos (una tabla), y se divide en 31 contenedores (ahora es una "hash table" o tabla fragmentada), y la clave para guardar los periódicos es el día de publicación (índice). Cuando se requiere buscar un periódico se busca por el día que fue publicado y así se sabe en que zócalo (bucket) está. Varios periódicos quedarán guardados en el mismo zócalo (es decir colisionan al ser almacenados), lo que implica buscar en la sub-lista que se guarda en cada zócalo. De esta forma se reduce el tamaño de las búsquedas de O(n) a, en el mejor de los casos, O(1) y, en el peor, a O(log(n)).
+
+Las tablas hash se suelen implementar sobre vectores de una dimensión, aunque se pueden hacer implementaciones multi-dimensionales basadas en varias claves. Como en el caso de los arrays, las tablas hash proveen tiempo constante de búsqueda promedio O(1),1 sin importar el número de elementos en la tabla. Sin embargo, en casos particularmente malos el tiempo de búsqueda puede llegar a O(n), es decir, en función del número de elementos.
+
+Comparada con otras estructuras de arrays asociadas, las tablas hash son más útiles cuando se almacenan grandes cantidades de información.
+
+Las tablas hash almacenan la información en posiciones pseudo-aleatorias, así que el acceso ordenado a su contenido es bastante lento. Otras estructuras como árboles binarios auto-balanceables tienen un tiempo promedio de búsqueda mayor (tiempo de búsqueda O(log n)), pero la información está ordenada en todo momento.
+
+Funcionamiento
+
+Las operaciones básicas implementadas en las tablas hash son:
+
+    inserción(llave, valor)
+    búsqueda(llave) que devuelve valor
+
+La mayoría de las implementaciones también incluyen borrar(llave). También se pueden ofrecer funciones como iteración en la tabla, crecimiento y vaciado. Algunas tablas hash permiten almacenar múltiples valores bajo la misma clave.
+
+Para usar una tabla hash se necesita:
+- Una estructura de acceso directo (normalmente un array).
+- Una estructura de datos con una clave
+- Una función resumen (hash) cuyo dominio sea el espacio de claves y su imagen (o rango) los números naturales.
+
+Inserción
+1. Para almacenar un elemento en la tabla hash se ha de convertir su clave a un número. Esto se consigue aplicando la función resumen (hash) a la clave del elemento.
+2. El resultado de la función resumen ha de mapearse al espacio de direcciones del vector que se emplea como soporte, lo cual se consigue con la función módulo. Tras este paso se obtiene un índice válido para la tabla.
+3. El elemento se almacena en la posición de la tabla obtenido en el paso anterior.
+    1. Si en la posición de la tabla ya había otro elemento, se ha producido una colisión. Este problema se puede solucionar asociando una lista a cada posición de la tabla, aplicando otra función o buscando el siguiente elemento libre. Estas posibilidades han de considerarse a la hora de recuperar los datos.
+
+Búsqueda
+1. Para recuperar los datos, es necesario únicamente conocer la clave del elemento, a la cual se le aplica la función resumen.
+2. El valor obtenido se mapea al espacio de direcciones de la tabla.
+3. Si el elemento existente en la posición indicada en el paso anterior tiene la misma clave que la empleada en la búsqueda, entonces es el deseado. Si la clave es distinta, se ha de buscar el elemento según la técnica empleada para resolver el problema de las colisiones al almacenar el elemento.
+
+Prácticas recomendadas para las funciones hash
+
+Una buena función hash es esencial para el buen rendimiento de una tabla hash. Las colisiones son generalmente resueltas por algún tipo de búsqueda lineal, así que si la función tiende a generar valores similares, las búsquedas resultantes se vuelven lentas.
+
+En una función hash ideal, el cambio de un simple bit en la llave (incluyendo el hacer la llave más larga o más corta) debería cambiar la mitad de los bits del hash, y este cambio debería ser independiente de los cambios provocados por otros bits de la llave. Como una función hash puede ser difícil de diseñar, o computacionalmente cara de ejecución, se han invertido muchos esfuerzos en el desarrollo de estrategias para la resolución de colisiones que mitiguen el mal rendimiento del hasheo. Sin embargo, ninguna de estas estrategias es tan efectiva como el desarrollo de una buena función hash de principio.
+
+Es deseable utilizar la misma función hash para arrays de cualquier tamaño concebible. Para esto, el índice de su ubicación en el array de la tabla hash se calcula generalmente en dos pasos:
+1. Un valor hash genérico es calculado, llenando un entero natural de máquina.
+2. Este valor es reducido a un índice válido en el vector encontrando su módulo con respecto al tamaño del array.
+
+El tamaño del vector de las tablas hash es con frecuencia un número primo. Esto se hace con el objetivo de evitar la tendencia de que los hash de enteros grandes tengan divisores comunes con el tamaño de la tabla hash, lo que provocaría colisiones tras el cálculo del módulo. Sin embargo, el uso de una tabla de tamaño primo no es un sustituto a una buena función hash.
+
+Un problema bastante común que ocurre con las funciones hash es el aglomeramiento. El aglomeramiento ocurre cuando la estructura de la función hash provoca que llaves usadas comúnmente tiendan a caer muy cerca unas de otras o incluso consecutivamente en la tabla hash. Esto puede degradar el rendimiento de manera significativa, cuando la tabla se llena usando ciertas estrategias de resolución de colisiones, como el sondeo lineal.
+
+Cuando se depura el manejo de las colisiones en una tabla hash, suele ser útil usar una función hash que devuelva siempre un valor constante, como 1, que cause colisión en cada inserción.
+
+Funciones Hash más usadas:
+
+1. Hash de División:
+
+Dado un diccionario D, se fija un número m >= |D| (m mayor o igual al tamaño del diccionario) y que sea primo no cercano a potencia de 2 o de 10. Siendo k la clave a buscar y h(k) la función hash, se tiene h(k)=k%m (Resto de la división k/m).
+
+2. Hash de Multiplicación
+
+Si por alguna razón, se necesita una tabla hash con tantos elementos o punteros como una potencia de 2 o de 10, será mejor usar una función hash de multiplicación, independiente del tamaño de la tabla. Se escoge un tamaño de tabla m >= |D| (m mayor o igual al tamaño del diccionario) y un cierto número irracional φ (normalmente se usa 1+5^(1/2)/2 o 1-5^(1/2)/2). De este modo se define h(k)= Suelo(m*Parte fraccionaria(k*φ))
+
+Resolución de colisiones
+
+Si dos llaves generan un hash apuntando al mismo índice, los registros correspondientes no pueden ser almacenados en la misma posición. En estos casos, cuando una casilla ya está ocupada, debemos encontrar otra ubicación donde almacenar el nuevo registro, y hacerlo de tal manera que podamos encontrarlo cuando se requiera.
+
+Para dar una idea de la importancia de una buena estrategia de resolución de colisiones, considerese el siguiente resultado, derivado de la paradoja de las fechas de nacimiento. Aun cuando supongamos que el resultado de nuestra función hash genera índices aleatorios distribuidos uniformemente en todo el vector, e incluso para vectores de 1 millón de entradas, hay un 95% de posibilidades de que al menos una colisión ocurra antes de alcanzar los 2.500 registros.
+
+Hay varias técnicas de resolución de colisiones, pero las más populares son encadenamiento y direccionamiento abierto.
+
+Direccionamiento Cerrado, Encadenamiento separado o Hashing abierto
+
+En la técnica más simple de encadenamiento, cada casilla en el array referencia una lista de los registros insertados que colisionan en la misma casilla. La inserción consiste en encontrar la casilla correcta y agregar al final de la lista correspondiente. El borrado consiste en buscar y quitar de la lista.
+
+La técnica de encadenamiento tiene ventajas sobre direccionamiento abierto. Primero el borrado es simple y segundo el crecimiento de la tabla puede ser pospuesto durante mucho más tiempo dado que el rendimiento disminuye mucho más lentamente incluso cuando todas las casillas ya están ocupadas. De hecho, muchas tablas hash encadenadas pueden no requerir crecimiento nunca, dado que la degradación de rendimiento es lineal en la medida que se va llenando la tabla. Por ejemplo, una tabla hash encadenada con dos veces el número de elementos recomendados, será dos veces más lenta en promedio que la misma tabla a su capacidad recomendada.
+
+Las tablas hash encadenadas heredan las desventajas de las listas ligadas. Cuando se almacenan cantidades de información pequeñas, el gasto extra de las listas ligadas puede ser significativo. También los viajes a través de las listas tienen un rendimiento de caché muy pobre.
+
+Otras estructuras de datos pueden ser utilizadas para el encadenamiento en lugar de las listas ligadas. Al usar árboles auto-balanceables, por ejemplo, el tiempo teórico del peor de los casos disminuye de O(n) a O(log n). Sin embargo, dado que se supone que cada lista debe ser pequeña, esta estrategia es normalmente ineficiente a menos que la tabla hash sea diseñada para correr a máxima capacidad o existan índices de colisión particularmente grandes. También se pueden utilizar vectores dinámicos para disminuir el espacio extra requerido y mejorar el rendimiento del caché cuando los registros son pequeños.
+
+Direccionamiento abierto o Hashing cerrado
+
+Las tablas hash de direccionamiento abierto pueden almacenar los registros directamente en el array. Las colisiones se resuelven mediante un sondeo del array, en el que se buscan diferentes localidades del array (secuencia de sondeo) hasta que el registro es encontrado o se llega a una casilla vacía, indicando que no existe esa llave en la tabla.
+
+Las secuencias de sondeo más socorridas incluyen:
+
+sondeo lineal
+    en el que el intervalo entre cada intento es constante (frecuentemente 1).
+sondeo cuadrático
+    en el que el intervalo entre los intentos aumenta linealmente (por lo que los índices son descritos por una función cuadrática), y
+doble hasheo
+    en el que el intervalo entre intentos es constante para cada registro pero es calculado por otra función hash.
+
+El sondeo lineal ofrece el mejor rendimiento del caché, pero es más sensible al aglomeramiento, en tanto que el doble hasheo tiene pobre rendimiento en el caché pero elimina el problema de aglomeramiento. El sondeo cuadrático se sitúa en medio. El doble hasheo también puede requerir más cálculos que las otras formas de sondeo.
+
+Una influencia crítica en el rendimiento de una tabla hash de direccionamiento abierto es el porcentaje de casillas usadas en el array. Conforme el array se acerca al 100% de su capacidad, el número de saltos requeridos por el sondeo puede aumentar considerablemente. Una vez que se llena la tabla, los algoritmos de sondeo pueden incluso caer en un círculo sin fin. Incluso utilizando buenas funciones hash, el límite aceptable de capacidad es normalmente 80%. Con funciones hash pobremente diseñadas el rendimiento puede degradarse incluso con poca información, al provocar aglomeramiento significativo. No se sabe a ciencia cierta qué provoca que las funciones hash generen aglomeramiento, y es muy fácil escribir una función hash que, sin querer, provoque un nivel muy elevado de aglomeramiento.
+
+Ventajas e inconvenientes de las tablas hash
+
+Una tabla hash tiene como principal ventaja que el acceso a los datos suele ser muy rápido si se cumplen las siguientes condiciones:
+- Una razón de ocupación no muy elevada (a partir del 75% de ocupación se producen demasiadas colisiones y la tabla se vuelve ineficiente).
+- Una función resumen que distribuya uniformemente las claves. Si la función está mal diseñada, se producirán muchas colisiones.
+
+Los inconvenientes de las tablas hash son:
+- Necesidad de ampliar el espacio de la tabla si el volumen de datos almacenados crece. Se trata de una operación costosa.
+- Dificultad para recorrer todos los elementos. Se suelen emplear listas para procesar la totalidad de los elementos.
+- Desaprovechamiento de la memoria. Si se reserva espacio para todos los posibles elementos, se consume más memoria de la necesaria; se suele resolver reservando espacio únicamente para punteros a los elementos.
+
+Implementación en pseudocódigo
+
+El pseudocódigo que sigue es una implementación de una tabla hash de direccionamiento abierto con sondeo lineal para resolución de colisiones y progresión sencilla, una solución común que funciona correctamente si la función hash es apropiada.
+
+ registro par { llave, valor }
+ var vector de pares casilla[0..numcasillas-1]
+ 
+ function buscacasilla(llave) {
+     i := hash(llave) módulo de numcasillas
+     loop {
+         if casilla[i] esta libre or casilla[i].llave = llave
+             return i
+         i := (i + 1) módulo de numcasillas
+     }
+ }
+ 
+ function busqueda(llave)
+     i := buscacasilla(llave)
+     if casilla[i] está ocupada   // llave está en la tabla
+         return casilla[i].valor
+     else                     // llave no está en la tabla
+         return no encontrada   
+ 
+ function asignar(llave, valor) {
+     i := buscacasilla(llave)
+     if casilla[i] está ocupada
+         casilla[i].valor := valor
+     else {
+         if tabla casi llena {
+             hacer tabla más grande (nota 1)
+             i := buscacasilla(llave)
+         }
+         casilla[i].llave := llave
+         casilla[i].valor := valor
+     }
+ }
+
+Implementación en Java
+
+En este método no se requiere que los elementos estén ordenados.
+
+El método consiste en asignar el índice a cada elemento mediante una transformación del elemento, esto se hace mediante una función de conversión llamada función hash. Hay diferentes funciones para transformar el elemento y el número obtenido es el índice del elemento.
+
+La principal forma de transformar el elemento es asignarlo directamente, es decir al 0 le corresponde el índice 0, al 1 el 1, y así sucesivamente pero cuando los elementos son muy grandes se desperdicia mucho espacio ya que necesitamos arreglo grandes para almacenarlos y estos quedan con muchos espacios libres, para utilizar mejor el espacio se utilizan funciones más complejas.
+
+La función de hash ideal debería ser biyectiva, esto es, que a cada elemento le corresponda un índice, y que a cada índice le corresponda un elemento, pero no siempre es fácil encontrar esa función, e incluso a veces es inútil, ya que puedes no saber el número de elementos a almacenar. La función de hash depende de cada problema y de cada finalidad, y se pueden utilizar con números o cadenas, pero las más utilizadas son:
+
+Restas Sucesivas
+
+Esta función se emplea con claves numéricas entre las que existen huecos de tamaño conocido, obteniéndose direcciones consecutivas. Un ejemplo serían los alumnos de ingeniería en sistemas que entraron en el año 2005 sus números de control son consecutivos y está definido el número de alumnos.
+
+    05210800 -05210800 → 0
+    05210801 -05210800 → 1
+    05210802 -05210800 → 2
+    …
+    05210899 -05210800 → 99
+
+Aritmética Modular
+
+El índice de un número es resto de la división de ese número entre un número N prefijado, preferentemente primo. Los números se guardarán en las direcciones de memoria de 0 a N-1. Este método tiene el problema de que dos o más elementos pueden producir el mismo residuo y un índice puede ser señalado por varios elementos. A este fenómeno se le llama colisión. Si el número N es el 7, los números siguientes quedan transformados en:
+
+    1679 → 6
+    4567 → 3
+    8471 → 1
+    0435 → 1
+    5033 → 0
+
+Mientras más grande sea número de elementos es mejor escoger un número primo mayor para seccionar el arreglo en más partes. El número elegido da el número de partes en que se secciona el arreglo, y las cada sección está compuesta por todos los elementos que arrojen el mismo residuo, y mientras más pequeñas sean las secciones la búsqueda se agilizara más que es lo que nos interesa.
+
+Mitad del Cuadrado
+
+Consiste en elevar al cuadrado la clave y coger las cifras centrales. Este método también presenta problemas de colisión.
+
+    709^2=502681 → 26
+    456^2=207936 → 79
+    105^2=011025 → 10
+    879^2=772641 → 26
+    619^2=383161 → 31
+
+Nota: en caso de que la cifra resultante tenga un número de dígitos impar, se toma el valor número y el anterior.
+
+Truncamiento
+
+Consiste en ignorar parte del número y utilizar los elementos restantes como índice. También se produce colisión. Por ejemplo, si un número de 7 cifras se debe ordenar en un arreglo de elementos, se pueden tomar el segundo, el cuarto y el sexto para formar un nuevo número:
+
+    5700931 → 703
+    3498610 → 481
+    0056241 → 064
+    9134720 → 142
+    5174829 → 142
+
+Plegamiento
+
+Consiste en dividir el número en diferentes partes, y operar con ellas (normalmente con suma o multiplicación). También se produce colisión. Por ejemplo, si dividimos el número de 7 cifras en 2, 2 y 3 cifras y se suman, dará otro número de tres cifras (y si no, se toman las tres últimas cifras):
+
+    5700931»> 57 + 00 + 931 = 988
+    3498610 → 34 + 98 + 610 = 742
+    0056241 → 00 + 56 + 241 = 297
+    9134720 → 91 + 34 + 720 = 845
+    5174929 → 51 + 74 + 929 = 1054
+
+Nota: Estas solo son sugerencias y que con cada problema se pude implementar una nueva función hash que incluso tu puedes inventar o formular.
+
+Tratamiento de Colisiones
+
+Hay diferentes maneras de solucionarlas pero lo más efectivo es en vez de crear un arreglo de número, crear un arreglo de punteros, donde cada puntero señala el principio de una lista enlazada. Así, cada elemento que llega a un determinado índice se pone en el último lugar de la lista de ese índice. El tiempo de búsqueda se reduce considerablemente, y no hace falta poner restricciones al tamaño del arreglo, ya que se pueden añadir nodos dinámicamente a la lista.
+
+Prueba Lineal
+
+Consiste en que una vez detectada la colisión se debe recorrer el arreglo secuencialmente a partir del punto de colisión, buscando al elemento. El proceso de búsqueda concluye cuando el elemento es hallado, o bien cuando se encuentra una posición vacía. Se trata al arreglo como a una estructura circular: el siguiente elemento después del último es el primero. La función de rehashing es, por tanto, de la forma: R(H(X)) = (H(X) + 1) % m (siendo m el tamaño del arreglo) Ejemplo: Si la posición 397 ya estaba ocupada, el registro con clave 0596397 es colocado en la posición 398, la cual se encuentra disponible. Una vez que el registro ha sido insertado en esta posición, otro registro que genere la posición 397 o la 398 es insertado en la posición siguiente disponible.
+
+public class Principal {
+    public static void main(String[] args) {
+        try {
+            int i, n, resp;
+            int m = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese el tamaño de la tabla"));
+            Hash[] h = new Hash[m];
+            for (i = 0; i < m; i++) {
+                h[i] = new Hash();
+                h[i].estado = 0;
+            }
+            do {
+                resp = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Menú Principal nn"
+                        + "Insertar (1)nBuscar (2)nEliminar (3)nSalir (4)"));
+                switch (resp) {
+                    case 1:
+                        n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese el número a ser insertado en la tabla:"));
+                        Hash.insertaHash(h, m, n);
+                        break;
+                    case 2:
+                        n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese el número a ser buscado en la tabla:"));
+                        i = Hash.buscaHash(h, m, n);
+                        if (i == -1) {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Número no encontrado");
+                        } else {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Número encontrado");
+                        }
+                        break;
+                    case 3:
+                        n = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Ingrese el número a ser eliminado de la tabla:"));
+                        i = Hash.eliminaHash(h, m, n);
+                        if (i == -1) {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Número no encontrado");
+                        } else {
+                            javax.swing.JOptionPane.showMessageDialog(null, "Número eliminado con éxito");
+                        }
+                        break;
+                    case 4:
+                        System.exit(0);
+                    default:
+                }
+            } while (resp != 4);
+        } catch (NumberFormatException nfe) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Está Saliendo del Programa");
+        } catch (OutOfMemoryError ome) {
+            javax.swing.JOptionPane.showMessageDialog(null, "No Hay Espacio");
+        }
+    }
+}
+ 
+public class Hash {
+    int dato;
+    int estado; //0 = Vacío, 1 = Eliminado, 2 = Ocupado
+ 
+    static int funcion(int n, int m) {
+        return ((n + 1) % m);
+    }
+ 
+    static void insertaHash(Hash[] h, int m, int n) {
+        boolean i = false;
+        int j = funcion(n, m);
+        do {
+            if (h[j].estado == 0 || h[j].estado == 1) {
+                h[j].dato = n;
+                h[j].estado = 2;
+                i = true;
+            } else {
+                j++;
+            }
+        } while (j < m && !i);
+        if (i) {
+            javax.swing.JOptionPane.showMessageDialog(null, "¡Elemento insertado con éxito!");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(null, "¡Tabla llena!");
+        }
+    }
+ 
+    static int buscaHash(Hash[] h, int m, int n) {
+        int j = funcion(n, m);
+        while (j < m) {
+            if (h[j].estado == 0) {
+                return -1;
+            } else if (h[j].dato == n) {
+                if (h[j].estado == 1) {
+                    return -1;
+                } else {
+                    return j;
+                }
+            } else {
+                j++;
+            }
+        }
+        return -1;
+    }
+ 
+    static int eliminaHash(Hash[] h, int m, int n) {
+        int i = buscaHash(h, m, n);
+        if (i == -1) {
+            return -1;
+        } else {
+            h[i].estado = 1;
+            return 1;
+        }
+    }
+}
+
+Hash Dinámico
+
+Las tablas hash se presentaron como una alternativa hacia las estructuras tipo árbol ya que permitían el almacenamiento de grandes volúmenes de información y algoritmos eficientes para la administración sobre estas estructuras (inserción, eliminación y búsqueda).
+
+Sin embargo, presentan 2 grandes problemas:
+1. No existen funciones hash perfectas que permitan asegurar que por cada transformación de un elemento habrá una única correspondencia en la clave que contiene este elemento.
+2. Son estructuras estáticas que no pueden crecer ya que necesitan un tamaño fijo para el funcionamiento de la estructura.
+
+Para solucionar el segundo problema se implementa la utilización de métodos totales y métodos parciales. Convirtiendo la tabla hash en una estructura dinámica capaz de almacenar un flujo de información y no una cantidad fija de datos.
+
+Métodos Totales
+
+Método de las expansiones totales
+
+El método de las expansiones totales consiste en realizar una duplicación del tamaño del arreglo establecido para realizar la tabla hash, esta expansión se ejecuta cuando se supera la densidad de ocupación.2 Así si se tiene una tabla hash de tamaño N, al realizar la expansión total se obtendrá una tabla hash de 2N, al realizar una segunda expansión se obtendrá una tabla hash de 4N, al realizar una tercera expansión se obtendrá una tabla hash de 8N y en general el tamaño de la tabla para una i-ésima expansión se define como aparece a continuación:
+
+    T = 2^i * N
+
+Dónde:
+
+N: Tamaño de la Tabla. i: Número de expansiones que se quieren realizar. T: Nuevo tamaño de la Tabla.
+
+La densidad de ocupación se define como el cociente entre el número de registros ocupados y el número de registros disponibles; así se tiene que:
+
+    \rho o = (ro/rd)*100
+
+Dónde:
+
+ro: Registros Ocupados. rd: Registros Disponibles. ρo: Densidad de Ocupación.
+
+Cada vez que se pretende insertar un elemento es necesario calcular la densidad de ocupación, si se supera esta densidad se procede a implementar la expansión. Al realizar cada de una de las expansiones es necesario volver a implementar la función hash para cada uno de los registros almacenados en la tabla y volver a insertarlos de nuevo en la tabla.
+
+Método de las reducciones totales
+
+Este método surge como una consecuencia del método de expansiones totales presentado anteriormente. En este método la densidad de ocupación disminuye de tal manera que acepta una reducción del tamaño de la tabla hash a la mitad. Así si se tiene una tabla hash de N, la primera reducción dará como resultado la N/2, la segunda reducción dará como resultado N/4, la tercera reducción dará N/8 y la i-ésima reducción dará como resultado:
+
+T = N / 2^i
+
+Dónde:
+
+N: Tamaño de la Tabla. i: Número de expansiones que se quieren realizar. T: Nuevo tamaño de la Tabla.
+
+Para realizar una reducción la densidad de ocupación se debe disminuir a un valor menor al rango establecido y los registros se deben eliminar de tal manera que los registros resultantes se puedan ingresar en una tabla hash que posea la mitad del tamaño de la tabla original. Cada vez que se implementa una reducción es necesario volver a utilizar la función hash con cada uno de los registros almacenados.
+
+Métodos Parciales
+
+Método de las expansiones parciales
+
+El método de las expansiones parciales consiste en incrementar en un 50% el tamaño del arreglo establecido para realizar la tabla hash, esta expansión se ejecuta cuando se supera la densidad de ocupación. Así si se tiene una tabla hash de tamaño N, al realizar la expansión parcial se obtendrá una tabla hash de 1.5 N, al realizar una segunda expansión se obtendrá una tabla hash de 2.25 N, al realizar una tercera expansión se obtendrá una tabla hash de 3.375 N y en general el tamaño de la tabla para una i-ésima expansión se define como:
+
+T = ↓( (1.5) ^ i * N )
+
+Dónde:
+
+N: Tamaño de la Tabla. i: Número de expansiones que se quieren realizar. T: Nuevo tamaño de la Tabla.
+
+Cada vez que se pretende insertar un elemento es necesario calcular la densidad de ocupación, si se supera esta densidad se procede a implementar la expansión. Al realizar cada de una de las expansiones es necesario volver a implementar la función hash para cada uno de los registros almacenados en la tabla hash y volver a insertarlos de nuevo en la tabla.
+
+Método de las reducciones parciales
+
+Este método surge como una consecuencia del método de expansiones parciales presentado en la sección 2.1 de este documento. En este método la densidad de ocupación disminuye de tal manera que acepta una reducción del tamaño de la tabla hash al 50%. Así si se tiene una tabla hash de N, la primera reducción dará como resultado la 0.5 N, la segunda reducción dará como resultado 0.25 N, la tercera reducción dará 0.125 N y la i-ésima reducción dará como resultado:
+
+T = ↑((0.5)^i*N)
+
+Dónde:
+
+N: Tamaño de la Tabla. i: Número de reducciones que se quieren realizar. T: Nuevo tamaño de la Tabla.
+
+Para realizar una reducción la densidad de ocupación debe disminuir a un valor menor al rango establecido y los registros se deben eliminar de tal manera que los registros resultantes se puedan ingresar en una tabla hash que posea la mitad del tamaño de la tabla original. Cada vez que se implementa una reducción es necesario volver a utilizar la función hash con cada uno de los registros almacenados.
+
+Nota
+1. La reconstrucción de la tabla requiere la creación de un array más grande y el uso posterior de la función asignar para insertar todos los elementos del viejo array en el nuevo array más grande. Es común aumentar el tamaño del array exponencialmente, por ejemplo duplicando el tamaño del array.
+2. Cairó, Osvaldo. Estructuras de Datos. McGraw-Hill Interamericana.

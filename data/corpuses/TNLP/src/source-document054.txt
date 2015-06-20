@@ -1,0 +1,71 @@
+Quinta forma normal
+
+La quinta forma normal (5FN), también conocida como forma normal de proyección-unión (PJ/NF), es un nivel de normalización de bases de datos diseñado para reducir redundancia en las bases de datos relacionales que guardan hechos multi-valores aislando semánticamente relaciones múltiples relacionadas. Una tabla se dice que está en 5NF si y sólo si está en 4NF y cada dependencia de unión (join) en ella es implicada por las claves candidatas.
+
+Ejemplo
+
+Considere el siguiente ejemplo:
+
+    Psiquiatra-para-Asegurador-para-Condición 
+	Psiquiatra 	Asegurador 	Condición
+    Dr. James 	Healthco 	Ansiedad
+    Dr. James 	Healthco 	Depresión
+    Dr. Kendrick 	FriendlyCare 	OCD
+    Dr. Kendrick 	FriendlyCare 	Ansiedad
+    Dr. Kendrick 	FriendlyCare 	Depresión
+    Dr. Lowenstein 	FriendlyCare 	Esquizofrenia
+    Dr. Lowenstein 	Healthco 	Ansiedad
+    Dr. Lowenstein 	Healthco 	Demencia
+    Dr. Lowenstein 	Victorian Life 	Trastorno de conversión
+
+El psiquiatra puede ofrecer tratamiento reembolsable a los pacientes que sufren de la condición dada y que son asegurados por el asegurador dado. En ausencia de cualquier regla que restrinja las combinaciones válidas posibles de psiquiatra, asegurador, y condición, la tabla de tres atributos Psiquiatra-para-Asegurador-para-Condición es necesaria para modelar la situación correctamente.
+
+Sin embargo, suponga que la regla siguiente se aplica:
+
+    Cuando un psiquiatra es autorizado a ofrecer el tratamiento reembolsable a los pacientes asegurados por el asegurador P, y el psiquiatra puede tratar la condición C, entonces - en caso que el asegurador P cubra la condición C - debe ser cierto que el psiquiatra puede ofrecer el tratamiento reembolsable a los pacientes que sufren de la condición C y están asegurados por el asegurador P.
+
+Con estas restricciones es posible dividir la relación en tres partes.
+
+Psiquiatra-para-Condición 
+Psiquiatra 	Condición
+Dr. James 	Ansiedad
+Dr. James 	Depresión
+Dr. Kendrick 	OCD
+Dr. Kendrick 	Ansiedad
+Dr. Kendrick 	Depresión
+Dr. Lowenstein 	Esquizofrenia
+Dr. Lowenstein 	Ansiedad
+Dr. Lowenstein 	Demencia
+Dr. Lowenstein 	Trastorno de conversión
+	
+Psiquiatra-para-Asegurador 
+Psiquiatra 	Asegurador
+Dr. James 	Healthco
+Dr. Kendrick 	FriendlyCare
+Dr. Lowenstein 	FriendlyCare
+Dr. Lowenstein 	Healthco
+Dr. Lowenstein 	Victorian Life
+	
+Asegurador-para-Condición 
+Asegurador 	Condición
+Healthco 	Ansiedad
+Healthco 	Depresión
+Healthco 	Demencia
+FriendlyCare 	OCD
+FriendlyCare 	Ansiedad
+FriendlyCare 	Depresión
+FriendlyCare 	Trastorno emocional
+FriendlyCare 	Esquizofrenia
+Victorian Life 	Trastorno de conversión
+
+Note como esta disposición ayuda a quitar redundancia. Suponga que el Dr. James se convierte en un proveedor de tratamientos para FriendlyCare. En la disposición anterior tendríamos que agregar dos nuevas entradas puesto que el Dr. James puede tratar dos condiciones cubiertas por FriendlyCare: ansiedad y depresión. Con la nueva disposición necesitamos agregar una sola entrada (en la tabla Psiquiatra-para-Asegurador).
+
+Uso
+
+Solamente en contadas ocasiones una tabla 4NF no se corresponde con una 5NF. Éstas son situaciones en las cuales una restricción compleja del mundo real, que limita las combinaciones válidas de los valores de atributos en la tabla 4NF, no está implícita en la estructura de esa tabla. Si esa tabla no se normaliza a 5NF, la tarea de mantener la consistencia lógica de los datos dentro de la tabla debe ser llevada en parte por la aplicación responsable de inserciones, borrados, y actualizaciones a ella; y hay un riesgo elevado de que los datos dentro de la tabla se vuelvan inconsistentes. Por el contrario, el diseño 5NF excluye la posibilidad de tales inconsistencias.
+
+Referencias
+- Rules Of Data Normalization
+- Kent, W. (1983) A Simple Guide to Five Normal Forms in Relational Database Theory, Communications of the ACM, vol. 26, pp. 120-125
+- Date, C.J., & Darwen, H., & Pascal, F. Database Debunkings
+- Advanced Normalization

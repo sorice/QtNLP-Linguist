@@ -1,0 +1,149 @@
+Proceso Unificado de Rational
+
+El Proceso Racional Unificado (Rational Unified Process en inglés, habitualmente resumido como RUP) es un proceso de desarrollo de software desarrollado por la empresa Rational Software, actualmente propiedad de IBM. Junto con el Lenguaje Unificado de Modelado UML, constituye la metodología estándar más utilizada para el análisis, diseño, implementación y documentación de sistemas orientados a objetos.
+
+El RUP no es un sistema con pasos firmemente establecidos, sino un conjunto de metodologías adaptables al contexto y necesidades de cada organización. También se conoce por este nombre al software, también desarrollado por Rational, que incluye información entrelazada de diversos artefactos y descripciones de las diversas actividades. Está incluido en el Rational Method Composer (RMC), que permite la personalización de acuerdo con las necesidades.
+
+Originalmente se diseñó un proceso genérico y de dominio público, el Proceso Unificado, y una especificación más detallada, el Rational Unified Process, que se vendiera como producto independiente...
+
+Principios de desarrollo
+
+El RUP está basado en 5 principios clave que son los siguientes:
+
+Adaptar el proceso
+
+El proceso deberá adaptarse a las necesidades del cliente ya que es muy importante interactuar con él. Las características propias del proyecto. El tamaño del mismo, así como su tipo o las regulaciones que lo condicionen, influirán en su diseño específico. También se deberá tener en cuenta el alcance del proyecto en un área subnormal.
+
+Equilibrar prioridades
+
+Los requisitos de los diversos participantes pueden ser diferentes, contradictorios o disputarse recursos limitados. Debe encontrarse un equilibrio que satisfaga los deseos de todos. Gracias a este equilibrio se podrán corregir desacuerdos que surjan en el futuro.
+
+Demostrar valor iterativamente
+
+Los proyectos se entregan, aunque sea de un modo interno, en etapas iteradas. En cada iteración se analiza la opinión de los inversores, la estabilidad y calidad del producto, y se refina la dirección del proyecto así como también los riesgos involucrados.
+
+Colaboración entre equipos
+
+El desarrollo de software no lo hace una única persona sino múltiples equipos. Debe haber una comunicación fluida para coordinar requisitos, desarrollo, evaluaciones, planes, resultados, etc.
+
+Enfocarse en la calidad
+
+El control de calidad no debe realizarse al final de cada iteración, sino en todos los aspectos de la producción. El aseguramiento de la calidad forma parte del proceso de desarrollo y no de un grupo independiente.
+
+Ciclo de vida
+
+El ciclo de vida RUP es una implementación del Desarrollo en espiral. Fue creado ensamblando los elementos en secuencias semi-ordenadas. El ciclo de vida organiza las tareas en fases e iteraciones.
+
+RUP divide el proceso en cuatro fases, dentro de las cuales se realizan varias iteraciones en número variable según el proyecto y en las que se hace un mayor o menor hincapié en las distintas actividades. En la Figura muestra cómo varía el esfuerzo asociado a las disciplinas según la fase en la que se encuentre el proyecto RUP.
+
+Las primeras iteraciones (en las fases de Inicio y Elaboración) se enfocan hacia la comprensión del problema y la tecnología, la delimitación del ámbito del proyecto, la eliminación de los riesgos críticos, y al establecimiento de una baseline (Línea Base) de la arquitectura.
+
+Durante la fase de inicio las iteraciones hacen mayor énfasis en actividades de modelado del negocio y de requisitos.
+
+En la fase de elaboración, las iteraciones se orientan al desarrollo de la baseline de la arquitectura, abarcan más los flujos de trabajo de requisitos, modelo de negocios (refinamiento), análisis, diseño y una parte de implementación orientado a la baseline de la arquitectura.
+
+En la fase de construcción, se lleva a cabo la construcción del producto por medio de una serie de iteraciones.
+
+Para cada iteración se seleccionan algunos Casos de Uso, se refinan su análisis y diseño y se procede a su implementación y pruebas. Se realiza una pequeña cascada para cada ciclo. Se realizan iteraciones hasta que se termine la implementación de la nueva versión del producto.
+
+En la fase de transición se pretende garantizar que se tiene un producto preparado para su entrega a la comunidad de usuarios.
+
+Como se puede observar en cada fase participan todas las disciplinas, pero dependiendo de la fase el esfuerzo dedicado a una disciplina varía.
+
+Principales características
+- Forma disciplinada de asignar tareas y responsabilidades (quién hace qué, cuándo y cómo)
+- Pretende implementar las mejores prácticas en Ingeniería de Software
+- Desarrollo iterativo
+- Administración de requisitos
+- Uso de arquitectura basada en componentes
+- Control de cambios
+- Modelado visual del software
+- Verificación de la calidad del software
+
+El RUP es un producto de Rational (IBM). Se caracteriza por ser iterativo e incremental, estar centrado en la arquitectura y guiado por los casos de uso. Incluye artefactos (que son los productos tangibles del proceso como por ejemplo, el modelo de casos de uso, el código fuente, etc.) y roles (papel que desempeña una persona en un determinado momento, una persona puede desempeñar distintos roles a lo largo del proceso).
+
+Fases
+- Establece oportunidad y alcance
+- Identifica las entidades externas o actores con las que se trata
+- Identifica los casos de uso
+
+RUP comprende 2 aspectos importantes por los cuales se establecen las disciplinas:
+
+'Proceso': Las etapas de esta sección son: (Revise nuevamente la gráfica)
+- Modelado de negocio
+- Requisitos
+- Análisis y Diseño
+- Implementación
+- Pruebas
+- Despliegue
+
+Soporte: En esta parte nos encontramos con las siguientes etapas:
+- Gestión del cambio y configuraciones
+- Gestión del proyecto
+- Entorno
+
+La estructura dinámica de RUP es la que permite que éste sea un proceso de desarrollo fundamentalmente iterativo, y en esta parte se ven inmersas las 4 fases descritas anteriormente:
+- Inicio (también llamado Incepción o Concepción).
+- Elaboración.
+- Desarrollo (también llamado Implementación, Construcción).
+- Cierre (también llamado Transición).
+
+Fase de Inicio: Esta fase tiene como propósito definir y acordar el alcance del proyecto con los patrocinadores, identificar los riesgos asociados al proyecto, proponer una visión muy general de la arquitectura de software y producir el plan de las fases y el de iteraciones posteriores.
+
+Fase de elaboración: En la fase de elaboración se seleccionan los casos de uso que permiten definir la arquitectura base del sistema y se desarrollaran en esta fase, se realiza la especificación de los casos de uso seleccionados y el primer análisis del dominio del problema, se diseña la solución preliminar.
+
+Fase de Desarrollo: El propósito de esta fase es completar la funcionalidad del sistema, para ello se deben clarificar los requisitos pendientes, administrar los cambios de acuerdo a las evaluaciones realizados por los usuarios y se realizan las mejoras para el proyecto.
+
+Fase de Transición: El propósito de esta fase es asegurar que el software esté disponible para los usuarios finales, ajustar los errores y defectos encontrados en las pruebas de aceptación, capacitar a los usuarios y proveer el soporte técnico necesario. Se debe verificar que el producto cumpla con las especificaciones entregadas por las personas involucradas en el proyecto.
+
+Artefactos
+
+RUP en cada una de sus fases (pertenecientes a la estructura dinámica) realiza una serie de artefactos que sirven para comprender mejor tanto el análisis como el diseño del sistema (entre otros). Estos artefactos (entre otros) son los siguientes:
+
+Inicio:
+- Documento Visión
+- Diagramas de caso de uso
+- Especificación de Requisitos
+- Diagrama de Requisitos
+
+Elaboración:
+- Documento Arquitectura que trabaja con las siguientes vistas:
+	Vista Lógica
+    - Diagrama de clases
+    - Modelo E-R (Si el sistema así lo requiere)
+    Vista de Implementación
+    - Diagrama de Secuencia
+    - Diagrama de estados
+    - Diagrama de Colaboración
+    Vista Conceptual
+    - Modelo de dominio
+    Vista física
+    - Mapa de comportamiento a nivel de hardware.
+- Diseño y desarrollo de casos de uso, o flujos de casos de uso arquitectónicos
+- Pruebas de los casos de uso desarrollados, que demuestran que la arquitectura documentada responde adecuadamente a requerimientos funcionales y no funcionales.
+
+Construcción:
+- Especificación de requisitos faltantes
+- Diseño y desarrollo de casos de uso y/o flujos de acuerdo con la planeación iterativa
+- Pruebas de los casos de uso desarrollados, y pruebas de regresión según sea el caso
+
+Transición:
+- Pruebas finales de aceptación
+- Puesta en producción
+- Estabilización
+
+Un poco de historia
+
+Los orígenes de RUP se remontan al modelo espiral original de Barry Boehm. Ken Hartman, uno de los contribuidores claves de RUP colaboró con Boehm en la investigación. En 1995 Rational Software compró una compañía sueca llamada Objectory AB, fundada por Ivar Jacobson, famoso por haber incorporado los casos de uso a los métodos de desarrollo orientados a objetos. El Rational Unified Process fue el resultado de una convergencia de Rational Approach y Objectory (el proceso de la empresa Objectory AB). El primer resultado de esta fusión fue el Rational Objectory Process, la primera versión de RUP, fue puesta en el mercado en 1998, siendo el arquitecto en jefe Philippe Kruchten.
+
+El primer libro para describir el proceso fue titulado "The Unified Software Development Process (ISBN 0-201-57169-2)" El Proceso Unificado de Desarrollo de Software (ISBN 0-201-57169-2), y publicado en 1999 por Ivar Jacobson, Grady Booch y James Rumbaugh.
+
+Comentarios sobre Metodo
+
+Por otro lado, en lo que se refiere a la metodología esta comprende tres principios claves: Dirigido por los casos de uso, centrado en la arquitectura, iterativo e incremental.
+
+En lo referente a dirigido por los casos de uso, significa que los requerimientos están enfocado a dar valor al cliente y que el proceso debe garantizar que todo el desarrollo, pruebas, planeación, documentación etc, está orientado a cubrir estas expectativas del cliente y asegurar que los requerimientos de valor se ponen en producción.
+
+En lo referente a centrado en arquitectura, significa que hay un énfasis a diseñar una arquitectura de calidad, y es la arquitectura también la que guía la forma cómo se debe planear y hacer el desarrollo.
+
+En lo referente a iterativo e incremental, significa que el proyecto se divide en varios ciclos de vida (llamadas iteraciones) que deben dar como resultado un ejecutable. Por cada una de las iteraciones se va agregando requerimientos y sobre todo valor al cliente; por este motivo es incremental.

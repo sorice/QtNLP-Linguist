@@ -1,0 +1,15 @@
+Actor (UML)
+
+En el Lenguaje Unificado de Modelado (UML), un actor "especifica un rol jugado por un usuario o cualquier otro sistema que interactúa con el sujeto."1
+
+Un actor modela un tipo de rol jugado por una entidad que interactúa con el sujeto (esto es, intercambiando signos y datos), pero que es externo a dicho sujeto.1
+
+Los actores pueden representar roles jugados por usuarios humanos, hardware externo, u otros sujetos. Un actor no necesariamente representa una entidad física específica, sino simplemente una faceta particular (es decir, un "rol") de alguna actividad que es relevante a la especificación de sus casos de uso asociados. Así, una única instancia física puede jugar el rol de muchos actores diferentes y, asimismo, un actor dado puede ser interpretado por múltiples instancias diferentes.1
+
+UML 2 no permite asociaciones entre Actores.1 2 A pesar de todo, esta restricción es usualmente violada en la práctica, en la medida que la generalización/especialización de relaciones entre actores es útil para el modelado de los comportamientos de superposición entre actores.3
+
+Referencias
+- OMG Unified Modeling Language (OMG UML), Superstructure, V2.1.2 p.586-588.
+- Problems and Deficiencies of UML as a Requirements Specification s.3.2.
+- Introduction to UML 2 Use Case Diagrams Fig 4.
+

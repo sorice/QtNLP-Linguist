@@ -1,0 +1,54 @@
+Intérprete (informática)
+
+En ciencias de la computación, intérprete o interpretador es un programa informático capaz de analizar y ejecutar otros programas, escritos en un lenguaje de alto nivel. Los intérpretes se diferencian de los compiladores en que mientras estos traducen un programa desde su descripción en un lenguaje de programación al código de máquina del sistema, los intérpretes sólo realizan la traducción a medida que sea necesaria, típicamente, instrucción por instrucción, y normalmente no guardan el resultado de dicha traducción.
+
+Usando un intérprete, un solo archivo fuente puede producir resultados iguales incluso en sistemas sumamente diferentes (ejemplo. una PC y un Xbox One). Usando un compilador, un solo archivo fuente puede producir resultados iguales solo si es compilado a distintos ejecutables específicos a cada sistema.
+
+Los programas interpretados suelen ser más lentos que los compilados debido a la necesidad de traducir el programa mientras se ejecuta, pero a cambio son más flexibles como entornos de programación y depuración (lo que se traduce, por ejemplo, en una mayor facilidad para reemplazar partes enteras del programa o añadir módulos completamente nuevos), y permiten ofrecer al programa interpretado un entorno no dependiente de la máquina donde se ejecuta el intérprete, sino del propio intérprete (lo que se conoce comúnmente como máquina virtual).
+
+Para mejorar el desempeño, algunas implementaciones de programación de lenguajes de programación pueden interpretar o compilar el código fuente original en una más compacta forma intermedia y después traducir eso al código de máquina (ej. Perl, Python, MATLAB, y Ruby). Algunos aceptan los archivos fuente guardados en esta representación intermedia (ej. Python, UCSD Pascal y Java).
+
+Comparando su actuación con la de un ser humano, un compilador equivale a un traductor profesional que, a partir de un texto, prepara otro independiente traducido a otra lengua, mientras que un intérprete corresponde al intérprete humano, que traduce de viva voz las palabras que oye, sin dejar constancia por escrito.
+
+En la actualidad, uno de los entornos más comunes de uso de los intérpretes informáticos es Internet, debido a la posibilidad que estos tienen de ejecutarse independientemente de la plataforma.
+
+Interpretadores de bytecode
+
+Hay un espectro de posibilidades entre la interpretación y la compilación, dependiendo de la cantidad de análisis realizados antes de que el programa sea ejecutado. Por ejemplo, el Emacs Lisp es compilado a bytecode, que es una representación altamente comprimida y optimizada del código fuente del Lisp, pero no es código de máquina (y por lo tanto no está atado a cualquier hardware particular). Este código "compilado" es entonces interpretado por un interpretador de bytecode (que está escrito en C). En este caso, el código compilado es el código de máquina para una máquina virtual, que no está implementada en el hardware, sino en el interpretador de bytecode. El mismo acercamiento es utilizado con el código Forth usado en sistemas Open Firmware: el lenguaje fuente es compilado en "código F" (un bytecode),
+
+Eficiencia
+
+La desventaja principal de los interpretadores es que cuando se interpreta un programa, típicamente corre más lentamente que si hubiera sido compilado. La diferencia en velocidades puede ser minúscula o grande; a menudo un orden de magnitud y a veces más. Generalmente toma más tiempo correr un programa bajo un interpretador que correr el código compilado, pero puede tomar menos tiempo para interpretarlo que el tiempo total requerido para compilarlo y ejecutarlo. Esto es especialmente importante si se está haciendo y probando un código prototipo cuando un ciclo de editar, interpretar y depurar del interpretador, a menudo puede ser mucho más corto que el ciclo de editar, compilar, ejecutar y depurar del compilador.
+
+La interpretación de código es más lenta que la ejecución de código compilado porque el interpretador debe analizar cada sentencia en el programa cada vez que es ejecutada y entonces realizar la acción deseada, mientras que el código compilado solo realiza la acción dentro de un determinado contexto fijo por la compilación. Este análisis en tiempo de ejecución se conoce como "sobrecarga interpretativa". En un interpretador, el acceso a las variables es también más lento porque el mapeo de identificadores hacia las localizaciones de almacenamiento debe hacerse repetidamente en tiempo de ejecución en vez de en el tiempo de compilación. Hay varios compromisos entre la velocidad de desarrollo al usar un interpretador y la velocidad de ejecución al usar un compilador. Algunos sistemas (ej., algunos LISPs) permiten al código interpretado y al compilado llamarse el uno al otro y compartir variables. Esto significa que una vez que una rutina ha sido probada y depurada bajo el interpretador puede ser compilada y por lo tanto beneficiarse de una ejecución más rápida mientras que otras rutinas están siendo desarrolladas. Muchos interpretadores no ejecutan el código fuente tal y como está sino que lo convierten en una forma interna más compacta. Por ejemplo, algunos interpretadores BASIC reemplazan palabras clave (keywords) con tokens de un simple byte que pueden ser usados para encontrar la instrucción en una tabla de saltos. Un interpretador puede bien usar el mismo analizador lexicográfico y el analizador sintáctico (parser) que el compilador y entonces interpretar el árbol de sintaxis abstracta resultante.
+
+Interpretadores de árbol de sintaxis abstracta
+
+En el espectro entre la interpretación y la compilación, otro acercamiento está transformando el código fuente en un árbol de sintaxis abstracta optimizado (AST), y después procediendo a ejecutar el programa siguiendo esta estructura arborescente.1 En este acercamiento cada sentencia necesita ser analizada (parsed) solo una vez. Como una ventaja sobre el bytecode, el AST mantiene la estructura y las relaciones globales del programa entre las sentencias (que se pierden en una representación de bytecode), y proporciona una representación más compacta.2
+
+Así, el AST se ha propuesto como un mejor formato intermedio para los compiladores justo a tiempo que el bytecode. También, permite realizar un mejor análisis durante tiempo de ejecución. Un interpretador Java basado en AST ha demostrado ser más rápido que un interpretador similar basado en bytecode,3 gracias a las más poderosas optimizaciones permitidas al tener la estructura completa del programa, así como tipos de datos de alto nivel, disponibles durante la ejecución.
+
+Compilación justo a tiempo
+
+Para desdibujar más la distinción entre los interpretadores, los interpretadores de bytecode y la compilación, está la compilación justo a tiempo (o JIT), una técnica en la cual la representación intermedia es compilada a código de máquina nativo en tiempo de ejecución. Esto confiere la eficiencia de ejecutar el código nativo, al costo de tiempo de inicio y de un uso creciente de la memoria cuando el bytecode o el AST es compilado por primera vez. La optimización adaptativa es una técnica complementaria en la cual el interpretador hace un análisis de desempeño del programa que está corriendo (profiling) y compila sus partes más frecuentemente ejecutadas a código nativo. Ambas técnicas tienen algunas décadas, apareciendo en lenguajes tales como Smalltalk en los años 1980.
+
+En años recientes, la compilación justo a tiempo ha ganado la atención de la mayoría de los implementadores de lenguajes de programación, con Java, Python, y el Microsoft .NET Framework todos ahora incluyendo JITs.
+
+Ejemplos
+
+Algunos ejemplos de lenguajes que son normalmente interpretados en vez de compilados son:
+- Perl
+- PHP
+- Javascript
+- Logo
+- ASP (hasta la versión 3)
+- Python
+- Tcl
+- Ruby
+- J#
+- ASP
+
+Notas y referencias
+1. AST intermediate representations, Lambda the Ultimate forum
+2. A Tree-Based Alternative to Java Byte-Codes, Thomas Kistler, Michael Franz
+3. Trees Versus Bytes, BComp Honours thesis by Kade Hansson

@@ -1,0 +1,26 @@
+Pruebas de validación
+
+Las pruebas de validación en la ingeniería de software son el proceso de revisión que verifica que el sistema de software producido cumple con las especificaciones y que logra su cometido. Es normalmente una parte del proceso de pruebas de software de un proyecto, que también utiliza técnicas tales como evaluaciones, inspecciones y tutoriales. La validación es el proceso de comprobar que lo que se ha especificado es lo que el usuario realmente quería.
+
+Se trata de evaluar el sistema o parte de este durante o al final del desarrollo para determinar si satisface los requisitos iniciales. La pregunta a realizarse es: ¿Es esto lo que el cliente quiere?.
+
+ En programación podemos encontrar distintas herramientas de software que facilitan localizar errores de manera parcial o totalmente automatizada, la práctica habitual en programación extrema es que este tipo de pruebas se ejecuten en cada uno de los pasos del ciclo de vida del desarrollo del software.
+
+Enfoques a la verificación
+- Dinámica de verificación, también conocido como ensayos o experimentación.
+- Estática de verificación, también conocido como análisis.
+
+Tipos
+- Pruebas de aceptación: desarrolladas por el cliente.
+- Pruebas alfa realizadas por el usuario con el desarrollador como observador en un entorno controlado (simulación de un entorno de producción).
+- Pruebas beta: realizadas por el usuario en su entorno de trabajo y sin observadores.
+
+Características
+
+Comprobar que se satisfacen los requisitos:
+- Se usan la mismas técnicas, pero con otro objetivo.
+- No hay programas de prueba, sino sólo el código final de la aplicación.
+- Se prueba el programa completo.
+- Uno o varios casos de prueba por cada requisito o caso de uso especificado.
+- Se prueba también rendimiento, capacidad, etc. (y no sólo resultados correctos).
+- Pruebas alfa (desarrolladores) y beta (usuarios).

@@ -1,0 +1,391 @@
+Pseudocódigo
+
+En ciencias de la computación, y análisis numérico, el pseudocódigo (o falso lenguaje) es una descripción de alto nivel compacta e informal1 del principio operativo de un programa informático u otro algoritmo.
+
+Utiliza las convenciones estructurales de un lenguaje de programación real,2 pero está diseñado para la lectura humana en lugar de la lectura mediante máquina, y con independencia de cualquier otro lenguaje de programación. Normalmente, el pseudocódigo omite detalles que no son esenciales para la comprensión humana del algoritmo, tales como declaraciones de variables, código específico del sistema y algunas subrutinas. El lenguaje de programación se complementa, donde sea conveniente, con descripciones detalladas en lenguaje natural, o con notación matemática compacta. Se utiliza pseudocódigo pues este es más fácil de entender para las personas que el código del lenguaje de programación convencional, ya que es una descripción eficiente y con un entorno independiente de los principios fundamentales de un algoritmo. Se utiliza comúnmente en los libros de texto y publicaciones científicas que se documentan varios algoritmos, y también en la planificación del desarrollo de programas informáticos, para esbozar la estructura del programa antes de realizar la efectiva codificación.
+
+No existe una sintaxis estándar para el pseudocódigo, aunque los ocho IDE's que manejan pseudocódigo tengan su sintaxis propia. Aunque sea parecido, el pseudocódigo no debe confundirse con los programas esqueleto que incluyen código ficticio, que pueden ser compilados sin errores. Los diagramas de flujo y UML pueden ser considerados como una alternativa gráfica al pseudocódigo, aunque sean más amplios en papel.
+
+Aplicaciones
+
+Generalmente se utiliza pseudocódigo en los libros de texto y publicaciones científicas relacionadas con la informática y la computación numérica, para la descripción de algoritmos, de manera que todos los programadores puedan entenderlo, aunque no todos conozcan el mismo lenguaje de programación. Generalmente, en los libros de texto se adjunta una explicación que acompaña a la introducción y que explica las convenciones particulares en uso. El nivel de detalle del pseudocódigo puede, en algunos casos, acercarse a la de formalizar los idiomas de propósito general.
+
+Un programador que tiene que aplicar un algoritmo específico, sobre todo uno desfamiliarizado, generalmente comienza con una descripción en pseudocódigo, y luego "traduce" esa descripción en el lenguaje de programación meta y lo modifica para que interactúe correctamente con el resto del programa. Los programadores también pueden iniciar un proyecto describiendo la forma del código en pseudocódigo en el papel antes de escribirlo en su lenguaje de programación, como ocurre en la estructuración de un enfoque de Top-down y Bottom-up arriba hacia abajo.
+
+Sintaxis
+
+En la actualidad y por lo general, el pseudocódigo, como su nombre lo indica, no obedece a las reglas de sintaxis de ningún idioma en particular ni es de forma estándar sistemática, a pesar de que cualquier escritor en particular vaya a pedir prestado las estructuras de control general, la sintaxis y el estilo, por ejemplo, de algún lenguaje de programación convencional. Pero en caso de que se quiera ejecutar, se debe llevar a forma tipo, para que no genere mensajes de error. Las fuentes populares incluyen la sintaxis de Pascal, BASIC, C, C++, Java, Lisp, y ALGOL. Por lo general, se omiten las declaraciones de variables. A veces, las llamadas a funciones, los bloques de código y el código contenido dentro de un loop se remplazan por una sentencia de una línea en lenguaje natural.
+
+Dependiendo del escritor, el pseudocódigo puede variar mucho en su estilo, yendo desde en un extremo, una imitación casi exacta de un lenguaje de programación real, hasta al acercarse a una descripción en prosa de formato de pseudocódigo en el otro extremo.
+
+Este es un ejemplo de pseudocódigo (para el juego matemático bizz buzz):
+
+Pseudocódigo estilo Fortran:
+
+programa bizzbuzz
+hacer i = 1 hasta 100 
+    establecer print_number a verdadero
+    si i es divisible por 3
+        escribir "Bizz"
+        establecer print_number a falso
+    si i es divisible por 5
+        escribir "Buzz" 
+        establecer print_number a falso
+    si print_number, escribir i
+    escribir una nueva línea
+fin del hacer
+
+Pseudocódigo estilo Pascal:
+
+procedimiento bizzbuzz
+para i := 1 hasta 100 hacer
+    establecer print_number a verdadero;
+    Si i es divisible por 3 entonces
+        escribir "Bizz";
+        establecer print_number a falso;
+    Si i es divisible por 5 entonces
+        escribir "Buzz";
+        establecer print_number a falso;
+    Si print_number, escribir i;
+    escribir una nueva lína;
+fin
+
+Pseudocódigo estilo C:
+
+subproceso funcion bizzbuzz
+para (i <- 1; i<=100; i++) {
+    establecer print_number a verdadero;
+    Si i es divisible por 3
+        escribir "Bizz";
+        establecer print_number a falso;
+    Si i es divisible por 5
+        escribir "Buzz";
+        establecer print_number a falso;
+    Si print_number, escribir i;
+    escribir una nueva línea;
+}
+
+Características y partes
+
+Las principales características de este lenguaje son:
+1. Se puede ejecutar en un ordenador (con un IDE como por ejemplo SLE, LPP, PilatoX, Maruga Script, Seudocódigo o PSeInt. Otros Ides de consideración son Inter-P y Algor)
+2. Es una forma de representación sencilla de utilizar y de manipular.
+3. Facilita el paso del programa al lenguaje de programación.
+4. Es independiente del lenguaje de programación que se vaya a utilizar.
+5. Es un método que facilita la programación y solución al algoritmo del programa.
+
+Todo documento en pseudocódigo debe permitir la descripción de:
+1. Instrucciones primitivas.
+2. Instrucciones de proceso....
+3. Instrucciones de control.
+4. Instrucciones compuestas.
+5. Instrucciones de descripción.
+
+Estructura a seguir en su realización:
+1. Cabecera.
+	1. Programa.
+	2. Módulo.
+	3. Tipos de datos.
+	4. Constantes.
+	5. Variables.
+2. Cuerpo.
+	1. Inicio.
+	2. Instrucciones.
+	3. Fin.
+
+Definición de datos del pseudocódigo
+
+La definición de datos se da por supuesta, sobre todo en las variables sencillas, si se emplea formaciones: pilas, colas, vectores o registros, se pueden definir en la cabecera del algoritmo, y naturalmente cuando empleemos el pseudocódigo para definir estructuras de datos, esta parte la desarrollaremos adecuadamente.
+
+Funciones y operaciones
+
+Cada autor usa su propio pseudocódigo con sus respectivas convenciones. Por ejemplo, la instrucción "reemplace el valor de la variable x por el valor de la variable y" puede ser representado como:
+
+    asigne a x\, el valor de y\,
+
+        { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ y; }} 
+        { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ := }} \; { \color{OliveGreen} \mathit{ y; }} 
+        { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ = }} \; { \color{OliveGreen} \mathit{ y; }} 
+
+Las operaciones aritméticas se representan de la forma usual en matemáticas.
+
+        { \color{Gray} \mathit{ \{ Esto \; es \; un \; comentario \; normalmente \; matem \acute{a} tico \} }} 
+        { \color{OliveGreen} \mathit{ volumen }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{Red} \mathit{ \pi }} { \color{OliveGreen} \mathit{ r }} {}^2 { \color{OliveGreen} \mathit{ h }} 
+        { \color{Gray} \mathit{ // y \; este \; es \; otro \; comentario \; normalmente \; de \; texto // }} 
+        { \color{OliveGreen} \mathit{ hipotenusa }} \; { \color{BlueViolet} \mathit{ \gets }} \; \sqrt{ { \color{OliveGreen} \mathit{ a }} {}^2 \; { \color{BlueViolet} \mathit{ + }} \; { \color{OliveGreen} \mathit{ b }} {}^2 \; } 
+        { \color{OliveGreen} \mathit{ resultado }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{Tan} \mathit{ sin }} ( { \color{OliveGreen} \mathit{ a }} ) 
+
+Estructuras de control
+
+En la redacción del pseudocódigo se utiliza tres tipos de estructuras de control: las secuenciales, las selectivas y las iterativas.
+
+Estructuras secuenciales
+
+Las instrucciones se siguen en una secuencia fija que normalmente viene dada por el número de renglón. Es decir que las instrucciones se ejecutan de arriba hacia abajo.
+
+        { \color{BlueViolet} \mathit{ instrucci \acute{o} n_1; }} 
+        { \color{BlueViolet} \mathit{ instrucci \acute{o} n_2; }} 
+        { \color{BlueViolet} \mathit{ instrucci \acute{o} n_3; }} 
+        \cdots 
+        { \color{BlueViolet} \mathit{ instrucci \acute{o} n_n; }} 
+
+Estructuras selectivas
+
+Las instrucciones selectivas representan instrucciones que pueden o no ejecutarse, según el cumplimiento de una condición.
+
+
+        { \color{Sepia} \mathit{ Si }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n }} \; { \color{Sepia} \mathit{ Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Si }} 
+
+La condición es una expresión booleana. Instrucciones es ejecutada sólo si la condición es verdadera.
+
+Selectiva doble (alternativa)
+
+La instrucción alternativa realiza una instrucción de dos posibles, según el cumplimiento de una condición.
+
+
+        { \color{Sepia} \mathit{ Si }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n }} \; { \color{Sepia} \mathit{ Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_1; }} 
+
+        { \color{Sepia} \mathit{ Si \; no \; Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_2; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Si }} 
+
+La condición es una variable booleana o una función reducible a booleana (lógica, Verdadero/Falso). Si esta condición es cierta se ejecuta Instrucciones1, si no es así, entonces se ejecuta Instrucciones2.
+
+Selectiva múltiple
+
+También es común el uso de una selección múltiple que equivaldría a anidar varias funciones de selección.
+
+        { \color{Sepia} \mathit{ Si }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n_1 }} \; { \color{Sepia} \mathit{ Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_1; }} 
+
+        { \color{Sepia} \mathit{ Si \; no \; si }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n_2 }} \; { \color{Sepia} \mathit{ Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_2; }} 
+
+        { \color{Sepia} \mathit{ Si \; no \; si }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n_3 }} \; { \color{Sepia} \mathit{ Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_3; }} 
+
+        \cdots 
+        { \color{Sepia} \mathit{ Si \; no \; Entonces }}
+
+            { \color{BlueViolet} \mathit{ instrucciones_n; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Si }} 
+
+En este caso hay una serie de condiciones que tienen que ser mutuamente excluyentes, si una de ellas se cumple las demás tienen que ser falsas necesariamente, hay un caso si no que será cierto cuando las demás condiciones sean falsas.
+
+En esta estructura si Condición1 es cierta, entonces se ejecuta sólo Instrucciones1. En general, si Condicióni es verdadera, entonces sólo se ejecuta Instruccionesi
+
+Selectiva múltiple-Casos
+
+Una construcción similar a la anterior (equivalente en algunos casos) es la que se muestra a continuación.
+
+        { \color{Sepia} \mathit{ Seg\acute{u}n }} \; { \color{OliveGreen} \mathit{ variable }} { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{Sepia} \mathit{ caso }} \; { \color{OliveGreen} \mathit{ valor_1; }}
+
+                { \color{BlueViolet} \mathit{ instrucciones_1; }} 
+
+            { \color{Sepia} \mathit{ caso }} \; { \color{OliveGreen} \mathit{ valor_2; }}
+
+                { \color{BlueViolet} \mathit{ instrucciones_2; }} 
+
+            { \color{Sepia} \mathit{ caso }} \; { \color{OliveGreen} \mathit{ valor_3; }}
+
+                { \color{BlueViolet} \mathit{ instrucciones_3; }} 
+
+            \cdots 
+            { \color{Sepia} \mathit{ De \; Otro \; Modo}}
+
+                { \color{BlueViolet} \mathit{ instrucciones_n; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Seg\acute{u}n }} 
+
+En este caso hay un Indicador es una variable o una función cuyo valor es comparado en cada caso con los valores "Valori", si en algún caso coinciden ambos valores, entonces se ejecutarán las Instruccionesi correspondientes. La sección en otro caso es análoga a la sección si no del ejemplo anterior.
+
+Estructuras iterativas
+
+Las instrucciones iterativas representan la ejecución de instrucciones en más de una vez.
+
+Bucle mientras
+
+El bucle se repite mientras la condición sea cierta, si al llegar por primera vez al bucle mientras la condición es falsa, el cuerpo del bucle no se ejecuta ninguna vez.
+
+
+        { \color{Sepia} \mathit{ Mientras }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n }} \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Mientras }} 
+
+Bucle repetir
+
+Existen otras variantes que se derivan a partir de la anterior. La estructura de control repetir se utiliza cuando es necesario que el cuerpo del bucle se ejecuten al menos una vez y hasta que se cumpla la condición:
+
+        { \color{Sepia} \mathit{ Repetir }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Hasta \; Que }} \; { \color{OliveGreen} \mathit{ condici \acute{o} n }} 
+
+La estructura anterior equivaldría a escribir:
+
+        { \color{BlueViolet} \mathit{ instrucciones; }} 
+        { \color{Sepia} \mathit{ Mientras }} \; { \color{BlueViolet} \mathit{ \neg }} ( { \color{OliveGreen} \mathit{ condici \acute{o} n }} ) \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Mientras }} 
+
+Bucle hacer
+
+El Bucle hacer se utiliza para repetir un bloque de código mientras se cumpla cierta condición.
+
+
+        {\color{Sepia} \mathit{ Hacer }} \;
+
+            {\color{BlueViolet} \mathit{ instrucciones; }} \; 
+
+        {\color{Sepia} \mathit{ Mientras}} \; {\color{OliveGreen} \mathit{ condici \acute{o} n }} 
+
+Bucle para
+
+Una estructura de control muy común es el ciclo para, la cual se usa cuando se desea iterar un número conocido de veces, empleando como índice una variable que se incrementa (o decrementa): Plantilla:Definiciones
+
+la cual se define como:
+
+        { \color{OliveGreen} \mathit{ i}} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ x}} 
+        { \color{Sepia} \mathit{ Mientras }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ \leq }} \; { \color{OliveGreen} \mathit{ n }} \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+            { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ + }} \; { \color{OliveGreen} \mathit{ z; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Mientras }} 
+
+Bucle para cada
+
+Por último, también es común usar la estructura de control para cada. Esta sentencia se usa cuando se tiene una lista o un conjunto L y se quiere iterar por cada uno de sus elementos:
+
+        { \color{Sepia} \mathit{ Para \; Cada }} \; { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \in }} \; { \color{OliveGreen} \mathit{ L }} \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Para \; Cada }} 
+
+Si asumimos que los elementos de L son L_0,L_1,\dots,L_n, entonces esta sentencia equivaldría a:
+
+        { \color{Sepia} \mathit{ Para }} \; { \color{OliveGreen} \mathit{ i}} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ 0}} \; { \color{Sepia} \mathit{ Hasta }} \; { \color{OliveGreen} \mathit{ n}} \; { \color{Sepia} \mathit{ Con \; Paso }} \; { \color{OliveGreen} \mathit{ 1}} \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \gets}} \; { \color{OliveGreen} \mathit{ L_i }} 
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Para }} 
+
+Que es lo mismo que:
+
+        { \color{Sepia} \mathit{ Para }} \; { \color{OliveGreen} \mathit{ i}} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ 0}} \; { \color{Sepia} \mathit{ Hasta }} \; { \color{OliveGreen} \mathit{ n}} \; { \color{Sepia} \mathit{ Hacer }}
+
+            { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \gets}} \; { \color{OliveGreen} \mathit{ L_i }} 
+            { \color{BlueViolet} \mathit{ instrucciones; }} 
+
+        { \color{Sepia} \mathit{ Fin \; Para }} 
+
+Sin embargo, en la práctica existen mejores formas de implementar esta instrucción dependiendo del problema.
+
+Es importante recalcar que el pseudocódigo no es un lenguaje estandarizado. Eso significa que diferentes autores podrían dar otras estructuras de control o bien usar estas mismas estructuras, pero con una notación diferente. Sin embargo, las funciones matemáticas y lógicas toman el significado usual que tienen en matemática y lógica, con las mismas expresiones.
+
+El anidamiento
+
+Cualquier instrucción puede ser sustituida por una estructura de control. El siguiente ejemplo muestra el pseudocódigo del ordenamiento de burbuja, que tiene varias estructuras anidadas. Este algoritmo ordena de menor a mayor los elementos de una lista L.
+
+    \begin{array}{l} { \color{Sepia} Procedimiento } \; { \color{BlueViolet} Ordenar } \; ( { \color{OliveGreen} L} \; ) \\ \left \updownarrow \begin{array}{l} { \color{Gray} // Comentario: \; L=(L_1,L_2,\dots,L_n) \; es \; una \; lista \; con \; n \; elementos // } \\ { \color{OliveGreen} k } \; { \color{BlueViolet} \gets } \; { \color{OliveGreen} 0;} \\ { \color{Sepia} Repetir } \\ \left \updownarrow \begin{array}{l} { \color{OliveGreen} intercambio } \; { \color{BlueViolet} \gets } \; { \color{OliveGreen} Falso;} \\ { \color{OliveGreen} k } \; { \color{BlueViolet} \gets } \; { \color{OliveGreen} k + 1;} \\ { \color{Sepia} Para } \; { \color{OliveGreen} i} \; { \color{BlueViolet} \gets } \; { \color{OliveGreen} 1} \; { \color{Sepia} Hasta } \; { \color{OliveGreen} n - k} \; { \color{Sepia} Con Paso } \; { \color{OliveGreen} 1} \; { \color{Sepia} Hacer } \\ \left \updownarrow \begin{array}{l} { \color{Sepia} Si } \; { \color{OliveGreen} L_i } \; { \color{BlueViolet} > } \; { \color{OliveGreen} L_{i+1} } \; { \color{Sepia} Entonces } \; \\ \left \updownarrow \begin{array}{l} { \color{BlueViolet} intercambiar } \; ( { \color{OliveGreen} L_i , L_{i+1} } \; ) \\ { \color{OliveGreen} intercambio } \; { \color{BlueViolet} \gets } \; { \color{OliveGreen} Verdadero;} \end{array} \right . \\ { \color{Sepia} Fin Si } \; \\ \end{array} \right . \\ { \color{Sepia} Fin Para } \\ \end{array} \right . \\ { \color{Sepia} Hasta \; Que } \; { \color{OliveGreen} intercambio } \; { \color{BlueViolet} = } \; { \color{OliveGreen} Falso;} \end{array} \right . \\ { \color{Sepia} Fin Procedimiento } \; \\ \end{array}
+
+En general, las estructuras anidadas se muestran indentadas, para hacer más sencilla su identificación a simple vista. En el ejemplo, además de la indentación, se ha conectado con flechas los pares de delimitadores de cada nivel de anidamiento.
+
+Desarrollo de algoritmos
+
+Con este pseudocódigo se puede desarrollar cualquier algoritmo que:
+- Tenga un único punto de inicio.
+- Tenga un número finito de posibles puntos de término.
+- Haya un número finito de caminos, entre el punto de inicio y los posibles puntos de término.
+
+Funciones y procedimientos
+
+Muchas personas prefieren distinguir entre funciones y procedimientos. Una función, al igual que una función matemática, recibe uno o varios valores de entrada y regresa una salida mientras que un procedimiento recibe una entrada y no genera ninguna salida aunque en algún caso podría devolver resultados a través de sus parámetros de entrada si estos se han declarado por referencia (ver formas de pasar argumentos a una función o procedimiento).
+
+En ambos casos es necesario dejar en claro cuáles son las entradas para el algoritmo, esto se hace comúnmente colocando estos valores entre paréntesis al principio o bien declarándolo explícitamente con un enunciado. En el caso de las funciones, es necesario colocar una palabra como regresar o devolver para indicar cuál es la salida generada por el algoritmo. Por ejemplo, el pseudocódigo de una función que permite calcular a^n (un número a elevado a potencia n).
+
+
+        { \color{Sepia} \mathit{ Funci \acute{o} n }} \; { \color{BlueViolet} \mathit{ potencia }} \; ( { \color{OliveGreen} \mathit{ a,n}} ) 
+        { \color{Gray} \mathit{ // Comentario: \; Este \; algoritmo \; calcula \; a^n \; con \; a \; y \; n \; n \acute{u} meros \; naturales // }}
+
+            { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ n; }} 
+            { \color{OliveGreen} \mathit{ r }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{Plum} \mathit{ 1;}} 
+            { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ a; }} 
+            { \color{Sepia} \mathit{ Mientras }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ > }} \; { \color{Plum} \mathit{ 0 }} \; { \color{Sepia} \mathit{ Hacer }}
+
+                { \color{Sepia} \mathit{ Si }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ % }} \; { \color{Plum} \mathit{ 2}} { \color{BlueViolet} \mathit{ \neq }} \; { \color{Plum} \mathit{ 0}} { \color{Sepia} \mathit{ Entonces }} \; { \color{Gray} \mathit{ //\; Si \; i \; es \; impar \; (% \; es \; resto)}}
+
+                    { \color{OliveGreen} \mathit{ r }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ r }} \; { \color{BlueViolet} \mathit{ * }} \; { \color{OliveGreen} \mathit{ x; }} 
+
+                { \color{Sepia} \mathit{ FinSi }} 
+                { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ x }} \; { \color{BlueViolet} \mathit{ * }} \; { \color{OliveGreen} \mathit{ x; }} 
+                { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{BlueViolet} \mathit{ / }} \; { \color{Plum} \mathit{ 2; }} \; 
+
+            { \color{Sepia} \mathit{ FinMientras }} 
+            { \color{Sepia} \mathit{ Escribir }} \; { \color{OliveGreen} \mathit{ r; }} 
+
+        { \color{Sepia} \mathit{ FinFunci \acute{o} n }} 
+
+Un ejemplo de procedimiento seria el algoritmo de Ordenamiento de burbuja, por el que partiendo de una lista de valores estos se ordenan, nótese que en un procedimiento, no se calcula el valor de una función, sino que se realiza una acción, en este caso ordenar la lista.
+
+        { \color{Sepia} \mathit{ Procedimiento }} \; { \color{BlueViolet} \mathit{ DeLaBurbuja }} \; ( { \color{OliveGreen} \mathit{ a }} { \color{Plum} \mathit{ {}_0 }} , { \color{OliveGreen} \mathit{ a }} { \color{Plum} \mathit{ {}_1 }} , { \color{OliveGreen} \mathit{ a }} { \color{Plum} \mathit{ {}_2 }} , \ldots, { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_n }} { \color{BlueViolet} \mathit{ {}_- }} { \color{Plum} \mathit{ {}_1}} {}_) )
+
+            { \color{Sepia} \mathit{ Para }} \; { \color{OliveGreen} \mathit{ i}} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{Plum} \mathit{ 2}} \; { \color{Sepia} \mathit{ Hasta }} \; { \color{OliveGreen} \mathit{ n}} \; { \color{Sepia} \mathit{ Hacer }}
+
+                { \color{Sepia} \mathit{ Para }} \; { \color{OliveGreen} \mathit{ j}} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{Plum} \mathit{ 0}} \; { \color{Sepia} \mathit{ Hasta }} \; { \color{OliveGreen} \mathit{ n }} \; { \color{BlueViolet} \mathit{ - }} \; { \color{OliveGreen} \mathit{ i }} \; { \color{Sepia} \mathit{ Hacer }}
+
+                    { \color{Sepia} \mathit{ Si }} \; { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} {}_) \; { \color{BlueViolet} \mathit{ < }} \; { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} { \color{BlueViolet} \mathit{ {}_+ }} { \color{Plum} \mathit{ {}_1}} {}_) \; { \color{Sepia} \mathit{ Entonces }} 
+
+                        { \color{OliveGreen} \mathit{ aux }} \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} {}_) \; 
+                        { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} {}_) \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} { \color{BlueViolet} \mathit{ {}_+ }} { \color{Plum} \mathit{ {}_1}} {}_) 
+                        { \color{OliveGreen} \mathit{ a }} {}_( { \color{OliveGreen} \mathit{ {}_j }} { \color{BlueViolet} \mathit{ {}_+ }} { \color{Plum} \mathit{ {}_1}} {}_) \; { \color{BlueViolet} \mathit{ \gets }} \; { \color{OliveGreen} \mathit{ aux }} 
+
+                    { \color{Sepia} \mathit{ Fin } { Si }} 
+
+                { \color{Sepia} \mathit{ Fin } { Para }} 
+
+            { \color{Sepia} \mathit{ Fin } { Para }} 
+
+        { \color{Sepia} \mathit{ Fin } { Procedimiento }} 
+
+Ventajas del pseudocódigo sobre los diagramas de flujo
+
+Los pseudocódigos presentan los siguientes beneficios:
+1. Ocupan mucho menos espacio en el desarrollo del problema.
+2. Permite representar de forma fácil operaciones repetitivas complejas.
+3. Es más sencilla la tarea de pasar de pseudocódigo a un lenguaje de programación formal.
+4. Si se siguen las reglas de identación se puede observar claramente los niveles en la estructura del programa.
+5. En los procesos de aprendizaje de los alumnos de programación, éstos están más cerca del paso siguiente (codificación en un lenguaje determinado, que los que se inician en esto con la modalidad Diagramas de Flujo).
+6. Mejora la claridad de la solución de un problema.
+
+Referencias
+1. «Pseudocódigo - Estructuras condicionales». Consultado el 7 de diciembre de 2012.
+2. «Instroducción al PseudoCódigo». Consultado el 7 de diciembre de 2012.
+
+Bibliografía
+1. Peña Marí, Ricardo (2005). Diseño de programas: formalismo y abstracción (3 edición). Pearson Alhambra. p. 488. ISBN 978-84-205-4191-4.
+2. Pseudocódigos y programación estructurada (1 edición). Centro Técnico Europeo de Enseñanzas Profesionales. 2 de 1997. ISBN 978-84-8199-065-2.
+3. Brassard, Gilles; Bratley, Paul (1996). Algorítmica: concepción y análisis. Peña Mari, Ricardo Tr. (1 edición). Masson, S.A. p. 384. ISBN 978-84-458-0535-0.
+4. Rodeira, ed. (6 de 1994). Pseudocódigos e programación estructurada (en gallego) (1 edición). ISBN 978-84-8116-287-5.
+5. Edebé, ed. (8 de 1993). Pseudocódigos y programación estructurada (1 edición). ISBN 978-84-236-3126-1.

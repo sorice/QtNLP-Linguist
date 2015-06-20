@@ -1,0 +1,168 @@
+Algoritmo divide y vencerás
+
+En la cultura popular, divide y vencerás hace referencia a un refrán que implica resolver un problema difícil, dividiéndolo en partes más simples tantas veces como sea necesario, hasta que la resolución de las partes se torna obvia. La solución del problema principal se construye con las soluciones encontradas.
+
+En las ciencias de la computación, el término divide y vencerás (DYV) hace referencia a uno de los más importantes paradigmas de diseño algorítmico. El método está basado en la resolución recursiva de un problema dividiéndolo en dos o más subproblemas de igual tipo o similar. El proceso continúa hasta que éstos llegan a ser lo suficientemente sencillos como para que se resuelvan directamente. Al final, las soluciones a cada uno de los subproblemas se combinan para dar una solución al problema original.
+
+Esta técnica es la base de los algoritmos eficientes para casi cualquier tipo de problema como, por ejemplo, algoritmos de ordenamiento (quicksort, mergesort, entre muchos otros), multiplicar números grandes (Karatsuba), análisis sintácticos (análisis sintáctico top-down) y la transformada discreta de Fourier.
+
+Por otra parte, analizar y diseñar algoritmos de DyV son tareas que lleva tiempo dominar. Al igual que en la inducción, a veces es necesario sustituir el problema original por uno más complejo para conseguir realizar la recursión, y no hay un método sistemático de generalización.
+
+El nombre divide y vencerás también se aplica a veces a algoritmos que reducen cada problema a un único subproblema, como la búsqueda binaria para encontrar un elemento en una lista ordenada (o su equivalente en computación numérica, el algoritmo de bisección para búsqueda de raíces). Estos algoritmos pueden ser implementados más eficientemente que los algoritmos generales de “divide y vencerás”; en particular, si es usando una serie de recursiones que lo convierten en simples bucles. Bajo esta amplia definición, sin embargo, cada algoritmo que usa recursión o bucles puede ser tomado como un algoritmo de “divide y vencerás”. El nombre decrementa y vencerás ha sido propuesta para la subclase simple de problemas.
+
+La corrección de un algoritmo de “divide y vencerás”, está habitualmente probada una inducción matemática, y su coste computacional se determina resolviendo relaciones de recurrencia.
+
+Precedentes históricos
+
+La búsqueda binaria, un algoritmo de divide y vencerás en el que el problema original es partido sucesivamente en subproblemas simples de más o menos la mitad del tamaño, tiene una larga historia. La idea de usar una lista ordenada de objetos para facilitar su búsqueda data de la antigua Babilonia en el 200 a. C., mientras que una descripción del algoritmo en ordenadores apareció en 1946 en un artículo de John Mauchly. Otro algoritmo de “divide y vencerás” con un único subproblema es el algoritmo de Euclides para computar el máximo común divisor de dos números (mediante reducción de números a problemas equivalentes cada vez más pequeños), que data de muchos siglos antes de Cristo.
+
+Un ejemplo antiguo de algoritmo de “divide y vencerás” con múltiples subproblemas es la descripción realizada por Gauss en 1805 de lo que se le llama ahora algoritmo de la rápida transformación de FourierCooley-Tukey (FFT), aunque él no analizó su conjunto de operaciones cuantitativamente y los FFT no se difundieron hasta que se redescubrieron casi un siglo después.
+
+Otro problema antiguo de 2 subdivisiones de “divide y vencerás” que fue específicamente desarrollado para ordenadores y analizado adecuadamente es el algoritmo de merge-sort, inventado por John von Neumann en 1945.
+
+Otro ejemplo notable es el algoritmo inventado por A. Karatsuba en 1960 que puede multiplicar dos números de n dígitos en O(n^{\log_2 3}). El algoritmo refutó la conjetura de Andréi Kolmogórov en 1956 que esa tarea requería Ω(n2) operaciones. Otro ejemplo de algoritmo de divide y vencerás que originalmente no se usaba en ordenador, Knuth dio el método que habitualmente una oficina de correos usa para dirigir las cartas: las cartas se ordenan en diferentes bolsas en función de su área geográfica, cada una de estas bolsas a su vez se ordena en diferentes lotes para subregiones más pequeñas, y así sucesivamente hasta que son repartidas. Esto está relacionado con el ordenamiento Radix, descrito para las máquinas de ordenación de tarjetas perforadas a los comienzos .
+
+Diseño e implementación
+
+La resolución de un problema mediante esta técnica consta fundamentalmente de los siguientes pasos:
+1. En primer lugar ha de plantearse el problema de forma que pueda ser descompuesto en k subproblemas del mismo tipo, pero de menor tamaño. Es decir, si el tamaño de la entrada es n, hemos de conseguir dividir el problema en k subproblemas (donde 1 ≤ k ≤ n), cada uno con una entrada de tamaño n/k y donde 0 ≤ n/k < n. A esta tarea se le conoce como división.
+2. En segundo lugar han de resolverse independientemente todos los subproblemas, bien directamente si son elementales o bien de forma recursiva. El hecho de que el tamaño de los subproblemas sea estrictamente menor que el tamaño original del problema nos garantiza la convergencia hacia los casos elementales, también denominados casos base.
+3. Por último, combinar las soluciones obtenidas en el paso anterior para construir la solución del problema original.
+
+Los algoritmos divide y vencerás (o divide and conquer, en inglés), se diseñan como procedimientos generalmente recursivos.
+
+ AlgoritmoDyV (p: TipoProblema): TipoSolucion
+   
+   if esCasoBase(p)
+      return resuelve(p)
+   
+   else
+      subproblemas: array of TipoProblema
+      subproblemas = divideEnSubproblemas(p)
+      soluciones_parciales: array of TipoSolucion
+   
+      for each sp in subproblemas
+         soluciones_parciales.push_back(AlgoritmoDYV(sp))
+      endFor
+   
+      return mezcla(soluciones_parciales)
+   
+   endIf
+   
+ finAlgoritmoDyV
+
+Por el hecho de usar un diseño recursivo, los algoritmos diseñados mediante la técnica de Divide y Vencerás van a heredar las ventajas e inconvenientes que la recursión plantea:
+- Por un lado el diseño que se obtiene suele ser simple, claro, robusto y elegante, lo que da lugar a una mayor legibilidad y facilidad de depuración y mantenimiento del código obtenido.
+- Por contra, los diseños recursivos conllevan normalmente un mayor tiempo de ejecución que los iterativos, además de la complejidad espacial que puede representar el uso de la pila de recursión.
+
+Sin embargo, este tipo de algoritmos también se pueden implementar como un algoritmo no recursivo que almacene las soluciones parciales en una estructura de datos explícita, como puede ser una pila, cola, o cola de prioridad. Esta aproximación da mayor libertad al diseñador, de forma que se pueda escoger qué subproblema es el que se va a resolver a continuación, lo que puede ser importante en el caso de usar técnicas como Ramificación y acotación o de optimización.
+
+Recursión
+
+Los algoritmos de “divide y vencerás” están naturalmente implementados, como procesos recursivos. En ese caso, los subproblemas parciales encabezados por aquel que ya ha sido resuelto se almacenan en la pila de llamadas de procedimientos.
+
+Pila explícita
+
+Los algoritmos de divide y vencerás también pueden ser implementados por un programa no recursivo que almacena los subproblemas parciales en alguna estructura de datos explícita, tales como una pila, una cola, o una cola de prioridad. Este enfoque permite más libertad a la hora de elegir los subproblemas a resolver después, una característica que es importante en algunas aplicaciones, por ejemplo en la búsqueda en anchura y en el método de ramificación y poda para optimización de subproblemas. Este enfoque es también la solución estándar en lenguajes de programación que no permiten procedimientos recursivos.
+
+Tamaño de la pila
+
+En implementaciones recursivas de algoritmos de DyV, debe asegurarse que hay suficiente memoria libre para la pila de recursión, sino la ejecución puede fallar por desbordamiento de la pila. Afortunadamente, los algoritmos DyV que son eficientes temporalmente tienen una profundidad recursiva relativamente pequeña. Por ejemplo, el algoritmo quicksort puede ser implementado de forma que nunca requiere más de log_2n llamadas recursivas para ordenar n elementos.
+
+Los desbordamientos de pila podrían ser difíciles de evitar cuando usamos procedimientos recursivos, donde muchos compiladores asumen que la pila de recursión es una zona contagiosa de memoria, y algunos asignan una cantidad de espacio determinada para ello. Los compiladores pueden también asignar más información en la pila de recursión que la estrictamente necesaria, tales como la dirección de retorno, parámetros invariables, y las variables internas del procedimiento. Así, el riesgo de desbordamiento de pila puede ser reducido mediante la minimización de parámetros y variables internas de los procedimientos recursivos, o usando estructura de pila explícita.
+
+Eligiendo los casos base
+
+En cualquier algoritmo recursivo, hay una libertad considerable para elegir los casos bases, los subproblemas pequeños que son resueltos directamente para acabar con la recursión.
+
+Elegir los casos base más pequeños y simples posibles es más elegante y normalmente nos da lugar a programas más simples, porque hay menos casos a considerar y son más fáciles de resolver. Por ejemplo, un algoritmo FFT podría parar la recursión cuando la entrada es una muestra simple, y el algoritmo quicksort de ordenación podría parar cuando la entrada es una lista vacía. En ambos casos, sólo hay que considerar un caso base, y no requiere procesamiento.
+
+Por otra parte, la eficiencia normalmente mejora si la recursión se para en casos relativamente grandes, y estos son resueltos no recursivamente. Esta estrategia evita la sobrecarga de llamadas recursivas que hacen poco o ningún trabajo, y pueden también permitir el uso de algoritmos especializados no recursivos que, para esos casos base, son más eficientes que la recursión explícita. Ya que un algoritmo de DyV reduce cada instancia del problema o subproblema aún gran número de instancias base, éstas habitualmente dominan el coste general del algoritmo, especialmente cuando la sobrecarga de separación/unión es baja. Véase que estas consideraciones no dependen de si la recursión está implementada por compilador o por pila explícita.
+
+Compartir subproblemas repetidos
+
+Para algunos problemas, la recursión ramificada podría acabar evaluando el mismo subproblema muchas veces. En tales casos valdría la pena identificar y guardar las soluciones de estos subproblemas solapados, una técnica comúnmente conocida como memoización. Llevado al límite, nos lleva a algoritmos de “divide y vencerás” de bottom-up tales como la programación dinámica y análisis gráfico.EDF
+
+Ventajas
+
+Resolución de problemas complejos
+
+Este modelo algorítmico es una herramienta potente para solucionar problemas complejos, tales como el clásico juego de las torres de Hanói. Todo lo que necesita este algoritmo es dividir el problema en subproblemas más sencillos, y éstos en otros más sencillos hasta llegar a unos subproblemas sencillos (también llamados casos base). Una vez ahí, se resuelven y se combinan los subproblemas en orden inverso a su inicio. Cómo dividir los problemas es, a menudo, la parte más compleja del algoritmo. Por eso, en muchos problemas, el modelo sólo ofrece la solución más sencilla, no la mejor.
+
+Eficiencia del algoritmo
+
+Normalmente, esta técnica proporciona una forma natural de diseñar algoritmos eficientes. Por ejemplo, si el trabajo de dividir el problema y de combinar las soluciones parciales es proporcional al tamaño del problema (n); además, hay un número limitado p de subproblemas de tamaño aproximadamente igual a n/p en cada etapa; y por último, los casos base requieren un tiempo constante (O(1)); entonces el algoritmo divide y vencerás tiene por cota superior asintótica a O(nlogn). Esta cota es la que tienen los algoritmos divide y vencerás que solucionan problemas tales como ordenar y la transformada discreta de fourier. Ambos procedimientos reducen su complejidad, anteriormente definida por O(n2). Para terminar, cabe destacar que existen otros enfoques y métodos que mejoran estas cotas.
+
+Al efectuar un análisis de la eficiencia de este método, se encuentra que la decisión de cómo se divida el problema afecta el 'orden' O de la implementación. Si se divide un problema de tamaño n en p partes de tamaño n/c cada una y considerando que hay un costo fijo b dependiente de n para procesar al final la unión de soluciones, se tiene que el número de operaciones o tiempo de procesamiento para el algoritmo se puede expresar como p veces el tiempo que toma resolver cada subproblema de tamaño n/c más el correspondiente costo fijo b:
+
+    (1)\begin{array}{l} T(n)=pT(\frac{n}{c})+bn\\T(1)=b\end{array}
+
+se considera un k tal que n=c^k \Rightarrow
+
+    (2)T(n)=R(k)\Rightarrow \begin{cases} R(k)=pR(k-1)+bc^k \\ R(0)=b \end{cases}
+
+sustituyendo S(k)= \frac{R(k)}{p^k} se obtiene...
+
+    (3)\Rightarrow \begin{cases} S(k)=S(k-1)+b(\frac{c}{p})^k \\ S(0)=b \end{cases}
+
+    S(k)- S(k-1) = b(\frac{c}{p})^k
+
+Aplicando sumatoria de 1 a k en ambos lados...
+
+    \sum_{i=1}^k{ S(i)- S(i-1) } = \sum_{i=1}^k{ b(\frac{c}{p})^i }
+
+    S(k)- S(0) = S(k)- b = \sum_{i=1}^k{ b(\frac{c}{p})^i }
+
+    S(k) = b + \sum_{i=1}^k{ b(\frac{c}{p})^i }
+
+    (3.1) S(k)= \sum_{i=0}^k{b(\frac{c}{p})^i} \Rightarrow
+
+    R(k)= p^kb\sum_{i=0}^k{(\frac{c}{p})^i} = \frac{p^k}{c^k}bc^k\sum_{i=0}^k{(\frac{c}{p})^i} = bc^k\sum_{i=0}^k{(\frac{c}{p})^{k-i}} = bc^k\sum_{i=0}^k{(\frac{c}{p})^{i}}
+
+    (4) R(k) = bc^k\sum_{i=0}^k{(\frac{c}{p})^{i}}
+
+Según la relación entre c y p se obtiene diferentes 'órdenes' para el algoritmo:
+
+Caso p < c: Es decir, si el problema se divide en pocas partes de gran tamaño cada una, entonces la sumatoria (4) es O(1) dado que se puede aplicar directamente la formula \sum_{i=0}^{n-1}{a^i} = \frac{1 - a^n}{1 - a} si a>1.
+
+    (5.1) R(k) \approx O(bc^k) \Rightarrow T(n)=O(n)
+
+Caso en que p == c:
+
+    (5.2) R(k) = bkc^k \Rightarrow T(n)=O(n\log n)
+
+Caso p > c: En que el problema se divide en muchas partes de tamaño 'relativamente' pequeño, implica que la sumatoria (4) es...
+
+    \sum_{i=0}^k{(\frac{c}{p})^{i}} = \frac{{(\frac{p}{c})^{k+1}}-1}{(\frac{p}{c})-1} = O((\frac{p}{c})^k)
+
+    R(k) = \frac{bc^kp^k}{c^k} = bp^k
+
+    (5.3) T(n) = bp^{\log_c n} = bn^{\log_c p} \Rightarrow T(n)=O(n)
+
+En efecto, los algoritmos de tipo Divide y Vencerás están acotados por O(n\log n) para casos muy particulares en que p y c son similares, mientras que en general se puede considerar que son O(n)
+
+Paralelismo
+
+Este tipo de algoritmos se adapta de forma natural a la ejecución en entornos multiprocesador, especialmente en sistemas de memoria compartida donde la comunicación de datos entre los procesadores no necesita ser planeada por adelantado, por lo que subproblemas distintos se pueden ejecutar en procesadores distintos.
+
+Acceso a memoria
+
+Los algoritmos que siguen el paradigma Divide y vencerás, tienden naturalmente a hacer un uso eficiente de las memorias cachés. La razón es que una vez que un subproblema es lo suficientemente pequeño, él y todos sus subproblemas se pueden, en principio, solucionar dentro de esa caché, sin tener acceso a la memoria principal, que es del orden de decenas de veces más lenta. Un algoritmo diseñado para aprovechar la memoria caché de esta manera se llama modelo caché-olvidadiza, olvidadiza porque no contiene el tamaño de la memoria como parámetro explícito. Por otra parte, estos algoritmos se pueden diseñar para muchos problemas importantes, tales como ordenación, la multiplicación de matrices, de manera que se haga un uso óptimo de la caché. En contraste, el acercamiento tradicional para explotar la caché es hacer bloques, de esta forma, el problema se divide explícitamente en las partes de tamaños apropiados para que se pueda utilizar al caché de forma óptima, pero solamente cuando el algoritmo es mejorado para el tamaño específico de la caché de una máquina particular. La misma ventaja existe en lo que respecta a otros sistemas jerárquicos de memoria, por ejemplo NUMA o memoria virtual, así como para niveles múltiples de caché: una vez que un subproblema es suficientemente pequeño, puede ser solucionado dentro de un nivel dado de la jerarquía, sin tener que acceder al más alto (más lento).
+
+Sin embargo, la clase de optimalidad asintótica descrita aquí, análoga a notación O mayúscula, no hace caso de factores constantes, y el añadir mejoras adicionales específicas de la máquina y caché no es un requerimiento para alcanzar el óptimo en un sentido absoluto.
+
+Control del redondeo
+
+En computaciones con aritmética redondeada, por ejemplo con los números en aritmética flotante, un algoritmo de divide y vencerás podría dar resultados más exactos que un problema iterativo equivalente superficialmente. Por ejemplo, se pueden sumar N números tanto como con un bucle simple que suma cada dato a una variable simple, o mediante un algoritmo de DyV que rompe el conjunto de datos en dos mitades, recursivamente computa cada suma y luego une las 2 sumas. Mientras que el segundo método realiza las mismas sumas que el primero, y cuesta más por las llamadas recursivas, normalmente es más exacto.
+
+Desventajas
+
+La principal desventaja de este método es su lentitud en la repetición del proceso recursivo: los gastos indirectos de las llamadas recursivas a la resolución de los subproblemas, junto con el hecho de tener que almacenar la pila de llamadas (el estado en cada punto en la repetición), pueden empeorar cualquier mejora hasta entonces lograda. Esta tarea, sin embargo, depende del estilo de la implementación: con casos base lo suficientemente grandes, se reducen los gastos indirectos de la repetición de las llamadas.
+
+Otra desventaja o inconveniente importante, es la dificultad o incluso inconveniencia de aplicar el método a situaciones en las que la solución al problema general no se deriva de la suma directa y simple de los subproblemas (partes). Esto se presenta por ejemplo cuando son relevantes las interacciones o efectos mutuos entre los subproblemas, lo que genera nuevos subproblemas, al considerar cada una de estas interacciones, incrementando exponencialmente el número de subproblemas a considerar, al incrementarse la complejidad de la situación general y de sus componentes.
+
+De modo similar, el algoritmo puede no ser aplicable cuando las interacciones no son predecibles de preciso.
+
+Ejemplos
+- Multiplicación de Enteros Grandes: algoritmo eficiente para multiplicar números de tamaño considerable, que se salen de los límites de representación, y no abordable con los algoritmos clásicos debido al excesivo coste.
+- Subvector de suma máxima: Algoritmo eficiente para encontrar subcadenas dentro de un vector evitando tener que recorrer todo el vector desde cada posición.

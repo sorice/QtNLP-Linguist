@@ -1,0 +1,81 @@
+Base de datos documental
+
+Una base de datos documental está constituida por un conjunto de programas que almacenan, recuperan y gestionan datos de documentos o datos de algún modo estructurados. Este tipo de bases de datos constituyen una de las principales subcategorías dentro de las denominadas bases de datos no SQL. A diferencia de las bases de datos relacionales, estas bases de datos están diseñadas alrededor de una noción abstracta de "Documento".
+
+Los documentos
+
+El concepto central de una base de datos orientada a documentos es el concepto mismo de Documento. Mientras cada implementación de base de datos orientada a documentos difiere en los detalles, en general todas ellas comparten el principio de que los documentos encapsulan y codifican datos o información siguiendo algún formato estándar. Entre las codificaciones usadas en la actualidad se encuentran XML, YAML, JSON y BSON, así como formatos binarios como PDF y documentos Microsoft Office (MS Word, Excel y demás).
+
+Los documentos dentro de una base de datos orientada a documentos son similar, de algún modo, a registros, tuplas o filas en una base de datos relacional pero menos rígidos. No se les requiere ajustarse a un esquema estándar ni tener todos las mismas secciones, atributos, claves o cosas por el estilo. Por ejemplo un documento puede ser:
+
+ {
+    Nombre:"Pepe",
+    Dirección:"Plaza Mayor 5",
+    Profesión:"Panadero"
+ }
+
+Mientras que otro:
+
+ {
+     Nombre:"Juliana",
+     Dirección:"Gran Vía 15",
+     Hijos:[
+        {Nombre:"Miguel", Edad:10},
+        {Nombre:"Jacinta", Edad:8},
+        {Nombre:"Sara", Edad:5},
+        {Nombre:"Elena", Edad:2}
+   ]
+  }
+
+Estos documentos contienen alguna información similar y otra diferente. Al contrario que una base de datos relacional en la que todos los registros deben tener los mismos atributos -que pueden quedar vacíos- , en un documento no quedan 'campos' vacíos. De este modo es posible añadir nueva información sin necesidad de establecer qué información queda excluida.
+
+Claves
+
+Se direccionan los documentos mediante una clave única que identifica el documento. Generalmente esta clave se compone de una simple cadena. En algunos casos puede tratarse de un URI o un camino, que sirve para rescatar el documento de la base de datos. Generalmente la base de datos mantiene un índice de dichas claves, por lo que la recuperación es rápida.
+
+Recuperación
+
+Otra de las características que definen una base de datos orientada a documentos es que, más allá de la sencilla correspondencia clave-documento (o clave-valor) usada para recuperar un documento, la base de datos ofrece un API o un lenguaje de interrogación para recuperar documentos según su contenido. Por ejemplo, para preguntar por todos los documentos que tienen un valor dado en un campo. El conjunto de características del API o del lenguaje de interrogación, así como lo que se obtiene, varía significativamente entre distintas implementaciones.
+
+Organización
+
+Las distintas implementaciones de bases de datos documentales que podemos organizan los documentos de muy distintas formas, entre las que se encuentran:
+- Collecciones
+- Etiquetas
+- Metadatos ocultos
+- Jerarquías de directorios
+
+Implementaciones
+Nombre 	Editor 	Licencia 	Lenguaje 	Notas 	API RESTful
+BaseX 	BaseX Team 	BSD 	Java, XQuery 	Soporta XML, JSON y formatos binarios; arquitectura cliente-servidor; búsquedas de texto completo concurrentes. 	Sí
+ArangoDB 	triAGENS 	Apache 2 	C, C++ & Javascript 	Almacén de documentos y presentación gráfica. 	Sí1
+Clusterpoint 	Clusterpoint Ltd. 	Libre/Comercial2 	C++ 	Base de datos documental sin esquema, búsqueda de texto completo, ordenación por relevancia y funcionamiento en Cluster. 	Sí
+Couchbase Server 	Couchbase, Inc. 	Apache 	Erlang y C 	Base de datos NoSQL distribuida documental. 	Sí3
+CouchDB 	Apache Software Foundation 	Apache 	Erlang 	JSON sobre REST/HTTP con propiedades ACID mediante multiversion concurrency control limitadas. Usa map y reduce para las vistas e interrogaciones.4 	Sí5
+eXist 	eXist, [3] 	GPL 	XQuery, Java 	XML sobre REST/HTTP, WebDAV, búsqueda de texto completo con Lucene, validación, versionado, clustering, triggers, reescritura de URLs, colecciones, ACLs, XQuery Update 	Sí6
+FleetDB 	FleetDB 	MIT 	Clojure 	Una base de datos basada en JSON sin esquema, optimizada para desarrollo Agile. 	(desconocido)
+Jackrabbit 	Apache Software Foundation 	Apache 	Java 		(desconocido)
+Lotus Notes 	IBM 	Proprietaria 	LotusScript, Java, Lotus @Formula 		(desconocido)
+MarkLogic 	MarkLogic Corporation 	Libre o comercial 	REST, Java, XQuery, XSLT, C++ 	Base de datos documental distribuida con multiversion concurrency control, búsqueda de texto completo y transacciones ACID. 	Sí
+MongoDB 	10gen, Inc 	GNU AGPL v3.07 	C++ 	Base de datos documental optimizada para contenido muy transitorio 	Opcional8
+MUMPS9 		Proprietaria y GNU Affero GPL10 	MUMPS 	Muy usada en aplicaciones médicas. 	(desconocido)
+OrientDB 	Orient Technologies 	Apache 	Java 	JSON sobre HTTP 	Sí
+Apache Cassandra 	Apache Software Foundation 	Apache 	Java 	JSON sobre HTTP 	Sí
+Redis 		BSD License 	ANSI C 	Almacén clave-valor con soporte de listas y conjuntos 	(desconocido)
+Rocket U2 	Rocket Software 	Proprietaria 		UniData, UniVerse 	Sí (Beta)
+RavenDB 	Hibernating Rhinos 	GNU AGPL v3.011 o Commercial 	C# 	JSON sobre HTTP 	Sí
+
+Bases de datos XML
+
+La mayoría de las bases de datos XML están orientadas a documentos.
+
+Referencias
+- ArangoDB REST API
+- Clusterpoint DBMS Licensing Options
+- CouchDB Overview
+- CouchDB Document API
+- Licencia MongoDB
+- Interfaces MongoDB REST
+- Extreme Database programming with MUMPS Globals
+- GTM MUMPS FOSS on SourceForge
+- RavenDB OSS license

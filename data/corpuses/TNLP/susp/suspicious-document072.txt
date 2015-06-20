@@ -1,0 +1,37 @@
+Tabla de hechos
+
+Introducción
+
+En las bases de datos, y más concretamente en un data warehouse, una tabla de hechos (o tabla fact) es la tabla central de un esquema dimensional (en estrella o en copo de nieve) y contiene los valores de las medidas de negocio o dicho de otra forma los indicadores de negocio. Cada medida se toma mediante la intersección de las dimensiones que la definen, dichas dimensiones estarán reflejadas en sus correspondientes tablas de dimensiones que rodearán la tabla de hechos y estarán relacionadas con ella.
+
+En la figura de la derecha, la tabla central (Ventas) es la tabla de hechos de un diseño de modelo de datos en estrella, las cinco tablas que la rodean (Producto, Tiempo, Almacén, Promoción y Cliente) son las cinco dimensiones de que consta esta tabla de hechos, en dicha tabla se almacenan, en este caso, las unidades vendidas y el precio obtenido por dichas ventas, estos son los hechos o medidas de negocio almacenados y que, gracias al diseño multidimensional en estrella, podrán ser analizados de forma exhaustiva, típicamente mediante técnicas OLAP (procesamiento analítico on-line).
+
+Las medidas del negocio (hechos)
+
+Las medidas más útiles para incluir en una tabla de hechos son los aditivos, es decir, aquellas medidas que pueden ser sumadas como por ejemplo la cantidad de producto vendido, los costes de producción o el dinero obtenido por las ventas; son medidas numéricas que pueden calcularse con la suma de varias cantidades de la tabla. En consecuencia, por lo general los hechos a almacenar en una tabla de hechos van a ser casi siempre valores numéricos, enteros o reales.
+
+Cardinalidad de la tabla de hechos
+
+Las tablas de hechos pueden contener un gran número de filas, a veces cientos de millones de registros cuando contienen uno o más años de la historia de una gran organización, esta cardinalidad estará acotada superiormente por la cardinalidad de las tablas dimensionales, Por ejemplo, si se tiene una tabla de hechos "TH" de tres dimensiones D1, D2 y D3, el número máximo de elementos que tendrá la tabla de hechos TH será:
+Card(TH) = Card(D1) x Card(D2) x Card(D3)
+Donde 'Card(x)' es la cardinalidad de la tabla 'x'
+
+Naturalmente, estas cardinalidades no son fijas, ya que, por ejemplo, si una de las dimensiones se refiere a los clientes de la empresa, cada vez que se dé de alta un nuevo cliente se estará aumentando la cardinalidad de la tabla de hechos. Una de las dimensiones suele ser el tiempo, éste puede medirse de muy distintas formas (por horas, días, semanas, ...), pero lo cierto es que transcurre continuamente, y para que el sistema funcione se deben añadir registros periódicamente a la tabla de esta dimensión (tabla de tiempos) y esto también produce un aumento de la cardinalidad de la tabla de hechos, ésta es la principal causa de que las tablas de hechos lleguen a tener una cantidad de registros del orden de millones de elementos.
+
+Granularidad
+
+Una característica importante que define a una tabla de hechos es el nivel de granularidad de los datos que en ella se almacenan, entendiéndose por 'granularidad' el nivel de detalle de dichos datos, es decir, la granularidad de la tabla de hechos representa el nivel más atómico por el cual se definen los datos. Por ejemplo, no es lo mismo contar el tiempo por horas (grano fino) que por semanas (grano grueso); o en el caso de los productos, se puede considerar cada variante de un mismo artículo como un producto (por ejemplo, en una empresa textil, cada talla y color de pantalón podría ser un producto) o agrupar todos los artículos de una misma familia considerándolos como un único producto (por ejemplo, el producto pantalón genérico).
+
+Como se puede observar, la granularidad afecta a la cardinalidad, tanto de las dimensiones como de la tabla de hechos, a mayor granularidad (grano más fino) mayor será el número de registros final de la tabla de hechos.
+
+Cuando la granularidad es mayor, es frecuente que se desee disponer de subtotales parciales, es decir, si tenemos una tabla de hechos con las ventas por días, podría interesar disponer de los totales semanales o mensuales, estos datos se pueden calcular haciendo sumas parciales, pero es frecuente añadir a la tabla de hechos registros donde se almacenan dichos cálculos para no tener que repetirlos cada vez que se requieran y mejorar así el rendimiento de la aplicación. En este caso se dispondrá en la misma tabla de hechos de datos de grano fino y de grano más grueso aumentando aún más la cardinalidad de la tabla.
+
+Agregación
+
+La agregación es un proceso de cálculo por el cual se resumen los datos de los registros de detalle. Esta operación consiste normalmente en el cálculo de totales dando lugar a medidas de grano grueso. Cuando se resumen los datos, el detalle ya no está directamente disponible para el analista, ya que este se elimina de la tabla de hechos.
+
+Esta operación se realiza típicamente con los datos más antiguos de la empresa con la finalidad de seguir disponiendo de dicha información (aunque sea resumida) para poder eliminar registros obsoletos de la tabla de hechos para liberar espacio.
+
+Tipos de datos adecuados
+
+Como ya se ha comentado, es normal que las tablas de hechos almacenen muchos millones de registros, por esta razón es muy importante que no se despilfarre memoria, hay que procurar utilizar los tipos de datos adecuados, si una medida a almacenar puede guardarse en un campo de tipo entero, no debemos definir ese campo como de tipo entero largo o como tipo real. Del mismo modo, si una magnitud necesita decimales, si las características de ésta lo permiten, será mejor utilizar un tipo real simple que un tipo real de doble precisión. Nótese que elegir uno u otro de estos campos, en principio sólo supondría una diferencia de unos pocos bytes en un registro, pero dado que en una tabla de hechos estamos hablando de cientos de millones de registros, en realidad, esa diferencia no es despreciable (5 bytes x 200 millones de registros = 1GB de memoria).

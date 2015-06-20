@@ -1,0 +1,17 @@
+Algoritmo del vecino más próximo
+
+El algoritmo del vecino más próximo fue, en las ciencias de la computación, uno de los primeros algoritmos utilizados para determinar una solución para el problema del viajante. Este método genera rápidamente un camino corto, pero generalmente no el ideal.
+
+Abajo está la aplicación del algoritmo del vecino más próximo al problema del viajante.
+
+Estos son los pasos del algoritmo:
+1. elección de un vértice arbitrario respecto al vértice actual.
+2. descubra la arista de menor peso que ya este conectada al vértice actual y a un vértice no visitado V.
+3. convierta el vértice actual en V.
+4. marque V como visitado.
+5. si todos los vértices del dominio estuvieran visitados, cierre el algoritmo.
+6. vaya al paso 2.
+
+La secuencia de los vértices visitados es la salida del algoritmo.
+
+El algoritmo del vecino más próximo es fácil de implementar y ejecutar rápidamente, pero algunas veces puede perder rutas más cortas, que son fácilmente notadas con la visión humana, debido a su naturaleza más "ávida". Como norma general, si los últimos pasos del recorrido son comparables en longitud al de los primeros pasos, el recorrido es razonable; si estos son mucho mayores, entonces es probable que existan caminos mucho mejores.

@@ -1,0 +1,60 @@
+Neurona de McCulloch-Pitts
+
+Definición
+
+La neurona de McCulloch-Pitts es una unidad de cálculo que intenta modelar el comportamiento de una neurona "natural", similares a las que constituyen del cerebro humano. Ella es la unidad esencial con la cual se construye una red neuronal artificial.
+
+El resultado del cálculo en una neurona consiste en realizar una suma ponderada de las entradas, seguida de la aplicación de una función no lineal, como se ilustra en la siguiente figura
+
+Esto se expresa matemáticamente como
+
+o=s(red)
+
+Donde
+
+    red = w_1 x_1 + \cdots + w_n x_n - \theta es la suma ponderada.
+    x_i es el valor de la i-ésima entrada (input).
+    w_i es el peso (weights) de la conexión entre la i-ésima entrada y la neurona.
+    \theta es el valor umbral (threshold)
+    o es la salida (output) de la neurona.
+    s es la función no lineal conocida como función de activación.
+
+La función de activación que se usa es
+
+s(u) = \begin{cases} 1, u \geq 0\\ 0, u < 0. \end{cases}
+
+La suma ponderada se puede expresar de una manera más compacta usando el produto de matrices:
+
+red=\bar w_1 \bar x_1 + \cdots + \bar w_{n+1} \bar x_{n+1}=\bar \boldsymbol w^T \bar \boldsymbol x
+
+con
+
+\bar \boldsymbol w = (w_1,\ldots,w_n,-\theta)^T y \bar\boldsymbol x = (x_1,\ldots,x_n,1)^T.
+
+\bar \boldsymbol w y \bar\boldsymbol x son los vectores extendidos de pesos y de entrada, respectivamente.
+
+También se puede simplificar la representación gráfica de la siguiente manera:
+
+Historia
+
+El modelo neuronal de McCulloch y Pitts fue el primer modelo neuronal moderno, y ha servido de inspiración para el desarrollo de otros modelos neuronales. Sin embargo, en muchos de los estudios en que refieren a este modelo, no se interpreta correctamente el sentido que quisieron dar originalmente McCulloch y Pitts, atribuyéndole características o funciones que no fueron descritas por sus autores, o restándole importancia a la capacidad de procesamiento del modelo. Por otro lado, el modelo McCulloch-Pitts por sí mismo está retomando importancia debido a que es uno de los pocos modelos digitales en tiempo discreto y, como para realizar implantaciones electrónicas o computacionales de las neuronas artificiales en la actualidad se utilizan sistemas digitales, con la mayoría de los modelos analógicos actuales es necesario realizar ciertas adaptaciones a los modelos al momento de implantarlos, lo que dificulta y hace imprecisa a dicha implantación con respecto al comportamiento teórico derivado del modelo.
+
+Usos de las neuronas
+
+- Permite hacer funciones lógicas
+- Primera aproximación a las redes neuronales
+- Capacidad de computación universal (puede simular cualquier programa computable)
+
+Autómatas finitos equivalentes a células
+
+Para cada célula existe un AF equivalente, para ello tenemos que:
+1. Q del AFD y. a.S. célula etiquetada con qa, h = 2y una entrada activadora externa al circuito, a
+2. Se añade una rama excitadora para cada célula que contenga q
+3. Añadir célula (a) con h=1 y que recibe 1 única entrada del exterior, correspondiente al símbolo inicial de la cadena
+4. Se añade una rama excitadora desde la salida de la célula a a cada una de las células cuya etiqueta contenga q0
+5. Se introduce una célula con etiqueta F, con h = 2 y que recibe una única entrada externa, correspondiente al símbolo final de cadena
+6. Se añade una rama excitadora hacia la célula F desde cada una de las células del circuito que envíe al menos una rama excitadora hacia cualquier célula cuya etiqueta contenga uno de los estados finales q.
+
+Referencias
+- D. Michie, D.J. Spiegelhalter, C.C. Taylor (eds). Machine Learning, Neural and Statistical Classification, 1994. [1]
+- R. Rojas. Neural Networks: A Systematic Introduction, Springer, 1996 .ISBN 3-540-60505-3.
