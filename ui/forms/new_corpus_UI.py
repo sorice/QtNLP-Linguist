@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'new_corpus.ui'
 #
-# Created: Wed May 27 04:28:51 2015
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Tue Apr 21 15:13:08 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_NewCopus(object):
     def setupUi(self, NewCopus):
@@ -118,23 +127,23 @@ class Ui_NewCopus(object):
         NewCopus.setTabOrder(self.btn_save, self.pushButton_2)
 
     def retranslateUi(self, NewCopus):
-        NewCopus.setWindowTitle(QtGui.QApplication.translate("NewCopus", "New Corpus", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("NewCopus", "Name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("NewCopus", "Language:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_5.setText(QtGui.QApplication.translate("NewCopus", "Copyright:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_7.setText(QtGui.QApplication.translate("NewCopus", "Author(s):", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_name.setToolTip(QtGui.QApplication.translate("NewCopus", "Corpus name", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_lang.setToolTip(QtGui.QApplication.translate("NewCopus", "Language: es, us, fr, ...", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_copyright.setToolTip(QtGui.QApplication.translate("NewCopus", "Copyright: copyleft, ...", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_authors.setToolTip(QtGui.QApplication.translate("NewCopus", "Authors, comma separated", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("NewCopus", "Version:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("NewCopus", "License:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_8.setText(QtGui.QApplication.translate("NewCopus", "Country:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_6.setText(QtGui.QApplication.translate("NewCopus", "Owner(s):", None, QtGui.QApplication.UnicodeUTF8))
-        self.sb_version.setToolTip(QtGui.QApplication.translate("NewCopus", "Corpus version", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_license.setToolTip(QtGui.QApplication.translate("NewCopus", "License: CC, GPL, ...", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_country.setToolTip(QtGui.QApplication.translate("NewCopus", "Country, comma separated", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_owners.setToolTip(QtGui.QApplication.translate("NewCopus", "Owners, comma separated", None, QtGui.QApplication.UnicodeUTF8))
-        self.btn_save.setText(QtGui.QApplication.translate("NewCopus", "Save", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_2.setText(QtGui.QApplication.translate("NewCopus", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        NewCopus.setWindowTitle(_translate("NewCopus", "New Corpus", None))
+        self.label.setText(_translate("NewCopus", "Name:", None))
+        self.label_3.setText(_translate("NewCopus", "Language:", None))
+        self.label_5.setText(_translate("NewCopus", "Copyright:", None))
+        self.label_7.setText(_translate("NewCopus", "Author(s):", None))
+        self.le_name.setToolTip(_translate("NewCopus", "Corpus name", None))
+        self.le_lang.setToolTip(_translate("NewCopus", "Language: es, us, fr, ...", None))
+        self.le_copyright.setToolTip(_translate("NewCopus", "Copyright: copyleft, ...", None))
+        self.le_authors.setToolTip(_translate("NewCopus", "Authors, comma separated", None))
+        self.label_2.setText(_translate("NewCopus", "Version:", None))
+        self.label_4.setText(_translate("NewCopus", "License:", None))
+        self.label_8.setText(_translate("NewCopus", "Country:", None))
+        self.label_6.setText(_translate("NewCopus", "Owner(s):", None))
+        self.sb_version.setToolTip(_translate("NewCopus", "Corpus version", None))
+        self.le_license.setToolTip(_translate("NewCopus", "License: CC, GPL, ...", None))
+        self.le_country.setToolTip(_translate("NewCopus", "Country, comma separated", None))
+        self.le_owners.setToolTip(_translate("NewCopus", "Owners, comma separated", None))
+        self.btn_save.setText(_translate("NewCopus", "Save", None))
+        self.pushButton_2.setText(_translate("NewCopus", "Cancel", None))
 

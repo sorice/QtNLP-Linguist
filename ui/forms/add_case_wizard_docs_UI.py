@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'add_case_wizard_docs.ui'
 #
-# Created: Wed May 27 04:28:49 2015
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Tue Apr 21 15:13:07 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -107,23 +116,23 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
-        self.btn_select_susp_doc.setText(QtGui.QApplication.translate("Dialog", "Select susp doc", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_9.setText(QtGui.QApplication.translate("Dialog", "Doc name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_doc_name.setText(QtGui.QApplication.translate("Dialog", "susp/", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_10.setText(QtGui.QApplication.translate("Dialog", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_offset.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("Dialog", "Length:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_length.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_12.setText(QtGui.QApplication.translate("Dialog", "Sentences:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_sentences_count.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.btn_select_src_doc.setText(QtGui.QApplication.translate("Dialog", "Select src doc", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_16.setText(QtGui.QApplication.translate("Dialog", "Doc name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_doc_name.setText(QtGui.QApplication.translate("Dialog", "src/", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_13.setText(QtGui.QApplication.translate("Dialog", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_offset.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_14.setText(QtGui.QApplication.translate("Dialog", "Length:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_length.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_15.setText(QtGui.QApplication.translate("Dialog", "Sentences:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_sentences_count.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
+        self.btn_select_susp_doc.setText(_translate("Dialog", "Select susp doc", None))
+        self.label_9.setText(_translate("Dialog", "Doc name:", None))
+        self.lb_susp_doc_name.setText(_translate("Dialog", "susp/", None))
+        self.label_10.setText(_translate("Dialog", "Offset:", None))
+        self.lb_susp_offset.setText(_translate("Dialog", "0", None))
+        self.label_11.setText(_translate("Dialog", "Length:", None))
+        self.lb_susp_length.setText(_translate("Dialog", "0", None))
+        self.label_12.setText(_translate("Dialog", "Sentences:", None))
+        self.lb_susp_sentences_count.setText(_translate("Dialog", "0", None))
+        self.btn_select_src_doc.setText(_translate("Dialog", "Select src doc", None))
+        self.label_16.setText(_translate("Dialog", "Doc name:", None))
+        self.lb_src_doc_name.setText(_translate("Dialog", "src/", None))
+        self.label_13.setText(_translate("Dialog", "Offset:", None))
+        self.lb_src_offset.setText(_translate("Dialog", "0", None))
+        self.label_14.setText(_translate("Dialog", "Length:", None))
+        self.lb_src_length.setText(_translate("Dialog", "0", None))
+        self.label_15.setText(_translate("Dialog", "Sentences:", None))
+        self.lb_src_sentences_count.setText(_translate("Dialog", "0", None))
 
