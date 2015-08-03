@@ -19,7 +19,8 @@ paraphrase_types = [
    "inflectional changes",
    "modal-verb changes",
    "derivational changes",
-   "spelling-and-format",
+   "lexicon format changes",
+   "spelling changes",
    "same-polarity substitutions",
    "synthetic/analytic",
    "opposite-polarity",
@@ -29,7 +30,8 @@ paraphrase_types = [
    "ellipsis",
    "coordination changes",
    "subordination-and-nesting",
-   "punctuation-and-format",
+   "discourse format changes",
+   "punctuation changes",
    "direct/indirect-style alternations",
    "sentence-modality",
    "syntax/discourse-structure",
@@ -49,5 +51,6 @@ phenomenom_types = [
 
 # Define text extension used in corpus
 text_extension = [
-   "paragraph"
+   "paragraph",
+   "sentence"
 ]
