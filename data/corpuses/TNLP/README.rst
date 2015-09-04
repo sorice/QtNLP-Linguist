@@ -18,7 +18,7 @@ Esta guía muestra el diseño del primer corpus lingüístico elaborado con la e
 TNLP contiene 300 casos elaborados a partir de términos sobre computación extraísdos de la Wikipedia en español.
 
 El corpus está disponible totalmente para investigaciones en:
-    http://gpln.reduc.edu.cu/corpus/es/computational-paraphrase-corpus-download
+    http://gpln.reduc.edu.cu/corpuses/es/computational-paraphrase-corpus-download
 
 Un análisis sobre el proceso de diseño y construcción del corpus bien detallado puede ser leído en el artículo **Spanish Corpus for Paraphrase Similarity and Text Re-Use Detection**. :cite:`Meneses-Abad2015` Si utiliza este corpus debe referenciar `dicho <./README.html#meneses-abad2015>`_ artículo.
 
