@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'cases_view.ui'
 #
-# Created: Wed May 27 04:28:50 2015
+# Created: Tue Sep 15 13:51:08 2015
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
