@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>198</height>
+    <width>551</width>
+    <height>205</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,11 +46,11 @@
     </layout>
    </item>
    <item row="1" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_9">
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QLabel" name="label_17">
            <property name="text">
@@ -79,32 +79,51 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>Domain</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QComboBox" name="cb_problem_type">
-           <item>
-            <property name="text">
-             <string>similarity</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>translation</string>
-            </property>
-           </item>
+           <property name="toolTip">
+            <string>Tipo de problema NLP o grupo de casos en el XML.</string>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_description"/>
+          <widget class="QLineEdit" name="le_description">
+           <property name="toolTip">
+            <string>Descripcion opcional del caso para usar como hint.</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_summary"/>
+          <widget class="QLineEdit" name="le_summary">
+           <property name="toolTip">
+            <string>Escriba 3 palabras de longitud menor a 21 caracteres que podria utilizar en la barra de search.</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_original_corpus_id"/>
+          <widget class="QLineEdit" name="le_original_corpus_id">
+           <property name="toolTip">
+            <string>Escriba solo digitos.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cb_domain">
+           <property name="toolTip">
+            <string>Area del conocimiento al que pertenece el text susp.</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -142,27 +161,51 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Doc Type</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_12">
          <item>
           <widget class="QComboBox" name="cb_text_extension">
-           <item>
-            <property name="text">
-             <string>paragraph</string>
-            </property>
-           </item>
+           <property name="toolTip">
+            <string>Longitud de los textos del caso: fragmentos, oraciones u otros.</string>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cb_plag_type"/>
+          <widget class="QComboBox" name="cb_plag_type">
+           <property name="toolTip">
+            <string>Tipologias de parafrasis propuestas por Barron-Cedeno2013.</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_original_corpus"/>
+          <widget class="QLineEdit" name="le_original_corpus">
+           <property name="toolTip">
+            <string>Corpus original del que fue extraido el caso.</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_generator_name"/>
+          <widget class="QLineEdit" name="le_generator_name">
+           <property name="toolTip">
+            <string>Nombre de la persona o algoritmo que creo el caso.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cb_document_type">
+           <property name="toolTip">
+            <string>Tipo de documento.</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

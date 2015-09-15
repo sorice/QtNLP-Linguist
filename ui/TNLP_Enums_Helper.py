@@ -54,3 +54,16 @@ text_extension = [
    "paragraph",
    "sentence"
 ]
+
+# Define text domain used in corpus
+text_domain = [
+   "computing",
+   "informatic"
+]
+
+# Define text domain used in corpus
+document_type = [
+   "scientific paper",
+   "book",
+   "web page"
+]

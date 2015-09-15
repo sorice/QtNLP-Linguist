@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'add_case_wizard_general.ui'
 #
-# Created: Tue Apr 21 15:13:07 2015
-#      by: PyQt4 UI code generator 4.10.4
+# Created: Tue Sep 15 13:51:07 2015
+#      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,21 +12,12 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    def _fromUtf8(s):
-        return s
-
-try:
-    _encoding = QtGui.QApplication.UnicodeUTF8
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig, _encoding)
-except AttributeError:
-    def _translate(context, text, disambig):
-        return QtGui.QApplication.translate(context, text, disambig)
+    _fromUtf8 = lambda s: s
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(550, 198)
+        Dialog.resize(551, 205)
         self.gridLayout = QtGui.QGridLayout(Dialog)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.horizontalLayout_10 = QtGui.QHBoxLayout()
@@ -40,43 +31,47 @@ class Ui_Dialog(object):
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_10.addItem(spacerItem)
         self.gridLayout.addLayout(self.horizontalLayout_10, 0, 0, 1, 1)
+        self.horizontalLayout_2 = QtGui.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.horizontalLayout_8 = QtGui.QHBoxLayout()
-        self.horizontalLayout_8.setObjectName(_fromUtf8("horizontalLayout_8"))
-        self.verticalLayout_9 = QtGui.QVBoxLayout()
-        self.verticalLayout_9.setObjectName(_fromUtf8("verticalLayout_9"))
+        self.verticalLayout = QtGui.QVBoxLayout()
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.label_17 = QtGui.QLabel(Dialog)
         self.label_17.setObjectName(_fromUtf8("label_17"))
-        self.verticalLayout_9.addWidget(self.label_17)
+        self.verticalLayout.addWidget(self.label_17)
         self.label_18 = QtGui.QLabel(Dialog)
         self.label_18.setObjectName(_fromUtf8("label_18"))
-        self.verticalLayout_9.addWidget(self.label_18)
+        self.verticalLayout.addWidget(self.label_18)
         self.label_21 = QtGui.QLabel(Dialog)
         self.label_21.setObjectName(_fromUtf8("label_21"))
-        self.verticalLayout_9.addWidget(self.label_21)
+        self.verticalLayout.addWidget(self.label_21)
         self.label_22 = QtGui.QLabel(Dialog)
         self.label_22.setObjectName(_fromUtf8("label_22"))
-        self.verticalLayout_9.addWidget(self.label_22)
-        self.horizontalLayout_8.addLayout(self.verticalLayout_9)
-        self.verticalLayout_10 = QtGui.QVBoxLayout()
-        self.verticalLayout_10.setObjectName(_fromUtf8("verticalLayout_10"))
+        self.verticalLayout.addWidget(self.label_22)
+        self.label_27 = QtGui.QLabel(Dialog)
+        self.label_27.setObjectName(_fromUtf8("label_27"))
+        self.verticalLayout.addWidget(self.label_27)
+        self.horizontalLayout.addLayout(self.verticalLayout)
+        self.verticalLayout_2 = QtGui.QVBoxLayout()
+        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
         self.cb_problem_type = QtGui.QComboBox(Dialog)
         self.cb_problem_type.setObjectName(_fromUtf8("cb_problem_type"))
-        self.cb_problem_type.addItem(_fromUtf8(""))
-        self.cb_problem_type.addItem(_fromUtf8(""))
-        self.verticalLayout_10.addWidget(self.cb_problem_type)
+        self.verticalLayout_2.addWidget(self.cb_problem_type)
         self.le_description = QtGui.QLineEdit(Dialog)
         self.le_description.setObjectName(_fromUtf8("le_description"))
-        self.verticalLayout_10.addWidget(self.le_description)
+        self.verticalLayout_2.addWidget(self.le_description)
         self.le_summary = QtGui.QLineEdit(Dialog)
         self.le_summary.setObjectName(_fromUtf8("le_summary"))
-        self.verticalLayout_10.addWidget(self.le_summary)
+        self.verticalLayout_2.addWidget(self.le_summary)
         self.le_original_corpus_id = QtGui.QLineEdit(Dialog)
         self.le_original_corpus_id.setObjectName(_fromUtf8("le_original_corpus_id"))
-        self.verticalLayout_10.addWidget(self.le_original_corpus_id)
-        self.horizontalLayout_8.addLayout(self.verticalLayout_10)
-        self.horizontalLayout.addLayout(self.horizontalLayout_8)
+        self.verticalLayout_2.addWidget(self.le_original_corpus_id)
+        self.cb_domain = QtGui.QComboBox(Dialog)
+        self.cb_domain.setObjectName(_fromUtf8("cb_domain"))
+        self.verticalLayout_2.addWidget(self.cb_domain)
+        self.horizontalLayout.addLayout(self.verticalLayout_2)
+        self.horizontalLayout_2.addLayout(self.horizontalLayout)
         self.horizontalLayout_11 = QtGui.QHBoxLayout()
         self.horizontalLayout_11.setObjectName(_fromUtf8("horizontalLayout_11"))
         self.verticalLayout_11 = QtGui.QVBoxLayout()
@@ -93,12 +88,14 @@ class Ui_Dialog(object):
         self.label_26 = QtGui.QLabel(Dialog)
         self.label_26.setObjectName(_fromUtf8("label_26"))
         self.verticalLayout_11.addWidget(self.label_26)
+        self.label_28 = QtGui.QLabel(Dialog)
+        self.label_28.setObjectName(_fromUtf8("label_28"))
+        self.verticalLayout_11.addWidget(self.label_28)
         self.horizontalLayout_11.addLayout(self.verticalLayout_11)
         self.verticalLayout_12 = QtGui.QVBoxLayout()
         self.verticalLayout_12.setObjectName(_fromUtf8("verticalLayout_12"))
         self.cb_text_extension = QtGui.QComboBox(Dialog)
         self.cb_text_extension.setObjectName(_fromUtf8("cb_text_extension"))
-        self.cb_text_extension.addItem(_fromUtf8(""))
         self.verticalLayout_12.addWidget(self.cb_text_extension)
         self.cb_plag_type = QtGui.QComboBox(Dialog)
         self.cb_plag_type.setObjectName(_fromUtf8("cb_plag_type"))
@@ -109,26 +106,38 @@ class Ui_Dialog(object):
         self.le_generator_name = QtGui.QLineEdit(Dialog)
         self.le_generator_name.setObjectName(_fromUtf8("le_generator_name"))
         self.verticalLayout_12.addWidget(self.le_generator_name)
+        self.cb_document_type = QtGui.QComboBox(Dialog)
+        self.cb_document_type.setObjectName(_fromUtf8("cb_document_type"))
+        self.verticalLayout_12.addWidget(self.cb_document_type)
         self.horizontalLayout_11.addLayout(self.verticalLayout_12)
-        self.horizontalLayout.addLayout(self.horizontalLayout_11)
-        self.gridLayout.addLayout(self.horizontalLayout, 1, 0, 1, 1)
+        self.horizontalLayout_2.addLayout(self.horizontalLayout_11)
+        self.gridLayout.addLayout(self.horizontalLayout_2, 1, 0, 1, 1)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
-        self.label_20.setText(_translate("Dialog", "Corpus name:", None))
-        self.lb_corpus_name.setText(_translate("Dialog", "name", None))
-        self.label_17.setText(_translate("Dialog", "Problem type:", None))
-        self.label_18.setText(_translate("Dialog", "Description:", None))
-        self.label_21.setText(_translate("Dialog", "Keywords:", None))
-        self.label_22.setText(_translate("Dialog", "Original corpus id:", None))
-        self.cb_problem_type.setItemText(0, _translate("Dialog", "similarity", None))
-        self.cb_problem_type.setItemText(1, _translate("Dialog", "translation", None))
-        self.label_23.setText(_translate("Dialog", "Text extension:", None))
-        self.label_24.setText(_translate("Dialog", "Plagiarism type:", None))
-        self.label_25.setText(_translate("Dialog", "Original corpus:", None))
-        self.label_26.setText(_translate("Dialog", "Added by:", None))
-        self.cb_text_extension.setItemText(0, _translate("Dialog", "paragraph", None))
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_20.setText(QtGui.QApplication.translate("Dialog", "Corpus name:", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_corpus_name.setText(QtGui.QApplication.translate("Dialog", "name", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_17.setText(QtGui.QApplication.translate("Dialog", "Problem type:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_18.setText(QtGui.QApplication.translate("Dialog", "Description:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_21.setText(QtGui.QApplication.translate("Dialog", "Keywords:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_22.setText(QtGui.QApplication.translate("Dialog", "Original corpus id:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_27.setText(QtGui.QApplication.translate("Dialog", "Domain", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_problem_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipo de problema NLP o grupo de casos en el XML.", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_description.setToolTip(QtGui.QApplication.translate("Dialog", "Descripcion opcional del caso para usar como hint.", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_summary.setToolTip(QtGui.QApplication.translate("Dialog", "Escriba 3 palabras de longitud menor a 21 caracteres que podria utilizar en la barra de search.", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_original_corpus_id.setToolTip(QtGui.QApplication.translate("Dialog", "Escriba solo digitos.", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_domain.setToolTip(QtGui.QApplication.translate("Dialog", "Area del conocimiento al que pertenece el text susp.", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_23.setText(QtGui.QApplication.translate("Dialog", "Text extension:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_24.setText(QtGui.QApplication.translate("Dialog", "Plagiarism type:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_25.setText(QtGui.QApplication.translate("Dialog", "Original corpus:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_26.setText(QtGui.QApplication.translate("Dialog", "Added by:", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_28.setText(QtGui.QApplication.translate("Dialog", "Doc Type", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_text_extension.setToolTip(QtGui.QApplication.translate("Dialog", "Longitud de los textos del caso: fragmentos, oraciones u otros.", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_plag_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipologias de parafrasis propuestas por Barron-Cedeno2013.", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_original_corpus.setToolTip(QtGui.QApplication.translate("Dialog", "Corpus original del que fue extraido el caso.", None, QtGui.QApplication.UnicodeUTF8))
+        self.le_generator_name.setToolTip(QtGui.QApplication.translate("Dialog", "Nombre de la persona o algoritmo que creo el caso.", None, QtGui.QApplication.UnicodeUTF8))
+        self.cb_document_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipo de documento.", None, QtGui.QApplication.UnicodeUTF8))
 

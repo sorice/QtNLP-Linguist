@@ -118,6 +118,9 @@ class TNLP_XML_Manager:
          case['original_corpus_id'] = item.getAttribute('original_corpus_id')
          case['generated_by'] = item.getAttribute('generate_by')
          case['generator_name'] = item.getAttribute('generator_name')
+         case['domain'] = item.getAttribute('domain')
+         case['document_type'] = item.getAttribute('document_type')
+         
          case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
          case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
          case['susp_snippet_length'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('length')
@@ -155,6 +158,8 @@ class TNLP_XML_Manager:
             case['original_corpus_id'] = item.getAttribute('original_corpus_id')
             case['generated_by'] = item.getAttribute('generated_by')
             case['generator_name'] = item.getAttribute('generator_name')
+            case['domain'] = item.getAttribute('domain')
+            case['document_type'] = item.getAttribute('document_type')
             case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
             case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
             case['susp_snippet_length'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('length')
@@ -241,7 +246,7 @@ class TNLP_XML_Manager:
 
 
    def add_case(self, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
-      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _susp_doc, _susp_offset,
+      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _susp_doc, _susp_offset,
       _susp_length, _susp_sentences_count, _src_doc, _src_offset, _src_length, _src_sentences_count): #OK
       """Add a new case to the corpus"""
 
@@ -286,6 +291,8 @@ class TNLP_XML_Manager:
       case.setAttribute('original_corpus_id', _original_corpus_id)
       case.setAttribute('generated_by',_generated_by)
       case.setAttribute('generator_name', _generator_name)
+      case.setAttribute('domain',_domain)
+      case.setAttribute('document_type', _document_type)
 
       # susp snippet node
       susp_snippet = self.__xml_document.createElement('susp_snippet')
