@@ -53,6 +53,9 @@ class TNLP_XML_Manager:
 
    def get_corpus_info(self): #OK
       """Return the root element info in a dictionary."""
+      
+      # update corpus info
+      self.__update_corpus_info()
 
       corpus = {}
       corpus['name'] = self.__root_node.getAttribute('name')
@@ -460,7 +463,12 @@ class TNLP_XML_Manager:
    def __update_corpus_info(self):
       """Update corpus information such as modification date and so on..."""
       
+      #Count total cases.
       tmp_cases = self.__root_node.getElementsByTagName('case')
+      total_cases = len(tmp_cases)
+      self.__root_node.setAttribute('total_cases', str(total_cases))
+      
+      #Count total true cases.
       case = {}
       total_true_cases = 0
       for item in tmp_cases:
@@ -468,6 +476,22 @@ class TNLP_XML_Manager:
          if case['plag_type'] != "none":
             total_true_cases += 1
       self.__root_node.setAttribute('total_true_cases', str(total_true_cases))
+      
+      #Count total annotations.
+      tmp_annotations = self.__root_node.getElementsByTagName('annotation')
+      total_annotations = len(tmp_annotations)
+      self.__root_node.setAttribute('total_annotations', str(total_annotations))
+      
+      #Count total true cases.
+      annotation = {}
+      total_true_annotations = 0
+      for item in tmp_annotations:
+         annotation['is_paraphrase'] = item.getAttribute('is_paraphrase')
+         if annotation['is_paraphrase'] != "":
+            total_true_annotations += 1
+      self.__root_node.setAttribute('total_true_annotations', str(total_true_annotations))
+      
+      #Write calculated data to XML.
       self.write_xml()
       
       return

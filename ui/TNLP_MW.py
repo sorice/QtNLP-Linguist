@@ -656,7 +656,10 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       info += 'Country: ' + corpus_info['country'] + '<br/>'
       info += 'Created: ' + corpus_info['creation_date'] + '<br/>'
       info += 'Changed: ' + corpus_info['last_modification_date'] + '<br/>'
-      info += 'Total Cases:' + str(corpus_info['total_cases']) + '<br/>'
+      info += 'Total Cases:' + corpus_info['total_cases'] + '<br/>'
+      info += 'Total True Cases:' + corpus_info['total_true_cases'] + '<br/>'
+      info += 'Total Annotations:' + corpus_info['total_annotations'] + '<br/>'
+      info += 'Total True Annotations:' + corpus_info['total_true_annotations'] + '<br/>'
 
 
       QMessageBox.information(self, self.__appName, info)

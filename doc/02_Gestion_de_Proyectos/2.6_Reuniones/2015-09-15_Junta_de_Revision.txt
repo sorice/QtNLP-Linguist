@@ -3,14 +3,18 @@ Objetivo:
 Asisten: Abel y Leonel.
 
 Objetivos desglosados:
-* Agregar componentes del case de acuerdo a lo diseñado en el artículo.
-* (Abel)Confeccionar scripts para el cálculo automático de total de casos, y x tipologías... y otros.[]
-* (Abel) Adicionar cuadradito blanco para plag_types = none.
+* (Abel) Agregar componentes del case de acuerdo a lo diseñado en el artículo.
+
 * Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
 * (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
 * (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 * (Abel) Incorporar tareas que no se harán por ahora a la LRP.
-* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones.
+* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
+
+[OK, 16/09/2015, 0.15h]* (Abel) Calcular el total_true_annotations. Agregar al show_corpus_info.
+[OK, 16/09/2015, 0.5h]* (Abel) Confeccionar scripts para el cálculo automático de total de casos, y total de anotaciones. Modificado en la vista del Dialog TNLP_MW.show_corpus_info.
+[OK, 16/09/2015, 1h]* (Abel) Adicionar cuadradito blanco para plag_types = none.
+[OK, 16/09/2015, 2h]* Elaborar la junta de revisión de septiembre de 2015, y planificar todo el trabajo relativo a QtNLP de este mes para hacer release v1.0 de la herramienta y luego del corpus.
 
 * (Leo) Implementación del editar case, editar annotation para finales de agosto.[]
 * (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
