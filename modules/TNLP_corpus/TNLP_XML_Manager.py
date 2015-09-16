@@ -16,10 +16,10 @@ import os, urllib
 from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
 
 class TNLP_XML_Manager:
-   """Helper to manage the TNLP.xml information file"""
+   """Helper to manage the TNLP.xml information file."""
 
    def __init__(self):
-      """Init global attributes"""
+      """Init global attributes."""
 
       self.__parsed = False
       self.__xml_path = None
@@ -315,6 +315,9 @@ class TNLP_XML_Manager:
 
       # update result
       result = True
+      
+      # update corpus info
+      self.__update_corpus_info()
 
       return case_id
 
@@ -412,7 +415,7 @@ class TNLP_XML_Manager:
 
    def create_corpus(self, _xml_file, _name, _version, _lang, _total_cases, _total_true_cases, _total_annotations,
       _total_true_annotations, _license, _copyright, _owners, _authors, _country, _creation_date, _last_modification_date, _xmlns):
-      """Creata a new corpus XML file"""
+      """Creata a new corpus XML file."""
 
       dom = pxdom.getDOMImplementation('')
       doc = dom.createDocument('', None, None)
@@ -456,6 +459,16 @@ class TNLP_XML_Manager:
    # auxiliar & private methods
    def __update_corpus_info(self):
       """Update corpus information such as modification date and so on..."""
-
-      pass
+      
+      tmp_cases = self.__root_node.getElementsByTagName('case')
+      case = {}
+      total_true_cases = 0
+      for item in tmp_cases:
+         case['plag_type'] = item.getAttribute('plag_type')
+         if case['plag_type'] != "none":
+            total_true_cases += 1
+      self.__root_node.setAttribute('total_true_cases', str(total_true_cases))
+      self.write_xml()
+      
+      return
 
