@@ -1,0 +1,71 @@
+Reunión de la Junta de Revisión
+Objetivo: 
+Asisten: Abel y Leonel.
+
+Objetivos desglosados:
+* Agregar componentes del case de acuerdo a lo diseñado en el artículo.
+* (Abel)Confeccionar scripts para el cálculo automático de total de casos, y x tipologías... y otros.[]
+* (Abel) Adicionar cuadradito blanco para plag_types = none.
+* Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
+* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
+* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
+* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
+* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones.
+
+* (Leo) Implementación del editar case, editar annotation para finales de agosto.[]
+* (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
+* (Leo) Revisar si todos los contadores están funcionando, creo que el contador de palabras no lo está haciendo. Esto debería servirle a los usuarios que crearán casos para editarlos ahí mismo.[]
+* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
+* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
+
+[OK, 15/09/2015]* (Abel) Corregir todos los labels de las tipologías de plagio para que queden iguales en el README.html, Enum_Helper.py y TNLP.xml.
+[OK, 15/09/2015]* (Abel) Integrar los casos y las anotaciones de Yanisbel de los casos 9,10,11,12,13.
+[OK, 15/09/2015]* Revisar la última junta de revisión del 6 de abril de 2015 y ver tareas pendientes.
+[OK, 15/09/2015]* (Abel)Hacer los cambios al parser con estas dos atributos nuevos del caso: domain y document_type.
+[OK, 15/09/2015]* (Abel)Confeccionar scripts para el cálculo automático de total_true_cases como baseline para los demás scripts de actualización.
+[OK, 15/09/2015]* (Abel)Traducción del README al idioma inglés.
+[OK, 15/09/2015]* Abel y Leonel sincronizar carpetas del proyecto. Revisar las tareas pendientes.
+
+Acuerdos (digitales) para Junio de 2015 (ver OK en esta junta, pues no hubo junta en Junio)
+*******************
+[OK, mayo-junio 2015]{abril/2015}Abel- Mecanismo de cálculo de las estadísticas de los chunk y las sentences.
+[P]{abril 2015}Abel- Validación de todos los inputs del add_case.
+[P]{abril 2015}Abel- Validación de todos los inputs del add_annotation.
+[OK, 19/04/2015]{abril 2015}Abel- Arreglar el action de get_corpus_info
+[OK, mayo-junio 2015]{abril 2015}Leo- Mecanismo de selección del texto.
+[OK, 13/06/2015]{abril 2015}Leo- Asistente para adicionar caso y adicionar anotación.
+[OK, mayo-junio 2015]{abril 2015}Leo- Función crear_corpus que genera el xml en blanco.
+[OK, mayo-junio 2015]{abril 2015}Abel- En añadir caso si el grupo no existe que lo cree.
+[OK, mayo-sept 2015]{abril 2015}Abel- Definir las listas que van en el Enum. -> Luego actualizar los combo box que se correspondan con estas listas actualizadas.
+
+Acuerdos pendientes del mes de Abril de 2015 (ver OK en junta de Abril)
+*********
+Seguirá pendiente{enero 2015}1- En la siguiente iteración programar la inclusión del corpus modificado del PAN(significa todos los xmls en un solo XML para asemejarlo a P4P), así como el script para generarlo. (esto ayudará a que la salida de mi algoritmo también pueda ser convertida a un solo XML)
+[OK, abril/2015]{febrero 2015}A: Abel pregunta a Alberto si es posible definir un typology para el fragmento.
+	->[P]{abril 2015} Alberto dijo que hay que preguntar a Marta Vila y a Martí.
+[Seguirá pendiente, ya al menos tengo el PAN-PC-10]{enero/2015}3- Crear un caso a partir del P4P buscando los textos originales usados por Alberto del PAN-PC 2010.
+[Seguirá pendiente]{enero 2015} A: Generar el resumen automáticamente con la función de palabras significativas de Sunshine.
+[seguirá pendiente hasta que no cambie el código, y luego se generará para mejor comprensión de los que estudien el software]{abril 2015}6- Revisar con Leonel el Diagrama de Secuencias después que hagamos los mínimos en Qt para poder escribirlo con los nombre de las clases, objetos y cualquier otra definición necesaria.
+[OK, sept/2015]{febrero 2015}7- No me acuerdo de la documentación de los elementos en el QtAssistant. Cómo se busca? Cuál es la URL directa? -> Buscar en el assistant "Qt Widget Gallery" (Leonel no me lo envió por @)
+[P]{enero 2015}8- Documentar los iconos utilizados, la URL en el sistema Ubuntu y además que colección es. Esto no lo he documentado en ningún lugar. Ponerlo en la documentación Sphinx de ToNgueLP.
+[P, definido que no haremos por ahora solo en el despliegue, 09/12/2015){enero 2015}A: Definir si vamos a realizar más baterías de prueba.(esto sin integración continua no tiene mucho sentido. 
+[P]{febrero 2015}11- Script Estado del Árbol para ver las diferencias entre las carpetas de PhD de Abel y de Leonel.
+[NO por ahora]{febrero 2015}A: 2015021102 Poner los compactados del PAN. Y por supuesto programar para que se pueda llamar esta implementación desde cualquier parte.
+
+Acuerdos de la junta de Revisión de Enero 2015
+****************************************************
+[NO analizar esto y diagramar lo nuevo que es mucho más grande que esta simple verificación]{enero 2015}A: Abel deberá diagramar lo que ya hizo en el UI de verificar el 'total_corpus_cases', pero ahora genérico para la verificación de todas las informaciones verificables automáticamente. Ej: total_real_cases, total_corpus_cases, o los casos nomenclados como <phenomenon type="literal_plagiarism"(esto se puede hacer automáticamente teniendo los casos con la función de string matching, usar cualquiera de la biblioteca externa que tengo que funciona con hash y otras cosas, ver mis experimentos de hash fingerprints. O usar el fuzzy para eliminar problemas de espacios, cambios menores, o una simple comparación de cadenas en python)
+[OK, mayo-junio]{nov/2014}A:Leonel cambiar el 100% de los nombres de los ficheros con esta nueva regla: Usar las siglas TNLP para nomenclar todo lo que vaya a decir ToNgueLP.
+[P esto para la versión 0.5]{febrero/2015}A: El src_text debe tener el fragmento similar resaltado en el mismo color que el Case_List.[P]
+[OK, resuelto en el wizzard de mayo-junio 2015]{febrero/2015}A: Modificar el Edit_Case_Bar a un área donde se puedan poner todos los elementos. (solo el 50% se definió en esta reunión para implementar un área para agregar las anotaciones)
+
+Otras tareas:
+[P para la v0.6]{noviembre 2014} - Leonel UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
+[P baja prioridad]{enero 2015}- Implementar la lectura de los corpus desde un .zip.
+[P baja prioridad]{octubre 2014}- Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+
+Miembros camagüeyanos del equipo:
+[]{20/07/2015}- Insertar casos detectados por algoritmo de Abel09 en la versión del corpus TNLP. 
+
+Documentado por: Abel Meneses
+fecha: 16/09/2015
