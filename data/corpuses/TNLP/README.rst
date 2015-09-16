@@ -9,13 +9,13 @@ Sobre TNLP
 
     <p><b>Ejemplo corto:</b><I> descripción de un caso </I><br/></p>
     <blockquote><b>Problema NLP</b>: <I>similaridad semántica entre dos oraciones</I>.<br/>
-    <b><tb/>Oración 1</b>: <I>... compilar el código en un pc no estándar, y obtener el ejecutable</I><br/> 
+    <b><tb/>Oración 1</b>: <I>... compilar el código en un pc no estándar, y obtener el ejecutable.</I><br/> 
     <b>Oración 2</b>: <I>... construir un binario en un procesador ejecutando funciones en ensamblador</I>.<br/> 
-    <b>     Propiedad</b>: <I>Tipo de Paráfrasis</I> = <I>semántica</I>.</blockquote>
+    <b>Propiedad</b>: <I>Tipo de Paráfrasis</I> = <I>semántica</I>.</blockquote>
 
 Esta guía muestra el diseño del primer corpus lingüístico elaborado con la estructura de TNLP: un corpus para detectar similaridad semántica en textos compuestos por más de una oración.
 
-TNLP contiene 300 casos elaborados a partir de términos sobre computación extraísdos de la Wikipedia en español.
+TNLP contiene 300 casos elaborados a partir de términos sobre computación extraídos de la Wikipedia en español.
 
 El corpus está disponible totalmente para investigaciones en:
     http://gpln.reduc.edu.cu/corpuses/es/computational-paraphrase-corpus-download
@@ -80,7 +80,7 @@ En la línea **[3]** se encuentra la etiqueta *corpus* y dentro de ella todos lo
 Casos
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-De la línea **[4]** a la **[8]** se describen los **casos** **[4]** *<cases*. Las etiquetas usadas son: **[5]** *<group*, grupo de casos; **[6]** *<case*, caso; **[7]** *<sus_snippet* y **[8]** *<src_snippet*, se corresponden con la descripción de los fragmentos de texto considerados como pares. 
+De la línea **[4]** a la **[8]** se describen los **casos**, **[4]** *<cases*. Las etiquetas usadas son: **[5]** *<group*, grupo de casos; **[6]** *<case*, caso; **[7]** *<sus_snippet* y **[8]** *<src_snippet*, se corresponden con la descripción de los fragmentos de texto considerados como pares. 
 
 Atributos de la **lista de casos** o *<group*:
     * **NLP_problem_type**  → tipo de problema NLP (puede ser similaridad, traducción, etc)
@@ -115,7 +115,7 @@ Atributos de una **anotación** o *<annotation*:
     * **is_paraphrase**     → atributo específico de TNLP para confirmar los casos positivos de paráfrasis
     * **validated_by_human_beings** → si el caso ha sido confirmado por otro revisor humano
     * **recognized_by_algorithms**  → si el caso ha sido verificado por el algoritmo baseline
-    * **algorithms_names**      → nombres de algoritmos que han reconocido el caso correctamnte(este campo enlaza con el XML de cada algoritmo).
+    * **algorithms_names**      → nombres de algoritmos que han reconocido el caso correctamente(este campo enlaza con el XML de cada algoritmo).
     * **annotation_date**           → fecha de la anotación
 
 Atributos de la etiqueta *<phenomenon*:

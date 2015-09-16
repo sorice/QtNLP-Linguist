@@ -8,6 +8,7 @@ Corpus
 ========
 
   * :ref:`TNLP <TNLP_corpus>`
+  * :ref:`TNLP English <en_TNLP_corpus>`
 
 :Copyright: Creative Commons Share Alike Non Commercial Use, 2014
 
