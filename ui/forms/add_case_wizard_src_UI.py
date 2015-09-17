@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'add_case_wizard_src.ui'
 #
-# Created: Tue Sep 15 13:51:07 2015
+# Created: Wed Sep 16 16:09:47 2015
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,6 +44,12 @@ class Ui_Dialog(object):
         self.lb_src_sentences_count = QtGui.QLabel(Dialog)
         self.lb_src_sentences_count.setObjectName(_fromUtf8("lb_src_sentences_count"))
         self.horizontalLayout.addWidget(self.lb_src_sentences_count)
+        self.label_13 = QtGui.QLabel(Dialog)
+        self.label_13.setObjectName(_fromUtf8("label_13"))
+        self.horizontalLayout.addWidget(self.label_13)
+        self.lb_src_words_count = QtGui.QLabel(Dialog)
+        self.lb_src_words_count.setObjectName(_fromUtf8("lb_src_words_count"))
+        self.horizontalLayout.addWidget(self.lb_src_words_count)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.gridLayout.addLayout(self.horizontalLayout, 3, 0, 1, 1)
@@ -63,6 +69,9 @@ class Ui_Dialog(object):
         self.lb_src_doc_name = QtGui.QLabel(Dialog)
         self.lb_src_doc_name.setObjectName(_fromUtf8("lb_src_doc_name"))
         self.horizontalLayout_3.addWidget(self.lb_src_doc_name)
+        self.comboBox = QtGui.QComboBox(Dialog)
+        self.comboBox.setObjectName(_fromUtf8("comboBox"))
+        self.horizontalLayout_3.addWidget(self.comboBox)
         spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem2)
         self.gridLayout.addLayout(self.horizontalLayout_3, 1, 0, 1, 1)
@@ -78,6 +87,8 @@ class Ui_Dialog(object):
         self.lb_src_length.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("Dialog", "Sentences:", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_src_sentences_count.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_13.setText(QtGui.QApplication.translate("Dialog", "Words:", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_src_words_count.setText(QtGui.QApplication.translate("Dialog", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_select_src_doc.setText(QtGui.QApplication.translate("Dialog", "Select document", None, QtGui.QApplication.UnicodeUTF8))
         self.label_9.setText(QtGui.QApplication.translate("Dialog", "Doc name:", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_src_doc_name.setText(QtGui.QApplication.translate("Dialog", "src/", None, QtGui.QApplication.UnicodeUTF8))
