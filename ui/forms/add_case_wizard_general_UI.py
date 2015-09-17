@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'add_case_wizard_general.ui'
 #
-# Created: Wed Sep 16 16:09:47 2015
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Thu Sep 17 01:08:24 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -117,27 +126,27 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_20.setText(QtGui.QApplication.translate("Dialog", "Corpus name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_corpus_name.setText(QtGui.QApplication.translate("Dialog", "name", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_17.setText(QtGui.QApplication.translate("Dialog", "Problem type:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_18.setText(QtGui.QApplication.translate("Dialog", "Description:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_21.setText(QtGui.QApplication.translate("Dialog", "Keywords:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_22.setText(QtGui.QApplication.translate("Dialog", "Original corpus id:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_27.setText(QtGui.QApplication.translate("Dialog", "Domain", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_problem_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipo de problema NLP o grupo de casos en el XML.", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_description.setToolTip(QtGui.QApplication.translate("Dialog", "Descripcion opcional del caso para usar como hint.", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_summary.setToolTip(QtGui.QApplication.translate("Dialog", "Escriba 3 palabras de longitud menor a 21 caracteres que podria utilizar en la barra de search.", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_original_corpus_id.setToolTip(QtGui.QApplication.translate("Dialog", "Escriba solo digitos.", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_domain.setToolTip(QtGui.QApplication.translate("Dialog", "Area del conocimiento al que pertenece el text susp.", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_23.setText(QtGui.QApplication.translate("Dialog", "Text extension:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_24.setText(QtGui.QApplication.translate("Dialog", "Plagiarism type:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_25.setText(QtGui.QApplication.translate("Dialog", "Original corpus:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_26.setText(QtGui.QApplication.translate("Dialog", "Added by:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_28.setText(QtGui.QApplication.translate("Dialog", "Doc Type", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_text_extension.setToolTip(QtGui.QApplication.translate("Dialog", "Longitud de los textos del caso: fragmentos, oraciones u otros.", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_plag_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipologias de parafrasis propuestas por Barron-Cedeno2013.", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_original_corpus.setToolTip(QtGui.QApplication.translate("Dialog", "Corpus original del que fue extraido el caso.", None, QtGui.QApplication.UnicodeUTF8))
-        self.le_generator_name.setToolTip(QtGui.QApplication.translate("Dialog", "Nombre de la persona o algoritmo que creo el caso.", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_document_type.setToolTip(QtGui.QApplication.translate("Dialog", "Tipo de documento.", None, QtGui.QApplication.UnicodeUTF8))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
+        self.label_20.setText(_translate("Dialog", "Corpus name:", None))
+        self.lb_corpus_name.setText(_translate("Dialog", "name", None))
+        self.label_17.setText(_translate("Dialog", "Problem type:", None))
+        self.label_18.setText(_translate("Dialog", "Description:", None))
+        self.label_21.setText(_translate("Dialog", "Keywords:", None))
+        self.label_22.setText(_translate("Dialog", "Original corpus id:", None))
+        self.label_27.setText(_translate("Dialog", "Domain", None))
+        self.cb_problem_type.setToolTip(_translate("Dialog", "Tipo de problema NLP o grupo de casos en el XML.", None))
+        self.le_description.setToolTip(_translate("Dialog", "Descripcion opcional del caso para usar como hint.", None))
+        self.le_summary.setToolTip(_translate("Dialog", "Escriba 3 palabras de longitud menor a 21 caracteres que podria utilizar en la barra de search.", None))
+        self.le_original_corpus_id.setToolTip(_translate("Dialog", "Escriba solo digitos.", None))
+        self.cb_domain.setToolTip(_translate("Dialog", "Area del conocimiento al que pertenece el text susp.", None))
+        self.label_23.setText(_translate("Dialog", "Text extension:", None))
+        self.label_24.setText(_translate("Dialog", "Plagiarism type:", None))
+        self.label_25.setText(_translate("Dialog", "Original corpus:", None))
+        self.label_26.setText(_translate("Dialog", "Added by:", None))
+        self.label_28.setText(_translate("Dialog", "Doc Type", None))
+        self.cb_text_extension.setToolTip(_translate("Dialog", "Longitud de los textos del caso: fragmentos, oraciones u otros.", None))
+        self.cb_plag_type.setToolTip(_translate("Dialog", "Tipologias de parafrasis propuestas por Barron-Cedeno2013.", None))
+        self.le_original_corpus.setToolTip(_translate("Dialog", "Corpus original del que fue extraido el caso.", None))
+        self.le_generator_name.setToolTip(_translate("Dialog", "Nombre de la persona o algoritmo que creo el caso.", None))
+        self.cb_document_type.setToolTip(_translate("Dialog", "Tipo de documento.", None))
 

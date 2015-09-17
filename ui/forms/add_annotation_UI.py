@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'add_annotation.ui'
 #
-# Created: Wed Sep 16 16:09:45 2015
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Thu Sep 17 01:08:24 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Add_Annotation(object):
     def setupUi(self, Add_Annotation):
@@ -185,26 +194,26 @@ class Ui_Add_Annotation(object):
         Add_Annotation.setTabOrder(self.btn_add_annotation, self.pushButton_2)
 
     def retranslateUi(self, Add_Annotation):
-        Add_Annotation.setWindowTitle(QtGui.QApplication.translate("Add_Annotation", "Add annotation", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_8.setText(QtGui.QApplication.translate("Add_Annotation", "Annotation for case", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_case_name.setText(QtGui.QApplication.translate("Add_Annotation", "case name", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("Add_Annotation", "Author:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("Add_Annotation", "Type:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("Add_Annotation", "Projection:", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_projection.setItemText(0, QtGui.QApplication.translate("Add_Annotation", "local", None, QtGui.QApplication.UnicodeUTF8))
-        self.cb_projection.setItemText(1, QtGui.QApplication.translate("Add_Annotation", "global", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_12.setText(QtGui.QApplication.translate("Add_Annotation", "Suspicious snippet:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_10.setText(QtGui.QApplication.translate("Add_Annotation", "Suspicious chunk:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("Add_Annotation", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_offset.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_5.setText(QtGui.QApplication.translate("Add_Annotation", "Length:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_susp_length.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_13.setText(QtGui.QApplication.translate("Add_Annotation", "Source snippet:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("Add_Annotation", "Source chunk:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_6.setText(QtGui.QApplication.translate("Add_Annotation", "Offset:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_offset.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_7.setText(QtGui.QApplication.translate("Add_Annotation", "Length:", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_src_length.setText(QtGui.QApplication.translate("Add_Annotation", "0", None, QtGui.QApplication.UnicodeUTF8))
-        self.btn_add_annotation.setText(QtGui.QApplication.translate("Add_Annotation", "Add", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_2.setText(QtGui.QApplication.translate("Add_Annotation", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        Add_Annotation.setWindowTitle(_translate("Add_Annotation", "Add annotation", None))
+        self.label_8.setText(_translate("Add_Annotation", "Annotation for case", None))
+        self.lb_case_name.setText(_translate("Add_Annotation", "case name", None))
+        self.label.setText(_translate("Add_Annotation", "Author:", None))
+        self.label_2.setText(_translate("Add_Annotation", "Type:", None))
+        self.label_3.setText(_translate("Add_Annotation", "Projection:", None))
+        self.cb_projection.setItemText(0, _translate("Add_Annotation", "local", None))
+        self.cb_projection.setItemText(1, _translate("Add_Annotation", "global", None))
+        self.label_12.setText(_translate("Add_Annotation", "Suspicious snippet:", None))
+        self.label_10.setText(_translate("Add_Annotation", "Suspicious chunk:", None))
+        self.label_4.setText(_translate("Add_Annotation", "Offset:", None))
+        self.lb_susp_offset.setText(_translate("Add_Annotation", "0", None))
+        self.label_5.setText(_translate("Add_Annotation", "Length:", None))
+        self.lb_susp_length.setText(_translate("Add_Annotation", "0", None))
+        self.label_13.setText(_translate("Add_Annotation", "Source snippet:", None))
+        self.label_11.setText(_translate("Add_Annotation", "Source chunk:", None))
+        self.label_6.setText(_translate("Add_Annotation", "Offset:", None))
+        self.lb_src_offset.setText(_translate("Add_Annotation", "0", None))
+        self.label_7.setText(_translate("Add_Annotation", "Length:", None))
+        self.lb_src_length.setText(_translate("Add_Annotation", "0", None))
+        self.btn_add_annotation.setText(_translate("Add_Annotation", "Add", None))
+        self.pushButton_2.setText(_translate("Add_Annotation", "Cancel", None))
 

@@ -207,10 +207,9 @@ class TNLP_XML_Manager:
       convertWin_Into_UnixText(self, _corpus_dir + _snippet_doc + '.txt')
       
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
-      _tmp_doc = _doc.read().decode('utf8')
+      _tmp_doc = unicode(_doc.read(),'utf8')
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
       _doc.close()
-      #~ print '%s: %s' % (_snippet_doc, _text)
 
       return _text
 
@@ -380,6 +379,10 @@ class TNLP_XML_Manager:
          annotation_id = max(ids) + 1
       else:
          annotation_id = 1
+      
+      #Calculate if annotation in not paraphrase or = to "false positive"
+      if _type == "non-paraphrase":
+         _is_paraphrase="False"
 
       # create new node and append it to current case
       # annotation node
@@ -430,6 +433,9 @@ class TNLP_XML_Manager:
 
       # update result
       result = True
+      
+      # update corpus info
+      self.__update_corpus_info()
 
       return self.get_annotations_of_case(_case_id)[-1]
 
@@ -533,7 +539,7 @@ class TNLP_XML_Manager:
       total_true_annotations = 0
       for item in tmp_annotations:
          annotation['is_paraphrase'] = item.getAttribute('is_paraphrase')
-         if annotation['is_paraphrase'] != "":
+         if annotation['is_paraphrase'] == "True":
             total_true_annotations += 1
       self.__root_node.setAttribute('total_true_annotations', str(total_true_annotations))
       
