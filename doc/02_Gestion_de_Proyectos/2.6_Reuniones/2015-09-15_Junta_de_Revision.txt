@@ -3,14 +3,21 @@ Objetivo:
 Asisten: Abel y Leonel.
 
 Objetivos desglosados:
-* (Abel) Agregar componentes del case de acuerdo a lo diseñado en el artículo.
-
 * Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
 * (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
 * (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 * (Abel) Incorporar tareas que no se harán por ahora a la LRP.
 * (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
 
+[OK, 16/09/2015, 4h]* (Abel) Agregar componentes del case de acuerdo a lo diseñado en el artículo.
+   . Adicionados los atributos del caso: topic_match, paraphrase_composition, lenght
+   . Adicionados los atributos del snippet: word_count, topic.
+   . Adicionados a los README en inglés y español.
+   . Adicionados al XML base, estructura simple de TNLP.xml
+   . Adicionados a los métodos del TNLP_XML_Manager
+   . Agregar al ENUM los valores del "topic".
+   . Agregar al TNLP_Add_Case los campos para que adicione el caso con los nuevos datos.
+   . Calculando valores automáticos para insertarlos al adicionar el caso.
 [OK, 16/09/2015, 0.15h]* (Abel) Calcular el total_true_annotations. Agregar al show_corpus_info.
 [OK, 16/09/2015, 0.5h]* (Abel) Confeccionar scripts para el cálculo automático de total de casos, y total de anotaciones. Modificado en la vista del Dialog TNLP_MW.show_corpus_info.
 [OK, 16/09/2015, 1h]* (Abel) Adicionar cuadradito blanco para plag_types = none.

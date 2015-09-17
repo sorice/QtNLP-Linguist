@@ -124,17 +124,25 @@ class TNLP_XML_Manager:
          case['domain'] = item.getAttribute('domain')
          case['document_type'] = item.getAttribute('document_type')
          
+         # susp snippet node
          case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
          case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
          case['susp_snippet_length'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('length')
          case['susp_snippet_sentences_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('sentences_count')
+         case['susp_snippet_words_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('words_count')
+         case['susp_snippet_topic'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('topic')
+         
+         case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+         
+         # susp snippet node
          case['src_snippet_doc'] = item.getElementsByTagName('src_snippet')[0].getAttribute('doc')
          case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
          case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
          case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
-         case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+         case['src_snippet_words_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('words_count')
+         case['src_snippet_topic'] = item.getElementsByTagName('src_snippet')[0].getAttribute('topic')
+         
          case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
-
 
          self.__cases.append(case)
 
@@ -163,15 +171,28 @@ class TNLP_XML_Manager:
             case['generator_name'] = item.getAttribute('generator_name')
             case['domain'] = item.getAttribute('domain')
             case['document_type'] = item.getAttribute('document_type')
+            case['topic_match'] = item.getAttribute('topic_match')
+            case['paraphrase_composition'] = item.getAttribute('paraphrase_composition')
+            case['lenght'] = item.getAttribute('lenght')
+            
+            # susp snippet node
             case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
             case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
             case['susp_snippet_length'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('length')
             case['susp_snippet_sentences_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('sentences_count')
+            case['susp_snippet_words_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('words_count')
+            case['susp_snippet_topic'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('topic')
+            
+            case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'],case['susp_snippet_offset'], case['susp_snippet_length'])
+            
+            # src snippet node
             case['src_snippet_doc'] = item.getElementsByTagName('src_snippet')[0].getAttribute('doc')
             case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
             case['src_snippet_length'] = item.getElementsByTagName('src_snippet')[0].getAttribute('length')
             case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
-            case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
+            case['src_snippet_words_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('words_count')
+            case['src_snippet_topic'] = item.getElementsByTagName('src_snippet')[0].getAttribute('topic')
+            
             case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
 
             break
@@ -224,10 +245,13 @@ class TNLP_XML_Manager:
          annotation['annotation_date']= item.getAttribute('annotation_date')
          annotation['phenomenon_type'] = item.getElementsByTagName('phenomenon')[0].getAttribute('type')
          annotation['projection'] = item.getElementsByTagName('phenomenon')[0].getAttribute('projection')
+         
          annotation['susp_chunk_offset'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('offset')
          annotation['susp_chunk_length'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('length')
+         
          annotation['src_chunk_offset'] = item.getElementsByTagName('src_chunk')[0].getAttribute('offset')
          annotation['src_chunk_length'] = item.getElementsByTagName('src_chunk')[0].getAttribute('length')
+         
          annotation['susp_sentence'] = self.__get_sentence_from_snippet(_case['susp_text'], annotation['susp_chunk_offset'])
          annotation['src_sentence'] = self.__get_sentence_from_snippet(_case['src_text'], annotation['src_chunk_offset'])
 
@@ -249,8 +273,8 @@ class TNLP_XML_Manager:
 
 
    def add_case(self, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
-      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _susp_doc, _susp_offset,
-      _susp_length, _susp_sentences_count, _src_doc, _src_offset, _src_length, _src_sentences_count): #OK
+      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _topic_match, _paraphrase_composition, _lenght, _susp_doc, _susp_offset,
+      _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic,): #OK
       """Add a new case to the corpus"""
 
       #TODO validate all input data
@@ -296,6 +320,9 @@ class TNLP_XML_Manager:
       case.setAttribute('generator_name', _generator_name)
       case.setAttribute('domain',_domain)
       case.setAttribute('document_type', _document_type)
+      case.setAttribute('topic_match', _topic_match)
+      case.setAttribute('paraphrase_composition', _paraphrase_composition)
+      case.setAttribute('lenght', _lenght)
 
       # susp snippet node
       susp_snippet = self.__xml_document.createElement('susp_snippet')
@@ -303,6 +330,8 @@ class TNLP_XML_Manager:
       susp_snippet.setAttribute('offset', str(_susp_offset))
       susp_snippet.setAttribute('length', str(_susp_length))
       susp_snippet.setAttribute('sentences_count', str(_susp_sentences_count))
+      susp_snippet.setAttribute('words_count', str(_susp_words_count))
+      susp_snippet.setAttribute('topic', str(_susp_doc_topic))
       case.appendChild(susp_snippet)
 
       # src snippet node
@@ -311,6 +340,8 @@ class TNLP_XML_Manager:
       src_snippet.setAttribute('offset', str(_src_offset))
       src_snippet.setAttribute('length', str(_src_length))
       src_snippet.setAttribute('sentences_count', str(_src_sentences_count))
+      src_snippet.setAttribute('words_count', str(_src_words_count))
+      src_snippet.setAttribute('topic', str(_src_doc_topic))
       case.appendChild(src_snippet)
 
       # add case to group
@@ -381,6 +412,21 @@ class TNLP_XML_Manager:
 
       # add annotation to case
       actual_case.appendChild(annotation)
+      
+      # calc paraphrase_composition
+      annotations = self.get_annotations_of_case(_case_id)
+      types = set()
+      for item in annotations:
+         types.add(item['phenomenon_type'])
+      
+      paraphrase_composition = "pure"
+      if len(types) > 2:
+         paraphrase_composition = "multiple"
+      else:
+         if len(types) > 1:
+            paraphrase_composition = "mixed"
+      
+      actual_case.setAttribute('paraphrase_composition',paraphrase_composition)
 
       # update result
       result = True

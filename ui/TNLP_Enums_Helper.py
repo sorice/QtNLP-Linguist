@@ -68,3 +68,12 @@ document_type = [
    "book",
    "web page"
 ]
+
+# Define src and susp doc topics. This list must be designed before compile QtNLP
+document_topic = [
+   "Data Base",
+   "Software Engineering",
+   "Software Test",
+   "Artificial Intelligence"
+]
+

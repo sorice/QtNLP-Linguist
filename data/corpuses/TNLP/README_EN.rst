@@ -97,12 +97,17 @@ Attributes of a **case** or *<case*:
     * **generator_name**      → name of the algorithm or person that generated the event
     * **domain**              → area of knowledge of the content of susp case doc.
     * **document_type**       → type of document: Scientific, book, story, conversation, ...
-
+    * **topic_match**         → if the *topic* in *susp* and *src* documents match this value is equal to *intra-topic*, on the contrary the value is equal to *inter-topic*.
+    * **paraphrase_composition** → indicates the number of paraphrase types involved in the case annotations: 1 = *pure*, 2=*mixed*, 3 o más = *multiple*
+    * **lenght** → indictes a case tipology relative to its lenght, can take de values: *short, medium* y *large*
+    
 Attributes **fragments** o *<xxx_snippet*:
     * **doc** → suspect document or source (l) plagiarism
-    * **offset** →  position in the text where the fragment starts
-    * **length** →  fragment size (used to calculate the final position)
-    * **centences_count**  → number of sentences of the fragment
+    * **offset**           →  position in the text where the fragment starts
+    * **length**           →  fragment size (used to calculate the final position)
+    * **sentences_count**  → number of sentences of the fragment
+    * **word_count**       → number of words of the fragment
+    * **topic**            → document *susp* and *src* specific area of knowleage they are about respectively.
 
 Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^
