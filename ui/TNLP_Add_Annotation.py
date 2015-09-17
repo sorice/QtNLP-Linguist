@@ -61,9 +61,9 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       # get UI data
       case_data['case_id'] = self._case['id']
       case_data['author'] = str(self.le_author.text().trimmed())
-      case_data['is_paraphrase'] = str('true')
-      case_data['validated_by_human_beings'] = str('true')
-      case_data['recognized_by_algorithms'] = str('false')
+      case_data['is_paraphrase'] = str('True')
+      case_data['validated_by_human_beings'] = str('True')
+      case_data['recognized_by_algorithms'] = str('False')
       case_data['algorithms_names'] = str('')
       case_data['annotation_date'] = str(QDate.currentDate().toString('yyyy-M-d'))
       case_data['type'] = str(self.cb_type.currentText())

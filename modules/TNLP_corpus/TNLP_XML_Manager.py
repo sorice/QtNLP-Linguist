@@ -379,6 +379,10 @@ class TNLP_XML_Manager:
          annotation_id = max(ids) + 1
       else:
          annotation_id = 1
+      
+      #Calculate if annotation in not paraphrase or = to "false positive"
+      if _type == "non-paraphrase":
+         _is_paraphrase="False"
 
       # create new node and append it to current case
       # annotation node
@@ -429,6 +433,9 @@ class TNLP_XML_Manager:
 
       # update result
       result = True
+      
+      # update corpus info
+      self.__update_corpus_info()
 
       return self.get_annotations_of_case(_case_id)[-1]
 
@@ -532,7 +539,7 @@ class TNLP_XML_Manager:
       total_true_annotations = 0
       for item in tmp_annotations:
          annotation['is_paraphrase'] = item.getAttribute('is_paraphrase')
-         if annotation['is_paraphrase'] != "":
+         if annotation['is_paraphrase'] == "True":
             total_true_annotations += 1
       self.__root_node.setAttribute('total_true_annotations', str(total_true_annotations))
       
