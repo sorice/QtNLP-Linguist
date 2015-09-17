@@ -8,6 +8,7 @@
     <file alias="pt_blue">icons/pt_blue.png</file>
     <file alias="pt_yellow">icons/pt_yellow.png</file>
     <file alias="pt_orange">icons/pt_orange.png</file>
+    <file alias="pt_white">icons/pt_white.png</file>
   </qresource>
   <qresource prefix="toolbar">
     <file>icons/validate_case.png</file>

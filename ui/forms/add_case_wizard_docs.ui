@@ -38,6 +38,9 @@
       </widget>
      </item>
      <item>
+      <widget class="QComboBox" name="cb_susp_doc_topic"/>
+     </item>
+     <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -97,6 +100,20 @@
       </widget>
      </item>
      <item>
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Words:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lb_susp_words_count">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer_5">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -128,7 +145,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_16">
+      <widget class="QLabel" name="label_14">
        <property name="text">
         <string>Doc name:</string>
        </property>
@@ -140,6 +157,9 @@
         <string>src/</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cb_src_doc_topic"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_3">
@@ -159,7 +179,7 @@
    <item row="4" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="label_15">
        <property name="text">
         <string>Offset:</string>
        </property>
@@ -173,7 +193,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_14">
+      <widget class="QLabel" name="label_16">
        <property name="text">
         <string>Length:</string>
        </property>
@@ -187,7 +207,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_15">
+      <widget class="QLabel" name="label_17">
        <property name="text">
         <string>Sentences:</string>
        </property>
@@ -195,6 +215,20 @@
      </item>
      <item>
       <widget class="QLabel" name="lb_src_sentences_count">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>Words:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lb_src_words_count">
        <property name="text">
         <string>0</string>
        </property>

@@ -86,23 +86,28 @@ Atributos de la **lista de casos** o *<group*:
     * **NLP_problem_type**  → tipo de problema NLP (puede ser similaridad, traducción, etc)
     * **text_extension**    → tamaño del texto (puede ser párrafo, oración, fragmento, etc)
 Atributos de **un caso** o *<case*:
-    * **id**            → identificador único del caso
-    * **description**       → descripción
-    * **plag_type**         → en el caso de TNLP describe tipo de plagio
-    * **annotator_summary**     → resumen del caso hecho por el anotador
-    * **automatic_summary**     → resumen del caso hecho por un PC, Ej.: Bag of Words, etc.
-    * **original_corpus**       → nombre del corpus original de donde vinieron los textos del caso
-    * **original_corpus_id**    → id del caso en su corpus original
-    * **generated_by**      → identifica el mecanismo de generación: humano o automático.
-    * **generator_name**        → nombre del algoritmo o persona que generó el caso
-    * **domain**            → área del conocimiento que refieren los docs del caso.
-    * **document_type**     → tipo de documento: científico, libro, noticia, conversación,...
+    * **id**                  → identificador único del caso
+    * **description**         → descripción
+    * **plag_type**           → en el caso de TNLP describe tipo de plagio
+    * **annotator_summary**   → resumen del caso hecho por el anotador
+    * **automatic_summary**   → resumen del caso hecho por un PC, Ej.: Bag of Words, etc.
+    * **original_corpus**     → nombre del corpus original de donde vinieron los textos del caso
+    * **original_corpus_id**  → id del caso en su corpus original
+    * **generated_by**        → identifica el mecanismo de generación: humano o automático.
+    * **generator_name**      → nombre del algoritmo o persona que generó el caso
+    * **domain**              → área del conocimiento que refieren los docs del caso.
+    * **document_type**       → tipo de documento: científico, libro, noticia, conversación,...
+    * **topic_match**         → si el *topic* de *susp* y *src* coinciden este valor es igual a *intra-topic*, de lo contrario *inter-topic*.
+    * **paraphrase_composition** → indica el número de tipos de paráfrasis involucrados en las anotaciones: 1 = *pure*, 2=*mixed*, 3 o más = *multiple*
+    * **lenght** → indica una tipología de caso relativo a su largo, puede tomar los valores: *short, medium* y *large*
 
 Atributos de los **fragmentos** o *<xxx_snippet*:
-    * **doc**           → documento sospechoso o fuente de(l) plagio
+    * **doc**               → documento sospechoso o fuente de(l) plagio
     * **offset**            → posición en el texto en la que comienza el fragmento
     * **length**            → tamaño del fragmento (se utiliza para calcular la posición final)
-    * **sentences_count**       → número de oraciones del fragmento
+    * **sentences_count**   → número de oraciones del fragmento
+    * **word_count**        → número de palabras del fragmento
+    * **topic**       → área del conocimiento específica sobre la que trata el documento sospechoso o fuente respectivamente.
 
 Anotaciones
 ^^^^^^^^^^^^^^^^^^^^^^^

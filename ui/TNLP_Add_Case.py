@@ -160,15 +160,12 @@ class TNLP_AddCase(QWizard):
       label_18.setText("Description:")
       label_21.setText("Keywords:")
       label_22.setText("Original corpus id:")
-      #~ cb_problem_type.setItemText(0, "similarity")
-      #~ cb_problem_type.setItemText(1, "translation")
       label_23.setText("Text extension:")
       label_24.setText("Plagiarism type:")
       label_25.setText("Original corpus:")
       label_26.setText("Added by:")
       label_27.setText("Domain:")
       label_28.setText("Doc Type:")
-      #~ cb_text_extension.setItemText(0, "paragraph")
 
       for i in plag_types:
          cb_plag_type.addItem(i)
@@ -219,6 +216,9 @@ class TNLP_AddCase(QWizard):
       lb_susp_doc_name = QLabel()
       lb_susp_doc_name.setObjectName(_fromUtf8("lb_susp_doc_name"))
       horizontalLayout.addWidget(lb_susp_doc_name)
+      cb_susp_doc_topic = QComboBox()
+      cb_susp_doc_topic.setObjectName(_fromUtf8("cb_susp_doc_topic"))
+      horizontalLayout.addWidget(cb_susp_doc_topic)
       spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
       horizontalLayout.addItem(spacerItem)
       gridLayout.addLayout(horizontalLayout, 0, 0, 1, 1)
@@ -242,6 +242,12 @@ class TNLP_AddCase(QWizard):
       lb_susp_sentences_count = QLabel()
       lb_susp_sentences_count.setObjectName(_fromUtf8("lb_susp_sentences_count"))
       horizontalLayout_2.addWidget(lb_susp_sentences_count)
+      label_13 = QLabel()
+      label_13.setObjectName(_fromUtf8("label_13"))
+      horizontalLayout_2.addWidget(label_13)
+      lb_susp_words_count = QLabel()
+      lb_susp_words_count.setObjectName(_fromUtf8("lb_susp_words_count"))
+      horizontalLayout_2.addWidget(lb_susp_words_count)
       spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
       horizontalLayout_2.addItem(spacerItem1)
       gridLayout.addLayout(horizontalLayout_2, 1, 0, 1, 1)
@@ -254,35 +260,44 @@ class TNLP_AddCase(QWizard):
       btn_select_src_doc = QPushButton()
       btn_select_src_doc.setObjectName(_fromUtf8("btn_select_src_doc"))
       horizontalLayout_4.addWidget(btn_select_src_doc)
-      label_16 = QLabel()
-      label_16.setObjectName(_fromUtf8("label_16"))
-      horizontalLayout_4.addWidget(label_16)
+      label_14 = QLabel()
+      label_14.setObjectName(_fromUtf8("label_14"))
+      horizontalLayout_4.addWidget(label_14)
       lb_src_doc_name = QLabel()
       lb_src_doc_name.setObjectName(_fromUtf8("lb_src_doc_name"))
       horizontalLayout_4.addWidget(lb_src_doc_name)
+      cb_src_doc_topic = QComboBox()
+      cb_src_doc_topic.setObjectName(_fromUtf8("cb_src_doc_topic"))
+      horizontalLayout_4.addWidget(cb_src_doc_topic)
       spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
       horizontalLayout_4.addItem(spacerItem2)
       gridLayout.addLayout(horizontalLayout_4, 3, 0, 1, 1)
       horizontalLayout_3 = QHBoxLayout()
       horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
-      label_13 = QLabel()
-      label_13.setObjectName(_fromUtf8("label_13"))
-      horizontalLayout_3.addWidget(label_13)
-      lb_src_offset = QLabel()
-      lb_src_offset.setObjectName(_fromUtf8("lb_src_offset"))
-      horizontalLayout_3.addWidget(lb_src_offset)
-      label_14 = QLabel()
-      label_14.setObjectName(_fromUtf8("label_14"))
-      horizontalLayout_3.addWidget(label_14)
-      lb_src_length = QLabel()
-      lb_src_length.setObjectName(_fromUtf8("lb_src_length"))
-      horizontalLayout_3.addWidget(lb_src_length)
       label_15 = QLabel()
       label_15.setObjectName(_fromUtf8("label_15"))
       horizontalLayout_3.addWidget(label_15)
+      lb_src_offset = QLabel()
+      lb_src_offset.setObjectName(_fromUtf8("lb_src_offset"))
+      horizontalLayout_3.addWidget(lb_src_offset)
+      label_16 = QLabel()
+      label_16.setObjectName(_fromUtf8("label_16"))
+      horizontalLayout_3.addWidget(label_16)
+      lb_src_length = QLabel()
+      lb_src_length.setObjectName(_fromUtf8("lb_src_length"))
+      horizontalLayout_3.addWidget(lb_src_length)
+      label_17 = QLabel()
+      label_17.setObjectName(_fromUtf8("label_17"))
+      horizontalLayout_3.addWidget(label_17)
       lb_src_sentences_count = QLabel()
       lb_src_sentences_count.setObjectName(_fromUtf8("lb_src_sentences_count"))
       horizontalLayout_3.addWidget(lb_src_sentences_count)
+      label_18 = QLabel()
+      label_18.setObjectName(_fromUtf8("label_18"))
+      horizontalLayout_3.addWidget(label_18)
+      lb_src_words_count = QLabel()
+      lb_src_words_count.setObjectName(_fromUtf8("lb_src_words_count"))
+      horizontalLayout_3.addWidget(lb_src_words_count)
       spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
       horizontalLayout_3.addItem(spacerItem3)
       gridLayout.addLayout(horizontalLayout_3, 4, 0, 1, 1)
@@ -303,15 +318,25 @@ class TNLP_AddCase(QWizard):
       lb_susp_length.setText("0")
       label_12.setText("Sentences:")
       lb_susp_sentences_count.setText("0")
+      label_13.setText("Words:")
+      lb_susp_words_count.setText("0")
       btn_select_src_doc.setText("Select src doc")
-      label_16.setText("Doc name:")
+      label_14.setText("Doc name:")
       lb_src_doc_name.setText("src/")
-      label_13.setText("Offset:")
+      label_15.setText("Offset:")
       lb_src_offset.setText("0")
-      label_14.setText("Length:")
+      label_16.setText("Length:")
       lb_src_length.setText("0")
-      label_15.setText("Sentences:")
+      label_17.setText("Sentences:")
       lb_src_sentences_count.setText("0")
+      label_18.setText("Words:")
+      lb_src_words_count.setText("0")
+      
+      for i in document_topic:
+         cb_susp_doc_topic.addItem(i)
+
+      for i in document_topic:
+         cb_src_doc_topic.addItem(i)
 
       # register fields, mandatory (*)
       page.registerField("susp_doc_name", lb_susp_doc_name)
@@ -319,12 +344,18 @@ class TNLP_AddCase(QWizard):
       page.registerField("susp_offset", lb_susp_offset)
       page.registerField("susp_length", lb_susp_length)
       page.registerField("susp_sentences_count", lb_susp_sentences_count)
+      page.registerField("susp_words_count", lb_susp_words_count)
       page.registerField("susp_text", te_susp_text)
+      
       page.registerField("src_doc_name", lb_src_doc_name)
       page.registerField("src_offset", lb_src_offset)
       page.registerField("src_length", lb_src_length)
       page.registerField("src_sentences_count", lb_src_sentences_count)
+      page.registerField("src_words_count", lb_src_words_count)
       page.registerField("src_text", te_src_text)
+      
+      page.registerField("susp_doc_topic", cb_susp_doc_topic)
+      page.registerField("src_doc_topic", cb_src_doc_topic)
 
       # connect signals & slots
       btn_select_susp_doc.clicked.connect(self.__select_susp_doc)
@@ -341,24 +372,6 @@ class TNLP_AddCase(QWizard):
       """Process the wizard data and adds the case to corpus"""
 
       # get wizard data
-      '''problem_type = phenomenom_types[self.field("problem_type").toInt()[0]]
-      description = str(self.field("description").toString())
-      summary = str(self.field("summary").toString())
-      original_corpus_id = str(self.field("original_corpus_id").toString())
-      txt_extension = text_extension[self.field("text_extension").toInt()[0]]
-      plag_type = plag_types[self.field("plag_type").toInt()[0]]
-      original_corpus = str(self.field("original_corpus").toString())
-      generator_name = str(self.field("generator_name").toString())
-      susp_doc_name = str(self.field("susp_doc_name").toString())
-      susp_offset = str(self.field("susp_offset").toInt()[0])
-      susp_length = str(self.field("susp_length").toInt()[0])
-      susp_sentences_count = str(self.field("susp_sentences_count").toInt()[0])
-      susp_text = str(self.field("susp_text").toString())
-      src_doc_name = str(self.field("src_doc_name").toString())
-      src_offset = str(self.field("src_offset").toInt()[0])
-      src_length = str(self.field("src_length").toInt()[0])
-      src_sentences_count = str(self.field("src_sentences_count").toInt()[0])
-      src_text = str(self.field("src_text").toString())'''
 
       # some widgets report empty strings, so obtain values using QObjetc.findChild instead
       problem_type = str(self.page(0).findChild(QComboBox, 'cb_problem_type').currentText())
@@ -371,21 +384,40 @@ class TNLP_AddCase(QWizard):
       generator_name = str(self.page(0).findChild(QLineEdit, 'le_generator_name').text()).strip()
       domain = str(self.page(0).findChild(QComboBox, 'cb_domain').currentText())
       document_type = str(self.page(0).findChild(QComboBox, 'cb_document_type').currentText())
+      
       susp_doc = str(self.page(1).findChild(QLabel, 'lb_susp_doc_name').text()).strip()
       susp_offset = str(self.page(1).findChild(QLabel, 'lb_susp_offset').text()).strip()
       susp_length = str(self.page(1).findChild(QLabel, 'lb_susp_length').text()).strip()
       susp_sentences_count = str(self.page(1).findChild(QLabel, 'lb_susp_sentences_count').text()).strip()
+      susp_words_count = str(self.page(1).findChild(QLabel, 'lb_susp_words_count').text()).strip()
       susp_text = unicode(self.page(1).findChild(QTextEdit, 'te_susp_text').toPlainText(), 'iso8859-1')
+      susp_doc_topic = str(self.page(1).findChild(QComboBox, 'cb_susp_doc_topic').currentText())
+      
       src_doc = str(self.page(1).findChild(QLabel, 'lb_src_doc_name').text()).strip()
       src_offset = str(self.page(1).findChild(QLabel, 'lb_src_offset').text()).strip()
       src_length = str(self.page(1).findChild(QLabel, 'lb_src_length').text()).strip()
       src_sentences_count = str(self.page(1).findChild(QLabel, 'lb_src_sentences_count').text()).strip()
+      src_words_count = str(self.page(1).findChild(QLabel, 'lb_src_words_count').text()).strip()
       src_text = unicode(self.page(1).findChild(QTextEdit, 'te_src_text').toPlainText(), 'iso8859-1')
+      src_doc_topic = str(self.page(1).findChild(QComboBox, 'cb_src_doc_topic').currentText())
+
       automatic_summary = ""
       generated_by = "human"
+      
+      #Calculate topic match
+      if susp_doc_topic == src_doc_topic:
+         topic_match = "intra-topic"
+      else: topic_match = "inter-topic"
+      
+      #Calculate case_lenght
+      if int(susp_words_count) > 0 and int(susp_words_count) <= 60:
+         case_lenght = "short"
+      elif int(susp_words_count) > 61 and int(susp_words_count) <= 360:
+         case_lenght = "medium"
+      else: case_lenght = "long"
 
-      #~ print problem_type, description, annotator_summary, original_corpus_id, text_extension, plag_type, original_corpus, generator_name, susp_doc_name, susp_offset, susp_length, susp_sentences_count, susp_text, src_doc_name, src_offset, src_length, src_sentences_count, src_text
-      # validate data
+      paraphrase_composition = ""
+
       if susp_text == '' or susp_length == '0' or susp_sentences_count == '0':
          QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect suspicious data. Please select a suspicious file and snippet.')
          return
@@ -395,8 +427,8 @@ class TNLP_AddCase(QWizard):
             return
 
       new_case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
-         automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, susp_doc, susp_offset,
-         susp_length, susp_sentences_count, src_doc, src_offset, src_length, src_sentences_count)
+         automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
+         susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
 
       self.__xml.write_xml()
 
@@ -491,8 +523,9 @@ class TNLP_AddCase(QWizard):
       _offset = self.page(1).findChild(QLabel, 'lb_susp_offset')
       _len = self.page(1).findChild(QLabel, 'lb_susp_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_susp_sentences_count')
+      _words = self.page(1).findChild(QLabel, 'lb_susp_words_count')
 
-      self.__text_changed(_text, _offset, _len, _sentences)
+      self.__text_changed(_text, _offset, _len, _sentences, _words)
 
 
    def __src_text_changed(self):
@@ -503,11 +536,12 @@ class TNLP_AddCase(QWizard):
       _offset = self.page(1).findChild(QLabel, 'lb_src_offset')
       _len = self.page(1).findChild(QLabel, 'lb_src_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_src_sentences_count')
+      _words = self.page(1).findChild(QLabel, 'lb_src_words_count')
 
-      self.__text_changed(_text, _offset, _len, _sentences)
+      self.__text_changed(_text, _offset, _len, _sentences, _words)
 
 
-   def __text_changed(self, _text_cmp, _offset, _len, _sentences):
+   def __text_changed(self, _text_cmp, _offset, _len, _sentences, _words):
       """Updates components data"""
 
       _text_cmp.textCursor().clearSelection()
@@ -516,6 +550,7 @@ class TNLP_AddCase(QWizard):
       _offset.setText('0')
       _len.setText('0')
       _sentences.setText('0')
+      _words.setText('0')
 
 
    def __susp_selection_changed(self):
@@ -523,13 +558,12 @@ class TNLP_AddCase(QWizard):
 
       # locate working elements
       _text = self.page(1).findChild(QTextEdit, 'te_susp_text')
-      #~ print 'type _text __susp_selection_changed', type(_text)
-
       _offset = self.page(1).findChild(QLabel, 'lb_susp_offset')
       _len = self.page(1).findChild(QLabel, 'lb_susp_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_susp_sentences_count')
+      _words = self.page(1).findChild(QLabel, 'lb_susp_words_count')
 
-      self.__selection_changed(_text, _offset, _len, _sentences)
+      self.__selection_changed(_text, _offset, _len, _sentences, _words)
 
 
    def __src_selection_changed(self):
@@ -537,15 +571,15 @@ class TNLP_AddCase(QWizard):
 
       # locate working elements
       _text = self.page(1).findChild(QTextEdit, 'te_src_text')
-      #~ print 'type _text __src_selection_changed', type(_text)
       _offset = self.page(1).findChild(QLabel, 'lb_src_offset')
       _len = self.page(1).findChild(QLabel, 'lb_src_length')
       _sentences = self.page(1).findChild(QLabel, 'lb_src_sentences_count')
+      _words = self.page(1).findChild(QLabel, 'lb_src_words_count')
 
-      self.__selection_changed(_text, _offset, _len, _sentences)
+      self.__selection_changed(_text, _offset, _len, _sentences, _words)
 
 
-   def __selection_changed(self, _text_cmp, _offset, _len, _sentences):
+   def __selection_changed(self, _text_cmp, _offset, _len, _sentences, _words):
       """Updates components data"""
 
       cursor = _text_cmp.textCursor()
@@ -595,10 +629,9 @@ class TNLP_AddCase(QWizard):
 
       cursor.clearSelection()
       cursor.movePosition(QTextCursor.Start)
-      
-      #~ print 'len txt __selection_changed:', txt[x:y], ',', len(txt[x:y])
 
       # update widgets
       _offset.setText(str(x))
       _len.setText(str(y - x))
       _sentences.setText(str(len(txt[x:y].split(".")) - 1))
+      _words.setText(str(len(txt[x:y].split())-(len(txt[x:y].split("."))-1)))
