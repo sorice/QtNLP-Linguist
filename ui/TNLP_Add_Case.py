@@ -24,7 +24,7 @@ except AttributeError:
       return s
 
 class TNLP_AddCase(QWizard):
-   def __init__(self, _xml_manager, parent = None):
+   def __init__(self, _xml_manager, _edit = False, _case = None, parent = None):
       # init the parent
       super(TNLP_AddCase, self).__init__(parent)
 
@@ -32,7 +32,15 @@ class TNLP_AddCase(QWizard):
       self.__xml = _xml_manager
       self.__working_dir = QFileInfo(self.__xml.get_xml_url()).absolutePath()
 
+      self.__susp_file = './' + _case['susp_snippet_doc']
+
+      self.__case = _case
+      self.__edit_mode = _edit
+
       self.setWindowTitle('Add Case')
+
+      if self.__edit_mode:
+         self.setWindowTitle('Edit Case')
 
       # setup wizard pages
       self.__setupPages()
@@ -50,7 +58,7 @@ class TNLP_AddCase(QWizard):
       self.addPage(self.__create_docs_page())
 
 
-   def __create_general_page(self):
+   def __create_general_page(self, _edit = False):
       """Creates de first page of the wizard, or the general data of a case."""
 
       page = QWizardPage()
@@ -175,10 +183,10 @@ class TNLP_AddCase(QWizard):
 
       for i in phenomenom_types:
          cb_problem_type.addItem(i)
-      
+
       for i in text_domain:
          cb_domain.addItem(i)
-         
+
       for i in document_type:
          cb_document_type.addItem(i)
 
@@ -197,7 +205,7 @@ class TNLP_AddCase(QWizard):
       return page
 
 
-   def __create_docs_page(self):
+   def __create_docs_page(self, _edit = False):
       """Creates de second page of the wizard, or the data of the susp and src docs."""
 
       page = QWizardPage()
@@ -252,7 +260,7 @@ class TNLP_AddCase(QWizard):
       horizontalLayout_2.addItem(spacerItem1)
       gridLayout.addLayout(horizontalLayout_2, 1, 0, 1, 1)
       te_susp_text = QTextEdit()
-      te_susp_text.setReadOnly(True)
+      te_susp_text.setReadOnly(False)
       te_susp_text.setObjectName(_fromUtf8("te_susp_text"))
       gridLayout.addWidget(te_susp_text, 2, 0, 1, 1)
       horizontalLayout_4 = QHBoxLayout()
@@ -331,7 +339,7 @@ class TNLP_AddCase(QWizard):
       lb_src_sentences_count.setText("0")
       label_18.setText("Words:")
       lb_src_words_count.setText("0")
-      
+
       for i in document_topic:
          cb_susp_doc_topic.addItem(i)
 
@@ -346,14 +354,14 @@ class TNLP_AddCase(QWizard):
       page.registerField("susp_sentences_count", lb_susp_sentences_count)
       page.registerField("susp_words_count", lb_susp_words_count)
       page.registerField("susp_text", te_susp_text)
-      
+
       page.registerField("src_doc_name", lb_src_doc_name)
       page.registerField("src_offset", lb_src_offset)
       page.registerField("src_length", lb_src_length)
       page.registerField("src_sentences_count", lb_src_sentences_count)
       page.registerField("src_words_count", lb_src_words_count)
       page.registerField("src_text", te_src_text)
-      
+
       page.registerField("susp_doc_topic", cb_susp_doc_topic)
       page.registerField("src_doc_topic", cb_src_doc_topic)
 
@@ -364,6 +372,23 @@ class TNLP_AddCase(QWizard):
       te_src_text.textChanged.connect(self.__src_text_changed)
       te_susp_text.selectionChanged.connect(self.__susp_selection_changed)
       te_src_text.selectionChanged.connect(self.__src_selection_changed)
+
+      #~ if _edit == True:
+         #~ lb_susp_doc_name.setText(self.__case['susp_snippet_doc'])
+         #~ lb_susp_offset.setText(self.__case['susp_snippet_offset'])
+         #~ lb_susp_length.setText(self.__case['susp_snippet_length'])
+         #~ lb_susp_sentences_count.setText(self.__case['susp_snippet_sentences_count'])
+         #~ lb_susp_words_count.setText(self.__case['susp_snippet_words_count'])
+         #~ te_susp_text.setText(self.__case['susp_snippet_doc'])
+         #~ cb_susp_doc_topic.setCurrentIndex(cb_susp_doc_topic.findText(self.__case['susp_snippet_topic']))
+#~
+         #~ lb_src_doc_name.setText(self.__case['src_snippet_doc'])
+         #~ lb_src_offset.setText(self.__case['src_snippet_offset'])
+         #~ lb_src_length.setText(self.__case['src_snippet_length'])
+         #~ lb_src_sentences_count.setText(self.__case['src_snippet_sentences_count'])
+         #~ lb_src_words_count.setText(self.__case['src_snippet_words_count'])
+         #~ te_src_text.setText(self.__case['src_snippet_doc'])
+         #~ cb_src_doc_topic.setCurrentIndex(cb_src_doc_topic.findText(self.__case['src_snippet_topic']))
 
       return page
 
@@ -384,15 +409,15 @@ class TNLP_AddCase(QWizard):
       generator_name = str(self.page(0).findChild(QLineEdit, 'le_generator_name').text()).strip()
       domain = str(self.page(0).findChild(QComboBox, 'cb_domain').currentText())
       document_type = str(self.page(0).findChild(QComboBox, 'cb_document_type').currentText())
-      
+
       susp_doc = str(self.page(1).findChild(QLabel, 'lb_susp_doc_name').text()).strip()
       susp_offset = str(self.page(1).findChild(QLabel, 'lb_susp_offset').text()).strip()
       susp_length = str(self.page(1).findChild(QLabel, 'lb_susp_length').text()).strip()
       susp_sentences_count = str(self.page(1).findChild(QLabel, 'lb_susp_sentences_count').text()).strip()
       susp_words_count = str(self.page(1).findChild(QLabel, 'lb_susp_words_count').text()).strip()
-      susp_text = unicode(self.page(1).findChild(QTextEdit, 'te_susp_text').toPlainText(), 'iso8859-1')
+      susp_text = unicode(self.page(1).findChild(QTextEdit, 'te_susp_text').toPlainText().trimmed(), 'iso8859-1').strip()
       susp_doc_topic = str(self.page(1).findChild(QComboBox, 'cb_susp_doc_topic').currentText())
-      
+
       src_doc = str(self.page(1).findChild(QLabel, 'lb_src_doc_name').text()).strip()
       src_offset = str(self.page(1).findChild(QLabel, 'lb_src_offset').text()).strip()
       src_length = str(self.page(1).findChild(QLabel, 'lb_src_length').text()).strip()
@@ -403,18 +428,20 @@ class TNLP_AddCase(QWizard):
 
       automatic_summary = ""
       generated_by = "human"
-      
+
       #Calculate topic match
       if susp_doc_topic == src_doc_topic:
          topic_match = "intra-topic"
-      else: topic_match = "inter-topic"
-      
+      else:
+         topic_match = "inter-topic"
+
       #Calculate case_lenght
       if int(susp_words_count) > 0 and int(susp_words_count) <= 60:
          case_lenght = "short"
       elif int(susp_words_count) > 61 and int(susp_words_count) <= 360:
          case_lenght = "medium"
-      else: case_lenght = "long"
+      else:
+         case_lenght = "long"
 
       paraphrase_composition = ""
 
@@ -426,9 +453,24 @@ class TNLP_AddCase(QWizard):
             QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect source data. Please select a source file and snippet.')
             return
 
-      new_case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
-         automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
-         susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
+      # save loaded document if any
+      if susp_doc <> "susp/":
+         f = QFile(self.__susp_file)
+         if f.open(QFile.WriteOnly):
+            f.write(susp_text)
+            f.close()
+      else:
+         # create new susp file
+         QMessageBox.critical(self, self.parent().get_app_name(), 'TODO Create new susp document here.')
+         return
+
+      if self.__edit_mode == False:
+         new_case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
+            automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
+            susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
+      else:
+         print "EDITING"
+         return
 
       self.__xml.write_xml()
 
@@ -459,9 +501,9 @@ class TNLP_AddCase(QWizard):
       if not f.exists():
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
-      
+
       convertWin_Into_UnixText(self, _file)
-      
+
       f = QFile(_file)
       if f.open(QFile.ReadOnly):
          _txt = open(_file).read()
@@ -473,6 +515,8 @@ class TNLP_AddCase(QWizard):
          _dir.chop(4)
 
          susp_doc_name.setText(_dir)
+
+         self.__susp_file = _file
       else:
          QMessageBox.critical(self, self.parent().get_app_name(), 'Error opening file.')
 
@@ -497,9 +541,9 @@ class TNLP_AddCase(QWizard):
       if not f.exists():
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
-      
+
       convertWin_Into_UnixText(self, _file)
-      
+
       f = QFile(_file)
       if f.open(QFile.ReadOnly):
          _txt = open(_file).read()
@@ -583,14 +627,14 @@ class TNLP_AddCase(QWizard):
       """Updates components data"""
 
       cursor = _text_cmp.textCursor()
-      
+
       txt = unicode(_text_cmp.toPlainText(),'iso8859-1')
 
       if len(txt) == 0:
          return
       p1 = cursor.selectionStart()
       p2 = cursor.selectionEnd()
-      
+
       # set upper limit
       if p2 == len(txt): p2 -= 1
 
