@@ -207,10 +207,9 @@ class TNLP_XML_Manager:
       convertWin_Into_UnixText(self, _corpus_dir + _snippet_doc + '.txt')
       
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
-      _tmp_doc = _doc.read().decode('utf8')
+      _tmp_doc = unicode(_doc.read(),'utf8')
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
       _doc.close()
-      #~ print '%s: %s' % (_snippet_doc, _text)
 
       return _text
 

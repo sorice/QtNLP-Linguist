@@ -574,7 +574,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       # Inyectando texto unicode dentro del QTextEdit
       __text_susp.setHtml(case['susp_text'])
-      print 'TNLP_MW: ', case['susp_text'], type(case['susp_text'])
+      #print 'TNLP_MW: ', case['susp_text'], type(case['susp_text'])
 
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
          length = <b>%2</b> char(s), offset = <b>%3</b>")
@@ -586,7 +586,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       # Inyectando texto unicode dentro del QTextEdit
       __text_src.setHtml(case['src_text'])
-      print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
+      #print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
 
       return
 
@@ -816,7 +816,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       # highlight annotation
       cursor.setPosition(int(_info['susp_chunk_offset']))
       cursor.setPosition(int(_info['susp_chunk_offset']) + int(_info['susp_chunk_length']), QTextCursor.KeepAnchor)
-      print 'len __text_susp:', unicode(__text_susp.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_susp.toPlainText(),'iso8859-1'))
+      #print 'len __text_susp:', unicode(__text_susp.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_susp.toPlainText(),'iso8859-1'))
       format = QTextCharFormat()
       font = QFont()
       font.setItalic(True)
@@ -830,7 +830,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       # clear highlighted annotation
       cursor.setPosition(0, QTextCursor.MoveAnchor)
       cursor.setPosition(len(unicode(__text_src.toPlainText(),'iso8859-1')), QTextCursor.KeepAnchor)
-      print 'len __text_src:', unicode(__text_src.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_src.toPlainText(),'iso8859-1'))
+      #print 'len __text_src:', unicode(__text_src.toPlainText(),'iso8859-1'), ', ', len(unicode(__text_src.toPlainText(),'iso8859-1'))
       format = QTextCharFormat()
       font = QFont()
       format.setFont(font)
@@ -990,5 +990,5 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = cases_tab.currentWidget()
       (case, annotations, index) = case_tab.get_case_data()
 
-      add = TNLP_AddCase(__reader, True, case, self)
+      add = TNLP_AddCase(__reader, self, True, case)
       add.show()

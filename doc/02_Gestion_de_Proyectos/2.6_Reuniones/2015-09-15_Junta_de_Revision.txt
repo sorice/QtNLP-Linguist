@@ -3,8 +3,8 @@ Objetivo:
 Asisten: Abel y Leonel.
 
 Objetivos desglosados:
+{agosto/2015}* Probar modificaciones del Add Case en Windows.
 {agosto/2015}* Cuando se hace Add_Annotation no se actualiza el conteo del total_annotations y del total_true_annotations.
-{agosto/2015}* Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
 {agosto/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
 {agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 {agosto/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
@@ -15,7 +15,12 @@ Objetivos desglosados:
 {agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
 {agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
 
-
+[OK, 17/09/2015, 1h]{agosto/2015}* (bug) Añadiendo texto en español al susp generaba problemas de coding al open tab del case.
+[OK, 17/09/2015, 2h]{agosto/2015}* (bug) Add_Case después de los cambios de Leonel se partió en mil pedazos -> Era un problema de los nuevos parámetros de la clase .
+[OK, 17/09/2015]{agosto/2015}* Revisar algoritmo de cálculo de los sentences y preveer que el punto esté pegado cuando el usuario escribe por si mismo. Ejecutar el normalizador?-> No, hacer que el linguista separe el punto de la palabra y _ en palabras que llevan puntos como las abreviaturas, o siglas y acrónimos mal escritos al separarlas por punto.
+[OK, 17/09/2015]{agosto/2015}* (Abel) Adicionado el TNLP corpus v0.2 con todos las etiquetas nuevas diseñadas. Modificando el recurso html para que el tag TNLP_corpus_v0.2.zip se genere correctamente.
+[OK, 17/09/2015]{agosto/2015}* (Abel) Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
+[OK, 16/09/2015, 2h]{agosto/2015}* Modificando Add_Case permitiendo la edición en el fragmento sospechoso (versión inicial).
 [OK vencida en la anterior, 16/09/2015]{Leo, agosto/2015}* (Abel) Revisar si todos los contadores están funcionando, creo que el contador de palabras no lo está haciendo. Esto debería servirle a los usuarios que crearán casos para editarlos ahí mismo.
 [OK, 16/09/2015, 4h]{agosto/2015}* (Abel) Agregar componentes del case de acuerdo a lo diseñado en el artículo.
    . Adicionados los atributos del caso: topic_match, paraphrase_composition, lenght

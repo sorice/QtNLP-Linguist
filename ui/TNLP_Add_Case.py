@@ -15,7 +15,7 @@ from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_Un
 
 # import LETTERS to calculate especial chars.
 import string
-LETTERS = unicode(''.join([string.letters, string.digits,'Ññ']),'iso8859-1')
+LETTERS = unicode(''.join([string.letters, string.digits,'Ññáéíóúü']),'iso8859-1')
 
 try:
    _fromUtf8 = QString.fromUtf8
@@ -24,7 +24,7 @@ except AttributeError:
       return s
 
 class TNLP_AddCase(QWizard):
-   def __init__(self, _xml_manager, _edit = False, _case = None, parent = None):
+   def __init__(self, _xml_manager, parent = None, _edit = False, _case = None):
       # init the parent
       super(TNLP_AddCase, self).__init__(parent)
 
@@ -32,7 +32,8 @@ class TNLP_AddCase(QWizard):
       self.__xml = _xml_manager
       self.__working_dir = QFileInfo(self.__xml.get_xml_url()).absolutePath()
 
-      self.__susp_file = './' + _case['susp_snippet_doc']
+      if _edit == True:
+         self.__susp_file = './' + _case['susp_snippet_doc']
 
       self.__case = _case
       self.__edit_mode = _edit
@@ -457,8 +458,9 @@ class TNLP_AddCase(QWizard):
       if susp_doc <> "susp/":
          f = QFile(self.__susp_file)
          if f.open(QFile.WriteOnly):
-            f.write(susp_text)
+            f.write(susp_text.encode('utf8'))
             f.close()
+         
       else:
          # create new susp file
          QMessageBox.critical(self, self.parent().get_app_name(), 'TODO Create new susp document here.')
@@ -632,23 +634,32 @@ class TNLP_AddCase(QWizard):
 
       if len(txt) == 0:
          return
+      
       p1 = cursor.selectionStart()
       p2 = cursor.selectionEnd()
+      print "\ntexto:",txt[p1:p2]
 
       # set upper limit
-      if p2 == len(txt): p2 -= 1
+      if p2 == len(txt):
+         p2 -= 1
 
       if txt[p2] == '.':
          y = p2
       else:
-         y = txt.find('.', p2, len(txt))
+         y = txt.find('.', p2, len(txt));print "y:",y
 
-      # Find first letter char of the sentence. Avoid PlainText problems.
-      x_temp = txt.rfind('.', 0, p1)
+      # Find first letter char of the selected fragment. Avoid PlainText problems.
+      x_temp = txt.rfind('.', 0, p1) #return pos of last point.
+      
       while txt[x_temp] not in LETTERS:
-         x = x_temp+1
+         x = x_temp+1; print "x:",x
          x_temp+=1
 
+      #Refine de selected fragment.
+      print "refinando posiciones"
+      print "x0:",x
+      print "y0:",y
+      
       if x == -1:
          x = 0
 
@@ -656,6 +667,8 @@ class TNLP_AddCase(QWizard):
          y = len(txt)
       else:
          y += 1
+      
+      print "new text:",txt[x:y],"\n"
 
       # clear document format
       cursor.setPosition(0)
@@ -674,7 +687,7 @@ class TNLP_AddCase(QWizard):
       cursor.clearSelection()
       cursor.movePosition(QTextCursor.Start)
 
-      # update widgets
+      # update widgets values
       _offset.setText(str(x))
       _len.setText(str(y - x))
       _sentences.setText(str(len(txt[x:y].split(".")) - 1))
