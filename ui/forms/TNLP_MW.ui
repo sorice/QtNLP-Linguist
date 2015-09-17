@@ -216,7 +216,7 @@
   </widget>
   <action name="actionLoad_New_Corpus">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/menu_corpus.png</normaloff>:/toolbar/icons/menu_corpus.png</iconset>
    </property>
    <property name="text">
@@ -228,7 +228,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/add_corpus_doc.png</normaloff>:/toolbar/icons/add_corpus_doc.png</iconset>
    </property>
    <property name="text">
@@ -237,7 +237,7 @@
   </action>
   <action name="actionCorpus_Information">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/corpus_info.png</normaloff>:/toolbar/icons/corpus_info.png</iconset>
    </property>
    <property name="text">
@@ -246,7 +246,7 @@
   </action>
   <action name="actionClose_Corpus">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/close_corpus.png</normaloff>:/toolbar/icons/close_corpus.png</iconset>
    </property>
    <property name="text">
@@ -255,7 +255,7 @@
   </action>
   <action name="actionAdd_Algorithm_Output">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/add_algorithm_output.png</normaloff>:/toolbar/icons/add_algorithm_output.png</iconset>
    </property>
    <property name="text">
@@ -264,7 +264,7 @@
   </action>
   <action name="actionAdd_New_Case">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/add_case.png</normaloff>:/toolbar/icons/add_case.png</iconset>
    </property>
    <property name="text">
@@ -273,10 +273,10 @@
   </action>
   <action name="actionEdit_Case">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/edit_case.png</normaloff>:/toolbar/icons/edit_case.png</iconset>
    </property>
    <property name="text">
@@ -285,7 +285,7 @@
   </action>
   <action name="actionValidate_Case">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/validate_case.png</normaloff>:/toolbar/icons/validate_case.png</iconset>
    </property>
    <property name="text">
@@ -294,7 +294,7 @@
   </action>
   <action name="action_Re_Define_Boundaries">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/redefine_boundaries.png</normaloff>:/toolbar/icons/redefine_boundaries.png</iconset>
    </property>
    <property name="text">
@@ -303,7 +303,7 @@
   </action>
   <action name="actionView_Annotation">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/toolbar/icons/view_annotation.png</normaloff>:/toolbar/icons/view_annotation.png</iconset>
    </property>
    <property name="text">

@@ -65,6 +65,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionAdd_New_Case.triggered.connect(self.__add_case)
       self.actionAdd_annotation.triggered.connect(self.__add_annotation)
       self.actionCreate_Corpus.triggered.connect(self.__create_corpus)
+      self.actionEdit_Case.triggered.connect(self.__edit_case)
 
 
    def get_app_name(self):
@@ -570,11 +571,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['susp_snippet_offset'])
          .arg(str(0))
          .arg(case['susp_snippet_sentences_count']))
-         
+
       # Inyectando texto unicode dentro del QTextEdit
       __text_susp.setHtml(case['susp_text'])
       print 'TNLP_MW: ', case['susp_text'], type(case['susp_text'])
-      
+
       __lb_src_info.setText(QString("[<b>Source</b>]&nbsp;&nbsp;&nbsp;doc-name = <b>%1</b>, \
          length = <b>%2</b> char(s), offset = <b>%3</b>")
          .arg(case['src_snippet_doc'])
@@ -582,7 +583,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          .arg(case['src_snippet_offset'])
          .arg(str(0))
          .arg(case['src_snippet_sentences_count']))
-      
+
       # Inyectando texto unicode dentro del QTextEdit
       __text_src.setHtml(case['src_text'])
       print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
@@ -776,7 +777,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       __lb_note_machine_recog = case_tab.findChild(QLabel, "lb_note_machine_recog")
       __lb_note_current = case_tab.findChild(QLabel, "lb_note_current")
       __lb_note_count = case_tab.findChild(QLabel, "lb_note_count")
-      
+
       # Encontrando los QTextEdit
       __text_susp = case_tab.findChild(QTextEdit, "text_susp")
       __text_src = case_tab.findChild(QTextEdit, "text_src")
@@ -968,3 +969,26 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       corpus = TNLP_NewCorpus(manager, self)
       corpus.show()
+
+
+   def __edit_case(self):
+      '''Show Edit Case Window'''
+
+      if len(self.__corpus_list) == 0:
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+
+      # select correct corpus reader
+      __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      cases_tab = __corpus.children()[2] # cases tab
+      if cases_tab.currentIndex() == -1:
+         QMessageBox.critical(self, self.__appName, u'No case selected.')
+         return
+      case_tab = cases_tab.currentWidget()
+      (case, annotations, index) = case_tab.get_case_data()
+
+      add = TNLP_AddCase(__reader, True, case, self)
+      add.show()
