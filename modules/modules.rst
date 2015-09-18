@@ -5,9 +5,12 @@ Plugins
 
 |EScorpus| es un sistema basado en módulos o plugins. En esta sección mostramos a través del modelo de las 3 capas cómo está desarrollada esta aplicación informática. En la sección final usted también podrá encontrar la documentación dividida por módulos.
 
-	* :ref:`ToNgueLP Corpus Parser <ToNgueLP_corpus_parser_module>`
-	* :ref:`Modulo de comparación <EScorpus_module_matching>` o **Matching View**.
-	* :ref:`Módulo de diccionarios <EScorpus_module_dicts>` o **Dict View**.
+   * :ref:`ToNgueLP Corpus Parser <ToNgueLP_corpus_parser_module>`
+   * :ref:`Linguist module source code doc <ToNgueLP_linguist_module>`.
+   * :ref:`Matching module source code doc <>`.
+   * :ref:`Dict module source code doc <>`.
+   * :ref:`PAN Corpus Parser <>`.
+   * :ref:`P4P Corpus Parser <>`.
 
 :leer más: :ref:`Arquitectura de Software <ToNgueLP_architecture>` 
 
@@ -36,13 +39,13 @@ Data Model
 |EScorpus| no usa gestor de BD relacional o no relacional. La persistencia de sus datos se garantizan a través de XMLs diseñados para cada función de la aplicación.
 
 * `XML del Corpus de casos de Plagio  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/EScorpusYYY-plag-cases-corpus.html>`_
-	XML propio de |EScorpus| con el corpus etiquetado de los casos de plagio parafrástico manualmente anotados. Está basada en un artículo [1]_ dedicado a la creación del primer corpus de paráfrasis para la detección de plagio.
+   XML propio de |EScorpus| con el corpus etiquetado de los casos de plagio parafrástico manualmente anotados. Está basada en un artículo [1]_ dedicado a la creación del primer corpus de paráfrasis para la detección de plagio.
 * `XML base de todos los documentos <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/ZZZdoc.html>`_
-	Formato XML de todos los textos contenidos en |EScorpus|. Contienen información de los textos originales extraídas con diferentes técnicas NLP.
+   Formato XML de todos los textos contenidos en |EScorpus|. Contienen información de los textos originales extraídas con diferentes técnicas NLP.
 * `Reporte XML de casos detectados  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-plag-report.html>`_
-	XML de casos detectados por el **Algoritmo-XXX**
+   XML de casos detectados por el **Algoritmo-XXX**
 * `Reporte XML de los datos del Algoritmo-XXX  <../_static/01_Ingenieria/1.2_Arquitectura_y_Design/algorithmXXX-data-report.html>`_
-	XML con datos del **Algoritmo-XXX** antes y después del proceso de comparación.
+   XML con datos del **Algoritmo-XXX** antes y después del proceso de comparación.
 
 Referencias
 =============

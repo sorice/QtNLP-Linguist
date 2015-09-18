@@ -13,6 +13,7 @@ Objetivos desglosados:
 {agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
 {agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
 
+[OK, 18/09/2015,1.5h]{sept/2015}* Documentar todo el UI de los lingüistas, donde están las implementaciones de las clases del módulo linguist. Desde ahí se debe llamar al ejemplo full. Creados los bases para cumplir con la tarea de hacer el "ejemplo full". Documentado en mis notas de sphinx como poner un autoclass cuando está en un fichero que no un módulo.
 [OK, 18/09/2015,1h]{sept/2015}* Revisar la LRP de otros proyectos(Portal del CEETI) u otros documentos a ver donde guardo el cuando se realizó y cuanto demoró. Cambiadas todas las tablas para lograr documentar esto aquí mismo. Llenados algunos campos conocidos.
 [OK, 18/09/2015,1h]{sept/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
 [OK, 18/09/2015,1.5]{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).

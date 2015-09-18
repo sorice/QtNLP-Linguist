@@ -49,10 +49,10 @@ Guía de Usuario
 Guía de Desarrollo
 *******************
 
-Esta sección está orientada a desarrolladores activos, o entusiastas futuros desarrolladores de |EScorpus|. Ha sido dividida en dos partes **Arquitectura** y **Dev DOC** para ayudar a los desarrolladores con las dos cuestiones más importantes:
+Esta sección está orientada a desarrolladores activos, o entusiastas (futuros desarrolladores) de |EScorpus|. Ha sido dividida en dos partes **Arquitectura** y **Dev DOC** para ayudar a los desarrolladores con las dos cuestiones más importantes:
 
- * Básicamente, ¿cómo está constituida la estructura de |EScorpus|?
- * ¿Dónde puedo leer la documentación del proceso de desarrollo de |EScorpus|?  
+ * Básicamente, ¿cuál es el diseño de |EScorpus|?
+ * ¿Cómo puedo desarrollar |EScorpus|? ¿Documentación?
 
 .. toctree::
    :maxdepth: 2
@@ -65,6 +65,7 @@ Arq Software
   :Avanzado: 
     * :ref:`Arquitectura de Software de ToNgueLP <ToNgueLP_architecture>`
     * :ref:`Estilo de Código de ToNgueLP<TNLP_code_style>` 
+    * :ref:`Complete example to add a new tag/attribute in XML, UI, and code <ToNgueLP_dev_full_example>`
 
 Documentación
 ----------------
@@ -90,8 +91,6 @@ Matlab Example
        w = win(:)';
        f = f .* w(ones(nf,1),:);
    end
-
-.. autofunction:: enframe()
 
 Acerca de:
 *******************

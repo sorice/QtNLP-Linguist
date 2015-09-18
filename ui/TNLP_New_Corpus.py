@@ -9,6 +9,8 @@ from PyQt4.QtGui import *
 from forms.new_corpus_UI import Ui_NewCopus
 
 class TNLP_NewCorpus(QDialog, Ui_NewCopus):
+   """Class to handle the creations of a new corpus."""
+   
    def __init__(self, _xml_manager, parent = None):
       # init the parent
       super(TNLP_NewCorpus, self).__init__(parent)
