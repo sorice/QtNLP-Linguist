@@ -15,7 +15,10 @@ from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_Un
 
 # import LETTERS to calculate especial chars.
 import string
-LETTERS = unicode(''.join([string.letters, string.digits,'Ññáéíóúü']),'iso8859-1')
+LETTERS = unicode(''.join([string.letters, string.digits,'ÑñáéíóúüÁÓÉÍÚ']),'iso8859-1')
+
+# import Edit Case WizardPage helper
+from TNLP_WizardPage import TNLP_QWizardPage
 
 try:
    _fromUtf8 = QString.fromUtf8
@@ -33,7 +36,8 @@ class TNLP_AddCase(QWizard):
       self.__working_dir = QFileInfo(self.__xml.get_xml_url()).absolutePath()
 
       if _edit == True:
-         self.__susp_file = './' + _case['susp_snippet_doc']
+         self.__susp_file = str(self.__working_dir + "/" + _case['susp_snippet_doc'] + ".txt")
+         self.__src_file = str(self.__working_dir + "/" + _case['src_snippet_doc'] + ".txt")
 
       self.__case = _case
       self.__edit_mode = _edit
@@ -59,10 +63,14 @@ class TNLP_AddCase(QWizard):
       self.addPage(self.__create_docs_page())
 
 
-   def __create_general_page(self, _edit = False):
+   def __create_general_page(self):
       """Creates de first page of the wizard, or the general data of a case."""
 
-      page = QWizardPage()
+      if self.__edit_mode == True:
+         page = TNLP_QWizardPage()
+      else:
+         page = TNLP_QWizardPage()
+
       page.setSubTitle("General case data")
 
       gridLayout = QGridLayout()
@@ -202,6 +210,18 @@ class TNLP_AddCase(QWizard):
       page.registerField("generator_name*", le_generator_name)
       page.registerField("domain", cb_domain)
       page.registerField("document_type", cb_document_type)
+
+      if self.__edit_mode == True:
+         cb_problem_type.setCurrentIndex(cb_problem_type.findText(self.__case['problem_type']))
+         le_description.setText(self.__case['description'])
+         le_summary.setText(self.__case['annotator_summary'])
+         le_original_corpus_id.setText(self.__case['original_corpus_id'])
+         cb_text_extension.setCurrentIndex(cb_text_extension.findText(self.__case['text_extension']))
+         cb_plag_type.setCurrentIndex(cb_plag_type.findText(self.__case['plag_type']))
+         le_original_corpus.setText(self.__case['original_corpus'])
+         le_generator_name.setText(self.__case['generator_name'])
+         cb_domain.setCurrentIndex(cb_domain.findText(self.__case['domain']))
+         cb_document_type.setCurrentIndex(cb_document_type.findText(self.__case['document_type']))
 
       return page
 
@@ -374,22 +394,79 @@ class TNLP_AddCase(QWizard):
       te_susp_text.selectionChanged.connect(self.__susp_selection_changed)
       te_src_text.selectionChanged.connect(self.__src_selection_changed)
 
-      #~ if _edit == True:
-         #~ lb_susp_doc_name.setText(self.__case['susp_snippet_doc'])
-         #~ lb_susp_offset.setText(self.__case['susp_snippet_offset'])
-         #~ lb_susp_length.setText(self.__case['susp_snippet_length'])
-         #~ lb_susp_sentences_count.setText(self.__case['susp_snippet_sentences_count'])
-         #~ lb_susp_words_count.setText(self.__case['susp_snippet_words_count'])
-         #~ te_susp_text.setText(self.__case['susp_snippet_doc'])
-         #~ cb_susp_doc_topic.setCurrentIndex(cb_susp_doc_topic.findText(self.__case['susp_snippet_topic']))
-#~
-         #~ lb_src_doc_name.setText(self.__case['src_snippet_doc'])
-         #~ lb_src_offset.setText(self.__case['src_snippet_offset'])
-         #~ lb_src_length.setText(self.__case['src_snippet_length'])
-         #~ lb_src_sentences_count.setText(self.__case['src_snippet_sentences_count'])
-         #~ lb_src_words_count.setText(self.__case['src_snippet_words_count'])
-         #~ te_src_text.setText(self.__case['src_snippet_doc'])
-         #~ cb_src_doc_topic.setCurrentIndex(cb_src_doc_topic.findText(self.__case['src_snippet_topic']))
+      if self.__edit_mode == True:
+         lb_susp_doc_name.setText(self.__case['susp_snippet_doc'])
+         lb_susp_offset.setText(self.__case['susp_snippet_offset'])
+         lb_susp_length.setText(self.__case['susp_snippet_length'])
+         lb_susp_sentences_count.setText(self.__case['susp_snippet_sentences_count'])
+         lb_susp_words_count.setText(self.__case['susp_snippet_words_count'])
+         cb_susp_doc_topic.setCurrentIndex(cb_susp_doc_topic.findText(self.__case['susp_snippet_topic']))
+         lb_src_doc_name.setText(self.__case['src_snippet_doc'])
+         lb_src_offset.setText(self.__case['src_snippet_offset'])
+         lb_src_length.setText(self.__case['src_snippet_length'])
+         lb_src_sentences_count.setText(self.__case['src_snippet_sentences_count'])
+         lb_src_words_count.setText(self.__case['src_snippet_words_count'])
+         cb_src_doc_topic.setCurrentIndex(cb_src_doc_topic.findText(self.__case['src_snippet_topic']))
+
+         # load text
+         # susp document
+         f = QFile(self.__susp_file)
+         if not f.exists():
+            QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid susp file.<br><b>' + self.__susp_file + "</b>")
+         else:
+            convertWin_Into_UnixText(self, self.__susp_file)
+
+            if f.open(QFile.ReadOnly):
+               _txt = open(self.__susp_file).read()
+               _text = unicode(_txt,'utf8')
+               te_susp_text.setText(_text)
+
+         # src document
+         f = QFile(self.__src_file)
+         if not f.exists():
+            QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid src file.<br><b>' + self.__src_file + "</b>")
+         else:
+            convertWin_Into_UnixText(self, self.__src_file)
+
+            if f.open(QFile.ReadOnly):
+               _txt = open(self.__src_file).read()
+               _text = unicode(_txt,'utf8')
+               te_src_text.setText(_text)
+
+         # format documents
+         # clear susp format
+         cursor = te_susp_text.textCursor()
+         cursor.setPosition(0)
+         cursor.setPosition(te_susp_text.toPlainText().length(), QTextCursor.KeepAnchor)
+         format = QTextCharFormat()
+         format.setBackground(QBrush(Qt.white))
+         cursor.setCharFormat(format)
+         # highlight selection
+         cursor.setPosition(int(self.__case['susp_snippet_offset']))
+         cursor.setPosition(int(self.__case['susp_snippet_offset']) + int(self.__case['susp_snippet_length']),
+            QTextCursor.KeepAnchor)
+         format = QTextCharFormat()
+         format.setBackground(QBrush(Qt.green))
+         cursor.mergeCharFormat(format)
+         cursor.clearSelection()
+         cursor.movePosition(QTextCursor.Start)
+
+         # clear src format
+         cursor = te_src_text.textCursor()
+         cursor.setPosition(0)
+         cursor.setPosition(te_src_text.toPlainText().length(), QTextCursor.KeepAnchor)
+         format = QTextCharFormat()
+         format.setBackground(QBrush(Qt.white))
+         cursor.setCharFormat(format)
+         # highlight selection
+         cursor.setPosition(int(self.__case['src_snippet_offset']))
+         cursor.setPosition(int(self.__case['src_snippet_offset']) + int(self.__case['src_snippet_length']),
+            QTextCursor.KeepAnchor)
+         format = QTextCharFormat()
+         format.setBackground(QBrush(Qt.green))
+         cursor.mergeCharFormat(format)
+         cursor.clearSelection()
+         cursor.movePosition(QTextCursor.Start)
 
       return page
 
@@ -460,25 +537,28 @@ class TNLP_AddCase(QWizard):
          if f.open(QFile.WriteOnly):
             f.write(susp_text.encode('utf8'))
             f.close()
-         
       else:
          # create new susp file
          QMessageBox.critical(self, self.parent().get_app_name(), 'TODO Create new susp document here.')
          return
 
       if self.__edit_mode == False:
-         new_case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
+         case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
             automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
             susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
       else:
-         print "EDITING"
-         return
+         case_id = self.__xml.edit_case(self.__case['id'], problem_type, text_extension, description, plag_type, annotator_summary,
+            automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
+            susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
 
       self.__xml.write_xml()
 
-      self.parent().update_case_list(new_case_id)
-
-      QMessageBox.information(self, self.parent().get_app_name(), u'Case added.')
+      if self.__edit_mode == False:
+         self.parent().update_case_list(case_id)
+         QMessageBox.information(self, self.parent().get_app_name(), u'Case added.')
+      else:
+         self.parent().update_case_list(case_id, True)
+         QMessageBox.information(self, self.parent().get_app_name(), u'Case updated.')
 
       self.close()
 
@@ -634,7 +714,7 @@ class TNLP_AddCase(QWizard):
 
       if len(txt) == 0:
          return
-      
+
       p1 = cursor.selectionStart()
       p2 = cursor.selectionEnd()
       print "\ntexto:",txt[p1:p2]
@@ -650,7 +730,7 @@ class TNLP_AddCase(QWizard):
 
       # Find first letter char of the selected fragment. Avoid PlainText problems.
       x_temp = txt.rfind('.', 0, p1) #return pos of last point.
-      
+
       while txt[x_temp] not in LETTERS:
          x = x_temp+1; print "x:",x
          x_temp+=1
@@ -659,7 +739,7 @@ class TNLP_AddCase(QWizard):
       print "refinando posiciones"
       print "x0:",x
       print "y0:",y
-      
+
       if x == -1:
          x = 0
 
@@ -667,7 +747,7 @@ class TNLP_AddCase(QWizard):
          y = len(txt)
       else:
          y += 1
-      
+
       print "new text:",txt[x:y],"\n"
 
       # clear document format

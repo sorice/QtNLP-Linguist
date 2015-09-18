@@ -5,7 +5,6 @@ Asisten: Abel y Leonel.
 Objetivos desglosados:
 {agosto/2015}* Probar modificaciones del Add Case en Windows.
 {agosto/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
-{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 {agosto/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
 {agosto/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
 
@@ -14,6 +13,8 @@ Objetivos desglosados:
 {agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
 {agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
 
+[OK, 18/09/2015]{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
+[80%, 17/09/2015]{agosto/2015}* (Leo) Implementación del editar case. Nuevo wizard incluido.
 [OK, 17/09/2015, 0.75h]{agosto/2015}* Cuando se hace Add_Annotation no se actualiza el conteo del total_annotations y del total_true_annotations. Calcular además cuando es una anotación falsa-positiva.
 [OK, 17/09/2015, 1h]{agosto/2015}* (bug) Añadiendo texto en español al susp generaba problemas de coding al open tab del case.
 [OK, 17/09/2015, 2h]{agosto/2015}* (bug) Add_Case después de los cambios de Leonel se partió en mil pedazos -> Era un problema de los nuevos parámetros de la clase .

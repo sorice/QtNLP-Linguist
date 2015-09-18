@@ -929,22 +929,30 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       add.show()
 
 
-   def update_case_list(self, _new_case_id):
+   def update_case_list(self, _case_id, _edit = False):
       '''Update cases list'''
 
       # locate working elements
       __corpus = self.corpusTabs.currentWidget() # corpus
       __cases_list = __corpus.children()[1].children()[2] # cases list
+      case_tab = __corpus.children()[2] # cases tab
       _total_lb = __corpus.children()[1].children()[3] # total cases
 
-      # update cases list
+      # get case data
       __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
-      case = __reader.get_case_by_id(_new_case_id)
-      listItem = QListWidgetItem(QIcon(plag_types[case['plag_type']][0]), QString("[" + case['id'] + "]: " + case['annotator_summary']))
-      listItem.setData(Qt.UserRole, [case['id'], plag_types[case['plag_type']][1]])
-      __cases_list.addItem(listItem)
+      case = __reader.get_case_by_id(_case_id)
 
-      _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
+      if _edit == True:
+         __cases_list.currentItem().setIcon(QIcon(plag_types[case['plag_type']][0]))
+         __cases_list.currentItem().setText(QString("[" + case['id'] + "]: " + case['annotator_summary']))
+         case_tab.removeTab(case_tab.currentIndex())
+         __cases_list.itemClicked.emit(__cases_list.currentItem())
+      else:
+         listItem = QListWidgetItem(QIcon(plag_types[case['plag_type']][0]), QString("[" + case['id'] + "]: " + case['annotator_summary']))
+         listItem.setData(Qt.UserRole, [case['id'], plag_types[case['plag_type']][1]])
+         __cases_list.addItem(listItem)
+
+         _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
 
 
    def update_annotations_list(self, _new_annotation):
