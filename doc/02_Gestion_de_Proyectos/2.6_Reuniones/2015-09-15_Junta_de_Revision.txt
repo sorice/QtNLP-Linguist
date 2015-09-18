@@ -2,24 +2,26 @@ Reunión de la Junta de Revisión
 Objetivo: Culminar la versión 1.0 del QtMainWindows.
 Asisten: Abel y Leonel.
 
+{sept/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
+
 Objetivos desglosados:
-{agosto/2015}* Probar modificaciones del Add Case en Windows.
-{agosto/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
-{agosto/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
+{sept/2015}* Probar modificaciones del Add Case en Windows.
+{sept/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
 
 {agosto/2015}* (Leo) Implementación del editar case, editar annotation para finales de agosto.[]
 {agosto/2015}* (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
 {agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
 {agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
 
-[OK, 18/09/2015]{agosto/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
-[OK, 18/09/2015]{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
+[OK, 18/09/2015,1h]{sept/2015}* Revisar la LRP de otros proyectos(Portal del CEETI) u otros documentos a ver donde guardo el cuando se realizó y cuanto demoró. Cambiadas todas las tablas para lograr documentar esto aquí mismo. Llenados algunos campos conocidos.
+[OK, 18/09/2015,1h]{sept/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
+[OK, 18/09/2015,1.5]{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 [80%, 17/09/2015]{agosto/2015}* (Leo) Implementación del editar case. Nuevo wizard incluido.
-[OK, 17/09/2015, 0.75h]{agosto/2015}* Cuando se hace Add_Annotation no se actualiza el conteo del total_annotations y del total_true_annotations. Calcular además cuando es una anotación falsa-positiva.
-[OK, 17/09/2015, 1h]{agosto/2015}* (bug) Añadiendo texto en español al susp generaba problemas de coding al open tab del case.
-[OK, 17/09/2015, 2h]{agosto/2015}* (bug) Add_Case después de los cambios de Leonel se partió en mil pedazos -> Era un problema de los nuevos parámetros de la clase .
-[OK, 17/09/2015]{agosto/2015}* Revisar algoritmo de cálculo de los sentences y preveer que el punto esté pegado cuando el usuario escribe por si mismo. Ejecutar el normalizador?-> No, hacer que el linguista separe el punto de la palabra y _ en palabras que llevan puntos como las abreviaturas, o siglas y acrónimos mal escritos al separarlas por punto.
-[OK, 17/09/2015]{agosto/2015}* (Abel) Adicionado el TNLP corpus v0.2 con todos las etiquetas nuevas diseñadas. Modificando el recurso html para que el tag TNLP_corpus_v0.2.zip se genere correctamente.
+[OK, 17/09/2015, 0.75h]{sept/2015}* Cuando se hace Add_Annotation no se actualiza el conteo del total_annotations y del total_true_annotations. Calcular además cuando es una anotación falsa-positiva.
+[OK, 17/09/2015, 1h]{sept/2015}* (bug) Añadiendo texto en español al susp generaba problemas de coding al open tab del case.
+[OK, 17/09/2015, 2h]{sept/2015}* (bug) Add_Case después de los cambios de Leonel se partió en mil pedazos -> Era un problema de los nuevos parámetros de la clase .
+[OK, 17/09/2015]{sept/2015}* Revisar algoritmo de cálculo de los sentences y preveer que el punto esté pegado cuando el usuario escribe por si mismo. Ejecutar el normalizador?-> No, hacer que el linguista separe el punto de la palabra y _ en palabras que llevan puntos como las abreviaturas, o siglas y acrónimos mal escritos al separarlas por punto.
+[OK, 17/09/2015]{sept/2015}* (Abel) Adicionado el TNLP corpus v0.2 con todos las etiquetas nuevas diseñadas. Modificando el recurso html para que el tag TNLP_corpus_v0.2.zip se genere correctamente.
 [OK, 17/09/2015]{agosto/2015}* (Abel) Agregar URLs al .VUE del doctorado. En sentido general actualizar link al algoritmo hecho por Abel para el PAN y Link al compactado del corpus+readme.
 [OK, 16/09/2015, 2h]{agosto/2015}* Modificando Add_Case permitiendo la edición en el fragmento sospechoso (versión inicial).
 [OK vencida en la anterior, 16/09/2015]{Leo, agosto/2015}* (Abel) Revisar si todos los contadores están funcionando, creo que el contador de palabras no lo está haciendo. Esto debería servirle a los usuarios que crearán casos para editarlos ahí mismo.
@@ -34,15 +36,15 @@ Objetivos desglosados:
    . Calculando valores automáticos para insertarlos al adicionar el caso.
 [OK, 16/09/2015, 0.15h]{agosto/2015}* (Abel) Calcular el total_true_annotations. Agregar al show_corpus_info.
 [OK, 16/09/2015, 0.5h]{agosto/2015}* (Abel) Confeccionar scripts para el cálculo automático de total de casos, y total de anotaciones. Modificado en la vista del Dialog TNLP_MW.show_corpus_info.
-[OK, 16/09/2015, 1h]{agosto/2015}* (Abel) Adicionar cuadradito blanco para plag_types = none.
-[OK, 16/09/2015, 2h]{agosto/2015}* Elaborar la junta de revisión de septiembre de 2015, y planificar todo el trabajo relativo a QtNLP de este mes para hacer release v1.0 de la herramienta y luego del corpus.
+[OK, 16/09/2015, 1h]{sept/2015}* (Abel) Adicionar cuadradito blanco para plag_types = none.
+[OK, 16/09/2015, 2h]{sept/2015}* Elaborar la junta de revisión de septiembre de 2015, y planificar todo el trabajo relativo a QtNLP de este mes para hacer release v1.0 de la herramienta y luego del corpus.
 [OK, 15/09/2015]{agosto/2015}* (Abel) Corregir todos los labels de las tipologías de plagio para que queden iguales en el README.html, Enum_Helper.py y TNLP.xml.
 [OK, 15/09/2015]{agosto/2015}* (Abel) Integrar los casos y las anotaciones de Yanisbel de los casos 9,10,11,12,13.
-[OK, 15/09/2015]{agosto/2015}* Revisar la última junta de revisión del 6 de abril de 2015 y ver tareas pendientes.
+[OK, 15/09/2015]{sept/2015}* Revisar la última junta de revisión del 6 de abril de 2015 y ver tareas pendientes.
 [OK, 15/09/2015]{agosto/2015}* (Abel)Hacer los cambios al parser con estas dos atributos nuevos del caso: domain y document_type.
 [OK, 15/09/2015]{agosto/2015}* (Abel)Confeccionar scripts para el cálculo automático de total_true_cases como baseline para los demás scripts de actualización.
 [OK, 15/09/2015]{agosto/2015}* (Abel)Traducción del README al idioma inglés.
-[OK, 15/09/2015]{agosto/2015}* Abel y Leonel sincronizar carpetas del proyecto. Revisar las tareas pendientes.
+[OK, 15/09/2015]{sept/2015}* Abel y Leonel sincronizar carpetas del proyecto. Revisar las tareas pendientes.
 
 Acuerdos (digitales) para Junio de 2015 (ver OK en esta junta, pues no hubo junta en Junio)
 *******************
