@@ -12,7 +12,7 @@
 """
 
 from lib.python_contrib.pxdom import pxdom
-import os, urllib
+import os, urllib, re
 from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
 
 class TNLP_XML_Manager:
@@ -458,6 +458,7 @@ class TNLP_XML_Manager:
 
       serialiser = self.__xml_document.implementation.createLSSerializer()
       serialiser.writeToURI(self.__xml_document, 'file:' + urllib.pathname2url(self.__xml_path))
+      self.__human_readable_parse()
 
 
    def get_corpus_name(self):
@@ -584,7 +585,30 @@ class TNLP_XML_Manager:
       self.write_xml()
 
       return
-
+      
+   def __human_readable_parse(self):
+      """Parse the writed xml and rewrite it in a human readable form."""
+      
+      xml_file = open(self.__xml_path).read() #open de xml
+      
+      #Adding four whitespace by level of deepness
+      xml_file = re.sub('>\s*<cases>', '>\n    <cases>',xml_file)
+      xml_file = re.sub(r'>\s*</cases>', '>\n    </cases>',xml_file)
+      xml_file = re.sub(r'>\s*<group', '>\n        <group',xml_file)
+      xml_file = re.sub(r'>\s*</group>', '>\n        </group>',xml_file)
+      xml_file = re.sub(r'>\s*<case ', '>\n            <case ',xml_file)
+      xml_file = re.sub(r'>\s*</case>', '>\n            </case>',xml_file)
+      xml_file = re.sub(r'>\s*<susp_snippet', '>\n                <susp_snippet',xml_file)
+      xml_file = re.sub(r'>\s*<src_snippet', '>\n                <src_snippet',xml_file)
+      xml_file = re.sub(r'>\s*<annotation', '>\n                <annotation',xml_file)
+      xml_file = re.sub(r'>\s*</annotation>', '>\n                </annotation>',xml_file)
+      xml_file = re.sub(r'>\s*<phenomenon', '>\n                    <phenomenon',xml_file)
+      xml_file = re.sub(r'>\s*<susp_chunk', '>\n                    <susp_chunk',xml_file)
+      xml_file = re.sub(r'>\s*<src_chunk', '>\n                    <src_chunk',xml_file)
+      
+      new_xml_file = open(self.__xml_path,'w')
+      new_xml_file.write(xml_file)
+      new_xml_file.close()
 
    def remove_case(self, _case_id):
       """Remove a case from XML"""

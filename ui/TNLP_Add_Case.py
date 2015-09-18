@@ -15,7 +15,7 @@ from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_Un
 
 # import LETTERS to calculate especial chars.
 import string
-LETTERS = unicode(''.join([string.letters, string.digits,'Ññáéíóúü']),'iso8859-1')
+LETTERS = unicode(''.join([string.letters, string.digits,'ÑñáéíóúüÁÓÉÍÚ']),'iso8859-1')
 
 # import Edit Case WizardPage helper
 from TNLP_WizardPage import TNLP_QWizardPage
