@@ -53,7 +53,7 @@ class TNLP_XML_Manager:
 
    def get_corpus_info(self): #OK
       """Return the root element info in a dictionary."""
-      
+
       # update corpus info
       self.__update_corpus_info()
 
@@ -123,7 +123,7 @@ class TNLP_XML_Manager:
          case['generator_name'] = item.getAttribute('generator_name')
          case['domain'] = item.getAttribute('domain')
          case['document_type'] = item.getAttribute('document_type')
-         
+
          # susp snippet node
          case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
          case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
@@ -131,9 +131,9 @@ class TNLP_XML_Manager:
          case['susp_snippet_sentences_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('sentences_count')
          case['susp_snippet_words_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('words_count')
          case['susp_snippet_topic'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('topic')
-         
+
          case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'], case['susp_snippet_offset'], case['susp_snippet_length'])
-         
+
          # susp snippet node
          case['src_snippet_doc'] = item.getElementsByTagName('src_snippet')[0].getAttribute('doc')
          case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
@@ -141,7 +141,7 @@ class TNLP_XML_Manager:
          case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
          case['src_snippet_words_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('words_count')
          case['src_snippet_topic'] = item.getElementsByTagName('src_snippet')[0].getAttribute('topic')
-         
+
          case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
 
          self.__cases.append(case)
@@ -161,6 +161,9 @@ class TNLP_XML_Manager:
       for item in tmp_cases:
          case['id'] = item.getAttribute('id')
          if case['id'] == str(case_id):
+            case['problem_type'] = item.parentNode.getAttribute('NLP_problem_type')
+            case['text_extension'] = item.parentNode.getAttribute('text_extension')
+
             case['description'] = item.getAttribute('description')
             case['plag_type'] = item.getAttribute('plag_type')
             case['annotator_summary'] = item.getAttribute('annotator_summary')
@@ -171,10 +174,9 @@ class TNLP_XML_Manager:
             case['generator_name'] = item.getAttribute('generator_name')
             case['domain'] = item.getAttribute('domain')
             case['document_type'] = item.getAttribute('document_type')
-            case['topic_match'] = item.getAttribute('topic_match')
             case['paraphrase_composition'] = item.getAttribute('paraphrase_composition')
             case['lenght'] = item.getAttribute('lenght')
-            
+
             # susp snippet node
             case['susp_snippet_doc'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('doc')
             case['susp_snippet_offset'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('offset')
@@ -182,9 +184,9 @@ class TNLP_XML_Manager:
             case['susp_snippet_sentences_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('sentences_count')
             case['susp_snippet_words_count'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('words_count')
             case['susp_snippet_topic'] = item.getElementsByTagName('susp_snippet')[0].getAttribute('topic')
-            
+
             case['susp_text'] = self.__get_snippet_text(case['susp_snippet_doc'],case['susp_snippet_offset'], case['susp_snippet_length'])
-            
+
             # src snippet node
             case['src_snippet_doc'] = item.getElementsByTagName('src_snippet')[0].getAttribute('doc')
             case['src_snippet_offset'] = item.getElementsByTagName('src_snippet')[0].getAttribute('offset')
@@ -192,8 +194,17 @@ class TNLP_XML_Manager:
             case['src_snippet_sentences_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('sentences_count')
             case['src_snippet_words_count'] = item.getElementsByTagName('src_snippet')[0].getAttribute('words_count')
             case['src_snippet_topic'] = item.getElementsByTagName('src_snippet')[0].getAttribute('topic')
-            
+
             case['src_text'] = self.__get_snippet_text(case['src_snippet_doc'], case['src_snippet_offset'], case['src_snippet_length'])
+
+            #~ # locate parent data
+            #~ parent_group = None
+            #~ tmp_groups = self.__root_node.getElementsByTagName('group')
+            #~ for group in groups:
+               #~ tmp_cases = group.getElementsByTagName('case')
+               #~ for item in tmp_cases:
+                  #~ if item.getAttribute('id') == str(case_id):
+                     #~ parent_group = group
 
             break
 
@@ -203,9 +214,9 @@ class TNLP_XML_Manager:
       """Return from a specific text the snippet with the given offset and length."""
 
       _corpus_dir = os.path.dirname(self.__xml_path) + '/'
-      
+
       convertWin_Into_UnixText(self, _corpus_dir + _snippet_doc + '.txt')
-      
+
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
       _tmp_doc = unicode(_doc.read(),'utf8')
       _text = _tmp_doc[int(_snippet_offset):int(_snippet_offset) + int(_snippet_length)]
@@ -244,13 +255,13 @@ class TNLP_XML_Manager:
          annotation['annotation_date']= item.getAttribute('annotation_date')
          annotation['phenomenon_type'] = item.getElementsByTagName('phenomenon')[0].getAttribute('type')
          annotation['projection'] = item.getElementsByTagName('phenomenon')[0].getAttribute('projection')
-         
+
          annotation['susp_chunk_offset'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('offset')
          annotation['susp_chunk_length'] = item.getElementsByTagName('susp_chunk')[0].getAttribute('length')
-         
+
          annotation['src_chunk_offset'] = item.getElementsByTagName('src_chunk')[0].getAttribute('offset')
          annotation['src_chunk_length'] = item.getElementsByTagName('src_chunk')[0].getAttribute('length')
-         
+
          annotation['susp_sentence'] = self.__get_sentence_from_snippet(_case['susp_text'], annotation['susp_chunk_offset'])
          annotation['src_sentence'] = self.__get_sentence_from_snippet(_case['src_text'], annotation['src_chunk_offset'])
 
@@ -273,7 +284,7 @@ class TNLP_XML_Manager:
 
    def add_case(self, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
       _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _topic_match, _paraphrase_composition, _lenght, _susp_doc, _susp_offset,
-      _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic,): #OK
+      _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic, _case_id = None): #OK
       """Add a new case to the corpus"""
 
       #TODO validate all input data
@@ -296,14 +307,17 @@ class TNLP_XML_Manager:
          self.__cases_node.appendChild(actual_group)
 
       # calculate new case id
-      ids = []
-      for c in self.get_cases():
-         ids.append(int(c['id']))
+      if _case_id == None:
+         ids = []
+         for c in self.get_cases():
+            ids.append(int(c['id']))
 
-      if len(ids) > 0:
-         case_id = max(ids) + 1
+         if len(ids) > 0:
+            case_id = max(ids) + 1
+         else:
+            case_id = 1
       else:
-         case_id = 1
+         case_id = _case_id
 
       # create new node and append it to current group
       # case node
@@ -348,7 +362,7 @@ class TNLP_XML_Manager:
 
       # update result
       result = True
-      
+
       # update corpus info
       self.__update_corpus_info()
 
@@ -379,7 +393,7 @@ class TNLP_XML_Manager:
          annotation_id = max(ids) + 1
       else:
          annotation_id = 1
-      
+
       #Calculate if annotation in not paraphrase or = to "false positive"
       if _type == "non-paraphrase":
          _is_paraphrase="False"
@@ -415,25 +429,25 @@ class TNLP_XML_Manager:
 
       # add annotation to case
       actual_case.appendChild(annotation)
-      
+
       # calc paraphrase_composition
       annotations = self.get_annotations_of_case(_case_id)
       types = set()
       for item in annotations:
          types.add(item['phenomenon_type'])
-      
+
       paraphrase_composition = "pure"
       if len(types) > 2:
          paraphrase_composition = "multiple"
       else:
          if len(types) > 1:
             paraphrase_composition = "mixed"
-      
+
       actual_case.setAttribute('paraphrase_composition',paraphrase_composition)
 
       # update result
       result = True
-      
+
       # update corpus info
       self.__update_corpus_info()
 
@@ -511,15 +525,38 @@ class TNLP_XML_Manager:
       return self.__xml_path
 
 
+   def edit_case(self, _case_id, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
+      _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _topic_match, _paraphrase_composition, _lenght, _susp_doc, _susp_offset,
+      _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic): #OK
+      """Add a new case to the corpus"""
+
+      #TODO validate all input data
+
+      result = False
+
+      self.remove_case(_case_id)
+      self.add_case(_problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
+         _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _topic_match, _paraphrase_composition, _lenght, _susp_doc, _susp_offset,
+         _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic, _case_id)
+
+      # update result
+      result = True
+
+      # update corpus info
+      self.__update_corpus_info()
+
+      return _case_id
+
+
    # auxiliar & private methods
    def __update_corpus_info(self):
       """Update corpus information such as modification date and so on..."""
-      
+
       #Count total cases.
       tmp_cases = self.__root_node.getElementsByTagName('case')
       total_cases = len(tmp_cases)
       self.__root_node.setAttribute('total_cases', str(total_cases))
-      
+
       #Count total true cases.
       case = {}
       total_true_cases = 0
@@ -528,12 +565,12 @@ class TNLP_XML_Manager:
          if case['plag_type'] != "none":
             total_true_cases += 1
       self.__root_node.setAttribute('total_true_cases', str(total_true_cases))
-      
+
       #Count total annotations.
       tmp_annotations = self.__root_node.getElementsByTagName('annotation')
       total_annotations = len(tmp_annotations)
       self.__root_node.setAttribute('total_annotations', str(total_annotations))
-      
+
       #Count total true cases.
       annotation = {}
       total_true_annotations = 0
@@ -542,9 +579,25 @@ class TNLP_XML_Manager:
          if annotation['is_paraphrase'] == "True":
             total_true_annotations += 1
       self.__root_node.setAttribute('total_true_annotations', str(total_true_annotations))
-      
+
       #Write calculated data to XML.
       self.write_xml()
-      
+
       return
+
+
+   def remove_case(self, _case_id):
+      """Remove a case from XML"""
+
+      # locate target case
+      tmp_cases = self.__root_node.getElementsByTagName('case')
+      for item in tmp_cases:
+         if item.getAttribute('id') == str(_case_id):
+            item.parentNode.removeChild(item)
+
+            #~ if len(item.parentNode.childNodes) == 1:
+               #~ item.parentNode.parentNode.removeChild(item.parentNode)
+            #~ else:
+
+            return
 
