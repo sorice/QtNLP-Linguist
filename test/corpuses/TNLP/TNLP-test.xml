@@ -15,10 +15,6 @@
             </case>
         </group>
         <group NLP_problem_type="similarity" text_extension="paragraph">
-            <case id="9" description="prueba 2 quitar \r" plag_type="interlingual" annotator_summary="prueba" automatic_summary="" original_corpus="TNLP" original_corpus_id="14" generated_by="human" generator_name="abelm">
-                <susp_snippet doc="susp/suspicious-document002win" offset="3286" length="171" sentences_count="1"/>
-                <src_snippet doc="src/source-document035" offset="4721" length="179" sentences_count="1"/>
-            </case>
             <case id="10" description="prueba 5 quitar \r" plag_type="interlingual" annotator_summary="prueba 2" automatic_summary="" original_corpus="TNLP" original_corpus_id="14" generated_by="human" generator_name="abelm">
                 <susp_snippet doc="susp/suspicious-document002win" offset="3286" length="171" sentences_count="1"/>
                 <src_snippet doc="src/source-document035" offset="4721" length="179" sentences_count="1"/>
@@ -159,6 +155,10 @@
             <case id="15" description="prueba 19 sept" plag_type="bad_quotation" annotator_summary="probar editar caso OK" automatic_summary="" original_corpus="TNLP" original_corpus_id="56" generated_by="human" generator_name="leonel" domain="informatic" document_type="web page" topic_match="inter-topic" paraphrase_composition="" lenght="short">
                 <susp_snippet doc="susp/susp-doc00005" offset="0" length="122" sentences_count="1" words_count="17" topic="Artificial Intelligence"/>
                 <src_snippet doc="src/src-doc02276" offset="1" length="72" sentences_count="1" words_count="10" topic="Software Engineering"/>
+            </case>
+            <case id="9" description="prueba 2 quitar" plag_type="interlingual" annotator_summary="pruebaf ttr" automatic_summary="" original_corpus="TNLP" original_corpus_id="14" generated_by="human" generator_name="abelm" domain="informatic" document_type="book" topic_match="intra-topic" paraphrase_composition="" lenght="short">
+                <susp_snippet doc="susp/suspicious-document002win" offset="17" length="170" sentences_count="1" words_count="26" topic=""/>
+                <src_snippet doc="src/source-document035" offset="259" length="93" sentences_count="1" words_count="16" topic=""/>
             </case>
         </group>
     </cases>

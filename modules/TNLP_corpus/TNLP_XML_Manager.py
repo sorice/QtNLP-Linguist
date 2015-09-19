@@ -360,6 +360,9 @@ class TNLP_XML_Manager:
       # add case to group
       actual_group.appendChild(case)
 
+      # write xml
+      self.__write_xml()
+
       # update result
       result = True
 
@@ -448,6 +451,9 @@ class TNLP_XML_Manager:
 
       actual_case.setAttribute('paraphrase_composition',paraphrase_composition)
 
+      # write xml
+      self.__write_xml()
+
       # update result
       result = True
 
@@ -456,7 +462,7 @@ class TNLP_XML_Manager:
 
       return self.get_annotations_of_case(_case_id)[-1]
 
-   def write_xml(self):
+   def __write_xml(self):
       """Write data to _xml_file"""
 
       serialiser = self.__xml_document.implementation.createLSSerializer()
@@ -586,7 +592,12 @@ class TNLP_XML_Manager:
                #~ item.parentNode.parentNode.removeChild(item.parentNode)
             #~ else:
 
-            return
+            # write xml
+            self.__write_xml()
+
+            return True
+
+      return False
 
 
    def remove_annotation_of_case(self, _annotation_id, _case_id):
@@ -604,7 +615,12 @@ class TNLP_XML_Manager:
          if item.getAttribute('id') == str(_annotation_id):
             item.parentNode.removeChild(item)
 
-            return
+            # write xml
+            self.__write_xml()
+
+            return True
+
+      return False
 
 
    # auxiliar & private methods
@@ -640,7 +656,7 @@ class TNLP_XML_Manager:
       self.__root_node.setAttribute('total_true_annotations', str(total_true_annotations))
 
       #Write calculated data to XML.
-      self.write_xml()
+      self.__write_xml()
 
       return
 

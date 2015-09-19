@@ -591,8 +591,6 @@ class TNLP_AddCase(QWizard):
             automatic_summary, original_corpus, original_corpus_id, generated_by, generator_name, domain, document_type, topic_match, paraphrase_composition, case_lenght, susp_doc, susp_offset,
             susp_length, susp_sentences_count, susp_words_count, susp_doc_topic, src_doc, src_offset, src_length, src_sentences_count, src_words_count, src_doc_topic)
 
-      self.__xml.write_xml()
-
       if self.__edit_mode == False:
          self.parent().update_case_list(case_id)
          QMessageBox.information(self, self.parent().get_app_name(), u'Case added.')

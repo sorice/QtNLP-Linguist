@@ -107,8 +107,6 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
             case_data['susp_offset'], case_data['susp_length'], case_data['src_offset'],
             case_data['src_length'])
 
-      self.__xml.write_xml()
-
       if self.__edit_mode == False:
          self.parent().update_annotations_list(annotation)
          QMessageBox.information(self, self.parent().get_app_name(), u'Annotation added.')
