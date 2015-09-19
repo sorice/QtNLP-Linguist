@@ -67,6 +67,8 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionCreate_Corpus.triggered.connect(self.__create_corpus)
       self.actionEdit_Case.triggered.connect(self.__edit_case)
       self.actionEdit_annotation.triggered.connect(self.__edit_annotation)
+      self.actionDelete_case.triggered.connect(self.__delete_case)
+      self.actionDelete_annotation.triggered.connect(self.__delete_annotation)
 
 
    def get_app_name(self):
@@ -1021,3 +1023,49 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
 
       edit = TNLP_AddAnnotation(__reader, case, self, True, annotations[index])
       edit.show()
+
+
+   def __delete_case(self):
+      '''Delete current case'''
+
+      if (len(self.__corpus_list) == 0):
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+      else:
+         # locate working elements
+         __corpus = self.corpusTabs.currentWidget() # corpus
+         __cases_list = __corpus.children()[1].children()[2] # cases list
+         cases_tab = __corpus.children()[2] # cases tab
+         if cases_tab.count() == 0:
+            QMessageBox.critical(self, self.__appName, u'No case opened.')
+            return
+         else:
+            resp = QMessageBox.question(self, self.__appName, u'<b>Delete selected case</b>?', QMessageBox.Yes | QMessageBox.No)
+            if resp == QMessageBox.Yes:
+               # select correct corpus reader
+               __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+
+               # get case data
+               case_tab = cases_tab.currentWidget()
+               case_id_annotator_summary = cases_tab.tabText(cases_tab.currentIndex())
+               (case, annotations, index) = case_tab.get_case_data()
+               __reader.remove_case(case['id'])
+               cases_tab.removeTab(cases_tab.currentIndex())
+               __cases_list.takeItem(__cases_list.row(__cases_list.findItems(case_id_annotator_summary, Qt.MatchCaseSensitive)[0]))
+
+            else:
+               event.ignore()
+
+   def __delete_annotation(self):
+      '''Delete current annotation'''
+
+      if (len(self.__corpus_list) == 0):
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+      else:
+         # locate working elements
+         __corpus = self.corpusTabs.currentWidget() # corpus
+         case_tab = __corpus.children()[2] # cases tab
+         if case_tab.count() == 0:
+            QMessageBox.critical(self, self.__appName, u'No case opened.')
+            return

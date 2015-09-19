@@ -9,38 +9,8 @@
                 <susp_snippet doc="susp/susp-doc00005" offset="123" length="419" sentences_count="3"/>
                 <src_snippet doc="src/source-document035" offset="259" length="465" sentences_count="4"/>
             </case>
-            <case id="18" description="test3 sept 2015" plag_type="none" annotator_summary="test3 sept 2015 update_corpus_info" automatic_summary="" original_corpus="TNLP" original_corpus_id="18" generated_by="human" generator_name="abelm" domain="computing" document_type="scientific paper">
-                <susp_snippet doc="susp/susp-doc00005" offset="123" length="311" sentences_count="2"/>
-                <src_snippet doc="src/source-document035" offset="0" length="352" sentences_count="3"/>
-            </case>
         </group>
         <group NLP_problem_type="similarity" text_extension="paragraph">
-            <case id="10" description="prueba 5 quitar \r" plag_type="interlingual" annotator_summary="prueba 2" automatic_summary="" original_corpus="TNLP" original_corpus_id="14" generated_by="human" generator_name="abelm">
-                <susp_snippet doc="susp/suspicious-document002win" offset="3286" length="171" sentences_count="1"/>
-                <src_snippet doc="src/source-document035" offset="4721" length="179" sentences_count="1"/>
-            </case>
-            <case id="11" description="af" plag_type="interlingual" annotator_summary="asdf" automatic_summary="" original_corpus="asg" original_corpus_id="s" generated_by="human" generator_name="sg">
-                <susp_snippet doc="susp/suspicious-document002win" offset="3286" length="171" sentences_count="1"/>
-                <src_snippet doc="src/source-document035win" offset="4721" length="179" sentences_count="1"/>
-            </case>
-            <case id="12" description="asf" plag_type="interlingual" annotator_summary="asdf" automatic_summary="" original_corpus="asdf" original_corpus_id="asdf" generated_by="human" generator_name="sf">
-                <susp_snippet doc="susp/suspicious-document002" offset="3265" length="169" sentences_count="1"/>
-                <src_snippet doc="src/source-document035" offset="4685" length="176" sentences_count="1"/>
-                <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-15">
-                    <phenomenon type="spelling-and-format" projection="local"/>
-                    <susp_chunk offset="81" length="8"/>
-                    <src_chunk offset="129" length="8"/>
-                </annotation>
-            </case>
-            <case id="13" description="adsf" plag_type="interlingual" annotator_summary="asf" automatic_summary="" original_corpus="asdf" original_corpus_id="ds" generated_by="human" generator_name="sf">
-                <susp_snippet doc="susp/suspicious-document002" offset="3265" length="169" sentences_count="1"/>
-                <src_snippet doc="src/source-document035" offset="4685" length="176" sentences_count="1"/>
-                <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-6-15">
-                    <phenomenon type="spelling-and-format" projection="local"/>
-                    <susp_chunk offset="81" length="8"/>
-                    <src_chunk offset="129" length="8"/>
-                </annotation>
-            </case>
             <case id="14" description="key1 key5 key9" plag_type="paraphrastic" annotator_summary="key1 key5 key9" automatic_summary="" original_corpus="TNLP" original_corpus_id="124" generated_by="human" generator_name="abelm">
                 <susp_snippet doc="susp/suspicious-document002" offset="3265" length="169" sentences_count="1"/>
                 <src_snippet doc="src/source-document035" offset="4685" length="176" sentences_count="1"/>
@@ -77,28 +47,6 @@
                     <susp_chunk offset="186" length="13"/>
                     <src_chunk offset="216" length="12"/>
                 </annotation>
-            </case>
-            <case id="20" description="test5 sept 2015" plag_type="paraphrastic" annotator_summary="test5 sept 2015 words count" automatic_summary="" original_corpus="TNLP" original_corpus_id="20" generated_by="human" generator_name="abelm" domain="computing" document_type="scientific paper" topic_match="intra-topic" paraphrase_composition="mixed" lenght="short">
-                <susp_snippet doc="susp/susp-doc00005" offset="926" length="303" sentences_count="2" words_count="49" topic="Data Base"/>
-                <src_snippet doc="src/source-document035" offset="259" length="221" sentences_count="2" words_count="34" topic="Data Base"/>
-                <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-9-17">
-                    <phenomenon type="inflectional changes" projection="local"/>
-                    <susp_chunk offset="73" length="14"/>
-                    <src_chunk offset="180" length="11"/>
-                </annotation>
-                <annotation id="2" author="abelm" is_paraphrase="False" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-9-17">
-                    <phenomenon type="non-paraphrase" projection="local"/>
-                    <susp_chunk offset="73" length="14"/>
-                    <src_chunk offset="180" length="11"/>
-                </annotation>
-            </case>
-            <case id="3" description="prueba1 wizard" plag_type="paraphrastic" annotator_summary="key1" automatic_summary="" original_corpus="PAN" original_corpus_id="123" generated_by="human" generator_name="leonel" domain="informatic" document_type="book" topic_match="intra-topic" paraphrase_composition="" lenght="short">
-                <susp_snippet doc="susp/susp-doc00005" offset="342" length="162" sentences_count="1" words_count="26" topic=""/>
-                <src_snippet doc="src/src-doc01090" offset="104" length="158" sentences_count="1" words_count="22" topic=""/>
-            </case>
-            <case id="4" description="Test case 2" plag_type="paraphrastic" annotator_summary="key3" automatic_summary="" original_corpus="PAN-PC-09" original_corpus_id="453" generated_by="human" generator_name="abelm" domain="informatic" document_type="book" topic_match="intra-topic" paraphrase_composition="" lenght="short">
-                <susp_snippet doc="susp/susp-doc00005" offset="0" length="122" sentences_count="1" words_count="17" topic=""/>
-                <src_snippet doc="src/src-doc01090" offset="0" length="103" sentences_count="1" words_count="17" topic=""/>
             </case>
             <case id="5" description="prueba 28 mayo" plag_type="paraphrastic" annotator_summary="keyOK" automatic_summary="" original_corpus="PAN" original_corpus_id="342" generated_by="human" generator_name="abelm" domain="informatic" document_type="book" topic_match="inter-topic" paraphrase_composition="" lenght="short">
                 <susp_snippet doc="susp/susp-doc00005" offset="5353" length="171" sentences_count="1" words_count="26" topic="Software Test"/>

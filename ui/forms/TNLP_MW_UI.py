@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'TNLP_MW.ui'
 #
-# Created: Sat Sep 19 08:27:21 2015
+# Created: Sat Sep 19 12:25:34 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -180,7 +180,8 @@ class Ui_ToNgueLP_MW(object):
         self.actionAdd_case = QtGui.QAction(ToNgueLP_MW)
         self.actionAdd_case.setObjectName(_fromUtf8("actionAdd_case"))
         self.actionDelete_case = QtGui.QAction(ToNgueLP_MW)
-        self.actionDelete_case.setEnabled(False)
+        self.actionDelete_case.setEnabled(True)
+        self.actionDelete_case.setIcon(icon3)
         self.actionDelete_case.setObjectName(_fromUtf8("actionDelete_case"))
         self.actionAdd_annotation = QtGui.QAction(ToNgueLP_MW)
         self.actionAdd_annotation.setIcon(icon5)
@@ -191,6 +192,7 @@ class Ui_ToNgueLP_MW(object):
         self.actionEdit_annotation.setObjectName(_fromUtf8("actionEdit_annotation"))
         self.actionDelete_annotation = QtGui.QAction(ToNgueLP_MW)
         self.actionDelete_annotation.setEnabled(False)
+        self.actionDelete_annotation.setIcon(icon3)
         self.actionDelete_annotation.setObjectName(_fromUtf8("actionDelete_annotation"))
         self.actionCreate_Corpus = QtGui.QAction(ToNgueLP_MW)
         self.actionCreate_Corpus.setObjectName(_fromUtf8("actionCreate_Corpus"))
