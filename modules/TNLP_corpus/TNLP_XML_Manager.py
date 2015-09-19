@@ -585,12 +585,12 @@ class TNLP_XML_Manager:
       self.write_xml()
 
       return
-      
+
    def __human_readable_parse(self):
       """Parse the writed xml and rewrite it in a human readable form."""
-      
+
       xml_file = open(self.__xml_path).read() #open de xml
-      
+
       #Adding four whitespace by level of deepness
       xml_file = re.sub('>\s*<cases>', '>\n    <cases>',xml_file)
       xml_file = re.sub(r'>\s*</cases>', '>\n    </cases>',xml_file)
@@ -605,7 +605,7 @@ class TNLP_XML_Manager:
       xml_file = re.sub(r'>\s*<phenomenon', '>\n                    <phenomenon',xml_file)
       xml_file = re.sub(r'>\s*<susp_chunk', '>\n                    <susp_chunk',xml_file)
       xml_file = re.sub(r'>\s*<src_chunk', '>\n                    <src_chunk',xml_file)
-      
+
       new_xml_file = open(self.__xml_path,'w')
       new_xml_file.write(xml_file)
       new_xml_file.close()

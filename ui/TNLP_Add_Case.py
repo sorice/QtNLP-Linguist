@@ -220,6 +220,7 @@ class TNLP_AddCase(QWizard):
          cb_plag_type.setCurrentIndex(cb_plag_type.findText(self.__case['plag_type']))
          le_original_corpus.setText(self.__case['original_corpus'])
          le_generator_name.setText(self.__case['generator_name'])
+         label_26.setText('Edited by:')
          cb_domain.setCurrentIndex(cb_domain.findText(self.__case['domain']))
          cb_document_type.setCurrentIndex(cb_document_type.findText(self.__case['document_type']))
 
@@ -236,6 +237,9 @@ class TNLP_AddCase(QWizard):
       gridLayout.setObjectName(_fromUtf8("gridLayout"))
       horizontalLayout = QHBoxLayout()
       horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+      chk_new_susp = QCheckBox()
+      chk_new_susp.setObjectName(_fromUtf8("chk_new_susp"))
+      horizontalLayout.addWidget(chk_new_susp)
       btn_select_susp_doc = QPushButton()
       btn_select_susp_doc.setObjectName(_fromUtf8("btn_select_susp_doc"))
       horizontalLayout.addWidget(btn_select_susp_doc)
@@ -245,11 +249,16 @@ class TNLP_AddCase(QWizard):
       lb_susp_doc_name = QLabel()
       lb_susp_doc_name.setObjectName(_fromUtf8("lb_susp_doc_name"))
       horizontalLayout.addWidget(lb_susp_doc_name)
+      spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout.addItem(spacerItem)
+      label = QLabel()
+      label.setObjectName(_fromUtf8("label"))
+      horizontalLayout.addWidget(label)
       cb_susp_doc_topic = QComboBox()
       cb_susp_doc_topic.setObjectName(_fromUtf8("cb_susp_doc_topic"))
       horizontalLayout.addWidget(cb_susp_doc_topic)
-      spacerItem = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout.addItem(spacerItem)
+      spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout.addItem(spacerItem1)
       gridLayout.addLayout(horizontalLayout, 0, 0, 1, 1)
       horizontalLayout_2 = QHBoxLayout()
       horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
@@ -277,8 +286,8 @@ class TNLP_AddCase(QWizard):
       lb_susp_words_count = QLabel()
       lb_susp_words_count.setObjectName(_fromUtf8("lb_susp_words_count"))
       horizontalLayout_2.addWidget(lb_susp_words_count)
-      spacerItem1 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_2.addItem(spacerItem1)
+      spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_2.addItem(spacerItem2)
       gridLayout.addLayout(horizontalLayout_2, 1, 0, 1, 1)
       te_susp_text = QTextEdit()
       te_susp_text.setReadOnly(False)
@@ -295,11 +304,16 @@ class TNLP_AddCase(QWizard):
       lb_src_doc_name = QLabel()
       lb_src_doc_name.setObjectName(_fromUtf8("lb_src_doc_name"))
       horizontalLayout_4.addWidget(lb_src_doc_name)
+      spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_4.addItem(spacerItem3)
+      label_2 = QLabel()
+      label_2.setObjectName(_fromUtf8("label_2"))
+      horizontalLayout_4.addWidget(label_2)
       cb_src_doc_topic = QComboBox()
       cb_src_doc_topic.setObjectName(_fromUtf8("cb_src_doc_topic"))
       horizontalLayout_4.addWidget(cb_src_doc_topic)
-      spacerItem2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_4.addItem(spacerItem2)
+      spacerItem4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_4.addItem(spacerItem4)
       gridLayout.addLayout(horizontalLayout_4, 3, 0, 1, 1)
       horizontalLayout_3 = QHBoxLayout()
       horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
@@ -327,8 +341,8 @@ class TNLP_AddCase(QWizard):
       lb_src_words_count = QLabel()
       lb_src_words_count.setObjectName(_fromUtf8("lb_src_words_count"))
       horizontalLayout_3.addWidget(lb_src_words_count)
-      spacerItem3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-      horizontalLayout_3.addItem(spacerItem3)
+      spacerItem5 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+      horizontalLayout_3.addItem(spacerItem5)
       gridLayout.addLayout(horizontalLayout_3, 4, 0, 1, 1)
       te_src_text = QTextEdit()
       te_src_text.setReadOnly(True)
@@ -337,10 +351,17 @@ class TNLP_AddCase(QWizard):
 
       page.setLayout(gridLayout)
 
+      # default signals/slots
+      QObject.connect(chk_new_susp, SIGNAL(_fromUtf8("clicked(bool)")), btn_select_susp_doc.setDisabled)
+      QObject.connect(chk_new_susp, SIGNAL(_fromUtf8("clicked(bool)")), label_9.setDisabled)
+      QObject.connect(chk_new_susp, SIGNAL(_fromUtf8("clicked(bool)")), lb_susp_doc_name.setDisabled)
+
       # default labels & data
+      chk_new_susp.setText("New susp doc")
       btn_select_susp_doc.setText("Select susp doc")
       label_9.setText("Doc name:")
       lb_susp_doc_name.setText("susp/")
+      label.setText("Topic:")
       label_10.setText("Offset:")
       lb_susp_offset.setText("0")
       label_11.setText("Length:")
@@ -352,6 +373,7 @@ class TNLP_AddCase(QWizard):
       btn_select_src_doc.setText("Select src doc")
       label_14.setText("Doc name:")
       lb_src_doc_name.setText("src/")
+      label_2.setText("Topic:")
       label_15.setText("Offset:")
       lb_src_offset.setText("0")
       label_16.setText("Length:")
@@ -395,12 +417,20 @@ class TNLP_AddCase(QWizard):
       te_src_text.selectionChanged.connect(self.__src_selection_changed)
 
       if self.__edit_mode == True:
+         chk_new_susp.setChecked(False)
+         chk_new_susp.setDisabled(True)
+         btn_select_susp_doc.setDisabled(True)
+         label_9.setDisabled(True)
+         lb_susp_doc_name.setDisabled(True)
          lb_susp_doc_name.setText(self.__case['susp_snippet_doc'])
          lb_susp_offset.setText(self.__case['susp_snippet_offset'])
          lb_susp_length.setText(self.__case['susp_snippet_length'])
          lb_susp_sentences_count.setText(self.__case['susp_snippet_sentences_count'])
          lb_susp_words_count.setText(self.__case['susp_snippet_words_count'])
          cb_susp_doc_topic.setCurrentIndex(cb_susp_doc_topic.findText(self.__case['susp_snippet_topic']))
+         btn_select_src_doc.setDisabled(True)
+         label_14.setDisabled(True)
+         lb_src_doc_name.setDisabled(True)
          lb_src_doc_name.setText(self.__case['src_snippet_doc'])
          lb_src_offset.setText(self.__case['src_snippet_offset'])
          lb_src_length.setText(self.__case['src_snippet_length'])
@@ -488,6 +518,8 @@ class TNLP_AddCase(QWizard):
       domain = str(self.page(0).findChild(QComboBox, 'cb_domain').currentText())
       document_type = str(self.page(0).findChild(QComboBox, 'cb_document_type').currentText())
 
+      susp_new = self.page(1).findChild(QCheckBox, 'chk_new_susp').isChecked()
+
       susp_doc = str(self.page(1).findChild(QLabel, 'lb_susp_doc_name').text()).strip()
       susp_offset = str(self.page(1).findChild(QLabel, 'lb_susp_offset').text()).strip()
       susp_length = str(self.page(1).findChild(QLabel, 'lb_susp_length').text()).strip()
@@ -513,6 +545,33 @@ class TNLP_AddCase(QWizard):
       else:
          topic_match = "inter-topic"
 
+      if susp_text == '' or susp_length == '0' or susp_sentences_count == '0':
+         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect suspicious data. Please select a suspicious file and snippet.')
+         return
+      else:
+         if src_text == '' or src_length == '0' or src_sentences_count == '0':
+            QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect source data. Please select a source file and snippet.')
+            return
+
+      # save susp document
+      if susp_new == False:
+         if susp_doc <> "susp/":
+            f = QFile(self.__susp_file)
+            if f.open(QFile.WriteOnly):
+               f.write(susp_text.encode('utf8'))
+               f.close()
+         else:
+            new_susp = self.__save_susp_doc(susp_text)
+      else:
+         new_susp = self.__save_susp_doc(susp_text)
+
+      if self.__edit_mode == False:
+         if new_susp == '':
+            return
+         else:
+            QMessageBox.information(self, self.parent().get_app_name(), "New suspicious file created.")
+            susp_doc = new_susp
+
       #Calculate case_lenght
       if int(susp_words_count) > 0 and int(susp_words_count) <= 60:
          case_lenght = "short"
@@ -522,25 +581,6 @@ class TNLP_AddCase(QWizard):
          case_lenght = "long"
 
       paraphrase_composition = ""
-
-      if susp_text == '' or susp_length == '0' or susp_sentences_count == '0':
-         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect suspicious data. Please select a suspicious file and snippet.')
-         return
-      else:
-         if src_text == '' or src_length == '0' or src_sentences_count == '0':
-            QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect source data. Please select a source file and snippet.')
-            return
-
-      # save loaded document if any
-      if susp_doc <> "susp/":
-         f = QFile(self.__susp_file)
-         if f.open(QFile.WriteOnly):
-            f.write(susp_text.encode('utf8'))
-            f.close()
-      else:
-         # create new susp file
-         QMessageBox.critical(self, self.parent().get_app_name(), 'TODO Create new susp document here.')
-         return
 
       if self.__edit_mode == False:
          case_id = self.__xml.add_case(problem_type, text_extension, description, plag_type, annotator_summary,
@@ -569,7 +609,7 @@ class TNLP_AddCase(QWizard):
       susp_doc_name = self.page(1).findChild(QLabel, 'lb_susp_doc_name')
       susp_text = self.page(1).findChild(QTextEdit, 'te_susp_text')
 
-      _file = QFileDialog.getOpenFileName(self, u"Select suspicious file", self.__working_dir, u"Text files (*.txt)")
+      _file = QFileDialog.getOpenFileName(self, u"Select suspicious file", self.__working_dir + '/susp', u"Text files (*.txt)")
 
       if not _file:
          QMessageBox.critical(self, self.parent().get_app_name(), 'Operation canceled.')
@@ -592,6 +632,7 @@ class TNLP_AddCase(QWizard):
          _text = unicode(_txt,'utf8')
          susp_text.setText(_text)
 
+         # get susp/filename format
          _dir = _file.right(_file.length() - QString(self.__working_dir).length())
          _dir = _dir.remove(0, 1)
          _dir.chop(4)
@@ -609,7 +650,7 @@ class TNLP_AddCase(QWizard):
       src_doc_name = self.page(1).findChild(QLabel, 'lb_src_doc_name')
       src_text = self.page(1).findChild(QTextEdit, 'te_src_text')
 
-      _file = QFileDialog.getOpenFileName(self, u"Select source file", self.__working_dir, u"Text files (*.txt)")
+      _file = QFileDialog.getOpenFileName(self, u"Select source file", self.__working_dir + '/src', u"Text files (*.txt)")
 
       if not _file:
          QMessageBox.critical(self, self.parent().get_app_name(), 'Operation canceled.')
@@ -632,6 +673,7 @@ class TNLP_AddCase(QWizard):
          _text = unicode(_txt,'utf8')
          src_text.setText(_text)
 
+         # get susp/filename format
          _dir = _file.right(_file.length() - QString(self.__working_dir).length())
          _dir = _dir.remove(0, 1)
          _dir.chop(4)
@@ -772,3 +814,30 @@ class TNLP_AddCase(QWizard):
       _len.setText(str(y - x))
       _sentences.setText(str(len(txt[x:y].split(".")) - 1))
       _words.setText(str(len(txt[x:y].split())-(len(txt[x:y].split("."))-1)))
+
+
+   def __save_susp_doc(self, _text):
+      """Create and save a new susp document"""
+
+      (susp_doc, result) = QInputDialog.getText(self, u"New Suspicious File", "Filename (without extension)")
+
+      if result == True:
+         if susp_doc.simplified() == "":
+            QMessageBox.warning(self, self.parent().get_app_name(), "Please write a valid filename")
+            self.__save_susp_doc(_text)
+            return
+         else:
+            susp_doc = susp_doc.replace(QRegExp('[^a-zA-Z0-9]'), '_')
+
+         susp_doc = self.__working_dir + "/susp/" + susp_doc + ".txt"
+         f = QFile(susp_doc)
+         if f.open(QFile.WriteOnly):
+            f.write(_text.encode('utf8'))
+            f.close()
+
+         # get susp/filename format
+         susp_doc = susp_doc.right(susp_doc.length() - QString(self.__working_dir).length())
+         susp_doc = susp_doc.remove(0, 1)
+         susp_doc.chop(4)
+
+      return str(susp_doc)

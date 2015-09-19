@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE report SYSTEM "TNLP.dtd"> -->
-<corpus name="TNLP" version="0.2" lang="es" total_cases="22" total_true_cases="21" total_annotations="11" total_true_annotations="10" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
+<corpus name="TNLP" version="0.2" lang="es" total_cases="22" total_true_cases="21" total_annotations="10" total_true_annotations="9" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
     <cases>
         <group NLP_problem_type="similarity" text_extension="paragraph">
         </group>
@@ -15,15 +15,6 @@
             </case>
         </group>
         <group NLP_problem_type="similarity" text_extension="paragraph">
-            <case id="6" description="afsjfaf asdfalsf skfasf" plag_type="interlingual" annotator_summary="key7 key11 key21" automatic_summary="" original_corpus="-" original_corpus_id="-" generated_by="human" generator_name="abelm">
-                <susp_snippet doc="susp/susp-doc00005" offset="122" length="420" sentences_count="3"/>
-                <src_snippet doc="src/src-doc01090" offset="0" length="527" sentences_count="4"/>
-                <annotation id="1" author="mark" is_paraphrase="True" validated_by_human_beings="true" recognized_by_algorithms="false" algorithms_names="" annotation_date="2015-5-27">
-                    <phenomenon type="synthetic/analytic" projection="global"/>
-                    <susp_chunk offset="149" length="9"/>
-                    <src_chunk offset="299" length="9"/>
-                </annotation>
-            </case>
             <case id="7" description="afsd" plag_type="interlingual" annotator_summary="asg" automatic_summary="" original_corpus="asdg" original_corpus_id="asg" generated_by="human" generator_name="sg">
                 <susp_snippet doc="susp/suspicious-document002" offset="3286" length="171" sentences_count="1"/>
                 <src_snippet doc="src/source-document035" offset="4721" length="179" sentences_count="1"/>
@@ -146,7 +137,11 @@
                 <susp_snippet doc="susp/susp-doc00005" offset="543" length="243" sentences_count="2" words_count="37" topic="Data Base"/>
                 <src_snippet doc="src/source-document035" offset="481" length="387" sentences_count="4" words_count="53" topic="Data Base"/>
             </case>
-            <case id="23" description="test8 sept 2015" plag_type="copyleft" annotator_summary="test8 sept 2015 human readable parser" automatic_summary="" original_corpus="TNLP" original_corpus_id="23" generated_by="human" generator_name="abelm" domain="computing" document_type="web page" topic_match="inter-topic" paraphrase_composition="" lenght="short">
+            <case id="6" description="test 19 sept" plag_type="interlingual" annotator_summary="editing" automatic_summary="" original_corpus="TNLP" original_corpus_id="6" generated_by="human" generator_name="leonel" domain="informatic" document_type="scientific paper" topic_match="inter-topic" paraphrase_composition="" lenght="medium">
+                <susp_snippet doc="susp/susp-doc00005" offset="123" length="489" sentences_count="4" words_count="79" topic="Software Test"/>
+                <src_snippet doc="src/src-doc01090" offset="0" length="527" sentences_count="4" words_count="77" topic="Artificial Intelligence"/>
+            </case>
+            <case id="23" description="test8 sept 2015" plag_type="copyleft" annotator_summary="test8 sept 2015 human readable parser" automatic_summary="" original_corpus="TNLP" original_corpus_id="23" generated_by="human" generator_name="leonel" domain="computing" document_type="web page" topic_match="inter-topic" paraphrase_composition="" lenght="short">
                 <susp_snippet doc="susp/susp-doc00005" offset="342" length="162" sentences_count="1" words_count="26" topic="Data Base"/>
                 <src_snippet doc="src/source-document035" offset="259" length="221" sentences_count="2" words_count="34" topic="Software Engineering"/>
             </case>
