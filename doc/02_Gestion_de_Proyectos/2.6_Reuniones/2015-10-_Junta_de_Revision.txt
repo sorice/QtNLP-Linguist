@@ -1,0 +1,30 @@
+Reunión de la Junta de Revisión
+Objetivo: Culminar la versión 0.9 del QtMainWindows.
+Asisten: Abel y Leonel.
+
+Objetivos desglosados:
+
+[P]{sept/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
+[P]{sept/2015}* (Leo) Delete Annotation.
+[P]{sept/2015}* (Abel) Probar modificaciones del Add Case en Windows.
+[P]{sept/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
+
+[P baja prioridad]{agosto/2015}* (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
+[P baja prioridad]{agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
+{agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
+
+Acuerdos (digitales) para Junio de 2015 (ver OK en esta junta, pues no hubo junta en Junio)
+*******************
+[P]{abril 2015}Abel- Validación de todos los inputs del add_case.
+[P]{abril 2015}Abel- Validación de todos los inputs del add_annotation.
+
+Otras tareas:
+[P para la v0.6]{noviembre 2014} - Leonel UNICA TAREA DOCUMENTAL de la iteración- Llenar la arquitectura de Software. 
+[P baja prioridad]{enero 2015}- Implementar la lectura de los corpus desde un .zip.
+[P baja prioridad]{octubre 2014}- Abel documentar XML_algorithm_data con Sphinx para que Leonel pueda entender, y ya de paso para que esté ahí.
+
+Miembros camagüeyanos del equipo:
+[P]{20/07/2015}- Insertar casos detectados por algoritmo de Abel09 en la versión del corpus TNLP. 
+
+Documentado por: Abel Meneses
+fecha: 19/09/2015

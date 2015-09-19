@@ -1,20 +1,25 @@
 Reunión de la Junta de Revisión
-Objetivo: Culminar la versión 1.0 del QtMainWindows.
+Objetivo: Culminar la versión 0.9 del QtMainWindows.
 Asisten: Abel y Leonel.
 
-{sept/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
-
 Objetivos desglosados:
-{sept/2015}* Probar modificaciones del Add Case en Windows.
-{sept/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
 
-{agosto/2015}* (Leo) Implementación del editar case, editar annotation para finales de agosto.[]
-{agosto/2015}* (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
-{agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
+[P]{sept/2015}* (Abel) Incorporar el paquete de normalización mejorado a QtNLP. Objetivo: diferenciar bien las oraciones antes de incluir más casos y que modifique.
+[P]{sept/2015}* (Leo) Delete Annotation.
+[P]{sept/2015}* (Abel) Probar modificaciones del Add Case en Windows.
+[P]{sept/2015}* (Abel) Documentar en la doc de desarrollo como se agrega un campo de tipo combobox a la interfaz, al manager, al TNLP_add_case y sus valores al ENUM.(utilizar el commit 119)
+
+[P baja prioridad]{agosto/2015}* (Leo) Implementación del Ctrl+F en el add_case para facilitar encontrar un fragmento. Y colocar la propiedad de edición a este susp TextEdit porque hará falta para insertar los fragmentos agregados por uno.
+[P baja prioridad]{agosto/2015}* (Leo) Revisar la posibilidad de visualizar en el TextEdit documentos con saltos de línea, etc, para Abel modificar el normalizador.
 {agosto/2015}* (Leo) Pequeño párrafo de porqué usar pxdom y no el base de python, esto para el registro del TNLP_XML_Manager.
 
+[OK, 19/09/2015]{sept/2015}* (Leo) Refactorizar llamadas al write_xml, se usaba en muchas partes dentro de implementación de las clases de TNLP -> se movió para el TNLP_XML_Manager después de cualquier de edit o add.
+[OK, 19/09/2015]{sept/2015}* (Leo) Delete case.
+[OK, 19/09/2015]{sept/2015}* (Leo) Actualizar la listWidget al edit case.
+[OK, 19/09/2015]{agosto/2015}* (Leo) Implementación del editar annotation para finales de agosto. + Funciones complementarias en el TNLP_XML_Manager.
+[OK, 18/09/2015]{agosto/2015}* (Leo) Implementación del editar case. Nuevo wizard incluido.
 [OK, 18/09/2015,1.5h]{sept/2015}* Documentar todo el UI de los lingüistas, donde están las implementaciones de las clases del módulo linguist. Desde ahí se debe llamar al ejemplo full. Creados los bases para cumplir con la tarea de hacer el "ejemplo full". Documentado en mis notas de sphinx como poner un autoclass cuando está en un fichero que no un módulo.
-[OK, 18/09/2015,1h]{sept/2015}* Revisar la LRP de otros proyectos(Portal del CEETI) u otros documentos a ver donde guardo el cuando se realizó y cuanto demoró. Cambiadas todas las tablas para lograr documentar esto aquí mismo. Llenados algunos campos conocidos.
+[OK, 18/09/2015,1h]{sept/2015}* (Abel) Revisar la LRP de otros proyectos(Portal del CEETI) u otros documentos a ver donde guardo el cuando se realizó y cuanto demoró. Cambiadas todas las tablas para lograr documentar esto aquí mismo. Llenados algunos campos conocidos.
 [OK, 18/09/2015,1h]{sept/2015}* (Abel) Incorporar tareas que no se harán por ahora a la LRP.
 [OK, 18/09/2015,1.5]{agosto/2015}* (Abel) Terminar el writer del xml con el identador apropiado(para el human readable).
 [80%, 17/09/2015]{agosto/2015}* (Leo) Implementación del editar case. Nuevo wizard incluido.
