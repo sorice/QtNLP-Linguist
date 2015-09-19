@@ -18,7 +18,7 @@ except AttributeError:
       return s
 
 class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
-   def __init__(self, _xml_manager, _case_data, parent = None):
+   def __init__(self, _xml_manager, _case_data, parent = None, _edit = False, _annotation = None):
       # init the parent
       super(TNLP_AddAnnotation, self).__init__(parent)
 
@@ -28,12 +28,23 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       # extra data
       self.__xml = _xml_manager
       self._case = _case_data
+      self.__edit_mode = _edit
+      self.__annotation = _annotation
+      if self.__edit_mode == True:
+         self.__annotation_index = self.__annotation['id']
 
       self.lb_case_name.setText('<b>[' + self._case['id'] + ']: ' + self._case['annotator_summary'] + '</b>')
 
       # load default data
       for i in paraphrase_types:
          self.cb_type.addItem(i)
+
+      if self.__edit_mode == True:
+         self.setWindowTitle('Edit Annotation')
+         self.label.setText('Editor:')
+         self.btn_add_annotation.setText('Save')
+         self.cb_type.setCurrentIndex(self.cb_type.findText(self.__annotation['phenomenon_type']))
+         self.cb_projection.setCurrentIndex(self.cb_projection.findText(self.__annotation['projection']))
 
       self.te_susp_snippet.setText(self._case['susp_text'])
       self.te_src_snippet.setText(self._case['src_text'])
@@ -74,21 +85,37 @@ class TNLP_AddAnnotation(QDialog, Ui_Add_Annotation):
       case_data['src_length'] = str(self.lb_src_length.text())
 
       if len(case_data['author']) == 0 or case_data['susp_length'] == '0' or case_data['src_length'] == '0':
-         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect annotation data. Please write the author and select the suspicious and source chunks.')
+         msg = 'Please write the author and select the suspicious and source chunks'
+         if self.__edit_mode == True:
+            msg = 'Please write the editor and select the suspicious and source chunks'
+
+         QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect annotation data. ' + msg)
          return;
 
-      new_annotation = self.__xml.add_annotation(case_data['case_id'], case_data['author'],
-         case_data['is_paraphrase'], case_data['validated_by_human_beings'],
-         case_data['recognized_by_algorithms'], case_data['algorithms_names'],
-         case_data['annotation_date'], case_data['type'], case_data['projection'],
-         case_data['susp_offset'], case_data['susp_length'], case_data['src_offset'],
-         case_data['src_length'])
+      if self.__edit_mode == False:
+         annotation = self.__xml.add_annotation(case_data['case_id'], case_data['author'],
+            case_data['is_paraphrase'], case_data['validated_by_human_beings'],
+            case_data['recognized_by_algorithms'], case_data['algorithms_names'],
+            case_data['annotation_date'], case_data['type'], case_data['projection'],
+            case_data['susp_offset'], case_data['susp_length'], case_data['src_offset'],
+            case_data['src_length'])
+      else:
+         annotation = self.__xml.edit_annotation(self.__annotation_index, case_data['case_id'], case_data['author'],
+            case_data['is_paraphrase'], case_data['validated_by_human_beings'],
+            case_data['recognized_by_algorithms'], case_data['algorithms_names'],
+            case_data['annotation_date'], case_data['type'], case_data['projection'],
+            case_data['susp_offset'], case_data['susp_length'], case_data['src_offset'],
+            case_data['src_length'])
 
       self.__xml.write_xml()
 
-      self.parent().update_annotations_list(new_annotation)
-
-      QMessageBox.information(self, self.parent().get_app_name(), u'Annotation added.')
+      if self.__edit_mode == False:
+         self.parent().update_annotations_list(annotation)
+         QMessageBox.information(self, self.parent().get_app_name(), u'Annotation added.')
+      else:
+         # use the same approach of edit case here to get the updated annotation
+         self.parent().update_case_list(case_data['case_id'], True)
+         QMessageBox.information(self, self.parent().get_app_name(), u'Annotation updated.')
 
 
    def __susp_selection_changed(self):

@@ -759,7 +759,6 @@ class TNLP_AddCase(QWizard):
 
       p1 = cursor.selectionStart()
       p2 = cursor.selectionEnd()
-      print "\ntexto:",txt[p1:p2]
 
       # set upper limit
       if p2 == len(txt):
@@ -768,20 +767,16 @@ class TNLP_AddCase(QWizard):
       if txt[p2] == '.':
          y = p2
       else:
-         y = txt.find('.', p2, len(txt));print "y:",y
+         y = txt.find('.', p2, len(txt))
 
       # Find first letter char of the selected fragment. Avoid PlainText problems.
       x_temp = txt.rfind('.', 0, p1) #return pos of last point.
 
       while txt[x_temp] not in LETTERS:
-         x = x_temp+1; print "x:",x
+         x = x_temp+1
          x_temp+=1
 
       #Refine de selected fragment.
-      print "refinando posiciones"
-      print "x0:",x
-      print "y0:",y
-
       if x == -1:
          x = 0
 
@@ -789,8 +784,6 @@ class TNLP_AddCase(QWizard):
          y = len(txt)
       else:
          y += 1
-
-      print "new text:",txt[x:y],"\n"
 
       # clear document format
       cursor.setPosition(0)

@@ -426,13 +426,21 @@
    </property>
   </action>
   <action name="actionAdd_annotation">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/toolbar/icons/add_case.png</normaloff>:/toolbar/icons/add_case.png</iconset>
+   </property>
    <property name="text">
     <string>Add Annotation</string>
    </property>
   </action>
   <action name="actionEdit_annotation">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/toolbar/icons/edit_case.png</normaloff>:/toolbar/icons/edit_case.png</iconset>
    </property>
    <property name="text">
     <string>Edit annotation</string>

@@ -66,6 +66,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       self.actionAdd_annotation.triggered.connect(self.__add_annotation)
       self.actionCreate_Corpus.triggered.connect(self.__create_corpus)
       self.actionEdit_Case.triggered.connect(self.__edit_case)
+      self.actionEdit_annotation.triggered.connect(self.__edit_annotation)
 
 
    def get_app_name(self):
@@ -537,7 +538,9 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = self.__create_new_case_tab()
       # save extra data
       index = -1
-      if len(annotations) > 0: index = 0
+      if len(annotations) > 0:
+         index = 0
+
       case_tab.set_case_data(case, annotations, index)
 
       __cases.addTab(case_tab, _current.text())
@@ -589,31 +592,6 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       #print 'case[src_text]:', case['src_text'], '++++++++++', type(case['src_text'])
 
       return
-
-      '''
-      # format segments
-      # source
-      __cursor = __src_te.textCursor()
-      __cursor.setPosition(int(case[2][11]))
-      __cursor.setPosition(int(case[2][11]) + int(case[2][9]), QTextCursor.KeepAnchor)
-      __format = QTextCharFormat()
-      #~ __format.setFontWeight(QFont.Bold)
-      __format.setFontItalic(True)
-      ##__format.setForeground(QBrush(Qt.green))
-      __cursor.mergeCharFormat(__format)
-      # suspiciuos
-      __cursor = __susp_te.textCursor()
-      __cursor.setPosition(int(case[2][11]))
-      __cursor.setPosition(int(case[2][7]) + int(case[2][5]), QTextCursor.KeepAnchor)
-      __format = QTextCharFormat()
-      #~ __format.setFontWeight(QFont.Bold)
-      __format.setFontItalic(True)
-      #__format.setForeground(QBrush(Qt.red))
-      __format.setFontUnderline(True)
-      __format.setUnderlineStyle(QTextCharFormat.WaveUnderline)
-      __format.setUnderlineColor(QColor(case_data[1].toString()))
-      __cursor.mergeCharFormat(__format)'''
-
 
    def __update_selected_case(self, _tab_index):
       """Update selected case in case list"""
@@ -706,20 +684,27 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          __cases.removeTab(tab_index)
 
 
-   def __searchCase(self):
+   def __searchCase(self, _edit = False, _case_id_annotator_summary = ''):
       """Search cases"""
 
-      # clear the search criteria
-      search_criteria = self.sender().text().trimmed()
+      if _edit == False:
+         # clear the search criteria
+         search_criteria = self.sender().text().trimmed()
+      else:
+         search_criteria = _case_id_annotator_summary
+
       # if valid then search
-      if search_criteria.length():
+      if search_criteria.length() > 0:
          # locate working elements
          __corpus = self.corpusTabs.currentWidget() # corpus
          __cases_list = __corpus.children()[1].children()[2] # cases list
          # focus first case matching the search criteria
          __result = __cases_list.findItems(search_criteria, Qt.MatchContains)
          if len(__result) > 0:
-            __cases_list.setCurrentItem(__result[0])
+            if _edit == False:
+               __cases_list.setCurrentItem(__result[0])
+            else:
+               self.__get_case(__result[0])
       else:
          QMessageBox.critical(self, self.__appName, u'Please enter a valid search criteria.')
 
@@ -945,8 +930,11 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       if _edit == True:
          __cases_list.currentItem().setIcon(QIcon(plag_types[case['plag_type']][0]))
          __cases_list.currentItem().setText(QString("[" + case['id'] + "]: " + case['annotator_summary']))
+
+         __actual_case_id_annotator_summary = __cases_list.currentItem().text()
+
          case_tab.removeTab(case_tab.currentIndex())
-         __cases_list.itemClicked.emit(__cases_list.currentItem())
+         self.__searchCase(True, __actual_case_id_annotator_summary)
       else:
          listItem = QListWidgetItem(QIcon(plag_types[case['plag_type']][0]), QString("[" + case['id'] + "]: " + case['annotator_summary']))
          listItem.setData(Qt.UserRole, [case['id'], plag_types[case['plag_type']][1]])
@@ -955,7 +943,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
          _total_lb.setText(QString('Total cases: <b>%1</b>').arg(__reader.get_corpus_total_cases()))
 
 
-   def update_annotations_list(self, _new_annotation):
+   def update_annotations_list(self, _annotation, _edit = False):
       '''Update annotations list'''
 
       # locate working elements
@@ -965,7 +953,7 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = case_tab.currentWidget()
 
       # update annotations list
-      case_tab.add_annotation(_new_annotation)
+      case_tab.add_annotation(_annotation)
 
       self.__update_selected_case(current_tab)
 
@@ -998,5 +986,38 @@ class TNLP_MW(QMainWindow, Ui_ToNgueLP_MW):
       case_tab = cases_tab.currentWidget()
       (case, annotations, index) = case_tab.get_case_data()
 
-      add = TNLP_AddCase(__reader, self, True, case)
-      add.show()
+      edit = TNLP_AddCase(__reader, self, True, case)
+      edit.show()
+
+
+   def __edit_annotation(self):
+      '''Show Edit Annotation Window'''
+
+      if (len(self.__corpus_list) == 0):
+         QMessageBox.critical(self, self.__appName, u'No corpus loaded.')
+         return
+      else:
+         # locate working elements
+         __corpus = self.corpusTabs.currentWidget() # corpus
+         case_tab = __corpus.children()[2] # cases tab
+         if case_tab.count() == 0:
+            QMessageBox.critical(self, self.__appName, u'No case opened.')
+            return
+
+      # select correct corpus reader
+      __reader = self.__corpus_list[self.corpusTabs.currentIndex()]
+
+      # locate working elements
+      __corpus = self.corpusTabs.currentWidget() # corpus
+      case_tab = __corpus.children()[2] # cases tab
+      case_tab = case_tab.currentWidget()
+
+      # get case data
+      (case, annotations, index) = case_tab.get_case_data()
+
+      if len(annotations) == 0:
+         QMessageBox.critical(self, self.__appName, u'No annotation to edit.')
+         return
+
+      edit = TNLP_AddAnnotation(__reader, case, self, True, annotations[index])
+      edit.show()

@@ -370,7 +370,7 @@ class TNLP_XML_Manager:
 
 
    def add_annotation(self, _case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names,
-      _date, _type, _projection, _chunk_offset, _chunk_length, _chunk_src_offset, _chunk_src_length):
+      _date, _type, _projection, _chunk_offset, _chunk_length, _chunk_src_offset, _chunk_src_length, _annotation_id = None):
       """Add an annotation to a case"""
 
       #TODO validate all input data
@@ -384,15 +384,18 @@ class TNLP_XML_Manager:
          if item.getAttribute('id') == str(_case_id):
             actual_case = item
 
-      # calculate new case id
-      ids = []
-      for a in self.get_annotations_of_case(_case_id):
-         ids.append(int(a['id']))
+      # calculate new annotation id
+      if _annotation_id == None:
+         ids = []
+         for a in self.get_annotations_of_case(_case_id):
+            ids.append(int(a['id']))
 
-      if len(ids) > 0:
-         annotation_id = max(ids) + 1
+         if len(ids) > 0:
+            annotation_id = max(ids) + 1
+         else:
+            annotation_id = 1
       else:
-         annotation_id = 1
+         annotation_id = _annotation_id
 
       #Calculate if annotation in not paraphrase or = to "false positive"
       if _type == "non-paraphrase":
@@ -529,7 +532,7 @@ class TNLP_XML_Manager:
    def edit_case(self, _case_id, _problem_type, _extension, _description, _plag_type, _summary, _auto_summary,
       _original_corpus, _original_corpus_id, _generated_by, _generator_name, _domain, _document_type, _topic_match, _paraphrase_composition, _lenght, _susp_doc, _susp_offset,
       _susp_length, _susp_sentences_count, _susp_words_count, _susp_doc_topic, _src_doc, _src_offset, _src_length, _src_sentences_count, _src_words_count, _src_doc_topic): #OK
-      """Add a new case to the corpus"""
+      """Edit case of corpus"""
 
       #TODO validate all input data
 
@@ -547,6 +550,61 @@ class TNLP_XML_Manager:
       self.__update_corpus_info()
 
       return _case_id
+
+
+   def edit_annotation(self, _annotation_id, _case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names,
+      _date, _type, _projection, _chunk_offset, _chunk_length, _chunk_src_offset, _chunk_src_length):
+      """Edit annotation of case"""
+
+      #TODO validate all input data
+
+      result = False
+
+      self.remove_annotation_of_case(_annotation_id, _case_id)
+      self.add_annotation(_case_id, _author, _is_paraphrase, _validated_by_human_beings, _recognized_by_algorithms, _algorithms_names,
+      _date, _type, _projection, _chunk_offset, _chunk_length, _chunk_src_offset, _chunk_src_length, _annotation_id)
+
+      # update result
+      result = True
+
+      # update corpus info
+      self.__update_corpus_info()
+
+      return self.get_annotations_of_case(_case_id)[-1]
+
+
+   def remove_case(self, _case_id):
+      """Remove a case from corpus"""
+
+      # locate target case
+      tmp_cases = self.__root_node.getElementsByTagName('case')
+      for item in tmp_cases:
+         if item.getAttribute('id') == str(_case_id):
+            item.parentNode.removeChild(item)
+
+            #~ if len(item.parentNode.childNodes) == 1:
+               #~ item.parentNode.parentNode.removeChild(item.parentNode)
+            #~ else:
+
+            return
+
+
+   def remove_annotation_of_case(self, _annotation_id, _case_id):
+      """Remove an annotation from corpus"""
+
+      # locate target annotation
+      actual_case = None
+      tmp_cases = self.__root_node.getElementsByTagName('case')
+      for item in tmp_cases:
+         if item.getAttribute('id') == str(_case_id):
+            actual_case = item
+
+      tmp_notes = actual_case.getElementsByTagName('annotation')
+      for item in tmp_notes:
+         if item.getAttribute('id') == str(_annotation_id):
+            item.parentNode.removeChild(item)
+
+            return
 
 
    # auxiliar & private methods
@@ -609,19 +667,3 @@ class TNLP_XML_Manager:
       new_xml_file = open(self.__xml_path,'w')
       new_xml_file.write(xml_file)
       new_xml_file.close()
-
-   def remove_case(self, _case_id):
-      """Remove a case from XML"""
-
-      # locate target case
-      tmp_cases = self.__root_node.getElementsByTagName('case')
-      for item in tmp_cases:
-         if item.getAttribute('id') == str(_case_id):
-            item.parentNode.removeChild(item)
-
-            #~ if len(item.parentNode.childNodes) == 1:
-               #~ item.parentNode.parentNode.removeChild(item.parentNode)
-            #~ else:
-
-            return
-
