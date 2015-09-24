@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE report SYSTEM "TNLP.dtd"> -->
-<corpus name="TNLP" version="0.2" lang="es" total_cases="22" total_true_cases="21" total_annotations="13" total_true_annotations="12" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
+<corpus name="TNLP" version="0.2" lang="es" total_cases="19" total_true_cases="19" total_annotations="17" total_true_annotations="17" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
     <cases>
         <group NLP_problem_type="similarity" text_extension="paragraph">
         </group>
@@ -104,9 +104,65 @@
                 <susp_snippet doc="susp/susp-doc00005" offset="0" length="122" sentences_count="1" words_count="17" topic="Artificial Intelligence"/>
                 <src_snippet doc="src/src-doc02276" offset="1" length="72" sentences_count="1" words_count="10" topic="Software Engineering"/>
             </case>
-            <case id="9" description="prueba 2 quitar" plag_type="interlingual" annotator_summary="pruebaf ttr" automatic_summary="" original_corpus="TNLP" original_corpus_id="14" generated_by="human" generator_name="abelm" domain="informatic" document_type="book" topic_match="intra-topic" paraphrase_composition="" lenght="short">
-                <susp_snippet doc="susp/suspicious-document002win" offset="17" length="170" sentences_count="1" words_count="26" topic=""/>
-                <src_snippet doc="src/source-document035" offset="259" length="93" sentences_count="1" words_count="16" topic=""/>
+            <case id="9" description="prueba 2 quitar" plag_type="interlingual" annotator_summary="test8 sept 2015 edit case" automatic_summary="" original_corpus="TNLP" original_corpus_id="9" generated_by="human" generator_name="abelm" domain="informatic" document_type="book" topic_match="intra-topic" paraphrase_composition="multiple" lenght="short">
+                <susp_snippet doc="susp/suspicious-document002win" offset="608" length="131" sentences_count="2" words_count="21" topic="Data Base"/>
+                <src_snippet doc="src/source-document035" offset="724" length="144" sentences_count="2" words_count="19" topic="Data Base"/>
+                <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="spelling changes" projection="local"/>
+                    <susp_chunk offset="0" length="10"/>
+                    <src_chunk offset="0" length="22"/>
+                </annotation>
+                <annotation id="2" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="punctuation changes" projection="local"/>
+                    <susp_chunk offset="11" length="11"/>
+                    <src_chunk offset="23" length="11"/>
+                </annotation>
+                <annotation id="3" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="identical" projection="local"/>
+                    <susp_chunk offset="23" length="29"/>
+                    <src_chunk offset="35" length="30"/>
+                </annotation>
+                <annotation id="4" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="addition/deletion" projection="local"/>
+                    <susp_chunk offset="55" length="13"/>
+                    <src_chunk offset="66" length="19"/>
+                </annotation>
+                <annotation id="5" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="same-polarity substitutions" projection="local"/>
+                    <susp_chunk offset="69" length="12"/>
+                    <src_chunk offset="86" length="13"/>
+                </annotation>
+                <annotation id="6" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="semantics-based changes" projection="local"/>
+                    <susp_chunk offset="82" length="16"/>
+                    <src_chunk offset="100" length="12"/>
+                </annotation>
+                <annotation id="7" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="punctuation changes" projection="local"/>
+                    <susp_chunk offset="110" length="19"/>
+                    <src_chunk offset="124" length="20"/>
+                </annotation>
+                <annotation id="8" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-21">
+                    <phenomenon type="identical" projection="local"/>
+                    <susp_chunk offset="99" length="10"/>
+                    <src_chunk offset="113" length="10"/>
+                </annotation>
+            </case>
+            <case id="24" description="test9 sept 2015" plag_type="paraphrastic" annotator_summary="test9 sept 2015 python-textnorm" automatic_summary="" original_corpus="TNLP" original_corpus_id="24" generated_by="human" generator_name="abelm" domain="computing" document_type="web page" topic_match="intra-topic" paraphrase_composition="" lenght="short">
+                <susp_snippet doc="susp/source-document3006_clean_punctuation" offset="128" length="244" sentences_count="5" words_count="41" topic="Data Base"/>
+                <src_snippet doc="src/source-document2976_clean_punctuation" offset="41" length="242" sentences_count="1" words_count="40" topic="Data Base"/>
+            </case>
+            <case id="25" description="test10 sept 2015" plag_type="paraphrastic" annotator_summary="test10 sept 2015 new susp" automatic_summary="" original_corpus="TNLP" original_corpus_id="25" generated_by="human" generator_name="abelm" domain="computing" document_type="web page" topic_match="intra-topic" paraphrase_composition="" lenght="short">
+                <susp_snippet doc="susp/test11" offset="27" length="32" sentences_count="1" words_count="6" topic="Data Base"/>
+                <src_snippet doc="src/source-document2976_clean_punctuation" offset="41" length="242" sentences_count="1" words_count="40" topic="Data Base"/>
+            </case>
+            <case id="26" description="test11 sept 2015" plag_type="good_quotation" annotator_summary="test11 sept 2015 new susp checkFalse" automatic_summary="" original_corpus="26" original_corpus_id="26" generated_by="human" generator_name="abelm" domain="computing" document_type="book" topic_match="intra-topic" paraphrase_composition="" lenght="short">
+                <susp_snippet doc="susp/test11" offset="27" length="32" sentences_count="1" words_count="6" topic="Data Base"/>
+                <src_snippet doc="src/source-document2976_clean_punctuation" offset="456" length="248" sentences_count="1" words_count="35" topic="Data Base"/>
+            </case>
+            <case id="27" description="test12 sept 2015" plag_type="interlingual" annotator_summary="test12 sept 2015 new case suspTrue checkTrue" automatic_summary="" original_corpus="TNLP" original_corpus_id="27" generated_by="human" generator_name="abelm" domain="computing" document_type="scientific paper" topic_match="intra-topic" paraphrase_composition="" lenght="short">
+                <susp_snippet doc="susp/test12" offset="373" length="75" sentences_count="1" words_count="15" topic="Data Base"/>
+                <src_snippet doc="src/source-document2976_clean_punctuation" offset="284" length="171" sentences_count="1" words_count="23" topic="Data Base"/>
             </case>
         </group>
     </cases>

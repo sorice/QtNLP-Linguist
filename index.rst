@@ -77,21 +77,6 @@ Documentación
 
      /doc/doc
 
-Matlab Example
-***************
-
-.. code-block:: matlab
-
-   nf = fix((nx-len+inc)/inc);
-   f=zeros(nf,len);
-   indf= inc*(0:(nf-1)).';
-   inds = (1:len);
-   f(:) = x(indf(:,ones(1,len))+inds(ones(nf,1),:));
-   if (nwin > 1)
-       w = win(:)';
-       f = f .* w(ones(nf,1),:);
-   end
-
 Acerca de:
 *******************
 

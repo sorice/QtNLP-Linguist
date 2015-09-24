@@ -545,6 +545,7 @@ class TNLP_AddCase(QWizard):
       else:
          topic_match = "inter-topic"
 
+      #Chequear que se ha introducido un texto susp y src correctos. Además de sus correspondientes snippets de comparación.
       if susp_text == '' or susp_length == '0' or susp_sentences_count == '0':
          QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect suspicious data. Please select a suspicious file and snippet.')
          return
@@ -553,22 +554,23 @@ class TNLP_AddCase(QWizard):
             QMessageBox.critical(self, self.parent().get_app_name(), 'Incorrect source data. Please select a source file and snippet.')
             return
 
-      # save susp document
-      if susp_new == False:
-         if susp_doc <> "susp/":
+      # sí estamos creando un nuevo susp ents create and save new file.
+      new_susp=''
+
+      if susp_new == False: #sí el checkbox de nuevo documento susp no está marcado
+         if susp_doc <> "susp/":    #sí el label del susp doc name tiene un nombre, o sea que se ha escogido algún documento donde salvar.
             f = QFile(self.__susp_file)
             if f.open(QFile.WriteOnly):
-               f.write(susp_text.encode('utf8'))
+               f.write(susp_text.encode('utf8')) #escribir esto por sí se hizo/o no una modificación en texto susp que ya se había elegido.
                f.close()
          else:
-            new_susp = self.__save_susp_doc(susp_text)
-      else:
-         new_susp = self.__save_susp_doc(susp_text)
+            new_susp = self.__save_susp_doc(susp_text) #sí no se ha escogido un txt inicial para guardar, llamar a la función de crear uno nuevo, y pasarle como parámetro el texto sospechoso.
+            
+      else: # si se ha indicado que se creará un documento nuevo
+         new_susp = self.__save_susp_doc(susp_text) # llamar a la función de crear un nuevo susp, y pasar como parámetro el texto sospechoso.
 
-      if self.__edit_mode == False:
-         if new_susp == '':
-            return
-         else:
+      if self.__edit_mode == False: #Si no estamos en modo de edición
+         if new_susp != '':
             QMessageBox.information(self, self.parent().get_app_name(), "New suspicious file created.")
             susp_doc = new_susp
 
