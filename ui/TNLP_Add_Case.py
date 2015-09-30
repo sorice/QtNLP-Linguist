@@ -11,7 +11,7 @@ from TNLP_Enums_Helper import *
 plag_types = list(plag_types)
 
 # import text normalization functions
-from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
+from modules.TNLP_textNormalization.textMode_Functions import preProcessFlow
 
 # import LETTERS to calculate especial chars.
 import string
@@ -444,7 +444,7 @@ class TNLP_AddCase(QWizard):
          if not f.exists():
             QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid susp file.<br><b>' + self.__susp_file + "</b>")
          else:
-            convertWin_Into_UnixText(self, self.__susp_file)
+            preProcessFlow(self, self.__susp_file)
 
             if f.open(QFile.ReadOnly):
                _txt = open(self.__susp_file).read()
@@ -456,7 +456,7 @@ class TNLP_AddCase(QWizard):
          if not f.exists():
             QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid src file.<br><b>' + self.__src_file + "</b>")
          else:
-            convertWin_Into_UnixText(self, self.__src_file)
+            preProcessFlow(self, self.__src_file)
 
             if f.open(QFile.ReadOnly):
                _txt = open(self.__src_file).read()
@@ -624,7 +624,7 @@ class TNLP_AddCase(QWizard):
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
 
-      convertWin_Into_UnixText(self, _file)
+      preProcessFlow(self, _file)
 
       f = QFile(_file)
       if f.open(QFile.ReadOnly):
@@ -665,7 +665,7 @@ class TNLP_AddCase(QWizard):
          QMessageBox.critical(self, self.parent().get_app_name(), 'Invalid file.')
          return
 
-      convertWin_Into_UnixText(self, _file)
+      preProcessFlow(self, _file)
 
       f = QFile(_file)
       if f.open(QFile.ReadOnly):

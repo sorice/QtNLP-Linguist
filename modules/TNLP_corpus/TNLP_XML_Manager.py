@@ -13,7 +13,7 @@
 
 from lib.python_contrib.pxdom import pxdom
 import os, urllib, re
-from modules.TNLP_textNormalization.textMode_Functions import convertWin_Into_UnixText
+from modules.TNLP_textNormalization.textMode_Functions import preProcessFlow
 
 class TNLP_XML_Manager:
    """Helper to manage the TNLP.xml information file."""
@@ -215,7 +215,7 @@ class TNLP_XML_Manager:
 
       _corpus_dir = os.path.dirname(self.__xml_path) + '/'
 
-      convertWin_Into_UnixText(self, _corpus_dir + _snippet_doc + '.txt')
+      #preProcessFlow(self, _corpus_dir + _snippet_doc + '.txt')
 
       _doc = open(_corpus_dir + _snippet_doc + '.txt')
       _tmp_doc = unicode(_doc.read(),'utf8')

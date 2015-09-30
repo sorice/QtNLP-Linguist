@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE report SYSTEM "TNLP.dtd"> -->
-<corpus name="TNLP" version="0.2" lang="es" total_cases="19" total_true_cases="19" total_annotations="17" total_true_annotations="17" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
+<corpus name="TNLP" version="0.2" lang="es" total_cases="19" total_true_cases="19" total_annotations="19" total_true_annotations="19" license="Creative Commons 3.0 Author Attribution Share Alike Non-Commercial Use" copyright="copyleft" owners="uclv,uc" authors="abel,leonel" country="Cuba" creation_date="Fry Jul 25 22:34:54 2014" last_modification_date="Thu Jul 31 23:48:06 2014" xmlns="http://tnlp.github.com">
     <cases>
         <group NLP_problem_type="similarity" text_extension="paragraph">
         </group>
@@ -163,6 +163,20 @@
             <case id="27" description="test12 sept 2015" plag_type="interlingual" annotator_summary="test12 sept 2015 new case suspTrue checkTrue" automatic_summary="" original_corpus="TNLP" original_corpus_id="27" generated_by="human" generator_name="abelm" domain="computing" document_type="scientific paper" topic_match="intra-topic" paraphrase_composition="" lenght="short">
                 <susp_snippet doc="susp/test12" offset="373" length="75" sentences_count="1" words_count="15" topic="Data Base"/>
                 <src_snippet doc="src/source-document2976_clean_punctuation" offset="284" length="171" sentences_count="1" words_count="23" topic="Data Base"/>
+            </case>
+            <case id="28" description="test13 sept 2015" plag_type="interlingual" annotator_summary="test13 sept 2015 qtextnorm integration" automatic_summary="" original_corpus="TNLP" original_corpus_id="28" generated_by="human" generator_name="abelm" domain="computing" document_type="book" topic_match="inter-topic" paraphrase_composition="mixed" lenght="medium">
+                <susp_snippet doc="susp/susp-doc029" offset="27" length="690" sentences_count="2" words_count="113" topic="Software Engineering"/>
+                <src_snippet doc="src/src-doc028" offset="23" length="375" sentences_count="2" words_count="65" topic="Data Base"/>
+                <annotation id="1" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-30">
+                    <phenomenon type="inflectional changes" projection="local"/>
+                    <susp_chunk offset="37" length="12"/>
+                    <src_chunk offset="38" length="10"/>
+                </annotation>
+                <annotation id="2" author="abelm" is_paraphrase="True" validated_by_human_beings="True" recognized_by_algorithms="False" algorithms_names="" annotation_date="2015-9-30">
+                    <phenomenon type="spelling changes" projection="global"/>
+                    <susp_chunk offset="78" length="8"/>
+                    <src_chunk offset="72" length="9"/>
+                </annotation>
             </case>
         </group>
     </cases>
